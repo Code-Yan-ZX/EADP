@@ -275,11 +275,12 @@ reproduce *itself* to 1e-4.
 > against itself.
 >
 > **Reason.** `m1_teacher_floor.py` measured the floor first: over 8 instances ×
-> 3 repeats the code path disagrees with itself by up to **9.6e-3** relative. A
-> 1e-4 threshold would have failed the published pipeline against itself, so it
-> tested nothing. Criterion (b) is the one that carries the weight — `HEAD_RANK`
-> supervises exactly the teacher's Top-32 and their rank order, so the question
-> is whether *the target* moves more than the generator's own noise moves it.
+> 2 repeats the code path disagrees with itself by up to **9.6e-3** relative, and
+> over 4 instances × 3 repeats by **7.5e-3**. A 1e-4 threshold would have failed
+> the published pipeline against itself, so it tested nothing. Criterion (b) is
+> the one that carries the weight — `HEAD_RANK` supervises exactly the teacher's
+> Top-32 and their rank order, so the question is whether *the target* moves more
+> than the generator's own noise moves it.
 >
 > **Effect on the verdict.** None. G2 is a generator self-check; the M1 decision
 > rule in §7 is untouched.
@@ -405,11 +406,12 @@ are descriptive, not verdicts.
 | 480 | 0.9087 | 0.7937 | 0.8189 | +0.1149 | +0.0898 |
 | 960 | 0.8979 | 0.8139 | 0.8214 | +0.0840 | +0.0765 |
 
-The train − held-out gap falls by **0.129**, from 0.2056 to 0.0765, and about
-two-thirds of that closure happens between n = 180 and n = 240. Train R@8 itself
-is roughly flat (0.887–0.969) while held-out rises — the extra data is buying
-generalisation, not fit capacity. That is the expected signature of a data effect
-rather than an optimization effect, and it is consistent with §8 Q1.
+The train − held-out gap falls by **0.1290**, from 0.2056 to 0.0765, and the
+closure is spread almost evenly across the ladder — 48 % of it in 60 → 180 and a
+further 47 % in 180 → 240, with the last two doublings contributing little. Train
+R@8 itself is roughly flat (0.887–0.969) while held-out rises — the extra data is
+buying generalisation, not fit capacity. That is the expected signature of a data
+effect rather than an optimization effect, and it is consistent with §8 Q1.
 
 ---
 
@@ -499,11 +501,12 @@ nothing clears the pre-registered RESOLVED bar.
 
 **Q5 — does the train/validation gap shrink?**
 
-**Yes, substantially, and mostly in the published range.** train − held-out R@8:
-0.2056 → 0.1496 → 0.1436 → 0.0824 → 0.0898 → 0.0765, a fall of **0.129**, with
-about two-thirds of it between n = 180 and n = 240. train − val falls 0.2375 →
-0.0840. Train R@8 stays roughly flat across the whole ladder while held-out rises,
-so the extra data is buying generalisation rather than capacity.
+**Yes, substantially, and almost all of it inside the published range.** train −
+held-out R@8: 0.2056 → 0.1496 → 0.1436 → 0.0824 → 0.0898 → 0.0765, a fall of
+**0.1290**, of which **95 % happens by n = 240** — 48 % in 60 → 180 and 47 % in
+180 → 240. The two new doublings contribute −0.006 in total. train − val falls
+0.2375 → 0.0840. Train R@8 stays roughly flat across the whole ladder while
+held-out rises, so the extra data is buying generalisation rather than capacity.
 
 **Q6 — is a downstream generation run worth it?**
 
@@ -566,8 +569,9 @@ Both are wired and guarded; neither was executed.
 * The L4 scorer reaches held-out R@8 **0.8214** at n = 960, above the 0.82 deploy
   line for the first time in this project, with a positive CI lower bound against
   the 240 reference.
-* The train/held-out gap falls by 0.129 across the ladder while train R@8 stays
-  flat — a generalisation effect, not a capacity effect.
+* The train/held-out gap falls by 0.1290 across the ladder — 95 % of it by
+  n = 240 — while train R@8 stays flat: a generalisation effect, not a capacity
+  effect, and one already almost exhausted at the previously published scale.
 * The S2-C6 reference is reproducible **bit-exactly** under a different but
   equivalent protocol (gate G3), which is what makes the decomposition above a
   measurement rather than an argument.
