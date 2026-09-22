@@ -1,0 +1,99 @@
+{
+ "stage": "S2-C6",
+ "step": "query control at the selection level",
+ "note": "honest vs another image's query (a derangement, so no image keeps its own). 'jaccard256' is the overlap of the two selected 256-token sets; 'changed256' is 1 - jaccard, i.e. the fraction of the selection the query actually moves.",
+ "arms": {
+  "L4+QUERY": {
+   "per_seed": [
+    {
+     "jaccard256": 0.9997924773022049,
+     "changed256": 0.0002075226977950706,
+     "head8_honest": 0.8058333333333333,
+     "head8_wrong": 0.8058333333333333,
+     "head8_delta": 0.0,
+     "seed": 0,
+     "abs_score_diff_mean": 0.0015290604205802083,
+     "abs_score_diff_max": 0.013078689575195312,
+     "n_params": 558465
+    },
+    {
+     "jaccard256": 0.9984954604409857,
+     "changed256": 0.0015045395590142618,
+     "head8_honest": 0.8191666666666667,
+     "head8_wrong": 0.8191666666666667,
+     "head8_delta": 0.0,
+     "seed": 1,
+     "abs_score_diff_mean": 0.006606437265872955,
+     "abs_score_diff_max": 0.057634830474853516,
+     "n_params": 558465
+    },
+    {
+     "jaccard256": 0.9976142933268984,
+     "changed256": 0.0023857066731014717,
+     "head8_honest": 0.7975,
+     "head8_wrong": 0.7983333333333333,
+     "head8_delta": -0.0008333333333333334,
+     "seed": 2,
+     "abs_score_diff_mean": 0.01713927648961544,
+     "abs_score_diff_max": 0.12504959106445312,
+     "n_params": 558465
+    }
+   ],
+   "mean": {
+    "changed256": 0.0013659229766369348,
+    "jaccard256": 0.9986340770233629,
+    "head8_honest": 0.8075,
+    "head8_wrong": 0.8077777777777778,
+    "head8_delta": -0.0002777777777777778,
+    "abs_score_diff_mean": 0.0084249247253562,
+    "abs_score_diff_max": 0.06525437037150066
+   }
+  },
+  "L4+QRY-BILIN": {
+   "per_seed": [
+    {
+     "jaccard256": 0.9901063598945647,
+     "changed256": 0.00989364010543533,
+     "head8_honest": 0.8141666666666667,
+     "head8_wrong": 0.8158333333333333,
+     "head8_delta": -0.0016666666666666668,
+     "seed": 0,
+     "abs_score_diff_mean": 0.015462184324860573,
+     "abs_score_diff_max": 0.4267549514770508,
+     "n_params": 558465
+    },
+    {
+     "jaccard256": 0.9784033604093215,
+     "changed256": 0.021596639590678285,
+     "head8_honest": 0.8058333333333333,
+     "head8_wrong": 0.8041666666666667,
+     "head8_delta": 0.0016666666666666668,
+     "seed": 1,
+     "abs_score_diff_mean": 0.04681462049484253,
+     "abs_score_diff_max": 1.0789451599121094,
+     "n_params": 558465
+    },
+    {
+     "jaccard256": 0.9867903535606517,
+     "changed256": 0.01320964643934816,
+     "head8_honest": 0.8041666666666667,
+     "head8_wrong": 0.8041666666666667,
+     "head8_delta": 0.0,
+     "seed": 2,
+     "abs_score_diff_mean": 0.03693889454007149,
+     "abs_score_diff_max": 0.8660602569580078,
+     "n_params": 558465
+    }
+   ],
+   "mean": {
+    "changed256": 0.014899975378487258,
+    "jaccard256": 0.9851000246215126,
+    "head8_honest": 0.8080555555555556,
+    "head8_wrong": 0.8080555555555556,
+    "head8_delta": 0.0,
+    "abs_score_diff_mean": 0.03307189978659153,
+    "abs_score_diff_max": 0.790586789449056
+   }
+  }
+ }
+}

@@ -1,0 +1,1254 @@
+{
+ "stage": "S2-C6",
+ "question": "is the residual 0.80 -> 0.95 gap a data limit or a single-snapshot representation limit, and if the latter does the missing signal come from the layer trajectory or from the query?",
+ "prereg": "docs/scoring_search_s2c6_prereg.md",
+ "rule": {
+  "margin": 0.01,
+  "primary": "held-out teacher Top-8 recall@256",
+  "selection": "validation teacher Top-8 recall@256 (H8)",
+  "paired_bootstrap_draws": 10000,
+  "seeds": [
+   0,
+   1,
+   2
+  ]
+ },
+ "part_A": {
+  "question": "is the token-local family data-limited at 240 fit images?",
+  "curve": {
+   "60": {
+    "held_out": {
+     "head_recall8": 0.7644444444444445,
+     "head_recall16": 0.73625,
+     "head_recall32": 0.6873611111111111,
+     "head_agree8": 0.2452777777777778,
+     "head_agree16": 0.22111111111111112,
+     "overlap256": 0.5130295138888888
+    },
+    "per_seed_head_recall8": [
+     0.7675,
+     0.7608333333333334,
+     0.765
+    ],
+    "seed_sd": 0.002749859704614325,
+    "by_benchmark_head_recall8": {
+     "DocVQA_VAL": 0.7016666666666667,
+     "OCRBench": 0.7641666666666667,
+     "TextVQA_VAL": 0.8275
+    },
+    "val_head_recall8": 0.7458333333333335,
+    "train_head_recall8": 0.9493055555555555,
+    "best_epoch": [
+     1,
+     2,
+     2
+    ],
+    "epochs_run": [
+     22,
+     22,
+     24
+    ],
+    "init_held_out_head_recall8": 0.22694444444444442,
+    "n_params": 524673,
+    "n_query_params": 0,
+    "access": {
+     "access": "token (L4)",
+     "context_dim": 0,
+     "attention": false,
+     "capacity_matched_to": "L4 (identity)",
+     "role": "candidate",
+     "part": "B"
+    },
+    "selection": "H8",
+    "n_fit": 60,
+    "subset_nested_in_next": true,
+    "ov_selected_head_recall8": 0.7555555555555555
+   },
+   "120": {
+    "held_out": {
+     "head_recall8": 0.7852777777777779,
+     "head_recall16": 0.7580555555555556,
+     "head_recall32": 0.7047222222222222,
+     "head_agree8": 0.27305555555555555,
+     "head_agree16": 0.24,
+     "overlap256": 0.5152256944444444
+    },
+    "per_seed_head_recall8": [
+     0.79,
+     0.78,
+     0.7858333333333334
+    ],
+    "seed_sd": 0.004101339738953727,
+    "by_benchmark_head_recall8": {
+     "DocVQA_VAL": 0.72,
+     "OCRBench": 0.8041666666666667,
+     "TextVQA_VAL": 0.8316666666666667
+    },
+    "val_head_recall8": 0.748611111111111,
+    "train_head_recall8": 0.9409722222222222,
+    "best_epoch": [
+     2,
+     1,
+     1
+    ],
+    "epochs_run": [
+     21,
+     24,
+     23
+    ],
+    "init_held_out_head_recall8": 0.22472222222222218,
+    "n_params": 524673,
+    "n_query_params": 0,
+    "access": {
+     "access": "token (L4)",
+     "context_dim": 0,
+     "attention": false,
+     "capacity_matched_to": "L4 (identity)",
+     "role": "candidate",
+     "part": "B"
+    },
+    "selection": "H8",
+    "n_fit": 120,
+    "subset_nested_in_next": true,
+    "ov_selected_head_recall8": 0.7702777777777777
+   },
+   "180": {
+    "held_out": {
+     "head_recall8": 0.7922222222222223,
+     "head_recall16": 0.7620833333333333,
+     "head_recall32": 0.7066666666666667,
+     "head_agree8": 0.27111111111111114,
+     "head_agree16": 0.24416666666666667,
+     "overlap256": 0.5072135416666667
+    },
+    "per_seed_head_recall8": [
+     0.7766666666666666,
+     0.7975,
+     0.8025
+    ],
+    "seed_sd": 0.011187239203112388,
+    "by_benchmark_head_recall8": {
+     "DocVQA_VAL": 0.7308333333333333,
+     "OCRBench": 0.805,
+     "TextVQA_VAL": 0.8408333333333333
+    },
+    "val_head_recall8": 0.7604166666666666,
+    "train_head_recall8": 0.9108796296296297,
+    "best_epoch": [
+     0,
+     1,
+     1
+    ],
+    "epochs_run": [
+     22,
+     24,
+     25
+    ],
+    "init_held_out_head_recall8": 0.2255555555555556,
+    "n_params": 524673,
+    "n_query_params": 0,
+    "access": {
+     "access": "token (L4)",
+     "context_dim": 0,
+     "attention": false,
+     "capacity_matched_to": "L4 (identity)",
+     "role": "candidate",
+     "part": "B"
+    },
+    "selection": "H8",
+    "n_fit": 180,
+    "subset_nested_in_next": true,
+    "ov_selected_head_recall8": 0.7822222222222223
+   },
+   "240": {
+    "held_out": {
+     "head_recall8": 0.8047222222222222,
+     "head_recall16": 0.7751388888888889,
+     "head_recall32": 0.7134722222222222,
+     "head_agree8": 0.275,
+     "head_agree16": 0.25069444444444444,
+     "overlap256": 0.5077517361111111
+    },
+    "per_seed_head_recall8": [
+     0.7991666666666667,
+     0.8133333333333334,
+     0.8016666666666666
+    ],
+    "seed_sd": 0.006173919658581359,
+    "by_benchmark_head_recall8": {
+     "DocVQA_VAL": 0.74,
+     "OCRBench": 0.8125,
+     "TextVQA_VAL": 0.8616666666666667
+    },
+    "val_head_recall8": 0.7805555555555556,
+    "train_head_recall8": 0.8871527777777777,
+    "best_epoch": [
+     0,
+     1,
+     0
+    ],
+    "epochs_run": [
+     24,
+     22,
+     22
+    ],
+    "init_held_out_head_recall8": 0.22583333333333333,
+    "n_params": 524673,
+    "n_query_params": 0,
+    "access": {
+     "access": "token (L4)",
+     "context_dim": 0,
+     "attention": false,
+     "capacity_matched_to": "L4 (identity)",
+     "role": "candidate",
+     "part": "B"
+    },
+    "selection": "H8",
+    "n_fit": 240,
+    "subset_nested_in_next": null,
+    "ov_selected_head_recall8": 0.7972222222222223
+   }
+  },
+  "segments": {
+   "60->120": {
+    "mean": 0.020833333333333332,
+    "lo": 0.006666666666666667,
+    "hi": 0.035,
+    "ci_excludes_zero": true,
+    "n": 150,
+    "per_seed": [
+     0.0225,
+     0.019166666666666665,
+     0.020833333333333332
+    ],
+    "all_seeds_positive": true,
+    "seed_min": 0.019166666666666665,
+    "seed_max": 0.0225,
+    "resolved": true,
+    "below_margin": false
+   },
+   "120->180": {
+    "mean": 0.006944444444444445,
+    "lo": -0.0061111111111111106,
+    "hi": 0.01972222222222222,
+    "ci_excludes_zero": false,
+    "n": 150,
+    "per_seed": [
+     -0.013333333333333334,
+     0.0175,
+     0.016666666666666666
+    ],
+    "all_seeds_positive": false,
+    "seed_min": -0.013333333333333334,
+    "seed_max": 0.0175,
+    "resolved": false,
+    "below_margin": false
+   },
+   "180->240": {
+    "mean": 0.0125,
+    "lo": 0.0005555555555555558,
+    "hi": 0.025555555555555554,
+    "ci_excludes_zero": true,
+    "n": 150,
+    "per_seed": [
+     0.0225,
+     0.015833333333333335,
+     -0.0008333333333333334
+    ],
+    "all_seeds_positive": false,
+    "seed_min": -0.0008333333333333334,
+    "seed_max": 0.0225,
+    "resolved": false,
+    "below_margin": true
+   }
+  },
+  "marginal_180_to_240": {
+   "mean": 0.0125,
+   "lo": 0.0005555555555555558,
+   "hi": 0.025555555555555554,
+   "ci_excludes_zero": true,
+   "n": 150,
+   "per_seed": [
+    0.0225,
+    0.015833333333333335,
+    -0.0008333333333333334
+   ],
+   "all_seeds_positive": false,
+   "seed_min": -0.0008333333333333334,
+   "seed_max": 0.0225,
+   "resolved": false,
+   "below_margin": true
+  },
+  "marginal_gain_last_segment": 0.0125,
+  "monotone": true,
+  "n_segments_positive": 3,
+  "verdict": "DATA-PLATEAU",
+  "verdict_reason": "the n=180 -> n=240 segment is not a RESOLVED GAIN (+0.0125, CI [+0.0006, +0.0256], per-seed [0.0225, 0.0158, -0.0008]); at this design's resolution 180 -> 240 has stopped paying, which is a statement about that segment and not a proof of a plateau -- four points cannot distinguish a plateau from a very slowly rising curve.",
+  "note": "the held-out 150 is never used to select anything here; the subset draw is fixed by SUBSET_SEED and each n is a prefix of the next, so the curve is nested by construction"
+ },
+ "consistency": {
+  "partA_240_equals_partB_L4_max_abs_diff": 0.0,
+  "identical": true,
+  "note": "the same configuration run twice through the same deterministic code path; identical per-image held-out metrics are what makes the two parts share one reference",
+  "l4_query_init_identity_max_abs_diff": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "part_B": {
+  "reference_L4": {
+   "held_out": {
+    "head_recall8": 0.8047222222222222,
+    "head_recall16": 0.7751388888888889,
+    "head_recall32": 0.7134722222222222,
+    "head_agree8": 0.275,
+    "head_agree16": 0.25069444444444444,
+    "overlap256": 0.5077517361111111
+   },
+   "per_seed_head_recall8": [
+    0.7991666666666667,
+    0.8133333333333334,
+    0.8016666666666666
+   ],
+   "seed_sd": 0.006173919658581359,
+   "by_benchmark_head_recall8": {
+    "DocVQA_VAL": 0.74,
+    "OCRBench": 0.8125,
+    "TextVQA_VAL": 0.8616666666666667
+   },
+   "val_head_recall8": 0.7805555555555556,
+   "train_head_recall8": 0.8871527777777777,
+   "best_epoch": [
+    0,
+    1,
+    0
+   ],
+   "epochs_run": [
+    24,
+    22,
+    22
+   ],
+   "init_held_out_head_recall8": 0.22583333333333333,
+   "n_params": 524673,
+   "n_query_params": 0,
+   "access": {
+    "access": "token (L4)",
+    "context_dim": 0,
+    "attention": false,
+    "capacity_matched_to": "L4 (identity)",
+    "role": "candidate",
+    "part": "B"
+   }
+  },
+  "arms": {
+   "L2": {
+    "held_out": {
+     "head_recall8": 0.7905555555555556,
+     "head_recall16": 0.75875,
+     "head_recall32": 0.6977777777777778,
+     "head_agree8": 0.2725,
+     "head_agree16": 0.24736111111111111,
+     "overlap256": 0.49803819444444447
+    },
+    "per_seed_head_recall8": [
+     0.7866666666666666,
+     0.795,
+     0.79
+    ],
+    "seed_sd": 0.003424674446093907,
+    "by_benchmark_head_recall8": {
+     "DocVQA_VAL": 0.73,
+     "OCRBench": 0.7866666666666666,
+     "TextVQA_VAL": 0.855
+    },
+    "val_head_recall8": 0.7868055555555555,
+    "train_head_recall8": 0.8769097222222221,
+    "best_epoch": [
+     0,
+     2,
+     0
+    ],
+    "epochs_run": [
+     24,
+     23,
+     22
+    ],
+    "init_held_out_head_recall8": 0.21166666666666667,
+    "n_params": 524673,
+    "n_query_params": 0,
+    "access": {
+     "access": "token (L2)",
+     "context_dim": 0,
+     "attention": false,
+     "capacity_matched_to": "L4 (identity)",
+     "role": "candidate",
+     "part": "B"
+    },
+    "governing_reference": "L4",
+    "vs_reference": {
+     "mean": -0.014166666666666666,
+     "lo": -0.024999999999999998,
+     "hi": -0.00361111111111111,
+     "ci_excludes_zero": true,
+     "n": 150,
+     "per_seed": [
+      -0.0125,
+      -0.018333333333333333,
+      -0.011666666666666667
+     ],
+     "all_seeds_positive": false,
+     "seed_min": -0.018333333333333333,
+     "seed_max": -0.011666666666666667,
+     "resolved": false,
+     "below_margin": false
+    },
+    "vs_L4": {
+     "mean": -0.014166666666666666,
+     "lo": -0.024999999999999998,
+     "hi": -0.00361111111111111,
+     "ci_excludes_zero": true,
+     "n": 150,
+     "per_seed": [
+      -0.0125,
+      -0.018333333333333333,
+      -0.011666666666666667
+     ],
+     "all_seeds_positive": false,
+     "seed_min": -0.018333333333333333,
+     "seed_max": -0.011666666666666667,
+     "resolved": false,
+     "below_margin": false
+    },
+    "ov_selected_head_recall8": 0.7952777777777778
+   },
+   "DELTA": {
+    "held_out": {
+     "head_recall8": 0.7975,
+     "head_recall16": 0.7659722222222223,
+     "head_recall32": 0.7099305555555555,
+     "head_agree8": 0.2525,
+     "head_agree16": 0.23819444444444443,
+     "overlap256": 0.5038715277777778
+    },
+    "per_seed_head_recall8": [
+     0.8058333333333333,
+     0.7958333333333333,
+     0.7908333333333334
+    ],
+    "seed_sd": 0.006236095644623202,
+    "by_benchmark_head_recall8": {
+     "DocVQA_VAL": 0.7433333333333333,
+     "OCRBench": 0.8033333333333333,
+     "TextVQA_VAL": 0.8458333333333333
+    },
+    "val_head_recall8": 0.78125,
+    "train_head_recall8": 0.907986111111111,
+    "best_epoch": [
+     1,
+     1,
+     0
+    ],
+    "epochs_run": [
+     23,
+     22,
+     23
+    ],
+    "init_held_out_head_recall8": 0.285,
+    "n_params": 524673,
+    "n_query_params": 0,
+    "access": {
+     "access": "token (delta)",
+     "context_dim": 0,
+     "attention": false,
+     "capacity_matched_to": "L4 (identity)",
+     "role": "candidate",
+     "part": "B"
+    },
+    "governing_reference": "L4",
+    "vs_reference": {
+     "mean": -0.007222222222222224,
+     "lo": -0.02638888888888889,
+     "hi": 0.011111111111111113,
+     "ci_excludes_zero": false,
+     "n": 150,
+     "per_seed": [
+      0.006666666666666667,
+      -0.0175,
+      -0.010833333333333334
+     ],
+     "all_seeds_positive": false,
+     "seed_min": -0.0175,
+     "seed_max": 0.006666666666666667,
+     "resolved": false,
+     "below_margin": false
+    },
+    "vs_L4": {
+     "mean": -0.007222222222222224,
+     "lo": -0.02638888888888889,
+     "hi": 0.011111111111111113,
+     "ci_excludes_zero": false,
+     "n": 150,
+     "per_seed": [
+      0.006666666666666667,
+      -0.0175,
+      -0.010833333333333334
+     ],
+     "all_seeds_positive": false,
+     "seed_min": -0.0175,
+     "seed_max": 0.006666666666666667,
+     "resolved": false,
+     "below_margin": false
+    },
+    "ov_selected_head_recall8": 0.7933333333333333
+   },
+   "L2+L4": {
+    "held_out": {
+     "head_recall8": 0.8038888888888889,
+     "head_recall16": 0.7741666666666667,
+     "head_recall32": 0.7107638888888889,
+     "head_agree8": 0.2788888888888889,
+     "head_agree16": 0.2520833333333333,
+     "overlap256": 0.5069878472222222
+    },
+    "per_seed_head_recall8": [
+     0.7941666666666667,
+     0.8116666666666666,
+     0.8058333333333333
+    ],
+    "seed_sd": 0.007275444918727088,
+    "by_benchmark_head_recall8": {
+     "DocVQA_VAL": 0.7408333333333333,
+     "OCRBench": 0.8091666666666667,
+     "TextVQA_VAL": 0.8616666666666667
+    },
+    "val_head_recall8": 0.7847222222222222,
+    "train_head_recall8": 0.8821180555555556,
+    "best_epoch": [
+     0,
+     1,
+     0
+    ],
+    "epochs_run": [
+     24,
+     22,
+     22
+    ],
+    "init_held_out_head_recall8": 0.22444444444444445,
+    "n_params": 524673,
+    "n_query_params": 0,
+    "access": {
+     "access": "token (L2) + token (L4)",
+     "context_dim": 0,
+     "attention": false,
+     "capacity_matched_to": "L4 (exactly: 2 x (4096 x 64 + 64) = 4096 x 128 + 128)",
+     "role": "candidate",
+     "part": "B"
+    },
+    "governing_reference": "L4",
+    "vs_reference": {
+     "mean": -0.0008333333333333324,
+     "lo": -0.007777777777777778,
+     "hi": 0.00611111111111111,
+     "ci_excludes_zero": false,
+     "n": 150,
+     "per_seed": [
+      -0.005,
+      -0.0016666666666666668,
+      0.004166666666666667
+     ],
+     "all_seeds_positive": false,
+     "seed_min": -0.005,
+     "seed_max": 0.004166666666666667,
+     "resolved": false,
+     "below_margin": false
+    },
+    "vs_L4": {
+     "mean": -0.0008333333333333324,
+     "lo": -0.007777777777777778,
+     "hi": 0.00611111111111111,
+     "ci_excludes_zero": false,
+     "n": 150,
+     "per_seed": [
+      -0.005,
+      -0.0016666666666666668,
+      0.004166666666666667
+     ],
+     "all_seeds_positive": false,
+     "seed_min": -0.005,
+     "seed_max": 0.004166666666666667,
+     "resolved": false,
+     "below_margin": false
+    },
+    "ov_selected_head_recall8": 0.7955555555555556,
+    "controls": {
+     "WRONG_TRAJ_ch0": {
+      "honest_minus_wrong": {
+       "mean": 0.09611111111111112,
+       "lo": 0.07833333333333334,
+       "hi": 0.11416666666666667,
+       "ci_excludes_zero": true,
+       "n": 150,
+       "per_seed": [
+        0.07416666666666667,
+        0.10416666666666667,
+        0.11
+       ],
+       "all_seeds_positive": true,
+       "seed_min": 0.07416666666666667,
+       "seed_max": 0.11,
+       "resolved": true,
+       "below_margin": false
+      },
+      "wrong_held_out_head_recall8": 0.7077777777777777
+     },
+     "WRONG_TRAJ_ch1": {
+      "honest_minus_wrong": {
+       "mean": 0.17805555555555558,
+       "lo": 0.15416666666666667,
+       "hi": 0.20277777777777775,
+       "ci_excludes_zero": true,
+       "n": 150,
+       "per_seed": [
+        0.155,
+        0.17833333333333334,
+        0.20083333333333334
+       ],
+       "all_seeds_positive": true,
+       "seed_min": 0.155,
+       "seed_max": 0.20083333333333334,
+       "resolved": true,
+       "below_margin": false
+      },
+      "wrong_held_out_head_recall8": 0.6258333333333334
+     }
+    }
+   },
+   "L4+DELTA": {
+    "held_out": {
+     "head_recall8": 0.8008333333333333,
+     "head_recall16": 0.7743055555555556,
+     "head_recall32": 0.7197222222222223,
+     "head_agree8": 0.26611111111111113,
+     "head_agree16": 0.24763888888888888,
+     "overlap256": 0.5129947916666666
+    },
+    "per_seed_head_recall8": [
+     0.8016666666666666,
+     0.7975,
+     0.8033333333333333
+    ],
+    "seed_sd": 0.0024532669073132974,
+    "by_benchmark_head_recall8": {
+     "DocVQA_VAL": 0.745,
+     "OCRBench": 0.8083333333333333,
+     "TextVQA_VAL": 0.8491666666666666
+    },
+    "val_head_recall8": 0.7854166666666668,
+    "train_head_recall8": 0.9184027777777778,
+    "best_epoch": [
+     1,
+     1,
+     0
+    ],
+    "epochs_run": [
+     24,
+     22,
+     22
+    ],
+    "init_held_out_head_recall8": 0.2225,
+    "n_params": 524673,
+    "n_query_params": 0,
+    "access": {
+     "access": "token (L4) + token (delta)",
+     "context_dim": 0,
+     "attention": false,
+     "capacity_matched_to": "L4 (exactly: 2 x (4096 x 64 + 64) = 4096 x 128 + 128)",
+     "role": "candidate",
+     "part": "B"
+    },
+    "governing_reference": "L4",
+    "vs_reference": {
+     "mean": -0.003888888888888887,
+     "lo": -0.018333333333333333,
+     "hi": 0.01027777777777778,
+     "ci_excludes_zero": false,
+     "n": 150,
+     "per_seed": [
+      0.0025,
+      -0.015833333333333335,
+      0.0016666666666666668
+     ],
+     "all_seeds_positive": false,
+     "seed_min": -0.015833333333333335,
+     "seed_max": 0.0025,
+     "resolved": false,
+     "below_margin": false
+    },
+    "vs_L4": {
+     "mean": -0.003888888888888887,
+     "lo": -0.018333333333333333,
+     "hi": 0.01027777777777778,
+     "ci_excludes_zero": false,
+     "n": 150,
+     "per_seed": [
+      0.0025,
+      -0.015833333333333335,
+      0.0016666666666666668
+     ],
+     "all_seeds_positive": false,
+     "seed_min": -0.015833333333333335,
+     "seed_max": 0.0025,
+     "resolved": false,
+     "below_margin": false
+    },
+    "ov_selected_head_recall8": 0.7822222222222223,
+    "controls": {
+     "WRONG_TRAJ_ch0": {
+      "honest_minus_wrong": {
+       "mean": 0.11583333333333333,
+       "lo": 0.09694444444444444,
+       "hi": 0.13555555555555557,
+       "ci_excludes_zero": true,
+       "n": 150,
+       "per_seed": [
+        0.105,
+        0.14,
+        0.1025
+       ],
+       "all_seeds_positive": true,
+       "seed_min": 0.1025,
+       "seed_max": 0.14,
+       "resolved": true,
+       "below_margin": false
+      },
+      "wrong_held_out_head_recall8": 0.685
+     },
+     "WRONG_TRAJ_ch1": {
+      "honest_minus_wrong": {
+       "mean": 0.14694444444444443,
+       "lo": 0.12444444444444443,
+       "hi": 0.16944444444444443,
+       "ci_excludes_zero": true,
+       "n": 150,
+       "per_seed": [
+        0.16083333333333333,
+        0.1125,
+        0.1675
+       ],
+       "all_seeds_positive": true,
+       "seed_min": 0.1125,
+       "seed_max": 0.1675,
+       "resolved": true,
+       "below_margin": false
+      },
+      "wrong_held_out_head_recall8": 0.6538888888888889
+     }
+    }
+   },
+   "L4+L4": {
+    "held_out": {
+     "head_recall8": 0.8066666666666666,
+     "head_recall16": 0.7755555555555556,
+     "head_recall32": 0.7169444444444445,
+     "head_agree8": 0.2761111111111111,
+     "head_agree16": 0.25194444444444447,
+     "overlap256": 0.510234375
+    },
+    "per_seed_head_recall8": [
+     0.8041666666666667,
+     0.8125,
+     0.8033333333333333
+    ],
+    "seed_sd": 0.004138795673819808,
+    "by_benchmark_head_recall8": {
+     "DocVQA_VAL": 0.7541666666666667,
+     "OCRBench": 0.8158333333333333,
+     "TextVQA_VAL": 0.85
+    },
+    "val_head_recall8": 0.7791666666666667,
+    "train_head_recall8": 0.9064236111111111,
+    "best_epoch": [
+     1,
+     1,
+     0
+    ],
+    "epochs_run": [
+     24,
+     22,
+     22
+    ],
+    "init_held_out_head_recall8": 0.23083333333333333,
+    "n_params": 524673,
+    "n_query_params": 0,
+    "access": {
+     "access": "token (L4) + token (L4)",
+     "context_dim": 0,
+     "attention": false,
+     "capacity_matched_to": "L4 (exactly: 2 x (4096 x 64 + 64) = 4096 x 128 + 128)",
+     "role": "mechanism control",
+     "part": "B"
+    },
+    "governing_reference": "L4",
+    "vs_reference": {
+     "mean": 0.0019444444444444427,
+     "lo": -0.006388888888888889,
+     "hi": 0.01,
+     "ci_excludes_zero": false,
+     "n": 150,
+     "per_seed": [
+      0.005,
+      -0.0008333333333333334,
+      0.0016666666666666668
+     ],
+     "all_seeds_positive": false,
+     "seed_min": -0.0008333333333333334,
+     "seed_max": 0.005,
+     "resolved": false,
+     "below_margin": false
+    },
+    "vs_L4": {
+     "mean": 0.0019444444444444427,
+     "lo": -0.006388888888888889,
+     "hi": 0.01,
+     "ci_excludes_zero": false,
+     "n": 150,
+     "per_seed": [
+      0.005,
+      -0.0008333333333333334,
+      0.0016666666666666668
+     ],
+     "all_seeds_positive": false,
+     "seed_min": -0.0008333333333333334,
+     "seed_max": 0.005,
+     "resolved": false,
+     "below_margin": false
+    },
+    "ov_selected_head_recall8": 0.795
+   }
+  },
+  "pairwise_vs_L4": {
+   "L2": {
+    "mean": -0.014166666666666666,
+    "lo": -0.024999999999999998,
+    "hi": -0.00361111111111111,
+    "ci_excludes_zero": true,
+    "n": 150,
+    "per_seed": [
+     -0.0125,
+     -0.018333333333333333,
+     -0.011666666666666667
+    ],
+    "all_seeds_positive": false,
+    "seed_min": -0.018333333333333333,
+    "seed_max": -0.011666666666666667,
+    "resolved": false,
+    "below_margin": false
+   },
+   "DELTA": {
+    "mean": -0.007222222222222224,
+    "lo": -0.02638888888888889,
+    "hi": 0.011111111111111113,
+    "ci_excludes_zero": false,
+    "n": 150,
+    "per_seed": [
+     0.006666666666666667,
+     -0.0175,
+     -0.010833333333333334
+    ],
+    "all_seeds_positive": false,
+    "seed_min": -0.0175,
+    "seed_max": 0.006666666666666667,
+    "resolved": false,
+    "below_margin": false
+   },
+   "L2+L4": {
+    "mean": -0.0008333333333333324,
+    "lo": -0.007777777777777778,
+    "hi": 0.00611111111111111,
+    "ci_excludes_zero": false,
+    "n": 150,
+    "per_seed": [
+     -0.005,
+     -0.0016666666666666668,
+     0.004166666666666667
+    ],
+    "all_seeds_positive": false,
+    "seed_min": -0.005,
+    "seed_max": 0.004166666666666667,
+    "resolved": false,
+    "below_margin": false
+   },
+   "L4+DELTA": {
+    "mean": -0.003888888888888887,
+    "lo": -0.018333333333333333,
+    "hi": 0.01027777777777778,
+    "ci_excludes_zero": false,
+    "n": 150,
+    "per_seed": [
+     0.0025,
+     -0.015833333333333335,
+     0.0016666666666666668
+    ],
+    "all_seeds_positive": false,
+    "seed_min": -0.015833333333333335,
+    "seed_max": 0.0025,
+    "resolved": false,
+    "below_margin": false
+   },
+   "L4+L4": {
+    "mean": 0.0019444444444444427,
+    "lo": -0.006388888888888889,
+    "hi": 0.01,
+    "ci_excludes_zero": false,
+    "n": 150,
+    "per_seed": [
+     0.005,
+     -0.0008333333333333334,
+     0.0016666666666666668
+    ],
+    "all_seeds_positive": false,
+    "seed_min": -0.0008333333333333334,
+    "seed_max": 0.005,
+    "resolved": false,
+    "below_margin": false
+   }
+  },
+  "architecture_control_L4_L4_vs_L4": {
+   "mean": 0.0019444444444444427,
+   "lo": -0.006388888888888889,
+   "hi": 0.01,
+   "ci_excludes_zero": false,
+   "n": 150,
+   "per_seed": [
+    0.005,
+    -0.0008333333333333334,
+    0.0016666666666666668
+   ],
+   "all_seeds_positive": false,
+   "seed_min": -0.0008333333333333334,
+   "seed_max": 0.005,
+   "resolved": false,
+   "below_margin": false
+  },
+  "control_fired": false,
+  "control_effect": "the dual architecture is not a RESOLVED GAIN over L4, so L4 remains the governing reference for the dual arms"
+ },
+ "part_C": {
+  "reference_L4": {
+   "held_out": {
+    "head_recall8": 0.8047222222222222,
+    "head_recall16": 0.7751388888888889,
+    "head_recall32": 0.7134722222222222,
+    "head_agree8": 0.275,
+    "head_agree16": 0.25069444444444444,
+    "overlap256": 0.5077517361111111
+   },
+   "per_seed_head_recall8": [
+    0.7991666666666667,
+    0.8133333333333334,
+    0.8016666666666666
+   ],
+   "seed_sd": 0.006173919658581359,
+   "by_benchmark_head_recall8": {
+    "DocVQA_VAL": 0.74,
+    "OCRBench": 0.8125,
+    "TextVQA_VAL": 0.8616666666666667
+   },
+   "val_head_recall8": 0.7805555555555556,
+   "train_head_recall8": 0.8871527777777777,
+   "best_epoch": [
+    0,
+    1,
+    0
+   ],
+   "epochs_run": [
+    24,
+    22,
+    22
+   ],
+   "init_held_out_head_recall8": 0.22583333333333333,
+   "n_params": 524673,
+   "n_query_params": 0,
+   "access": {
+    "access": "token (L4)",
+    "context_dim": 0,
+    "attention": false,
+    "capacity_matched_to": "L4 (identity)",
+    "role": "candidate",
+    "part": "B"
+   }
+  },
+  "arms": {
+   "L4+QUERY": {
+    "held_out": {
+     "head_recall8": 0.8075,
+     "head_recall16": 0.7784722222222222,
+     "head_recall32": 0.7225694444444445,
+     "head_agree8": 0.2825,
+     "head_agree16": 0.25527777777777777,
+     "overlap256": 0.5171006944444444
+    },
+    "per_seed_head_recall8": [
+     0.8058333333333333,
+     0.8191666666666667,
+     0.7975
+    ],
+    "seed_sd": 0.008923543557893921,
+    "by_benchmark_head_recall8": {
+     "DocVQA_VAL": 0.7558333333333334,
+     "OCRBench": 0.8141666666666667,
+     "TextVQA_VAL": 0.8525
+    },
+    "val_head_recall8": 0.7791666666666667,
+    "train_head_recall8": 0.9171874999999999,
+    "best_epoch": [
+     0,
+     1,
+     2
+    ],
+    "epochs_run": [
+     24,
+     22,
+     22
+    ],
+    "init_held_out_head_recall8": 0.22583333333333333,
+    "n_params": 558465,
+    "n_query_params": 33792,
+    "access": {
+     "access": "token (L4) + question embedding (rank 8)",
+     "context_dim": 0,
+     "attention": false,
+     "capacity_matched_to": null,
+     "query_params": 33792,
+     "role": "candidate",
+     "part": "C"
+    },
+    "governing_reference": "L4",
+    "vs_reference": {
+     "mean": 0.0027777777777777775,
+     "lo": -0.005,
+     "hi": 0.010555555555555556,
+     "ci_excludes_zero": false,
+     "n": 150,
+     "per_seed": [
+      0.006666666666666667,
+      0.005833333333333334,
+      -0.004166666666666667
+     ],
+     "all_seeds_positive": false,
+     "seed_min": -0.004166666666666667,
+     "seed_max": 0.006666666666666667,
+     "resolved": false,
+     "below_margin": false
+    },
+    "vs_L4": {
+     "mean": 0.0027777777777777775,
+     "lo": -0.005,
+     "hi": 0.010555555555555556,
+     "ci_excludes_zero": false,
+     "n": 150,
+     "per_seed": [
+      0.006666666666666667,
+      0.005833333333333334,
+      -0.004166666666666667
+     ],
+     "all_seeds_positive": false,
+     "seed_min": -0.004166666666666667,
+     "seed_max": 0.006666666666666667,
+     "resolved": false,
+     "below_margin": false
+    },
+    "ov_selected_head_recall8": 0.7975,
+    "controls": {
+     "WRONG_QUERY": {
+      "honest_minus_wrong": {
+       "mean": -0.0002777777777777778,
+       "lo": -0.0008333333333333334,
+       "hi": 0.0,
+       "ci_excludes_zero": false,
+       "n": 150,
+       "per_seed": [
+        0.0,
+        0.0,
+        -0.0008333333333333334
+       ],
+       "all_seeds_positive": false,
+       "seed_min": -0.0008333333333333334,
+       "seed_max": 0.0,
+       "resolved": false,
+       "below_margin": false
+      },
+      "wrong_held_out_head_recall8": 0.8077777777777778
+     }
+    }
+   },
+   "L4+QRY-BILIN": {
+    "held_out": {
+     "head_recall8": 0.8080555555555556,
+     "head_recall16": 0.7755555555555556,
+     "head_recall32": 0.7154861111111112,
+     "head_agree8": 0.2738888888888889,
+     "head_agree16": 0.24944444444444444,
+     "overlap256": 0.5086631944444444
+    },
+    "per_seed_head_recall8": [
+     0.8141666666666667,
+     0.8058333333333333,
+     0.8041666666666667
+    ],
+    "seed_sd": 0.004374448818895467,
+    "by_benchmark_head_recall8": {
+     "DocVQA_VAL": 0.7558333333333334,
+     "OCRBench": 0.805,
+     "TextVQA_VAL": 0.8633333333333333
+    },
+    "val_head_recall8": 0.7784722222222222,
+    "train_head_recall8": 0.8862847222222222,
+    "best_epoch": [
+     0,
+     1,
+     0
+    ],
+    "epochs_run": [
+     24,
+     21,
+     23
+    ],
+    "init_held_out_head_recall8": 0.22583333333333333,
+    "n_params": 558465,
+    "n_query_params": 33792,
+    "access": {
+     "access": "token (L4)",
+     "context_dim": 0,
+     "attention": false,
+     "capacity_matched_to": "L4 (identity)",
+     "role": "candidate",
+     "part": "C"
+    },
+    "governing_reference": "L4",
+    "vs_reference": {
+     "mean": 0.003333333333333333,
+     "lo": -0.0030555555555555557,
+     "hi": 0.009722222222222222,
+     "ci_excludes_zero": false,
+     "n": 150,
+     "per_seed": [
+      0.015,
+      -0.0075,
+      0.0025
+     ],
+     "all_seeds_positive": false,
+     "seed_min": -0.0075,
+     "seed_max": 0.015,
+     "resolved": false,
+     "below_margin": false
+    },
+    "vs_L4": {
+     "mean": 0.003333333333333333,
+     "lo": -0.0030555555555555557,
+     "hi": 0.009722222222222222,
+     "ci_excludes_zero": false,
+     "n": 150,
+     "per_seed": [
+      0.015,
+      -0.0075,
+      0.0025
+     ],
+     "all_seeds_positive": false,
+     "seed_min": -0.0075,
+     "seed_max": 0.015,
+     "resolved": false,
+     "below_margin": false
+    },
+    "ov_selected_head_recall8": 0.7908333333333334,
+    "controls": {
+     "WRONG_QUERY": {
+      "honest_minus_wrong": {
+       "mean": 0.0,
+       "lo": -0.0011111111111111111,
+       "hi": 0.0011111111111111111,
+       "ci_excludes_zero": false,
+       "n": 150,
+       "per_seed": [
+        -0.0016666666666666668,
+        0.0016666666666666668,
+        0.0
+       ],
+       "all_seeds_positive": false,
+       "seed_min": -0.0016666666666666668,
+       "seed_max": 0.0016666666666666668,
+       "resolved": false,
+       "below_margin": false
+      },
+      "wrong_held_out_head_recall8": 0.8080555555555555
+     }
+    }
+   }
+  },
+  "pairwise_vs_L4": {
+   "L4+QUERY": {
+    "mean": 0.0027777777777777775,
+    "lo": -0.005,
+    "hi": 0.010555555555555556,
+    "ci_excludes_zero": false,
+    "n": 150,
+    "per_seed": [
+     0.006666666666666667,
+     0.005833333333333334,
+     -0.004166666666666667
+    ],
+    "all_seeds_positive": false,
+    "seed_min": -0.004166666666666667,
+    "seed_max": 0.006666666666666667,
+    "resolved": false,
+    "below_margin": false
+   },
+   "L4+QRY-BILIN": {
+    "mean": 0.003333333333333333,
+    "lo": -0.0030555555555555557,
+    "hi": 0.009722222222222222,
+    "ci_excludes_zero": false,
+    "n": 150,
+    "per_seed": [
+     0.015,
+     -0.0075,
+     0.0025
+    ],
+    "all_seeds_positive": false,
+    "seed_min": -0.0075,
+    "seed_max": 0.015,
+    "resolved": false,
+    "below_margin": false
+   }
+  },
+  "reference_L4_from_part_B": true,
+  "amendment": "L4+QUERY was the pre-registered arm. It adds one 128-vector per image to every token, so its query term is identical across the image's 1 024 tokens and it can reorder tokens only through the final GELU's nonlinearity -- it cannot express token-specific query relevance. Its null therefore does not close the brief's question, and L4+QRY-BILIN was added after the fact: a token-dependent rank-8 bilinear term at an *identical* added budget (33 792 parameters). Both are reported; the pre-registration is amended in scoring_search_s2c6.md rather than rewritten."
+ },
+ "verdicts": {
+  "flags": {
+   "A_DATA_LIMITED": false,
+   "B_SNAPSHOT_SUFFICIENT": true,
+   "C_TRAJECTORY_INFORMATIVE": false,
+   "D_QUERY_INFORMATIVE": false,
+   "INDETERMINATE_TRAJECTORY": false
+  },
+  "reasons": {
+   "A_DATA_LIMITED": "the n=180 -> n=240 segment is not a RESOLVED GAIN (+0.0125, CI [+0.0006, +0.0256], per-seed [0.0225, 0.0158, -0.0008]); at this design's resolution 180 -> 240 has stopped paying, which is a statement about that segment and not a proof of a plateau -- four points cannot distinguish a plateau from a very slowly rising curve.",
+   "B_SNAPSHOT_SUFFICIENT": "no arm in {L2, DELTA, L2+L4, L4+DELTA} is a RESOLVED GAIN over its governing reference",
+   "C_TRAJECTORY_INFORMATIVE": "neither L2+L4 nor L4+DELTA clears its reference",
+   "D_QUERY_INFORMATIVE": "L4+QUERY: vs L4 +0.0028 (CI_lo -0.0050, resolved=False), shuffled-query control honest-wrong -0.0003 (resolved=False); L4+QRY-BILIN: vs L4 +0.0033 (CI_lo -0.0031, resolved=False), shuffled-query control honest-wrong +0.0000 (resolved=False)",
+   "INDETERMINATE_TRAJECTORY": "no trajectory arm is below-margin"
+  }
+ },
+ "headline": "A DATA-PLATEAU (180->240 +0.0125) | B SNAPSHOT-SUFFICIENT | C no trajectory gain | D query adds nothing resolved",
+ "deployable_gate": {
+  "rule": "forward-only arm with held-out R@8 >= 0.82 (aspirational 0.85), paired CI lower bound > 0 vs L4, and a consistent seed pattern",
+  "best_arm": "L4+QRY-BILIN",
+  "best_held_out_head_recall8": 0.8080555555555556,
+  "reaches_0.82": [],
+  "clears": [],
+  "downstream_run": false,
+  "note": "no generation is run: the gate stays closed"
+ }
+}
