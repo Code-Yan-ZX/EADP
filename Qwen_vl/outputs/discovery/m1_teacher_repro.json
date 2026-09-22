@@ -1,0 +1,141 @@
+{
+ "n_checked": 8,
+ "rows": [
+  {
+   "key": "DocVQA_VAL_1902",
+   "ref_max": 56.75,
+   "self_max_abs": 1.0,
+   "self_rel": 0.01762114537444934,
+   "published_max_abs": 1.0,
+   "published_rel": 0.01762114537444934,
+   "top32_diff_self": 0,
+   "top32_diff_vs_published": 0,
+   "top1_token_id_expected": 64,
+   "top1_token_id_got": [
+    64,
+    64
+   ],
+   "top1_match": true
+  },
+  {
+   "key": "DocVQA_VAL_1974",
+   "ref_max": 29.75,
+   "self_max_abs": 0.078125,
+   "self_rel": 0.0026260504201680674,
+   "published_max_abs": 0.125,
+   "published_rel": 0.004201680672268907,
+   "top32_diff_self": 0,
+   "top32_diff_vs_published": 0,
+   "top1_token_id_expected": 91603,
+   "top1_token_id_got": [
+    91603,
+    91603
+   ],
+   "top1_match": true
+  },
+  {
+   "key": "DocVQA_VAL_323",
+   "ref_max": 40.75,
+   "self_max_abs": 0.25,
+   "self_rel": 0.006134969325153374,
+   "published_max_abs": 1.375,
+   "published_rel": 0.03374233128834356,
+   "top32_diff_self": 0,
+   "top32_diff_vs_published": 0,
+   "top1_token_id_expected": 15,
+   "top1_token_id_got": [
+    15,
+    15
+   ],
+   "top1_match": true
+  },
+  {
+   "key": "OCRBench_181",
+   "ref_max": 26.375,
+   "self_max_abs": 0.1875,
+   "self_rel": 0.0071090047393364926,
+   "published_max_abs": 0.375,
+   "published_rel": 0.014218009478672985,
+   "top32_diff_self": 0,
+   "top32_diff_vs_published": 0,
+   "top1_token_id_expected": 500,
+   "top1_token_id_got": [
+    500,
+    500
+   ],
+   "top1_match": true
+  },
+  {
+   "key": "OCRBench_60",
+   "ref_max": 24.25,
+   "self_max_abs": 0.09375,
+   "self_rel": 0.003865979381443299,
+   "published_max_abs": 0.125,
+   "published_rel": 0.005154639175257732,
+   "top32_diff_self": 0,
+   "top32_diff_vs_published": 0,
+   "top1_token_id_expected": 6918,
+   "top1_token_id_got": [
+    6918,
+    6918
+   ],
+   "top1_match": true
+  },
+  {
+   "key": "OCRBench_637",
+   "ref_max": 32.25,
+   "self_max_abs": 0.125,
+   "self_rel": 0.003875968992248062,
+   "published_max_abs": 0.25,
+   "published_rel": 0.007751937984496124,
+   "top32_diff_self": 0,
+   "top32_diff_vs_published": 0,
+   "top1_token_id_expected": 1918,
+   "top1_token_id_got": [
+    1918,
+    1918
+   ],
+   "top1_match": true
+  },
+  {
+   "key": "OCRBench_94",
+   "ref_max": 9.75,
+   "self_max_abs": 0.0625,
+   "self_rel": 0.00641025641025641,
+   "published_max_abs": 0.125,
+   "published_rel": 0.01282051282051282,
+   "top32_diff_self": 0,
+   "top32_diff_vs_published": 0,
+   "top1_token_id_expected": 9522,
+   "top1_token_id_got": [
+    9522,
+    9522
+   ],
+   "top1_match": true
+  },
+  {
+   "key": "OCRBench_986",
+   "ref_max": 82.0,
+   "self_max_abs": 0.25,
+   "self_rel": 0.003048780487804878,
+   "published_max_abs": 0.5,
+   "published_rel": 0.006097560975609756,
+   "top32_diff_self": 0,
+   "top32_diff_vs_published": 0,
+   "top1_token_id_expected": 2069,
+   "top1_token_id_got": [
+    2069,
+    2069
+   ],
+   "top1_match": true
+  }
+ ],
+ "repeats": 2,
+ "prereg_tol": 0.0001,
+ "criterion": "amended: (a) published_rel <= 2*self_rel and (b) top32_diff_vs_published <= top32_diff_self",
+ "worst_self_rel": 0.01762114537444934,
+ "worst_published_rel": 0.03374233128834356,
+ "a_ok": true,
+ "b_ok": true,
+ "passed": true
+}
