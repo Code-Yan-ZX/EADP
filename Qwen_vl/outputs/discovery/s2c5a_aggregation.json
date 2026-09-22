@@ -1,0 +1,267 @@
+{
+ "stage": "S2-C5A",
+ "question": "are S2-C4's HEAD_RANK = 0.7783 and S2-C5's HEAD_RANK = 0.7656 the same checkpoints under different aggregation?",
+ "answer": "yes -- same three S2-C3 HEAD_RANK checkpoints, same held-out 150, same metric; they differ only in whether the seed average is taken before or after the rank metric",
+ "arm": "HEAD_RANK",
+ "n_seeds": 3,
+ "n_test": 150,
+ "metric": "head_recall8",
+ "protocol_A": {
+  "name": "metric-then-mean",
+  "definition": "mean_i mean_s head_recall@8(score_{s,i}, teacher_i)",
+  "where_used": "S2-C5 reference and rule_inputs; S2-C4 trained_per_seed means",
+  "report": {
+   "head_recall8": {
+    "seed_mean": 0.7655555555555554,
+    "per_seed": [
+     0.7608333333333334,
+     0.7775,
+     0.7583333333333333
+    ],
+    "seed_sd": 0.008507440461729741
+   },
+   "head_recall16": {
+    "seed_mean": 0.7408333333333333,
+    "per_seed": [
+     0.7395833333333334,
+     0.7470833333333333,
+     0.7358333333333333
+    ],
+    "seed_sd": 0.004677071733467417
+   },
+   "head_recall32": {
+    "seed_mean": 0.6940972222222221,
+    "per_seed": [
+     0.694375,
+     0.6960416666666667,
+     0.691875
+    ],
+    "seed_sd": 0.0017123372230469294
+   },
+   "head_agree8": {
+    "seed_mean": 0.26555555555555554,
+    "per_seed": [
+     0.2708333333333333,
+     0.25666666666666665,
+     0.26916666666666667
+    ],
+    "seed_sd": 0.00632211482041169
+   },
+   "overlap256": {
+    "seed_mean": 0.5131770833333333,
+    "per_seed": [
+     0.514453125,
+     0.50796875,
+     0.517109375
+    ],
+    "seed_sd": 0.003839181171287993
+   }
+  }
+ },
+ "protocol_B": {
+  "name": "mean-then-metric",
+  "definition": "mean_i head_recall@8(mean_s score_{s,i}, teacher_i)",
+  "where_used": "S2-C4 BEST_TRAINED / arms table (HEAD_RANK_seedavg)",
+  "B_raw_mean_of_weights": {
+   "head_recall8": 0.7741666666666667,
+   "head_recall16": 0.75125,
+   "head_recall32": 0.704375,
+   "head_agree8": 0.27,
+   "overlap256": 0.52171875
+  },
+  "B_rawdir_mean_of_weights_rescored": {
+   "head_recall8": 0.7741666666666667,
+   "head_recall16": 0.75125,
+   "head_recall32": 0.704375,
+   "head_agree8": 0.27,
+   "overlap256": 0.52171875
+  },
+  "B_unit_mean_of_unit_directions": {
+   "head_recall8": 0.7783333333333333,
+   "head_recall16": 0.7566666666666667,
+   "head_recall32": 0.7070833333333333,
+   "head_agree8": 0.2708333333333333,
+   "overlap256": 0.5219791666666667
+  },
+  "weight_norms": [
+   0.9236951699584273,
+   0.6502344323143816,
+   0.8387137731626675
+  ],
+  "max_abs_recon_error_per_seed": 2.1287775431311218e-06,
+  "note": "B_raw == B_rawdir to float precision (the cached score vectors are exactly w_s.h + b_s, verified by reconstruction); B_unit is the different, scale-symmetric aggregation S2-C4 actually used"
+ },
+ "gap": {
+  "head_recall8": {
+   "A_metric_then_mean": 0.7655555555555554,
+   "B_raw_mean_of_weights": 0.7741666666666667,
+   "B_rawdir_mean_of_weights_rescored": 0.7741666666666667,
+   "B_unit_mean_of_unit_directions": 0.7783333333333333,
+   "delta_A_minus_B_raw": -0.008611111111111113,
+   "paired_A_vs_B_raw": {
+    "mean": -0.008611111111111113,
+    "lo": -0.016118055555555556,
+    "hi": -0.0005555555555555562,
+    "ci_excludes_zero": true
+   },
+   "delta_B_raw_minus_B_unit": -0.004166666666666667,
+   "paired_B_raw_vs_B_unit": {
+    "mean": -0.004166666666666667,
+    "lo": -0.01,
+    "hi": 0.0025,
+    "ci_excludes_zero": false
+   },
+   "delta_A_minus_B_unit": -0.01277777777777778,
+   "paired_A_vs_B_unit": {
+    "mean": -0.01277777777777778,
+    "lo": -0.021388888888888888,
+    "hi": -0.0038888888888888957,
+    "ci_excludes_zero": true
+   }
+  },
+  "head_recall16": {
+   "A_metric_then_mean": 0.7408333333333333,
+   "B_raw_mean_of_weights": 0.75125,
+   "B_rawdir_mean_of_weights_rescored": 0.75125,
+   "B_unit_mean_of_unit_directions": 0.7566666666666667,
+   "delta_A_minus_B_raw": -0.010416666666666666,
+   "paired_A_vs_B_raw": {
+    "mean": -0.010416666666666666,
+    "lo": -0.01694444444444444,
+    "hi": -0.003750000000000006,
+    "ci_excludes_zero": true
+   },
+   "delta_B_raw_minus_B_unit": -0.005416666666666667,
+   "paired_B_raw_vs_B_unit": {
+    "mean": -0.005416666666666667,
+    "lo": -0.010416666666666666,
+    "hi": -0.0004166666666666667,
+    "ci_excludes_zero": true
+   },
+   "delta_A_minus_B_unit": -0.015833333333333335,
+   "paired_A_vs_B_unit": {
+    "mean": -0.015833333333333335,
+    "lo": -0.022083333333333333,
+    "hi": -0.009444444444444443,
+    "ci_excludes_zero": true
+   }
+  },
+  "head_recall32": {
+   "A_metric_then_mean": 0.6940972222222221,
+   "B_raw_mean_of_weights": 0.704375,
+   "B_rawdir_mean_of_weights_rescored": 0.704375,
+   "B_unit_mean_of_unit_directions": 0.7070833333333333,
+   "delta_A_minus_B_raw": -0.010277777777777778,
+   "paired_A_vs_B_raw": {
+    "mean": -0.010277777777777778,
+    "lo": -0.015486111111111114,
+    "hi": -0.0049999999999999975,
+    "ci_excludes_zero": true
+   },
+   "delta_B_raw_minus_B_unit": -0.0027083333333333334,
+   "paired_B_raw_vs_B_unit": {
+    "mean": -0.0027083333333333334,
+    "lo": -0.005833333333333334,
+    "hi": 0.0004166666666666667,
+    "ci_excludes_zero": false
+   },
+   "delta_A_minus_B_unit": -0.012986111111111111,
+   "paired_A_vs_B_unit": {
+    "mean": -0.012986111111111111,
+    "lo": -0.017916666666666664,
+    "hi": -0.007916666666666664,
+    "ci_excludes_zero": true
+   }
+  },
+  "head_agree8": {
+   "A_metric_then_mean": 0.26555555555555554,
+   "B_raw_mean_of_weights": 0.27,
+   "B_rawdir_mean_of_weights_rescored": 0.27,
+   "B_unit_mean_of_unit_directions": 0.2708333333333333,
+   "delta_A_minus_B_raw": -0.004444444444444445,
+   "paired_A_vs_B_raw": {
+    "mean": -0.004444444444444445,
+    "lo": -0.009722222222222222,
+    "hi": 0.0008333333333333334,
+    "ci_excludes_zero": false
+   },
+   "delta_B_raw_minus_B_unit": -0.0008333333333333334,
+   "paired_B_raw_vs_B_unit": {
+    "mean": -0.0008333333333333334,
+    "lo": -0.004166666666666667,
+    "hi": 0.0016666666666666668,
+    "ci_excludes_zero": false
+   },
+   "delta_A_minus_B_unit": -0.005277777777777778,
+   "paired_A_vs_B_unit": {
+    "mean": -0.005277777777777778,
+    "lo": -0.011111111111111113,
+    "hi": 0.0005555555555555552,
+    "ci_excludes_zero": false
+   }
+  },
+  "overlap256": {
+   "A_metric_then_mean": 0.5131770833333333,
+   "B_raw_mean_of_weights": 0.52171875,
+   "B_rawdir_mean_of_weights_rescored": 0.52171875,
+   "B_unit_mean_of_unit_directions": 0.5219791666666667,
+   "delta_A_minus_B_raw": -0.008541666666666668,
+   "paired_A_vs_B_raw": {
+    "mean": -0.008541666666666668,
+    "lo": -0.01012152777777778,
+    "hi": -0.006987847222222226,
+    "ci_excludes_zero": true
+   },
+   "delta_B_raw_minus_B_unit": -0.00026041666666666666,
+   "paired_B_raw_vs_B_unit": {
+    "mean": -0.00026041666666666666,
+    "lo": -0.00109375,
+    "hi": 0.000546875,
+    "ci_excludes_zero": false
+   },
+   "delta_A_minus_B_unit": -0.008802083333333335,
+   "paired_A_vs_B_unit": {
+    "mean": -0.008802083333333335,
+    "lo": -0.01046875,
+    "hi": -0.007143880208333336,
+    "ci_excludes_zero": true
+   }
+  }
+ },
+ "headline": {
+  "s2c4_quoted": 0.7783333333333333,
+  "s2c4_quoted_protocol": "B_unit (metric on the mean of the unit directions)",
+  "s2c5_quoted": 0.7655555555555555,
+  "s2c5_quoted_protocol": "A (metric-then-mean)",
+  "s2c3_quoted": 0.7656,
+  "reproduced_A": 0.7655555555555554,
+  "reproduced_B_unit": 0.7783333333333333,
+  "reproduced_B_raw": 0.7741666666666667,
+  "total_gap_A_minus_B_unit": -0.012777777777777888,
+  "gap_part_metric_order": -0.008611111111111236,
+  "gap_part_unit_normalisation": -0.004166666666666652
+ },
+ "protocol_mixing": {
+  "s2c5_used": "metric-then-mean for arms AND for the reference, consistently -- verified against s2c5_controls.json, which recorded both readings and compared on this one",
+  "s2c5_controls_reported": {
+   "metric_then_mean": 0.7655555555555554,
+   "mean_of_raw_score_vectors": 0.7741666666666667,
+   "per_seed": [
+    0.7608333333333334,
+    0.7775,
+    0.7583333333333333
+   ]
+  },
+  "s2c4_used": "metric of the 3-seed mean unit direction",
+  "mixed": false,
+  "note": "the two stages are each internally consistent; they simply answer different questions and their headline HEAD_RANK numbers are therefore not comparable to each other"
+ },
+ "sources": {
+  "scores": "s2c3_scores.npz",
+  "refs": [
+   "s2c4_direction.json",
+   "s2c5_factorization.json",
+   "s2c5_controls.json"
+  ]
+ }
+}
