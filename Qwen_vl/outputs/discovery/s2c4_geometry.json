@@ -1,0 +1,298 @@
+{
+ "note": "\nS2-C4 step 3: the geometry of the per-image oracle directions.\n\nIf the 450 oracle directions w_i (unit vectors in R^4096, mean-difference centroid\ndirections of each image's teacher Top-32) occupy a low-dimensional subspace, an\nimage-adaptive scorer is at least *conceivable*: a cheap descriptor could pick a\npoint in that subspace. If they are near-isotropic, no low-dimensional adaptive\nmechanism can approximate them and the per-image differences are noise from the\npoint of view of any shared or routed read-out.\n\nReported, with no claim beyond what the numbers show:\n\n  * pairwise cosine similarity, within and across benchmarks\n  * cosine to the global mean direction (how much of each w_i is shared)\n  * PCA spectrum: explained variance, participation-ratio effective rank, and the\n    number of components needed for 50/80/90/95 % of the variance\n  * whether the leading components align with benchmark identity, tested by a\n    contingency table of a k-means partition against the benchmark label, and by\n    the benchmark means of the leading coefficients\n\nThe PCA itself is fitted on the **fit split only** (240 directions); the held-out\n150 are projected onto it, never used to build it. That is the same basis\n``s2c4_pca.py`` then uses for the reconstruction bound, so the two agree.\n",
+ "k_head": 32,
+ "pairwise_cosine": {
+  "fit": {
+   "name": "fit directions (240)",
+   "n": 240,
+   "mean": 0.1803124099969864,
+   "sd": 0.13814106583595276,
+   "p05": -0.030430737882852554,
+   "p50": 0.17143584787845612,
+   "p95": 0.4154759645462036,
+   "frac_negative": 0.08253138075313808,
+   "frac_above_0p5": 0.015376569037656903,
+   "within_benchmark_mean": 0.24550358951091766,
+   "across_benchmark_mean": 0.14812427759170532,
+   "within": {
+    "TextVQA_VAL": 0.30916640162467957,
+    "DocVQA_VAL": 0.23255257308483124,
+    "OCRBench": 0.1947917640209198
+   }
+  },
+  "test": {
+   "name": "held-out directions (150)",
+   "n": 150,
+   "mean": 0.17207856476306915,
+   "sd": 0.13839790225028992,
+   "p05": -0.03719509765505791,
+   "p50": 0.16253353655338287,
+   "p95": 0.41104546189308167,
+   "frac_negative": 0.09029082774049217,
+   "frac_above_0p5": 0.015033557046979866,
+   "within_benchmark_mean": 0.2223391979932785,
+   "across_benchmark_mean": 0.14745084941387177,
+   "within": {
+    "TextVQA_VAL": 0.2684497535228729,
+    "DocVQA_VAL": 0.1725042760372162,
+    "OCRBench": 0.22606360912322998
+   }
+  }
+ },
+ "cosine_to_global": {
+  "fit": {
+   "mean": 0.42863476276397705,
+   "sd": 0.13257405161857605,
+   "p05": 0.1863321214914322,
+   "p95": 0.6506709456443787
+  },
+  "test": {
+   "mean": 0.4139312207698822,
+   "sd": 0.1526338756084442
+  },
+  "by_benchmark": {
+   "TextVQA_VAL": 0.45687705278396606,
+   "DocVQA_VAL": 0.34300586581230164,
+   "OCRBench": 0.44191083312034607
+  }
+ },
+ "pca": {
+  "n_fit": 240,
+  "effective_rank_participation_ratio": 43.455448747397796,
+  "dims_for_variance": {
+   "n_for_50pct": 25,
+   "n_for_80pct": 96,
+   "n_for_90pct": 144,
+   "n_for_95pct": 179,
+   "n_for_99pct": 222
+  },
+  "evr_top20": [
+   0.10402894020080566,
+   0.06146113574504852,
+   0.04391751438379288,
+   0.03214133530855179,
+   0.025984428822994232,
+   0.020354261621832848,
+   0.019599424675107002,
+   0.017000801861286163,
+   0.015876203775405884,
+   0.015447456389665604,
+   0.013996971771121025,
+   0.012708605267107487,
+   0.01248234510421753,
+   0.011561576277017593,
+   0.010812177322804928,
+   0.010474435985088348,
+   0.010018088854849339,
+   0.009433808736503124,
+   0.00905164610594511,
+   0.008752481080591679
+  ],
+  "cumulative_top20": [
+   0.10402894125887091,
+   0.16549007673008032,
+   0.20940759240207385,
+   0.2415489289863753,
+   0.2675333586529217,
+   0.28788762006712953,
+   0.307487045431291,
+   0.3244878483104434,
+   0.3403640516408181,
+   0.35581150833109443,
+   0.3698084805772261,
+   0.3825170859514197,
+   0.3949994311636366,
+   0.40656100742047185,
+   0.41737318544273244,
+   0.42784762126869363,
+   0.43786571007565156,
+   0.4472995189036223,
+   0.4563511649682894,
+   0.4651036465356999
+  ],
+  "evr_at": [
+   {
+    "k": 1,
+    "cumulative": 0.10402894125887091
+   },
+   {
+    "k": 2,
+    "cumulative": 0.16549007673008032
+   },
+   {
+    "k": 4,
+    "cumulative": 0.2415489289863753
+   },
+   {
+    "k": 8,
+    "cumulative": 0.3244878483104434
+   },
+   {
+    "k": 16,
+    "cumulative": 0.42784762126869363
+   },
+   {
+    "k": 32,
+    "cumulative": 0.5505324939578133
+   },
+   {
+    "k": 64,
+    "cumulative": 0.7005151023183365
+   },
+   {
+    "k": 128,
+    "cumulative": 0.8728934700167563
+   },
+   {
+    "k": 240,
+    "cumulative": 1.0
+   }
+  ]
+ },
+ "clusters_wrt_benchmark": {
+  "k=3": {
+   "contingency": {
+    "c0": {
+     "TextVQA_VAL": 1,
+     "DocVQA_VAL": 24,
+     "OCRBench": 31
+    },
+    "c1": {
+     "TextVQA_VAL": 74,
+     "DocVQA_VAL": 2,
+     "OCRBench": 38
+    },
+    "c2": {
+     "TextVQA_VAL": 5,
+     "DocVQA_VAL": 54,
+     "OCRBench": 11
+    }
+   },
+   "purity_wrt_benchmark": 0.6625,
+   "sizes": [
+    56,
+    114,
+    70
+   ],
+   "means_by_benchmark_shape": "see contingency"
+  },
+  "k=8": {
+   "contingency": {
+    "c0": {
+     "TextVQA_VAL": 0,
+     "DocVQA_VAL": 0,
+     "OCRBench": 1
+    },
+    "c1": {
+     "TextVQA_VAL": 41,
+     "DocVQA_VAL": 2,
+     "OCRBench": 25
+    },
+    "c2": {
+     "TextVQA_VAL": 3,
+     "DocVQA_VAL": 15,
+     "OCRBench": 11
+    },
+    "c3": {
+     "TextVQA_VAL": 31,
+     "DocVQA_VAL": 0,
+     "OCRBench": 8
+    },
+    "c4": {
+     "TextVQA_VAL": 0,
+     "DocVQA_VAL": 16,
+     "OCRBench": 9
+    },
+    "c5": {
+     "TextVQA_VAL": 5,
+     "DocVQA_VAL": 16,
+     "OCRBench": 6
+    },
+    "c6": {
+     "TextVQA_VAL": 0,
+     "DocVQA_VAL": 31,
+     "OCRBench": 0
+    },
+    "c7": {
+     "TextVQA_VAL": 0,
+     "DocVQA_VAL": 0,
+     "OCRBench": 20
+    }
+   },
+   "purity_wrt_benchmark": 0.7125,
+   "sizes": [
+    1,
+    68,
+    29,
+    39,
+    25,
+    27,
+    31,
+    20
+   ],
+   "means_by_benchmark_shape": "see contingency"
+  }
+ },
+ "leading_coefficients_by_benchmark": {
+  "pc1": {
+   "var_total": 0.08491592109203339,
+   "var_between_benchmark": 0.05141045153141022,
+   "frac_explained_by_benchmark": 0.6054276823997498,
+   "means": {
+    "TextVQA_VAL": -0.25891542434692383,
+    "DocVQA_VAL": 0.29328012466430664,
+    "OCRBench": -0.034364692866802216
+   }
+  },
+  "pc2": {
+   "var_total": 0.05016901344060898,
+   "var_between_benchmark": 0.0059357150457799435,
+   "frac_explained_by_benchmark": 0.11831436306238174,
+   "means": {
+    "TextVQA_VAL": -0.04115457832813263,
+    "DocVQA_VAL": -0.06679145991802216,
+    "OCRBench": 0.10794603824615479
+   }
+  },
+  "pc3": {
+   "var_total": 0.035848651081323624,
+   "var_between_benchmark": 0.005711413454264402,
+   "frac_explained_by_benchmark": 0.1593201756477356,
+   "means": {
+    "TextVQA_VAL": -0.04478394240140915,
+    "DocVQA_VAL": -0.06164919212460518,
+    "OCRBench": 0.10643315315246582
+   }
+  },
+  "pc4": {
+   "var_total": 0.02623608335852623,
+   "var_between_benchmark": 0.0016467986861243844,
+   "frac_explained_by_benchmark": 0.06276846677064896,
+   "means": {
+    "TextVQA_VAL": -0.05069335550069809,
+    "DocVQA_VAL": 0.0020478381775319576,
+    "OCRBench": 0.048645514994859695
+   }
+  },
+  "pc5": {
+   "var_total": 0.02121036872267723,
+   "var_between_benchmark": 0.00149593036621809,
+   "frac_explained_by_benchmark": 0.07052826136350632,
+   "means": {
+    "TextVQA_VAL": 0.05049687623977661,
+    "DocVQA_VAL": -0.04345405846834183,
+    "OCRBench": -0.007042811252176762
+   }
+  },
+  "pc6": {
+   "var_total": 0.01661461777985096,
+   "var_between_benchmark": 0.000206363620236516,
+   "frac_explained_by_benchmark": 0.01242060586810112,
+   "means": {
+    "TextVQA_VAL": -0.020109931007027626,
+    "DocVQA_VAL": 0.007557287812232971,
+    "OCRBench": 0.012552645988762379
+   }
+  }
+ }
+}

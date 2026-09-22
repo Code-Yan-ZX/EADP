@@ -1,0 +1,55 @@
+{
+ "note": "\nS2-C4 step 1: build and cache the per-image oracle directions.\n\nFor every instance with a teacher map (240 fit + 60 val + 150 held-out = 450; the\n15 causal instances have no P1-G2 map and are excluded -- S2-C1's rule, unchanged):\n\n  w32_i  mean-difference direction of the teacher's Top-32, unit-normalised\n  w8_i   the same for the teacher's Top-8 (supplementary)\n\nplus the cheap per-image descriptors used later to *select* a direction without\nreading that image's teacher map:\n\n  mean(h_L4)                 4096\n  std(h_L4)                  4096\n  mean+std                   8192\n  meanstd+delta             12288   (delta = mean(h_L4) - mean(h_L2), S2-C1 cache)\n\nand the fit-split standardisation statistics (mu, sd) that every quantity in this\nstage is expressed in.\n\nThis step is the only one that touches the 3.9 GB feature memmap in full; the\nartifacts it writes are ~40 MB, and every later step is CPU-only and reads them.\n\nSanity checks run here, printed and stored:\n  * the in-sample recall of each oracle direction, which must reproduce S2-C3 \u00a76\n    (w32 -> 0.903, w8 -> 0.982) -- if it does not, this stage is not comparable\n    to the one it is diagnosing;\n  * descriptor finiteness and the fraction of near-zero-norm directions.\n",
+ "n_instances": 450,
+ "split_counts": {
+  "fit": 240,
+  "test": 150,
+  "val": 60
+ },
+ "descriptor_dims": {
+  "mean": 4096,
+  "std": 4096,
+  "mean+std": 8192,
+  "meanstd+delta": 12288
+ },
+ "sanity": {
+  "n": 150,
+  "in_sample_recall8": 0.9816666666666667,
+  "in_sample_recall32": 0.9025,
+  "in_sample_agree8": 0.4266666666666667,
+  "s2c3_reference": {
+   "recall8": 0.9817,
+   "recall32": 0.9025,
+   "agree8": 0.4267
+  },
+  "frac_zero_direction": 0.0
+ },
+ "in_sample_per_instance": null,
+ "in_sample_by_split": {
+  "fit": {
+   "recall8": 0.9817708333333334,
+   "recall32": 0.9032552083333333,
+   "agree8": 0.41822916666666665,
+   "n": 240
+  },
+  "val": {
+   "recall8": 0.96875,
+   "recall32": 0.8817708333333333,
+   "agree8": 0.38958333333333334,
+   "n": 60
+  },
+  "test": {
+   "recall8": 0.9816666666666667,
+   "recall32": 0.9025,
+   "agree8": 0.4266666666666667,
+   "n": 150
+  }
+ },
+ "head_ks": [
+  8,
+  16,
+  32
+ ],
+ "k_head": 32,
+ "layer": 4
+}
