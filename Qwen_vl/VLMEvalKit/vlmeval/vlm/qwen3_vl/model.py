@@ -146,13 +146,14 @@ class Qwen3VLChat(Qwen3VLPromptMixin, BaseModel):
                 trust_remote_code=True,
             )
         else:
+            attn_impl = os.environ.get('QWEN3_VLM_ATTN_IMPL', 'flash_attention_2')
             if listinstr(['omni'], model_path.lower()):
                 self.model = Qwen3OmniMoeForConditionalGeneration.from_pretrained(
-                    model_path, dtype='auto', device_map='auto', attn_implementation='flash_attention_2'
+                    model_path, dtype='auto', device_map='auto', attn_implementation=attn_impl
                 )
             else:
                 self.model = AutoModelForImageTextToText.from_pretrained(
-                    model_path, dtype='auto', device_map='auto', attn_implementation='flash_attention_2'
+                    model_path, dtype='auto', device_map='auto', attn_implementation=attn_impl
                 )
             self.model.eval()
 

@@ -46,7 +46,12 @@ from vlmeval.inference import infer_data_job
 from vlmeval.inference_video import infer_data_job_video
 from vlmeval.inference_mt import infer_data_job_mt
 from vlmeval.smp import *
-from vlmeval.utils.result_transfer import MMMU_result_transfer, MMTBench_result_transfer
+try:
+    from vlmeval.utils.result_transfer import MMMU_result_transfer, MMTBench_result_transfer
+except ImportError:
+    # This bundled VLMEvalKit is trimmed; only MMMU_TEST / MMT-Bench_ALL need these.
+    MMMU_result_transfer = None
+    MMTBench_result_transfer = None
 
 
 # Make WORLD_SIZE invisible when build models

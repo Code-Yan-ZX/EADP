@@ -1,0 +1,59 @@
+{
+ "instance": "TextVQA_VAL_67",
+ "seq_len_full": 1052,
+ "n_visual": 1024,
+ "budget": 256,
+ "repeat": 20,
+ "full_prefill_ms": 203.18321533203124,
+ "full_prefill_ms_std": 2.279508481828715,
+ "prefix_ms": {
+  "2": 18.837627124786376,
+  "4": 29.42080488204956
+ },
+ "pruned_prefill_ms": 72.83764266967773,
+ "pruned_prefill_ms_std": 0.8685376658044619,
+ "pruned_seq_len": 284,
+ "scorer": {
+  "LIN_L2": {
+   "layer": 2,
+   "family": "LIN",
+   "n_params": 4097,
+   "scorer_ms": 0.10326559841632843,
+   "topk_ms": 0.13567839935421944,
+   "scoring_only_ms": 19.076571122556924,
+   "naive_end_to_end_ms": 91.91421379223466,
+   "vs_teacher_507ms": 0.03762637302279472
+  },
+  "LIN_L4": {
+   "layer": 4,
+   "family": "LIN",
+   "n_params": 4097,
+   "scorer_ms": 0.1021135974675417,
+   "topk_ms": 0.1354943998157978,
+   "scoring_only_ms": 29.6584128793329,
+   "naive_end_to_end_ms": 102.49605554901063,
+   "vs_teacher_507ms": 0.05849785577777692
+  },
+  "QRY_L2": {
+   "layer": 2,
+   "family": "QRY",
+   "n_params": 528385,
+   "scorer_ms": 0.10233599878847599,
+   "topk_ms": 0.13684159889817238,
+   "scoring_only_ms": 19.076804722473025,
+   "naive_end_to_end_ms": 91.91444739215076,
+   "vs_teacher_507ms": 0.037626833772136145
+  },
+  "QRY_L4": {
+   "layer": 4,
+   "family": "QRY",
+   "n_params": 528385,
+   "scorer_ms": 0.1002831980586052,
+   "topk_ms": 0.1363615982234478,
+   "scoring_only_ms": 29.657449678331613,
+   "naive_end_to_end_ms": 102.49509234800935,
+   "vs_teacher_507ms": 0.05849595597304066
+  }
+ },
+ "best_arm": "QRY_L2"
+}

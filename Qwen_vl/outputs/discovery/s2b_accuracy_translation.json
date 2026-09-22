@@ -1,0 +1,907 @@
+{
+ "setting": {
+  "frozen_set": "Stage-1 Part 2 sample bank: sample_indices(len(data), 150, 0) per benchmark, n=450, indices verified identical to diag_selectors_b256.json",
+  "budget": 256,
+  "pilot": "every 3rd index of the frozen 150 (n=50/dataset)",
+  "score": "P1 + gradient x input (G2): k=argmax(logits at first answer position); J=logits[k]; s_i=sum_d |dJ/dv_i,d * v_i,d|",
+  "baseline": "diag_selectors_b256.json facility @256, reused not recomputed"
+ },
+ "harness_identity_check": {
+  "arm": "official scoring through this runner (override=None)",
+  "per_dataset": {
+   "TextVQA_VAL": {
+    "n": 150,
+    "official": 70.26666666666667,
+    "arm": 70.26666666666667,
+    "delta": 0.0
+   },
+   "DocVQA_VAL": {
+    "n": 150,
+    "official": 64.38037078085273,
+    "arm": 64.38037078085273,
+    "delta": 0.0
+   },
+   "OCRBench": {
+    "n": 150,
+    "official": 66.0,
+    "arm": 66.0,
+    "delta": 0.0
+   }
+  },
+  "macro_delta": 0.0,
+  "win_tie_loss": [
+   0,
+   450,
+   0
+  ],
+  "verdict": "exact reproduction of the Stage-1 numbers on all three benchmarks"
+ },
+ "shuffled_score_control": {
+  "arm": "C2 calibration, score->instance assignment rotated by 7",
+  "summary": {
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "n": 50,
+     "official": 59.4,
+     "arm": 65.2,
+     "delta": 5.800000000000001
+    },
+    "DocVQA_VAL": {
+     "n": 50,
+     "official": 61.891202488900696,
+     "arm": 55.01434676434677,
+     "delta": -6.876855724553935
+    },
+    "OCRBench": {
+     "n": 50,
+     "official": 62.0,
+     "arm": 66.0,
+     "delta": 4.0
+    }
+   },
+   "macro": 62.071448921448926,
+   "macro_delta": 0.9743814251486924,
+   "ci": [
+    -5.866701566289163,
+    7.758053997958089
+   ],
+   "pooled_delta": 0.9743814251486885,
+   "win": 24,
+   "tie": 101,
+   "loss": 25
+  },
+  "verdict": "macro delta +0.97, CI spans zero => the gain is content-specific"
+ },
+ "pilot": {
+  "facility|C1": {
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "n": 50,
+     "official": 59.4,
+     "arm": 73.6,
+     "delta": 14.2
+    },
+    "DocVQA_VAL": {
+     "n": 50,
+     "official": 61.891202488900696,
+     "arm": 82.07723855092277,
+     "delta": 20.186036062022062
+    },
+    "OCRBench": {
+     "n": 50,
+     "official": 62.0,
+     "arm": 76.0,
+     "delta": 14.000000000000002
+    }
+   },
+   "macro": 77.22574618364092,
+   "macro_delta": 16.128678687340688,
+   "ci": [
+    9.609665919137921,
+    22.64638866988443
+   ],
+   "pooled_delta": 16.128678687340688,
+   "win": 41,
+   "tie": 103,
+   "loss": 6
+  },
+  "facility|C2": {
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "n": 50,
+     "official": 59.4,
+     "arm": 73.6,
+     "delta": 14.2
+    },
+    "DocVQA_VAL": {
+     "n": 50,
+     "official": 61.891202488900696,
+     "arm": 80.97836637047163,
+     "delta": 19.087163881570934
+    },
+    "OCRBench": {
+     "n": 50,
+     "official": 62.0,
+     "arm": 76.0,
+     "delta": 14.000000000000002
+    }
+   },
+   "macro": 76.85945545682388,
+   "macro_delta": 15.762387960523647,
+   "ci": [
+    9.216314028940056,
+    22.730338452938902
+   ],
+   "pooled_delta": 15.762387960523643,
+   "win": 39,
+   "tie": 105,
+   "loss": 6
+  },
+  "facility|C3": {
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "n": 50,
+     "official": 59.4,
+     "arm": 77.0,
+     "delta": 17.6
+    },
+    "DocVQA_VAL": {
+     "n": 50,
+     "official": 61.891202488900696,
+     "arm": 82.3958988380041,
+     "delta": 20.5046963491034
+    },
+    "OCRBench": {
+     "n": 50,
+     "official": 62.0,
+     "arm": 74.0,
+     "delta": 12.0
+    }
+   },
+   "macro": 77.79863294600136,
+   "macro_delta": 16.70156544970113,
+   "ci": [
+    9.81998028328591,
+    23.8027423558703
+   ],
+   "pooled_delta": 16.701565449701135,
+   "win": 42,
+   "tie": 101,
+   "loss": 7
+  }
+ },
+ "full": {
+  "block8|C3": {
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "n": 150,
+     "official": 70.26666666666667,
+     "arm": 77.0,
+     "delta": 6.7333333333333325
+    },
+    "DocVQA_VAL": {
+     "n": 150,
+     "official": 64.38037078085273,
+     "arm": 86.443039908269,
+     "delta": 22.062669127416296
+    },
+    "OCRBench": {
+     "n": 150,
+     "official": 66.0,
+     "arm": 74.0,
+     "delta": 8.0
+    }
+   },
+   "macro": 79.147679969423,
+   "macro_delta": 12.265334153583197,
+   "ci": [
+    8.514088177525057,
+    16.1520100710714
+   ],
+   "pooled_delta": 12.26533415358321,
+   "win": 104,
+   "tie": 322,
+   "loss": 24
+  },
+  "facility|C1": {
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "n": 150,
+     "official": 70.26666666666667,
+     "arm": 75.33333333333333,
+     "delta": 5.066666666666666
+    },
+    "DocVQA_VAL": {
+     "n": 150,
+     "official": 64.38037078085273,
+     "arm": 86.27723507848027,
+     "delta": 21.89686429762755
+    },
+    "OCRBench": {
+     "n": 150,
+     "official": 66.0,
+     "arm": 75.33333333333333,
+     "delta": 9.333333333333334
+    }
+   },
+   "macro": 78.98130058171564,
+   "macro_delta": 12.098954765875845,
+   "ci": [
+    8.450997945764087,
+    15.860362837598146
+   ],
+   "pooled_delta": 12.098954765875849,
+   "win": 101,
+   "tie": 324,
+   "loss": 25
+  },
+  "facility|C3": {
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "n": 150,
+     "official": 70.26666666666667,
+     "arm": 77.06666666666666,
+     "delta": 6.799999999999999
+    },
+    "DocVQA_VAL": {
+     "n": 150,
+     "official": 64.38037078085273,
+     "arm": 86.01807460338568,
+     "delta": 21.637703822532956
+    },
+    "OCRBench": {
+     "n": 150,
+     "official": 66.0,
+     "arm": 73.33333333333333,
+     "delta": 7.333333333333333
+    }
+   },
+   "macro": 78.80602486779522,
+   "macro_delta": 11.923679051955418,
+   "ci": [
+    8.086175097341586,
+    15.758092683542447
+   ],
+   "pooled_delta": 11.92367905195543,
+   "win": 102,
+   "tie": 323,
+   "loss": 25
+  },
+  "topk|C3": {
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "n": 150,
+     "official": 70.26666666666667,
+     "arm": 76.13333333333333,
+     "delta": 5.866666666666667
+    },
+    "DocVQA_VAL": {
+     "n": 150,
+     "official": 64.38037078085273,
+     "arm": 84.64891824046315,
+     "delta": 20.26854745961041
+    },
+    "OCRBench": {
+     "n": 150,
+     "official": 66.0,
+     "arm": 71.33333333333334,
+     "delta": 5.333333333333334
+    }
+   },
+   "macro": 77.37186163570995,
+   "macro_delta": 10.48951581987015,
+   "ci": [
+    6.639834279471504,
+    14.299191266637548
+   ],
+   "pooled_delta": 10.489515819870137,
+   "win": 97,
+   "tie": 325,
+   "loss": 28
+  }
+ },
+ "full_diagnostics": {
+  "block8|C3": {
+   "overlap": 0.2610329861111111,
+   "blocks": 15.917777777777777,
+   "top256_blocks": 15.877777777777778,
+   "n": 450
+  },
+  "facility|C1": {
+   "overlap": 0.3357204861111111,
+   "blocks": 15.986666666666666,
+   "top256_blocks": 15.877777777777778,
+   "n": 450
+  },
+  "facility|C3": {
+   "overlap": 0.2531336805555556,
+   "blocks": 15.902222222222223,
+   "top256_blocks": 15.877777777777778,
+   "n": 450
+  },
+  "topk|C3": {
+   "overlap": 0.22536458333333334,
+   "blocks": 15.877777777777778,
+   "top256_blocks": 15.877777777777778,
+   "n": 450
+  }
+ },
+ "full_transitions": {
+  "block8|C3": {
+   "total": {
+    "fixed": 68,
+    "broken": 21,
+    "both_correct": 291,
+    "both_wrong": 70
+   },
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "fixed": 17,
+     "broken": 7,
+     "both_correct": 98,
+     "both_wrong": 28,
+     "n": 150
+    },
+    "DocVQA_VAL": {
+     "fixed": 29,
+     "broken": 4,
+     "both_correct": 104,
+     "both_wrong": 13,
+     "n": 150
+    },
+    "OCRBench": {
+     "fixed": 22,
+     "broken": 10,
+     "both_correct": 89,
+     "both_wrong": 29,
+     "n": 150
+    }
+   }
+  },
+  "facility|C1": {
+   "total": {
+    "fixed": 66,
+    "broken": 18,
+    "both_correct": 294,
+    "both_wrong": 72
+   },
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "fixed": 14,
+     "broken": 7,
+     "both_correct": 98,
+     "both_wrong": 31,
+     "n": 150
+    },
+    "DocVQA_VAL": {
+     "fixed": 30,
+     "broken": 3,
+     "both_correct": 105,
+     "both_wrong": 12,
+     "n": 150
+    },
+    "OCRBench": {
+     "fixed": 22,
+     "broken": 8,
+     "both_correct": 91,
+     "both_wrong": 29,
+     "n": 150
+    }
+   }
+  },
+  "facility|C3": {
+   "total": {
+    "fixed": 67,
+    "broken": 22,
+    "both_correct": 290,
+    "both_wrong": 71
+   },
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "fixed": 16,
+     "broken": 6,
+     "both_correct": 99,
+     "both_wrong": 29,
+     "n": 150
+    },
+    "DocVQA_VAL": {
+     "fixed": 29,
+     "broken": 5,
+     "both_correct": 103,
+     "both_wrong": 13,
+     "n": 150
+    },
+    "OCRBench": {
+     "fixed": 22,
+     "broken": 11,
+     "both_correct": 88,
+     "both_wrong": 29,
+     "n": 150
+    }
+   }
+  },
+  "topk|C3": {
+   "total": {
+    "fixed": 63,
+    "broken": 24,
+    "both_correct": 288,
+    "both_wrong": 75
+   },
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "fixed": 16,
+     "broken": 7,
+     "both_correct": 98,
+     "both_wrong": 29,
+     "n": 150
+    },
+    "DocVQA_VAL": {
+     "fixed": 27,
+     "broken": 5,
+     "both_correct": 103,
+     "both_wrong": 15,
+     "n": 150
+    },
+    "OCRBench": {
+     "fixed": 20,
+     "broken": 12,
+     "both_correct": 87,
+     "both_wrong": 31,
+     "n": 150
+    }
+   }
+  }
+ },
+ "transitions_by_category": {
+  "arm": "facility|C3",
+  "breakdown": {
+   "TextVQA_VAL": {
+    "len_bucket:1-3": {
+     "n": 31,
+     "fixed": 3,
+     "broken": 0,
+     "net": 3,
+     "delta": 9.67741935483871,
+     "off_acc": 74.19354838709677,
+     "arm_acc": 83.87096774193549
+    },
+    "len_bucket:4-8": {
+     "n": 64,
+     "fixed": 7,
+     "broken": 2,
+     "net": 5,
+     "delta": 7.8125,
+     "off_acc": 78.125,
+     "arm_acc": 85.9375
+    },
+    "len_bucket:9-20": {
+     "n": 49,
+     "fixed": 6,
+     "broken": 3,
+     "net": 3,
+     "delta": 6.530612244897959,
+     "off_acc": 57.14285714285714,
+     "arm_acc": 63.26530612244898
+    },
+    "len_bucket:21+": {
+     "n": 6,
+     "fixed": 0,
+     "broken": 1,
+     "net": -1,
+     "delta": -16.666666666666664,
+     "off_acc": 66.66666666666666,
+     "arm_acc": 50.0
+    }
+   },
+   "DocVQA_VAL": {
+    "qtypes:['Image/Photo']": {
+     "n": 2,
+     "fixed": 0,
+     "broken": 0,
+     "net": 0,
+     "delta": 0.0,
+     "off_acc": 100.0,
+     "arm_acc": 100.0
+    },
+    "qtypes:['Yes/No']": {
+     "n": 1,
+     "fixed": 0,
+     "broken": 0,
+     "net": 0,
+     "delta": 0.0,
+     "off_acc": 100.0,
+     "arm_acc": 100.0
+    },
+    "qtypes:['figure/diagram', 'layout']": {
+     "n": 1,
+     "fixed": 0,
+     "broken": 0,
+     "net": 0,
+     "delta": 0.0,
+     "off_acc": 100.0,
+     "arm_acc": 100.0
+    },
+    "qtypes:['figure/diagram']": {
+     "n": 4,
+     "fixed": 0,
+     "broken": 0,
+     "net": 0,
+     "delta": -6.25,
+     "off_acc": 100.0,
+     "arm_acc": 100.0
+    },
+    "qtypes:['form', 'free_text', 'table/list']": {
+     "n": 1,
+     "fixed": 1,
+     "broken": 0,
+     "net": 1,
+     "delta": 94.73684210526316,
+     "off_acc": 0.0,
+     "arm_acc": 100.0
+    },
+    "qtypes:['form', 'layout', 'others']": {
+     "n": 1,
+     "fixed": 0,
+     "broken": 0,
+     "net": 0,
+     "delta": 37.5,
+     "off_acc": 100.0,
+     "arm_acc": 100.0
+    },
+    "qtypes:['form', 'layout']": {
+     "n": 4,
+     "fixed": 2,
+     "broken": 0,
+     "net": 2,
+     "delta": 56.25,
+     "off_acc": 50.0,
+     "arm_acc": 100.0
+    },
+    "qtypes:['form', 'table/list']": {
+     "n": 2,
+     "fixed": 2,
+     "broken": 0,
+     "net": 2,
+     "delta": 92.10526315789474,
+     "off_acc": 0.0,
+     "arm_acc": 100.0
+    },
+    "qtypes:['form']": {
+     "n": 19,
+     "fixed": 3,
+     "broken": 0,
+     "net": 3,
+     "delta": 20.773524720893143,
+     "off_acc": 84.21052631578947,
+     "arm_acc": 100.0
+    },
+    "qtypes:['free_text', 'layout']": {
+     "n": 3,
+     "fixed": 1,
+     "broken": 0,
+     "net": 1,
+     "delta": 33.33333333333333,
+     "off_acc": 66.66666666666666,
+     "arm_acc": 100.0
+    },
+    "qtypes:['free_text', 'table/list']": {
+     "n": 3,
+     "fixed": 1,
+     "broken": 0,
+     "net": 1,
+     "delta": 30.808080808080803,
+     "off_acc": 33.33333333333333,
+     "arm_acc": 66.66666666666666
+    },
+    "qtypes:['free_text']": {
+     "n": 18,
+     "fixed": 2,
+     "broken": 0,
+     "net": 2,
+     "delta": 21.15009654864727,
+     "off_acc": 83.33333333333334,
+     "arm_acc": 94.44444444444444
+    },
+    "qtypes:['handwritten', 'form']": {
+     "n": 4,
+     "fixed": 0,
+     "broken": 0,
+     "net": 0,
+     "delta": 0.0,
+     "off_acc": 75.0,
+     "arm_acc": 75.0
+    },
+    "qtypes:['handwritten', 'layout']": {
+     "n": 1,
+     "fixed": 0,
+     "broken": 0,
+     "net": 0,
+     "delta": 38.888888888888886,
+     "off_acc": 100.0,
+     "arm_acc": 100.0
+    },
+    "qtypes:['handwritten', 'table/list']": {
+     "n": 2,
+     "fixed": 1,
+     "broken": 0,
+     "net": 1,
+     "delta": 50.0,
+     "off_acc": 50.0,
+     "arm_acc": 100.0
+    },
+    "qtypes:['layout', 'Image/Photo']": {
+     "n": 1,
+     "fixed": 0,
+     "broken": 0,
+     "net": 0,
+     "delta": 0.0,
+     "off_acc": 100.0,
+     "arm_acc": 100.0
+    },
+    "qtypes:['layout']": {
+     "n": 42,
+     "fixed": 8,
+     "broken": 2,
+     "net": 6,
+     "delta": 19.400282599939644,
+     "off_acc": 71.42857142857143,
+     "arm_acc": 85.71428571428571
+    },
+    "qtypes:['table/list', 'layout']": {
+     "n": 4,
+     "fixed": 1,
+     "broken": 0,
+     "net": 1,
+     "delta": 23.75,
+     "off_acc": 50.0,
+     "arm_acc": 75.0
+    },
+    "qtypes:['table/list']": {
+     "n": 37,
+     "fixed": 7,
+     "broken": 3,
+     "net": 4,
+     "delta": 19.26174315880198,
+     "off_acc": 67.56756756756756,
+     "arm_acc": 78.37837837837837
+    },
+    "len_bucket:1-3": {
+     "n": 19,
+     "fixed": 2,
+     "broken": 1,
+     "net": 1,
+     "delta": 9.649122807017543,
+     "off_acc": 78.94736842105263,
+     "arm_acc": 84.21052631578947
+    },
+    "len_bucket:4-8": {
+     "n": 39,
+     "fixed": 7,
+     "broken": 2,
+     "net": 5,
+     "delta": 15.79059829059829,
+     "off_acc": 69.23076923076923,
+     "arm_acc": 82.05128205128204
+    },
+    "len_bucket:9-20": {
+     "n": 69,
+     "fixed": 11,
+     "broken": 1,
+     "net": 10,
+     "delta": 21.79791339065804,
+     "off_acc": 76.81159420289855,
+     "arm_acc": 91.30434782608695
+    },
+    "len_bucket:21+": {
+     "n": 23,
+     "fixed": 9,
+     "broken": 1,
+     "net": 8,
+     "delta": 40.9753427286031,
+     "off_acc": 56.52173913043478,
+     "arm_acc": 91.30434782608695
+    }
+   },
+   "OCRBench": {
+    "category:Artistic Text Recognition": {
+     "n": 8,
+     "fixed": 0,
+     "broken": 0,
+     "net": 0,
+     "delta": 0.0,
+     "off_acc": 87.5,
+     "arm_acc": 87.5
+    },
+    "category:Digit String Recognition": {
+     "n": 8,
+     "fixed": 2,
+     "broken": 1,
+     "net": 1,
+     "delta": 12.5,
+     "off_acc": 12.5,
+     "arm_acc": 25.0
+    },
+    "category:Doc-oriented VQA": {
+     "n": 30,
+     "fixed": 7,
+     "broken": 4,
+     "net": 3,
+     "delta": 10.0,
+     "off_acc": 50.0,
+     "arm_acc": 60.0
+    },
+    "category:Handwriting Recognition": {
+     "n": 7,
+     "fixed": 0,
+     "broken": 0,
+     "net": 0,
+     "delta": 0.0,
+     "off_acc": 85.71428571428571,
+     "arm_acc": 85.71428571428571
+    },
+    "category:Handwritten Mathematical Expression Recognition": {
+     "n": 15,
+     "fixed": 1,
+     "broken": 1,
+     "net": 0,
+     "delta": 0.0,
+     "off_acc": 40.0,
+     "arm_acc": 40.0
+    },
+    "category:Irregular Text Recognition": {
+     "n": 7,
+     "fixed": 0,
+     "broken": 0,
+     "net": 0,
+     "delta": 0.0,
+     "off_acc": 85.71428571428571,
+     "arm_acc": 85.71428571428571
+    },
+    "category:Key Information Extraction": {
+     "n": 30,
+     "fixed": 9,
+     "broken": 2,
+     "net": 7,
+     "delta": 23.333333333333332,
+     "off_acc": 60.0,
+     "arm_acc": 83.33333333333334
+    },
+    "category:Non-Semantic Text Recognition": {
+     "n": 7,
+     "fixed": 1,
+     "broken": 2,
+     "net": -1,
+     "delta": -14.285714285714285,
+     "off_acc": 71.42857142857143,
+     "arm_acc": 57.14285714285714
+    },
+    "category:Regular Text Recognition": {
+     "n": 8,
+     "fixed": 0,
+     "broken": 0,
+     "net": 0,
+     "delta": 0.0,
+     "off_acc": 100.0,
+     "arm_acc": 100.0
+    },
+    "category:Scene Text-centric VQA": {
+     "n": 30,
+     "fixed": 2,
+     "broken": 1,
+     "net": 1,
+     "delta": 3.3333333333333335,
+     "off_acc": 90.0,
+     "arm_acc": 93.33333333333333
+    },
+    "len_bucket:1-3": {
+     "n": 1,
+     "fixed": 0,
+     "broken": 0,
+     "net": 0,
+     "delta": 0.0,
+     "off_acc": 100.0,
+     "arm_acc": 100.0
+    },
+    "len_bucket:4-8": {
+     "n": 97,
+     "fixed": 15,
+     "broken": 6,
+     "net": 9,
+     "delta": 9.278350515463918,
+     "off_acc": 70.10309278350515,
+     "arm_acc": 79.38144329896907
+    },
+    "len_bucket:9-20": {
+     "n": 30,
+     "fixed": 4,
+     "broken": 3,
+     "net": 1,
+     "delta": 3.3333333333333335,
+     "off_acc": 63.33333333333333,
+     "arm_acc": 66.66666666666666
+    },
+    "len_bucket:21+": {
+     "n": 22,
+     "fixed": 3,
+     "broken": 2,
+     "net": 1,
+     "delta": 4.545454545454546,
+     "off_acc": 50.0,
+     "arm_acc": 54.54545454545454
+    }
+   }
+  }
+ },
+ "spatial_concentration": {
+  "gradient": {
+   "top1": 0.14421006944444445,
+   "top3": 0.377421875,
+   "top1_over_uniform": 2.307361111111111,
+   "blocks_for_half": 4.906666666666666
+  },
+  "official": {
+   "top1": 0.16313368055555555,
+   "top3": 0.41737847222222224,
+   "top1_over_uniform": 2.610138888888889,
+   "blocks_for_half": 4.377777777777778
+  },
+  "random": {
+   "top1": 0.0869704861111111,
+   "top3": 0.24269965277777777,
+   "top1_over_uniform": 1.3915277777777777,
+   "blocks_for_half": 7.08
+  }
+ },
+ "timing": {
+  "gradient_forward_ms": 216.06616421169704,
+  "gradient_backward_ms": 296.1998705376519,
+  "gradient_peak_mem_mb": 23085.426975911458,
+  "selection_ms": 41.705639864603675,
+  "prune_total_ms": 43.01544347551135,
+  "selection_ms_by_selector": {
+   "facility": 41.705639864603675,
+   "block8": 8.792496982150608,
+   "topk": 0.7323497964276208
+  },
+  "prune_ms_by_selector": {
+   "facility": 43.01544347551135,
+   "block8": 9.863995437622071,
+   "topk": 1.7815638028250802
+  },
+  "oracle_total_ms": 757.066034749349,
+  "oracle_note": "gradient fwd+bwd plus the full untouched EADP-256 e2e (selection + pruned prefill + generation). Not deployable.",
+  "stage1_reference": {
+   "eadp256_e2e_ms": 244.8,
+   "unpruned_e2e_ms": 522.1,
+   "pruned_prefill_ms": 77.99,
+   "unpruned_prefill_ms": 228.43,
+   "eadp_prune_overhead_ms": 41.96,
+   "facility_selector_ms": 40.15,
+   "eadp_scoring_ms": 0.92
+  },
+  "oracle_vs_eadp256_e2e": 3.0925900112310005,
+  "oracle_vs_unpruned_e2e": 1.4500402887365427
+ },
+ "accuracy_pct": {
+  "facility|C3": {
+   "TextVQA_VAL": 77.06666666666666,
+   "DocVQA_VAL": 86.01807460338568,
+   "OCRBench": 73.33333333333333
+  },
+  "topk|C3": {
+   "TextVQA_VAL": 76.13333333333333,
+   "DocVQA_VAL": 84.64891824046315,
+   "OCRBench": 71.33333333333334
+  },
+  "block8|C3": {
+   "TextVQA_VAL": 77.0,
+   "DocVQA_VAL": 86.443039908269,
+   "OCRBench": 74.0
+  },
+  "facility|C1": {
+   "TextVQA_VAL": 75.33333333333333,
+   "DocVQA_VAL": 86.27723507848027,
+   "OCRBench": 75.33333333333333
+  }
+ }
+}

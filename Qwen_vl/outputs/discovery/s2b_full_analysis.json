@@ -1,0 +1,284 @@
+{
+ "summary": {
+  "block8|C3": {
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "n": 150,
+     "official": 70.26666666666667,
+     "arm": 77.0,
+     "delta": 6.7333333333333325
+    },
+    "DocVQA_VAL": {
+     "n": 150,
+     "official": 64.38037078085273,
+     "arm": 86.443039908269,
+     "delta": 22.062669127416296
+    },
+    "OCRBench": {
+     "n": 150,
+     "official": 66.0,
+     "arm": 74.0,
+     "delta": 8.0
+    }
+   },
+   "macro": 79.147679969423,
+   "macro_delta": 12.265334153583197,
+   "ci": [
+    8.514088177525057,
+    16.1520100710714
+   ],
+   "pooled_delta": 12.26533415358321,
+   "win": 104,
+   "tie": 322,
+   "loss": 24
+  },
+  "facility|C1": {
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "n": 150,
+     "official": 70.26666666666667,
+     "arm": 75.33333333333333,
+     "delta": 5.066666666666666
+    },
+    "DocVQA_VAL": {
+     "n": 150,
+     "official": 64.38037078085273,
+     "arm": 86.27723507848027,
+     "delta": 21.89686429762755
+    },
+    "OCRBench": {
+     "n": 150,
+     "official": 66.0,
+     "arm": 75.33333333333333,
+     "delta": 9.333333333333334
+    }
+   },
+   "macro": 78.98130058171564,
+   "macro_delta": 12.098954765875845,
+   "ci": [
+    8.450997945764087,
+    15.860362837598146
+   ],
+   "pooled_delta": 12.098954765875849,
+   "win": 101,
+   "tie": 324,
+   "loss": 25
+  },
+  "facility|C3": {
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "n": 150,
+     "official": 70.26666666666667,
+     "arm": 77.06666666666666,
+     "delta": 6.799999999999999
+    },
+    "DocVQA_VAL": {
+     "n": 150,
+     "official": 64.38037078085273,
+     "arm": 86.01807460338568,
+     "delta": 21.637703822532956
+    },
+    "OCRBench": {
+     "n": 150,
+     "official": 66.0,
+     "arm": 73.33333333333333,
+     "delta": 7.333333333333333
+    }
+   },
+   "macro": 78.80602486779522,
+   "macro_delta": 11.923679051955418,
+   "ci": [
+    8.086175097341586,
+    15.758092683542447
+   ],
+   "pooled_delta": 11.92367905195543,
+   "win": 102,
+   "tie": 323,
+   "loss": 25
+  },
+  "topk|C3": {
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "n": 150,
+     "official": 70.26666666666667,
+     "arm": 76.13333333333333,
+     "delta": 5.866666666666667
+    },
+    "DocVQA_VAL": {
+     "n": 150,
+     "official": 64.38037078085273,
+     "arm": 84.64891824046315,
+     "delta": 20.26854745961041
+    },
+    "OCRBench": {
+     "n": 150,
+     "official": 66.0,
+     "arm": 71.33333333333334,
+     "delta": 5.333333333333334
+    }
+   },
+   "macro": 77.37186163570995,
+   "macro_delta": 10.48951581987015,
+   "ci": [
+    6.639834279471504,
+    14.299191266637548
+   ],
+   "pooled_delta": 10.489515819870137,
+   "win": 97,
+   "tie": 325,
+   "loss": 28
+  }
+ },
+ "diagnostics": {
+  "block8|C3": {
+   "overlap": 0.2610329861111111,
+   "blocks": 15.917777777777777,
+   "top256_blocks": 15.877777777777778,
+   "n": 450
+  },
+  "facility|C1": {
+   "overlap": 0.3357204861111111,
+   "blocks": 15.986666666666666,
+   "top256_blocks": 15.877777777777778,
+   "n": 450
+  },
+  "facility|C3": {
+   "overlap": 0.2531336805555556,
+   "blocks": 15.902222222222223,
+   "top256_blocks": 15.877777777777778,
+   "n": 450
+  },
+  "topk|C3": {
+   "overlap": 0.22536458333333334,
+   "blocks": 15.877777777777778,
+   "top256_blocks": 15.877777777777778,
+   "n": 450
+  }
+ },
+ "transitions": {
+  "block8|C3": {
+   "total": {
+    "fixed": 68,
+    "broken": 21,
+    "both_correct": 291,
+    "both_wrong": 70
+   },
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "fixed": 17,
+     "broken": 7,
+     "both_correct": 98,
+     "both_wrong": 28,
+     "n": 150
+    },
+    "DocVQA_VAL": {
+     "fixed": 29,
+     "broken": 4,
+     "both_correct": 104,
+     "both_wrong": 13,
+     "n": 150
+    },
+    "OCRBench": {
+     "fixed": 22,
+     "broken": 10,
+     "both_correct": 89,
+     "both_wrong": 29,
+     "n": 150
+    }
+   }
+  },
+  "facility|C1": {
+   "total": {
+    "fixed": 66,
+    "broken": 18,
+    "both_correct": 294,
+    "both_wrong": 72
+   },
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "fixed": 14,
+     "broken": 7,
+     "both_correct": 98,
+     "both_wrong": 31,
+     "n": 150
+    },
+    "DocVQA_VAL": {
+     "fixed": 30,
+     "broken": 3,
+     "both_correct": 105,
+     "both_wrong": 12,
+     "n": 150
+    },
+    "OCRBench": {
+     "fixed": 22,
+     "broken": 8,
+     "both_correct": 91,
+     "both_wrong": 29,
+     "n": 150
+    }
+   }
+  },
+  "facility|C3": {
+   "total": {
+    "fixed": 67,
+    "broken": 22,
+    "both_correct": 290,
+    "both_wrong": 71
+   },
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "fixed": 16,
+     "broken": 6,
+     "both_correct": 99,
+     "both_wrong": 29,
+     "n": 150
+    },
+    "DocVQA_VAL": {
+     "fixed": 29,
+     "broken": 5,
+     "both_correct": 103,
+     "both_wrong": 13,
+     "n": 150
+    },
+    "OCRBench": {
+     "fixed": 22,
+     "broken": 11,
+     "both_correct": 88,
+     "both_wrong": 29,
+     "n": 150
+    }
+   }
+  },
+  "topk|C3": {
+   "total": {
+    "fixed": 63,
+    "broken": 24,
+    "both_correct": 288,
+    "both_wrong": 75
+   },
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "fixed": 16,
+     "broken": 7,
+     "both_correct": 98,
+     "both_wrong": 29,
+     "n": 150
+    },
+    "DocVQA_VAL": {
+     "fixed": 27,
+     "broken": 5,
+     "both_correct": 103,
+     "both_wrong": 15,
+     "n": 150
+    },
+    "OCRBench": {
+     "fixed": 20,
+     "broken": 12,
+     "both_correct": 87,
+     "both_wrong": 31,
+     "n": 150
+    }
+   }
+  }
+ }
+}

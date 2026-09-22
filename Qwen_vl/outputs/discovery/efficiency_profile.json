@@ -1,0 +1,655 @@
+{
+  "config": {
+    "per_dataset": 50,
+    "offset": 0,
+    "repeat": 5,
+    "gen_repeat": 3,
+    "warmup": 2,
+    "max_new_tokens": 2048
+  },
+  "alpha": 0.5,
+  "beta": 2.0,
+  "models": {
+    "baseline": {
+      "TextVQA_VAL": {
+        "n": 50,
+        "dataset": "TextVQA_VAL",
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "visual_tokens_in_mean": 1024.0,
+        "visual_tokens_in_std": 0.0,
+        "visual_tokens_kept_mean": 1024.0,
+        "visual_tokens_kept_std": 0.0,
+        "seq_len_mean": 1055.2,
+        "seq_len_std": 2.0199009876724157,
+        "prefill_ms_mean_mean": 231.77077307128909,
+        "prefill_ms_mean_std": 13.522086088893372,
+        "prefill_total_ms_mean_mean": 349.570833984375,
+        "prefill_total_ms_mean_std": 19.830878311326764,
+        "vision_ms_mean_mean": 116.02864770507813,
+        "vision_ms_mean_std": 5.661120229259384,
+        "e2e_ms_mean_mean": 459.39857666015627,
+        "e2e_ms_mean_std": 73.72623543388679,
+        "gen_tokens_mean": 3.92,
+        "gen_tokens_std": 1.775837830433849,
+        "flops_g_mean": 17285.192886517758,
+        "flops_g_std": 35.60650627125294,
+        "peak_mem_mb_mean": 17065.4594140625,
+        "peak_mem_mb_std": 0.6169238153717025,
+        "prune_ms_mean_mean": 0.0,
+        "prune_ms_mean_std": 0.0,
+        "stages": {}
+      },
+      "DocVQA_VAL": {
+        "n": 50,
+        "dataset": "DocVQA_VAL",
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "visual_tokens_in_mean": 1024.0,
+        "visual_tokens_in_std": 0.0,
+        "visual_tokens_kept_mean": 1024.0,
+        "visual_tokens_kept_std": 0.0,
+        "seq_len_mean": 1058.76,
+        "seq_len_std": 4.356879617340833,
+        "prefill_ms_mean_mean": 229.94102246093757,
+        "prefill_ms_mean_std": 12.108456708345997,
+        "prefill_total_ms_mean_mean": 348.67177001953127,
+        "prefill_total_ms_mean_std": 17.819986284787138,
+        "vision_ms_mean_mean": 115.61257864379883,
+        "vision_ms_mean_std": 5.202755687719431,
+        "e2e_ms_mean_mean": 523.0994348144532,
+        "e2e_ms_mean_std": 116.90951287711837,
+        "gen_tokens_mean": 5.58,
+        "gen_tokens_std": 2.8290634492708007,
+        "flops_g_mean": 17347.97299286016,
+        "flops_g_std": 76.85243492063637,
+        "peak_mem_mb_mean": 17066.54669921875,
+        "peak_mem_mb_std": 1.3306713826134797,
+        "prune_ms_mean_mean": 0.0,
+        "prune_ms_mean_std": 0.0,
+        "stages": {}
+      },
+      "OCRBench": {
+        "n": 50,
+        "dataset": "OCRBench",
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "visual_tokens_in_mean": 1024.0,
+        "visual_tokens_in_std": 0.0,
+        "visual_tokens_kept_mean": 1024.0,
+        "visual_tokens_kept_std": 0.0,
+        "seq_len_mean": 1059.48,
+        "seq_len_std": 6.171677243667235,
+        "prefill_ms_mean_mean": 223.57673626708987,
+        "prefill_ms_mean_std": 1.710482380058109,
+        "prefill_total_ms_mean_mean": 337.8580699462891,
+        "prefill_total_ms_mean_std": 1.3173383519359263,
+        "vision_ms_mean_mean": 112.68456591796874,
+        "vision_ms_mean_std": 0.8760898075373429,
+        "e2e_ms_mean_mean": 583.8893363444009,
+        "e2e_ms_mean_std": 311.61748657859954,
+        "gen_tokens_mean": 7.42,
+        "gen_tokens_std": 7.897062745097065,
+        "flops_g_mean": 17360.69271257088,
+        "flops_g_std": 108.88561134400372,
+        "peak_mem_mb_mean": 17066.766591796873,
+        "peak_mem_mb_std": 1.8849899616783652,
+        "prune_ms_mean_mean": 0.0,
+        "prune_ms_mean_std": 0.0,
+        "stages": {}
+      }
+    },
+    "eadp128": {
+      "TextVQA_VAL": {
+        "n": 50,
+        "dataset": "TextVQA_VAL",
+        "model": "Qwen3-VL-8B-EADP-128-a0.5-b2.0",
+        "visual_tokens_in_mean": 1024.0,
+        "visual_tokens_in_std": 0.0,
+        "visual_tokens_kept_mean": 128.0,
+        "visual_tokens_kept_std": 0.0,
+        "seq_len_mean": 159.2,
+        "seq_len_std": 2.0199009876724157,
+        "prefill_ms_mean_mean": 48.55750195312501,
+        "prefill_ms_mean_std": 0.4303362340600248,
+        "prefill_total_ms_mean_mean": 181.9269714813232,
+        "prefill_total_ms_mean_std": 1.5673463256382674,
+        "vision_ms_mean_mean": 111.20239746093752,
+        "vision_ms_mean_std": 0.9011231941647789,
+        "e2e_ms_mean_mean": 160.36858184814454,
+        "e2e_ms_mean_std": 58.867906815325874,
+        "gen_tokens_mean": 3.78,
+        "gen_tokens_std": 1.4736349615830917,
+        "flops_g_mean": 2439.58474080256,
+        "flops_g_std": 31.3365786380497,
+        "peak_mem_mb_mean": 16800.97025390625,
+        "peak_mem_mb_std": 0.6327042915416952,
+        "prune_ms_mean_mean": 22.167072067260744,
+        "prune_ms_mean_std": 0.7308607679066291,
+        "stages": {
+          "dense_guidance": {
+            "mean": 0.33114124909043313,
+            "std": 0.01075219153814211
+          },
+          "facility_location": {
+            "mean": 20.454276817321773,
+            "std": 0.5503721926424469
+          },
+          "global_guidance": {
+            "mean": 0.1138577910065651,
+            "std": 0.007544490368303609
+          },
+          "polarization": {
+            "mean": 0.034974592283368106,
+            "std": 0.0027896853404107223
+          },
+          "prep_norm": {
+            "mean": 0.149467264175415,
+            "std": 0.005135266034058217
+          },
+          "score_fusion": {
+            "mean": 0.17610240109264852,
+            "std": 0.007229112903088345
+          },
+          "smoothing": {
+            "mean": 0.3524334082603454,
+            "std": 0.011864946472110624
+          },
+          "total": {
+            "mean": 22.167072067260744,
+            "std": 0.5606078556003078
+          }
+        }
+      },
+      "DocVQA_VAL": {
+        "n": 50,
+        "dataset": "DocVQA_VAL",
+        "model": "Qwen3-VL-8B-EADP-128-a0.5-b2.0",
+        "visual_tokens_in_mean": 1024.0,
+        "visual_tokens_in_std": 0.0,
+        "visual_tokens_kept_mean": 128.0,
+        "visual_tokens_kept_std": 0.0,
+        "seq_len_mean": 162.76,
+        "seq_len_std": 4.356879617340833,
+        "prefill_ms_mean_mean": 48.62394305419922,
+        "prefill_ms_mean_std": 0.36946401803735296,
+        "prefill_total_ms_mean_mean": 181.55918295288086,
+        "prefill_total_ms_mean_std": 1.2493548618211123,
+        "vision_ms_mean_mean": 110.85025445556641,
+        "vision_ms_mean_std": 0.662639772442136,
+        "e2e_ms_mean_mean": 1821.6635432434082,
+        "e2e_ms_mean_std": 11312.386999832914,
+        "gen_tokens_mean": 45.8,
+        "gen_tokens_std": 286.0388085557622,
+        "flops_g_mean": 2494.8392591360002,
+        "flops_g_std": 67.6423006216176,
+        "peak_mem_mb_mean": 16802.085654296876,
+        "peak_mem_mb_std": 1.3644498892067831,
+        "prune_ms_mean_mean": 22.084985443115233,
+        "prune_ms_mean_std": 0.7657722894077421,
+        "stages": {
+          "dense_guidance": {
+            "mean": 0.3322017284631729,
+            "std": 0.010022401436439175
+          },
+          "facility_location": {
+            "mean": 20.367876831054687,
+            "std": 0.2665733915348808
+          },
+          "global_guidance": {
+            "mean": 0.11420531114935877,
+            "std": 0.0065328325968535906
+          },
+          "polarization": {
+            "mean": 0.035003136172890664,
+            "std": 0.0012689754310189843
+          },
+          "prep_norm": {
+            "mean": 0.14907379192113876,
+            "std": 0.005489990854489748
+          },
+          "score_fusion": {
+            "mean": 0.17619712162017823,
+            "std": 0.0040547915692270425
+          },
+          "smoothing": {
+            "mean": 0.35630835175514214,
+            "std": 0.015283593998354647
+          },
+          "total": {
+            "mean": 22.084985443115233,
+            "std": 0.28190315119818815
+          }
+        }
+      },
+      "OCRBench": {
+        "n": 50,
+        "dataset": "OCRBench",
+        "model": "Qwen3-VL-8B-EADP-128-a0.5-b2.0",
+        "visual_tokens_in_mean": 1024.0,
+        "visual_tokens_in_std": 0.0,
+        "visual_tokens_kept_mean": 128.0,
+        "visual_tokens_kept_std": 0.0,
+        "seq_len_mean": 163.48,
+        "seq_len_std": 6.171677243667235,
+        "prefill_ms_mean_mean": 49.21217485046387,
+        "prefill_ms_mean_std": 1.054312093966842,
+        "prefill_total_ms_mean_mean": 183.1448122253418,
+        "prefill_total_ms_mean_std": 1.863055216366099,
+        "vision_ms_mean_mean": 111.57823431396484,
+        "vision_ms_mean_std": 0.9868775391582709,
+        "e2e_ms_mean_mean": 273.9672669474284,
+        "e2e_ms_mean_std": 247.74442542205603,
+        "gen_tokens_mean": 6.64,
+        "gen_tokens_std": 6.2410255567494675,
+        "flops_g_mean": 2506.0369498112,
+        "flops_g_std": 95.83912344134914,
+        "peak_mem_mb_mean": 16802.31083984375,
+        "peak_mem_mb_std": 1.9331768189029994,
+        "prune_ms_mean_mean": 22.354403060913086,
+        "prune_ms_mean_std": 0.7832951172321967,
+        "stages": {
+          "dense_guidance": {
+            "mean": 0.3396480003595353,
+            "std": 0.013199046602747082
+          },
+          "facility_location": {
+            "mean": 20.59051150512695,
+            "std": 0.687946029846698
+          },
+          "global_guidance": {
+            "mean": 0.11778534279763699,
+            "std": 0.0062321657261008604
+          },
+          "polarization": {
+            "mean": 0.03492019230127334,
+            "std": 0.002093762066439864
+          },
+          "prep_norm": {
+            "mean": 0.15285977584123614,
+            "std": 0.005103677477940343
+          },
+          "score_fusion": {
+            "mean": 0.179601409047842,
+            "std": 0.008730632760806835
+          },
+          "smoothing": {
+            "mean": 0.3678306558132172,
+            "std": 0.015744386733317794
+          },
+          "total": {
+            "mean": 22.354403060913086,
+            "std": 0.711119021686086
+          }
+        }
+      }
+    },
+    "eadp256": {
+      "TextVQA_VAL": {
+        "n": 50,
+        "dataset": "TextVQA_VAL",
+        "model": "Qwen3-VL-8B-EADP-256-a0.5-b2.0",
+        "visual_tokens_in_mean": 1024.0,
+        "visual_tokens_in_std": 0.0,
+        "visual_tokens_kept_mean": 256.0,
+        "visual_tokens_kept_std": 0.0,
+        "seq_len_mean": 287.2,
+        "seq_len_std": 2.0199009876724157,
+        "prefill_ms_mean_mean": 77.36545889282226,
+        "prefill_ms_mean_std": 0.9337393432307335,
+        "prefill_total_ms_mean_mean": 229.65485748291016,
+        "prefill_total_ms_mean_std": 1.8957794723629013,
+        "vision_ms_mean_mean": 110.32177328491211,
+        "vision_ms_mean_std": 0.8199825437823949,
+        "e2e_ms_mean_mean": 191.0426745605469,
+        "e2e_ms_mean_std": 68.50841429343416,
+        "gen_tokens_mean": 3.86,
+        "gen_tokens_std": 1.7205812971202494,
+        "flops_g_mean": 4444.421787484161,
+        "flops_g_std": 31.946568298658143,
+        "peak_mem_mb_mean": 16841.06498046875,
+        "peak_mem_mb_std": 0.6327042915416952,
+        "prune_ms_mean_mean": 41.96762530517578,
+        "prune_ms_mean_std": 1.1183318998056568,
+        "stages": {
+          "dense_guidance": {
+            "mean": 0.34187097585201265,
+            "std": 0.012266344318150652
+          },
+          "facility_location": {
+            "mean": 40.144566543579096,
+            "std": 0.5866840621755692
+          },
+          "global_guidance": {
+            "mean": 0.12297830344736577,
+            "std": 0.008390265704850882
+          },
+          "polarization": {
+            "mean": 0.036564736407250165,
+            "std": 0.0019034431983325903
+          },
+          "prep_norm": {
+            "mean": 0.1561500158905983,
+            "std": 0.00835414876046625
+          },
+          "score_fusion": {
+            "mean": 0.18070745718479156,
+            "std": 0.006457318335760186
+          },
+          "smoothing": {
+            "mean": 0.40483827269077305,
+            "std": 0.019621412926552624
+          },
+          "total": {
+            "mean": 41.96762530517578,
+            "std": 0.6013834959381096
+          }
+        }
+      },
+      "DocVQA_VAL": {
+        "n": 50,
+        "dataset": "DocVQA_VAL",
+        "model": "Qwen3-VL-8B-EADP-256-a0.5-b2.0",
+        "visual_tokens_in_mean": 1024.0,
+        "visual_tokens_in_std": 0.0,
+        "visual_tokens_kept_mean": 256.0,
+        "visual_tokens_kept_std": 0.0,
+        "seq_len_mean": 290.76,
+        "seq_len_std": 4.356879617340833,
+        "prefill_ms_mean_mean": 78.24631530761718,
+        "prefill_ms_mean_std": 0.88834817941319,
+        "prefill_total_ms_mean_mean": 231.5058930664063,
+        "prefill_total_ms_mean_std": 1.4384315296440742,
+        "vision_ms_mean_mean": 111.2062797241211,
+        "vision_ms_mean_std": 0.7903151007851343,
+        "e2e_ms_mean_mean": 233.82824595133465,
+        "e2e_ms_mean_std": 108.45378466757118,
+        "gen_tokens_mean": 4.92,
+        "gen_tokens_std": 2.711752201068527,
+        "flops_g_mean": 4500.75138981888,
+        "flops_g_std": 68.95803407958239,
+        "peak_mem_mb_mean": 16842.180078125,
+        "peak_mem_mb_std": 1.3647095044849178,
+        "prune_ms_mean_mean": 42.05329803466797,
+        "prune_ms_mean_std": 0.8304978479600423,
+        "stages": {
+          "dense_guidance": {
+            "mean": 0.34118271982669834,
+            "std": 0.009636109794926843
+          },
+          "facility_location": {
+            "mean": 40.2367185974121,
+            "std": 0.8217794096743212
+          },
+          "global_guidance": {
+            "mean": 0.12145612770318985,
+            "std": 0.006740437823114661
+          },
+          "polarization": {
+            "mean": 0.03656947238743305,
+            "std": 0.0011961133724952876
+          },
+          "prep_norm": {
+            "mean": 0.15466905671358108,
+            "std": 0.007327969923846978
+          },
+          "score_fusion": {
+            "mean": 0.1804256008863449,
+            "std": 0.005477937415752469
+          },
+          "smoothing": {
+            "mean": 0.4033515510559082,
+            "std": 0.017841506600506728
+          },
+          "total": {
+            "mean": 42.05329803466797,
+            "std": 0.8444175598043421
+          }
+        }
+      },
+      "OCRBench": {
+        "n": 50,
+        "dataset": "OCRBench",
+        "model": "Qwen3-VL-8B-EADP-256-a0.5-b2.0",
+        "visual_tokens_in_mean": 1024.0,
+        "visual_tokens_in_std": 0.0,
+        "visual_tokens_kept_mean": 256.0,
+        "visual_tokens_kept_std": 0.0,
+        "seq_len_mean": 291.48,
+        "seq_len_std": 6.171677243667235,
+        "prefill_ms_mean_mean": 78.36625903320314,
+        "prefill_ms_mean_std": 0.8821854552681698,
+        "prefill_total_ms_mean_mean": 231.74381825256347,
+        "prefill_total_ms_mean_std": 1.464268292954318,
+        "vision_ms_mean_mean": 111.50349435424805,
+        "vision_ms_mean_std": 0.66108226251659,
+        "e2e_ms_mean_mean": 309.38215037028,
+        "e2e_ms_mean_std": 253.3834741378558,
+        "gen_tokens_mean": 6.82,
+        "gen_tokens_std": 6.370839819050547,
+        "flops_g_mean": 4512.16651321344,
+        "flops_g_std": 97.70290741216337,
+        "peak_mem_mb_mean": 16842.40556640625,
+        "peak_mem_mb_std": 1.9331768189029994,
+        "prune_ms_mean_mean": 41.8740648651123,
+        "prune_ms_mean_std": 1.0526913101391857,
+        "stages": {
+          "dense_guidance": {
+            "mean": 0.3369483514428138,
+            "std": 0.009325201302207426
+          },
+          "facility_location": {
+            "mean": 40.08339547729493,
+            "std": 0.798112802806113
+          },
+          "global_guidance": {
+            "mean": 0.1190538232922554,
+            "std": 0.0064961396532815345
+          },
+          "polarization": {
+            "mean": 0.037209600389003755,
+            "std": 0.002952416636125702
+          },
+          "prep_norm": {
+            "mean": 0.15348121693730352,
+            "std": 0.005449683706216878
+          },
+          "score_fusion": {
+            "mean": 0.17848358547687532,
+            "std": 0.004861538427569257
+          },
+          "smoothing": {
+            "mean": 0.3950416630506515,
+            "std": 0.012053119148267
+          },
+          "total": {
+            "mean": 41.8740648651123,
+            "std": 0.808200007379442
+          }
+        }
+      }
+    },
+    "eadp512": {
+      "TextVQA_VAL": {
+        "n": 50,
+        "dataset": "TextVQA_VAL",
+        "model": "Qwen3-VL-8B-EADP-512-a0.5-b2.0",
+        "visual_tokens_in_mean": 1024.0,
+        "visual_tokens_in_std": 0.0,
+        "visual_tokens_kept_mean": 512.0,
+        "visual_tokens_kept_std": 0.0,
+        "seq_len_mean": 543.2,
+        "seq_len_std": 2.0199009876724157,
+        "prefill_ms_mean_mean": 122.28338891601562,
+        "prefill_ms_mean_std": 1.0814896638695066,
+        "prefill_total_ms_mean_mean": 314.80756765747077,
+        "prefill_total_ms_mean_std": 2.0959694723879805,
+        "vision_ms_mean_mean": 111.28788024902343,
+        "vision_ms_mean_std": 1.0270271940946873,
+        "e2e_ms_mean_mean": 234.10476216634117,
+        "e2e_ms_mean_std": 69.55186051289934,
+        "gen_tokens_mean": 3.88,
+        "gen_tokens_std": 1.7622712617528549,
+        "flops_g_mean": 8570.05999783936,
+        "flops_g_std": 33.16654762124705,
+        "peak_mem_mb_mean": 16921.25443359375,
+        "peak_mem_mb_std": 0.6327042915416952,
+        "prune_ms_mean_mean": 81.23629849243166,
+        "prune_ms_mean_std": 1.747190009802859,
+        "stages": {
+          "dense_guidance": {
+            "mean": 0.34495014452934264,
+            "std": 0.01368760683797831
+          },
+          "facility_location": {
+            "mean": 79.35824353027344,
+            "std": 1.4316438339173745
+          },
+          "global_guidance": {
+            "mean": 0.12524889561533928,
+            "std": 0.010789181161929453
+          },
+          "polarization": {
+            "mean": 0.038341632381081577,
+            "std": 0.0025635157700966606
+          },
+          "prep_norm": {
+            "mean": 0.15588864040374756,
+            "std": 0.00817772398968255
+          },
+          "score_fusion": {
+            "mean": 0.18026099312305452,
+            "std": 0.006074865144108916
+          },
+          "smoothing": {
+            "mean": 0.4494421762228012,
+            "std": 0.030196019362676574
+          },
+          "total": {
+            "mean": 81.23629849243166,
+            "std": 1.453918714624598
+          }
+        }
+      },
+      "DocVQA_VAL": {
+        "n": 50,
+        "dataset": "DocVQA_VAL",
+        "model": "Qwen3-VL-8B-EADP-512-a0.5-b2.0",
+        "visual_tokens_in_mean": 1024.0,
+        "visual_tokens_in_std": 0.0,
+        "visual_tokens_kept_mean": 512.0,
+        "visual_tokens_kept_std": 0.0,
+        "seq_len_mean": 546.76,
+        "seq_len_std": 4.356879617340833,
+        "prefill_ms_mean_mean": 122.66828521728516,
+        "prefill_ms_mean_std": 1.0036753064046293,
+        "prefill_total_ms_mean_mean": 315.4241329040528,
+        "prefill_total_ms_mean_std": 2.1291221142626493,
+        "vision_ms_mean_mean": 111.28107659912108,
+        "vision_ms_mean_std": 0.7231705471875534,
+        "e2e_ms_mean_mean": 275.02754587809244,
+        "e2e_ms_mean_std": 97.67811714083487,
+        "gen_tokens_mean": 4.9,
+        "gen_tokens_std": 2.4515301344262523,
+        "flops_g_mean": 8628.53976817664,
+        "flops_g_std": 71.58950100981495,
+        "peak_mem_mb_mean": 16922.36953125,
+        "peak_mem_mb_std": 1.3647095044849178,
+        "prune_ms_mean_mean": 81.47477108764649,
+        "prune_ms_mean_std": 1.8677775689245737,
+        "stages": {
+          "dense_guidance": {
+            "mean": 0.34429337608814237,
+            "std": 0.011946511262658057
+          },
+          "facility_location": {
+            "mean": 79.60033782958985,
+            "std": 1.4908894589291137
+          },
+          "global_guidance": {
+            "mean": 0.12404339170455934,
+            "std": 0.008252311495223867
+          },
+          "polarization": {
+            "mean": 0.03748902445659042,
+            "std": 0.0017824506629802487
+          },
+          "prep_norm": {
+            "mean": 0.15652761644124985,
+            "std": 0.007465410897161284
+          },
+          "score_fusion": {
+            "mean": 0.1801653770208359,
+            "std": 0.0050722603152677185
+          },
+          "smoothing": {
+            "mean": 0.44929100847244263,
+            "std": 0.026841381230332802
+          },
+          "total": {
+            "mean": 81.47477108764649,
+            "std": 1.5000564178457427
+          }
+        }
+      },
+      "OCRBench": {
+        "n": 50,
+        "dataset": "OCRBench",
+        "model": "Qwen3-VL-8B-EADP-512-a0.5-b2.0",
+        "visual_tokens_in_mean": 1024.0,
+        "visual_tokens_in_std": 0.0,
+        "visual_tokens_kept_mean": 512.0,
+        "visual_tokens_kept_std": 0.0,
+        "seq_len_mean": 547.48,
+        "seq_len_std": 6.171677243667235,
+        "prefill_ms_mean_mean": 122.977646484375,
+        "prefill_ms_mean_std": 1.1104500145110467,
+        "prefill_total_ms_mean_mean": 316.0782710876465,
+        "prefill_total_ms_mean_std": 2.8450105195326127,
+        "vision_ms_mean_mean": 111.65429064941407,
+        "vision_ms_mean_std": 0.9046661578879612,
+        "e2e_ms_mean_mean": 348.9254675292968,
+        "e2e_ms_mean_std": 210.12414580223805,
+        "gen_tokens_mean": 6.78,
+        "gen_tokens_std": 5.36764380338338,
+        "flops_g_mean": 8640.389757009922,
+        "flops_g_std": 101.43047537019416,
+        "peak_mem_mb_mean": 16922.59501953125,
+        "peak_mem_mb_std": 1.9331768189029994,
+        "prune_ms_mean_mean": 81.44633395385743,
+        "prune_ms_mean_std": 2.7929807431075893,
+        "stages": {
+          "dense_guidance": {
+            "mean": 0.3476500475406646,
+            "std": 0.014182573231477882
+          },
+          "facility_location": {
+            "mean": 79.55212869262695,
+            "std": 1.454905236546258
+          },
+          "global_guidance": {
+            "mean": 0.1244392953068018,
+            "std": 0.00807924010816961
+          },
+          "polarization": {
+            "mean": 0.03821849642135203,
+            "std": 0.002652062548363721
+          },
+          "prep_norm": {
+            "mean": 0.15859212863445282,
+            "std": 0.008334546771103435
+          },
+          "score_fusion": {
+            "mean": 0.1805194253772497,
+            "std": 0.00813302407969619
+          },
+          "smoothing": {
+            "mean": 0.4542967039346695,
+            "std": 0.0216955562756062
+          },
+          "total": {
+            "mean": 81.44633395385743,
+            "std": 1.4754723405175723
+          }
+        }
+      }
+    }
+  }
+}

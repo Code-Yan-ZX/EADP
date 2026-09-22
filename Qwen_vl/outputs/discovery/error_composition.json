@@ -1,0 +1,396 @@
+{
+  "DocVQA_VAL:question_types": [
+    {
+      "question_types": "['table/list']",
+      "n": 1504,
+      "mean_hit": 0.5443036973933308,
+      "hard_err": 0.3636968085106383
+    },
+    {
+      "question_types": "['layout']",
+      "n": 1331,
+      "mean_hit": 0.7009232815114329,
+      "hard_err": 0.2261457550713749
+    },
+    {
+      "question_types": "['form']",
+      "n": 659,
+      "mean_hit": 0.6098980286133724,
+      "hard_err": 0.3110773899848255
+    },
+    {
+      "question_types": "['free_text']",
+      "n": 515,
+      "mean_hit": 0.5399693223952199,
+      "hard_err": 0.3941747572815534
+    },
+    {
+      "question_types": "['figure/diagram']",
+      "n": 182,
+      "mean_hit": 0.6160627384311596,
+      "hard_err": 0.34065934065934067
+    },
+    {
+      "question_types": "['handwritten', 'form']",
+      "n": 162,
+      "mean_hit": 0.6763902770508826,
+      "hard_err": 0.24691358024691357
+    },
+    {
+      "question_types": "['free_text', 'layout']",
+      "n": 127,
+      "mean_hit": 0.6183473521348302,
+      "hard_err": 0.2992125984251969
+    },
+    {
+      "question_types": "['table/list', 'layout']",
+      "n": 121,
+      "mean_hit": 0.4826699174099926,
+      "hard_err": 0.4462809917355372
+    },
+    {
+      "question_types": "['layout', 'others']",
+      "n": 100,
+      "mean_hit": 0.6767597856279397,
+      "hard_err": 0.27
+    },
+    {
+      "question_types": "['form', 'layout']",
+      "n": 94,
+      "mean_hit": 0.5575258886824535,
+      "hard_err": 0.32978723404255317
+    },
+    {
+      "question_types": "['figure/diagram', 'layout']",
+      "n": 72,
+      "mean_hit": 0.7022975245369878,
+      "hard_err": 0.2361111111111111
+    },
+    {
+      "question_types": "['free_text', 'others']",
+      "n": 56,
+      "mean_hit": 0.6061485556088285,
+      "hard_err": 0.32142857142857145
+    },
+    {
+      "question_types": "['handwritten', 'table/list']",
+      "n": 55,
+      "mean_hit": 0.677864357864358,
+      "hard_err": 0.23636363636363636
+    },
+    {
+      "question_types": "['Image/Photo']",
+      "n": 53,
+      "mean_hit": 0.6542980342508644,
+      "hard_err": 0.3018867924528302
+    },
+    {
+      "question_types": "['handwritten', 'layout']",
+      "n": 50,
+      "mean_hit": 0.8114614313561682,
+      "hard_err": 0.1
+    },
+    {
+      "question_types": "['layout', 'Image/Photo']",
+      "n": 39,
+      "mean_hit": 0.6519305480843942,
+      "hard_err": 0.28205128205128205
+    },
+    {
+      "question_types": "['others']",
+      "n": 30,
+      "mean_hit": 0.5920725584919958,
+      "hard_err": 0.3333333333333333
+    },
+    {
+      "question_types": "['form', 'table/list']",
+      "n": 28,
+      "mean_hit": 0.6708198664081017,
+      "hard_err": 0.21428571428571427
+    },
+    {
+      "question_types": "['free_text', 'table/list']",
+      "n": 25,
+      "mean_hit": 0.395,
+      "hard_err": 0.56
+    },
+    {
+      "question_types": "['table/list', 'others']",
+      "n": 14,
+      "mean_hit": 0.5633116883116883,
+      "hard_err": 0.2857142857142857
+    },
+    {
+      "question_types": "['Yes/No', 'form']",
+      "n": 12,
+      "mean_hit": 0.6666666666666666,
+      "hard_err": 0.3333333333333333
+    },
+    {
+      "question_types": "['handwritten', 'form', 'layout']",
+      "n": 11,
+      "mean_hit": 0.75008325008325,
+      "hard_err": 0.18181818181818182
+    },
+    {
+      "question_types": "['handwritten', 'free_text']",
+      "n": 10,
+      "mean_hit": 0.6852756892230577,
+      "hard_err": 0.2
+    },
+    {
+      "question_types": "['Yes/No', 'handwritten', 'form']",
+      "n": 8,
+      "mean_hit": 0.75,
+      "hard_err": 0.25
+    },
+    {
+      "question_types": "['free_text', 'form']",
+      "n": 7,
+      "mean_hit": 0.7505291005291006,
+      "hard_err": 0.14285714285714285
+    },
+    {
+      "question_types": "['form', 'free_text', 'table/list']",
+      "n": 7,
+      "mean_hit": 0.4530952380952381,
+      "hard_err": 0.42857142857142855
+    },
+    {
+      "question_types": "['form', 'layout', 'others']",
+      "n": 7,
+      "mean_hit": 0.3869047619047619,
+      "hard_err": 0.42857142857142855
+    },
+    {
+      "question_types": "['form', 'others']",
+      "n": 7,
+      "mean_hit": 0.7232142857142857,
+      "hard_err": 0.14285714285714285
+    },
+    {
+      "question_types": "['form', 'handwritten', 'table/list']",
+      "n": 6,
+      "mean_hit": 0.6666666666666666,
+      "hard_err": 0.3333333333333333
+    },
+    {
+      "question_types": "['Yes/No']",
+      "n": 5,
+      "mean_hit": 1.0,
+      "hard_err": 0.0
+    },
+    {
+      "question_types": "['figure/diagram', 'others']",
+      "n": 5,
+      "mean_hit": 0.13658536585365852,
+      "hard_err": 0.8
+    },
+    {
+      "question_types": "['handwritten', 'table/list', 'layout']",
+      "n": 4,
+      "mean_hit": 0.25,
+      "hard_err": 0.75
+    },
+    {
+      "question_types": "['free_text', 'form', 'layout']",
+      "n": 4,
+      "mean_hit": 0.65,
+      "hard_err": 0.25
+    },
+    {
+      "question_types": "['Image/Photo', 'layout', 'others']",
+      "n": 3,
+      "mean_hit": 0.6666666666666666,
+      "hard_err": 0.3333333333333333
+    },
+    {
+      "question_types": "['handwritten']",
+      "n": 3,
+      "mean_hit": 0.6111111111111112,
+      "hard_err": 0.3333333333333333
+    },
+    {
+      "question_types": "['free_text', 'table/list', 'layout']",
+      "n": 3,
+      "mean_hit": 0.5333333333333333,
+      "hard_err": 0.3333333333333333
+    },
+    {
+      "question_types": "['free_text', 'layout', 'others']",
+      "n": 3,
+      "mean_hit": 1.0,
+      "hard_err": 0.0
+    },
+    {
+      "question_types": "['figure/diagram', 'table/list']",
+      "n": 3,
+      "mean_hit": 0.3333333333333333,
+      "hard_err": 0.6666666666666666
+    },
+    {
+      "question_types": "['form', 'table/list', 'layout']",
+      "n": 3,
+      "mean_hit": 0.5303030303030303,
+      "hard_err": 0.3333333333333333
+    },
+    {
+      "question_types": "['table/list', 'Image/Photo']",
+      "n": 2,
+      "mean_hit": 1.0,
+      "hard_err": 0.0
+    },
+    {
+      "question_types": "['handwritten', 'layout', 'others']",
+      "n": 2,
+      "mean_hit": 0.5,
+      "hard_err": 0.5
+    },
+    {
+      "question_types": "['handwritten', 'form', 'others']",
+      "n": 2,
+      "mean_hit": 1.0,
+      "hard_err": 0.0
+    },
+    {
+      "question_types": "['handwritten', 'form', 'layout', 'others']",
+      "n": 2,
+      "mean_hit": 0.5,
+      "hard_err": 0.5
+    },
+    {
+      "question_types": "['free_text', 'table/list', 'others']",
+      "n": 2,
+      "mean_hit": 1.0,
+      "hard_err": 0.0
+    },
+    {
+      "question_types": "['Yes/No', 'form', 'handwritten', 'table/list']",
+      "n": 1,
+      "mean_hit": 1.0,
+      "hard_err": 0.0
+    },
+    {
+      "question_types": "['Yes/No', 'layout']",
+      "n": 1,
+      "mean_hit": 0.0,
+      "hard_err": 1.0
+    },
+    {
+      "question_types": "['Yes/No', 'table/list']",
+      "n": 1,
+      "mean_hit": 0.0,
+      "hard_err": 1.0
+    },
+    {
+      "question_types": "['figure/diagram', 'free_text', 'layout']",
+      "n": 1,
+      "mean_hit": 0.8095238095238095,
+      "hard_err": 0.0
+    },
+    {
+      "question_types": "['figure/diagram', 'free_text']",
+      "n": 1,
+      "mean_hit": 1.0,
+      "hard_err": 0.0
+    },
+    {
+      "question_types": "['figure/diagram', 'free_text', 'others']",
+      "n": 1,
+      "mean_hit": 1.0,
+      "hard_err": 0.0
+    },
+    {
+      "question_types": "['free_text', 'layout', 'Image/Photo']",
+      "n": 1,
+      "mean_hit": 0.0,
+      "hard_err": 1.0
+    },
+    {
+      "question_types": "['handwritten', 'free_text', 'layout']",
+      "n": 1,
+      "mean_hit": 0.0,
+      "hard_err": 1.0
+    },
+    {
+      "question_types": "['handwritten', 'free_text', 'form']",
+      "n": 1,
+      "mean_hit": 0.6666666666666667,
+      "hard_err": 0.0
+    },
+    {
+      "question_types": "['handwritten', 'others']",
+      "n": 1,
+      "mean_hit": 0.0,
+      "hard_err": 1.0
+    },
+    {
+      "question_types": "['table/list', 'layout', 'others']",
+      "n": 1,
+      "mean_hit": 1.0,
+      "hard_err": 0.0
+    }
+  ],
+  "OCRBench:category": [
+    {
+      "category": "Key Information Extraction",
+      "n": 200,
+      "mean_hit": 0.475,
+      "hard_err": 0.525
+    },
+    {
+      "category": "Doc-oriented VQA",
+      "n": 200,
+      "mean_hit": 0.45,
+      "hard_err": 0.55
+    },
+    {
+      "category": "Scene Text-centric VQA",
+      "n": 200,
+      "mean_hit": 0.845,
+      "hard_err": 0.155
+    },
+    {
+      "category": "Handwritten Mathematical Expression Recognition",
+      "n": 100,
+      "mean_hit": 0.41,
+      "hard_err": 0.59
+    },
+    {
+      "category": "Digit String Recognition",
+      "n": 50,
+      "mean_hit": 0.28,
+      "hard_err": 0.72
+    },
+    {
+      "category": "Artistic Text Recognition",
+      "n": 50,
+      "mean_hit": 0.92,
+      "hard_err": 0.08
+    },
+    {
+      "category": "Irregular Text Recognition",
+      "n": 50,
+      "mean_hit": 0.9,
+      "hard_err": 0.1
+    },
+    {
+      "category": "Handwriting Recognition",
+      "n": 50,
+      "mean_hit": 0.8,
+      "hard_err": 0.2
+    },
+    {
+      "category": "Non-Semantic Text Recognition",
+      "n": 50,
+      "mean_hit": 0.68,
+      "hard_err": 0.32
+    },
+    {
+      "category": "Regular Text Recognition",
+      "n": 50,
+      "mean_hit": 0.98,
+      "hard_err": 0.02
+    }
+  ]
+}

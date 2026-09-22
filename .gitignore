@@ -1,0 +1,31 @@
+# ---- large generated binaries (regenerable from the discovery scripts) ----
+# The S2-C1 feature caches alone are 7.4 GB; the JSON deliverables and logs
+# under outputs/discovery are tracked on purpose, these are not.
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.xlsx
+
+# ---- run artifacts ----
+*.log.tmp
+Qwen_vl/outputs/logs/
+
+# ---- python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# ---- editor / OS ----
+.vscode/
+.idea/
+.DS_Store
+*.swp

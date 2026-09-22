@@ -9,7 +9,17 @@ venv/
 env/
 
 # Generated outputs
-outputs/
+#
+# The discovery deliverables under outputs/discovery/*.json are the evidence for
+# docs/scoring_search_*.md and are tracked on purpose, so `outputs/` is excluded
+# by contents rather than wholesale. Everything else in outputs/ -- notably the
+# S2-C1 feature caches (7.4 GB of *.npy) and the *.pt scorer weights -- stays
+# ignored, as do *.log run records. The root .gitignore repeats the binary rules
+# for other trees.
+outputs/*
+!outputs/discovery/
+outputs/discovery/*
+!outputs/discovery/*.json
 logs/
 *.log
 *.out

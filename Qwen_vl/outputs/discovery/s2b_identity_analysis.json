@@ -1,0 +1,77 @@
+{
+ "summary": {
+  "facility|official": {
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "n": 150,
+     "official": 70.26666666666667,
+     "arm": 70.26666666666667,
+     "delta": 0.0
+    },
+    "DocVQA_VAL": {
+     "n": 150,
+     "official": 64.38037078085273,
+     "arm": 64.38037078085273,
+     "delta": 0.0
+    },
+    "OCRBench": {
+     "n": 150,
+     "official": 66.0,
+     "arm": 66.0,
+     "delta": 0.0
+    }
+   },
+   "macro": 66.8823458158398,
+   "macro_delta": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "pooled_delta": 0.0,
+   "win": 0,
+   "tie": 450,
+   "loss": 0
+  }
+ },
+ "diagnostics": {
+  "facility|official": {
+   "overlap": 1.0,
+   "blocks": 16.0,
+   "top256_blocks": 15.877777777777778,
+   "n": 450
+  }
+ },
+ "transitions": {
+  "facility|official": {
+   "total": {
+    "fixed": 0,
+    "broken": 0,
+    "both_correct": 312,
+    "both_wrong": 138
+   },
+   "per_dataset": {
+    "TextVQA_VAL": {
+     "fixed": 0,
+     "broken": 0,
+     "both_correct": 105,
+     "both_wrong": 45,
+     "n": 150
+    },
+    "DocVQA_VAL": {
+     "fixed": 0,
+     "broken": 0,
+     "both_correct": 108,
+     "both_wrong": 42,
+     "n": 150
+    },
+    "OCRBench": {
+     "fixed": 0,
+     "broken": 0,
+     "both_correct": 99,
+     "both_wrong": 51,
+     "n": 150
+    }
+   }
+  }
+ }
+}
