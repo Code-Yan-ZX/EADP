@@ -20,6 +20,11 @@ outputs/*
 !outputs/discovery/
 outputs/discovery/*
 !outputs/discovery/*.json
+# M2 deliverable: the accuracy-efficiency Pareto figure (a few hundred kB, and
+# the report's central exhibit). Every other figure stays ignored.
+!outputs/discovery/figures/
+outputs/discovery/figures/*
+!outputs/discovery/figures/m2_*.png
 logs/
 *.log
 *.out
