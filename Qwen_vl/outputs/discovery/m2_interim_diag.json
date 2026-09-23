@@ -1,0 +1,346 @@
+{
+ "instance": "TextVQA_VAL_0",
+ "started": "2026-09-23 19:37:54",
+ "environment": {
+  "torch": "2.10.0+cu128",
+  "gpu": "NVIDIA A40"
+ },
+ "D1_k1024_multistep_identity": {
+  "engine_tokens": [
+   67,
+   585,
+   6089,
+   151645
+  ],
+  "hf_tokens": [
+   67,
+   585,
+   6089,
+   151645
+  ],
+  "prompt_len": 1055,
+  "hf_returned_shape": [
+   1,
+   4
+  ],
+  "n_compared": 4,
+  "all_steps_match": true,
+  "per_step_match": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "prefill_argmax_equals_hf_first": true,
+  "engine_text": "dakota",
+  "hf_text": "dakota",
+  "fast_path": true,
+  "n_kept": 1024,
+  "context_len": 1055,
+  "kv_seq_len": 1055,
+  "eos_generation_config": [
+   151645,
+   151643
+  ],
+  "eos_config": null,
+  "eos_tokenizer": 151645
+ },
+ "D2_budget256_introspection": {
+  "budget": 256,
+  "n_arm": 960,
+  "seed": 2,
+  "seq_full": 1055,
+  "n_text": 31,
+  "n_kept": 256,
+  "context_len": 287,
+  "kv_seq_len_before": 287,
+  "position_ids_min": 0,
+  "position_ids_max": 1054,
+  "position_id_gaps": 136,
+  "pos_ids_contiguous": false,
+  "decode_positions_used": [
+   [
+    287,
+    1055
+   ],
+   [
+    288,
+    1055
+   ],
+   [
+    289,
+    1055
+   ]
+  ],
+  "kv_shapes_prefill_early_layers": {
+   "0": [
+    1,
+    8,
+    287,
+    128
+   ],
+   "4": [
+    1,
+    8,
+    287,
+    128
+   ]
+  },
+  "kv_shapes_prefill_late_layers": {
+   "5": [
+    1,
+    8,
+    287,
+    128
+   ],
+   "10": [
+    1,
+    8,
+    287,
+    128
+   ],
+   "35": [
+    1,
+    8,
+    287,
+    128
+   ]
+  },
+  "kv_shapes_after_3_decode_steps": {
+   "0": [
+    1,
+    8,
+    290,
+    128
+   ],
+   "5": [
+    1,
+    8,
+    290,
+    128
+   ],
+   "35": [
+    1,
+    8,
+    290,
+    128
+   ]
+  },
+  "kv_bytes_early": 5877760,
+  "kv_bytes_late": 42319872,
+  "cache_policy": "compact_L0_L4",
+  "pos_policy": "preserve",
+  "select_idx_head": [
+   0,
+   1,
+   2,
+   3,
+   5,
+   6,
+   7,
+   8
+  ],
+  "select_idx_tail": [
+   1009,
+   1013,
+   1014,
+   1015,
+   1016,
+   1019,
+   1022,
+   1023
+  ],
+  "select_idx_sorted": true,
+  "keep_full_len": 287
+ },
+ "D3_same_token_set_graph_control": [
+  {
+   "key": "TextVQA_VAL_4127",
+   "benchmark": "TextVQA_VAL",
+   "charset": 4127,
+   "mid_llm": {
+    "first12_ids": [
+     92655,
+     306,
+     306,
+     306,
+     306,
+     306,
+     306,
+     306,
+     306,
+     306,
+     306,
+     306
+    ],
+    "text": "preventententententententententententent",
+    "n_kept": 256,
+    "repetition": {
+     "n": 12,
+     "top_count": 4,
+     "frac": 0.14285714285714285
+    }
+   },
+   "pre_llm": {
+    "n_tokens": 256,
+    "first12_ids": [
+     92655,
+     306,
+     306,
+     306,
+     306,
+     306,
+     306,
+     306,
+     306,
+     306,
+     306,
+     306
+    ],
+    "text": "preventententententententententententent",
+    "context_len": 286,
+    "repetition": {
+     "n": 12,
+     "top_count": 4,
+     "frac": 0.14285714285714285
+    }
+   },
+   "mid_llm_repetition": {
+    "n": 12,
+    "top_count": 4,
+    "frac": 0.14285714285714285
+   },
+   "pre_llm_repetition": {
+    "n": 12,
+    "top_count": 4,
+    "frac": 0.14285714285714285
+   }
+  },
+  {
+   "key": "DocVQA_VAL_1077",
+   "benchmark": "DocVQA_VAL",
+   "charset": 1077,
+   "mid_llm": {
+    "first12_ids": [
+     37,
+     8264,
+     220,
+     16,
+     14,
+     16,
+     14,
+     16,
+     18,
+     14,
+     16,
+     18
+    ],
+    "text": "FEB 1/1/13/13",
+    "n_kept": 256,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 1.0
+    }
+   },
+   "pre_llm": {
+    "n_tokens": 256,
+    "first12_ids": [
+     37,
+     8264,
+     220,
+     16,
+     14,
+     16,
+     14,
+     16,
+     18,
+     14,
+     16,
+     18
+    ],
+    "text": "FEB 1/1/13/13",
+    "context_len": 292,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 1.0
+    }
+   },
+   "mid_llm_repetition": {
+    "n": 12,
+    "top_count": 1,
+    "frac": 1.0
+   },
+   "pre_llm_repetition": {
+    "n": 12,
+    "top_count": 1,
+    "frac": 1.0
+   }
+  },
+  {
+   "key": "DocVQA_VAL_1292",
+   "benchmark": "DocVQA_VAL",
+   "charset": 1292,
+   "mid_llm": {
+    "first12_ids": [
+     7,
+     15,
+     18,
+     8,
+     18,
+     19,
+     17,
+     21,
+     18,
+     19,
+     17,
+     21
+    ],
+    "text": "(03)34263426",
+    "n_kept": 256,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 1.0
+    }
+   },
+   "pre_llm": {
+    "n_tokens": 256,
+    "first12_ids": [
+     7,
+     15,
+     18,
+     8,
+     220,
+     17,
+     21,
+     18,
+     18,
+     21,
+     220,
+     17
+    ],
+    "text": "(03) 26336 2",
+    "context_len": 290,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 1.0
+    }
+   },
+   "mid_llm_repetition": {
+    "n": 12,
+    "top_count": 1,
+    "frac": 1.0
+   },
+   "pre_llm_repetition": {
+    "n": 12,
+    "top_count": 1,
+    "frac": 1.0
+   }
+  }
+ ],
+ "wall_seconds": 41.03595542907715,
+ "peak_allocated_mb": 17174.34765625
+}

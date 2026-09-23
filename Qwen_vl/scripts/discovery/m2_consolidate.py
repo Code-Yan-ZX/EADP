@@ -260,6 +260,43 @@ def main():
                          all_seeds_positive=bool(all(x > 0 for x in per_seed)))
     audit["matched_seed_deltas"] = ms
 
+    # ---- degeneracy: runs that hit the generation cap ----------------------
+    # Stage-1 O-C found this failure mode invisible in prefill tables; a
+    # 2048-token repetition loop is both a quality failure and a latency
+    # catastrophe, so it is reported per arm-run: rate, char-length
+    # distribution, macro excluding capped runs.
+    deg = {}
+    for key, r in arms.items():
+        if "error" in r or "predictions" not in r:
+            continue
+        L = np.array([len(x) for x in r["predictions"]])
+        h = np.concatenate([np.asarray(r["per_benchmark"][ds]["hits"], float)
+                            for ds in DS_ORDER])
+        capped = L > 2000          # ~the 2048-token cap in decoded chars
+        keep = []
+        for ds in DS_ORDER:
+            mask_ds = np.array([m["ds"] == ds for m in r["per_image_meta"]])
+            keep.append((~capped[mask_ds]).mean() if capped.any() else 1.0)
+        ex = {}
+        for ds in DS_ORDER:
+            mask_ds = np.array([m["ds"] == ds for m in r["per_image_meta"]])
+            hs = np.asarray(r["per_benchmark"][ds]["hits"], float)
+            sel = hs[~capped[mask_ds]]
+            ex[ds] = float(sel.mean() * 100) if len(sel) else None
+        deg[key] = dict(arm=r["arm"], seed=r["seed"],
+                        n_capped=int(capped.sum()),
+                        capped_rate=float(capped.mean()),
+                        hit_among_capped=float(h[capped].mean()) if capped.any() else None,
+                        char_len_median=float(np.median(L)),
+                        char_len_p90=float(np.percentile(L, 90)),
+                        char_len_max=int(L.max()),
+                        macro_all_pct=r["macro_pct"],
+                        macro_ex_capped_pct=(float(np.mean(
+                            [v for v in ex.values() if v is not None]))
+                            if capped.any() else float(r["macro_pct"])),
+                        per_bench_ex_capped=ex)
+    audit["degeneracy"] = deg
+
     # ---------------- the conclusion (prereg §8) ---------------------------
     audit["conclusion"] = _conclude(audit, crit, eff, b1_ttft, arms)
 
@@ -317,11 +354,25 @@ def _conclude(audit, crit, eff, b1_ttft, arms):
                           "not of the learned score.")
         return dict(code="P1", statement=statement, detail=detail)
 
-    # no Pareto bar cleared: is it accuracy that failed, or the mechanism?
+    # no Pareto bar cleared. Model-side saving, isolated from the fixed
+    # preprocessing + vision floor every arm shares, separates "the mechanism
+    # cannot pay for itself" (P4) from "it pays, but the shared floor dilutes
+    # the relative TTFT gain below threshold" (P2/P3/P5 readings).
+    def model_side(tag):
+        stg = eff.get(tag, {}).get("stages", {})
+        return sum(stg.get(k, 0.0) for k in
+                   ("eadp_scoring_ms", "selector_ms", "L0_L4_ms", "scorer_ms",
+                    "token_compaction_ms", "llm_forward_ms"))
+    saved_model = model_side("B1") - model_side("C1")
     best_acc = max((v.get("vs_B1_macro_pts", -1e9) for v in crit.values()),
                    default=float("-inf"))
     min_drop = min((-(v.get("vs_B1_macro_pts") or 0.0) for v in crit.values()),
                    default=float("inf"))
+    detail_common = dict(gdep_prefix_ms=gdep_prefix,
+                         ttft_saved_vs_B1_ms=saved,
+                         model_side_saved_vs_B1_ms=saved_model,
+                         best_vs_B1_pts=best_acc,
+                         shuffled_gap_pts=shuf_gap)
     if l4_too_late:
         return dict(code="P4", statement=(
             "The L4 pruning point is too late: the L0-L4 full-token forward plus "
@@ -329,32 +380,40 @@ def _conclude(audit, crit, eff, b1_ttft, arms):
             "saving, so end-to-end TTFT does not fall. The mechanism cannot pay "
             "for itself at this depth; the distillation has to move into the "
             "vision encoder / pre-LLM stage."),
-            detail=dict(gdep_prefix_ms=gdep_prefix,
-                        ttft_saved_vs_B1_ms=saved))
-    if best_acc < 0 and min_drop > CRIT["compression"]["acc_drop_pts"]:
-        return dict(code="P3", statement=(
-            "GDEP is faster but the accuracy loss is unacceptable: the best "
-            f"candidate trails B1 by {min_drop:.2f} macro points, above the "
-            "pre-registered 2.0-point bar."),
-            detail=dict(best_vs_B1_pts=best_acc))
+            detail=detail_common)
+    if score_carries_signal:
+        # the score demonstrably carries image-specific signal (honest arm beats
+        # the content-free control by >= 1 pt on every seed) yet no bar cleared:
+        # the system/selector path is what failed to convert it.
+        return dict(code="P5", statement=(
+            "The learned score works but the selector / system implementation is "
+            f"the bottleneck: the honest arm beats the content-free shuffled "
+            f"control by {shuf_gap:.2f} macro points on every seed, the "
+            f"model-side path saves {saved_model:.1f} ms vs B1, yet no "
+            "pre-registered Pareto bar is cleared."),
+            detail=detail_common)
     if best_acc >= 0:
         return dict(code="P2", statement=(
             "GDEP has better accuracy but the performance cost is too large: "
-            "accuracy is at or above B1 but no pre-registered efficiency bar is "
-            "met."), detail=dict(best_vs_B1_pts=best_acc))
-    if score_carries_signal:
-        return dict(code="P5", statement=(
-            "The learned score works but the selector / system implementation is "
-            "the bottleneck: the honest arm beats the content-free shuffled "
-            f"control by {shuf_gap:.2f} macro points on every seed, and no "
-            "candidate clears a Pareto bar."),
-            detail=dict(shuffled_gap_pts=shuf_gap,
-                        shuffled_minus_honest_pts=shuf["mean_pts"]))
+            "accuracy is at or above B1 (best point estimate "
+            f"{best_acc:+.2f} pts) but no pre-registered efficiency bar is met."),
+            detail=detail_common)
+    if min_drop > CRIT["compression"]["acc_drop_pts"]:
+        return dict(code="P3", statement=(
+            "GDEP is faster but the accuracy loss is unacceptable: the best "
+            f"candidate trails B1 by {min_drop:.2f} macro points, above the "
+            "pre-registered 2.0-point bar, and the shuffled control does not "
+            "attribute the difference to the learned score."),
+            detail=detail_common)
     return dict(code="P3", statement=(
-        "No candidate clears a Pareto bar and the shuffled control does not "
-        "separate from the honest arm; the configuration as implemented is not "
-        "better than the incumbent on either axis."),
-        detail=dict(best_vs_B1_pts=best_acc, shuffled_gap_pts=shuf_gap))
+        "No candidate clears a Pareto bar: GDEP is faster than B1 on TTFT "
+        f"({100 * saved / b1_ttft if b1_ttft else 0:.1f} % median, below the "
+        f"15 % primary threshold) while its accuracy sits within "
+        f"{-best_acc:.2f} pts of the incumbent and the content-free control "
+        "does not separate -- the configuration is inside the incumbent's "
+        "accuracy envelope at a smaller-than-threshold speed edge on either "
+        "reading."),
+        detail=detail_common)
 
 
 def _tables(audit):

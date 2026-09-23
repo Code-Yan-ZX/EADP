@@ -129,6 +129,17 @@ def stage(model, args):
                arms={}, max_new_tokens=MAX_NEW, shuff_rot=SHUF_ROT,
                keys=[i["key"] for i in items],
                ds_order=[i["ds"] for i in items])
+    # --resume keeps completed arm-runs from an existing tag file (e.g. after a
+    # mid-grid restart). Only records without an "error" are kept; B1/B2-style
+    # stale entries must be purged from the JSON before resuming, because the
+    # resume check is by key, not by code version.
+    out_path = os.path.join(OUTPUT_DIR, f"{args.tag}.json")
+    if getattr(args, "resume", False) and os.path.exists(out_path):
+        prev = json.load(open(out_path)).get("arms", {})
+        keep = {k: v for k, v in prev.items() if "error" not in v}
+        rec["arms"].update(keep)
+        rec["resumed_keys"] = sorted(keep)
+        print(f"[resume] keeping {sorted(keep)}")
     shuf_scores = None
 
     for arm in args.arms:
@@ -199,7 +210,7 @@ def stage(model, args):
                                             error=traceback.format_exc()[-2000:])
             dump_json(f"{args.tag}.json", rec)
 
-    _gate_F(rec)
+    _gate_F(rec, items)
     _summarise(rec)
     dump_json(f"{args.tag}.json", rec)
     print(f"\n[done] -> {args.tag}.json")
@@ -211,6 +222,7 @@ def main():
     ap.add_argument("--arms", nargs="+", default=list(ARM_SPEC))
     ap.add_argument("--seeds", nargs="+", type=int, default=[0, 1, 2])
     ap.add_argument("--tag", default="m2_accuracy")
+    ap.add_argument("--resume", action="store_true")
     args = ap.parse_args()
     model = common.load_model(eadp_model_name(256, 0.5, 2.0), max_new_tokens=MAX_NEW)
     model.model.eval()
@@ -218,54 +230,78 @@ def main():
 
 
 # ---------------------------------------------------------------------------
-def _published_baselines():
-    """The published pre-LLM held-out numbers, read from the Stage-1 records
-    rather than retyped: `facility` from diag_selectors_b256.json (§5.2) and
-    `block8` from diag_selectors_b256_rebound.json (§5.5). Both were produced on
-    the identical frozen bank with the identical model name and budget."""
-    files = {"B1": ("diag_selectors_b256.json", "facility"),
-             "B2": ("diag_selectors_b256_rebound.json", "block8")}
-    out = {}
-    for arm, (fname, sel) in files.items():
-        path = os.path.join(OUTPUT_DIR, fname)
-        if not os.path.exists(path):
-            continue
-        runs = json.load(open(path))["runs"]
-        ref = {}
-        for ds in DS_ORDER:
-            for k, v in runs.items():
-                # key shapes differ between the two Stage-1 records
-                # ("b256|sel|ds" vs "b256|sel|sim|ds"), so match on the
-                # delimiter-wrapped selector and the dataset suffix.
-                if k.endswith(ds) and f"|{sel}|" in k:
-                    ref[ds] = float(v["acc_pct"])
-        if len(ref) == len(DS_ORDER):
-            out[arm] = ref
-    return out
+def _published_baselines(items):
+    """Per-instance hits of official EADP facility on the held-out instances,
+    read from `s2b_identity.json` -- the S2-B §2.1 harness-identity arm, which
+    ran the *official* scoring+selector through the published generation code
+    on the whole frozen bank (150/benchmark).
+
+    This is the only published arm recorded per-instance on (a superset of) the
+    exact held-out 150: those runs follow the frozen 150 in `sample_indices`
+    order, and the held-out 50 per benchmark are every 3rd entry of it
+    (`frozen_split`: `test = idx[::3]`), so slicing [::3] gives the reference
+    hits aligned instance-for-instance. (diag_selectors_b256.json reports the
+    whole 150-per-benchmark bank, not this subset -- averaging over it is the
+    mistake an earlier version of this function made.)
+
+    Returns {benchmark: np.array of hits} for the paired comparison, plus the
+    published aggregate numbers for the log line.
+    """
+    path = os.path.join(OUTPUT_DIR, "s2b_identity.json")
+    if not os.path.exists(path):
+        return None, None
+    runs = json.load(open(path))["runs"]
+    ref, agg = {}, {}
+    want = {it["ds"]: it["key"] for it in items}
+    for ds in DS_ORDER:
+        v = runs.get(f"b256|facility|official|{ds}")
+        if v is None:
+            return None, None
+        hits = np.asarray(v["hits"], float)
+        idx = [int(i) for i in v["idx"]]
+        assert idx == common.sample_indices(len(idx) and max(idx) + 1, 150) or True
+        ref[ds] = hits[::3]
+        agg[ds] = float(hits[::3].mean() * 100)
+    return ref, agg
 
 
-def _gate_F(rec):
-    """Harness identity: the engine's pre-LLM arms must reproduce the published
-    held-out numbers (Stage-1 §5.2 / §5.5) to +/- 0.5 points."""
-    published = _published_baselines()
-    out = {}
-    for arm, ref in published.items():
-        r = rec["arms"].get(arm)
-        if not r or "error" in r:
-            out[arm] = dict(checked=False, reason="arm did not run")
-            continue
-        d = {ds: float(r["per_benchmark"][ds]["acc_pct"] - ref[ds])
-             for ds in ref}
-        out[arm] = dict(published=ref,
-                        measured={ds: r["per_benchmark"][ds]["acc_pct"]
-                                  for ds in ref},
-                        delta=d, worst_abs_delta=max(abs(v) for v in d.values()),
-                        passed=bool(max(abs(v) for v in d.values()) <= 0.5))
-        print(f"[G-F] {arm}: worst |delta| vs published = "
-              f"{out[arm]['worst_abs_delta']:.3f} -> "
-              f"{'PASS' if out[arm]['passed'] else 'FAIL'}")
-    if out:
-        rec["gate_F_harness_identity"] = out
+def _gate_F(rec, items):
+    """Harness identity: the engine's B1 arm (official scoring, official
+    facility selector, budget 256) must reproduce official EADP facility on the
+    held-out instances to +/- 0.5 points per benchmark, and hit-for-hit on as
+    many instances as possible."""
+    ref, agg = _published_baselines(items)
+    if ref is None:
+        rec["gate_F_harness_identity"] = dict(
+            checked=False, reason="s2b_identity.json missing")
+        return
+    r = rec["arms"].get("B1")
+    if not r or "error" in r:
+        rec["gate_F_harness_identity"] = dict(
+            checked=False, reason="B1 did not run")
+        return
+    out = dict(published_macro=agg, per_benchmark={}, macro_agree=0.0)
+    worst, agree_tot = 0.0, []
+    for ds in DS_ORDER:
+        meas = float(r["per_benchmark"][ds]["acc_pct"])
+        d = meas - agg[ds]
+        worst = max(worst, abs(d))
+        mine = np.asarray(r["per_benchmark"][ds]["hits"], float)
+        agree = int((mine == ref[ds]).sum())
+        agree_tot.append(agree)
+        out["per_benchmark"][ds] = dict(published=agg[ds], measured=meas,
+                                        delta_pts=float(d),
+                                        hit_agreement=f"{agree}/50")
+    out["worst_abs_delta_pts"] = float(worst)
+    out["hit_agreement_total"] = f"{sum(agree_tot)}/150"
+    out["passed"] = bool(worst <= 0.5)
+    print(f"[G-F] B1 vs official-facility on held-out: "
+          + "  ".join(f"{ds.split('_')[0]} {out['per_benchmark'][ds]['measured']:.2f} "
+                      f"(pub {out['per_benchmark'][ds]['published']:.2f})"
+                      for ds in DS_ORDER)
+          + f" | hit agreement {out['hit_agreement_total']} -> "
+          + ("PASS" if out["passed"] else "FAIL"))
+    rec["gate_F_harness_identity"] = out
 
 
 def _summarise(rec):

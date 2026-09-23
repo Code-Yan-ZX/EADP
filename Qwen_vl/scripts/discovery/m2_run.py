@@ -38,6 +38,7 @@ def main():
     ap.add_argument("--perf-arms", nargs="+", default=[a["tag"] for a in m2_perf.ARMS])
     ap.add_argument("--acc-arms", nargs="+", default=list(m2_accuracy.ARM_SPEC))
     ap.add_argument("--acc-seeds", nargs="+", type=int, default=[0, 1, 2])
+    ap.add_argument("--acc-resume", action="store_true")
     args = ap.parse_args()
 
     t0 = time.time()
@@ -62,7 +63,7 @@ def main():
 
     if "accuracy" in args.stages:
         aa = argparse.Namespace(arms=args.acc_arms, seeds=args.acc_seeds,
-                                tag="m2_accuracy")
+                                tag="m2_accuracy", resume=args.acc_resume)
         m2_accuracy.stage(model, aa)
 
     print(f"\n[M2] done in {time.time()-t0:.0f} s")

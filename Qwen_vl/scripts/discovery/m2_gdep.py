@@ -294,7 +294,8 @@ class GDEPEngine:
         mask = torch.ones(1, prompt.shape[1], dtype=torch.long,
                           device=prompt.device)
         return dict(inputs=inputs, prompt=prompt, mask=mask, vis=vis,
-                    vis_slice=(s, e), gthw=gthw, pv=pv)
+                    vis_slice=(s, e), gthw=gthw, pv=pv,
+                    message=message, ds=dataset_name)
 
 
     # --------------------------------------------------------------- prefill --
@@ -500,13 +501,24 @@ class GDEPEngine:
         return state, info
 
     def _instruction_embeds(self, prep):
-        """Text-side embeddings the incumbent's pruner consumes (its own API)."""
-        ids = prep["inputs"]["input_ids"]
-        with torch.no_grad():
-            emb = self.model.get_input_embeddings()(ids)
-        s, e = prep["vis_slice"]
-        seq = torch.cat([emb[:, :s], emb[:, e:]], dim=1)[0]
-        return seq.mean(0, keepdim=True).expand(1, -1), seq.unsqueeze(0)
+        """Text-side embeddings the incumbent's pruner consumes.
+
+        This calls the wrapper's OWN `_get_instruction_sequence_embedding`,
+        which tokenises the instruction TEXT ALONE (`_tokenize_instruction`:
+        question string, special tokens on, no chat template, no vision
+        markers, nothing from the answer span). Gate G-F caught an earlier
+        version that instead embedded the full templated prompt minus the
+        visual span -- a different (longer, scaffolding-laden) text sequence
+        feeds the dense-guidance entropy filter, so the importance map
+        changed and the B1 arm was not the incumbent any more. The published
+        harness (diag_selectors.generate_prediction) and this must agree
+        token-for-token; they now share the exact same call.
+        """
+        instr = self.vlm._get_instruction_sequence_embedding(
+            prep["message"], dataset=prep["ds"])          # (1, L_txt, D)
+        num_images = int(prep["gthw"].shape[0])
+        return instr.mean(dim=1).expand(num_images, -1), \
+            instr.expand(num_images, -1, -1)
 
     # ---------------------------------------------------------------- decode --
     @torch.no_grad()
@@ -529,6 +541,7 @@ class GDEPEngine:
         preserve = (cfg.mode == MODE_GDEP and cfg.pos_policy == POLICY_PRESERVE)
 
         out = []
+        used_positions = []          # read-only record for the interim audit
         cur = int(torch.argmax(logits, dim=-1).item())
         for _ in range(max_new_tokens):
             out.append(cur)
@@ -538,6 +551,7 @@ class GDEPEngine:
             n_ctx = torch.cat([n_ctx, n_ctx.new_ones(1, 1)], dim=1)
             cp = torch.tensor([cur_len], device=dev)
             nxt = (int(pos1.max().item()) + 1) if preserve else cur_len
+            used_positions.append((int(cur_len), int(nxt)))
             pos3 = torch.tensor([[[nxt]]], device=dev).expand(3, 1, 1)
             h = embed(torch.tensor([[cur]], device=dev))
             attn = self._causal(h, n_ctx, cp, cache, pos3[0])
@@ -546,6 +560,7 @@ class GDEPEngine:
             h = self.text.norm(h)
             logits = self.model.lm_head(h[:, -1:, :])[:, -1, :]
             cur = int(torch.argmax(logits, dim=-1).item())
+        self.last_decode_positions = used_positions
         return out
 
     # ------------------------------------------------------------- one stop ---
