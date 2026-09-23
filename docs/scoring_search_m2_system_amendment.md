@@ -307,4 +307,5 @@ What the amendment established beyond the defect itself:
 | `m2_correctness_v2.json` | `m2_correctness.py --tag m2_correctness_v2` | G-A…G-E on the fixed engine |
 | `m2_perf_paired.json` | `m2_perf_paired.py` | §7 |
 | `m2_amend_report.json/.md` | `m2_amend_report.py` | valid-arms-only tables + frozen-decision reading |
+| `figures/m2_pareto.png` | `m2_amend_figure.py` | valid arms, paired timing; the prereg Pareto panel |
 | `m2_gdep.py` (v2) | fixed engine, `ENGINE_VERSION` stamped | git diff vs 6a74c0b is the whole defect record |

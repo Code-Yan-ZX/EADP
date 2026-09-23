@@ -130,8 +130,13 @@ def main():
                                          for ds in DS_ORDER},
                           n_kept_mean=rec.get("n_kept_mean"))
     audit["accuracy_table"] = table
-    audit["seed_means"] = acc.get("seed_means")
-    audit["summary_vs_B1"] = acc.get("summary_vs_B1")
+    # m2_accuracy.py's own _summarise ran before the validity marks existed;
+    # filter its passthrough summaries to records this amendment considers
+    # valid, so no INVALID arm can re-enter through the JSON copies.
+    audit["seed_means"] = {k: v for k, v in (acc.get("seed_means") or {}).items()
+                           if all(valid(arms.get(f"{k}|s{s}")) for s in SEEDS)}
+    audit["summary_vs_B1"] = {k: v for k, v in (acc.get("summary_vs_B1") or {}).items()
+                              if valid(arms.get(k))}
 
     if "B1" not in arms or not valid(arms["B1"]):
         dump_json(args.out, audit)
