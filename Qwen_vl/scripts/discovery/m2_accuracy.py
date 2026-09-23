@@ -16,10 +16,19 @@ Arms
     C3        GDEP n=960 facility@256, PRESERVE
     C1-R      C1 under RENUMBER                         declared control
     C1-SHUF   C1 with the score map rotated by 7 images declared control
+    C1-P      (amendment) the corrected-PRESERVE rerun of C1, under engine
+              version gdep_preserve_v2_advancing_rope. The implementation-defect
+              amendment stops the original grid (C0/C1/C2 records stay in the
+              file marked INVALID_DUE_TO_FROZEN_ROPE_POSITION) and runs only
+              C1-R + C1-P in phase 1. C1-P is a distinct run key AND carries the
+              engine version in its cfg hash, so it cannot overwrite or mix
+              with the contaminated C1|s* records.
 
 `--arms` and `--seeds` make the grid explicit; the defaults are the full
-pre-registered grid.  `C1-SHUF` needs one extra scoring-only pass over the same
-150 instances, which is why it is implemented as a two-pass arm.
+pre-registered grid (which the amendment does not re-run; phase 1 is
+`--arms C1-P --resume` after the fix gates). `C1-SHUF` needs one extra
+scoring-only pass over the same 150 instances, which is why it is implemented
+as a two-pass arm.
 
 Usage
     python scripts/discovery/m2_accuracy.py                       # everything
@@ -61,8 +70,11 @@ ARM_SPEC = {
     "C3":      dict(mode=MODE_GDEP,   n_arm=960, selector="facility",  policy=POLICY_PRESERVE),
     "C1-R":    dict(mode=MODE_GDEP,   n_arm=960, selector="topk",      policy=POLICY_RENUMBER),
     "C1-SHUF": dict(mode=MODE_GDEP,   n_arm=960, selector="topk",      policy=POLICY_PRESERVE),
+    # Amendment arm: corrected PRESERVE (advancing decode position). Same
+    # frozen configuration as C1 in every other respect.
+    "C1-P":    dict(mode=MODE_GDEP,   n_arm=960, selector="topk",      policy=POLICY_PRESERVE),
 }
-SEEDED = ("C0", "C1", "C2", "C3", "C1-R", "C1-SHUF")
+SEEDED = ("C0", "C1", "C2", "C3", "C1-R", "C1-SHUF", "C1-P")
 
 
 def make_engine(model, arm, seed):
@@ -167,14 +179,20 @@ def stage(model, args):
                         info = out["info"]
                     except Exception:
                         traceback.print_exc()
-                        p, info = "", {}
+                        p, info, out = "", {}, {}
                     preds.append(p)
+                    # n_decode: exact termination accounting. The decode loop
+                    # stops ONLY on EOS or at max_new_tokens, so
+                    # n_decode < MAX_NEW <=> EOS was emitted. Added by the
+                    # implementation-defect amendment (the char-length proxy in
+                    # consolidation was the only signal before).
                     meta.append(dict(key=it["key"], ds=it["ds"],
                                      n_kept=info.get("n_kept"),
                                      context_len=info.get("context_len"),
                                      kv_seq_len=info.get("kv_seq_len"),
                                      pos_ids_contiguous=info.get(
-                                         "pos_ids_contiguous")))
+                                         "pos_ids_contiguous"),
+                                     n_decode=out.get("n_decode")))
                     if (j + 1) % 25 == 0:
                         print(f"  {j+1}/{len(items)}  {time.time()-t0:.0f}s",
                               flush=True)

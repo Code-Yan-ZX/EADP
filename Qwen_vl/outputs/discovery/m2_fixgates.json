@@ -1,0 +1,1246 @@
+{
+ "stage": "M2 amendment",
+ "engine_version": "gdep_preserve_v2_advancing_rope",
+ "v1_commit": "6a74c0b",
+ "gates": [],
+ "HG-1_multi_step_identity": {
+  "rows": [
+   {
+    "key": "TextVQA_VAL_0",
+    "n_steps": 24,
+    "first_new": 67,
+    "full_equals_hf": true,
+    "gdep_k1024_equals_hf": true,
+    "first_diff_full": null,
+    "first_diff_id": null,
+    "layer_calls": 900
+   },
+   {
+    "key": "TextVQA_VAL_101",
+    "n_steps": 24,
+    "first_new": 9693,
+    "full_equals_hf": true,
+    "gdep_k1024_equals_hf": true,
+    "first_diff_full": null,
+    "first_diff_id": null,
+    "layer_calls": 900
+   },
+   {
+    "key": "TextVQA_VAL_201",
+    "n_steps": 24,
+    "first_new": 58913,
+    "full_equals_hf": true,
+    "gdep_k1024_equals_hf": true,
+    "first_diff_full": null,
+    "first_diff_id": null,
+    "layer_calls": 900
+   },
+   {
+    "key": "TextVQA_VAL_302",
+    "n_steps": 24,
+    "first_new": 65,
+    "full_equals_hf": true,
+    "gdep_k1024_equals_hf": true,
+    "first_diff_full": null,
+    "first_diff_id": null,
+    "layer_calls": 900
+   },
+   {
+    "key": "TextVQA_VAL_403",
+    "n_steps": 24,
+    "first_new": 17,
+    "full_equals_hf": true,
+    "gdep_k1024_equals_hf": true,
+    "first_diff_full": null,
+    "first_diff_id": null,
+    "layer_calls": 900
+   },
+   {
+    "key": "TextVQA_VAL_503",
+    "n_steps": 24,
+    "first_new": 10593,
+    "full_equals_hf": true,
+    "gdep_k1024_equals_hf": true,
+    "first_diff_full": null,
+    "first_diff_id": null,
+    "layer_calls": 900
+   },
+   {
+    "key": "TextVQA_VAL_604",
+    "n_steps": 24,
+    "first_new": 1690,
+    "full_equals_hf": true,
+    "gdep_k1024_equals_hf": true,
+    "first_diff_full": null,
+    "first_diff_id": null,
+    "layer_calls": 900
+   },
+   {
+    "key": "TextVQA_VAL_705",
+    "n_steps": 24,
+    "first_new": 18,
+    "full_equals_hf": true,
+    "gdep_k1024_equals_hf": true,
+    "first_diff_full": null,
+    "first_diff_id": null,
+    "layer_calls": 900
+   }
+  ],
+  "n_compared": 8,
+  "forced_steps": 24,
+  "passed": true
+ },
+ "HG-2 preserve_decode_positions": {
+  "rows": [
+   {
+    "key": "TextVQA_VAL_0",
+    "policy": "preserve",
+    "prefill_max_pos": 1054,
+    "cache_len0": 287,
+    "rope_first": 1055,
+    "rope_last": 1078,
+    "start_expected": 1055,
+    "advances_consecutively": true,
+    "cache_position_advances": true,
+    "n_positions": 24,
+    "n_distinct": 24,
+    "decode_steps": 24,
+    "layer_calls": 900,
+    "layer_calls_expected": 900,
+    "no_recompute": true
+   },
+   {
+    "key": "TextVQA_VAL_101",
+    "policy": "preserve",
+    "prefill_max_pos": 1051,
+    "cache_len0": 284,
+    "rope_first": 1052,
+    "rope_last": 1075,
+    "start_expected": 1052,
+    "advances_consecutively": true,
+    "cache_position_advances": true,
+    "n_positions": 24,
+    "n_distinct": 24,
+    "decode_steps": 24,
+    "layer_calls": 900,
+    "layer_calls_expected": 900,
+    "no_recompute": true
+   },
+   {
+    "key": "TextVQA_VAL_201",
+    "policy": "preserve",
+    "prefill_max_pos": 1055,
+    "cache_len0": 288,
+    "rope_first": 1056,
+    "rope_last": 1079,
+    "start_expected": 1056,
+    "advances_consecutively": true,
+    "cache_position_advances": true,
+    "n_positions": 24,
+    "n_distinct": 24,
+    "decode_steps": 24,
+    "layer_calls": 900,
+    "layer_calls_expected": 900,
+    "no_recompute": true
+   },
+   {
+    "key": "TextVQA_VAL_302",
+    "policy": "preserve",
+    "prefill_max_pos": 1051,
+    "cache_len0": 284,
+    "rope_first": 1052,
+    "rope_last": 1075,
+    "start_expected": 1052,
+    "advances_consecutively": true,
+    "cache_position_advances": true,
+    "n_positions": 24,
+    "n_distinct": 24,
+    "decode_steps": 24,
+    "layer_calls": 900,
+    "layer_calls_expected": 900,
+    "no_recompute": true
+   },
+   {
+    "key": "TextVQA_VAL_403",
+    "policy": "preserve",
+    "prefill_max_pos": 1055,
+    "cache_len0": 288,
+    "rope_first": 1056,
+    "rope_last": 1079,
+    "start_expected": 1056,
+    "advances_consecutively": true,
+    "cache_position_advances": true,
+    "n_positions": 24,
+    "n_distinct": 24,
+    "decode_steps": 24,
+    "layer_calls": 900,
+    "layer_calls_expected": 900,
+    "no_recompute": true
+   },
+   {
+    "key": "TextVQA_VAL_503",
+    "policy": "preserve",
+    "prefill_max_pos": 1052,
+    "cache_len0": 285,
+    "rope_first": 1053,
+    "rope_last": 1076,
+    "start_expected": 1053,
+    "advances_consecutively": true,
+    "cache_position_advances": true,
+    "n_positions": 24,
+    "n_distinct": 24,
+    "decode_steps": 24,
+    "layer_calls": 900,
+    "layer_calls_expected": 900,
+    "no_recompute": true
+   }
+  ],
+  "forced_steps": 24,
+  "passed": true
+ },
+ "HG-3 renumber_decode_positions": {
+  "rows": [
+   {
+    "key": "TextVQA_VAL_0",
+    "policy": "renumber",
+    "prefill_max_pos": 286,
+    "cache_len0": 287,
+    "rope_first": 287,
+    "rope_last": 310,
+    "start_expected": 287,
+    "advances_consecutively": true,
+    "cache_position_advances": true,
+    "n_positions": 24,
+    "n_distinct": 24,
+    "decode_steps": 24,
+    "layer_calls": 900,
+    "layer_calls_expected": 900,
+    "no_recompute": true
+   },
+   {
+    "key": "TextVQA_VAL_101",
+    "policy": "renumber",
+    "prefill_max_pos": 283,
+    "cache_len0": 284,
+    "rope_first": 284,
+    "rope_last": 307,
+    "start_expected": 284,
+    "advances_consecutively": true,
+    "cache_position_advances": true,
+    "n_positions": 24,
+    "n_distinct": 24,
+    "decode_steps": 24,
+    "layer_calls": 900,
+    "layer_calls_expected": 900,
+    "no_recompute": true
+   },
+   {
+    "key": "TextVQA_VAL_201",
+    "policy": "renumber",
+    "prefill_max_pos": 287,
+    "cache_len0": 288,
+    "rope_first": 288,
+    "rope_last": 311,
+    "start_expected": 288,
+    "advances_consecutively": true,
+    "cache_position_advances": true,
+    "n_positions": 24,
+    "n_distinct": 24,
+    "decode_steps": 24,
+    "layer_calls": 900,
+    "layer_calls_expected": 900,
+    "no_recompute": true
+   },
+   {
+    "key": "TextVQA_VAL_302",
+    "policy": "renumber",
+    "prefill_max_pos": 283,
+    "cache_len0": 284,
+    "rope_first": 284,
+    "rope_last": 307,
+    "start_expected": 284,
+    "advances_consecutively": true,
+    "cache_position_advances": true,
+    "n_positions": 24,
+    "n_distinct": 24,
+    "decode_steps": 24,
+    "layer_calls": 900,
+    "layer_calls_expected": 900,
+    "no_recompute": true
+   },
+   {
+    "key": "TextVQA_VAL_403",
+    "policy": "renumber",
+    "prefill_max_pos": 287,
+    "cache_len0": 288,
+    "rope_first": 288,
+    "rope_last": 311,
+    "start_expected": 288,
+    "advances_consecutively": true,
+    "cache_position_advances": true,
+    "n_positions": 24,
+    "n_distinct": 24,
+    "decode_steps": 24,
+    "layer_calls": 900,
+    "layer_calls_expected": 900,
+    "no_recompute": true
+   },
+   {
+    "key": "TextVQA_VAL_503",
+    "policy": "renumber",
+    "prefill_max_pos": 284,
+    "cache_len0": 285,
+    "rope_first": 285,
+    "rope_last": 308,
+    "start_expected": 285,
+    "advances_consecutively": true,
+    "cache_position_advances": true,
+    "n_positions": 24,
+    "n_distinct": 24,
+    "decode_steps": 24,
+    "layer_calls": 900,
+    "layer_calls_expected": 900,
+    "no_recompute": true
+   }
+  ],
+  "forced_steps": 24,
+  "passed": true
+ },
+ "HG-4_no_frozen_position": {
+  "rows": [
+   {
+    "key": "TextVQA_VAL_4127",
+    "n": 64,
+    "first": 1054,
+    "last": 1117,
+    "contiguous": true
+   },
+   {
+    "key": "DocVQA_VAL_1077",
+    "n": 64,
+    "first": 1060,
+    "last": 1123,
+    "contiguous": true
+   },
+   {
+    "key": "DocVQA_VAL_1292",
+    "n": 64,
+    "first": 1058,
+    "last": 1121,
+    "contiguous": true
+   }
+  ],
+  "passed": true,
+  "steps": 64
+ },
+ "HG-5_d5_trio_delooped": {
+  "rows": [
+   {
+    "key": "TextVQA_VAL_4127",
+    "ids": [
+     92655,
+     306,
+     151645
+    ],
+    "expected_v1_P2": [
+     92655,
+     306,
+     151645
+    ],
+    "equals_P2": true,
+    "text": "preventent",
+    "chars": 10,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "terminated": true
+   },
+   {
+    "key": "DocVQA_VAL_1077",
+    "ids": [
+     37,
+     8264,
+     220,
+     16,
+     11,
+     220,
+     16,
+     24,
+     22,
+     17,
+     151645
+    ],
+    "expected_v1_P2": [
+     37,
+     8264,
+     220,
+     16,
+     11,
+     220,
+     16,
+     24,
+     22,
+     17,
+     151645
+    ],
+    "equals_P2": true,
+    "text": "FEB 1, 1972",
+    "chars": 11,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "terminated": true
+   },
+   {
+    "key": "DocVQA_VAL_1292",
+    "ids": [
+     7,
+     15,
+     18,
+     8,
+     220,
+     18,
+     19,
+     16,
+     220,
+     20,
+     21,
+     21,
+     19,
+     151645
+    ],
+    "expected_v1_P2": [
+     7,
+     15,
+     18,
+     8,
+     220,
+     18,
+     19,
+     16,
+     220,
+     20,
+     21,
+     21
+    ],
+    "equals_P2": true,
+    "text": "(03) 341 5664",
+    "chars": 13,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 1.0
+    },
+    "terminated": true
+   }
+  ],
+  "passed": true
+ },
+ "HG-6_previously_capped": {
+  "n_instances": 50,
+  "rows": [
+   {
+    "key": "DocVQA_VAL_1077",
+    "re_run": "C0|s0",
+    "n_tokens": 11,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 11,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "FEB 1, 1972"
+   },
+   {
+    "key": "DocVQA_VAL_1292",
+    "re_run": "C0|s0",
+    "n_tokens": 13,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 12,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 1.0
+    },
+    "text_head": "(03) 26 1078"
+   },
+   {
+    "key": "DocVQA_VAL_1400",
+    "re_run": "C0|s0",
+    "n_tokens": 8,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 7,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "$17,019"
+   },
+   {
+    "key": "DocVQA_VAL_1507",
+    "re_run": "C0|s0",
+    "n_tokens": 11,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 10,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "$30,600.00"
+   },
+   {
+    "key": "DocVQA_VAL_1615",
+    "re_run": "C1|s0",
+    "n_tokens": 6,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 13,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 1.0
+    },
+    "text_head": "William J. J."
+   },
+   {
+    "key": "DocVQA_VAL_1831",
+    "re_run": "C0|s0",
+    "n_tokens": 5,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 4,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "617C"
+   },
+   {
+    "key": "DocVQA_VAL_1938",
+    "re_run": "C0|s0",
+    "n_tokens": 15,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 14,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 0.5
+    },
+    "text_head": "(212) 986-1000"
+   },
+   {
+    "key": "DocVQA_VAL_215",
+    "re_run": "C0|s1",
+    "n_tokens": 6,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 5,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "99105"
+   },
+   {
+    "key": "DocVQA_VAL_2369",
+    "re_run": "C0|s2",
+    "n_tokens": 20,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 35,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 0.043478260869565216
+    },
+    "text_head": "1st July 2000 to 31st December 2000"
+   },
+   {
+    "key": "DocVQA_VAL_2477",
+    "re_run": "C0|s0",
+    "n_tokens": 10,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 9,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "$2,000.00"
+   },
+   {
+    "key": "DocVQA_VAL_2800",
+    "re_run": "C0|s0",
+    "n_tokens": 10,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 24,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 0.08333333333333333
+    },
+    "text_head": "GRATIS TAX REIMBURSEMENT"
+   },
+   {
+    "key": "DocVQA_VAL_323",
+    "re_run": "C0|s1",
+    "n_tokens": 6,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 5,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "18113"
+   },
+   {
+    "key": "DocVQA_VAL_3230",
+    "re_run": "C0|s0",
+    "n_tokens": 5,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 4,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "2955"
+   },
+   {
+    "key": "DocVQA_VAL_3553",
+    "re_run": "C0|s0",
+    "n_tokens": 15,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 14,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 0.5
+    },
+    "text_head": "(212) 429-3780"
+   },
+   {
+    "key": "DocVQA_VAL_3769",
+    "re_run": "C2|s1",
+    "n_tokens": 13,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 14,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 0.5
+    },
+    "text_head": "10:00-11:00 am"
+   },
+   {
+    "key": "DocVQA_VAL_3876",
+    "re_run": "C0|s0",
+    "n_tokens": 10,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 13,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 1.0
+    },
+    "text_head": "March 2, 1951"
+   },
+   {
+    "key": "DocVQA_VAL_4415",
+    "re_run": "C1|s0",
+    "n_tokens": 9,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 26,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 0.07142857142857142
+    },
+    "text_head": "DATA SOURCES - RJR TRACKER"
+   },
+   {
+    "key": "DocVQA_VAL_4846",
+    "re_run": "C0|s1",
+    "n_tokens": 7,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 6,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "100.00"
+   },
+   {
+    "key": "DocVQA_VAL_5061",
+    "re_run": "C1|s2",
+    "n_tokens": 6,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 5,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "10354"
+   },
+   {
+    "key": "DocVQA_VAL_5276",
+    "re_run": "C2|s0",
+    "n_tokens": 7,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 16,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 0.25
+    },
+    "text_head": "Trina Ricci, PhD"
+   },
+   {
+    "key": "DocVQA_VAL_754",
+    "re_run": "C0|s1",
+    "n_tokens": 7,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 6,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "40,000"
+   },
+   {
+    "key": "DocVQA_VAL_969",
+    "re_run": "C2|s0",
+    "n_tokens": 3,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 3,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "VLG"
+   },
+   {
+    "key": "OCRBench_101",
+    "re_run": "C2|s0",
+    "n_tokens": 6,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 12,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 1.0
+    },
+    "text_head": "scotttygnynn"
+   },
+   {
+    "key": "OCRBench_161",
+    "re_run": "C2|s0",
+    "n_tokens": 5,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 11,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "strichiches"
+   },
+   {
+    "key": "OCRBench_201",
+    "re_run": "C0|s1",
+    "n_tokens": 5,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 4,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "1055"
+   },
+   {
+    "key": "OCRBench_241",
+    "re_run": "C0|s0",
+    "n_tokens": 6,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 5,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "34420"
+   },
+   {
+    "key": "OCRBench_382",
+    "re_run": "C1|s0",
+    "n_tokens": 6,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 13,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 1.0
+    },
+    "text_head": "rachel bussel"
+   },
+   {
+    "key": "OCRBench_483",
+    "re_run": "C2|s0",
+    "n_tokens": 7,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 14,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 0.5
+    },
+    "text_head": "Jeananne M. M."
+   },
+   {
+    "key": "OCRBench_503",
+    "re_run": "C2|s0",
+    "n_tokens": 5,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 4,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "1956"
+   },
+   {
+    "key": "OCRBench_523",
+    "re_run": "C0|s1",
+    "n_tokens": 8,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 7,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "5-20-98"
+   },
+   {
+    "key": "OCRBench_543",
+    "re_run": "C0|s2",
+    "n_tokens": 20,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 36,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 0.041666666666666664
+    },
+    "text_head": "1st July 2000 and 31st December 2003"
+   },
+   {
+    "key": "OCRBench_583",
+    "re_run": "C0|s0",
+    "n_tokens": 6,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 5,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "10519"
+   },
+   {
+    "key": "OCRBench_603",
+    "re_run": "C2|s0",
+    "n_tokens": 5,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 4,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "2003"
+   },
+   {
+    "key": "OCRBench_704",
+    "re_run": "C0|s0",
+    "n_tokens": 9,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 11,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "08 Jun 2018"
+   },
+   {
+    "key": "OCRBench_724",
+    "re_run": "C0|s1",
+    "n_tokens": 10,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 17,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 0.2
+    },
+    "text_head": "BHpetrol1 10 Jaya"
+   },
+   {
+    "key": "OCRBench_744",
+    "re_run": "C0|s0",
+    "n_tokens": 6,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 11,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "SETAPUMPULP"
+   },
+   {
+    "key": "OCRBench_764",
+    "re_run": "C0|s1",
+    "n_tokens": 6,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 5,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "37.90"
+   },
+   {
+    "key": "OCRBench_80",
+    "re_run": "C0|s2",
+    "n_tokens": 512,
+    "terminated_by_eos": false,
+    "capped_now": true,
+    "chars": 1023,
+    "repetition": {
+     "n": 12,
+     "top_count": 169,
+     "frac": 0.1671612265084075
+    },
+    "text_head": "c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c "
+   },
+   {
+    "key": "OCRBench_805",
+    "re_run": "C0|s0",
+    "n_tokens": 5,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 4,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "3016"
+   },
+   {
+    "key": "OCRBench_845",
+    "re_run": "C1|s2",
+    "n_tokens": 5,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 5,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "964mg"
+   },
+   {
+    "key": "OCRBench_885",
+    "re_run": "C0|s0",
+    "n_tokens": 6,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 7,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "415kcal"
+   },
+   {
+    "key": "OCRBench_905",
+    "re_run": "C0|s1",
+    "n_tokens": 25,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 39,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 0.037037037037037035
+    },
+    "text_head": "$$- 6 x x = \\frac { 2 } { 3 } - 3 + 4$$"
+   },
+   {
+    "key": "OCRBench_925",
+    "re_run": "C0|s1",
+    "n_tokens": 512,
+    "terminated_by_eos": false,
+    "capped_now": true,
+    "chars": 832,
+    "repetition": {
+     "n": 12,
+     "top_count": 11,
+     "frac": 0.013414634146341463
+    },
+    "text_head": "$\\frac{9}{18}+\\frac{1}{18}+\\frac{1}{18}+\\frac{1}{18}+\\frac{1"
+   },
+   {
+    "key": "OCRBench_965",
+    "re_run": "C0|s0",
+    "n_tokens": 24,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 49,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 0.02702702702702703
+    },
+    "text_head": "$$\\frac { A D } { D G } = \\frac { B D } { D G }$$"
+   },
+   {
+    "key": "OCRBench_986",
+    "re_run": "C0|s0",
+    "n_tokens": 5,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 5,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "$ODD$"
+   },
+   {
+    "key": "TextVQA_VAL_1208",
+    "re_run": "C2|s0",
+    "n_tokens": 4,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 9,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "briscbane"
+   },
+   {
+    "key": "TextVQA_VAL_2818",
+    "re_run": "C0|s2",
+    "n_tokens": 8,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 30,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 0.05555555555555555
+    },
+    "text_head": "gundam dynasty warriors reborn"
+   },
+   {
+    "key": "TextVQA_VAL_4026",
+    "re_run": "C0|s1",
+    "n_tokens": 13,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 29,
+    "repetition": {
+     "n": 12,
+     "top_count": 1,
+     "frac": 0.058823529411764705
+    },
+    "text_head": "pont suspendu, couffoufouleux"
+   },
+   {
+    "key": "TextVQA_VAL_4127",
+    "re_run": "C0|s0",
+    "n_tokens": 3,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 10,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "preventent"
+   },
+   {
+    "key": "TextVQA_VAL_4529",
+    "re_run": "C2|s0",
+    "n_tokens": 5,
+    "terminated_by_eos": true,
+    "capped_now": false,
+    "chars": 4,
+    "repetition": {
+     "n": 12,
+     "top_count": 0,
+     "frac": 0.0
+    },
+    "text_head": "2014"
+   }
+  ],
+  "n_terminated": 48,
+  "termination_rate": 0.96,
+  "passed": true
+ },
+ "HG-7_eos_rate": {
+  "termination_rate": 0.96,
+  "baseline_rate_from_interim": {
+   "B0_B1_B2": 1.0
+  },
+  "passed": true
+ },
+ "HG-8_prefill_and_renumber_invariance": {
+  "prefill": [
+   {
+    "key": "TextVQA_VAL_0",
+    "scores_bit_identical": true,
+    "select_idx_identical": true,
+    "keep_full_identical": true,
+    "n_sym_diff_select": 0
+   },
+   {
+    "key": "TextVQA_VAL_101",
+    "scores_bit_identical": true,
+    "select_idx_identical": true,
+    "keep_full_identical": true,
+    "n_sym_diff_select": 0
+   },
+   {
+    "key": "TextVQA_VAL_201",
+    "scores_bit_identical": true,
+    "select_idx_identical": true,
+    "keep_full_identical": true,
+    "n_sym_diff_select": 0
+   },
+   {
+    "key": "TextVQA_VAL_302",
+    "scores_bit_identical": true,
+    "select_idx_identical": true,
+    "keep_full_identical": true,
+    "n_sym_diff_select": 0
+   },
+   {
+    "key": "TextVQA_VAL_403",
+    "scores_bit_identical": true,
+    "select_idx_identical": true,
+    "keep_full_identical": true,
+    "n_sym_diff_select": 0
+   },
+   {
+    "key": "TextVQA_VAL_503",
+    "scores_bit_identical": true,
+    "select_idx_identical": true,
+    "keep_full_identical": true,
+    "n_sym_diff_select": 0
+   },
+   {
+    "key": "TextVQA_VAL_604",
+    "scores_bit_identical": true,
+    "select_idx_identical": true,
+    "keep_full_identical": true,
+    "n_sym_diff_select": 0
+   },
+   {
+    "key": "TextVQA_VAL_705",
+    "scores_bit_identical": true,
+    "select_idx_identical": true,
+    "keep_full_identical": true,
+    "n_sym_diff_select": 0
+   }
+  ],
+  "renumber_decode": [
+   {
+    "key": "TextVQA_VAL_0",
+    "ids_identical": true,
+    "n": 24,
+    "first_diff": null
+   },
+   {
+    "key": "TextVQA_VAL_101",
+    "ids_identical": true,
+    "n": 24,
+    "first_diff": null
+   },
+   {
+    "key": "TextVQA_VAL_201",
+    "ids_identical": true,
+    "n": 24,
+    "first_diff": null
+   },
+   {
+    "key": "TextVQA_VAL_302",
+    "ids_identical": true,
+    "n": 24,
+    "first_diff": null
+   }
+  ],
+  "passed": true
+ },
+ "all_passed": true
+}

@@ -45,12 +45,22 @@ Position policy (prereg §2.2)
 -----------------------------
 ``preserve``  a kept token carries the position id it had in the full sequence;
               the compacted ``position_ids`` are ``sorted(kept_indices)`` and are
-              therefore not contiguous. The next generated token takes
-              ``max(position_ids) + 1``.
+              therefore not contiguous (the original token position gaps are
+              kept). The first generated token takes ``max(position_ids) + 1``
+              and every later step takes one more than the step before it.
 ``renumber``  the compacted sequence is assigned ``arange(0, L')``. This is what
               the incumbent's pre-LLM path does implicitly, so it is the policy
               that makes GDEP-vs-EADP like-for-like on positional encoding.
 PRESERVE is the primary policy; RENUMBER is a declared control on C1 only.
+
+**Decode-branch version (implementation-defect amendment, 2026-09-23).** v1's
+PRESERVE branch recomputed ``max(prefill_position_ids) + 1`` from the frozen
+prefill tensor on *every* step, so all generated tokens shared one RoPE position
+(the interim audit's D2/D5: degenerate loops that P' -- the advancing policy --
+answers correctly). v2 advances the position by one per step; ``cache_position``
+keeps following the compacted cache length in both versions, and the RENUMBER
+branch is untouched by the fix. ``ENGINE_VERSION`` below is embedded in the
+config key of every gdep arm so pre/post-fix artefacts can never share a hash.
 
 KV-cache policy (prereg §2.3)
 -----------------------------
@@ -85,6 +95,12 @@ MODE_GDEP = "gdep"
 POLICY_PRESERVE = "preserve"
 POLICY_RENUMBER = "renumber"
 
+# Decode-branch engine version, embedded in the config key of every gdep arm
+# (see the module docstring). The contaminated v1 grid records were produced
+# without this segment; corrected runs carry it, so the two generations of
+# results cannot be confused or overwritten.
+ENGINE_VERSION = "gdep_preserve_v2_advancing_rope"
+
 D_MODEL = 4096
 D_HID = 128
 N_VIS = 1024
@@ -109,6 +125,10 @@ class GDEPConfig:
     seed: int = 2                   # scorer seed
     sim_source: str = "h4"          # only "h4" implemented for gdep
     tag: str = "C1"
+    # gdep arms carry the decode-branch version in their key; full/prellm arms
+    # do not (their code is untouched by the fix, and their stored hashes must
+    # stay reproducible).
+    engine_version: str = ENGINE_VERSION
     # Correctness-probe switch. When the selector keeps every token there is
     # nothing to compact, so the engine continues the layer loop in one pass and
     # the K = 1024 arm is provably the identity. `force_split` restores the
@@ -117,8 +137,11 @@ class GDEPConfig:
     force_split: bool = False
 
     def key(self) -> str:
-        return (f"{self.tag}|{self.mode}|n{self.n_arm}|s{self.seed}|"
-                f"{self.selector}|T{self.budget}|{self.pos_policy}")
+        k = (f"{self.tag}|{self.mode}|n{self.n_arm}|s{self.seed}|"
+             f"{self.selector}|T{self.budget}|{self.pos_policy}")
+        if self.mode == MODE_GDEP:
+            k += f"|ev{self.engine_version}"
+        return k
 
     def hash(self) -> str:
         import hashlib
@@ -393,7 +416,14 @@ class GDEPEngine:
 
             def _prune():
                 return pruner(vis, text_llm, text_seq, prep["gthw"])
-            pruned, sizes = _step("selector_ms", _prune)
+            # Amendment: the pruner call is NOT event-bracketed here. Its own
+            # CudaTimer already brackets scoring and selection internally, and
+            # an earlier version both set selector_ms from that timer and added
+            # an outer _step event span for the same call -- double-counting it
+            # (B1 "facility 85.8 ms" vs C3's 41.4 ms was this artefact, not
+            # host drift) and pushing the event sum above the wall TTFT. The
+            # internal timer is the single selector window for prellm arms.
+            pruned, sizes = _prune()
             st = dict(pruner.last_timing)
             info["stage_timing"] = st
             if timings is not None:
@@ -541,8 +571,13 @@ class GDEPEngine:
         preserve = (cfg.mode == MODE_GDEP and cfg.pos_policy == POLICY_PRESERVE)
 
         out = []
-        used_positions = []          # read-only record for the interim audit
+        used_positions = []          # read-only record: (cache_position, rope pos)
         cur = int(torch.argmax(logits, dim=-1).item())
+        # gdep_preserve_v2_advancing_rope: the first generated token takes
+        # max(prefill position)+1 and every later step takes one more. v1
+        # recomputed max+1 from the frozen prefill tensor every step, issuing
+        # every generated token the same RoPE position (interim audit D2/D5).
+        next_pos = int(pos1.max().item()) + 1 if preserve else 0
         for _ in range(max_new_tokens):
             out.append(cur)
             if cur in eos and not ignore_eos:
@@ -550,7 +585,11 @@ class GDEPEngine:
             cur_len = int(cache.get_seq_length(0))
             n_ctx = torch.cat([n_ctx, n_ctx.new_ones(1, 1)], dim=1)
             cp = torch.tensor([cur_len], device=dev)
-            nxt = (int(pos1.max().item()) + 1) if preserve else cur_len
+            if preserve:
+                nxt = next_pos
+                next_pos += 1
+            else:
+                nxt = cur_len
             used_positions.append((int(cur_len), int(nxt)))
             pos3 = torch.tensor([[[nxt]]], device=dev).expand(3, 1, 1)
             h = embed(torch.tensor([[cur]], device=dev))

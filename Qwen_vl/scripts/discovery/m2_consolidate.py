@@ -107,15 +107,22 @@ def main():
                                     n_instances=acc["n_instances"]))
 
     # ---------------- seed means -------------------------------------------
+    def valid(rec):
+        """Implementation-defect amendment: records explicitly flagged with a
+        validity marker (INVALID_*) are excluded from every table, CI, Pareto
+        reading and criterion, but remain in the artefact file."""
+        return rec is not None and "error" not in rec and not str(
+            rec.get("validity", "")).startswith("INVALID")
+
     def seed_arm(arm):
         rs = [arms.get(f"{arm}|s{s}") for s in SEEDS]
-        if any(r is None or "error" in r for r in rs):
+        if any(not valid(r) for r in rs):
             return None
         return rs
 
     table = {}
     for key, rec in arms.items():
-        if "error" in rec:
+        if not valid(rec):
             continue
         table[key] = dict(arm=rec["arm"], seed=rec["seed"],
                           macro_pct=rec["macro_pct"],
@@ -126,19 +133,19 @@ def main():
     audit["seed_means"] = acc.get("seed_means")
     audit["summary_vs_B1"] = acc.get("summary_vs_B1")
 
-    if "B1" not in arms or "error" in arms["B1"]:
+    if "B1" not in arms or not valid(arms["B1"]):
         dump_json(args.out, audit)
         raise SystemExit("B1 did not run; nothing can be evaluated")
 
     b1, b0 = arms["B1"], arms.get("B0")
     b1_hits = hits_of(b1)
-    b0_hits = hits_of(b0) if b0 and "error" not in b0 else None
+    b0_hits = hits_of(b0) if valid(b0) else None
     b1_macro = macro_of(b1)
 
     # ---------------- error transitions ------------------------------------
     trans = {}
     for key, rec in arms.items():
-        if "error" in rec or rec["arm"] in ("B1",):
+        if not valid(rec) or rec["arm"] in ("B1",):
             continue
         t = dict(vs_B1=transitions(hits_of(rec), b1_hits))
         if b0_hits is not None:
@@ -229,7 +236,7 @@ def main():
             peak_delta_mb=e.get("peak_delta_over_load_mb"),
             peak_delta_reduction_vs_B1=mem_red_delta,
             vs_B0_macro_pts=(macro_pts - macro_of(b0) * 100)
-            if b0 and "error" not in b0 else None,
+            if valid(b0) else None,
             primary_success=bool(c1_), strong_compression_success=bool(c2_),
             accuracy_led_success=bool(c3_))
     audit["criteria"] = crit
@@ -267,7 +274,7 @@ def main():
     # distribution, macro excluding capped runs.
     deg = {}
     for key, r in arms.items():
-        if "error" in r or "predictions" not in r:
+        if not valid(r) or "predictions" not in r:
             continue
         L = np.array([len(x) for x in r["predictions"]])
         h = np.concatenate([np.asarray(r["per_benchmark"][ds]["hits"], float)
