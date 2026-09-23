@@ -34,8 +34,7 @@ def main():
     by_key = {c["key"]: c for c in cases}
 
     fig, ax = plt.subplots(2, 3, figsize=(15, 9),
-                           gridspec_kw=dict(width_ratios=[1.1, 1.1, 1.1,
-                                                           1.1, 1.4, 1.4]))
+                           gridspec_kw=dict(width_ratios=[1.1, 1.1, 1.2]))
     # --- A: three example heatmaps ------------------------------------------
     picks = []
     for ds in C.DS_ALL:
@@ -79,10 +78,11 @@ def main():
     # --- C: interaction share -----------------------------------------------
     a = ax[1, 1]
     xs = np.arange(len(C.DS_ALL))
-    vals = [ana["part_a"][ds]["interaction_share"]["mean"] for ds in C.DS_ALL]
-    lo = [v - ana["part_a"][ds]["interaction_share"]["lo"]
+    vals = [ana["part_a"][ds]["resolved"]["interaction_share"]["mean"]
+            for ds in C.DS_ALL]
+    lo = [v - ana["part_a"][ds]["resolved"]["interaction_share"]["lo"]
           for ds, v in zip(C.DS_ALL, vals)]
-    hi = [ana["part_a"][ds]["interaction_share"]["hi"] - v
+    hi = [ana["part_a"][ds]["resolved"]["interaction_share"]["hi"] - v
           for ds, v in zip(C.DS_ALL, vals)]
     a.bar(xs, vals, yerr=[lo, hi], color=[colors[ds] for ds in C.DS_ALL],
           alpha=0.8)

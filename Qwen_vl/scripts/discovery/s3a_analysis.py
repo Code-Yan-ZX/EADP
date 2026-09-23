@@ -467,6 +467,58 @@ def part_d(rescue_path):
                 base_wrong_rescuable_keys=sorted(r.keys()))
 
 
+def part_d_stop(rescue_path, nll_path):
+    """Recover the conditional-greedy gain trajectory.
+
+    The per-step gain of the greedy is exactly the NLL change of that step, so
+    the cumulative sum telescopes to dL(S_m). From the frozen trajectories we
+    can ask the deployable question the fixed k=8/16 endpoint cannot:
+    how many swaps carry real conditional gain before the pool runs dry, and
+    what is the best achievable stopping point -- even for an ORACLE that gets
+    to stop when it wants (which the k=8/16 arms do not)."""
+    if not os.path.exists(rescue_path):
+        return None
+    r = json.load(open(rescue_path))["runs"]
+    nll = json.load(open(nll_path))
+    rows = []
+    for key, v in r.items():
+        gains = [s["gain"] for s in v.get("cond_steps", [])]
+        if not gains:
+            continue
+        floor = next(rr["L"] for rr in nll["meas"][key] if rr["kind"] == "floor")
+        cum = np.cumsum(gains)
+        kstar = int(np.argmax(cum)) + 1 if len(cum) else 0
+        npos = int(sum(1 for g in gains if g >= 3 * max(floor, 1e-9)))
+        rows.append(dict(key=key, ds=v["ds"], floor=floor, gains=gains,
+                         dL_k8=v.get("cond_k8", {}).get("dL"),
+                         dL_k16=v.get("cond_k16", {}).get("dL"),
+                         kstar=kstar, dL_star=float(cum[kstar - 1]) if kstar else 0.0,
+                         n_steps_ge_3floor=npos,
+                         gain1=float(gains[0]),
+                         unary_dL_k8=v.get("unary_k8", {}).get("dL"),
+                         unary_dL_k16=v.get("unary_k16", {}).get("dL")))
+    out = {"per_instance": rows}
+    for ds in C.DS_ALL:
+        sub = [x for x in rows if x["ds"] == ds]
+        if not sub:
+            continue
+        out[ds] = dict(
+            n=len(sub),
+            gain_step1=bootstrap_ci([x["gain1"] for x in sub]),
+            dL_oracle_stop=bootstrap_ci([x["dL_star"] for x in sub]),
+            kstar=[x["kstar"] for x in sub],
+            n_steps_resolved=bootstrap_ci(
+                [x["n_steps_ge_3floor"] for x in sub]),
+            dL_cond_k8=bootstrap_ci([x["dL_k8"] for x in sub if x["dL_k8"] is not None]),
+            dL_unary_k8=bootstrap_ci(
+                [x["unary_dL_k8"] for x in sub if x["unary_dL_k8"] is not None]),
+            dL_cond_k16=bootstrap_ci(
+                [x["dL_k16"] for x in sub if x["dL_k16"] is not None]),
+            dL_unary_k16=bootstrap_ci(
+                [x["unary_dL_k16"] for x in sub if x["unary_dL_k16"] is not None]))
+    return out
+
+
 def main():
     cases = json.load(open(os.path.join(OUT, C.CASES_JSON)))["cases"]
     nll = json.load(open(os.path.join(OUT, "s3a_nll.json")))
@@ -485,6 +537,8 @@ def main():
     rep["part_c"] = part_c(mats, cases)
     rep["removal_identity"] = removal_identity_check(nll)
     rep["part_d"] = part_d(os.path.join(OUT, "s3a_rescue.json"))
+    rep["part_d_stop"] = part_d_stop(os.path.join(OUT, "s3a_rescue.json"),
+                                     os.path.join(OUT, "s3a_nll.json"))
     rep["budget_check"] = budget_check(mats)
     # correlation of add-delta with the removed token's teacher rank
     # (base context): tests "the effect is really about what got dropped"
@@ -571,11 +625,34 @@ def _digest(rep):
         for ds in C.DS_ALL:
             t = rep["part_d"]["per_ds"][ds]
             print(f"  {ds} n={t['n']}")
-            for arm in ("unary_k16", "cond_k16", "spatial_k16", "random_k16"):
+            for arm in ("unary_k8", "cond_k8", "spatial_k8", "random_k8",
+                        "unary_k16", "cond_k16", "spatial_k16", "random_k16"):
                 if arm in t:
                     print(f"    {arm:11s} dL={t[arm]['dL']:+.3f} "
                           f"hit={t[arm]['hit']:.2f} "
                           f"rescued={t[arm]['rescued']}/{t[arm]['n']}")
+            pc = t.get("cond_k8_minus_unary_k8")
+            pf = t.get("cond_k16_minus_unary_k16")
+            for pc_, k_ in ((pc, "k8"), (pf, "k16")):
+                if pc_:
+                    print(f"    paired cond-unary {k_}: dL "
+                          f"{pc_['dL']['mean']:+.3f} "
+                          f"[{pc_['dL']['lo']:+.3f},{pc_['dL']['hi']:+.3f}] "
+                          f"rescue {pc_['rescue']['mean']:+.3f} "
+                          f"[{pc_['rescue']['lo']:+.2f},"
+                          f"{pc_['rescue']['hi']:+.2f}]")
+    if rep.get("part_d_stop"):
+        print("\nPart D trajectory (oracle-stoppable greedy):")
+        for ds in C.DS_ALL:
+            v = rep["part_d_stop"].get(ds)
+            if not v:
+                continue
+            print(f"  {ds} n={v['n']}: step1 gain {v['gain_step1']['mean']:+.3f} "
+                  f"[{v['gain_step1']['lo']:+.3f},{v['gain_step1']['hi']:+.3f}]  "
+                  f"resolved-gain steps {v['n_steps_resolved']['mean']:.1f}  "
+                  f"kstar {v['kstar']}  dL@kstar {v['dL_oracle_stop']['mean']:+.3f} "
+                  f"vs cond_k8 {v['dL_cond_k8']['mean']:+.3f} "
+                  f"unary_k8 {v['dL_unary_k8']['mean']:+.3f}")
 
 
 if __name__ == "__main__":
