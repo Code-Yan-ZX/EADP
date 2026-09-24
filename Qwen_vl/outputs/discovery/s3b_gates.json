@@ -1,0 +1,155 @@
+{
+ "B1_engine_select": {
+  "rows": [
+   {
+    "key": "TextVQA_VAL_0",
+    "identical": true,
+    "symdiff": 0
+   },
+   {
+    "key": "TextVQA_VAL_101",
+    "identical": true,
+    "symdiff": 0
+   },
+   {
+    "key": "TextVQA_VAL_201",
+    "identical": true,
+    "symdiff": 0
+   }
+  ],
+  "passed": true
+ },
+ "B2_s2c2_reuse": {
+  "rows": [
+   {
+    "key": "OCRBench_543",
+    "arm": "teacher:1|OCRBench",
+    "k": 1,
+    "text_match": true,
+    "hit_match": true,
+    "pred": "14 years",
+    "pred_ref": "14 years",
+    "hit": 1.0,
+    "hit_ref": 1.0
+   },
+   {
+    "key": "OCRBench_543",
+    "arm": "teacher:2|OCRBench",
+    "k": 2,
+    "text_match": true,
+    "hit_match": true,
+    "pred": "14 years",
+    "pred_ref": "14 years",
+    "hit": 1.0,
+    "hit_ref": 1.0
+   },
+   {
+    "key": "DocVQA_VAL_2154",
+    "arm": "teacher:3|DocVQA_VAL",
+    "k": 3,
+    "text_match": true,
+    "hit_match": true,
+    "pred": "Postcards",
+    "pred_ref": "Postcards",
+    "hit": 1.0,
+    "hit_ref": 1.0
+   },
+   {
+    "key": "DocVQA_VAL_2154",
+    "arm": "teacher:4|DocVQA_VAL",
+    "k": 4,
+    "text_match": true,
+    "hit_match": true,
+    "pred": "Postcards",
+    "pred_ref": "Postcards",
+    "hit": 1.0,
+    "hit_ref": 1.0
+   },
+   {
+    "key": "TextVQA_VAL_201",
+    "arm": "teacher:5|TextVQA_VAL",
+    "k": 5,
+    "text_match": true,
+    "hit_match": true,
+    "pred": "jr highway bus",
+    "pred_ref": "jr highway bus",
+    "hit": 1.0,
+    "hit_ref": 1.0
+   },
+   {
+    "key": "TextVQA_VAL_201",
+    "arm": "teacher:6|TextVQA_VAL",
+    "k": 6,
+    "text_match": true,
+    "hit_match": true,
+    "pred": "jr highway bus",
+    "pred_ref": "jr highway bus",
+    "hit": 1.0,
+    "hit_ref": 1.0
+   }
+  ],
+  "passed": true
+ },
+ "B3_harness_equiv": {
+  "rows": [
+   {
+    "key": "TextVQA_VAL_0",
+    "text_match": true,
+    "pred": "dakota",
+    "pred_s3a": "dakota"
+   },
+   {
+    "key": "TextVQA_VAL_101",
+    "text_match": true,
+    "pred": "yes",
+    "pred_s3a": "yes"
+   },
+   {
+    "key": "TextVQA_VAL_201",
+    "text_match": true,
+    "pred": "jr highway bus",
+    "pred_s3a": "jr highway bus"
+   },
+   {
+    "key": "TextVQA_VAL_302",
+    "text_match": true,
+    "pred": "boston to tokyo",
+    "pred_s3a": "boston to tokyo"
+   },
+   {
+    "key": "TextVQA_VAL_403",
+    "text_match": true,
+    "pred": "2f85",
+    "pred_s3a": "2f85"
+   },
+   {
+    "key": "TextVQA_VAL_503",
+    "text_match": true,
+    "pred": "free",
+    "pred_s3a": "free"
+   }
+  ],
+  "passed": true
+ },
+ "B4_determinism": {
+  "L_equal": true,
+  "text_equal": true,
+  "passed": true
+ },
+ "B5_delivery": {
+  "rows": [
+   {
+    "key": "TextVQA_VAL_101",
+    "max_abs_diff": 0.0,
+    "n_visual": 256
+   },
+   {
+    "key": "TextVQA_VAL_201",
+    "max_abs_diff": 0.0,
+    "n_visual": 256
+   }
+  ],
+  "passed": true
+ },
+ "all_passed": true
+}
