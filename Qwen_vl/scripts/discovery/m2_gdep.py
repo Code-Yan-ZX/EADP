@@ -378,6 +378,16 @@ class GDEPEngine:
             if timings is None:
                 return
             torch.cuda.synchronize()
+            # M3: the audit-and-correct pruner brackets its own work with an
+            # event pair and hands it over UNREAD, so the miss stage never
+            # forces a second sync inside the timed region (amendment §3's
+            # lesson: a window that is counted twice is as wrong as one that is
+            # counted zero times).  Read here, under the single sync.
+            ev = getattr(self.pruner, "last_miss_events", None)
+            if ev is not None:
+                timings["miss_ms"] = (timings.get("miss_ms", 0.0)
+                                      + ev[0].elapsed_time(ev[1]))
+                self.pruner.last_miss_events = None
             for n, a, b in _events:
                 timings[n] = timings.get(n, 0.0) + a.elapsed_time(b)
 
@@ -631,12 +641,25 @@ def jsonable(o):
         return o.item()
     if isinstance(o, np.ndarray):
         return o.tolist()
+    if isinstance(o, torch.Tensor):
+        return o.detach().cpu().tolist()
     return o
 
 
 def dump_json(name: str, obj) -> str:
+    """Write via a temp file + rename.
+
+    The per-arm checkpoint dump runs after every arm, so a crash during the
+    write used to leave a half-written artefact and destroy every arm already
+    recorded in it (M3 session B lost 13 completed arms that way).  os.replace
+    is atomic on POSIX: the artefact is either the old one or the new one.
+    """
     path = os.path.join(OUTPUT_DIR, name)
-    with open(path, "w", encoding="utf-8") as f:
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(jsonable(obj), f, indent=1)
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(tmp, path)
     print(f"[saved] {name}")
     return path

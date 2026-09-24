@@ -1,0 +1,248 @@
+{
+ "seed": 2,
+ "features": [
+  "imp",
+  "fused",
+  "glob",
+  "loc",
+  "imp_pre",
+  "red_s0",
+  "red_all",
+  "nn_drop",
+  "nb_mean",
+  "nb_max",
+  "nb_std",
+  "nb_mean_f",
+  "x",
+  "y",
+  "cos_s0c",
+  "cos_top64c",
+  "vis_norm",
+  "rank_imp",
+  "loc_max",
+  "loc_top5",
+  "loc_std",
+  "nb_cos"
+ ],
+ "pos_k": {
+  "loose": 256,
+  "strict": 64
+ },
+ "r_grid": [
+  8,
+  16,
+  32
+ ],
+ "head_decay": 16.0,
+ "n_neg": 256,
+ "n_fit": 240,
+ "n_val": 60,
+ "n_test": 150,
+ "configs": {
+  "strict|z0": {
+   "target": "strict",
+   "per_instance_z": false,
+   "best_epoch": 10,
+   "val": {
+    "overlap": {
+     "8": 0.26458333333333334,
+     "16": 0.23229166666666667,
+     "32": 0.24791666666666667
+    },
+    "recall": {
+     "8": 0.6083333333333333,
+     "16": 0.4510416666666667,
+     "32": 0.34375
+    },
+    "chance_overlap": 0.020833333333333332
+   },
+   "test_posthoc": {
+    "overlap": {
+     "8": 0.2783333333333333,
+     "16": 0.24625,
+     "32": 0.2504166666666667
+    },
+    "recall": {
+     "8": 0.6133333333333333,
+     "16": 0.45166666666666666,
+     "32": 0.341875
+    },
+    "chance_overlap": 0.020833333333333332
+   },
+   "train_seconds": 23.467536687850952,
+   "note": "test_posthoc is descriptive only; selection was on val overlap@16"
+  },
+  "strict|z1": {
+   "target": "strict",
+   "per_instance_z": true,
+   "best_epoch": 20,
+   "val": {
+    "overlap": {
+     "8": 0.25625,
+     "16": 0.23125,
+     "32": 0.246875
+    },
+    "recall": {
+     "8": 0.5895833333333333,
+     "16": 0.43125,
+     "32": 0.328125
+    },
+    "chance_overlap": 0.020833333333333332
+   },
+   "test_posthoc": {
+    "overlap": {
+     "8": 0.2683333333333333,
+     "16": 0.22666666666666666,
+     "32": 0.23166666666666666
+    },
+    "recall": {
+     "8": 0.5708333333333333,
+     "16": 0.40208333333333335,
+     "32": 0.3020833333333333
+    },
+    "chance_overlap": 0.020833333333333332
+   },
+   "train_seconds": 25.432315826416016,
+   "note": "test_posthoc is descriptive only; selection was on val overlap@16"
+  },
+  "loose|z0": {
+   "target": "loose",
+   "per_instance_z": false,
+   "best_epoch": 10,
+   "val": {
+    "overlap": {
+     "8": 0.23958333333333334,
+     "16": 0.209375,
+     "32": 0.23072916666666668
+    },
+    "recall": {
+     "8": 0.56875,
+     "16": 0.43125,
+     "32": 0.33541666666666664
+    },
+    "chance_overlap": 0.020833333333333332
+   },
+   "test_posthoc": {
+    "overlap": {
+     "8": 0.245,
+     "16": 0.20916666666666667,
+     "32": 0.22354166666666667
+    },
+    "recall": {
+     "8": 0.5683333333333334,
+     "16": 0.3975,
+     "32": 0.306875
+    },
+    "chance_overlap": 0.020833333333333332
+   },
+   "train_seconds": 26.922998905181885,
+   "note": "test_posthoc is descriptive only; selection was on val overlap@16"
+  },
+  "loose|z1": {
+   "target": "loose",
+   "per_instance_z": true,
+   "best_epoch": 15,
+   "val": {
+    "overlap": {
+     "8": 0.23958333333333334,
+     "16": 0.20625,
+     "32": 0.22552083333333334
+    },
+    "recall": {
+     "8": 0.5666666666666667,
+     "16": 0.4322916666666667,
+     "32": 0.3203125
+    },
+    "chance_overlap": 0.020833333333333332
+   },
+   "test_posthoc": {
+    "overlap": {
+     "8": 0.24333333333333335,
+     "16": 0.20958333333333334,
+     "32": 0.21770833333333334
+    },
+    "recall": {
+     "8": 0.5566666666666666,
+     "16": 0.3908333333333333,
+     "32": 0.29020833333333335
+    },
+    "chance_overlap": 0.020833333333333332
+   },
+   "train_seconds": 28.501127004623413,
+   "note": "test_posthoc is descriptive only; selection was on val overlap@16"
+  },
+  "head|z0": {
+   "target": "head",
+   "per_instance_z": false,
+   "best_epoch": 90,
+   "val": {
+    "overlap": {
+     "8": 0.004166666666666667,
+     "16": 0.00625,
+     "32": 0.008854166666666666
+    },
+    "recall": {
+     "8": 0.014583333333333334,
+     "16": 0.016666666666666666,
+     "32": 0.013020833333333334
+    },
+    "chance_overlap": 0.020833333333333332
+   },
+   "test_posthoc": {
+    "overlap": {
+     "8": 0.0,
+     "16": 0.0020833333333333333,
+     "32": 0.005208333333333333
+    },
+    "recall": {
+     "8": 0.01,
+     "16": 0.009583333333333333,
+     "32": 0.009583333333333333
+    },
+    "chance_overlap": 0.020833333333333332
+   },
+   "train_seconds": 42.89962601661682,
+   "note": "test_posthoc is descriptive only; selection was on val overlap@16"
+  },
+  "head|z1": {
+   "target": "head",
+   "per_instance_z": true,
+   "best_epoch": 65,
+   "val": {
+    "overlap": {
+     "8": 0.0020833333333333333,
+     "16": 0.007291666666666667,
+     "32": 0.009375
+    },
+    "recall": {
+     "8": 0.01875,
+     "16": 0.015625,
+     "32": 0.0140625
+    },
+    "chance_overlap": 0.020833333333333332
+   },
+   "test_posthoc": {
+    "overlap": {
+     "8": 0.0,
+     "16": 0.004166666666666667,
+     "32": 0.008333333333333333
+    },
+    "recall": {
+     "8": 0.008333333333333333,
+     "16": 0.015833333333333335,
+     "32": 0.016458333333333332
+    },
+    "chance_overlap": 0.020833333333333332
+   },
+   "train_seconds": 38.846428871154785,
+   "note": "test_posthoc is descriptive only; selection was on val overlap@16"
+  }
+ },
+ "selected": {
+  "config": "strict|z0",
+  "target": "strict",
+  "per_instance_z": false,
+  "val_overlap16": 0.23229166666666667,
+  "selection_rule": "argmax val overlap@16 over the 6 pilot configs"
+ }
+}

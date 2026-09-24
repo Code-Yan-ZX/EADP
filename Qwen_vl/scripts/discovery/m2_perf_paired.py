@@ -72,9 +72,26 @@ ARMS = [
          policy=POLICY_RENUMBER, label="GDEP n=960 topk@256, RENUMBER"),
 ]
 
+# M3 arms.  Kept OUT of the default ARMS on purpose: the amendment's record is
+# five arms over 120 blocks, and silently changing that set would change what
+# `m2_perf_paired.json` means if the M2 benchmark were ever re-run.  Select
+# these with `--tags MG OR`.
+M3_ARMS = [
+    # The pre-registered primary MissGuard arm, measured against B2 in the same
+    # block: the within-block TTFT contrast MG - B2 is the only number that
+    # includes every host-side cost of the audit.
+    dict(tag="MG", mode=MODE_PRELLM, n_arm=None, seed=None, selector="block8",
+         policy=None, student="m3_miss",
+         miss=dict(source="learned", r=16, rule="lowimp"),
+         label="MissGuard learned r=16 lowimp (pre-LLM)"),
+    dict(tag="OR", mode=MODE_PRELLM, n_arm=None, seed=None, selector="block8",
+         policy=None, miss=dict(source="teacher", r=16, rule="lowimp"),
+         label="Oracle-Miss r=16 lowimp (teacher rescue)"),
+]
+
 STAGE_KEYS = ["image_preprocess_ms", "vision_encoder_ms", "eadp_scoring_ms",
               "selector_ms", "L0_L4_ms", "scorer_ms", "token_compaction_ms",
-              "llm_forward_ms"]
+              "miss_ms", "llm_forward_ms"]
 MODEL_ONLY_KEYS = [k for k in STAGE_KEYS if k != "image_preprocess_ms"]
 
 
@@ -83,7 +100,27 @@ def build_engine(model, arm):
                      pos_policy=arm["policy"] or POLICY_PRESERVE,
                      n_arm=arm["n_arm"] or 240, seed=arm["seed"] or 0,
                      tag=arm["tag"])
-    return GDEPEngine.from_checkpoint(cfg, model=model, max_new_tokens=32)
+    eng = GDEPEngine.from_checkpoint(cfg, model=model, max_new_tokens=32)
+    if arm.get("miss") is not None:                     # M3: audit-and-correct
+        from m3_common import install_missguard
+        miss = dict(arm["miss"])
+        if miss.get("source") == "learned":
+            import numpy as np
+            ck = torch.load(os.path.join(OUTPUT_DIR, f"{arm['student']}.pt"),
+                            map_location="cpu", weights_only=False)
+            from m3_common import MissStudent, feature_index
+            st = MissStudent(ck["d_hand"], ck["d_vis"])
+            st.load_state_dict(ck["state_dict"])
+            st.eval().to(next(model.model.parameters()).device)
+            miss.update(student=st,
+                        mu_hand=torch.from_numpy(np.asarray(ck["mu_hand"], np.float32)).to(st.proj_v.weight.device),
+                        sd_hand=torch.from_numpy(np.asarray(ck["sd_hand"], np.float32)).to(st.proj_v.weight.device),
+                        mu_vis=torch.from_numpy(np.asarray(ck["mu_vis"], np.float32)).to(st.proj_v.weight.device),
+                        sd_vis=torch.from_numpy(np.asarray(ck["sd_vis"], np.float32)).to(st.proj_v.weight.device),
+                        feature_idx=feature_index(ck["features"]).to(st.proj_v.weight.device),
+                        per_instance_z=bool(ck["per_instance_z"]))
+        install_missguard(eng, model, miss)
+    return eng
 
 
 def timed_request(eng, msg, ds_name, decode_tokens):
@@ -152,6 +189,10 @@ def stage(model, args):
     engines = {}
     for arm in ARMS:
         engines[arm["tag"]] = build_engine(model, arm)
+        m = arm.get("miss") or {}
+        if m.get("source") == "teacher":
+            from m3_common import load_teacher
+            engines[arm["tag"]].pruner.miss["teacher"] = load_teacher()[key0]
 
     rng = random.Random(args.seed)
     boot = np.random.default_rng(args.seed + 1)
@@ -262,7 +303,16 @@ def main():
     ap.add_argument("--decode-tokens", type=int, default=32)
     ap.add_argument("--seed", type=int, default=20260923)
     ap.add_argument("--tag", default="m2_perf_paired")
+    ap.add_argument("--tags", nargs="+", default=None,
+                    help="restrict the arm set by tag (default: the whole ARMS)")
     args = ap.parse_args()
+    if args.tags:
+        global ARMS
+        pool = ARMS + M3_ARMS
+        ARMS = [a for a in pool if a["tag"] in args.tags]
+        missing = set(args.tags) - {a["tag"] for a in pool}
+        if missing:
+            raise SystemExit(f"unknown arm tag(s): {sorted(missing)}")
     model = common.load_model(eadp_model_name(256, 0.5, 2.0), max_new_tokens=32)
     model.model.eval()
     stage(model, args)

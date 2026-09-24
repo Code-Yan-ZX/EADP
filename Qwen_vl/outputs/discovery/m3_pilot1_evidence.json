@@ -1,0 +1,32 @@
+{
+ "note": "M3-v0 pilot session 1, before the 3-D sim fix; learned arms crashed. Kept as the first oracle measurement.",
+ "gate_identity": "PASS 150/150 hits, 150/150 prediction strings vs stored B2",
+ "arms": {
+  "MG0": 59.878,
+  "OR-lowimp-r16": 73.275,
+  "OR-teacher-r16": 73.474,
+  "MG-lowimp-r16": "CRASH 0.2",
+  "MG-maxred-r16": "CRASH 0.2",
+  "MG-combo-r16": "CRASH 0.2",
+  "OR-maxred-r16": "CRASH 0.2",
+  "OR-combo-r16": "CRASH 0.2",
+  "RND-combo-r16": "CRASH 0.2"
+ },
+ "per_benchmark": {
+  "OR-lowimp-r16": {
+   "TextVQA_VAL": 75.4,
+   "DocVQA_VAL": 76.426,
+   "OCRBench": 68.0
+  },
+  "OR-teacher-r16": {
+   "TextVQA_VAL": 77.4,
+   "DocVQA_VAL": 79.023,
+   "OCRBench": 64.0
+  },
+  "B2": {
+   "TextVQA_VAL": 65.4,
+   "DocVQA_VAL": 60.235,
+   "OCRBench": 54.0
+  }
+ }
+}

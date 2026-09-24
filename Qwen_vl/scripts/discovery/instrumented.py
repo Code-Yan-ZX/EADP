@@ -367,6 +367,13 @@ class TimedEADPPruner(VisualTokenPruner):
         self.selector_kwargs = dict(selector_kwargs or {})
         self.sim_mode = sim_mode
         self.capture = capture
+        # `capture` keeps CPU copies of the score-map intermediates for offline
+        # analysis and costs ~0.5 ms.  `keep_gpu` keeps the SAME tensors on the
+        # device they were produced on, so a consumer that only needs
+        # reductions (M3's audit features) never pays a host round-trip.  Both
+        # are off by default and neither changes a single returned value.
+        self.keep_gpu = False
+        self.last_gpu = {}
         self.last_timing = {}
         self.last_capture = {}
 
@@ -436,6 +443,18 @@ class TimedEADPPruner(VisualTokenPruner):
         importance = importance ** self.beta
         timer.stop(STAGE_POLAR)
 
+        if self.keep_gpu:
+            self.last_gpu.update(
+                global_sim=global_sim, local_sim=local_sim, fused=text_sim,
+                importance=importance, importance_post_smooth=pre_polar,
+                # The RAW per-instruction-token similarity, before the entropy
+                # filter and the weighted mean that collapse it into
+                # `local_sim`.  M3's audit reads it to ask a question EADP's
+                # aggregate cannot: does this visual token match SOME single
+                # instruction token sharply, rather than many of them mildly?
+                local_sim_all=local_sim_all,
+            )
+
         if self.capture:
             # text-side entropy, exactly as used by the entropy filter
             sim_probs = torch.softmax(local_sim_all * 100.0, dim=1)
@@ -498,6 +517,10 @@ class TimedEADPPruner(VisualTokenPruner):
                     select_idx=select_idx.detach().cpu(),
                     selector=self.selector_name,
                 )
+            if self.keep_gpu:
+                self.last_gpu.update(sim_matrix=sim_matrix.detach(),
+                                     select_idx=select_idx.detach(),
+                                     image_features=img_feats.detach())
 
             select_idx_sorted = select_idx[0].sort().values
             pruned_feats = img_feats[select_idx_sorted]
