@@ -455,14 +455,16 @@ features**. Three measurements say so, independently of each other:
 
 * **The in-sample ceiling is architecture-independent.** v0 (274 k params,
   token-local, Top-64 objective) fits the training rows to 0.2919; v2 (up to
-  1334 k, query-conditioned, head objective) fits them to 0.2961. Two very
-  different models, one number. The limit is the mapping from pre-LLM features
-  to the teacher's head, not the model that has to learn it.
+  1334 k, query-conditioned, head objective) fits them to 0.2930 — 0.3119 under
+  the regularised regime. Two very different models, one number. The limit is
+  the mapping from pre-LLM features to the teacher's head, not the model that
+  has to learn it.
 * **The base selector's own score is orthogonal to the head.** `imp` scores
   0.0219 — chance, to four decimals. What the auditor must find is not a
   re-expression of anything EADP already computes.
-* **More structure makes it slightly worse, not better.** Every added block
-  costs capacity that 240 images cannot pay for and buys nothing back.
+* **Neither more capacity nor more structure changes it.** Every added block
+  costs parameters that 240 images cannot pay for, and the A/B/C spread stays
+  inside the noise in both training regimes.
 
 This is the fourth independent time this project has landed on the same wall —
 after S2-C2 ("no cheap property identifies the valuable tokens"), S3-B
@@ -477,7 +479,7 @@ same in-sample ceiling. A different architecture is not the next thing to try.
 
 `v0_randinit` — the v0 architecture with **untrained** weights, same features,
 same standardisers — already scores **0.0906** on val, 4.3× chance. The v2
-architecture at init scores 0.0206, exactly chance. Both reach ~0.29 in-sample
+architecture at init scores 0.0236, exactly chance. Both reach ~0.29 in-sample
 after training, so v2 actually learns *more* from training (+0.187) than v0
 does (+0.146) — it simply starts from a floor of zero.
 
@@ -512,9 +514,9 @@ teacher rank 74–132 toward the true top-16?**
 rescue sits at mean teacher rank 103.8 with `hw@16` 0.1412; every one of the 27
 v2 cells sits at mean rank 231–290 with `hw@16` 0.117–0.132. The A→B→C ablation
 is **inside the noise and does not replicate**: the primary grid orders
-A > B > C in all three objectives (0.2100 / 0.2074 / 0.2038 averaged over
+A > B > C in all three objectives (0.2101 / 0.2074 / 0.2038 averaged over
 objectives) and the regularised grid reverses it to B best in all three
-(0.2070 / 0.2122 / 0.2082). The whole spread is ≤ 0.007 against per-cell seed
+(0.2069 / 0.2123 / 0.2082). The whole spread is ≤ 0.007 against per-cell seed
 SDs of 0.002–0.008. Query conditioning is neither helpful nor harmful; it is
 **inert**.
 
@@ -531,7 +533,7 @@ is exactly why C is never the best arm in either grid.
 **Q2. Which head-focused objective works?**
 **Only the pairwise one, and not enough to matter.** H2 (pairwise logistic with
 `1/√(rank+1)` weighting) is the best objective in **both** grids — 0.2105 vs
-H1's 0.2016 in the primary (+0.0089) and 0.2106 vs 0.2085 in the regularised
+H1's 0.2016 in the primary (+0.0089) and 0.2106 vs 0.2084 in the regularised
 (+0.002). It is the only axis in this document with a replicated sign. It also
 has the highest in-sample fit of any objective (0.32–0.34 primary, 0.31–0.38
 regularised), which is exactly the pattern that failed to convert. H1 (balanced
@@ -542,7 +544,7 @@ gate is −0.14.
 **Q3. Does v2 stably beat the matched random rescue?**
 **Yes, and this is the one thing it does.** The auditor scores 0.2078 on val
 against `random`'s 0.0219 — a 9.5× lift over chance, in all 27 runs and all 3
-seeds, with init at 0.0206 confirming the lift is training and not
+seeds, with init at 0.0236 confirming the lift is training and not
 architecture. `imp` alone (0.0219) and `random` (0.0219) are the same number.
 So the auditor learns something real; it just does not learn *v0's* something,
 and it does not learn the head.
