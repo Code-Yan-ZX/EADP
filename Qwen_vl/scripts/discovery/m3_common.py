@@ -381,16 +381,8 @@ class MissGuardPruner(TimedEADPPruner):
             rescue = dropped[torch.randperm(dropped.numel(), generator=gen)[:r]
                              .to(dropped.device)]
         else:
-            Xh = handcrafted_t(g, vis_raw, s0)
-            if miss.get("feature_idx") is not None:
-                Xh = Xh[:, miss["feature_idx"]]
-            mu_h, sd_h = miss["mu_hand"], miss["sd_hand"]
-            mu_v, sd_v = miss["mu_vis"], miss["sd_vis"]
-            zh = (Xh[dropped] - mu_h) / sd_h
-            zv = (vis_q[dropped] - mu_v) / sd_v
-            if miss.get("per_instance_z"):
-                zh = (zh - zh.mean(0, keepdim=True)) / zh.std(0, keepdim=True).clamp_min(1e-6)
-            sc = miss["student"](zh, zv).float()
+            sc = self.audit_scores(g, vis_raw, vis_q, s0, dropped,
+                                   text_embeds_seq_llm)
             rescue = dropped[torch.argsort(-sc)[:r]]
 
         ev = evict_t(s0, imp, sim, r, rule=miss.get("rule", "combo"),
@@ -420,6 +412,27 @@ class MissGuardPruner(TimedEADPPruner):
         )
         idx = torch.sort(s_final).values
         return image_features[idx], [int(idx.numel())]
+
+    # ------------------------------------------------------------- audit --
+    def audit_scores(self, g, vis_raw, vis_q, s0, dropped, text_seq=None):
+        """v0's token-local student: a small MLP over the hand features and one
+        linear view of the vision feature.
+
+        Extracted verbatim from `forward` so M3-v2's query-conditioned auditor
+        can override this one method -- the base selection, the identity path,
+        the eviction, the budget assertion and the timing events all stay in
+        the base class and stay identical for both students.  `text_seq` is
+        unused here; it is in the signature because the v2 override needs it.
+        """
+        miss = self.miss
+        Xh = handcrafted_t(g, vis_raw, s0)
+        if miss.get("feature_idx") is not None:
+            Xh = Xh[:, miss["feature_idx"]]
+        zh = (Xh[dropped] - miss["mu_hand"]) / miss["sd_hand"]
+        zv = (vis_q[dropped] - miss["mu_vis"]) / miss["sd_vis"]
+        if miss.get("per_instance_z"):
+            zh = (zh - zh.mean(0, keepdim=True)) / zh.std(0, keepdim=True).clamp_min(1e-6)
+        return miss["student"](zh, zv).float()
 
     # ------------------------------------------------------------ readout --
     def read_miss_ms(self) -> float:

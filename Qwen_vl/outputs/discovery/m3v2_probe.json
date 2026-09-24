@@ -1,0 +1,170 @@
+{
+ "m3v2_auditor_h1A_s0": {
+  "blocks": [
+   "V",
+   "H",
+   "g"
+  ],
+  "churn_top16": {
+   "V": 0.8479166666666667,
+   "H": 0.12916666666666668,
+   "g": 0.21041666666666667
+  },
+  "attn_entropy_frac": {},
+  "val_top16_recall_at_16": 0.21041666666666667,
+  "note": "churn_top16 = fraction of the deployed top-16 that changes when the block is zeroed; attn_entropy_frac = attention entropy / log(n_keys), 1.0 = uniform"
+ },
+ "m3v2_auditor_h1B_s0": {
+  "blocks": [
+   "V",
+   "H",
+   "q",
+   "g"
+  ],
+  "churn_top16": {
+   "V": 0.26458333333333334,
+   "H": 0.13229166666666667,
+   "q": 0.18125,
+   "g": 0.19583333333333333
+  },
+  "attn_entropy_frac": {
+   "xt": 0.72917184750013
+  },
+  "val_top16_recall_at_16": 0.203125,
+  "note": "churn_top16 = fraction of the deployed top-16 that changes when the block is zeroed; attn_entropy_frac = attention entropy / log(n_keys), 1.0 = uniform"
+ },
+ "m3v2_auditor_h1C_s0": {
+  "blocks": [
+   "V",
+   "H",
+   "q",
+   "c",
+   "g"
+  ],
+  "churn_top16": {
+   "V": 0.10208333333333333,
+   "H": 0.07708333333333334,
+   "q": 0.12395833333333334,
+   "c": 0.11666666666666667,
+   "g": 0.13333333333333333
+  },
+  "attn_entropy_frac": {
+   "xt": 0.7781070641398641,
+   "ctx": 0.8878825358053447
+  },
+  "val_top16_recall_at_16": 0.19583333333333333,
+  "note": "churn_top16 = fraction of the deployed top-16 that changes when the block is zeroed; attn_entropy_frac = attention entropy / log(n_keys), 1.0 = uniform"
+ },
+ "m3v2_auditor_h2A_s0": {
+  "blocks": [
+   "V",
+   "H",
+   "g"
+  ],
+  "churn_top16": {
+   "V": 0.8583333333333333,
+   "H": 0.13229166666666667,
+   "g": 0.19791666666666666
+  },
+  "attn_entropy_frac": {},
+  "val_top16_recall_at_16": 0.20416666666666666,
+  "note": "churn_top16 = fraction of the deployed top-16 that changes when the block is zeroed; attn_entropy_frac = attention entropy / log(n_keys), 1.0 = uniform"
+ },
+ "m3v2_auditor_h2B_s0": {
+  "blocks": [
+   "V",
+   "H",
+   "q",
+   "g"
+  ],
+  "churn_top16": {
+   "V": 0.25833333333333336,
+   "H": 0.17083333333333334,
+   "q": 0.3625,
+   "g": 0.25833333333333336
+  },
+  "attn_entropy_frac": {
+   "xt": 0.6355618616917661
+  },
+  "val_top16_recall_at_16": 0.21770833333333334,
+  "note": "churn_top16 = fraction of the deployed top-16 that changes when the block is zeroed; attn_entropy_frac = attention entropy / log(n_keys), 1.0 = uniform"
+ },
+ "m3v2_auditor_h2C_s0": {
+  "blocks": [
+   "V",
+   "H",
+   "q",
+   "c",
+   "g"
+  ],
+  "churn_top16": {
+   "V": 0.14791666666666667,
+   "H": 0.04895833333333333,
+   "q": 0.10729166666666666,
+   "c": 0.25104166666666666,
+   "g": 0.15104166666666666
+  },
+  "attn_entropy_frac": {
+   "xt": 0.7261247442440799,
+   "ctx": 0.9988904566757939
+  },
+  "val_top16_recall_at_16": 0.2,
+  "note": "churn_top16 = fraction of the deployed top-16 that changes when the block is zeroed; attn_entropy_frac = attention entropy / log(n_keys), 1.0 = uniform"
+ },
+ "m3v2_auditor_h3A_s0": {
+  "blocks": [
+   "V",
+   "H",
+   "g"
+  ],
+  "churn_top16": {
+   "V": 0.8135416666666667,
+   "H": 0.1625,
+   "g": 0.246875
+  },
+  "attn_entropy_frac": {},
+  "val_top16_recall_at_16": 0.221875,
+  "note": "churn_top16 = fraction of the deployed top-16 that changes when the block is zeroed; attn_entropy_frac = attention entropy / log(n_keys), 1.0 = uniform"
+ },
+ "m3v2_auditor_h3B_s0": {
+  "blocks": [
+   "V",
+   "H",
+   "q",
+   "g"
+  ],
+  "churn_top16": {
+   "V": 0.30416666666666664,
+   "H": 0.103125,
+   "q": 0.3020833333333333,
+   "g": 0.17916666666666667
+  },
+  "attn_entropy_frac": {
+   "xt": 0.5725424945081085
+  },
+  "val_top16_recall_at_16": 0.20416666666666666,
+  "note": "churn_top16 = fraction of the deployed top-16 that changes when the block is zeroed; attn_entropy_frac = attention entropy / log(n_keys), 1.0 = uniform"
+ },
+ "m3v2_auditor_h3C_s0": {
+  "blocks": [
+   "V",
+   "H",
+   "q",
+   "c",
+   "g"
+  ],
+  "churn_top16": {
+   "V": 0.14791666666666667,
+   "H": 0.06770833333333333,
+   "q": 0.11875,
+   "c": 0.22395833333333334,
+   "g": 0.15
+  },
+  "attn_entropy_frac": {
+   "xt": 0.7423598567712982,
+   "ctx": 0.9985367839088863
+  },
+  "val_top16_recall_at_16": 0.20520833333333333,
+  "note": "churn_top16 = fraction of the deployed top-16 that changes when the block is zeroed; attn_entropy_frac = attention entropy / log(n_keys), 1.0 = uniform"
+ }
+}
