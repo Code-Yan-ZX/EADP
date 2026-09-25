@@ -89,6 +89,30 @@ M3_ARMS = [
          label="Oracle-Miss r=16 lowimp (teacher rescue)"),
 ]
 
+# M4 arms.  Same reasoning as M3_ARMS: kept out of the default set so the M2
+# amendment's five-arm record keeps meaning what it meant.  Select with
+# `--tags REC REC8 REC32`.  The M4 tag names are the perf-run keys, not the
+# accuracy-run keys (`REC-r16` etc.), because a paired contrast is printed as
+# `<tag>_minus_B2` and a hyphen inside a tag would make that ambiguous.
+M4_ARMS = [
+    dict(tag="REC", mode=MODE_PRELLM, n_arm=None, seed=None, selector="block8",
+         policy=None, rec=dict(mode="capsule", weights="residual",
+                               assign="spatial", r=16),
+         label="REC residual capsules r=16 (pre-LLM)"),
+    dict(tag="REC8", mode=MODE_PRELLM, n_arm=None, seed=None, selector="block8",
+         policy=None, rec=dict(mode="capsule", weights="residual",
+                               assign="spatial", r=8),
+         label="REC residual capsules r=8 (pre-LLM)"),
+    dict(tag="REC32", mode=MODE_PRELLM, n_arm=None, seed=None, selector="block8",
+         policy=None, rec=dict(mode="capsule", weights="residual",
+                               assign="spatial", r=32),
+         label="REC residual capsules r=32 (pre-LLM)"),
+    dict(tag="MEAN", mode=MODE_PRELLM, n_arm=None, seed=None, selector="block8",
+         policy=None, rec=dict(mode="capsule", weights="mean",
+                               assign="spatial", r=16),
+         label="plain mean merge r=16 (pre-LLM)"),
+]
+
 STAGE_KEYS = ["image_preprocess_ms", "vision_encoder_ms", "eadp_scoring_ms",
               "selector_ms", "L0_L4_ms", "scorer_ms", "token_compaction_ms",
               "miss_ms", "llm_forward_ms"]
@@ -101,6 +125,9 @@ def build_engine(model, arm):
                      n_arm=arm["n_arm"] or 240, seed=arm["seed"] or 0,
                      tag=arm["tag"])
     eng = GDEPEngine.from_checkpoint(cfg, model=model, max_new_tokens=32)
+    if arm.get("rec") is not None:                      # M4: compress-the-rejected
+        from m4_common import install_rec
+        install_rec(eng, model, dict(arm["rec"]))
     if arm.get("miss") is not None:                     # M3: audit-and-correct
         from m3_common import install_missguard
         miss = dict(arm["miss"])
@@ -308,7 +335,7 @@ def main():
     args = ap.parse_args()
     if args.tags:
         global ARMS
-        pool = ARMS + M3_ARMS
+        pool = ARMS + M3_ARMS + M4_ARMS
         ARMS = [a for a in pool if a["tag"] in args.tags]
         missing = set(args.tags) - {a["tag"] for a in pool}
         if missing:
