@@ -1,0 +1,51 @@
+{
+ "n": 720,
+ "budget": 256,
+ "grid": 32,
+ "base_selector": "block8",
+ "source": "m1_plan.json extension rows",
+ "features": [
+  "imp",
+  "imp_pre",
+  "fused",
+  "glob",
+  "loc",
+  "loc_max",
+  "loc_top5",
+  "loc_std",
+  "red_s0",
+  "red_s0_top8",
+  "resid_u",
+  "nn4_recon",
+  "red_all",
+  "nn_drop",
+  "nn_drop_min",
+  "nb_mean",
+  "nb_max",
+  "nb_std",
+  "nb_mean_f",
+  "nb_red",
+  "nb_cos",
+  "x",
+  "y",
+  "vis_norm",
+  "rank_imp",
+  "cos_s0c",
+  "cos_top64c"
+ ],
+ "G_ORDER": {
+  "checked": 720,
+  "n_bad": 0,
+  "examples": [],
+  "passed": true,
+  "what": "first 256 greedy picks == live selection order"
+ },
+ "G_S0": {
+  "checked": 720,
+  "n_bad": 0,
+  "examples": [],
+  "passed": true,
+  "what": "live s0 is 256 unique indices"
+ },
+ "wall_seconds": 209.17724514007568
+}
