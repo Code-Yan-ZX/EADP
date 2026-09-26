@@ -1,0 +1,47 @@
+{
+  "n": 450,
+  "h": 0.01,
+  "dirs": [
+    1,
+    2,
+    4,
+    8,
+    64
+  ],
+  "seed": 0,
+  "source": "ZOO-Prune Eq.2-4 reproduced; shared direction bank; perturbation at the pre-merger vision features; response read at the merger output",
+  "G_MERGER": {
+    "checked": 450,
+    "max_abs_diff": 0.0,
+    "n_bad": 0,
+    "examples": [],
+    "passed": true,
+    "what": "merger(captured input) == tower output, bit-for-bit"
+  },
+  "cost": {
+    "tower_ms_mean": 111.90602513631185,
+    "zo_ms": {
+      "1": {
+        "mean": 2.533774650891622,
+        "median": 2.462847948074341
+      },
+      "2": {
+        "mean": 4.721232064565023,
+        "median": 4.691856145858765
+      },
+      "4": {
+        "mean": 8.253280652364095,
+        "median": 8.233504295349121
+      },
+      "8": {
+        "mean": 15.879536582099067,
+        "median": 15.836368083953857
+      },
+      "64": {
+        "mean": 127.04377200656467,
+        "median": 126.59614562988281
+      }
+    }
+  },
+  "wall_seconds": 186.07238960266113
+}

@@ -1,0 +1,73 @@
+{
+ "n": 450,
+ "vis_file": "m5_vis.npy",
+ "grid": 32,
+ "budget": 256,
+ "base_selector": "block8",
+ "features": [
+  "imp",
+  "imp_pre",
+  "fused",
+  "glob",
+  "loc",
+  "loc_max",
+  "loc_top5",
+  "loc_std",
+  "red_s0",
+  "red_s0_top8",
+  "resid_u",
+  "nn4_recon",
+  "red_all",
+  "nn_drop",
+  "nn_drop_min",
+  "nb_mean",
+  "nb_max",
+  "nb_std",
+  "nb_mean_f",
+  "nb_red",
+  "nb_cos",
+  "x",
+  "y",
+  "vis_norm",
+  "rank_imp",
+  "cos_s0c",
+  "cos_top64c"
+ ],
+ "splits": {
+  "fit": 240,
+  "val": 60,
+  "test": 150
+ },
+ "G_S0": {
+  "checked": 450,
+  "n_bad": 0,
+  "examples": [],
+  "passed": true
+ },
+ "G_VIS": {
+  "rows": [
+   {
+    "key": "TextVQA_VAL_67",
+    "bit_exact": true,
+    "max_abs_diff": 0.0
+   },
+   {
+    "key": "DocVQA_VAL_4774",
+    "bit_exact": true,
+    "max_abs_diff": 0.0
+   },
+   {
+    "key": "TextVQA_VAL_0",
+    "bit_exact": true,
+    "max_abs_diff": 0.0
+   },
+   {
+    "key": "OCRBench_986",
+    "bit_exact": true,
+    "max_abs_diff": 0.0
+   }
+  ],
+  "passed": true
+ },
+ "wall_seconds": 124.222736120224
+}
