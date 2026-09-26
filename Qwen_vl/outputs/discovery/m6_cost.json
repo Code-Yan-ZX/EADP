@@ -1,0 +1,45 @@
+{
+  "n_warm": 10,
+  "n_iter": 50,
+  "batch": 4,
+  "device": "cuda",
+  "timed": {
+    "nn4_recon": {
+      "median_ms": 1.4787199907004833,
+      "p90_ms": 1.4924184419214725
+    },
+    "cos_s0c": {
+      "median_ms": 0.24734134785830975,
+      "p90_ms": 0.25050523690879345
+    }
+  },
+  "total_marginal_ms": 1.726061338558793,
+  "free_columns": [
+    "imp",
+    "imp_pre",
+    "fused",
+    "glob",
+    "loc",
+    "loc_max",
+    "loc_top5",
+    "loc_std",
+    "red_s0",
+    "red_s0_top8",
+    "resid_u",
+    "red_all",
+    "nn_drop",
+    "nn_drop_min",
+    "nb_mean",
+    "nb_max",
+    "nb_std",
+    "nb_mean_f",
+    "nb_red",
+    "nb_cos",
+    "x",
+    "y",
+    "vis_norm",
+    "rank_imp",
+    "cos_top64c"
+  ],
+  "note": "only nn4_recon and cos_s0c do work the incumbent's pruner does not already do; the other 25 columns are reductions over tensors it already produces (score, components, sim_matrix, tower features)"
+}
