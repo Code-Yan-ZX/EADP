@@ -1,0 +1,435 @@
+{
+ "t1": [
+  {
+   "arm": "B2",
+   "TextVQA_VAL": 65.4,
+   "DocVQA_VAL": 60.235,
+   "OCRBench": 54.0,
+   "macro": 59.878,
+   "d_orig": 0.0,
+   "d_db2": 1.843
+  },
+  {
+   "arm": "DB2",
+   "TextVQA_VAL": 63.4,
+   "DocVQA_VAL": 58.705,
+   "OCRBench": 52.0,
+   "macro": 58.035,
+   "d_orig": -1.843,
+   "d_db2": 0.0
+  },
+  {
+   "arm": "DB2",
+   "TextVQA_VAL": 63.4,
+   "DocVQA_VAL": 58.705,
+   "OCRBench": 52.0,
+   "macro": 58.035,
+   "d_orig": -1.843,
+   "d_db2": 0.0
+  },
+  {
+   "arm": "RND4",
+   "TextVQA_VAL": 67.4,
+   "DocVQA_VAL": 57.188,
+   "OCRBench": 54.0,
+   "macro": 59.529,
+   "d_orig": -0.349,
+   "d_db2": 1.494
+  },
+  {
+   "arm": "RND8",
+   "TextVQA_VAL": 63.4,
+   "DocVQA_VAL": 58.59,
+   "OCRBench": 54.0,
+   "macro": 58.663,
+   "d_orig": -1.215,
+   "d_db2": 0.628
+  },
+  {
+   "arm": "COS4",
+   "TextVQA_VAL": 61.4,
+   "DocVQA_VAL": 57.79,
+   "OCRBench": 54.0,
+   "macro": 57.73,
+   "d_orig": -2.148,
+   "d_db2": -0.305
+  },
+  {
+   "arm": "COS8",
+   "TextVQA_VAL": 65.4,
+   "DocVQA_VAL": 58.335,
+   "OCRBench": 58.0,
+   "macro": 60.578,
+   "d_orig": 0.7,
+   "d_db2": 2.543
+  },
+  {
+   "arm": "ATTN4",
+   "TextVQA_VAL": 61.4,
+   "DocVQA_VAL": 58.252,
+   "OCRBench": 56.0,
+   "macro": 58.551,
+   "d_orig": -1.328,
+   "d_db2": 0.516
+  },
+  {
+   "arm": "ATTN8",
+   "TextVQA_VAL": 65.4,
+   "DocVQA_VAL": 57.118,
+   "OCRBench": 60.0,
+   "macro": 60.839,
+   "d_orig": 0.961,
+   "d_db2": 2.804
+  },
+  {
+   "arm": "CMC4",
+   "TextVQA_VAL": 65.4,
+   "DocVQA_VAL": 58.252,
+   "OCRBench": 54.0,
+   "macro": 59.217,
+   "d_orig": -0.661,
+   "d_db2": 1.182
+  },
+  {
+   "arm": "CMC8",
+   "TextVQA_VAL": 65.4,
+   "DocVQA_VAL": 57.318,
+   "OCRBench": 60.0,
+   "macro": 60.906,
+   "d_orig": 1.027,
+   "d_db2": 2.871
+  },
+  {
+   "arm": "ORC4",
+   "TextVQA_VAL": 61.4,
+   "DocVQA_VAL": 57.79,
+   "OCRBench": 54.0,
+   "macro": 57.73,
+   "d_orig": -2.148,
+   "d_db2": -0.305
+  },
+  {
+   "arm": "ORC8",
+   "TextVQA_VAL": 65.4,
+   "DocVQA_VAL": 58.79,
+   "OCRBench": 58.0,
+   "macro": 60.73,
+   "d_orig": 0.852,
+   "d_db2": 2.695
+  }
+ ],
+ "t3": {
+  "RND4": {
+   "delta": 0.014942760942760942,
+   "ci": [
+    -0.016243939393939394,
+    0.048646464646464646
+   ],
+   "wins": 5,
+   "losses": 3
+  },
+  "RND8": {
+   "delta": 0.006284557547715444,
+   "ci": [
+    -0.026666666666666665,
+    0.04523929053402733
+   ],
+   "wins": 4,
+   "losses": 4
+  },
+  "COS4": {
+   "delta": -0.0030494417862838887,
+   "ci": [
+    -0.03244338118022327,
+    0.025439553429027113
+   ],
+   "wins": 4,
+   "losses": 4
+  },
+  "COS8": {
+   "delta": 0.025432446695604592,
+   "ci": [
+    -0.0011454037190879302,
+    0.054873585673585634
+   ],
+   "wins": 8,
+   "losses": 3
+  },
+  "ATTN4": {
+   "delta": 0.005155686418844317,
+   "ci": [
+    -0.02624335664335664,
+    0.03673245614035086
+   ],
+   "wins": 6,
+   "losses": 4
+  },
+  "ATTN8": {
+   "delta": 0.028042133305291202,
+   "ci": [
+    -0.017637691256112305,
+    0.07156360744518632
+   ],
+   "wins": 8,
+   "losses": 4
+  },
+  "CMC4": {
+   "delta": 0.011822353085510984,
+   "ci": [
+    -0.020769138755980857,
+    0.046813366458103266
+   ],
+   "wins": 7,
+   "losses": 4
+  },
+  "CMC8": {
+   "delta": 0.02870879997195787,
+   "ci": [
+    -0.01715393729077939,
+    0.07242425907425909
+   ],
+   "wins": 9,
+   "losses": 4
+  },
+  "ORC4": {
+   "delta": -0.0030494417862838887,
+   "ci": [
+    -0.025473684210526315,
+    0.01976363636363628
+   ],
+   "wins": 3,
+   "losses": 3
+  },
+  "ORC8": {
+   "delta": 0.02695055821371611,
+   "ci": [
+    -0.002666666666666665,
+    0.06466666666666666
+   ],
+   "wins": 6,
+   "losses": 2
+  },
+  "CMC8-ATTN8": {
+   "delta": 0.0006666666666666665,
+   "ci": [
+    0.0,
+    0.0019999999999999996
+   ],
+   "wins": 1,
+   "losses": 0
+  },
+  "CMC4-ATTN4": {
+   "delta": 0.006666666666666666,
+   "ci": [
+    0.0,
+    0.02
+   ],
+   "wins": 1,
+   "losses": 0
+  },
+  "DB2-B2": {
+   "delta": -0.018433952528379774,
+   "ci": [
+    -0.04745614035087719,
+    0.006666666666666665
+   ],
+   "wins": 3,
+   "losses": 5
+  }
+ },
+ "t4": {
+  "RND4": {
+   "TextVQA_VAL": {
+    "fixed": 3,
+    "broken": 1
+   },
+   "DocVQA_VAL": {
+    "fixed": 2,
+    "broken": 2
+   },
+   "OCRBench": {
+    "fixed": 1,
+    "broken": 0
+   },
+   "total": {
+    "fixed": 6,
+    "broken": 3
+   }
+  },
+  "RND8": {
+   "TextVQA_VAL": {
+    "fixed": 1,
+    "broken": 1
+   },
+   "DocVQA_VAL": {
+    "fixed": 2,
+    "broken": 2
+   },
+   "OCRBench": {
+    "fixed": 2,
+    "broken": 1
+   },
+   "total": {
+    "fixed": 5,
+    "broken": 4
+   }
+  },
+  "COS4": {
+   "TextVQA_VAL": {
+    "fixed": 1,
+    "broken": 2
+   },
+   "DocVQA_VAL": {
+    "fixed": 2,
+    "broken": 2
+   },
+   "OCRBench": {
+    "fixed": 1,
+    "broken": 0
+   },
+   "total": {
+    "fixed": 4,
+    "broken": 4
+   }
+  },
+  "COS8": {
+   "TextVQA_VAL": {
+    "fixed": 1,
+    "broken": 0
+   },
+   "DocVQA_VAL": {
+    "fixed": 4,
+    "broken": 3
+   },
+   "OCRBench": {
+    "fixed": 3,
+    "broken": 0
+   },
+   "total": {
+    "fixed": 8,
+    "broken": 3
+   }
+  },
+  "ATTN4": {
+   "TextVQA_VAL": {
+    "fixed": 1,
+    "broken": 2
+   },
+   "DocVQA_VAL": {
+    "fixed": 3,
+    "broken": 2
+   },
+   "OCRBench": {
+    "fixed": 2,
+    "broken": 0
+   },
+   "total": {
+    "fixed": 6,
+    "broken": 4
+   }
+  },
+  "ATTN8": {
+   "TextVQA_VAL": {
+    "fixed": 2,
+    "broken": 1
+   },
+   "DocVQA_VAL": {
+    "fixed": 1,
+    "broken": 3
+   },
+   "OCRBench": {
+    "fixed": 5,
+    "broken": 1
+   },
+   "total": {
+    "fixed": 8,
+    "broken": 5
+   }
+  },
+  "CMC4": {
+   "TextVQA_VAL": {
+    "fixed": 2,
+    "broken": 1
+   },
+   "DocVQA_VAL": {
+    "fixed": 3,
+    "broken": 2
+   },
+   "OCRBench": {
+    "fixed": 2,
+    "broken": 1
+   },
+   "total": {
+    "fixed": 7,
+    "broken": 4
+   }
+  },
+  "CMC8": {
+   "TextVQA_VAL": {
+    "fixed": 2,
+    "broken": 1
+   },
+   "DocVQA_VAL": {
+    "fixed": 2,
+    "broken": 3
+   },
+   "OCRBench": {
+    "fixed": 5,
+    "broken": 1
+   },
+   "total": {
+    "fixed": 9,
+    "broken": 5
+   }
+  },
+  "ORC4": {
+   "TextVQA_VAL": {
+    "fixed": 0,
+    "broken": 1
+   },
+   "DocVQA_VAL": {
+    "fixed": 2,
+    "broken": 2
+   },
+   "OCRBench": {
+    "fixed": 1,
+    "broken": 0
+   },
+   "total": {
+    "fixed": 3,
+    "broken": 3
+   }
+  },
+  "ORC8": {
+   "TextVQA_VAL": {
+    "fixed": 2,
+    "broken": 1
+   },
+   "DocVQA_VAL": {
+    "fixed": 3,
+    "broken": 2
+   },
+   "OCRBench": {
+    "fixed": 3,
+    "broken": 0
+   },
+   "total": {
+    "fixed": 8,
+    "broken": 3
+   }
+  }
+ },
+ "gates": {
+  "B2": [
+   true,
+   null
+  ],
+  "DB2L0": [
+   null,
+   true
+  ]
+ },
+ "exposure": {
+  "dB2_minus_B2": -1.843
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "config": {
+  "row": null
+ },
+ "info": {
+  "row": 240,
+  "key": "TextVQA_VAL_34",
+  "ds": "TextVQA_VAL",
+  "seq_full": 1055,
+  "vis_slice": [
+   4,
+   1028
+  ],
+  "text_prefix_rows": 4,
+  "n_text_suffix": 27,
+  "n_vis_early": 288,
+  "q_span_rows": [
+   293,
+   314
+  ],
+  "question_decoded": "what is the screen name being displayed?\nPlease answer concisely with short words or phrases when possible.",
+  "n_tail": 16,
+  "n_reserve": 32,
+  "n_boundary": 48,
+  "timing_ms": {
+   "plain": [
+    129.19039279222488,
+    17.029959708452225,
+    16.924550756812096
+   ],
+   "captured": [
+    131.8412348628044,
+    90.11351130902767,
+    90.77625349164009
+   ]
+  },
+  "capture_overhead_ms": 73.74629378318787,
+  "gcap_rel_err_median": 0.0035979226231575012,
+  "gcap_rel_err_max": 0.004971569404006004,
+  "gcap_pass": true,
+  "capture_shapes": {
+   "att_mean": [
+    27,
+    48
+   ],
+   "avn": [
+    27,
+    48
+   ],
+   "cmc_mn": [
+    27,
+    48
+   ],
+   "cmc_nm": [
+    27,
+    48
+   ]
+  }
+ }
+}

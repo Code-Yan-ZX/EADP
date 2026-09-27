@@ -1,0 +1,281 @@
+{
+ "r4": {
+  "r": 4,
+  "n_positive": 176,
+  "positive_rate": 0.8380952380952381,
+  "P_hit_given_positive": {
+   "cos": 0.7840909090909091,
+   "cmc": 0.875,
+   "cmc_resc": 0.875,
+   "cos_resc": 0.7840909090909091
+  },
+  "per_benchmark": {
+   "DocVQA_VAL": {
+    "cos": {
+     "recall": 0.35,
+     "mean_swap_rank": 58.45357142857143
+    },
+    "cmc": {
+     "recall": 0.33214285714285713,
+     "mean_swap_rank": 36.2831541218638
+    },
+    "cmc_resc": {
+     "recall": 0.33214285714285713,
+     "mean_swap_rank": 37.142857142857146
+    },
+    "cos_resc": {
+     "recall": 0.35,
+     "mean_swap_rank": 58.45357142857143
+    }
+   },
+   "OCRBench": {
+    "cos": {
+     "recall": 0.21428571428571427,
+     "mean_swap_rank": 114.91785714285714
+    },
+    "cmc": {
+     "recall": 0.28214285714285714,
+     "mean_swap_rank": 41.960431654676256
+    },
+    "cmc_resc": {
+     "recall": 0.28214285714285714,
+     "mean_swap_rank": 43.06428571428572
+    },
+    "cos_resc": {
+     "recall": 0.21428571428571427,
+     "mean_swap_rank": 114.91785714285714
+    }
+   },
+   "TextVQA_VAL": {
+    "cos": {
+     "recall": 0.2,
+     "mean_swap_rank": 105.88571428571429
+    },
+    "cmc": {
+     "recall": 0.31785714285714284,
+     "mean_swap_rank": 33.95340501792115
+    },
+    "cmc_resc": {
+     "recall": 0.31785714285714284,
+     "mean_swap_rank": 34.23571428571429
+    },
+    "cos_resc": {
+     "recall": 0.2,
+     "mean_swap_rank": 105.88571428571429
+    }
+   }
+  },
+  "bootstrap": {
+   "cmc-cos": {
+    "recall_diff": 0.055952380952380955,
+    "recall_ci": [
+     0.03214285714285714,
+     0.07976190476190476
+    ],
+    "rank_diff_mean": -55.6840133899993,
+    "rank_ci": [
+     -66.9045142889145,
+     -45.16114287480267
+    ]
+   },
+   "cmc_resc-cos_resc": {
+    "recall_diff": 0.055952380952380955,
+    "recall_ci": [
+     0.03333333333333333,
+     0.07976190476190476
+    ],
+    "rank_diff_mean": -54.852807142857145,
+    "rank_ci": [
+     -66.28723214285715,
+     -44.33583333333332
+    ]
+   }
+  }
+ },
+ "r8": {
+  "r": 8,
+  "n_positive": 200,
+  "positive_rate": 0.9523809523809523,
+  "P_hit_given_positive": {
+   "cos": 0.9,
+   "cmc": 0.93,
+   "cmc_resc": 0.935,
+   "cos_resc": 0.905
+  },
+  "per_benchmark": {
+   "DocVQA_VAL": {
+    "cos": {
+     "recall": 0.2517857142857143,
+     "mean_swap_rank": 119.08648648648649
+    },
+    "cmc": {
+     "recall": 0.25892857142857145,
+     "mean_swap_rank": 82.22836095764272
+    },
+    "cmc_resc": {
+     "recall": 0.25892857142857145,
+     "mean_swap_rank": 86.43571428571428
+    },
+    "cos_resc": {
+     "recall": 0.2517857142857143,
+     "mean_swap_rank": 121.2
+    }
+   },
+   "OCRBench": {
+    "cos": {
+     "recall": 0.17142857142857143,
+     "mean_swap_rank": 140.2728904847397
+    },
+    "cmc": {
+     "recall": 0.21964285714285714,
+     "mean_swap_rank": 80.25645756457564
+    },
+    "cmc_resc": {
+     "recall": 0.22321428571428573,
+     "mean_swap_rank": 84.57142857142857
+    },
+    "cos_resc": {
+     "recall": 0.17142857142857143,
+     "mean_swap_rank": 140.0392857142857
+    }
+   },
+   "TextVQA_VAL": {
+    "cos": {
+     "recall": 0.2017857142857143,
+     "mean_swap_rank": 132.2688172043011
+    },
+    "cmc": {
+     "recall": 0.24821428571428572,
+     "mean_swap_rank": 73.4629294755877
+    },
+    "cmc_resc": {
+     "recall": 0.24821428571428572,
+     "mean_swap_rank": 75.43035714285715
+    },
+    "cos_resc": {
+     "recall": 0.20357142857142857,
+     "mean_swap_rank": 131.89464285714286
+    }
+   }
+  },
+  "bootstrap": {
+   "cmc-cos": {
+    "recall_diff": 0.033928571428571426,
+    "recall_ci": [
+     0.02142857142857143,
+     0.04642857142857143
+    ],
+    "rank_diff_mean": -51.932033462519804,
+    "rank_ci": [
+     -60.47991550741488,
+     -43.806298406362615
+    ]
+   },
+   "cmc_resc-cos_resc": {
+    "recall_diff": 0.034523809523809526,
+    "recall_ci": [
+     0.02142857142857143,
+     0.047619047619047616
+    ],
+    "rank_diff_mean": -48.98260982142857,
+    "rank_ci": [
+     -56.83244047619048,
+     -41.37866071428571
+    ]
+   }
+  }
+ },
+ "r16": {
+  "r": 16,
+  "n_positive": 209,
+  "positive_rate": 0.9952380952380953,
+  "P_hit_given_positive": {
+   "cos": 0.9904306220095693,
+   "cmc": 1.0,
+   "cmc_resc": 1.0,
+   "cos_resc": 0.9904306220095693
+  },
+  "per_benchmark": {
+   "DocVQA_VAL": {
+    "cos": {
+     "recall": 0.16964285714285715,
+     "mean_swap_rank": 178.4390243902439
+    },
+    "cmc": {
+     "recall": 0.1732142857142857,
+     "mean_swap_rank": 144.08092485549133
+    },
+    "cmc_resc": {
+     "recall": 0.17410714285714285,
+     "mean_swap_rank": 151.37053571428572
+    },
+    "cos_resc": {
+     "recall": 0.16964285714285715,
+     "mean_swap_rank": 179.99553571428572
+    }
+   },
+   "OCRBench": {
+    "cos": {
+     "recall": 0.1625,
+     "mean_swap_rank": 167.91351351351352
+    },
+    "cmc": {
+     "recall": 0.17589285714285716,
+     "mean_swap_rank": 140.52906403940887
+    },
+    "cmc_resc": {
+     "recall": 0.17857142857142858,
+     "mean_swap_rank": 151.92142857142858
+    },
+    "cos_resc": {
+     "recall": 0.1625,
+     "mean_swap_rank": 168.83392857142857
+    }
+   },
+   "TextVQA_VAL": {
+    "cos": {
+     "recall": 0.1732142857142857,
+     "mean_swap_rank": 159.25317604355718
+    },
+    "cmc": {
+     "recall": 0.18839285714285714,
+     "mean_swap_rank": 117.6676217765043
+    },
+    "cmc_resc": {
+     "recall": 0.18928571428571428,
+     "mean_swap_rank": 127.13482142857143
+    },
+    "cos_resc": {
+     "recall": 0.175,
+     "mean_swap_rank": 160.89017857142858
+    }
+   }
+  },
+  "bootstrap": {
+   "cmc-cos": {
+    "recall_diff": 0.010714285714285714,
+    "recall_ci": [
+     0.003273809523809524,
+     0.018154761904761906
+    ],
+    "rank_diff_mean": -34.62999767858799,
+    "rank_ci": [
+     -40.628146487837704,
+     -28.70097492791479
+    ]
+   },
+   "cmc_resc-cos_resc": {
+    "recall_diff": 0.011607142857142858,
+    "recall_ci": [
+     0.004166666666666667,
+     0.019345238095238096
+    ],
+    "rank_diff_mean": -26.354639285714285,
+    "rank_ci": [
+     -31.803482142857135,
+     -20.95548363095237
+    ]
+   }
+  }
+ }
+}

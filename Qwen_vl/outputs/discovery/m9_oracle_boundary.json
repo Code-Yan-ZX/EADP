@@ -1,0 +1,107 @@
+{
+ "config": {
+  "pool": 32,
+  "r_list": [
+   4,
+   8,
+   16
+  ],
+  "reserve_rule": "cos_s0c LOW top-32 among dropped"
+ },
+ "panels": {
+  "heldout210": {
+   "r4": {
+    "r": 4,
+    "n": 210,
+    "frac_any_swap": 1.0,
+    "frac_full_swap": 0.919047619047619,
+    "mean_k_swap": 3.914285714285714,
+    "mean_best_res_rank": 1.561904761904762,
+    "median_best_res_rank": 0.0,
+    "p90_best_res_rank": 5.0,
+    "mean_swap_rank_all": 9.993917274939173,
+    "mean_swap_rank_when_swapped": 9.993917274939173,
+    "median_swap_rank_when_swapped": 5.0,
+    "head_recall_at_r": 0.3869047619047619,
+    "mean_teacher_mass_gain": 46.141812569754464
+   },
+   "r8": {
+    "r": 8,
+    "n": 210,
+    "frac_any_swap": 1.0,
+    "frac_full_swap": 0.6190476190476191,
+    "mean_k_swap": 7.504761904761905,
+    "mean_best_res_rank": 1.561904761904762,
+    "median_best_res_rank": 0.0,
+    "p90_best_res_rank": 5.0,
+    "mean_swap_rank_all": 26.92258883248731,
+    "mean_swap_rank_when_swapped": 26.92258883248731,
+    "median_swap_rank_when_swapped": 18.0,
+    "head_recall_at_r": 0.2994047619047619,
+    "mean_teacher_mass_gain": 56.53165806361607
+   },
+   "r16": {
+    "r": 16,
+    "n": 210,
+    "frac_any_swap": 1.0,
+    "frac_full_swap": 0.05714285714285714,
+    "mean_k_swap": 13.461904761904762,
+    "mean_best_res_rank": 1.561904761904762,
+    "median_best_res_rank": 0.0,
+    "p90_best_res_rank": 5.0,
+    "mean_swap_rank_all": 58.442164839052,
+    "mean_swap_rank_when_swapped": 58.442164839052,
+    "median_swap_rank_when_swapped": 45.0,
+    "head_recall_at_r": 0.21517857142857144,
+    "mean_teacher_mass_gain": 66.13448486328124
+   }
+  },
+  "all450": {
+   "r4": {
+    "r": 4,
+    "n": 450,
+    "frac_any_swap": 1.0,
+    "frac_full_swap": 0.9377777777777778,
+    "mean_k_swap": 3.9355555555555557,
+    "mean_best_res_rank": 1.58,
+    "median_best_res_rank": 0.0,
+    "p90_best_res_rank": 5.0,
+    "mean_swap_rank_all": 9.65612648221344,
+    "mean_swap_rank_when_swapped": 9.65612648221344,
+    "median_swap_rank_when_swapped": 5.0,
+    "head_recall_at_r": 0.39611111111111114,
+    "mean_teacher_mass_gain": 47.70881781684028
+   },
+   "r8": {
+    "r": 8,
+    "n": 450,
+    "frac_any_swap": 1.0,
+    "frac_full_swap": 0.6244444444444445,
+    "mean_k_swap": 7.504444444444444,
+    "mean_best_res_rank": 1.58,
+    "median_best_res_rank": 0.0,
+    "p90_best_res_rank": 5.0,
+    "mean_swap_rank_all": 25.974829730530058,
+    "mean_swap_rank_when_swapped": 25.974829730530058,
+    "median_swap_rank_when_swapped": 17.0,
+    "head_recall_at_r": 0.30916666666666665,
+    "mean_teacher_mass_gain": 58.500677083333336
+   },
+   "r16": {
+    "r": 16,
+    "n": 450,
+    "frac_any_swap": 1.0,
+    "frac_full_swap": 0.09777777777777778,
+    "mean_k_swap": 13.571111111111112,
+    "mean_best_res_rank": 1.58,
+    "median_best_res_rank": 0.0,
+    "p90_best_res_rank": 5.0,
+    "mean_swap_rank_all": 58.452759128868514,
+    "mean_swap_rank_when_swapped": 58.452759128868514,
+    "median_swap_rank_when_swapped": 45.0,
+    "head_recall_at_r": 0.22680555555555557,
+    "mean_teacher_mass_gain": 68.19305311414931
+   }
+  }
+ }
+}
