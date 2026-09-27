@@ -37,12 +37,12 @@ B2's TTFT under the same harness is **278.6 ms** (M2 record).
 Method | r | head recall@r | mean teacher rank | median teacher rank
 |---|---:|---:|---:|---:|
 random-in-pool (20 seeds) | 8 | 0.0103 | — | — |
-`cos_s0c` (best single) | 8 | 0.1815 | 240 | 144 |
-`imp` (EADP importance) | 8 | 0.0899 | 260 | 205 |
-`nn4_recon` | 8 | 0.0833 | 332 | 323 |
-`red_s0_top8` | 8 | 0.1345 | 292 | 254 |
-M6 D4 disagreement | 8 | 0.1298 | 297 | 263 |
-M6 max-fusion | 8 | 0.1268 | 301 | 267 |
+`cos_s0c` (best single) | 8 | 0.2089 | 131 | 85 |
+`imp` (EADP importance) | 8 | 0.0923 | 198 | 137 |
+`nn4_recon` | 8 | 0.0750 | 283 | 246 |
+`red_s0_top8` | 8 | 0.1482 | 218 | 152 |
+M6 D4 disagreement | 8 | 0.1595 | 197 | 125 |
+M6 max-fusion | 8 | 0.1577 | 200 | 137 |
 ZO-P m=1 | 8 | 0.0190 | 455 | 489 |
 ZO-P m=2 | 8 | 0.0185 | 451 | 478 |
 ZO-P m=4 | 8 | 0.0161 | 449 | 476 |
@@ -50,12 +50,12 @@ ZO-P m=8 | 8 | 0.0167 | 448 | 470 |
 **oracle in pool** | 8 | 1.0000 | 4 | 4 |
 
 random-in-pool (20 seeds) | 16 | 0.0216 | — | — |
-`cos_s0c` (best single) | 16 | 0.1417 | 282 | 234 |
-`imp` (EADP importance) | 16 | 0.0908 | 280 | 227 |
-`nn4_recon` | 16 | 0.0726 | 343 | 317 |
-`red_s0_top8` | 16 | 0.1086 | 322 | 296 |
-M6 D4 disagreement | 16 | 0.1190 | 319 | 293 |
-M6 max-fusion | 16 | 0.1179 | 320 | 297 |
+`cos_s0c` (best single) | 16 | 0.1693 | 170 | 123 |
+`imp` (EADP importance) | 16 | 0.1074 | 218 | 164 |
+`nn4_recon` | 16 | 0.0741 | 301 | 273 |
+`red_s0_top8` | 16 | 0.1238 | 253 | 199 |
+M6 D4 disagreement | 16 | 0.1524 | 211 | 142 |
+M6 max-fusion | 16 | 0.1515 | 214 | 151 |
 ZO-P m=1 | 16 | 0.0268 | 456 | 506 |
 ZO-P m=2 | 16 | 0.0301 | 454 | 492 |
 ZO-P m=4 | 16 | 0.0262 | 455 | 494 |
@@ -63,12 +63,12 @@ ZO-P m=8 | 16 | 0.0241 | 454 | 492 |
 **oracle in pool** | 16 | 1.0000 | 8 | 8 |
 
 random-in-pool (20 seeds) | 32 | 0.0431 | — | — |
-`cos_s0c` (best single) | 32 | 0.1256 | 311 | 268 |
-`imp` (EADP importance) | 32 | 0.1010 | 303 | 270 |
-`nn4_recon` | 32 | 0.0787 | 360 | 343 |
-`red_s0_top8` | 32 | 0.0984 | 345 | 319 |
-M6 D4 disagreement | 32 | 0.1089 | 339 | 326 |
-M6 max-fusion | 32 | 0.1082 | 340 | 325 |
+`cos_s0c` (best single) | 32 | 0.1659 | 211 | 160 |
+`imp` (EADP importance) | 32 | 0.1350 | 242 | 183 |
+`nn4_recon` | 32 | 0.0807 | 323 | 297 |
+`red_s0_top8` | 32 | 0.1147 | 286 | 251 |
+M6 D4 disagreement | 32 | 0.1640 | 228 | 169 |
+M6 max-fusion | 32 | 0.1635 | 231 | 170 |
 ZO-P m=1 | 32 | 0.0344 | 456 | 495 |
 ZO-P m=2 | 32 | 0.0381 | 454 | 504 |
 ZO-P m=4 | 32 | 0.0378 | 455 | 501 |
@@ -76,12 +76,12 @@ ZO-P m=8 | 32 | 0.0378 | 454 | 495 |
 **oracle in pool** | 32 | 1.0000 | 16 | 16 |
 
 random-in-pool (20 seeds) | 8 | 0.0731 | — | — |
-`cos_s0c` (best single) | 8 | 0.2333 | 119 | 64 |
-`imp` (EADP importance) | 8 | 0.1810 | 138 | 80 |
-`nn4_recon` | 8 | 0.1774 | 177 | 115 |
-`red_s0_top8` | 8 | 0.2167 | 146 | 85 |
-M6 D4 disagreement | 8 | 0.2286 | 133 | 75 |
-M6 max-fusion | 8 | 0.2292 | 134 | 74 |
+`cos_s0c` (best single) | 8 | 0.2089 | 131 | 85 |
+`imp` (EADP importance) | 8 | 0.1577 | 136 | 88 |
+`nn4_recon` | 8 | 0.1577 | 172 | 117 |
+`red_s0_top8` | 8 | 0.1994 | 151 | 87 |
+M6 D4 disagreement | 8 | 0.2149 | 128 | 77 |
+M6 max-fusion | 8 | 0.2155 | 128 | 76 |
 ZO-P m=1 | 8 | 0.1607 | 188 | 149 |
 ZO-P m=2 | 8 | 0.1702 | 184 | 148 |
 ZO-P m=4 | 8 | 0.1637 | 186 | 144 |
@@ -89,12 +89,12 @@ ZO-P m=8 | 8 | 0.1655 | 187 | 148 |
 **oracle in pool** | 8 | 0.2994 | 31 | 23 |
 
 random-in-pool (20 seeds) | 16 | 0.1056 | — | — |
-`cos_s0c` (best single) | 16 | 0.1768 | 170 | 119 |
-`imp` (EADP importance) | 16 | 0.1649 | 173 | 124 |
-`nn4_recon` | 16 | 0.1536 | 191 | 144 |
-`red_s0_top8` | 16 | 0.1714 | 182 | 133 |
-M6 D4 disagreement | 16 | 0.1747 | 175 | 122 |
-M6 max-fusion | 16 | 0.1747 | 175 | 120 |
+`cos_s0c` (best single) | 16 | 0.1693 | 170 | 123 |
+`imp` (EADP importance) | 16 | 0.1586 | 166 | 118 |
+`nn4_recon` | 16 | 0.1417 | 193 | 145 |
+`red_s0_top8` | 16 | 0.1646 | 184 | 130 |
+M6 D4 disagreement | 16 | 0.1747 | 167 | 122 |
+M6 max-fusion | 16 | 0.1747 | 167 | 123 |
 ZO-P m=1 | 16 | 0.1470 | 201 | 158 |
 ZO-P m=2 | 16 | 0.1485 | 199 | 158 |
 ZO-P m=4 | 16 | 0.1461 | 201 | 158 |
@@ -115,12 +115,12 @@ ZO-P m=8 | 32 | 0.1659 | 211 | 160 |
 **oracle in pool** | 32 | 0.1659 | 211 | 160 |
 
 random-in-pool (20 seeds) | 8 | 0.0444 | — | — |
-`cos_s0c` (best single) | 8 | 0.2304 | 135 | 75 |
-`imp` (EADP importance) | 8 | 0.1482 | 162 | 104 |
-`nn4_recon` | 8 | 0.1542 | 205 | 148 |
-`red_s0_top8` | 8 | 0.2060 | 167 | 106 |
-M6 D4 disagreement | 8 | 0.2155 | 156 | 86 |
-M6 max-fusion | 8 | 0.2143 | 157 | 86 |
+`cos_s0c` (best single) | 8 | 0.2089 | 131 | 85 |
+`imp` (EADP importance) | 8 | 0.1363 | 147 | 101 |
+`nn4_recon` | 8 | 0.1310 | 194 | 140 |
+`red_s0_top8` | 8 | 0.1768 | 175 | 109 |
+M6 D4 disagreement | 8 | 0.2048 | 138 | 82 |
+M6 max-fusion | 8 | 0.2060 | 138 | 81 |
 ZO-P m=1 | 8 | 0.1220 | 233 | 193 |
 ZO-P m=2 | 8 | 0.1315 | 233 | 202 |
 ZO-P m=4 | 8 | 0.1262 | 232 | 195 |
@@ -128,12 +128,12 @@ ZO-P m=8 | 8 | 0.1220 | 235 | 189 |
 **oracle in pool** | 8 | 0.3595 | 20 | 16 |
 
 random-in-pool (20 seeds) | 16 | 0.0696 | — | — |
-`cos_s0c` (best single) | 16 | 0.1801 | 181 | 122 |
-`imp` (EADP importance) | 16 | 0.1524 | 189 | 140 |
-`nn4_recon` | 16 | 0.1289 | 225 | 169 |
-`red_s0_top8` | 16 | 0.1625 | 204 | 148 |
-M6 D4 disagreement | 16 | 0.1685 | 196 | 140 |
-M6 max-fusion | 16 | 0.1682 | 197 | 140 |
+`cos_s0c` (best single) | 16 | 0.1693 | 170 | 123 |
+`imp` (EADP importance) | 16 | 0.1452 | 174 | 120 |
+`nn4_recon` | 16 | 0.1253 | 217 | 163 |
+`red_s0_top8` | 16 | 0.1521 | 211 | 154 |
+M6 D4 disagreement | 16 | 0.1702 | 172 | 119 |
+M6 max-fusion | 16 | 0.1699 | 173 | 119 |
 ZO-P m=1 | 16 | 0.1232 | 243 | 210 |
 ZO-P m=2 | 16 | 0.1307 | 240 | 205 |
 ZO-P m=4 | 16 | 0.1283 | 242 | 206 |
@@ -141,12 +141,12 @@ ZO-P m=8 | 16 | 0.1295 | 242 | 206 |
 **oracle in pool** | 16 | 0.2824 | 47 | 40 |
 
 random-in-pool (20 seeds) | 32 | 0.1145 | — | — |
-`cos_s0c` (best single) | 32 | 0.1629 | 222 | 174 |
-`imp` (EADP importance) | 32 | 0.1567 | 222 | 180 |
-`nn4_recon` | 32 | 0.1379 | 239 | 197 |
-`red_s0_top8` | 32 | 0.1560 | 231 | 175 |
-M6 D4 disagreement | 32 | 0.1619 | 223 | 175 |
-M6 max-fusion | 32 | 0.1621 | 223 | 176 |
+`cos_s0c` (best single) | 32 | 0.1659 | 211 | 160 |
+`imp` (EADP importance) | 32 | 0.1597 | 210 | 162 |
+`nn4_recon` | 32 | 0.1363 | 235 | 199 |
+`red_s0_top8` | 32 | 0.1519 | 235 | 188 |
+M6 D4 disagreement | 32 | 0.1664 | 208 | 163 |
+M6 max-fusion | 32 | 0.1673 | 208 | 157 |
 ZO-P m=1 | 32 | 0.1359 | 248 | 214 |
 ZO-P m=2 | 32 | 0.1379 | 247 | 215 |
 ZO-P m=4 | 32 | 0.1363 | 248 | 216 |
@@ -154,12 +154,12 @@ ZO-P m=8 | 32 | 0.1363 | 249 | 218 |
 **oracle in pool** | 32 | 0.2299 | 102 | 92 |
 
 random-in-pool (20 seeds) | 8 | 0.0859 | — | — |
-`cos_s0c` (best single) | 8 | 0.2232 | 140 | 74 |
-`imp` (EADP importance) | 8 | 0.1708 | 167 | 110 |
-`nn4_recon` | 8 | 0.1738 | 186 | 130 |
-`red_s0_top8` | 8 | 0.2036 | 168 | 98 |
-M6 D4 disagreement | 8 | 0.2196 | 150 | 84 |
-M6 max-fusion | 8 | 0.2196 | 151 | 84 |
+`cos_s0c` (best single) | 8 | 0.2089 | 131 | 85 |
+`imp` (EADP importance) | 8 | 0.0923 | 198 | 137 |
+`nn4_recon` | 8 | 0.0750 | 283 | 246 |
+`red_s0_top8` | 8 | 0.1482 | 218 | 152 |
+M6 D4 disagreement | 8 | 0.1905 | 190 | 116 |
+M6 max-fusion | 8 | 0.1899 | 189 | 115 |
 ZO-P m=1 | 8 | 0.1750 | 204 | 136 |
 ZO-P m=2 | 8 | 0.1756 | 204 | 137 |
 ZO-P m=4 | 8 | 0.1780 | 202 | 137 |
@@ -167,12 +167,12 @@ ZO-P m=8 | 8 | 0.1768 | 203 | 136 |
 **oracle in pool** | 8 | 0.2649 | 40 | 29 |
 
 random-in-pool (20 seeds) | 16 | 0.1187 | — | — |
-`cos_s0c` (best single) | 16 | 0.1628 | 201 | 138 |
-`imp` (EADP importance) | 16 | 0.1551 | 201 | 140 |
-`nn4_recon` | 16 | 0.1512 | 212 | 154 |
-`red_s0_top8` | 16 | 0.1601 | 206 | 140 |
-M6 D4 disagreement | 16 | 0.1667 | 197 | 139 |
-M6 max-fusion | 16 | 0.1670 | 197 | 139 |
+`cos_s0c` (best single) | 16 | 0.1673 | 183 | 126 |
+`imp` (EADP importance) | 16 | 0.1476 | 198 | 138 |
+`nn4_recon` | 16 | 0.1179 | 247 | 201 |
+`red_s0_top8` | 16 | 0.1446 | 231 | 177 |
+M6 D4 disagreement | 16 | 0.1557 | 216 | 150 |
+M6 max-fusion | 16 | 0.1565 | 215 | 149 |
 ZO-P m=1 | 16 | 0.1509 | 222 | 166 |
 ZO-P m=2 | 16 | 0.1500 | 222 | 161 |
 ZO-P m=4 | 16 | 0.1506 | 223 | 165 |
@@ -193,12 +193,12 @@ ZO-P m=8 | 32 | 0.1357 | 228 | 170 |
 **oracle in pool** | 32 | 0.1357 | 228 | 170 |
 
 random-in-pool (20 seeds) | 8 | 0.0535 | — | — |
-`cos_s0c` (best single) | 8 | 0.2268 | 141 | 72 |
-`imp` (EADP importance) | 8 | 0.1446 | 175 | 120 |
-`nn4_recon` | 8 | 0.1512 | 217 | 160 |
-`red_s0_top8` | 8 | 0.1929 | 180 | 106 |
-M6 D4 disagreement | 8 | 0.2179 | 161 | 85 |
-M6 max-fusion | 8 | 0.2179 | 161 | 86 |
+`cos_s0c` (best single) | 8 | 0.2089 | 131 | 85 |
+`imp` (EADP importance) | 8 | 0.0923 | 198 | 137 |
+`nn4_recon` | 8 | 0.0750 | 283 | 246 |
+`red_s0_top8` | 8 | 0.1482 | 218 | 152 |
+M6 D4 disagreement | 8 | 0.1911 | 188 | 115 |
+M6 max-fusion | 8 | 0.1905 | 187 | 114 |
 ZO-P m=1 | 8 | 0.1452 | 241 | 196 |
 ZO-P m=2 | 8 | 0.1488 | 237 | 191 |
 ZO-P m=4 | 8 | 0.1488 | 241 | 197 |
@@ -206,12 +206,12 @@ ZO-P m=8 | 8 | 0.1512 | 240 | 194 |
 **oracle in pool** | 8 | 0.3262 | 23 | 18 |
 
 random-in-pool (20 seeds) | 16 | 0.0798 | — | — |
-`cos_s0c` (best single) | 16 | 0.1726 | 189 | 128 |
-`imp` (EADP importance) | 16 | 0.1443 | 201 | 146 |
-`nn4_recon` | 16 | 0.1375 | 230 | 175 |
-`red_s0_top8` | 16 | 0.1598 | 213 | 157 |
-M6 D4 disagreement | 16 | 0.1708 | 200 | 132 |
-M6 max-fusion | 16 | 0.1702 | 201 | 132 |
+`cos_s0c` (best single) | 16 | 0.1693 | 170 | 123 |
+`imp` (EADP importance) | 16 | 0.1074 | 218 | 164 |
+`nn4_recon` | 16 | 0.0741 | 301 | 273 |
+`red_s0_top8` | 16 | 0.1238 | 253 | 199 |
+M6 D4 disagreement | 16 | 0.1560 | 214 | 148 |
+M6 max-fusion | 16 | 0.1571 | 214 | 146 |
 ZO-P m=1 | 16 | 0.1339 | 250 | 214 |
 ZO-P m=2 | 16 | 0.1351 | 250 | 206 |
 ZO-P m=4 | 16 | 0.1345 | 250 | 208 |
@@ -219,12 +219,12 @@ ZO-P m=8 | 16 | 0.1333 | 252 | 207 |
 **oracle in pool** | 16 | 0.2458 | 55 | 48 |
 
 random-in-pool (20 seeds) | 32 | 0.1288 | — | — |
-`cos_s0c` (best single) | 32 | 0.1551 | 235 | 181 |
-`imp` (EADP importance) | 32 | 0.1527 | 235 | 182 |
-`nn4_recon` | 32 | 0.1472 | 244 | 192 |
-`red_s0_top8` | 32 | 0.1564 | 240 | 190 |
-M6 D4 disagreement | 32 | 0.1576 | 235 | 187 |
-M6 max-fusion | 32 | 0.1574 | 235 | 187 |
+`cos_s0c` (best single) | 32 | 0.1667 | 219 | 166 |
+`imp` (EADP importance) | 32 | 0.1561 | 228 | 168 |
+`nn4_recon` | 32 | 0.1205 | 273 | 230 |
+`red_s0_top8` | 32 | 0.1403 | 263 | 226 |
+M6 D4 disagreement | 32 | 0.1522 | 244 | 194 |
+M6 max-fusion | 32 | 0.1531 | 243 | 190 |
 ZO-P m=1 | 32 | 0.1443 | 258 | 220 |
 ZO-P m=2 | 32 | 0.1445 | 258 | 224 |
 ZO-P m=4 | 32 | 0.1446 | 258 | 222 |
@@ -237,26 +237,26 @@ Pools: P0 = all 768 dropped, P1 = `cos_s0c` top-32, P2 = `cos_s0c` top-64, P3 = 
 
 contrast | Δ recall@r | 95 % CI | significant
 |---|---:|---|---|
-P0 zop1-vs-cos | -0.1625 | [-0.1810, -0.1440] | yes * |
-P0 zop2-vs-cos | -0.1631 | [-0.1810, -0.1452] | yes * |
-P0 zop4-vs-cos | -0.1655 | [-0.1839, -0.1476] | yes * |
-P0 zop8-vs-cos | -0.1649 | [-0.1833, -0.1470] | yes * |
-P1 zop1-vs-cos | -0.0726 | [-0.0863, -0.0589] | yes * |
-P1 zop2-vs-cos | -0.0631 | [-0.0756, -0.0500] | yes * |
-P1 zop4-vs-cos | -0.0696 | [-0.0833, -0.0565] | yes * |
-P1 zop8-vs-cos | -0.0679 | [-0.0810, -0.0548] | yes * |
-P2 zop1-vs-cos | -0.1083 | [-0.1250, -0.0911] | yes * |
-P2 zop2-vs-cos | -0.0988 | [-0.1161, -0.0821] | yes * |
-P2 zop4-vs-cos | -0.1042 | [-0.1202, -0.0881] | yes * |
-P2 zop8-vs-cos | -0.1083 | [-0.1244, -0.0923] | yes * |
-P3 zop1-vs-cos | -0.0482 | [-0.0583, -0.0381] | yes * |
-P3 zop2-vs-cos | -0.0476 | [-0.0571, -0.0381] | yes * |
-P3 zop4-vs-cos | -0.0452 | [-0.0554, -0.0351] | yes * |
-P3 zop8-vs-cos | -0.0464 | [-0.0571, -0.0363] | yes * |
-P4 zop1-vs-cos | -0.0815 | [-0.0952, -0.0679] | yes * |
-P4 zop2-vs-cos | -0.0780 | [-0.0899, -0.0655] | yes * |
-P4 zop4-vs-cos | -0.0780 | [-0.0899, -0.0655] | yes * |
-P4 zop8-vs-cos | -0.0756 | [-0.0875, -0.0631] | yes * |
+P0 zop1-vs-cos | -0.1899 | [-0.2071, -0.1708] | yes * |
+P0 zop2-vs-cos | -0.1905 | [-0.2077, -0.1720] | yes * |
+P0 zop4-vs-cos | -0.1929 | [-0.2101, -0.1738] | yes * |
+P0 zop8-vs-cos | -0.1923 | [-0.2089, -0.1738] | yes * |
+P1 zop1-vs-cos | -0.0482 | [-0.0673, -0.0298] | yes * |
+P1 zop2-vs-cos | -0.0387 | [-0.0565, -0.0202] | yes * |
+P1 zop4-vs-cos | -0.0452 | [-0.0631, -0.0274] | yes * |
+P1 zop8-vs-cos | -0.0435 | [-0.0619, -0.0262] | yes * |
+P2 zop1-vs-cos | -0.0869 | [-0.1077, -0.0661] | yes * |
+P2 zop2-vs-cos | -0.0774 | [-0.0982, -0.0565] | yes * |
+P2 zop4-vs-cos | -0.0827 | [-0.1030, -0.0619] | yes * |
+P2 zop8-vs-cos | -0.0869 | [-0.1060, -0.0667] | yes * |
+P3 zop1-vs-cos | -0.0339 | [-0.0482, -0.0202] | yes * |
+P3 zop2-vs-cos | -0.0333 | [-0.0476, -0.0190] | yes * |
+P3 zop4-vs-cos | -0.0310 | [-0.0452, -0.0173] | yes * |
+P3 zop8-vs-cos | -0.0321 | [-0.0458, -0.0185] | yes * |
+P4 zop1-vs-cos | -0.0637 | [-0.0810, -0.0470] | yes * |
+P4 zop2-vs-cos | -0.0601 | [-0.0756, -0.0440] | yes * |
+P4 zop4-vs-cos | -0.0601 | [-0.0756, -0.0446] | yes * |
+P4 zop8-vs-cos | -0.0577 | [-0.0732, -0.0422] | yes * |
 
 ## T5 — the teacher's head surviving a 256-token set from all 1024
 

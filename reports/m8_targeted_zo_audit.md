@@ -8,6 +8,24 @@ closed and this document reopens none of them. **Status:** Phase 0 and Phase 1
 run; **Phases 2–5 not run**, because the pre-registered Phase-1 depth gate
 failed. Everything here is forward-only and training-free.
 
+> **AMENDMENT (2026-09-27, found during M9).** The cheap-rule cells of the
+> Phase-1 grid (`cos_s0c`, `imp`, `nn4_recon`, `red_s0_top8`, D4, max-fusion)
+> were computed **misaligned**: `m8_phase1.picks_for` passed the positional
+> panel index `j` to `r_cheap_in_pool` / `m6_score_in_pool`, which index
+> `bank["X"]` with it, while the pool and the teacher rank belonged to global
+> bank row `hold[j]` — a different instance. Oracle, random and ZO-P cells were
+> always aligned, and the pool audit was unaffected. The bug was fixed in
+> `m8_phase1.py`, the grid regenerated (`m8_phase1.json`,
+> `reports/m8_tables.md`) and the affected figures corrected in place below.
+> The headline correction: in pool P1 at `r = 8`, `cos_s0c` is
+> **131.0** (recall 0.2089), not 118.9 (0.2333); D4/max-fusion are
+> **127.8/127.5**, not 133.4/133.7 — so in-pool the M6 composition rules are
+> *marginally better* than the best single proxy, reversing that ordering in
+> this table. Every gate clause still fails, by wider margins than reported:
+> the best ZO-P cell (184.2) is ~57 ranks worse than the best cheap rule, and
+> the "worse on 13 of 15 pool×r cells" count is unchanged (the two exceptions
+> are exact ties from pool exhaustion at r = 32). **The verdict is unaffected.**
+
 **The question this document answers, and the only one.**
 
 > Cheap forward-only proxies leave the tokens that actually carry the answer at
@@ -36,7 +54,7 @@ candidate pool than the cheap proxy that built the pool. Verdict: REFUTED.**
   any number is read: at `r = 8`, mean teacher rank **< 40**, ideally < 25,
   clearly better than `cos_s0c` and than the best M6 cheap scorer. The best
   zeroth-order cell anywhere in the grid is **mean teacher rank 184.2** (pool
-  P1, ZO-P m=2) against `cos_s0c`'s **118.9** in the same pool and an oracle's
+  P1, ZO-P m=2) against `cos_s0c`'s **131.0** in the same pool and an oracle's
   **31.3**. The gate fails by a factor of **4.6** on its own primary metric, and
   the estimator loses to the cheap proxy it was meant to beat.
 - **Why — the mechanism, and it is not subtle.** ZOO-Prune's estimator, run at
@@ -76,7 +94,7 @@ candidate pool than the cheap proxy that built the pool. Verdict: REFUTED.**
 - **Nomination works; auditing does not.** This is the one genuinely new
   positive finding, and it sharpens the negative. The cheap pools are strongly
   enriched (P1: `cov@8` = 0.2994 against chance 0.0312, and its in-pool oracle
-  at `r = 8` sits at mean teacher rank **31.3** against `cos_s0c`'s 118.9 from
+  at `r = 8` sits at mean teacher rank **31.3** against `cos_s0c`'s 131.0 from
   the same pool). The pool contains the answer. The
   audit cannot find it. M6's "no cheap score ranks inside the enriched pool" is
   now joined by "and neither does the published zeroth-order estimator".
@@ -196,8 +214,8 @@ a fixed pool, which SADS never is.
 
 **The pools are genuinely enriched.** P1 holds 9.6× chance coverage of the
 teacher's top-8 head in 32 slots, and its in-pool oracle at `r = 8` reaches mean
-teacher rank **31.3** — 3.8× shallower than what `cos_s0c` actually delivers
-(118.9) from the same pool. The ceiling falls as the pool grows, exactly as it
+teacher rank **31.3** — 4.2× shallower than what `cos_s0c` actually delivers
+(131.0) from the same pool. The ceiling falls as the pool grows, exactly as it
 must: **3.5** for the full 768 (P0 — which reproduces M3-v0's global oracle band
 of 3.5–15.5, where a rescue was measured at +7.7 to +14.9 macro), **20.1** for
 64 slots (P2), **22.7** for 48.8 (P4), **31.3** for 32 (P1), **39.6** for 25
@@ -227,9 +245,9 @@ rank are over the picked tokens (0 = the teacher's best dropped token).
 Method | r | head recall@r | mean teacher rank | median teacher rank
 |---|---:|---:|---:|---:|
 random-in-pool (20 seeds) | 8 | 0.0731 | — | —
-`cos_s0c` (best single) | 8 | **0.2333** | **118.9** | 64.0
-M6 D4 disagreement | 8 | 0.2286 | 133.4 | 75.0
-M6 max-fusion | 8 | 0.2292 | 133.7 | 74.3
+`cos_s0c` (best single) | 8 | **0.2089** | **131.0** | 84.8
+M6 D4 disagreement | 8 | 0.2149 | **127.8** | 76.8
+M6 max-fusion | 8 | 0.2155 | **127.5** | 76.0
 ZO-P m=1 | 8 | 0.1607 | 187.6 | 149.0
 ZO-P m=2 | 8 | 0.1702 | **184.2** | 147.5
 ZO-P m=4 | 8 | 0.1637 | 185.6 | 144.5
@@ -245,10 +263,10 @@ ZO-P m=8 | 8 | 0.1655 | 186.6 | 148.0
    the *nomination* step is sound.
 2. **ZO-P does not reach it, and does not reach the cheap proxy either.** At
    `r = 8` ZO-P's best budget (m=2) sits at mean teacher rank **184.2** against
-   `cos_s0c`'s **118.9** — a **65-rank** deficit — and against the oracle's
+   `cos_s0c`'s **131.0** — a **53-rank** deficit — and against the oracle's
    31.3.
    It beats the matched random draw (0.170 vs 0.073 recall) but loses to the
-   free column by **66 teacher ranks** and to both M6 composition rules by ~50.
+   free column by **55 teacher ranks** and to both M6 composition rules by ~57.
 3. **More directions do not help.** `m = 1, 2, 4, 8` are within 4 ranks of each
    other on every pool, and the published `m = 64` lands inside the same band.
    The estimator is not variance-limited; it is *bias*-limited, and §8
@@ -296,7 +314,7 @@ its cost is even considered.
 
 On **P0** — the full 768 dropped tokens, no nomination at all — ZO-P's best
 `r = 8` pick sits at mean teacher rank **448**, against a chance value of 384
-(768/2) and `cos_s0c`'s **240**. The estimator is *worse than chance* when it is
+(768/2) and `cos_s0c`'s **131.0**. The estimator is *worse than chance* when it is
 allowed to choose from everything, and it is worse than chance for the same
 reason it is weak inside a pool: it is ranking by a quantity the teacher's head
 is anti-correlated with (§8).
@@ -306,8 +324,8 @@ is anti-correlated with (§8).
 | gate (fixed before any number was read) | outcome |
 |---|---|
 | `r = 8` mean teacher rank **< 40**, ideally < 25 | ❌ **184.2** (best cell anywhere in the grid) |
-| clearly better than `cos_s0c` | ❌ **worse** — 184.2 vs 118.9 in the same pool |
-| clearly better than the best M6 cheap scorer | ❌ D4 = 133.4, max-fusion = 133.7, both better than ZO-P |
+| clearly better than `cos_s0c` | ❌ **worse** — 184.2 vs 131.0 in the same pool |
+| clearly better than the best M6 cheap scorer | ❌ D4 = 127.8, max-fusion = 127.5, both better than ZO-P |
 | same direction on several pools | ❌ ZO-P is worse than `cos_s0c` on **P0, P1, P2, P3 and P4** at `r = 8`, and on **13 of 15** pool × r cells using its best budget |
 | depth improves, not only recall | ❌ neither improves |
 
@@ -648,7 +666,7 @@ that, after M6's cheap-score audit and M7's keep-them-all hedge.
 **Q1 — Does ZO sensitivity break the cheap-feature depth wall?** **No — both
 estimators were run and both failed.** ZO-P, the published one: best cell
 anywhere is mean teacher rank **184.2** at `r = 8` (gate: < 40), worse than
-`cos_s0c` (118.9) in the same pool, worse on 13 of 15 pool × r cells, worse than
+`cos_s0c` (131.0) in the same pool, worse on 13 of 15 pool × r cells, worse than
 both M6 composition rules. ZO-L, the LLM-level one that *could* have: mean
 teacher rank **200** at `r = 8` against `cos_s0c`'s 129, **1.21× chance**, teacher
 agreement **+0.014** — a ranking with no teacher information, exactly as its
@@ -661,13 +679,13 @@ dropped tokens (P0) scores 0.0170 / mean rank **447.7**. Nomination moves the
 estimator from below chance (447.7 of 768, against a chance value of 384) to a
 real signal (186.6) — a 2.4× depth gain.
 But the cheap score that *built* the pool, applied inside it, is better still
-(118.9), so the audit does not repay the nomination it depends on.
+(131.0), so the audit does not repay the nomination it depends on.
 
 **Q3 — Does the gain come from the ZO audit or from ordinary replacement?**
 **From neither, because there is no gain to attribute.** ZO-P does beat the
 matched random-in-pool draw (P1 `r = 8`: 0.1655 vs 0.0731 recall, 186.6 vs —), so
 the audit is not worthless in isolation. It is simply dominated: a free column
-inside the same pool beats it by 66 teacher ranks. Since no generation was run
+inside the same pool beats it by 55 teacher ranks. Since no generation was run
 (§6), no macro claim is made in either direction, and the matched random control
 remains the bar any future rescue formulation must clear.
 
@@ -726,7 +744,7 @@ Against the brief's own gate:
 **What is left standing**, all reusable:
 
 1. **Nomination is solved; ranking is not.** P1's in-pool oracle at `r = 8` is
-   mean teacher rank 31.3 against `cos_s0c`'s 118.9 from the same 32 slots, and
+   mean teacher rank 31.3 against `cos_s0c`'s 131.0 from the same 32 slots, and
    the 768-token pool's oracle is 3.5. This is now the
    third independent measurement of the same asymmetry (M6 cheap scores, M7
    keep-the-union, M8 zeroth-order), and it should be stated as the project's

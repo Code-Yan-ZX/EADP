@@ -119,11 +119,18 @@ def main():
         if rule == "oracle":
             return [r_oracle_in_pool(sub, j, pl[j], r) for j in range(sub.n)]
         if rule in CHEAP:
-            return [r_cheap_in_pool(bank, sub, j, pl[j], rule, r)
+            # NOTE: the score column must be read from the GLOBAL bank row
+            # hold[j] -- the same instance whose pool and teacher rank are
+            # used.  (An earlier version passed the positional j here, which
+            # read instance j's features against instance hold[j]'s pool; the
+            # cheap-rule cells in the stored grid were misaligned.  Oracle,
+            # random and ZO-P cells were always aligned.)
+            return [r_cheap_in_pool(bank, dropped, hold[j], pl[j], rule, r)
                     for j in range(sub.n)]
         if rule in ("D4", "maxfusion"):
             return [rank_by_score(pl[j],
-                                  m6_score_in_pool(bank, sub, j, pl[j], rule))[:r]
+                                  m6_score_in_pool(bank, dropped, hold[j],
+                                                   pl[j], rule))[:r]
                     for j in range(sub.n)]
         if rule.startswith("zop"):
             m = int(rule[3:])
