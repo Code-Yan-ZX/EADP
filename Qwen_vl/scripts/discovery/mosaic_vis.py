@@ -111,9 +111,13 @@ def main():
             # recover the preprocessed 1024x1024 image for the overlay
             from qwen_vl_utils import process_vision_info
             msgs = model._build_messages(message, dataset=dataset_name)
-            images, _, _ = process_vision_info(msgs, image_patch_size=16)
+            out = process_vision_info(msgs, image_patch_size=16)
+            images = out[0] if isinstance(out, tuple) else out
             from vlmeval.vlm.qwen3_vl.model_fixed_res import get_spatial_merge_size  # noqa
-            proc_img = expand2square(images[0]).resize(
+            image_mean = getattr(model.processor.image_processor, "image_mean",
+                                 [0.5, 0.5, 0.5])
+            bg = tuple(int(x * 255) for x in image_mean)
+            proc_img = expand2square(images[0], bg).resize(
                 (QWEN3_FIXED_RESOLUTION, QWEN3_FIXED_RESOLUTION))
 
             for mode in MODES:
