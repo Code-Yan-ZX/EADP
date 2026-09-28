@@ -1,0 +1,1501 @@
+{
+ "criteria": {
+  "C1_paired_macro_beats_B2": false,
+  "C2_no_benchmark_loses_1pt": false,
+  "C3_ttft_within_constraint": true,
+  "C4_perm_erases_gain": true,
+  "C5_unary_recovers_less": true
+ },
+ "per_arm": {
+  "B2": {
+   "macro": 63.61882523161844,
+   "per_ds": {
+    "TextVQA_VAL": 74.20833333333334,
+    "DocVQA_VAL": 54.56480902818861,
+    "OCRBench": 62.083333333333336
+   },
+   "ttft_median_ms": 293.8407361507416
+  },
+  "B1": {
+   "macro": 63.2967975321237,
+   "per_ds": {
+    "TextVQA_VAL": 73.5,
+    "DocVQA_VAL": 55.55705926303778,
+    "OCRBench": 60.83333333333333
+   },
+   "ttft_median_ms": 329.9731994047761
+  },
+  "SAGE": {
+   "macro": 62.32046213638032,
+   "per_ds": {
+    "TextVQA_VAL": 71.74999999999999,
+    "DocVQA_VAL": 53.12805307580765,
+    "OCRBench": 62.083333333333336
+   },
+   "ttft_median_ms": 307.93258734047413
+  },
+  "RND": {
+   "macro": 61.94678488770308,
+   "per_ds": {
+    "TextVQA_VAL": 71.125,
+    "DocVQA_VAL": 53.465354663109245,
+    "OCRBench": 61.25000000000001
+   },
+   "ttft_median_ms": null
+  },
+  "PERM": {
+   "macro": 62.32046213638032,
+   "per_ds": {
+    "TextVQA_VAL": 71.74999999999999,
+    "DocVQA_VAL": 53.12805307580765,
+    "OCRBench": 62.083333333333336
+   },
+   "ttft_median_ms": null
+  },
+  "PERM-X": {
+   "macro": 62.71621068619865,
+   "per_ds": {
+    "TextVQA_VAL": 72.95833333333334,
+    "DocVQA_VAL": 53.523632058595936,
+    "OCRBench": 61.66666666666667
+   },
+   "ttft_median_ms": null
+  },
+  "UNARY": {
+   "macro": 62.56996124157797,
+   "per_ds": {
+    "TextVQA_VAL": 72.54166666666667,
+    "DocVQA_VAL": 53.501550391400556,
+    "OCRBench": 61.66666666666667
+   },
+   "ttft_median_ms": 311.2034220248461
+  }
+ },
+ "contrasts": {
+  "B1": {
+   "delta": -0.0032202769949471587,
+   "lo": -0.028270798641545053,
+   "hi": 0.01996440801625128,
+   "p_two_sided": 0.785,
+   "n_win": 72,
+   "n_loss": 65,
+   "n_tie": 583
+  },
+  "SAGE": {
+   "delta": -0.012983630952380951,
+   "lo": -0.023159577546296297,
+   "hi": -0.003767361111111111,
+   "p_two_sided": 0.005,
+   "n_win": 6,
+   "n_loss": 15,
+   "n_tie": 699
+  },
+  "RND": {
+   "delta": -0.016720403439153438,
+   "lo": -0.02736245453042328,
+   "hi": -0.006390066964285717,
+   "p_two_sided": 0.001,
+   "n_win": 3,
+   "n_loss": 17,
+   "n_tie": 700
+  },
+  "PERM": {
+   "delta": -0.012983630952380951,
+   "lo": -0.023159577546296297,
+   "hi": -0.003767361111111111,
+   "p_two_sided": 0.005,
+   "n_win": 6,
+   "n_loss": 15,
+   "n_tie": 699
+  },
+  "PERM-X": {
+   "delta": -0.00902614545419778,
+   "lo": -0.019561134747090418,
+   "hi": 0.0006385682947274401,
+   "p_two_sided": 0.066,
+   "n_win": 8,
+   "n_loss": 14,
+   "n_tie": 698
+  },
+  "UNARY": {
+   "delta": -0.010488639900404606,
+   "lo": -0.02103189192343604,
+   "hi": -0.00017550770308124086,
+   "p_two_sided": 0.046,
+   "n_win": 5,
+   "n_loss": 13,
+   "n_tie": 702
+  },
+  "SAGE-UNARY": {
+   "delta": -0.0024949910519763458,
+   "lo": -0.01646508325552443,
+   "hi": 0.011805679563492048,
+   "p_two_sided": 0.712,
+   "n_win": 18,
+   "n_loss": 18,
+   "n_tie": 684
+  },
+  "SAGE-PERM": {
+   "delta": 0.0,
+   "lo": 0.0,
+   "hi": 0.0,
+   "p_two_sided": 2.0,
+   "n_win": 0,
+   "n_loss": 0,
+   "n_tie": 720
+  },
+  "SAGE-PERM-X": {
+   "delta": -0.003957485498183173,
+   "lo": -0.015205039455039454,
+   "hi": 0.0077562245309338185,
+   "p_two_sided": 0.512,
+   "n_win": 12,
+   "n_loss": 15,
+   "n_tie": 693
+  }
+ },
+ "rescue_break": {
+  "SAGE": {
+   "rescue": 6,
+   "break_": 15,
+   "tie": 699,
+   "per_ds": {
+    "TextVQA_VAL": {
+     "rescue": 1,
+     "break_": 6
+    },
+    "DocVQA_VAL": {
+     "rescue": 4,
+     "break_": 8
+    },
+    "OCRBench": {
+     "rescue": 1,
+     "break_": 1
+    }
+   }
+  },
+  "RND": {
+   "rescue": 3,
+   "break_": 17,
+   "tie": 700,
+   "per_ds": {
+    "TextVQA_VAL": {
+     "rescue": 0,
+     "break_": 8
+    },
+    "DocVQA_VAL": {
+     "rescue": 2,
+     "break_": 6
+    },
+    "OCRBench": {
+     "rescue": 1,
+     "break_": 3
+    }
+   }
+  },
+  "PERM": {
+   "rescue": 6,
+   "break_": 15,
+   "tie": 699,
+   "per_ds": {
+    "TextVQA_VAL": {
+     "rescue": 1,
+     "break_": 6
+    },
+    "DocVQA_VAL": {
+     "rescue": 4,
+     "break_": 8
+    },
+    "OCRBench": {
+     "rescue": 1,
+     "break_": 1
+    }
+   }
+  },
+  "PERM-X": {
+   "rescue": 8,
+   "break_": 14,
+   "tie": 698,
+   "per_ds": {
+    "TextVQA_VAL": {
+     "rescue": 3,
+     "break_": 4
+    },
+    "DocVQA_VAL": {
+     "rescue": 4,
+     "break_": 8
+    },
+    "OCRBench": {
+     "rescue": 1,
+     "break_": 2
+    }
+   }
+  },
+  "UNARY": {
+   "rescue": 5,
+   "break_": 13,
+   "tie": 702,
+   "per_ds": {
+    "TextVQA_VAL": {
+     "rescue": 0,
+     "break_": 4
+    },
+    "DocVQA_VAL": {
+     "rescue": 2,
+     "break_": 5
+    },
+    "OCRBench": {
+     "rescue": 3,
+     "break_": 4
+    }
+   }
+  }
+ },
+ "hindsight": {
+  "mean_best_delta": 0.052078213464950424,
+  "frac_images_with_gain": 0.08194444444444444,
+  "macro_if_hindsight_deployed": 68.82664657811347,
+  "note": "realized ceiling over 4 sampled edges/image only -- a lower bound on the true hindsight ceiling over all of E(x)"
+ },
+ "calib": {
+  "bound": {
+   "b2_median_ms": 289.9343091994524,
+   "multiplier": 1.1,
+   "max_median_ms": 318.92774011939764
+  },
+  "chosen": {
+   "g": 8,
+   "family": "set",
+   "width": 256,
+   "tau": 0.206674,
+   "val_macro": 66.0729517396184,
+   "exchange_rate": 0.5,
+   "ttft_median_ms": 304.92186825722456
+  },
+  "unary": {
+   "g": 8,
+   "width": 256,
+   "tau": 0.1068,
+   "val_macro": 67.20198399768292,
+   "exchange_rate": 0.3,
+   "ttft_median_ms": 308.32850746810436
+  },
+  "results": {
+   "g1_set_w256": {
+    "g": 1,
+    "family": "set",
+    "width": 256,
+    "ttft_median_ms": 289.38135504722595,
+    "ttft_ok": true,
+    "sage_ms_median": 4.0386881828308105,
+    "taus": [
+     {
+      "tau": 0.0,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.9833333333333333
+     },
+     {
+      "tau": 0.005,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.9833333333333333
+     },
+     {
+      "tau": 0.01,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.9833333333333333
+     },
+     {
+      "tau": 0.02,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.95
+     },
+     {
+      "tau": 0.05,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.9166666666666666
+     },
+     {
+      "tau": 0.05432,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.9
+     },
+     {
+      "tau": 0.061405,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.8
+     },
+     {
+      "tau": 0.074127,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.7
+     },
+     {
+      "tau": 0.090194,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.6
+     },
+     {
+      "tau": 0.1,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.5666666666666667
+     },
+     {
+      "tau": 0.105837,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.5
+     },
+     {
+      "tau": 0.129712,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.4
+     },
+     {
+      "tau": 0.152637,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.3
+     },
+     {
+      "tau": 0.185993,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.2
+     },
+     {
+      "tau": 0.2,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.11666666666666667
+     },
+     {
+      "tau": 0.210959,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.1
+     },
+     {
+      "tau": 0.5,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     }
+    ],
+    "best_tau": {
+     "tau": 0.5,
+     "macro": 65.42779044929583,
+     "exchange_rate": 0.0
+    },
+    "n": 60
+   },
+   "g1_set_w1024": {
+    "g": 1,
+    "family": "set",
+    "width": 1024,
+    "ttft_median_ms": 287.42475621402264,
+    "ttft_ok": true,
+    "sage_ms_median": 4.928895950317383,
+    "taus": [
+     {
+      "tau": 0.0,
+      "macro": 63.72615874766413,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.005,
+      "macro": 63.72615874766413,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.01,
+      "macro": 63.72615874766413,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.02,
+      "macro": 63.72615874766413,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.05,
+      "macro": 63.72615874766413,
+      "exchange_rate": 0.9166666666666666
+     },
+     {
+      "tau": 0.056002,
+      "macro": 63.72615874766413,
+      "exchange_rate": 0.9
+     },
+     {
+      "tau": 0.080414,
+      "macro": 63.72615874766413,
+      "exchange_rate": 0.8
+     },
+     {
+      "tau": 0.097737,
+      "macro": 63.72615874766413,
+      "exchange_rate": 0.7
+     },
+     {
+      "tau": 0.1,
+      "macro": 63.72615874766413,
+      "exchange_rate": 0.6833333333333333
+     },
+     {
+      "tau": 0.112042,
+      "macro": 63.72615874766413,
+      "exchange_rate": 0.6
+     },
+     {
+      "tau": 0.132107,
+      "macro": 63.72615874766413,
+      "exchange_rate": 0.5
+     },
+     {
+      "tau": 0.144038,
+      "macro": 63.72615874766413,
+      "exchange_rate": 0.4
+     },
+     {
+      "tau": 0.153257,
+      "macro": 63.72615874766413,
+      "exchange_rate": 0.3
+     },
+     {
+      "tau": 0.1674,
+      "macro": 65.3928254143308,
+      "exchange_rate": 0.2
+     },
+     {
+      "tau": 0.2,
+      "macro": 65.3928254143308,
+      "exchange_rate": 0.13333333333333333
+     },
+     {
+      "tau": 0.217329,
+      "macro": 65.3928254143308,
+      "exchange_rate": 0.1
+     },
+     {
+      "tau": 0.5,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     }
+    ],
+    "best_tau": {
+     "tau": 0.5,
+     "macro": 65.42779044929583,
+     "exchange_rate": 0.0
+    },
+    "n": 60
+   },
+   "g1_unary_w256": {
+    "g": 1,
+    "family": "unary",
+    "width": 256,
+    "ttft_median_ms": 284.4095919281244,
+    "ttft_ok": true,
+    "sage_ms_median": 2.850719928741455,
+    "taus": [
+     {
+      "tau": 0.0,
+      "macro": 62.464827486332865,
+      "exchange_rate": 0.9833333333333333
+     },
+     {
+      "tau": 0.002586,
+      "macro": 62.464827486332865,
+      "exchange_rate": 0.9
+     },
+     {
+      "tau": 0.005,
+      "macro": 62.464827486332865,
+      "exchange_rate": 0.8666666666666667
+     },
+     {
+      "tau": 0.006294,
+      "macro": 62.464827486332865,
+      "exchange_rate": 0.8
+     },
+     {
+      "tau": 0.007551,
+      "macro": 62.464827486332865,
+      "exchange_rate": 0.7
+     },
+     {
+      "tau": 0.008623,
+      "macro": 62.464827486332865,
+      "exchange_rate": 0.6
+     },
+     {
+      "tau": 0.00978,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.5
+     },
+     {
+      "tau": 0.01,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.48333333333333334
+     },
+     {
+      "tau": 0.010944,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.4
+     },
+     {
+      "tau": 0.012554,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.3
+     },
+     {
+      "tau": 0.015772,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.2
+     },
+     {
+      "tau": 0.018884,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.1
+     },
+     {
+      "tau": 0.02,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.08333333333333333
+     },
+     {
+      "tau": 0.05,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     },
+     {
+      "tau": 0.1,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     },
+     {
+      "tau": 0.2,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     },
+     {
+      "tau": 0.5,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     }
+    ],
+    "best_tau": {
+     "tau": 0.5,
+     "macro": 65.42779044929583,
+     "exchange_rate": 0.0
+    },
+    "n": 60
+   },
+   "g2_set_w256": {
+    "g": 2,
+    "family": "set",
+    "width": 256,
+    "ttft_median_ms": 305.4492035880685,
+    "ttft_ok": true,
+    "sage_ms_median": 25.615903854370117,
+    "taus": [
+     {
+      "tau": 0.0,
+      "macro": 62.059492080997465,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.005,
+      "macro": 62.059492080997465,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.01,
+      "macro": 62.059492080997465,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.02,
+      "macro": 62.059492080997465,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.05,
+      "macro": 62.059492080997465,
+      "exchange_rate": 0.9833333333333333
+     },
+     {
+      "tau": 0.060437,
+      "macro": 62.059492080997465,
+      "exchange_rate": 0.9
+     },
+     {
+      "tau": 0.072611,
+      "macro": 63.72615874766413,
+      "exchange_rate": 0.8
+     },
+     {
+      "tau": 0.094752,
+      "macro": 63.72615874766413,
+      "exchange_rate": 0.7
+     },
+     {
+      "tau": 0.1,
+      "macro": 63.72615874766413,
+      "exchange_rate": 0.65
+     },
+     {
+      "tau": 0.104548,
+      "macro": 63.72615874766413,
+      "exchange_rate": 0.6
+     },
+     {
+      "tau": 0.125032,
+      "macro": 63.72615874766413,
+      "exchange_rate": 0.5
+     },
+     {
+      "tau": 0.157776,
+      "macro": 63.72615874766413,
+      "exchange_rate": 0.4
+     },
+     {
+      "tau": 0.184712,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.3
+     },
+     {
+      "tau": 0.2,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.26666666666666666
+     },
+     {
+      "tau": 0.226682,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.2
+     },
+     {
+      "tau": 0.282808,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.1
+     },
+     {
+      "tau": 0.5,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     }
+    ],
+    "best_tau": {
+     "tau": 0.5,
+     "macro": 65.42779044929583,
+     "exchange_rate": 0.0
+    },
+    "n": 60
+   },
+   "g2_set_w1024": {
+    "g": 2,
+    "family": "set",
+    "width": 1024,
+    "ttft_median_ms": 313.3963802829385,
+    "ttft_ok": true,
+    "sage_ms_median": 26.664448738098145,
+    "taus": [
+     {
+      "tau": 0.0,
+      "macro": 62.09445711596249,
+      "exchange_rate": 0.9833333333333333
+     },
+     {
+      "tau": 0.005,
+      "macro": 62.09445711596249,
+      "exchange_rate": 0.9833333333333333
+     },
+     {
+      "tau": 0.01,
+      "macro": 62.09445711596249,
+      "exchange_rate": 0.9666666666666667
+     },
+     {
+      "tau": 0.02,
+      "macro": 62.09445711596249,
+      "exchange_rate": 0.95
+     },
+     {
+      "tau": 0.047407,
+      "macro": 62.09445711596249,
+      "exchange_rate": 0.9
+     },
+     {
+      "tau": 0.05,
+      "macro": 62.09445711596249,
+      "exchange_rate": 0.8833333333333333
+     },
+     {
+      "tau": 0.079398,
+      "macro": 62.09445711596249,
+      "exchange_rate": 0.8
+     },
+     {
+      "tau": 0.1,
+      "macro": 62.09445711596249,
+      "exchange_rate": 0.75
+     },
+     {
+      "tau": 0.11217,
+      "macro": 62.09445711596249,
+      "exchange_rate": 0.7
+     },
+     {
+      "tau": 0.11763,
+      "macro": 62.09445711596249,
+      "exchange_rate": 0.6
+     },
+     {
+      "tau": 0.138854,
+      "macro": 62.09445711596249,
+      "exchange_rate": 0.5
+     },
+     {
+      "tau": 0.155071,
+      "macro": 62.09445711596249,
+      "exchange_rate": 0.4
+     },
+     {
+      "tau": 0.168547,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.3
+     },
+     {
+      "tau": 0.188974,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.2
+     },
+     {
+      "tau": 0.2,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.13333333333333333
+     },
+     {
+      "tau": 0.238268,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.1
+     },
+     {
+      "tau": 0.5,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     }
+    ],
+    "best_tau": {
+     "tau": 0.5,
+     "macro": 65.42779044929583,
+     "exchange_rate": 0.0
+    },
+    "n": 60
+   },
+   "g2_unary_w256": {
+    "g": 2,
+    "family": "unary",
+    "width": 256,
+    "ttft_median_ms": 309.1095229610801,
+    "ttft_ok": true,
+    "sage_ms_median": 24.698816299438477,
+    "taus": [
+     {
+      "tau": 0.0,
+      "macro": 62.059492080997465,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.005,
+      "macro": 62.059492080997465,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.01,
+      "macro": 62.059492080997465,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.017596,
+      "macro": 62.059492080997465,
+      "exchange_rate": 0.9
+     },
+     {
+      "tau": 0.02,
+      "macro": 62.09445711596249,
+      "exchange_rate": 0.8333333333333334
+     },
+     {
+      "tau": 0.02237,
+      "macro": 62.09445711596249,
+      "exchange_rate": 0.8
+     },
+     {
+      "tau": 0.02446,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.7
+     },
+     {
+      "tau": 0.028096,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.6
+     },
+     {
+      "tau": 0.031572,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.5
+     },
+     {
+      "tau": 0.033477,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.4
+     },
+     {
+      "tau": 0.036381,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.3
+     },
+     {
+      "tau": 0.043102,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.2
+     },
+     {
+      "tau": 0.05,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.11666666666666667
+     },
+     {
+      "tau": 0.052765,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.1
+     },
+     {
+      "tau": 0.1,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     },
+     {
+      "tau": 0.2,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     },
+     {
+      "tau": 0.5,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     }
+    ],
+    "best_tau": {
+     "tau": 0.5,
+     "macro": 65.42779044929583,
+     "exchange_rate": 0.0
+    },
+    "n": 60
+   },
+   "g4_set_w256": {
+    "g": 4,
+    "family": "set",
+    "width": 256,
+    "ttft_median_ms": 307.86878149956465,
+    "ttft_ok": true,
+    "sage_ms_median": 26.110512733459473,
+    "taus": [
+     {
+      "tau": 0.0,
+      "macro": 64.25476992143659,
+      "exchange_rate": 0.9666666666666667
+     },
+     {
+      "tau": 0.005,
+      "macro": 64.25476992143659,
+      "exchange_rate": 0.9666666666666667
+     },
+     {
+      "tau": 0.01,
+      "macro": 64.25476992143659,
+      "exchange_rate": 0.9666666666666667
+     },
+     {
+      "tau": 0.02,
+      "macro": 64.25476992143659,
+      "exchange_rate": 0.9666666666666667
+     },
+     {
+      "tau": 0.05,
+      "macro": 64.25476992143659,
+      "exchange_rate": 0.9666666666666667
+     },
+     {
+      "tau": 0.1,
+      "macro": 64.25476992143659,
+      "exchange_rate": 0.9
+     },
+     {
+      "tau": 0.106184,
+      "macro": 64.25476992143659,
+      "exchange_rate": 0.9
+     },
+     {
+      "tau": 0.13092,
+      "macro": 64.25476992143659,
+      "exchange_rate": 0.8
+     },
+     {
+      "tau": 0.148283,
+      "macro": 64.25476992143659,
+      "exchange_rate": 0.7
+     },
+     {
+      "tau": 0.172077,
+      "macro": 64.25476992143659,
+      "exchange_rate": 0.6
+     },
+     {
+      "tau": 0.189567,
+      "macro": 64.25476992143659,
+      "exchange_rate": 0.5
+     },
+     {
+      "tau": 0.2,
+      "macro": 64.25476992143659,
+      "exchange_rate": 0.48333333333333334
+     },
+     {
+      "tau": 0.208744,
+      "macro": 64.40628507295175,
+      "exchange_rate": 0.4
+     },
+     {
+      "tau": 0.237845,
+      "macro": 64.40628507295175,
+      "exchange_rate": 0.3
+     },
+     {
+      "tau": 0.291546,
+      "macro": 64.40628507295175,
+      "exchange_rate": 0.2
+     },
+     {
+      "tau": 0.3941,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.1
+     },
+     {
+      "tau": 0.5,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.016666666666666666
+     }
+    ],
+    "best_tau": {
+     "tau": 0.5,
+     "macro": 65.42779044929583,
+     "exchange_rate": 0.016666666666666666
+    },
+    "n": 60
+   },
+   "g4_set_w1024": {
+    "g": 4,
+    "family": "set",
+    "width": 1024,
+    "ttft_median_ms": 313.23499511927366,
+    "ttft_ok": true,
+    "sage_ms_median": 26.92204761505127,
+    "taus": [
+     {
+      "tau": 0.0,
+      "macro": 62.90628507295174,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.005,
+      "macro": 62.90628507295174,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.01,
+      "macro": 62.90628507295174,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.02,
+      "macro": 62.90628507295174,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.05,
+      "macro": 62.90628507295174,
+      "exchange_rate": 0.9833333333333333
+     },
+     {
+      "tau": 0.092747,
+      "macro": 62.90628507295174,
+      "exchange_rate": 0.9
+     },
+     {
+      "tau": 0.1,
+      "macro": 62.90628507295174,
+      "exchange_rate": 0.8666666666666667
+     },
+     {
+      "tau": 0.140383,
+      "macro": 62.90628507295174,
+      "exchange_rate": 0.8
+     },
+     {
+      "tau": 0.167617,
+      "macro": 62.90628507295174,
+      "exchange_rate": 0.7
+     },
+     {
+      "tau": 0.188709,
+      "macro": 62.90628507295174,
+      "exchange_rate": 0.6
+     },
+     {
+      "tau": 0.198121,
+      "macro": 63.92779044929583,
+      "exchange_rate": 0.5
+     },
+     {
+      "tau": 0.2,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.48333333333333334
+     },
+     {
+      "tau": 0.223466,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.4
+     },
+     {
+      "tau": 0.244685,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.3
+     },
+     {
+      "tau": 0.279551,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.2
+     },
+     {
+      "tau": 0.305843,
+      "macro": 63.76112378262916,
+      "exchange_rate": 0.1
+     },
+     {
+      "tau": 0.5,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     }
+    ],
+    "best_tau": {
+     "tau": 0.5,
+     "macro": 65.42779044929583,
+     "exchange_rate": 0.0
+    },
+    "n": 60
+   },
+   "g4_unary_w256": {
+    "g": 4,
+    "family": "unary",
+    "width": 256,
+    "ttft_median_ms": 308.12195874750614,
+    "ttft_ok": true,
+    "sage_ms_median": 24.618528366088867,
+    "taus": [
+     {
+      "tau": 0.0,
+      "macro": 62.011223344556676,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.005,
+      "macro": 62.011223344556676,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.01,
+      "macro": 62.011223344556676,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.02,
+      "macro": 62.011223344556676,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.05,
+      "macro": 62.011223344556676,
+      "exchange_rate": 0.9333333333333333
+     },
+     {
+      "tau": 0.056304,
+      "macro": 62.011223344556676,
+      "exchange_rate": 0.9
+     },
+     {
+      "tau": 0.061993,
+      "macro": 63.67789001122335,
+      "exchange_rate": 0.8
+     },
+     {
+      "tau": 0.066521,
+      "macro": 64.69939538756744,
+      "exchange_rate": 0.7
+     },
+     {
+      "tau": 0.075428,
+      "macro": 64.69939538756744,
+      "exchange_rate": 0.6
+     },
+     {
+      "tau": 0.078955,
+      "macro": 64.69939538756744,
+      "exchange_rate": 0.5
+     },
+     {
+      "tau": 0.090023,
+      "macro": 64.53272872090076,
+      "exchange_rate": 0.4
+     },
+     {
+      "tau": 0.1,
+      "macro": 64.53272872090076,
+      "exchange_rate": 0.3333333333333333
+     },
+     {
+      "tau": 0.103005,
+      "macro": 64.53272872090076,
+      "exchange_rate": 0.3
+     },
+     {
+      "tau": 0.11064,
+      "macro": 64.81050649867855,
+      "exchange_rate": 0.2
+     },
+     {
+      "tau": 0.124354,
+      "macro": 64.81050649867855,
+      "exchange_rate": 0.1
+     },
+     {
+      "tau": 0.2,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     },
+     {
+      "tau": 0.5,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     }
+    ],
+    "best_tau": {
+     "tau": 0.5,
+     "macro": 65.42779044929583,
+     "exchange_rate": 0.0
+    },
+    "n": 60
+   },
+   "g8_set_w256": {
+    "g": 8,
+    "family": "set",
+    "width": 256,
+    "ttft_median_ms": 304.92186825722456,
+    "ttft_ok": true,
+    "sage_ms_median": 26.955663681030273,
+    "taus": [
+     {
+      "tau": 0.0,
+      "macro": 64.62514029180697,
+      "exchange_rate": 0.9833333333333333
+     },
+     {
+      "tau": 0.005,
+      "macro": 64.62514029180697,
+      "exchange_rate": 0.9833333333333333
+     },
+     {
+      "tau": 0.01,
+      "macro": 64.62514029180697,
+      "exchange_rate": 0.9833333333333333
+     },
+     {
+      "tau": 0.02,
+      "macro": 64.62514029180697,
+      "exchange_rate": 0.9833333333333333
+     },
+     {
+      "tau": 0.05,
+      "macro": 64.62514029180697,
+      "exchange_rate": 0.9833333333333333
+     },
+     {
+      "tau": 0.1,
+      "macro": 64.62514029180697,
+      "exchange_rate": 0.9333333333333333
+     },
+     {
+      "tau": 0.118619,
+      "macro": 64.62514029180697,
+      "exchange_rate": 0.9
+     },
+     {
+      "tau": 0.144052,
+      "macro": 64.77665544332211,
+      "exchange_rate": 0.8
+     },
+     {
+      "tau": 0.171668,
+      "macro": 64.77665544332211,
+      "exchange_rate": 0.7
+     },
+     {
+      "tau": 0.188066,
+      "macro": 66.0729517396184,
+      "exchange_rate": 0.6
+     },
+     {
+      "tau": 0.2,
+      "macro": 66.0729517396184,
+      "exchange_rate": 0.5166666666666667
+     },
+     {
+      "tau": 0.206674,
+      "macro": 66.0729517396184,
+      "exchange_rate": 0.5
+     },
+     {
+      "tau": 0.232786,
+      "macro": 64.40628507295175,
+      "exchange_rate": 0.4
+     },
+     {
+      "tau": 0.253725,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.3
+     },
+     {
+      "tau": 0.268367,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.2
+     },
+     {
+      "tau": 0.311106,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.1
+     },
+     {
+      "tau": 0.5,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.016666666666666666
+     }
+    ],
+    "best_tau": {
+     "tau": 0.206674,
+     "macro": 66.0729517396184,
+     "exchange_rate": 0.5
+    },
+    "n": 60
+   },
+   "g8_set_w1024": {
+    "g": 8,
+    "family": "set",
+    "width": 1024,
+    "ttft_median_ms": 312.98534013330936,
+    "ttft_ok": true,
+    "sage_ms_median": 27.92846393585205,
+    "taus": [
+     {
+      "tau": 0.0,
+      "macro": 61.25476992143658,
+      "exchange_rate": 0.9666666666666667
+     },
+     {
+      "tau": 0.005,
+      "macro": 61.25476992143658,
+      "exchange_rate": 0.9666666666666667
+     },
+     {
+      "tau": 0.01,
+      "macro": 61.25476992143658,
+      "exchange_rate": 0.9666666666666667
+     },
+     {
+      "tau": 0.02,
+      "macro": 61.25476992143658,
+      "exchange_rate": 0.9666666666666667
+     },
+     {
+      "tau": 0.05,
+      "macro": 61.25476992143658,
+      "exchange_rate": 0.95
+     },
+     {
+      "tau": 0.1,
+      "macro": 61.25476992143658,
+      "exchange_rate": 0.9333333333333333
+     },
+     {
+      "tau": 0.123851,
+      "macro": 61.25476992143658,
+      "exchange_rate": 0.9
+     },
+     {
+      "tau": 0.142092,
+      "macro": 61.25476992143658,
+      "exchange_rate": 0.8
+     },
+     {
+      "tau": 0.155509,
+      "macro": 61.25476992143658,
+      "exchange_rate": 0.7
+     },
+     {
+      "tau": 0.191861,
+      "macro": 62.921436588103255,
+      "exchange_rate": 0.6
+     },
+     {
+      "tau": 0.2,
+      "macro": 62.921436588103255,
+      "exchange_rate": 0.5833333333333334
+     },
+     {
+      "tau": 0.232988,
+      "macro": 63.07295173961841,
+      "exchange_rate": 0.5
+     },
+     {
+      "tau": 0.242293,
+      "macro": 63.07295173961841,
+      "exchange_rate": 0.4
+     },
+     {
+      "tau": 0.277464,
+      "macro": 63.07295173961841,
+      "exchange_rate": 0.3
+     },
+     {
+      "tau": 0.301728,
+      "macro": 63.07295173961841,
+      "exchange_rate": 0.2
+     },
+     {
+      "tau": 0.334381,
+      "macro": 63.07295173961841,
+      "exchange_rate": 0.1
+     },
+     {
+      "tau": 0.5,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     }
+    ],
+    "best_tau": {
+     "tau": 0.5,
+     "macro": 65.42779044929583,
+     "exchange_rate": 0.0
+    },
+    "n": 60
+   },
+   "g8_unary_w256": {
+    "g": 8,
+    "family": "unary",
+    "width": 256,
+    "ttft_median_ms": 308.32850746810436,
+    "ttft_ok": true,
+    "sage_ms_median": 25.13315200805664,
+    "taus": [
+     {
+      "tau": 0.0,
+      "macro": 65.25753955323849,
+      "exchange_rate": 1.0
+     },
+     {
+      "tau": 0.005,
+      "macro": 65.25753955323849,
+      "exchange_rate": 0.9833333333333333
+     },
+     {
+      "tau": 0.01,
+      "macro": 65.25753955323849,
+      "exchange_rate": 0.9666666666666667
+     },
+     {
+      "tau": 0.02,
+      "macro": 65.25753955323849,
+      "exchange_rate": 0.9166666666666666
+     },
+     {
+      "tau": 0.024538,
+      "macro": 65.25753955323849,
+      "exchange_rate": 0.9
+     },
+     {
+      "tau": 0.043885,
+      "macro": 65.25753955323849,
+      "exchange_rate": 0.8
+     },
+     {
+      "tau": 0.05,
+      "macro": 65.25753955323849,
+      "exchange_rate": 0.7666666666666667
+     },
+     {
+      "tau": 0.060756,
+      "macro": 65.25753955323849,
+      "exchange_rate": 0.7
+     },
+     {
+      "tau": 0.072847,
+      "macro": 66.92420621990514,
+      "exchange_rate": 0.6
+     },
+     {
+      "tau": 0.085043,
+      "macro": 66.92420621990514,
+      "exchange_rate": 0.5
+     },
+     {
+      "tau": 0.092552,
+      "macro": 66.92420621990514,
+      "exchange_rate": 0.4
+     },
+     {
+      "tau": 0.1,
+      "macro": 67.20198399768292,
+      "exchange_rate": 0.36666666666666664
+     },
+     {
+      "tau": 0.1068,
+      "macro": 67.20198399768292,
+      "exchange_rate": 0.3
+     },
+     {
+      "tau": 0.114892,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.2
+     },
+     {
+      "tau": 0.148245,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.1
+     },
+     {
+      "tau": 0.2,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.016666666666666666
+     },
+     {
+      "tau": 0.5,
+      "macro": 65.42779044929583,
+      "exchange_rate": 0.0
+     }
+    ],
+    "best_tau": {
+     "tau": 0.1068,
+     "macro": 67.20198399768292,
+     "exchange_rate": 0.3
+    },
+    "n": 60
+   }
+  }
+ },
+ "overall": "FAIL",
+ "n": 720,
+ "premise": "early-observability premise FALSIFIED: hindsight ceiling clearly positive while the critic fails"
+}
