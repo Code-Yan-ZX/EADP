@@ -33,15 +33,31 @@ REFERENCES = {
 
 
 def read_accuracy(model_name: str, dataset_name: str, root: str):
+    # VLMEvalKit writes either {root}/{model}_{ds}_acc.csv (flat work-dir) or
+    # {root}/{model}/T*/{model}_{ds}_acc.csv (per-model timestamp dir).
+    def candidates():
+        yield os.path.join(root, f"{model_name}_{dataset_name}_score.json")
+        yield os.path.join(root, f"{model_name}_{dataset_name}_acc.csv")
+        model_dir = os.path.join(root, model_name)
+        if os.path.isdir(model_dir):
+            for entry in sorted(os.listdir(model_dir)):
+                yield os.path.join(model_dir, entry,
+                                   f"{model_name}_{dataset_name}_score.json")
+                yield os.path.join(model_dir, entry,
+                                   f"{model_name}_{dataset_name}_acc.csv")
+
     if dataset_name == "OCRBench":
-        p = os.path.join(root, f"{model_name}_{dataset_name}_score.json")
-        if not os.path.exists(p):
-            return None
-        with open(p) as f:
-            d = json.load(f)
-        return float(d.get("Final Score", d.get("final_score", d.get("Overall", None))))
-    p = os.path.join(root, f"{model_name}_{dataset_name}_acc.csv")
-    if not os.path.exists(p):
+        for p in candidates():
+            if os.path.exists(p):
+                with open(p) as f:
+                    d = json.load(f)
+                return float(d.get("Final Score",
+                                   d.get("final_score", d.get("Overall", 0))))
+        return None
+    for p in candidates():
+        if os.path.exists(p):
+            break
+    else:
         return None
     with open(p) as f:
         rows = list(csv.reader(f))
