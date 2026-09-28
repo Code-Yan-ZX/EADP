@@ -1276,6 +1276,27 @@ qwen3vl_series = {
         for alpha in [0.2, 0.5, 0.8]
         for beta in [1.0, 2.0, 5.0, 10.0]
     },
+    **{
+        f"Qwen3-VL-8B-Mosaic-{tok}-{mode}": partial(
+            Qwen3VLChatMosaic,
+            model_path=QWEN3_VL_8B_LOCAL_PATH,
+            min_pixels=1024 * 1024,
+            max_pixels=1024 * 1024,
+            use_custom_prompt=True,
+            use_vllm=False,
+            max_new_tokens=2048,
+            top_p=0.001,
+            top_k=1,
+            temperature=0.01,
+            repetition_penalty=1.0,
+            presence_penalty=0.0,
+            visual_token_num=tok,
+            mode=mode,
+            seed=0,
+        )
+        for tok in [128, 256]
+        for mode in ["uniform", "random", "dispersion"]
+    },
     "Qwen3-VL-4B-Instruct": partial(
         Qwen3VLChat,
         model_path="Qwen/Qwen3-VL-4B-Instruct",

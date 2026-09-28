@@ -35,7 +35,7 @@ from .open_flamingo import OpenFlamingo
 from .pandagpt import PandaGPT
 from .qwen_vl import QwenVL, QwenVLChat
 from .qwen2_vl import Qwen2VLChat, Qwen2VLChatAguvis, Qwen2VLChatFixedRes, Qwen2VLChatCDPruner, Qwen2VLChatDivPruner, Qwen2VLChatEADP, Qwen2VLChatHiPrune
-from .qwen3_vl import Qwen3VLChat, Qwen3VLChatFixedRes, Qwen3VLChatCDPruner, Qwen3VLChatDivPruner, Qwen3VLChatEADP, Qwen3VLChatHiPrune
+from .qwen3_vl import Qwen3VLChat, Qwen3VLChatFixedRes, Qwen3VLChatCDPruner, Qwen3VLChatDivPruner, Qwen3VLChatEADP, Qwen3VLChatHiPrune, Qwen3VLChatMosaic
 from .transcore_m import TransCoreM
 from .visualglm import VisualGLM
 from .xcomposer import (

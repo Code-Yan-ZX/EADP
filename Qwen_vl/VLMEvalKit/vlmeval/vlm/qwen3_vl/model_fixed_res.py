@@ -595,6 +595,69 @@ class Qwen3VLChatEADP(Qwen3VLChatCDPruner):
         return pruned_embeds, pruned_split_sizes
 
 
+class Qwen3VLChatMosaic(Qwen3VLChatCDPruner):
+    """Qwen3-VL with MosaicPrune adaptive-resolution spatial compression.
+
+    Replaces the post-merger image embeds with one mean-pooled token per
+    quadtree leaf (see model/mosaic.py). Uses the same inputs_embeds pathway
+    as EADP/CDPruner/DivPrune, so position handling (arange fallback when
+    input_ids is not passed) is identical to those baselines.
+
+    Extends Qwen3VLChatCDPruner to inherit its pruned-input generate path,
+    but initialises like the plain fixed-res wrapper (no pruner module).
+    """
+
+    def __init__(self, visual_token_num: int = 256, mode: str = "dispersion",
+                 seed: int = 0, **kwargs):
+        Qwen3VLChatFixedRes.__init__(self, **kwargs)
+        self.visual_token_num = visual_token_num
+        self.mode = mode
+        self.seed = seed
+
+        from model.mosaic import MOSAIC_MODES, stats_path_for
+
+        if mode not in MOSAIC_MODES:
+            raise ValueError(f"unknown mosaic mode: {mode}")
+        self.stats_file = stats_path_for(mode, visual_token_num)
+        logging.info(
+            f"Loading Qwen3 MosaicPrune: tokens={visual_token_num}, mode={mode}, "
+            f"seed={seed}, stats={self.stats_file}"
+        )
+        # start a fresh stats file per process to keep runs separable
+        try:
+            os.makedirs(os.path.dirname(self.stats_file), exist_ok=True)
+            with open(self.stats_file, "w"):
+                pass
+        except OSError:
+            self.stats_file = None
+
+    @torch.no_grad()
+    def _get_pruned_image_features(
+        self,
+        pixel_values,
+        image_grid_thw,
+        *,
+        instruction_embeds_seq=None,
+        message=None,
+        dataset=None,
+    ):
+        from model.mosaic import mosaic_compress
+
+        pixel_values = pixel_values.type(self.model.visual.dtype)
+        image_embeds = unwrap_visual_output(
+            self.model.visual(pixel_values, grid_thw=image_grid_thw)
+        )
+        pruned_embeds, pruned_split_sizes = mosaic_compress(
+            image_embeds,
+            image_grid_thw,
+            self.visual_token_num,
+            self.mode,
+            seed=self.seed,
+            stats_file=self.stats_file,
+        )
+        return pruned_embeds, pruned_split_sizes
+
+
 class Qwen3VLChatDivPruner(Qwen3VLChatCDPruner):
     """Qwen3-VL with DivPruner."""
 

@@ -5,6 +5,7 @@ from .model_fixed_res import (
     Qwen3VLChatDivPruner,
     Qwen3VLChatEADP,
     Qwen3VLChatHiPrune,
+    Qwen3VLChatMosaic,
 )
 
 __all__ = [
@@ -14,4 +15,5 @@ __all__ = [
     'Qwen3VLChatDivPruner',
     'Qwen3VLChatEADP',
     'Qwen3VLChatHiPrune',
+    'Qwen3VLChatMosaic',
 ]
