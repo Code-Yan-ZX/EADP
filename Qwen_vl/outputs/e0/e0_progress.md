@@ -139,3 +139,29 @@ labelled 移植存疑.
 (≈4765 requests, ~2.1 s/it) → M4 full grid with the A6 smoke gate and the M3
 budget guard. Logs: `/tmp/pace_repro4.log`, `/tmp/m4_all.log`,
 `/tmp/e0_chain.log`.
+
+## ⚠️ 2026-09-30 01:45 — D1 computed but BLOCKED by an unexplained anomaly
+
+The D1 inputs (a1/a2/b2 K=256 OCR panel) completed and the mechanical
+verdict says D1 does NOT fire (pooled B2−A1 per-question delta +7.5 pts,
+CI [3.5, 8.4]). But the absolute numbers fail every sanity check:
+
+| arm (native unless noted) | TextVQA | OCRBench norm | historical reference |
+|---|---:|---:|---|
+| b0 (unpruned) | **85.03** | **14.3** | 73.6 / ~62-68 |
+| a1 (legacy B2) | (empty official) | 10.3 | 71.04 / 62.3 |
+| b2 (native B2) | (empty official) | 13.1 | ~71 / ~62 |
+
+TextVQA +11 over the historical B0 and OCRBench −48: both directions are
+implausible as a repair effect, and the same engine reproduced the archived
+SAGE legacy predictions 32/32 (gate N5) and stock generate bit-exactly
+(gate N1) on DEV samples. So the anomaly is in the accuracy-run pipeline,
+not obviously in the engine. Suspects, in order:
+1. the DEV-row message/scoring path differs from the SAGE-conf one
+   (build_prompt / use_custom_prompt interplay);
+2. OCRBench per-question scoring mismatch on the reduced DEV subset;
+3. Text/DocVQA official dicts came back EMPTY ({}) — the evaluate call for
+   them silently produced nothing, so their macros are currently
+   CONTRIBUTING NOTHING (macros over 1-2 datasets only).
+D1/D3 conclusions are ON HOLD until this is root-caused. Do not cite the
+numbers above.

@@ -37,21 +37,87 @@ def official_main(ds, official):
     if ds == "OCRBench":
         return float(official.get("Final Score Norm",
                                   float(official.get("Final Score", 0)) / 10))
-    for k in ("Overall", "acc", "Accuracy", "Final Score"):
+    for k in ("Overall", "acc", "Accuracy", "Final Score",
+              "Final Score Norm"):
         if k in official:
-            return float(official[k])
-    if isinstance(official, dict) and len(official) == 1:
-        return float(list(official.values())[0])
+            try:
+                return float(official[k])
+            except (TypeError, ValueError):
+                pass
+    import re
+    for v in official.values():          # first parseable number wins
+        if isinstance(v, (int, float)):
+            return float(v)
+        if isinstance(v, str):           # e.g. "{0: 85.033...}" from the
+            m = re.findall(r"-?\d+\.?\d*", v)   # MMBench circular round-trip
+            if m:
+                return float(m[-1])
     raise KeyError(f"no headline in {official}")
+
+
+def _backfill_per_q(path, ds):
+    """Per-question scores for shards written without them: the ImageVQA
+    evaluators dump eval_score into _pred_results.xlsx/tsv; OCRBench has no
+    per-question official output, so its own rule is recomputed."""
+    import pandas as pd
+    tsv = path.replace("_score.json", "_pred.tsv")  # run_score's prediction tsv
+    for det in (tsv.replace(".tsv", "_results.xlsx"),
+                tsv.replace(".tsv", "_results.tsv")):
+        if os.path.exists(det):
+            try:
+                d = pd.read_excel(det) if det.endswith("xlsx") \
+                    else pd.read_csv(det, sep="\t")
+            except Exception:
+                continue
+            if "eval_score" in d.columns:
+                # detail rows follow the shard's sorted positions 1:1 (the
+                # detail's own `index` column is the dataset's original id,
+                # not the DEV positional index)
+                shard = json.load(open(path.replace("_score.json", ".json")))
+                positions = sorted(int(k) for k in shard["records"])
+                if len(positions) == len(d):
+                    return {str(pos): float(sc) for pos, sc in
+                            zip(positions, d["eval_score"])}
+    if ds == "OCRBench":
+        import ast as _ast
+        shard = json.load(open(path.replace("_score.json", ".json")))
+        from vlmeval.dataset import build_dataset as _bd
+        dso = _bd(ds)
+        per_q = {}
+        for k, rec in shard["records"].items():
+            row = dso.data.iloc[int(k)]
+            pred = str(rec["prediction"]).lower().strip()
+            answers = _ast.literal_eval(row["answer"])
+            hit = 0.0
+            if row["category"] == "Handwritten Mathematical Expression Recognition":
+                p2 = pred.replace("\n", " ").replace(" ", "")
+                if any(a.strip().replace("\n", " ").replace(" ", "") in p2
+                       for a in answers):
+                    hit = 1.0
+            elif any(a.lower().strip().replace("\n", " ") in pred
+                     for a in answers):
+                hit = 1.0
+            per_q[str(k)] = hit
+        return per_q
+    return None
 
 
 def load_scores():
     """{(arm, K): {ds: dict(official=..., per_q={idx: score}, n=...)}}"""
     out = {}
     for p in glob.glob(os.path.join(ACC_DIR, "*", "K*", "*_score.json")):
-        s = json.load(open(p))
-        parts = os.path.normpath(p).split(os.sep)
-        arm = s["arm"]
+        if p.endswith("_pred_score.json"):
+            continue             # vlmeval's own dump, not our summary
+        try:
+            s = json.load(open(p))
+            arm = s["arm"]
+        except Exception:
+            continue
+        if not s.get("per_question"):
+            try:
+                s["per_question"] = _backfill_per_q(p, s["ds"])
+            except Exception:
+                s["per_question"] = None
         out[(arm, s["K"], s["ds"])] = s
     return out
 
@@ -77,10 +143,10 @@ def image_keys(ds, rows):
         row = dataset.data.iloc[int(i)]
         ip = row.get("image_path", None)
         if ip is not None and isinstance(ip, str) and ip.strip():
-            keys[int(i)] = os.path.basename(ip.strip())
+            keys[str(int(i))] = os.path.basename(ip.strip())
         else:
             b = row.get("image", None)
-            keys[int(i)] = hashlib.md5(b.encode("ascii")).hexdigest() \
+            keys[str(int(i))] = hashlib.md5(b.encode("ascii")).hexdigest() \
                 if isinstance(b, str) and b.startswith("/9j") else f"n{int(i)}"
     return keys
 

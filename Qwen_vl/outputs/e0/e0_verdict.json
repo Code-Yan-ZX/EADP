@@ -1,0 +1,473 @@
+{
+ "scores_present": [
+  [
+   "a1",
+   256,
+   "DocVQA_VAL"
+  ],
+  [
+   "a1",
+   256,
+   "OCRBench"
+  ],
+  [
+   "a1",
+   256,
+   "TextVQA_VAL"
+  ],
+  [
+   "a2",
+   256,
+   "DocVQA_VAL"
+  ],
+  [
+   "a2",
+   256,
+   "OCRBench"
+  ],
+  [
+   "a2",
+   256,
+   "TextVQA_VAL"
+  ],
+  [
+   "b0",
+   1024,
+   "ChartQA_TEST"
+  ],
+  [
+   "b0",
+   1024,
+   "DocVQA_VAL"
+  ],
+  [
+   "b0",
+   1024,
+   "MMBench_DEV_EN_V11"
+  ],
+  [
+   "b0",
+   1024,
+   "MMStar"
+  ],
+  [
+   "b0",
+   1024,
+   "OCRBench"
+  ],
+  [
+   "b0",
+   1024,
+   "POPE"
+  ],
+  [
+   "b0",
+   1024,
+   "RealWorldQA"
+  ],
+  [
+   "b0",
+   1024,
+   "TextVQA_VAL"
+  ],
+  [
+   "b2",
+   256,
+   "ChartQA_TEST"
+  ],
+  [
+   "b2",
+   256,
+   "DocVQA_VAL"
+  ],
+  [
+   "b2",
+   256,
+   "OCRBench"
+  ],
+  [
+   "b2",
+   256,
+   "TextVQA_VAL"
+  ],
+  [
+   "cdpruner",
+   256,
+   "ChartQA_TEST"
+  ],
+  [
+   "cdpruner",
+   256,
+   "DocVQA_VAL"
+  ],
+  [
+   "cdpruner",
+   256,
+   "MMBench_DEV_EN_V11"
+  ],
+  [
+   "cdpruner",
+   256,
+   "MMStar"
+  ],
+  [
+   "cdpruner",
+   256,
+   "OCRBench"
+  ],
+  [
+   "cdpruner",
+   256,
+   "POPE"
+  ],
+  [
+   "cdpruner",
+   256,
+   "RealWorldQA"
+  ],
+  [
+   "cdpruner",
+   256,
+   "TextVQA_VAL"
+  ],
+  [
+   "fastv",
+   256,
+   "ChartQA_TEST"
+  ],
+  [
+   "fastv",
+   256,
+   "DocVQA_VAL"
+  ],
+  [
+   "fastv",
+   256,
+   "MMBench_DEV_EN_V11"
+  ],
+  [
+   "fastv",
+   256,
+   "MMStar"
+  ],
+  [
+   "fastv",
+   256,
+   "OCRBench"
+  ],
+  [
+   "fastv",
+   256,
+   "POPE"
+  ],
+  [
+   "fastv",
+   256,
+   "RealWorldQA"
+  ],
+  [
+   "fastv",
+   256,
+   "TextVQA_VAL"
+  ],
+  [
+   "rres512",
+   1024,
+   "ChartQA_TEST"
+  ],
+  [
+   "rres512",
+   1024,
+   "DocVQA_VAL"
+  ],
+  [
+   "rres512",
+   1024,
+   "OCRBench"
+  ],
+  [
+   "rres512",
+   1024,
+   "TextVQA_VAL"
+  ],
+  [
+   "visionzip",
+   256,
+   "ChartQA_TEST"
+  ],
+  [
+   "visionzip",
+   256,
+   "DocVQA_VAL"
+  ],
+  [
+   "visionzip",
+   256,
+   "MMBench_DEV_EN_V11"
+  ],
+  [
+   "visionzip",
+   256,
+   "MMStar"
+  ],
+  [
+   "visionzip",
+   256,
+   "OCRBench"
+  ],
+  [
+   "visionzip",
+   256,
+   "POPE"
+  ],
+  [
+   "visionzip",
+   256,
+   "RealWorldQA"
+  ],
+  [
+   "visionzip",
+   256,
+   "TextVQA_VAL"
+  ]
+ ],
+ "macros": {
+  "b0|K=1024": {
+   "ocr": 65.78204734377442,
+   "general": 0.75,
+   "total": 33.26602367188721
+  },
+  "visionzip|K=256": {
+   "ocr": 63.76722750983269,
+   "general": 0.75,
+   "total": 32.258613754916354
+  },
+  "rres512|K=1024": {
+   "ocr": 64.43419476914485,
+   "general": null,
+   "total": 64.43419476914485
+  },
+  "b2|K=256": {
+   "ocr": 58.595542574001904,
+   "general": null,
+   "total": 58.595542574001904
+  },
+  "a2|K=256": {
+   "ocr": 51.49206545271998,
+   "general": null,
+   "total": 51.49206545271998
+  },
+  "a1|K=256": {
+   "ocr": 47.308408840654856,
+   "general": null,
+   "total": 47.308408840654856
+  },
+  "cdpruner|K=256": {
+   "ocr": 56.422793505833766,
+   "general": 0.75,
+   "total": 28.586396752916883
+  },
+  "fastv|K=256": {
+   "ocr": 22.776342492816582,
+   "general": 0.75,
+   "total": 11.763171246408291
+  }
+ },
+ "paired_vs_b2": {
+  "visionzip|K=256|TextVQA_VAL": {
+   "delta": -0.009653840021432252,
+   "ci": [
+    -0.04884507385164743,
+    0.029373411158683308
+   ],
+   "rescued": 18,
+   "broken": 21
+  },
+  "visionzip|K=256|ChartQA_TEST": {
+   "delta": 0.06994187167253607,
+   "ci": [
+    0.023255813953488413,
+    0.1176517422255526
+   ],
+   "rescued": 40,
+   "broken": 19
+  },
+  "visionzip|K=256|DocVQA_VAL": {
+   "delta": -0.04994292511319023,
+   "ci": [
+    -0.10042896328993352,
+    -0.0010247196776515892
+   ],
+   "rescued": 29,
+   "broken": 48
+  },
+  "visionzip|K=256|OCRBench": {
+   "delta": -0.01833921420460251,
+   "ci": [
+    -0.07272727272727264,
+    0.030674846625766916
+   ],
+   "rescued": 8,
+   "broken": 11
+  },
+  "a2|K=256|TextVQA_VAL": {
+   "delta": -0.04640695446161259,
+   "ci": [
+    -0.07684346642468233,
+    -0.01720689033189036
+   ],
+   "rescued": 6,
+   "broken": 19
+  },
+  "a2|K=256|DocVQA_VAL": {
+   "delta": 0.007804538993506319,
+   "ci": [
+    -0.02169753583912461,
+    0.03761601959147275
+   ],
+   "rescued": 15,
+   "broken": 18
+  },
+  "a2|K=256|OCRBench": {
+   "delta": -0.03059361118582113,
+   "ci": [
+    -0.06748466257668706,
+    0.0
+   ],
+   "rescued": 2,
+   "broken": 7
+  },
+  "a1|K=256|TextVQA_VAL": {
+   "delta": -0.09846347930884154,
+   "ci": [
+    -0.13838391984359738,
+    -0.06096752098983646
+   ],
+   "rescued": 7,
+   "broken": 39
+  },
+  "a1|K=256|DocVQA_VAL": {
+   "delta": 0.03757028189874428,
+   "ci": [
+    0.00556784965437764,
+    0.06996853360085428
+   ],
+   "rescued": 30,
+   "broken": 19
+  },
+  "a1|K=256|OCRBench": {
+   "delta": -0.1644293991488097,
+   "ci": [
+    -0.22699386503067476,
+    -0.10429447852760731
+   ],
+   "rescued": 2,
+   "broken": 29
+  },
+  "cdpruner|K=256|TextVQA_VAL": {
+   "delta": -0.0415892179826127,
+   "ci": [
+    -0.07796694915254236,
+    -0.004545086790232402
+   ],
+   "rescued": 13,
+   "broken": 27
+  },
+  "cdpruner|K=256|ChartQA_TEST": {
+   "delta": -0.026920220432314727,
+   "ci": [
+    -0.07849829351535842,
+    0.02448475437605859
+   ],
+   "rescued": 27,
+   "broken": 35
+  },
+  "cdpruner|K=256|DocVQA_VAL": {
+   "delta": 0.02828211053442234,
+   "ci": [
+    -0.00748064645064134,
+    0.0634323416476997
+   ],
+   "rescued": 43,
+   "broken": 30
+  },
+  "cdpruner|K=256|OCRBench": {
+   "delta": -0.08552034511915936,
+   "ci": [
+    -0.14110429447852768,
+    -0.030487804878048808
+   ],
+   "rescued": 5,
+   "broken": 19
+  },
+  "fastv|K=256|TextVQA_VAL": {
+   "delta": -0.42825677941133544,
+   "ci": [
+    -0.4898989898989898,
+    -0.36699098239978595
+   ],
+   "rescued": 7,
+   "broken": 138
+  },
+  "fastv|K=256|ChartQA_TEST": {
+   "delta": -0.5129279651880225,
+   "ci": [
+    -0.5785996128648004,
+    -0.4474553969669937
+   ],
+   "rescued": 5,
+   "broken": 159
+  },
+  "fastv|K=256|DocVQA_VAL": {
+   "delta": 0.3075425418941514,
+   "ci": [
+    0.24385314354703716,
+    0.37143021649431646
+   ],
+   "rescued": 136,
+   "broken": 21
+  },
+  "fastv|K=256|OCRBench": {
+   "delta": -0.44412957108623413,
+   "ci": [
+    -0.5272727272727273,
+    -0.35975609756097565
+   ],
+   "rescued": 4,
+   "broken": 77
+  }
+ },
+ "D1": {
+  "rule": "|native B2 - A1| >= 2 macro with CI excluding 0",
+  "ocr_datasets_delta_b2_minus_a1": 0.07510753218630233,
+  "per_ds": [
+   -0.09846347930884154,
+   0.03757028189874428,
+   -0.1644293991488097
+  ],
+  "ci": [
+   -0.08422490143865491,
+   -0.03496423315132866
+  ],
+  "fires": false
+ },
+ "D3": {
+  "rule": "ViTshare>=0.5 & PACE TTFT -15% & PACE OCR -2 -> E1; PACE OCR no-drop & faster -> occupied; ViTshare<0.35 -> stop",
+  "verdict": "INCOMPLETE (no perf file)"
+ },
+ "D2": {
+  "rule": "R-res(512) OCR macro >= Best24/25(256) - 1 AND R-res TTFT lower than that arm's",
+  "best24_25": {
+   "arm": "visionzip",
+   "ocr_macro": 63.76722750983269
+  },
+  "rres_ocr_macro": 64.43419476914485,
+  "fires": null
+ },
+ "D4": {
+  "rule": "baseline OCR macro < R-res OCR - 10 -> port-suspect, excluded from Best24/25",
+  "suspect": [
+   "fastv"
+  ]
+ }
+}
