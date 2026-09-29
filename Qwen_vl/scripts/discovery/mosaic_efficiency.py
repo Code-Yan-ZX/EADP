@@ -53,18 +53,22 @@ def profile_mosaic_sample(model, message, dataset_name, cfg):
         with torch.no_grad():
             model.model.visual(pv, grid_thw=gthw)
 
-    vision_mean, vision_std = time_callable(
-        lambda: model.model.visual(pv, grid_thw=gthw), cfg["repeat"], 1)
+    from vlmeval.vlm.qwen3_vl.model_fixed_res import unwrap_visual_output
+
+    def vision_forward():
+        return unwrap_visual_output(model.model.visual(pv, grid_thw=gthw))
+
+    vision_mean, vision_std = time_callable(vision_forward, cfg["repeat"], 1)
 
     def compress():
         with torch.no_grad():
-            feats = model.model.visual(pv, grid_thw=gthw)
+            feats = vision_forward()
             return mosaic_compress(feats, gthw, model.visual_token_num,
                                    model.mode, seed=model.seed, stats_file=None)
 
     compress_mean, compress_std = time_callable(compress, cfg["repeat"], 1)
     with torch.no_grad():
-        feats = model.model.visual(pv, grid_thw=gthw)
+        feats = vision_forward()
         pruned_embeds, sizes = mosaic_compress(
             feats, gthw, model.visual_token_num, model.mode,
             seed=model.seed, stats_file=None)
