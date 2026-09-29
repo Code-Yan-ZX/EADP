@@ -25,6 +25,13 @@ outputs/discovery/*
 !outputs/e0/
 outputs/e0/*
 !outputs/e0/*.json
+# E0 accuracy shards: only the official-score summaries are evidence; the
+# per-question prediction TSVs and shard JSONs stay local (regenerable).
+!outputs/e0/acc/
+outputs/e0/acc/*
+!outputs/e0/acc/*/
+outputs/e0/acc/*/*
+!outputs/e0/acc/*/*/*_score.json
 !outputs/e0/*.md
 !outputs/e0/figures/
 outputs/e0/figures/*
