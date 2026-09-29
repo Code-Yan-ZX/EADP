@@ -58,7 +58,7 @@ def main():
     # 30-question smoke on TextVQA_VAL DEV (first 30 rows)
     smoke_rows = G.dev_rows("TextVQA_VAL", 30)
     smoke_items = G.build_items(model, [("TextVQA_VAL", r) for r in smoke_rows])
-    for name, K in arms:
+    for name, K in arms + gen_only:
         n_trunc, empty, samples = 0, 0, []
         for it in smoke_items:
             res = G.with_oom_retry(
