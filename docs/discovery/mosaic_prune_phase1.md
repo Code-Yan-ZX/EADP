@@ -147,9 +147,19 @@ degradation.
 | Mosaic-256 uniform | 56.78 | 539 | 67.58 |
 | Mosaic-256 random | 42.99 | 493 | 61.95 |
 | Mosaic-256 dispersion | 45.32 | 492 | 52.29 |
-| Mosaic-128 uniform | (pending) | (pending) | (pending) |
-| Mosaic-128 random | (pending) | (pending) | (pending) |
-| Mosaic-128 dispersion | (pending) | (pending) | (pending) |
+| Mosaic-128 uniform | 33.55 | 444 | 48.68 |
+| Mosaic-128 random | 30.20 | 429 | (run stopped by user) |
+| Mosaic-128 dispersion | 30.05 | 369 | 36.57 |
+
+At K=128 the ordering is unchanged (uniform > adaptive arms on every
+benchmark; dispersion ties or loses to random). The uniform−dispersion gap
+persists at lower budget (DocVQA +3.5, OCRBench +75, TextVQA +12.1 vs +11.5 /
++47 / +15.3 at K=256) and everything collapses further in absolute terms —
+there is no low-budget robustness edge for the adaptive map. Gate condition 4
+(K=128 robustness advantage) is refuted as well. Note: the sweep was stopped
+during Mosaic-128-random / TextVQA_VAL, so that single cell is missing; the
+verdict does not depend on it (random-128 already ≥ dispersion-128 on DocVQA
+and OCRBench).
 
 OCRBench sub-scores (K=256): dispersion keeps Text Recognition high (227 vs
 uniform 177, EADP 228) but collapses Scene-text VQA (103 vs 161/169) and KIE
