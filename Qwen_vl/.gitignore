@@ -20,6 +20,15 @@ outputs/*
 !outputs/discovery/
 outputs/discovery/*
 !outputs/discovery/*.json
+# E0 deliverables: plan/gates/accuracy/perf/verdict JSONs plus the progress
+# note and the Pareto figure, same evidence convention as outputs/discovery.
+!outputs/e0/
+outputs/e0/*
+!outputs/e0/*.json
+!outputs/e0/*.md
+!outputs/e0/figures/
+outputs/e0/figures/*
+!outputs/e0/figures/*.png
 # M2 deliverable: the accuracy-efficiency Pareto figure (a few hundred kB, and
 # the report's central exhibit). Every other figure stays ignored.
 !outputs/discovery/figures/
