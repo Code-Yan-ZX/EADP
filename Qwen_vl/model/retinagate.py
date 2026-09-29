@@ -180,22 +180,27 @@ def pv_to_rgb_maps(pv: torch.Tensor, gthw: torch.Tensor, ms: int,
     return out
 
 
-def center_surround_energy(x: torch.Tensor) -> torch.Tensor:
-    """|x - avg3(x)| + 0.5*|x - avg5(x)| on a [H, W] map (patch resolution)."""
+def center_surround_energy(x: torch.Tensor, multi_scale: bool = True) -> torch.Tensor:
+    """|x - avg3(x)| + 0.5*|x - avg5(x)| on a [H, W] map (patch resolution).
+
+    ``multi_scale=False`` keeps only the 3x3 term (single-scale ablation).
+    """
     x4 = x[None, None, :, :]
     e = (x4 - F.avg_pool2d(x4, 3, stride=1, padding=1)).abs()
-    e = e + 0.5 * (x4 - F.avg_pool2d(x4, 5, stride=1, padding=2)).abs()
+    if multi_scale:
+        e = e + 0.5 * (x4 - F.avg_pool2d(x4, 5, stride=1, padding=2)).abs()
     return e[0, 0]
 
 
-def retina_channels(rgb_map: torch.Tensor, ms: int):
+def retina_channels(rgb_map: torch.Tensor, ms: int, single_scale: bool = False):
     """Y / RG / BY center-surround energies aggregated to the group grid."""
     y = 0.299 * rgb_map[..., 0] + 0.587 * rgb_map[..., 1] + 0.114 * rgb_map[..., 2]
     rg = rgb_map[..., 0] - rgb_map[..., 1]
     by = rgb_map[..., 2] - 0.5 * (rgb_map[..., 0] + rgb_map[..., 1])
     e = {}
     for name, m in (("Y", y), ("RG", rg), ("BY", by)):
-        e[name] = _group_pool(center_surround_energy(m), ms)
+        e[name] = _group_pool(center_surround_energy(m, multi_scale=not single_scale),
+                              ms)
     return e
 
 
@@ -206,13 +211,14 @@ def _group_pool(patch_map: torch.Tensor, ms: int) -> torch.Tensor:
 
 
 def retina_event_score(rgb_map: torch.Tensor, ms: int,
-                       lam_rg: float = 0.5, lam_by: float = 0.5):
+                       lam_rg: float = 0.5, lam_by: float = 0.5,
+                       single_scale: bool = False):
     """Per-image-normalized opponent-channel event score on the group grid.
 
     Returns (event [Mh, Mw], per-channel dict) with each channel scaled by
     its own mean (per-image normalization; no learned parameters).
     """
-    e = retina_channels(rgb_map, ms)
+    e = retina_channels(rgb_map, ms, single_scale=single_scale)
     norm = {k: v / (v.mean() + 1e-6) for k, v in e.items()}
     event = norm["Y"] + lam_rg * norm["RG"] + lam_by * norm["BY"]
     return event, e
@@ -327,8 +333,18 @@ def select_groups(mode: str, k: int, prep: dict, eng,
                 keep, base = base_plus_event(event, kk, base_frac)
                 info.setdefault("n_base", []).append(int(base.numel()))
                 keeps.append(off_g + keep)
+            elif mode == "retinagate_s1":
+                event, _ = retina_event_score(rgb, ms, lam_rg, lam_by,
+                                              single_scale=True)
+                keep, base = base_plus_event(event, kk, base_frac)
+                info.setdefault("n_base", []).append(int(base.numel()))
+                keeps.append(off_g + keep)
             elif mode == "event":
                 event, _ = retina_event_score(rgb, ms, lam_rg, lam_by)
+                keeps.append(off_g + event.reshape(-1).topk(kk).indices.sort().values)
+            elif mode == "event_s1":
+                event, _ = retina_event_score(rgb, ms, lam_rg, lam_by,
+                                              single_scale=True)
                 keeps.append(off_g + event.reshape(-1).topk(kk).indices.sort().values)
             elif mode == "graydog":
                 e = _group_pool(center_surround_energy(
