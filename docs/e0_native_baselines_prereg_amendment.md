@@ -122,3 +122,28 @@ layers, schedule and text-guided scoring, minus recycling. The full-
 recycling port is labelled "移植存疑" and excluded from Best24/25 unless a
 later fix passes the same smoke bar. No SparseVLM accuracy number existed
 when this was written.
+
+## A7 (2026-09-29, user-authorized scope reduction, before any accuracy number): trend-first M4
+
+The user authorized reducing the M4 grid to reach the D1-D4 verdicts fast
+("只要看到走向"). The full grid (82k generations, 23-37 h) is replaced by a
+prioritized queue; everything not in the queue is DEFERRED, not cancelled,
+and can be appended later with no protocol change. Cuts:
+
+1. **Budget curve**: K=128 is dropped everywhere; K in {256, 64}.
+2. **OCR panel first**: TextVQA_VAL, DocVQA_VAL, OCRBench, ChartQA_TEST
+   (1064 questions) carry D1/D2/D4; the general panel is reduced to a
+   K=256 trend pass for b0, b2, rres512, pace and the two strongest 24/25
+   arms on the full 4 general datasets.
+3. **Deferred arms**: b1, cdpruner, hiprune (all outside the prereg's
+   Best24/25 set) and all K=64/128 combinations beyond the trend endpoint
+   (K=64: b2, rres256, fastv, visionzip, pdrop, pace).
+4. **M5 (paired perf + resolution sweep) moves BEFORE M4**: it is
+   accuracy-independent and unlocks ViTshare and every TTFT contrast in
+   D2/D3 tonight.
+
+Cost estimate: ~25k generations ≈ 7 h at the host's observed ~1 s/q, i.e.
+verdicts by tomorrow midday; D1 alone readable ~1 h after M5. The reduced
+grid changes no arm, hyper-parameter, prompt, or scoring rule; macros are
+reported over the panels that actually ran, with the reduction stated in
+the report.
