@@ -335,6 +335,7 @@ class NativeEngine:
         ev = [torch.cuda.Event(enable_timing=True) for _ in range(2)]
         ev[0].record()
         vz_extra = None
+        attn_list = None
         if selector == "hiprune":
             # HiPrune selects on per-layer vision attention; this walk returns
             # the same merged features / DeepStack streams as the stock pass.
