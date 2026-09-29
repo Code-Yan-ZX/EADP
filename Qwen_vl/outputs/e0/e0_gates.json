@@ -1,0 +1,3445 @@
+{
+ "env": {
+  "torch": "2.10.0+cu128",
+  "transformers": "4.57.6",
+  "cuda": "12.8",
+  "gpu": "NVIDIA A40"
+ },
+ "n1": {
+  "desc": "N1 identity: keep-all native vs stock generate path",
+  "samples": [
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 43,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 44,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 55,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 63,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 64,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 74,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 180,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 191,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 193,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 197,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 199,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 4,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 11,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 15,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 25,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 31,
+    "d_prefill": 0.0,
+    "d_decode": 0.0,
+    "token_mismatch": 0,
+    "ok": true
+   }
+  ],
+  "max_absdiff_prefill": 0.0,
+  "max_absdiff_decode": 0.0,
+  "token_mismatch": 0,
+  "passed": true
+ },
+ "n2": {
+  "desc": "N2 DeepStack injection is live (off vs on)",
+  "samples": [
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 43,
+    "absdiff": 7.5,
+    "ok": true
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 44,
+    "absdiff": 14.4375,
+    "ok": true
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 55,
+    "absdiff": 7.875,
+    "ok": true
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 63,
+    "absdiff": 4.875,
+    "ok": true
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 64,
+    "absdiff": 6.0625,
+    "ok": true
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 74,
+    "absdiff": 12.125,
+    "ok": true
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 180,
+    "absdiff": 2.875,
+    "ok": true
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 191,
+    "absdiff": 3.546875,
+    "ok": true
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 193,
+    "absdiff": 3.6875,
+    "ok": true
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 197,
+    "absdiff": 3.75,
+    "ok": true
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 199,
+    "absdiff": 9.75,
+    "ok": true
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 4,
+    "absdiff": 7.53125,
+    "ok": true
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 11,
+    "absdiff": 9.625,
+    "ok": true
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 15,
+    "absdiff": 7.1875,
+    "ok": true
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 25,
+    "absdiff": 8.125,
+    "ok": true
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 31,
+    "absdiff": 6.3125,
+    "ok": true
+   }
+  ],
+  "min_absdiff": 2.875,
+  "passed": true
+ },
+ "n3": {
+  "desc": "N3 3-D position subset + decode continuation",
+  "samples": [
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 43,
+    "subset_ok": true,
+    "visual_ok": true,
+    "text_monotone": true,
+    "decode_ok": true,
+    "ok": true
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 44,
+    "subset_ok": true,
+    "visual_ok": true,
+    "text_monotone": true,
+    "decode_ok": true,
+    "ok": true
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 55,
+    "subset_ok": true,
+    "visual_ok": true,
+    "text_monotone": true,
+    "decode_ok": true,
+    "ok": true
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 63,
+    "subset_ok": true,
+    "visual_ok": true,
+    "text_monotone": true,
+    "decode_ok": true,
+    "ok": true
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 64,
+    "subset_ok": true,
+    "visual_ok": true,
+    "text_monotone": true,
+    "decode_ok": true,
+    "ok": true
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 74,
+    "subset_ok": true,
+    "visual_ok": true,
+    "text_monotone": true,
+    "decode_ok": true,
+    "ok": true
+   }
+  ],
+  "passed": true
+ },
+ "n4": {
+  "desc": "N4 invariants per arm",
+  "arms": {
+   "identity|K=1024": {
+    "n": 12,
+    "n_bad": 0,
+    "rows": [
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 1024,
+      "seq_full": 1054,
+      "lk": 1054,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       1024,
+       1024,
+       1024
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 1069,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 43
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 1024,
+      "seq_full": 1055,
+      "lk": 1055,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       1024,
+       1024,
+       1024
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 1070,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 44
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 1024,
+      "seq_full": 1056,
+      "lk": 1056,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       1024,
+       1024,
+       1024
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 1071,
+      "cache_ok": true,
+      "decode_positions_head": [
+       64,
+       65,
+       66,
+       67
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 55
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 1024,
+      "seq_full": 1055,
+      "lk": 1055,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       1024,
+       1024,
+       1024
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 1070,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 63
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 1024,
+      "seq_full": 1055,
+      "lk": 1055,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       1024,
+       1024,
+       1024
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 1070,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 180
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 1024,
+      "seq_full": 1054,
+      "lk": 1054,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       1024,
+       1024,
+       1024
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 1069,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 191
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 1024,
+      "seq_full": 1060,
+      "lk": 1060,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       1024,
+       1024,
+       1024
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 1075,
+      "cache_ok": true,
+      "decode_positions_head": [
+       68,
+       69,
+       70,
+       71
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 193
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 1024,
+      "seq_full": 1054,
+      "lk": 1054,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       1024,
+       1024,
+       1024
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 1069,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 197
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 1024,
+      "seq_full": 1054,
+      "lk": 1054,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       1024,
+       1024,
+       1024
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 1069,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 4
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 1024,
+      "seq_full": 1054,
+      "lk": 1054,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       1024,
+       1024,
+       1024
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 1069,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 11
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 1024,
+      "seq_full": 1054,
+      "lk": 1054,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       1024,
+       1024,
+       1024
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 1069,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 15
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 1024,
+      "seq_full": 1054,
+      "lk": 1054,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       1024,
+       1024,
+       1024
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 1069,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 25
+     }
+    ]
+   },
+   "b2|K=256": {
+    "n": 12,
+    "n_bad": 0,
+    "rows": [
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 43
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 44
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1056,
+      "lk": 288,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 303,
+      "cache_ok": true,
+      "decode_positions_head": [
+       64,
+       65,
+       66,
+       67
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 55
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 63
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 180
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 191
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1060,
+      "lk": 292,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 307,
+      "cache_ok": true,
+      "decode_positions_head": [
+       68,
+       69,
+       70,
+       71
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 193
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 197
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 4
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 11
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 15
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 25
+     }
+    ]
+   },
+   "b1|K=256": {
+    "n": 12,
+    "n_bad": 0,
+    "rows": [
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 43
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 44
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1056,
+      "lk": 288,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 303,
+      "cache_ok": true,
+      "decode_positions_head": [
+       64,
+       65,
+       66,
+       67
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 55
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 63
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 180
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 191
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1060,
+      "lk": 292,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 307,
+      "cache_ok": true,
+      "decode_positions_head": [
+       68,
+       69,
+       70,
+       71
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 193
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 197
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 4
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 11
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 15
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 25
+     }
+    ]
+   },
+   "divprune|K=256": {
+    "n": 12,
+    "n_bad": 0,
+    "rows": [
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 43
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 44
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1056,
+      "lk": 288,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 303,
+      "cache_ok": true,
+      "decode_positions_head": [
+       64,
+       65,
+       66,
+       67
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 55
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 63
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 180
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 191
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1060,
+      "lk": 292,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 307,
+      "cache_ok": true,
+      "decode_positions_head": [
+       68,
+       69,
+       70,
+       71
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 193
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 197
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 4
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 11
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 15
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 25
+     }
+    ]
+   },
+   "cdpruner|K=256": {
+    "n": 12,
+    "n_bad": 0,
+    "rows": [
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 43
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 44
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1056,
+      "lk": 288,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 303,
+      "cache_ok": true,
+      "decode_positions_head": [
+       64,
+       65,
+       66,
+       67
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 55
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 63
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 180
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 191
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1060,
+      "lk": 292,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 307,
+      "cache_ok": true,
+      "decode_positions_head": [
+       68,
+       69,
+       70,
+       71
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 193
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 197
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 4
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 11
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 15
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 25
+     }
+    ]
+   },
+   "hiprune|K=256": {
+    "n": 12,
+    "n_bad": 0,
+    "rows": [
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 43
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 44
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1056,
+      "lk": 288,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 303,
+      "cache_ok": true,
+      "decode_positions_head": [
+       64,
+       65,
+       66,
+       67
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 55
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 63
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 180
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 191
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1060,
+      "lk": 292,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 307,
+      "cache_ok": true,
+      "decode_positions_head": [
+       68,
+       69,
+       70,
+       71
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 193
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 197
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 4
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 11
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 15
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 25
+     }
+    ]
+   },
+   "random|K=256": {
+    "n": 12,
+    "n_bad": 0,
+    "rows": [
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 43
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 44
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1056,
+      "lk": 288,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 303,
+      "cache_ok": true,
+      "decode_positions_head": [
+       64,
+       65,
+       66,
+       67
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 55
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 63
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1055,
+      "lk": 287,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 302,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 180
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 191
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1060,
+      "lk": 292,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 307,
+      "cache_ok": true,
+      "decode_positions_head": [
+       68,
+       69,
+       70,
+       71
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 193
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 197
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 4
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 11
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 15
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 256,
+      "seq_full": 1054,
+      "lk": 286,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       256,
+       256,
+       256
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 301,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 25
+     }
+    ]
+   },
+   "b2|K=64": {
+    "n": 12,
+    "n_bad": 0,
+    "rows": [
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 64,
+      "seq_full": 1054,
+      "lk": 94,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       64,
+       64,
+       64
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 109,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 43
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 64,
+      "seq_full": 1055,
+      "lk": 95,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       64,
+       64,
+       64
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 110,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 44
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 64,
+      "seq_full": 1056,
+      "lk": 96,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       64,
+       64,
+       64
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 111,
+      "cache_ok": true,
+      "decode_positions_head": [
+       64,
+       65,
+       66,
+       67
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 55
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 64,
+      "seq_full": 1055,
+      "lk": 95,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       64,
+       64,
+       64
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 110,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "TextVQA_VAL",
+      "idx": 63
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 64,
+      "seq_full": 1055,
+      "lk": 95,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       64,
+       64,
+       64
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 110,
+      "cache_ok": true,
+      "decode_positions_head": [
+       63,
+       64,
+       65,
+       66
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 180
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 64,
+      "seq_full": 1054,
+      "lk": 94,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       64,
+       64,
+       64
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 109,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 191
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 64,
+      "seq_full": 1060,
+      "lk": 100,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       64,
+       64,
+       64
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 115,
+      "cache_ok": true,
+      "decode_positions_head": [
+       68,
+       69,
+       70,
+       71
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 193
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 64,
+      "seq_full": 1054,
+      "lk": 94,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       64,
+       64,
+       64
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 109,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "DocVQA_VAL",
+      "idx": 197
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 64,
+      "seq_full": 1054,
+      "lk": 94,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       64,
+       64,
+       64
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 109,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 4
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 64,
+      "seq_full": 1054,
+      "lk": 94,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       64,
+       64,
+       64
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 109,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 11
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 64,
+      "seq_full": 1054,
+      "lk": 94,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       64,
+       64,
+       64
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 109,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 15
+     },
+     {
+      "n_vis_full": 1024,
+      "n_vis_kept": 64,
+      "seq_full": 1054,
+      "lk": 94,
+      "pos_mode": "mrope3d",
+      "deepstack": true,
+      "decode_steps": 15,
+      "no_dup": true,
+      "in_range": true,
+      "ascending": true,
+      "ds_lengths": [
+       64,
+       64,
+       64
+      ],
+      "layer_calls": 576,
+      "layer_calls_expected": 576,
+      "layer_calls_ok": true,
+      "cache_len": 109,
+      "cache_ok": true,
+      "decode_positions_head": [
+       62,
+       63,
+       64,
+       65
+      ],
+      "ds": "OCRBench",
+      "idx": 25
+     }
+    ]
+   }
+  },
+  "passed": true
+ },
+ "n5": {
+  "desc": "N5 legacy-mode B2 vs archived SAGE-confirmation B2",
+  "samples": [
+   {
+    "key": "DocVQA_VAL_1055",
+    "agree": true,
+    "pred": "Tea and other retail products",
+    "archived": "Tea and other retail products"
+   },
+   {
+    "key": "DocVQA_VAL_1396",
+    "agree": true,
+    "pred": "Merrill Lynch Pierce Smith Inc.",
+    "archived": "Merrill Lynch Pierce Smith Inc."
+   },
+   {
+    "key": "DocVQA_VAL_1996",
+    "agree": true,
+    "pred": "RENOVATION CENTER",
+    "archived": "RENOVATION CENTER"
+   },
+   {
+    "key": "DocVQA_VAL_2625",
+    "agree": true,
+    "pred": "Thomas D. Ebert",
+    "archived": "Thomas D. Ebert"
+   },
+   {
+    "key": "DocVQA_VAL_2974",
+    "agree": true,
+    "pred": "Joint Room",
+    "archived": "Joint Room"
+   },
+   {
+    "key": "DocVQA_VAL_3684",
+    "agree": true,
+    "pred": "9910",
+    "archived": "9910"
+   },
+   {
+    "key": "DocVQA_VAL_4045",
+    "agree": true,
+    "pred": "4",
+    "archived": "4"
+   },
+   {
+    "key": "DocVQA_VAL_4490",
+    "agree": true,
+    "pred": "9+ drinks daily",
+    "archived": "9+ drinks daily"
+   },
+   {
+    "key": "DocVQA_VAL_5048",
+    "agree": true,
+    "pred": "17.2",
+    "archived": "17.2"
+   },
+   {
+    "key": "DocVQA_VAL_5335",
+    "agree": true,
+    "pred": "$196.69",
+    "archived": "$196.69"
+   },
+   {
+    "key": "DocVQA_VAL_852",
+    "agree": true,
+    "pred": "Mar 2012",
+    "archived": "Mar 2012"
+   },
+   {
+    "key": "OCRBench_150",
+    "agree": true,
+    "pred": "communities",
+    "archived": "communities"
+   },
+   {
+    "key": "OCRBench_225",
+    "agree": true,
+    "pred": "4189",
+    "archived": "4189"
+   },
+   {
+    "key": "OCRBench_328",
+    "agree": true,
+    "pred": "organic",
+    "archived": "organic"
+   },
+   {
+    "key": "OCRBench_408",
+    "agree": true,
+    "pred": "autotopoplan",
+    "archived": "autotopoplan"
+   },
+   {
+    "key": "OCRBench_494",
+    "agree": true,
+    "pred": "2016",
+    "archived": "2016"
+   },
+   {
+    "key": "OCRBench_572",
+    "agree": true,
+    "pred": "2017",
+    "archived": "2017"
+   },
+   {
+    "key": "OCRBench_663",
+    "agree": true,
+    "pred": "3.21M",
+    "archived": "3.21M"
+   },
+   {
+    "key": "OCRBench_78",
+    "agree": true,
+    "pred": "davidson",
+    "archived": "davidson"
+   },
+   {
+    "key": "OCRBench_857",
+    "agree": true,
+    "pred": "7.9g",
+    "archived": "7.9g"
+   },
+   {
+    "key": "OCRBench_927",
+    "agree": true,
+    "pred": "y = \\frac{1}{3}x + 2",
+    "archived": "y = \\frac{1}{3}x + 2"
+   },
+   {
+    "key": "TextVQA_VAL_118",
+    "agree": true,
+    "pred": "music",
+    "archived": "music"
+   },
+   {
+    "key": "TextVQA_VAL_1511",
+    "agree": true,
+    "pred": "1:50",
+    "archived": "1:50"
+   },
+   {
+    "key": "TextVQA_VAL_1936",
+    "agree": true,
+    "pred": "samsung",
+    "archived": "samsung"
+   },
+   {
+    "key": "TextVQA_VAL_2333",
+    "agree": true,
+    "pred": "t",
+    "archived": "t"
+   },
+   {
+    "key": "TextVQA_VAL_2845",
+    "agree": true,
+    "pred": "coca cola",
+    "archived": "coca cola"
+   },
+   {
+    "key": "TextVQA_VAL_3335",
+    "agree": true,
+    "pred": "wheat",
+    "archived": "wheat"
+   },
+   {
+    "key": "TextVQA_VAL_372",
+    "agree": true,
+    "pred": "htc",
+    "archived": "htc"
+   },
+   {
+    "key": "TextVQA_VAL_4308",
+    "agree": true,
+    "pred": "sms",
+    "archived": "sms"
+   },
+   {
+    "key": "TextVQA_VAL_472",
+    "agree": true,
+    "pred": "fail",
+    "archived": "fail"
+   },
+   {
+    "key": "TextVQA_VAL_581",
+    "agree": true,
+    "pred": "12:45",
+    "archived": "12:45"
+   },
+   {
+    "key": "TextVQA_VAL_995",
+    "agree": true,
+    "pred": "private eye",
+    "archived": "private eye"
+   }
+  ],
+  "n_agree": 32,
+  "n_total": 32,
+  "passed": true,
+  "rate": 1.0
+ },
+ "all_passed": true,
+ "elapsed_s": 274.4
+}

@@ -109,6 +109,21 @@ class HiPruner(nn.Module):
         return retain_indices
 
     @torch.no_grad()
+    def select_indices(self, attn_list, image_grid_thw, img_idx: int, token_num: int):
+        """E0: kept indices for ONE image (the forward's per-image logic)."""
+        device = attn_list[0].device if hasattr(attn_list[0], "device") else "cuda"
+        split_sizes = self._n_image_tokens(image_grid_thw, self.spatial_merge_size)
+        n = split_sizes[img_idx]
+        offset = sum(split_sizes[:img_idx])
+        object_layer_idx = min(self.object_layer - 1, len(attn_list) - 1)
+        shallow_attn = attn_list[object_layer_idx][offset: offset + n]
+        deep_attn = attn_list[-1][offset: offset + n]
+        width = int(image_grid_thw[img_idx, 2].item()) // self.spatial_merge_size
+        width = max(1, width)
+        idx = self._select_one_image(shallow_attn, deep_attn, n, width, device)
+        return torch.sort(idx).values
+
+    @torch.no_grad()
     def forward(
         self,
         image_embeds: torch.Tensor,

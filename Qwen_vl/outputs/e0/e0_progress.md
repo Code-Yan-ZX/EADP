@@ -51,3 +51,27 @@ S2-A causal cases).
   global CONFIRM `b81f9135e8cec3cd571c1c2818b3a74251164a07e69673b1f75a2bee3cb8a7ec`.
   Per-dataset hashes inside `e0_plan.json`. CONFIRM answers are NOT read; only
   indices + sha256 are archived.
+
+## Host resource note (2026-09-29)
+
+The GPU host runs an **Ollama service** (`/usr/local/bin/ollama`, systemd
+managed) which intermittently loads a `qwen3.6:35b` chat model (~27 GB of the
+46 GB A40) and unloads it after ~5 min idle. It is not ours to kill. All E0
+GPU scripts carry OOM-retry loops (150 s backoff) so foreign loads cannot
+fail a gate or corrupt an accuracy run; wall-clock timings measured while the
+foreign model is resident are discarded/retried.
+
+## CIVIC code search (prereg §4.2, 2026-09-29)
+
+Queries (web search): "CIVIC visual token pruning compressed KV anchor
+aggregation Qwen3-VL code github arXiv 2605.28115"; follow-ups on the arXiv
+page and Semantic Scholar. Result: paper identified ([arXiv:2605.28115],
+"CIVIC: End-to-End Sequence Compactness for Efficient Vision-Language
+Models", Yang et al., Univ. of Utah, May 2026) — **no public code found** on
+GitHub/project page/author pages. Per prereg §4.2 "no code" branch: E0 does
+not reimplement it; it is listed as an un-reproduced near neighbour that
+(a) requires training and (b) uses compressed-KV anchor attention; its own
+evaluation (Qwen3-VL-2B, MMMU/MathVision/ODinW-13/RealWorldQA/VideoMME)
+does not overlap this project's setting. A second search is run before the
+report is finalised.
+

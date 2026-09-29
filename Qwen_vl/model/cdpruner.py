@@ -27,6 +27,55 @@ class CDPruner(nn.Module):
         self.spatial_merge_size = spatial_merge_size
 
     @torch.no_grad()
+    def select_indices(self, img_feats, text_emb, token_num):
+        """Conditional-DPP greedy for ONE image; returns kept indices (sorted).
+
+        E0: the exact loop from ``forward``, split out so the native path can
+        consume indices instead of re-gathered features."""
+        device = img_feats.device
+        N_i = img_feats.shape[0]
+        B = 1
+
+        image_normalized = img_feats.unsqueeze(0) / img_feats.unsqueeze(0).norm(dim=-1, keepdim=True).clamp(min=1e-8)
+        image_normalized = image_normalized.float()
+        similarity = torch.matmul(
+            image_normalized, image_normalized.transpose(1, 2)
+        )
+
+        img_embeds_llm = img_feats.unsqueeze(0).float() / img_feats.unsqueeze(0).float().norm(dim=-1, keepdim=True).clamp(min=1e-8)
+        text_emb = text_emb.float()
+        text_emb = text_emb / text_emb.norm(dim=-1, keepdim=True).clamp(min=1e-8)
+        relevance = torch.matmul(img_embeds_llm, text_emb.t()).squeeze(-1)
+        relevance = (-relevance).float()
+        relevance = (relevance - relevance.min(dim=-1, keepdim=True).values + 1e-6) / (
+            relevance.max(dim=-1, keepdim=True).values
+            - relevance.min(dim=-1, keepdim=True).values
+            + 1e-6
+        )
+
+        kernel = relevance.unsqueeze(2) * similarity * relevance.unsqueeze(1)
+        N = N_i
+        cis = torch.zeros((token_num, B, N), device=device, dtype=torch.float32)
+        di2s = torch.diagonal(kernel, dim1=1, dim2=2).clone()
+        select_idx = torch.empty((token_num, B), dtype=torch.long, device=device)
+
+        for i in range(token_num):
+            j = torch.argmax(di2s, dim=-1)
+            select_idx[i] = j
+            batch_range = torch.arange(B, device=device)
+            eis_numer = kernel[batch_range, j] - torch.einsum(
+                'tb,tbn->bn', cis[:i, batch_range, j], cis[:i]
+            )
+            eis_denom = torch.sqrt(di2s[batch_range, j].clamp(min=1e-8)).unsqueeze(-1)
+            eis = eis_numer / eis_denom
+            cis[i, :, :] = eis
+            di2s -= torch.square(eis)
+            di2s[batch_range, j] = -float('inf')
+
+        select_idx = torch.sort(select_idx.t()).values
+        return select_idx[0]
+
+    @torch.no_grad()
     def forward(
         self,
         image_features: torch.Tensor,
