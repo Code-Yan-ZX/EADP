@@ -41,6 +41,7 @@ run --arm pdrop --K 256 $OCR_DS
 run --arm visionzip --K 256 $OCR_DS
 [ "$SKIP_SV" = "no" ] && run --arm sparsevlm_norecycle --K 256 $OCR_DS
 run --arm divprune --K 256 $OCR_DS
+[ -f /tmp/e0_pace_ok ] && run --arm pace --K 256 $OCR_DS
 
 # --- P1: b0 + full-arm general-panel pass (K=256; A7 extension after the
 #     user asked to keep more than the OCR panel) ------------------------------
@@ -50,6 +51,7 @@ for arm in b2 rres fastv pdrop visionzip divprune; do
   run --arm $arm --K 256 $GEN_DS
 done
 [ "$SKIP_SV" = "no" ] && run --arm sparsevlm_norecycle --K 256 $GEN_DS
+[ -f /tmp/e0_pace_ok ] && run --arm pace --K 256 $GEN_DS
 
 # --- P2: K=64 curve endpoint (OCR panel) ------------------------------------
 run --arm b2 --K 64 $OCR_DS
@@ -57,5 +59,6 @@ run --arm rres --K 64 $OCR_DS
 run --arm fastv --K 64 $OCR_DS
 run --arm visionzip --K 64 $OCR_DS
 run --arm pdrop --K 64 $OCR_DS
+[ -f /tmp/e0_pace_ok ] && run --arm pace --K 64 $OCR_DS
 
 echo "M4_PRIORITY_DONE"

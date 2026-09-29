@@ -328,6 +328,11 @@ class NativeEngine:
                  record_ctx: bool = False):
         """One full arm run.  Returns dict(text, keep_idx, meta, timings)."""
         timings = timings if timings is not None else {}
+        if selector == "pace":
+            from model.baselines import pace_qwen3
+            return pace_qwen3.generate(self, message, dataset_name, K,
+                                       deepstack, pos, max_new_tokens,
+                                       timings)
         wall0 = time.perf_counter()
         prep = self.prepare(message, dataset_name)
         timings["image_preprocess_ms"] = (time.perf_counter() - wall0) * 1e3

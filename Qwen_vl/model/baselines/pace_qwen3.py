@@ -150,12 +150,12 @@ def pace_prepare(engine, message, dataset_name, K):
     img = _load_expanded_image(eng, message, side=1024)
 
     # --- APC preview at the full 1024 grid (patch 16 -> 4096 patch tokens)
-    img0 = img
-    text = eng.vlm.processor.apply_chat_template(
-        [{"role": "user",
-          "content": [{"type": "image", "image": ""}, {"type": "text", "text": "x"}]}],
-        tokenize=False, add_generation_prompt=True)
     proc = eng.vlm.processor
+    text = proc.apply_chat_template(
+        [{"role": "user",
+          "content": [{"type": "image", "image": ""},
+                      {"type": "text", "text": "x"}]}],
+        tokenize=False, add_generation_prompt=True)
     inputs0 = proc(text=text, images=[img0], videos=None, do_resize=False,
                    return_tensors="pt")
     dev = next(eng.model.parameters()).device
@@ -169,10 +169,7 @@ def pace_prepare(engine, message, dataset_name, K):
     h2, w2 = compressed_resolution(img.height, img.width, 32, retention)
     img2 = img.resize((w2, h2), Image.BICUBIC)
 
-    # official preprocessing path on the compressed image
-    inputs = eng.vlm._processor_inputs(eng.vlm._build_messages(message,
-                                                               dataset=dataset_name))
-    # replace the pixel input with the compressed image (same prompt text)
+    # official preprocessing path on the compressed image (same prompt text)
     from qwen_vl_utils import process_vision_info
     messages = eng.vlm._build_messages(message, dataset=dataset_name)
     text = proc.apply_chat_template(messages, tokenize=False,
@@ -267,9 +264,9 @@ def generate(engine, message, dataset_name, K, deepstack, pos,
     timings["vision_ms"] = float("nan")   # measured inside preprocess window
     timings["selector_ms"] = 0.0
     timings["ttft_ms"] = (_t.perf_counter() - wall0) * 1e3
+    wall1 = _t.perf_counter()
     gen_ids, text_out = eng.decode(st, max_new_tokens)
-    timings["decode_wall_ms"] = (_t.perf_counter() - wall1) * 1e3 \
-        if (wall1 := _t.perf_counter()) else 0
+    timings["decode_wall_ms"] = (_t.perf_counter() - wall1) * 1e3
     meta = eng.invariants(prep, st, V, DS, n_decode=len(gen_ids))
     meta["apc"] = prep["apc"]
     return dict(text=text_out, gen_ids=gen_ids, keep_idx=st.keep_idx,
