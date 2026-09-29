@@ -67,11 +67,11 @@ def main():
             empty += int(len(txt) == 0)
             if len(samples) < 3:
                 samples.append(txt[:60])
-        out["arms"][f"{name}:{K}"]["smoke"] = dict(
+        out["arms"][f"{name}|K={K}"]["smoke"] = dict(
             n=len(smoke_items), truncated=n_trunc, empty=empty,
             truncation_rate=n_trunc / len(smoke_items),
             samples=samples)
-        print(f"[smoke] {name}:{K} trunc={n_trunc}/{len(smoke_items)} "
+        print(f"[smoke] {name}|K={K} trunc={n_trunc}/{len(smoke_items)} "
               f"empty={empty}", flush=True)
 
     with open(os.path.join(OUT_DIR, "e0_smoke.json"), "w") as f:

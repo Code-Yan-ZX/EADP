@@ -254,11 +254,22 @@ def gate_n4(engine, items, seed=20260929, arms=None):
                 continue
             inv.update(ds=it["ds"], idx=it["idx"])
             rows.append(inv)
+        # SparseVLM's recycling appends cluster tokens (amendment A4): the
+        # realized visual count is K + n_recycled, bounded here by +15 %
+        n_target = min(K, 1024)
+        def _count_ok(r, name=name):
+            if r["n_vis_kept"] == n_target:
+                return True
+            if name == "sparsevlm" and n_target <= r["n_vis_kept"] <= n_target + max(16, int(0.15 * n_target)):
+                return True
+            return False
         n_bad = sum(1 for r in rows
                     if not (r["layer_calls_ok"] and r["cache_ok"] and r["no_dup"]
                             and r["in_range"] and r["ascending"]
-                            and r["n_vis_kept"] == min(K, r["n_vis_full"])
-                            and all(d == min(K, r["n_vis_full"]) for d in r["ds_lengths"])))
+                            and _count_ok(r)
+                            and all(d == min(K, r["n_vis_full"]) or
+                                    (name == "sparsevlm" and d >= n_target)
+                                    for d in r["ds_lengths"])))
         res["arms"][key] = dict(n=len(rows), n_bad=n_bad, rows=rows)
         res["passed"] = bool(res["passed"] and n_bad == 0 and len(rows) > 0)
         print(f"  [N4] {key}: {len(rows)} samples, {n_bad} bad", flush=True)

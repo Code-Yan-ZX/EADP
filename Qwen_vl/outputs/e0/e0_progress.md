@@ -75,3 +75,32 @@ evaluation (Qwen3-VL-2B, MMMU/MathVision/ODinW-13/RealWorldQA/VideoMME)
 does not overlap this project's setting. A second search is run before the
 report is finalised.
 
+## M1 — native repair + gates (2026-09-29): ALL GATES PASSED
+
+`Qwen_vl/scripts/e0/e0_gates.py` → `e0_gates.json`, `all_passed=True`:
+
+| gate | result |
+|---|---|
+| N1 identity (16 DEV samples, K=1024, 32 forced steps) | max\|Δlogits\| = **0.00e+00** prefill and every decode step, 0/512 token mismatches (bit-exact) |
+| N2 DeepStack live | min \|Δ\| = 2.88 ≫ 0.1 — injection is real |
+| N3 3-D positions (K=256 random keep) | kept tokens carry full-sequence (t,h,w); text monotone; decode step n = prefill_max+1+n |
+| N4 invariants (12 samples × 8 local arms) | 0 bad: exact K, no dup/OOB, DS lengths, cache len, layer_calls = 36·(1+decode_steps) |
+| N5 legacy B2 vs archived SAGE-confirmation B2 | **32/32 prediction-exact** (100 % ≥ 95 %) — the new engine's B2 selection matches the code that produced the archived predictions |
+
+The N1 lm_head note (amendment A2): with the all-positions lm_head the
+identity is bit-exact; the earlier 6.25e-02 was pure GEMM-shape rounding on
+the last-position-only call.
+
+## M2 — baseline ports (2026-09-29)
+
+Cloned upstream repos (`_upstream/`), HEADs pinned and cited in each port:
+FastV d1659729, PyramidDrop 6444f304, VisionZip 8f86b55c, SparseVLMs
+a9e71427, PACE 240b2206. Ports live in `Qwen_vl/model/baselines/`; the local
+pruners (cdpruner/hipruner) got index-exposing wrappers (`select_indices`).
+N4 on 12 DEV samples: visionzip/fastv/pdrop/sparsevlm all 0 bad (sparsevlm
+counted with the amendment-A4 recycling bound; realized visual count =
+K + n_recycled). Implementation bugs found and fixed during the port are in
+git history (DS compaction alignment, layer-call double count, GQA repeat_kv
+in PDrop scoring, SparseVLM recycling pre/post-compaction split).
+
+
