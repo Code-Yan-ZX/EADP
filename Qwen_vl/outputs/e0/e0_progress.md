@@ -104,3 +104,22 @@ git history (DS compaction alignment, layer-call double count, GQA repeat_kv
 in PDrop scoring, SparseVLM recycling pre/post-compaction split).
 
 
+
+## CIVIC runtime re-search (§4.2, 2026-09-29)
+
+Second search round ("CIVIC End-to-End Sequence Compactness code release
+github ..."): again **no code repository found** — only the arXiv entry,
+Semantic Scholar (no code link), and third-party summaries. Conclusion from
+§4.2 unchanged.
+
+## M3 plan (frozen reading of the prereg)
+
+M4's question count: 9 pruned arms x 3 budgets on the full 8-dataset DEV
+panel (27 x 2264) + B0 (2264) + R-res variants (4 x 2264) + PACE (3 x 2264) +
+A1/A2 (2 x 764) ~= 82k generations. With the prereg §8 upper bound of 25
+GPU-hours, the 1.5x line is 37.5 h, i.e. an observed s/q of ~1.65 s/q on the
+host. The chain script (/tmp/e0_chain.sh, also mirrored in git) measures the
+observed s/q on the first ~120 b2/K=256/TextVQA questions, projects the total
+with the exact run inventory, and stops with `outputs/e0/M3_BUDGET_STOP` for
+a human decision if the projection exceeds 37.5 h. Nothing else in the chain
+depends on the estimate, so a stop costs nothing.
