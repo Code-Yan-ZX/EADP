@@ -72,6 +72,26 @@
   ],
   [
    "b2",
+   64,
+   "ChartQA_TEST"
+  ],
+  [
+   "b2",
+   64,
+   "DocVQA_VAL"
+  ],
+  [
+   "b2",
+   64,
+   "OCRBench"
+  ],
+  [
+   "b2",
+   64,
+   "TextVQA_VAL"
+  ],
+  [
+   "b2",
    256,
    "ChartQA_TEST"
   ],
@@ -83,7 +103,27 @@
   [
    "b2",
    256,
+   "MMBench_DEV_EN_V11"
+  ],
+  [
+   "b2",
+   256,
+   "MMStar"
+  ],
+  [
+   "b2",
+   256,
    "OCRBench"
+  ],
+  [
+   "b2",
+   256,
+   "POPE"
+  ],
+  [
+   "b2",
+   256,
+   "RealWorldQA"
   ],
   [
    "b2",
@@ -131,6 +171,66 @@
    "TextVQA_VAL"
   ],
   [
+   "divprune",
+   256,
+   "ChartQA_TEST"
+  ],
+  [
+   "divprune",
+   256,
+   "DocVQA_VAL"
+  ],
+  [
+   "divprune",
+   256,
+   "MMBench_DEV_EN_V11"
+  ],
+  [
+   "divprune",
+   256,
+   "MMStar"
+  ],
+  [
+   "divprune",
+   256,
+   "OCRBench"
+  ],
+  [
+   "divprune",
+   256,
+   "POPE"
+  ],
+  [
+   "divprune",
+   256,
+   "RealWorldQA"
+  ],
+  [
+   "divprune",
+   256,
+   "TextVQA_VAL"
+  ],
+  [
+   "fastv",
+   64,
+   "ChartQA_TEST"
+  ],
+  [
+   "fastv",
+   64,
+   "DocVQA_VAL"
+  ],
+  [
+   "fastv",
+   64,
+   "OCRBench"
+  ],
+  [
+   "fastv",
+   64,
+   "TextVQA_VAL"
+  ],
+  [
    "fastv",
    256,
    "ChartQA_TEST"
@@ -171,6 +271,86 @@
    "TextVQA_VAL"
   ],
   [
+   "pdrop",
+   64,
+   "ChartQA_TEST"
+  ],
+  [
+   "pdrop",
+   64,
+   "DocVQA_VAL"
+  ],
+  [
+   "pdrop",
+   64,
+   "OCRBench"
+  ],
+  [
+   "pdrop",
+   64,
+   "TextVQA_VAL"
+  ],
+  [
+   "pdrop",
+   256,
+   "ChartQA_TEST"
+  ],
+  [
+   "pdrop",
+   256,
+   "DocVQA_VAL"
+  ],
+  [
+   "pdrop",
+   256,
+   "MMBench_DEV_EN_V11"
+  ],
+  [
+   "pdrop",
+   256,
+   "MMStar"
+  ],
+  [
+   "pdrop",
+   256,
+   "OCRBench"
+  ],
+  [
+   "pdrop",
+   256,
+   "POPE"
+  ],
+  [
+   "pdrop",
+   256,
+   "RealWorldQA"
+  ],
+  [
+   "pdrop",
+   256,
+   "TextVQA_VAL"
+  ],
+  [
+   "rres256",
+   1024,
+   "ChartQA_TEST"
+  ],
+  [
+   "rres256",
+   1024,
+   "DocVQA_VAL"
+  ],
+  [
+   "rres256",
+   1024,
+   "OCRBench"
+  ],
+  [
+   "rres256",
+   1024,
+   "TextVQA_VAL"
+  ],
+  [
    "rres512",
    1024,
    "ChartQA_TEST"
@@ -183,11 +363,51 @@
   [
    "rres512",
    1024,
+   "MMBench_DEV_EN_V11"
+  ],
+  [
+   "rres512",
+   1024,
+   "MMStar"
+  ],
+  [
+   "rres512",
+   1024,
    "OCRBench"
   ],
   [
    "rres512",
    1024,
+   "POPE"
+  ],
+  [
+   "rres512",
+   1024,
+   "RealWorldQA"
+  ],
+  [
+   "rres512",
+   1024,
+   "TextVQA_VAL"
+  ],
+  [
+   "visionzip",
+   64,
+   "ChartQA_TEST"
+  ],
+  [
+   "visionzip",
+   64,
+   "DocVQA_VAL"
+  ],
+  [
+   "visionzip",
+   64,
+   "OCRBench"
+  ],
+  [
+   "visionzip",
+   64,
    "TextVQA_VAL"
   ],
   [
@@ -237,20 +457,45 @@
    "general": 0.75,
    "total": 33.26602367188721
   },
+  "rres256|K=1024": {
+   "ocr": 31.224255490286154,
+   "general": null,
+   "total": 31.224255490286154
+  },
+  "visionzip|K=64": {
+   "ocr": 25.48635115928349,
+   "general": null,
+   "total": 25.48635115928349
+  },
   "visionzip|K=256": {
-   "ocr": 63.76722750983269,
+   "ocr": 55.4758373713088,
    "general": 0.75,
-   "total": 32.258613754916354
+   "total": 28.1129186856544
+  },
+  "pdrop|K=64": {
+   "ocr": 27.230391719688118,
+   "general": null,
+   "total": 27.230391719688118
+  },
+  "pdrop|K=256": {
+   "ocr": 35.287297280408836,
+   "general": 0.75,
+   "total": 18.018648640204418
   },
   "rres512|K=1024": {
    "ocr": 64.43419476914485,
+   "general": 0.75,
+   "total": 32.592097384572426
+  },
+  "b2|K=64": {
+   "ocr": 25.11016072725659,
    "general": null,
-   "total": 64.43419476914485
+   "total": 25.11016072725659
   },
   "b2|K=256": {
    "ocr": 58.595542574001904,
-   "general": null,
-   "total": 58.595542574001904
+   "general": 0.75,
+   "total": 29.672771287000952
   },
   "a2|K=256": {
    "ocr": 51.49206545271998,
@@ -267,13 +512,59 @@
    "general": 0.75,
    "total": 28.586396752916883
   },
+  "fastv|K=64": {
+   "ocr": 6.557391543199664,
+   "general": null,
+   "total": 6.557391543199664
+  },
   "fastv|K=256": {
    "ocr": 22.776342492816582,
    "general": 0.75,
    "total": 11.763171246408291
+  },
+  "divprune|K=256": {
+   "ocr": 57.50322036982796,
+   "general": 0.75,
+   "total": 29.126610184913975
   }
  },
  "paired_vs_b2": {
+  "visionzip|K=64|TextVQA_VAL": {
+   "delta": -0.04070976117141455,
+   "ci": [
+    -0.10366728187919454,
+    0.021622747747747733
+   ],
+   "rescued": 34,
+   "broken": 49
+  },
+  "visionzip|K=64|ChartQA_TEST": {
+   "delta": 0.09364326864522626,
+   "ci": [
+    0.03934279859484773,
+    0.1485157483139618
+   ],
+   "rescued": 48,
+   "broken": 20
+  },
+  "visionzip|K=64|DocVQA_VAL": {
+   "delta": -0.002905352480276195,
+   "ci": [
+    -0.04132352784950219,
+    0.03448735893198139
+   ],
+   "rescued": 39,
+   "broken": 36
+  },
+  "visionzip|K=64|OCRBench": {
+   "delta": -0.07305126097477894,
+   "ci": [
+    -0.14110429447852763,
+    -0.0060975609756097615
+   ],
+   "rescued": 11,
+   "broken": 23
+  },
   "visionzip|K=256|TextVQA_VAL": {
    "delta": -0.009653840021432252,
    "ci": [
@@ -309,6 +600,78 @@
    ],
    "rescued": 8,
    "broken": 11
+  },
+  "pdrop|K=64|TextVQA_VAL": {
+   "delta": 0.01734748750759146,
+   "ci": [
+    -0.045215915172598285,
+    0.08119120272682998
+   ],
+   "rescued": 49,
+   "broken": 48
+  },
+  "pdrop|K=64|ChartQA_TEST": {
+   "delta": 0.013924040793646713,
+   "ci": [
+    -0.05279528729270441,
+    0.08026755852842807
+   ],
+   "rescued": 49,
+   "broken": 45
+  },
+  "pdrop|K=64|DocVQA_VAL": {
+   "delta": -0.056119857155747674,
+   "ci": [
+    -0.11122036943033896,
+    -0.0025082807753490977
+   ],
+   "rescued": 50,
+   "broken": 69
+  },
+  "pdrop|K=64|OCRBench": {
+   "delta": -0.054405256310270614,
+   "ci": [
+    -0.12804878048780488,
+    0.018404907975460072
+   ],
+   "rescued": 16,
+   "broken": 25
+  },
+  "pdrop|K=256|TextVQA_VAL": {
+   "delta": -0.23050000382734853,
+   "ci": [
+    -0.2910898417144345,
+    -0.1721144480519479
+   ],
+   "rescued": 15,
+   "broken": 87
+  },
+  "pdrop|K=256|ChartQA_TEST": {
+   "delta": -0.46965359827492065,
+   "ci": [
+    -0.5355962469733656,
+    -0.4041095890410959
+   ],
+   "rescued": 7,
+   "broken": 148
+  },
+  "pdrop|K=256|DocVQA_VAL": {
+   "delta": 0.13106723544953325,
+   "ci": [
+    0.06928900198316547,
+    0.1908942477169054
+   ],
+   "rescued": 88,
+   "broken": 38
+  },
+  "pdrop|K=256|OCRBench": {
+   "delta": -0.23771557823199263,
+   "ci": [
+    -0.3170731707317074,
+    -0.1595092024539877
+   ],
+   "rescued": 7,
+   "broken": 46
   },
   "a2|K=256|TextVQA_VAL": {
    "delta": -0.04640695446161259,
@@ -400,6 +763,42 @@
    "rescued": 5,
    "broken": 19
   },
+  "fastv|K=64|TextVQA_VAL": {
+   "delta": -0.34364787734480123,
+   "ci": [
+    -0.4065578024845425,
+    -0.279933110367893
+   ],
+   "rescued": 8,
+   "broken": 115
+  },
+  "fastv|K=64|ChartQA_TEST": {
+   "delta": -0.13629005200684274,
+   "ci": [
+    -0.18855368632948707,
+    -0.08306682729559615
+   ],
+   "rescued": 13,
+   "broken": 54
+  },
+  "fastv|K=64|DocVQA_VAL": {
+   "delta": 0.1521162151111409,
+   "ci": [
+    0.10946631606596503,
+    0.19528741892363533
+   ],
+   "rescued": 72,
+   "broken": 15
+  },
+  "fastv|K=64|OCRBench": {
+   "delta": -0.4080581002088267,
+   "ci": [
+    -0.4878048780487805,
+    -0.3273782467532468
+   ],
+   "rescued": 3,
+   "broken": 70
+  },
   "fastv|K=256|TextVQA_VAL": {
    "delta": -0.42825677941133544,
    "ci": [
@@ -435,6 +834,42 @@
    ],
    "rescued": 4,
    "broken": 77
+  },
+  "divprune|K=256|TextVQA_VAL": {
+   "delta": -0.013557926164598865,
+   "ci": [
+    -0.05384677419354841,
+    0.026402640264026393
+   ],
+   "rescued": 20,
+   "broken": 25
+  },
+  "divprune|K=256|ChartQA_TEST": {
+   "delta": -0.08689272578487453,
+   "ci": [
+    -0.14610578375113256,
+    -0.02856888662938479
+   ],
+   "rescued": 22,
+   "broken": 48
+  },
+  "divprune|K=256|DocVQA_VAL": {
+   "delta": 0.010457200549778872,
+   "ci": [
+    -0.03653052681498836,
+    0.056444311755188464
+   ],
+   "rescued": 35,
+   "broken": 37
+  },
+  "divprune|K=256|OCRBench": {
+   "delta": -0.04860025653975378,
+   "ci": [
+    -0.11042944785276076,
+    0.012269938650306789
+   ],
+   "rescued": 10,
+   "broken": 18
   }
  },
  "D1": {
@@ -458,8 +893,8 @@
  "D2": {
   "rule": "R-res(512) OCR macro >= Best24/25(256) - 1 AND R-res TTFT lower than that arm's",
   "best24_25": {
-   "arm": "visionzip",
-   "ocr_macro": 63.76722750983269
+   "arm": "divprune",
+   "ocr_macro": 57.50322036982796
   },
   "rres_ocr_macro": 64.43419476914485,
   "fires": null
@@ -467,7 +902,8 @@
  "D4": {
   "rule": "baseline OCR macro < R-res OCR - 10 -> port-suspect, excluded from Best24/25",
   "suspect": [
-   "fastv"
+   "fastv",
+   "pdrop"
   ]
  }
 }
