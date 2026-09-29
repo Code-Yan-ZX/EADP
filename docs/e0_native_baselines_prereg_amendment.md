@@ -154,3 +154,18 @@ extended from 5 arms to the same main-arm set as the OCR panel (b2, rres,
 fastv, pdrop, visionzip, divprune, sparsevlm_norecycle, pace + b0). All 8
 datasets now carry the main arms at K=256; only K=128, the K=64 general
 pass, and the deferred arms (b1, cdpruner, hiprune) are cut.
+
+## A8 (2026-09-29, before any SparseVLM/PACE accuracy number): root-cause notes
+
+1. **SparseVLM (both variants) = 移植存疑.** The recycling-free variant fails
+   the smoke bar identically to the full port (20/30 capped, 2/30 empty vs
+   0/30 for fastv/pdrop/visionzip) — the defect is in the port's core
+   (multi-stage 'after'-mode interaction with the native engine), not in
+   recycling. Two fix attempts failed; per the working discipline the
+   iteration stops here. Both variants are excluded from Best24/25; the
+   prereg's Best24/25 set degrades to FastV/PDrop/VisionZip/DivPrune. The
+   D1-D3 verdicts do not depend on SparseVLM.
+2. **Pace smoke-harness fix**: pace is a generate-level dispatch, not a
+   selector; e0_smoke now routes it accordingly. The pace arm runs behind
+   its own smoke gate; the official Qwen2.5-VL reproduction is re-queued
+   after the priority accuracy queue (it needs a solo GPU).

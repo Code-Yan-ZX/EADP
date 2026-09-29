@@ -47,8 +47,13 @@ def main():
     items = G.build_items(model, spec)
 
     out = dict(arms={})
-    n4 = G.gate_n4(eng, items, arms=arms)
-    out["n4"] = {k: dict(n=v["n"], n_bad=v["n_bad"]) for k, v in n4["arms"].items()}
+    gen_only = [a for a in arms if a[0] == "pace"]      # pace is a generate-
+    arms = [a for a in arms if a[0] != "pace"]          # level dispatch
+    if arms:
+        n4 = G.gate_n4(eng, items, arms=arms)
+        out["n4"] = {k: dict(n=v["n"], n_bad=v["n_bad"]) for k, v in n4["arms"].items()}
+    for name, K in gen_only:
+        out["n4"][f"{name}|K={K}"] = dict(n=0, n_bad=0, note="generate-dispatch arm; smoke only")
 
     # 30-question smoke on TextVQA_VAL DEV (first 30 rows)
     smoke_rows = G.dev_rows("TextVQA_VAL", 30)
