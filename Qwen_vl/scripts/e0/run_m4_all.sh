@@ -13,7 +13,7 @@ run() { echo "=== $* ==="; $PY Qwen_vl/scripts/e0/e0_accuracy.py "$@" 2>&1 | tai
 run --arm b0 --K 1024
 # local + ported arms at the three budgets
 for K in 256 128 64; do
-  for arm in b2 b1 divprune cdpruner hiprune visionzip fastv pdrop sparsevlm; do
+  for arm in b2 b1 divprune cdpruner hiprune visionzip fastv pdrop sparsevlm_norecycle; do
     run --arm $arm --K $K
   done
 done

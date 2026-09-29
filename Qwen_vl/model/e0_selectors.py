@@ -189,7 +189,8 @@ def register(name: str, fn):
     SELECTORS[name] = fn
 
 
-_BASELINE_MODULES = {"fastv", "pdrop", "sparsevlm", "visionzip"}
+_BASELINE_MODULES = {"fastv", "pdrop", "sparsevlm", "visionzip",
+                     "sparsevlm_norecycle"}
 
 
 def run_selector(name: str, K: int, ctx: dict) -> torch.Tensor:

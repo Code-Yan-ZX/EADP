@@ -42,7 +42,8 @@ def arm_spec(arm: str, K: int):
     if arm == "b0":
         return "identity", True, "mrope3d", 1024
     if arm in ("b1", "b2", "divprune", "cdpruner", "hiprune",
-               "visionzip", "fastv", "pdrop", "sparsevlm"):
+               "visionzip", "fastv", "pdrop", "sparsevlm",
+               "sparsevlm_norecycle"):
         return arm, True, "mrope3d", K
     if arm == "a1":      # B2, legacy: deepstack off + 1-D positions
         return "b2", False, "1d", 256

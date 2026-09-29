@@ -104,3 +104,21 @@ inert under `do_sample=False`, and repetition_penalty=1.0 / presence_penalty=0.0
 install no processors). A1/A2 run in the same loop with `pos='1d'`
 (`position_ids=None` reproduces the legacy 1-D running index in both prefill
 and decode) and, for A1, no DeepStack injection.
+
+## A6 (2026-09-29, before any SparseVLM accuracy number): recycling downgrade
+
+The full SparseVLM port (with token recycling) passes the N4 mechanical
+invariants on 12 samples, but the 30-question smoke shows degenerate
+generation: 20/30 generations hit the 2048-token cap and 1/30 is empty,
+vs 0/30 for every other ported arm — a semantic defect in the merged-token
+insertion path (KV-cache rows / positions of synthetic tokens), not in the
+pruning logic. Two fixes were attempted (member-index remapping; pre/post-
+compaction split of the merge); the second made the machinery consistent but
+did not repair generation quality.
+
+Per prereg §4 ("若 Qwen3 上无法完整移植,降级为不含 recycling 的版本,并明确
+标注"), the E0 main grid runs **sparsevlm_norecycle** — identical pruning
+layers, schedule and text-guided scoring, minus recycling. The full-
+recycling port is labelled "移植存疑" and excluded from Best24/25 unless a
+later fix passes the same smoke bar. No SparseVLM accuracy number existed
+when this was written.
