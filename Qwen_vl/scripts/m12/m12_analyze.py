@@ -21,11 +21,73 @@ import numpy as np
 QWEN_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(
     os.path.abspath(__file__))))
 sys.path.insert(0, os.path.join(QWEN_ROOT, "scripts", "e0"))
-from e0_analyze import official_main, _backfill_per_q  # noqa: E402
+from e0_analyze import official_main  # noqa: E402
 
 OUT12 = os.path.join(QWEN_ROOT, "outputs", "m12")
 OUTE0 = os.path.join(QWEN_ROOT, "outputs", "e0")
 DS_LIST = ["TextVQA_VAL", "DocVQA_VAL", "OCRBench", "ChartQA_TEST"]
+
+
+def _per_q_from_detail(score_path: str, ds: str):
+    """Per-question scores reproducing hit_calculate exactly.
+
+    The _pred_results detail stores eval_match = list of per-gt scores
+    (for DocVQA: anls DISTANCES).  Row order is the shard's sorted done
+    positions 1:1 (the submission order is preserved by the evaluator).
+    """
+    import ast as _ast
+    import pandas as pd
+    tsv = score_path.replace("_score.json", "_pred.tsv")
+    shard_p = score_path.replace("_score.json", ".json")
+    if ds == "OCRBench":  # no per-question official dump; recompute the rule
+        shard = json.load(open(shard_p))
+        from vlmeval.dataset import build_dataset as _bd
+        dso = _bd(ds)
+        per_q = {}
+        for k, rec in shard["records"].items():
+            row = dso.data.iloc[int(k)]
+            pred = str(rec["prediction"]).lower().strip()
+            answers = _ast.literal_eval(row["answer"])
+            hit = 0.0
+            if row["category"] == "Handwritten Mathematical Expression Recognition":
+                p2 = pred.replace("\n", " ").replace(" ", "")
+                if any(a.strip().replace("\n", " ").replace(" ", "") in p2
+                       for a in answers):
+                    hit = 1.0
+            elif any(a.lower().strip().replace("\n", " ") in pred
+                     for a in answers):
+                hit = 1.0
+            per_q[str(k)] = hit
+        return per_q
+    for det in (tsv.replace(".tsv", "_results.xlsx"),
+                tsv.replace(".tsv", "_results.tsv")):
+        if not os.path.exists(det):
+            continue
+        d = pd.read_excel(det) if det.endswith("xlsx") else pd.read_csv(det, sep="\t")
+        if "eval_match" not in d.columns:
+            continue
+        shard = json.load(open(shard_p))
+        positions = sorted(int(k) for k in shard["records"])
+        if len(positions) != len(d):
+            return None
+        per_q = {}
+        for pos, (_, r) in zip(positions, d.iterrows()):
+            m = r["eval_match"]
+            if isinstance(m, str):
+                m = _ast.literal_eval(m)
+            m = list(m)
+            if ds == "TextVQA_VAL":
+                hit = float(np.mean(m))
+            elif ds == "DocVQA_VAL":
+                md = float(np.min(m))    # anls distance to the best gt
+                hit = 0.0 if 1 - md < 0.5 else 1 - md
+            elif ds == "ChartQA_TEST":
+                hit = float(np.max(m))
+            else:
+                hit = float(np.mean(m))
+            per_q[str(pos)] = hit
+        return per_q
+    return None
 
 
 def load_entry(root, key_arm, key_K, out_arm, out_K, ds):
@@ -40,13 +102,23 @@ def load_entry(root, key_arm, key_K, out_arm, out_K, ds):
             off = {"test_augmented": off.get("test_augmented",
                                              list(off.values())[-1])}
         head = official_main(ds, off)
+        if ds == "OCRBench":    # report raw points (max = n), not the /10 norm
+            head = float(off["Final Score"])
     except Exception:
         head = None
     pq = s.get("per_question")
     if not pq:
         try:
-            pq = _backfill_per_q(p, ds)
+            pq = _per_q_from_detail(p, ds)
         except Exception:
+            pq = None
+    # consistency: mean(per_q) must reproduce the official headline
+    if pq and head is not None:
+        m = 100 * float(np.mean([float(v) for v in pq.values()]))
+        ref = head
+        if ds == "OCRBench":    # headline is raw points out of n
+            ref = 100.0 * head / s.get("n", 164)
+        if abs(m - ref) > 1.5:
             pq = None
     return dict(arm=out_arm, K=out_K, ds=ds, n=s.get("n"), score=head,
                 per_q=pq)
@@ -79,8 +151,10 @@ def main():
                 if kdir.startswith("K"):
                     entries.append((OUT12, arm, int(kdir[1:]), arm,
                                     int(kdir[1:])))
+    # E0 rres arm ids are SIDE lengths: rres512 = side 512 = 256 merged
+    # tokens (RRES = {256: [512], 64: [256]} in e0_accuracy).
     for key_arm, out_arm, out_K in [("b0", "b0", 1024), ("b2", "b2", 256),
-                                    ("rres256", "rres", 256)]:
+                                    ("rres512", "rres", 256)]:
         if os.path.isdir(os.path.join(OUTE0, "acc", key_arm)):
             entries.append((OUTE0, key_arm, 1024 if key_arm != "b2" else 256,
                             out_arm, out_K))
@@ -120,8 +194,9 @@ def main():
                 if not cs:
                     return ""
                 c = cs[0]
-                return (f"{c['mean_diff']:+.2f} "
-                        f"[{c['ci95'][0]:+.2f},{c['ci95'][1]:+.2f}]")
+                scale = r["n"] if ds == "OCRBench" else 1.0  # raw points
+                return (f"{scale * c['mean_diff']:+.1f} "
+                        f"[{scale * c['ci95'][0]:+.1f},{scale * c['ci95'][1]:+.1f}]")
             lines.append(f"| {ds} | {r['arm']} | {r['K']} | {r['n']} | "
                          f"{round(r['score'], 2) if r['score'] is not None else '?'} "
                          f"| {cell('b0')} | {cell('rres')} |")

@@ -177,7 +177,29 @@ Gate readings (prereg §8 of the task):
 * **E (≤1–2 point loss at ~50 %): FAIL.**  Best pre-ViT arm (variance)
   loses 5.3 points on average; R-res loses 3.4 with better TTFT.
 
-Failure trend confirmation at K=256: (filled below)
+Failure trend confirmation at K=256 (same DEV rows; rres side 512 from the
+E0 shards = identical 256-token budget):
+
+| arm @K=256 | TextVQA | DocVQA | OCRBench | mean Δ vs b0 |
+|---|---|---|---|---|
+| R-res side 512 | 78.63 | 77.51 | 137 | −11.0 |
+| variance | 53.53 | 54.80 | 102 | −36.3 |
+| retinagate | 45.53 | 20.83 | 70 | −61.5 |
+| random | 20.57 | 20.56 | 28 | −86.4 |
+
+The R-res advantage **widens** as the budget shrinks (33 / 57 / 67 points
+over RetinaGate at 25 %).  Paired per-question contrasts with cluster-free
+bootstrap (10k resamples; full table in `m12_analysis.json`) confirm every
+R-res vs selector gap is decisively negative (e.g. OCRBench RetinaGate@512
+vs R-res@512: −27 points [−38, −16]).
+
+Scoring note: the `_pred_results` detail's `eval_score` stores DocVQA anls
+*distance* (not the headline's gated hit), so per-question contrasts here
+re-derive hits from `eval_match` with the exact `hit_calculate` semantics
+and are validated to reproduce each shard's official headline to <1.5
+points.  (This also re-explains E0's D1 "sanity" flag: nothing is wrong
+with the headline numbers; only the naive per-question backfill was
+misread.)
 
 ## 7b. The opponent-channel / base-lattice ablation answers (early)
 
@@ -213,6 +235,20 @@ predictable from the round's own history (post-encoder selectors read
 semantic features that only exist *after* the encoder), and it predicts the
 accuracy outcome: no pre-ViT score can find "the important half" because
 importance at this granularity is not a pixel-space property.
+
+## 8b. Failure cases (DocVQA, RetinaGate K=512 vs R-res side 704)
+
+Where the two arms diverge, RetinaGate shows character-level text mangling —
+the signature of dropped glyph patches with unrecoverable context:
+
+| q | b0 | R-res 704 | RetinaGate 512 |
+|---|---|---|---|
+| 180 | 4-30-92 | 4-20-92 | 7-30-72 |
+| 236 | Change of Due Dates for Monthly Payroll… | (same) | Change of Due dates for hourly payroll… |
+| 276 | Dec-08 | Feb'09 | Feb-09 |
+
+The uniform-lattice arm's failures are coarser: entire column bands of text
+missing (KIE 1/164 on OCRBench), consistent with stride aliasing.
 
 ## 9. Selector overhead & honest cost accounting
 
@@ -268,7 +304,30 @@ What survives from this round:
   next round: if encoder compute must shrink, reduce resolution or merge
   (context-preserving), do not drop.
 
-## 11. Reproducibility
+## 11. Pareto data (quality vs real ViT latency)
+
+Quality (mean Δ vs b0 over the three OCR datasets) against measured ViT
+latency from §4:
+
+| arm | K | ViT ms | TTFT ms | Text | Doc | OCR | mean Δ vs b0 |
+|---|---|---|---|---|---|---|---|
+| b0 | 1024 | 110.3 | 405 | 85.0 | 93.9 | 143 | 0 |
+| R-res | 784 | 83.3 | 314 | — | — | — | (not run) |
+| R-res | 484–529 | 54.5 | 219 | 80.9 | 89.8 | 141 | −3.4 |
+| R-res | 256 | 29.5 | 135 | 78.6 | 77.5 | 137 | −11.0 |
+| variance | 512 | 55.8 | 256 | 77.9 | 89.9 | 137 | −5.3 |
+| variance | 256 | 33.2 | 194 | 53.5 | 54.8 | 102 | −36.3 |
+| retinagate | 512 | 55.8 | 256 | 69.9 | 71.5 | 115 | −19.9 |
+| retinagate | 256 | 33.2 | 194 | 45.5 | 20.8 | 70 | −61.5 |
+| random | 512 | 55.8 | 256 | 42.3 | 48.5 | 71 | −53.5 |
+| random | 256 | 33.2 | 194 | 20.6 | 20.6 | 28 | −86.4 |
+
+R-res rows: accuracy from side 704 (484 tokens, quality arm) / side 512
+(256 tokens, E0 shard); timing from the oracle's side-736 / side-512 runs.
+The quality axis, not latency, decides: at every budget the R-res point
+dominates every selection point on accuracy at equal (or better) latency.
+
+## 12. Reproducibility
 
 Code: `Qwen_vl/model/retinagate.py`, `Qwen_vl/scripts/m12/`.
 Raw: `Qwen_vl/outputs/m12/{m12_correctness.json,m12_speed_oracle.json,

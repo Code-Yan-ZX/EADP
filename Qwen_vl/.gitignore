@@ -63,3 +63,14 @@ hf_cache/
 .DS_Store
 .idea/
 .vscode/
+# M12 deliverables: gate/oracle/diag/analysis JSONs plus official-score
+# summaries, same evidence convention as outputs/e0. Prediction shards and
+# TSV/xlsx stay local (regenerable from the scripts).
+!outputs/m12/
+outputs/m12/*
+!outputs/m12/*.json
+!outputs/m12/acc/
+outputs/m12/acc/*
+!outputs/m12/acc/*/
+outputs/m12/acc/*/*
+!outputs/m12/acc/*/*/*_score.json
