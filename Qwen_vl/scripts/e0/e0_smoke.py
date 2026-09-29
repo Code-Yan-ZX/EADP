@@ -67,7 +67,7 @@ def main():
             empty += int(len(txt) == 0)
             if len(samples) < 3:
                 samples.append(txt[:60])
-        out["arms"][f"{name}|K={K}"]["smoke"] = dict(
+        out["n4"][f"{name}|K={K}"]["smoke"] = dict(
             n=len(smoke_items), truncated=n_trunc, empty=empty,
             truncation_rate=n_trunc / len(smoke_items),
             samples=samples)
