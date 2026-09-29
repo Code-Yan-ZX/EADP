@@ -134,47 +134,165 @@ guidance, no residual tokens, no training.
 
 ## 6. Main table
 
-(filled when the sweep completes)
+Baseline / EADP-256 numbers: baseline from this sweep (`outputs/mosaic/`), EADP-256
+reproduced 2026-09-21 (`outputs/eadp/`). All pruned arms share the
+`inputs_embeds` pathway (no M-RoPE grid geometry, no deepstack); the baseline
+keeps both, so the baseline row conflates token count with position/deepstack
+degradation.
 
-| arm | DocVQA_VAL | OCRBench | TextVQA_VAL |
+| arm | DocVQA_VAL (ANLS) | OCRBench | TextVQA_VAL (VQA) |
 |---|---|---|---|
-| baseline-1024 | — | — | — |
-| EADP-256 (incumbent) | 61.14 | 623 | 71.04 |
-| Mosaic-256 uniform | — | — | — |
-| Mosaic-256 random | — | — | — |
-| Mosaic-256 dispersion | — | — | — |
-| Mosaic-128 uniform | — | — | — |
-| Mosaic-128 random | — | — | — |
-| Mosaic-128 dispersion | — | — | — |
+| baseline-1024 (full model) | **94.48** | **851** | **83.74** |
+| EADP-256 (incumbent selector) | 61.14 | 623 | 71.04 |
+| Mosaic-256 uniform | 56.78 | 539 | 67.58 |
+| Mosaic-256 random | 42.99 | 493 | 61.95 |
+| Mosaic-256 dispersion | 45.32 | 492 | 52.29 |
+| Mosaic-128 uniform | (pending) | (pending) | (pending) |
+| Mosaic-128 random | (pending) | (pending) | (pending) |
+| Mosaic-128 dispersion | (pending) | (pending) | (pending) |
 
-## 7. Efficiency table
+OCRBench sub-scores (K=256): dispersion keeps Text Recognition high (227 vs
+uniform 177, EADP 228) but collapses Scene-text VQA (103 vs 161/169) and KIE
+(53 vs 73/95) — refinement lands on glyph texture while the coarse blocks
+destroy scene/document context. Baseline-1024 sub-scores: 265/193/151/178/64.
 
-(filled when the sweep completes)
+## 7. Paired diagnostic: pooling vs selection
 
-## 8. Token statistics
+`mosaic_diag_pooling.py`, 30 DocVQA samples (offset 0, easier-than-average;
+full-1024 scores 86.1 there), all four arms on the identical wrapper/pathway:
 
-(filled when the sweep completes)
+| arm | ANLS |
+|---|---|
+| full-1024 | 86.08 |
+| rand-sel-256 (random 256-token selection, original embeddings) | 50.18 |
+| uniform-256 (2×2 mean pooling) | 52.03 |
+| disp-256 (dispersion quadtree pooling) | 42.05 |
 
-## 9. Visualization
+Readings: (1) mean-pooling is *not* extra-harmful — uniform pooling ≈ random
+selection, so the off-manifold concern is refuted; (2) content-blind 256-token
+compression of any kind is catastrophic (−34 vs full on these samples); (3)
+dispersion pooling is 10 points *below* uniform pooling, and the loss is
+heavy-tailed: median per-sample delta = 0, P(disp<uniform) = 0.30, driven by
+catastrophic collapses — e.g. three different questions ('Men', '7', '.97')
+all answered '6/20', i.e. when the answer region is absorbed into a coarse
+block, the model grabs unrelated surviving text.
 
-Diagnostic overlays for DocVQA / OCRBench / TextVQA samples are committed
-under `outputs/discovery/mosaic/vis/` (gitignored output dir; referenced
-here). First renders show the intended behaviour: blank bands and dark margins
-collapse to 8×8/16×16 blocks, while titles, axis labels, plot lines, camera
-text ("DAKOTA DIGITAL") and lens/flash edges refine to 1×1 leaves.
+## 8. Efficiency
 
-## 10. PASS / FAIL verdict
+Compression wall-clock (microbenchmark + in-pipeline stats, A40, bf16,
+1024→256): uniform ≈ 3.1 ms, random ≈ 9 ms, dispersion ≈ 18–21 ms per image.
+EADP's full selector ≈ 42 ms at K=256 (`outputs/discovery/efficiency_profile.json`),
+so the mosaic compressor is ~2–14× cheaper than the incumbent selector, and
+the prefill gain (232 ms at 1024 tokens → ~230/180 ms at 256/128 kept tokens,
+same profile) applies to all arms equally. Full profiler output for the mosaic
+arms: (pending, `mosaic/efficiency_mosaic.json`).
 
-(pending)
+## 9. Token statistics
 
-## 11. Failure analysis & mechanism interpretation
+Offline over 120 deterministic samples per dataset (`mosaic/tokenstats.json`),
+K=256 leaf side-length distributions (percent of leaves):
 
-(pending)
+| dataset | mode | 1×1 | 2×2 | 4×4 | 8×8 | 16×16 |
+|---|---|---|---|---|---|---|
+| DocVQA | dispersion | 71.9 | 20.6 | 5.6 | 1.8 | 0.4 |
+| DocVQA | random | 75.0 | 15.6 | 7.0 | 2.3 | — |
+| OCRBench | dispersion | 69.3 | 21.8 | 7.1 | 1.8 | 0.4 |
+| OCRBench | random | 75.0 | 15.6 | 7.0 | 2.3 | — |
+| TextVQA | dispersion | 70.0 | 21.8 | 6.3 | 1.8 | 0.4 |
+| TextVQA | random | 75.0 | 15.6 | 7.0 | 2.3 | — |
+| all | uniform | — | 100.0 | — | — | — |
 
-## 12. Worth developing into a paper method?
+The dispersion and random partitions have nearly identical *marginal*
+distributions (by construction random matches the achievable quadtree shape
+space) — so the accuracy differences in the main table are attributable to
+*placement*, not shape. K=128 numbers in the same file; dispersion shifts
+mass to coarser leaves (e.g. DocVQA 1×1 → ~62%).
 
-(pending)
+## 10. Visualization
 
-## 13. Recommended next experiment
+Overlays under `outputs/discovery/mosaic/vis/` (referenced, gitignored).
+Confirmed behaviour: blank bands and dark margins collapse to 8×8/16×16
+blocks; titles, axis labels, plot lines, camera text and lens/flash edges
+refine to 1×1. The partition does what the hypothesis asked — the hypothesis
+about what the LLM needs was wrong.
 
-(pending)
+## 11. PASS / FAIL verdict
+
+**FAIL** — pre-registered fail conditions met:
+
+1. *"Dispersion 与 Random 基本一样"*: OCRBench 492 vs 493 (tie), TextVQA
+   52.29 vs 61.95 (dispersion −9.7 **worse**), DocVQA 45.32 vs 42.99 (+2.3).
+   No consistent dispersion-over-random edge.
+2. *"Uniform 更好"*: uniform beats both adaptive arms on all three benchmarks.
+3. *"adaptive partition 没有稳定 task correlation"*: only 1 of 3 benchmarks
+   shows a dispersion>random edge, and it flips sign on TextVQA.
+
+Gate conditions 1/2/4 unreachable; gate 3 (accuracy parity with cheaper
+overhead) is unreachable at −15.8/−131/−18.7 vs EADP-256.
+
+## 12. Failure analysis & mechanism interpretation
+
+1. **The adaptive hierarchy itself is the primary damage.** Both adaptive
+   partitions (dispersion, random) allow arbitrarily large leaves (8×8, 16×16
+   cells → one token per up to 512×512 px); uniform never loses a region below
+   2×2-cell granularity. The −11/−14 gap of adaptive arms vs uniform on DocVQA
+   is the cost of those bets. Answer: *question 6 of the mechanism list — the
+   hierarchy has negative value at this budget; only spatial locality (uniform)
+   is safely exploitable.*
+2. **Low feature dispersion ≠ low information.** Form fields, faint print and
+   small labels live in visually flat areas; a variance-seeking allocator
+   spends the budget on edges/texture (it even *wins* the raw Text Recognition
+   sub-score) and collapses the context needed for scene-text VQA / KIE.
+3. **Where dispersion beat random (DocVQA +2.3) it did so by placing 1×1
+   leaves on glyphs** — a low-level, query-independent win that does not
+   transfer to TextVQA (−9.7), where texture variance is decorrelated from
+   semantics.
+4. **Cheap content-agnostic signals and answer relevance**: this reproduces the
+   project-wide negative (S1: necessary-token rank 0.525; S2-A: gradient
+   saliency largely answer-agnostic; M8: nomination solved, ranking not) in a
+   *spatial* form. Question 8 of the mechanism list: yes — Mosaic is the
+   spatial analogue of the scorer search, and it fails for the same root
+   reason: nothing about single-image feature statistics tells you which
+   regions the *question* needs.
+5. **"Large regions can be coarse-merged but not deleted" (question 7): NOT
+   supported.** Uniform coarse-merging (2×2) is fine, but 8×8/16×16 merging —
+   the whole point of an adaptive map — is consistently punished. At this
+   pathway/budget the LLM's usable information is spread at ≤2×2-cell
+   granularity across the image; there is no large "free" region class.
+6. **Budget context**: the whole 256-token regime sits 33–51 points below the
+   full model (94.48/851/83.74) — EADP included. Any resolution-map method
+   would first have to beat its own uniform floor at 256 tokens; none here
+   does.
+
+## 13. Worth developing into a paper method?
+
+**No, not in this form.** The phase-1 falsification is clean: a
+training-free, query-free dispersion map cannot allocate resolution better
+than uniform pooling, and adaptive spatial allocation *hurts* relative to
+uniform at the same budget. The only salvageable observation is that plain
+uniform 2×2 pooling is only −4.4/−84/−3.5 from EADP-256 at ~14× lower
+selector cost — a useful floor/sanity baseline for future methods, and a
+negative result worth one paragraph in the paper's ablation ("why not
+adaptive spatial maps").
+
+The two pre-registered follow-up variants (normalized dispersion, area
+correction) are **not pursued**: they only reshape the allocation, and the
+dominant failure (any large coarse leaf is dangerous; texture variance is
+task-irrelevant) survives both.
+
+## 14. Recommended next experiment
+
+If the "resolution, not identity" framing is worth one more shot, the phase-1
+evidence points at the missing ingredient: **the signal must be
+query-conditioned, not content-agnostic** — every successful retained point
+(EADP's dense instruction scoring, S3-B's depth structure) involves the text.
+A minimal next probe would keep the quadtree mechanics but score leaves with
+the *existing* EADP importance map (query-aware, already computed in this
+repo): does query-aware refinement of a coverage-preserving partition beat
+EADP's pure top-k selection at equal K? That isolates "coverage-preserving
+allocation with the right signal" from "coverage-preserving allocation with a
+wrong signal", at near-zero implementation cost (the pruner already returns
+per-token importance; replace dispersion with importance in the same split
+loop). If that also loses to EADP, the resolution framing is dead on this
+pipeline and the token-selection line (S3-B depth structure) remains the only
+live direction.

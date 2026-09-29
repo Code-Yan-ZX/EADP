@@ -65,7 +65,9 @@ def main():
             gthw = inputs["image_grid_thw"]
             pv = inputs["pixel_values"].type(visual.dtype)
             with torch.no_grad():
-                feats = visual(pv, grid_thw=gthw)
+                from vlmeval.vlm.qwen3_vl.model_fixed_res import (
+                    unwrap_visual_output)
+                feats = unwrap_visual_output(visual(pv, grid_thw=gthw))
             for K in args.budgets:
                 for mode in args.modes:
                     from model.mosaic import build_partition
