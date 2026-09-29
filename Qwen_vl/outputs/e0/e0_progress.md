@@ -123,3 +123,19 @@ observed s/q on the first ~120 b2/K=256/TextVQA questions, projects the total
 with the exact run inventory, and stops with `outputs/e0/M3_BUDGET_STOP` for
 a human decision if the projection exceeds 37.5 h. Nothing else in the chain
 depends on the estimate, so a stop costs nothing.
+
+## Smoke results (M2 close-out, 2026-09-29)
+
+`e0_smoke.json` — 30-question TextVQA DEV smoke, K=256:
+visionzip / fastv / pdrop **0/30 truncated, 0 empty**; sparsevlm (full
+recycling) **20/30 truncated, 1 empty** → amendment A6: main grid runs
+`sparsevlm_norecycle` behind a smoke gate in `run_m4_all.sh` (skip + flag if
+its truncation rate exceeds the prereg's 2 % bar); the full-recycling port is
+labelled 移植存疑.
+
+## Chain status
+
+`/tmp/e0_chain.sh` running (2026-09-29 20:14): PACE Qwen2.5-VL reproduction
+(≈4765 requests, ~2.1 s/it) → M4 full grid with the A6 smoke gate and the M3
+budget guard. Logs: `/tmp/pace_repro4.log`, `/tmp/m4_all.log`,
+`/tmp/e0_chain.log`.
