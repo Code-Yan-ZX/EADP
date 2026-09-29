@@ -80,6 +80,7 @@ def pick_samples(plan, n_per_ds=4):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--blocks", type=int, default=MEASURE_BLOCKS)
+    ap.add_argument("--no-pace", action="store_true")
     ap.add_argument("--seed", type=int, default=20260929)
     ap.add_argument("--out", default=os.path.join(OUT_DIR, "e0_perf_paired.json"))
     args = ap.parse_args()
@@ -92,7 +93,7 @@ def main():
     import vlmeval.vlm.qwen3_vl.model_fixed_res as mfr
 
     samples = pick_samples(plan)
-    arms = build_arms()
+    arms = build_arms(include_pace_all_k=not args.no_pace)
     rng = random.Random(args.seed)
 
     # pre-build messages

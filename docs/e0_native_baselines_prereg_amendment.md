@@ -147,3 +147,10 @@ verdicts by tomorrow midday; D1 alone readable ~1 h after M5. The reduced
 grid changes no arm, hyper-parameter, prompt, or scoring rule; macros are
 reported over the panels that actually ran, with the reduction stated in
 the report.
+
+A7 revision (same day, still before any accuracy number): after the user
+asked to keep more than the OCR panel, the general-panel K=256 pass is
+extended from 5 arms to the same main-arm set as the OCR panel (b2, rres,
+fastv, pdrop, visionzip, divprune, sparsevlm_norecycle, pace + b0). All 8
+datasets now carry the main arms at K=256; only K=128, the K=64 general
+pass, and the deferred arms (b1, cdpruner, hiprune) are cut.
