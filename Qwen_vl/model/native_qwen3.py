@@ -501,21 +501,28 @@ class NativeEngine:
             if spec is not None and spec[0] == "after":
                 attn_w = self._forward_layer_eager(layer, h, positions, mask,
                                                    cp, cache, cos_sin)
-                self._layer_calls += 1
+                # layer-call counting happens through the registered hook
                 out = spec[1](dict(
                     hidden=h, attn_weights=attn_w, vis_mask=vis_mask,
                     positions=positions, layer_idx=j, engine=self,
                     layer=layer, cos_sin=cos_sin))
                 keep_local, info = out[0], out[1]
                 append = out[2] if len(out) > 2 else None
+                # merged rows are built from PRE-compaction tensors (the
+                # merged members are tokens that compaction removes)
+                extra = self._build_merged_rows(h, positions, cos_sin,
+                                                vis_mask, DS_k, cache,
+                                                append, keep_seq) \
+                    if append is not None else None
                 h, positions, cos_sin, vis_mask, DS_k, keep_idx, keep_seq = \
                     self._compact(h, positions, cos_sin, vis_mask, DS_k,
                                   keep_idx, keep_seq, keep_local)
                 mask, cp = rebuild_mask(h)
                 self._compact_cache(cache, keep_local)
-                if append is not None:
-                    h, positions, cos_sin, vis_mask, DS_k = self._append_merged(
-                        h, positions, cos_sin, vis_mask, DS_k, cache, append)
+                if extra is not None:
+                    h, positions, cos_sin, vis_mask, DS_k, keep_seq = \
+                        self._insert_merged(h, positions, cos_sin, vis_mask,
+                                            DS_k, cache, extra, keep_seq)
                     mask, cp = rebuild_mask(h)
                 prune_info.append(dict(layer=j, mode="after", info=info,
                                        n_kept=int(h.shape[1])))
@@ -535,7 +542,7 @@ class NativeEngine:
                     position_embeddings=cos_sin,
                 )
                 h = layer_outputs
-                self._layer_calls += 1
+                # layer-call counting happens through the registered hook
                 if deepstack and DS_k is not None and j < len(DS_k):
                     h = self.text._deepstack_process(h, vis_mask.unsqueeze(0),
                                                      DS_k[j])
@@ -562,16 +569,17 @@ class NativeEngine:
         dev = h.device
         idx = keep_local.to(dev)
         cos, sin = cos_sin
+        old_vis_idx = torch.nonzero(vis_mask, as_tuple=True)[0]
         h = h[:, idx, :]
         positions = positions[:, :, idx]
         cos_sin = (cos[:, idx, :], sin[:, idx, :])
-        vis_mask = vis_mask[idx]
         # DS rows are aligned with the OLD visual slots in raster order; the
-        # survivors keep their relative order, so a boolean over the new
-        # visual slots selects the DS rows.
+        # survivors keep their relative order.
         if DS_k is not None:
-            DS_k = [ds[vis_mask] for ds in DS_k] if bool(vis_mask.any()) \
+            surv = torch.isin(old_vis_idx, idx)
+            DS_k = [ds[surv] for ds in DS_k] if bool(surv.any()) \
                 else [ds[:0] for ds in DS_k]
+        vis_mask = vis_mask[idx]
         keep_seq = keep_seq[idx]
         return h, positions, cos_sin, vis_mask, DS_k, keep_idx, keep_seq
 
@@ -583,56 +591,68 @@ class NativeEngine:
                 lyr.values = lyr.values[:, :, keep_local, :]
 
     @staticmethod
-    def _append_merged(h, positions, cos_sin, vis_mask, DS_k, cache, append):
-        """SparseVLM token recycling: insert merged tokens right after the
-        visual block.  Each merged token takes its cluster CENTRE's 3-D
-        coordinate / cos-sin; its hidden state, DeepStack rows and every
-        cache layer's K/V are the official similarity-weighted average of the
-        cluster members' rows (one shared weight matrix W)."""
-        members = append["members"].to(h.device)          # [m] local indices
-        centers = append["centers"].to(h.device)          # [nc] local indices
-        W = append["W"].to(h.device, h.dtype)             # [nc, m], rows sum 1
-        n_clusters = int(W.shape[0])
-
+    def _build_merged_rows(h, positions, cos_sin, vis_mask, DS_k, cache,
+                           append, keep_seq):
+        """SparseVLM recycling, pre-compaction half: gather the REMOVED
+        members' rows and average them with the official uniform weights.
+        Each merged token keeps its cluster CENTRE's 3-D coordinate."""
+        members = append["members"].to(h.device)          # [m] old indices
+        centers = append["centers"].to(h.device)          # [nc] old indices
+        W = append["W"].to(h.device, h.dtype)             # [nc, m]
         extra_h = (W @ h[0, members, :]).unsqueeze(0)     # [1, nc, C]
-
         cos, sin = cos_sin
-        extra_pos = positions[:, :, centers]              # [3, 1, nc]
+        extra_pos = positions[:, :, centers]
         extra_cos = cos[:, centers, :]
         extra_sin = sin[:, centers, :]
+        # DS rows: rank of each member among the (pre-compaction) visual slots
+        extra_ds = None
+        if DS_k is not None and any(ds is not None for ds in DS_k):
+            vis_idx = torch.nonzero(vis_mask, as_tuple=True)[0]
+            rank = torch.searchsorted(vis_idx, members)
+            extra_ds = [(W @ ds[rank, :]).to(ds.dtype) for ds in DS_k]
+        kv = []
+        for lyr in cache.layers:
+            if lyr.keys is not None:
+                mk = lyr.keys[0, :, members, :]
+                mv = lyr.values[0, :, members, :]
+                kv.append(((W.to(mk.dtype) @ mk).unsqueeze(0),
+                           (W.to(mv.dtype) @ mv).unsqueeze(0)))
+            else:
+                kv.append(None)
+        return dict(h=extra_h, pos=extra_pos, cos=extra_cos, sin=extra_sin,
+                    ds=extra_ds, kv=kv,
+                    keep_seq=keep_seq[centers])
 
-        # insertion point: right after the LAST visual token of the block
+    @staticmethod
+    def _insert_merged(h, positions, cos_sin, vis_mask, DS_k, cache, extra,
+                       keep_seq):
+        """Post-compaction half: insert the merged tokens right after the
+        visual block."""
+        n_clusters = int(extra["h"].shape[1])
         insert_at = int(torch.nonzero(vis_mask, as_tuple=True)[0].max().item()) + 1
-        h = torch.cat([h[:, :insert_at], extra_h, h[:, insert_at:]], dim=1)
-        positions = torch.cat([positions[:, :, :insert_at], extra_pos,
+        h = torch.cat([h[:, :insert_at], extra["h"], h[:, insert_at:]], dim=1)
+        positions = torch.cat([positions[:, :, :insert_at], extra["pos"],
                                positions[:, :, insert_at:]], dim=2)
-        cos_sin = (torch.cat([cos[:, :insert_at], extra_cos,
+        cos, sin = cos_sin
+        cos_sin = (torch.cat([cos[:, :insert_at], extra["cos"],
                               cos[:, insert_at:]], dim=1),
-                   torch.cat([sin[:, :insert_at], extra_sin,
+                   torch.cat([sin[:, :insert_at], extra["sin"],
                               sin[:, insert_at:]], dim=1))
         ones = torch.ones(n_clusters, dtype=torch.bool, device=h.device)
         vis_mask = torch.cat([vis_mask[:insert_at], ones, vis_mask[insert_at:]])
-
-        if DS_k is not None and any(ds is not None for ds in DS_k):
-            # rows of DS_k are aligned with the visual entries in order; the
-            # rank of a visual position = number of visual slots before it
-            vis_idx = torch.nonzero(vis_mask, as_tuple=True)[0]
-            rank = torch.searchsorted(vis_idx, members)
-            DS_k = [torch.cat([ds, (W @ ds[rank, :]).to(ds.dtype)], dim=0)
-                    if ds is not None else None for ds in DS_k]
-
-        # cache rows: the same weight matrix over the members' K/V per layer
-        for lyr in cache.layers:
-            if lyr.keys is not None:
-                mk = lyr.keys[0, :, members, :]               # [H, m, hd]
-                mv = lyr.values[0, :, members, :]
-                ek = (W.to(mk.dtype) @ mk).unsqueeze(0)       # [1, H, nc, hd]
-                ev = (W.to(mv.dtype) @ mv).unsqueeze(0)
+        keep_seq = torch.cat([keep_seq[:insert_at], extra["keep_seq"],
+                              keep_seq[insert_at:]])
+        if DS_k is not None and extra["ds"] is not None:
+            DS_k = [torch.cat([ds, e], dim=0) if ds is not None else None
+                    for ds, e in zip(DS_k, extra["ds"])]
+        for lyr, kv in zip(cache.layers, extra["kv"]):
+            if kv is not None and lyr.keys is not None:
+                ek, ev = kv
                 lyr.keys = torch.cat([lyr.keys[:, :, :insert_at], ek,
                                       lyr.keys[:, :, insert_at:]], dim=2)
                 lyr.values = torch.cat([lyr.values[:, :, :insert_at], ev,
                                         lyr.values[:, :, insert_at:]], dim=2)
-        return h, positions, cos_sin, vis_mask, DS_k
+        return h, positions, cos_sin, vis_mask, DS_k, keep_seq
 
     def _forward_layer_eager(self, layer, h, positions, mask, cp, cache,
                              cos_sin):

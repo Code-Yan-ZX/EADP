@@ -64,6 +64,34 @@ keep the last-position call (first-token logits are identical in argmax and
 the TTFT window stays honest). Source of the difference is recorded here per
 the prereg's "若非零,必须解释来源" rule.
 
+## A4 (2026-09-29, before any SparseVLM run): recycling positions and bookkeeping
+
+SparseVLM's token recycling appends synthetic merged tokens that do not exist
+in the full sequence, so prereg §3.2.5's "same-index shrink" cannot apply to
+them literally. Frozen rules: a recycled token takes its cluster CENTRE's 3-D
+coordinate and cos/sin; its hidden state, DeepStack rows and every cache
+layer's K/V are the official uniform mean of its cluster members' rows; it
+counts as a visual token for later pruning stages (as in the official
+implementation). The realized visual count is therefore K + n_recycled and is
+reported per run.
+
+## A5 (2026-09-29, before any PACE run): Qwen3-VL port decisions
+
+1. APC preview runs on the harness's 1024x1024 expanded image (patch grid
+   64x64); the compressed resolution targets merged-token geometry with patch
+   unit 32; the full ViT pass (and DeepStack) runs on the COMPRESSED grid --
+   this is the method's encoder-side mechanism and is reported as the
+   realized ViT patch count (prereg §4.1.3).
+2. The vision attention score for DDAE fusion is the compressed pass's
+   last-block received attention (head-mean, query-sum); if the preview and
+   merged token counts disagree it is nearest-interpolated to the merged
+   count (alignment detail, frozen before any number).
+3. Budget alignment: DDAE keeps exactly K tokens per image (K = the E0
+   budget); APC's retention stays data-adaptive. The official token_budget
+   ratio semantics are replaced by this fixed-K rule so the arm sits on the
+   E0 budget curves; the realized retention/patch distribution is reported.
+4. The generation config and everything LLM-side is the shared native engine.
+
 ## A3 (2026-09-29, before M1 gates): engine/greedy-loop choice
 
 Prereg §3.2 step 4 offers "自写 greedy 循环" or hooking

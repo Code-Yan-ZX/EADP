@@ -16,7 +16,8 @@ from __future__ import annotations
 
 import torch
 
-from transformers.models.qwen3_vl.modeling_qwen3_vl import apply_rotary_pos_emb
+from transformers.models.qwen3_vl.modeling_qwen3_vl import (
+    apply_rotary_pos_emb, repeat_kv)
 
 LAYER_LIST = [8, 16, 24]
 
@@ -38,9 +39,11 @@ def build_prune_layers(K: int, n_vis: int = 1024, layer_list=None):
             k = attn.k_norm(attn.k_proj(hs).view(hidden_shape)).transpose(1, 2)
             cos, sin = ctx["cos_sin"]
             q, k = apply_rotary_pos_emb(q, k, cos, sin)
-            # head-mean softmaxed attention of the last prompt token
+            # head-mean softmaxed attention of the last prompt token (GQA:
+            # repeat the KV heads up to the query-head count)
+            k_rep = repeat_kv(k, attn.num_key_value_groups)
             scores = torch.matmul(q[:, :, -1:, :].float(),
-                                  k.transpose(2, 3).float()) * attn.scaling
+                                  k_rep.transpose(2, 3).float()) * attn.scaling
             attn_w = torch.softmax(scores, dim=-1)          # [1, H, 1, L]
             attn_avg = attn_w[0, :, 0, :].mean(0)           # [L]
             vis = ctx["vis_mask"]
