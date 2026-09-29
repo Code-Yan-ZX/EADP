@@ -144,11 +144,75 @@ absolute levels. b0/b2@256 numbers are reused from the E0 shards.
 
 ## 7. Accuracy / quality results
 
-(filled after screen 1)
+Screen 1: K=512 (50 % of 1024 merged tokens), E0 DEV rows, same samples for
+every arm, official VLMEvalKit scoring (OCRBench raw /100):
+
+| arm @K=512 | TextVQA | DocVQA | OCRBench | mean Δ vs b0 |
+|---|---|---|---|---|
+| b0 (native, K=1024) | 85.03 | 93.86 | 143 | — |
+| **R-res side 704 (=512 tok)** | **80.93** | **89.78** | **141** | **−3.4** |
+| variance | 77.87 | 89.93 | 137 | −5.3 |
+| event (pure retina, no base) | 73.93 | 75.60 | 122 | −16.4 |
+| graydog (Y-only DoG) | 69.50 | 75.60 | 122 | −18.2 |
+| retinagate (base + event) | 69.90 | 71.55 | 115 | −19.9 |
+| sobel | 60.67 | 73.84 | 122 | −22.1 |
+| random | 42.30 | 48.54 | 71 | −53.5 |
+| uniform 2-D lattice | 37.10 | 34.42 | 70 | −58.1 |
+
+Reference arms at HALF the budget (K=256), from E0 shards: b2 (post-encoder
+EADP) 78.33 / 68.43 / 131; rres side 512 → **78.63 / 77.51 / 137**.
+
+Gate readings (prereg §8 of the task):
+
+* **B (beat Random + Uniform): technically yes** (by 28–43 points) — but
+  this is meaningless because **uniform is worse than random**: a regular
+  lattice at 50 % alias-destroys document/text structure (OCRBench KIE
+  1/164).  Structured regular decimation is pathological, not protective.
+* **C (beat Sobel / grayscale DoG): FAIL.**  Local variance crushes every
+  contrast-flavored score (77.9/89.9/137 vs retinagate 69.9/71.5/115).
+* **D (clear quality edge over R-res): CATASTROPHIC FAIL — the decisive
+  one.**  R-res at the same budget beats every pre-ViT selector by 7–30
+  points; worse, R-res at *half* the budget (side 512, K=256: 78.6/77.5/137)
+  still beats RetinaGate at 50 % (69.9/71.5/115).
+* **E (≤1–2 point loss at ~50 %): FAIL.**  Best pre-ViT arm (variance)
+  loses 5.3 points on average; R-res loses 3.4 with better TTFT.
+
+Failure trend confirmation at K=256: (filled below)
+
+## 7b. The opponent-channel / base-lattice ablation answers (early)
+
+The screen doubles as the prereg ablation:
+
+* **Base lattice contributes NEGATIVE value**: base+event (retinagate)
+  < event-only on all three datasets (−4.0 / −4.0 / −7).  The 2-D lattice's
+  structured gaps are the same aliasing pathology as the uniform arm.
+* **Opponent chroma**: on DocVQA, event and graydog produce *identical*
+  predictions on 299/300 questions (chroma carries nothing on near-grayscale
+  documents).  On TextVQA (natural images) chroma is worth +4.4
+  (73.9 vs 69.5).  Honest reading: the "retina story" reduces to luminance
+  DoG plus a modest natural-image chroma bonus, dominated by plain variance
+  in both regimes.
 
 ## 8. Mechanism diagnostics
 
-(filled after diag)
+`m12_diag.py` (30 DEV samples/dataset, K=512): coverage of the groups the
+post-encoder incumbent (B2 = official EADP scoring + block8 facility)
+keeps, by each cheap pre-ViT score:
+
+| dataset | event | graydog | sobel | variance | retinagate sel. |
+|---|---|---|---|---|---|
+| TextVQA | .524 | .522 | .519 | .545 | .522 |
+| DocVQA | .500 | .500 | .503 | .533 | .494 |
+| OCRBench | .520 | .518 | .523 | .549 | .520 |
+| ChartQA | .512 | .503 | .505 | .538 | .510 |
+
+Recall ≈ 0.5 = chance (K/N = 0.5); AUROC 0.49–0.56.  **Every cheap
+pixel-space score is near-chance at predicting which regions the encoder
+features (and the post-encoder selector) consider important.**  This was
+predictable from the round's own history (post-encoder selectors read
+semantic features that only exist *after* the encoder), and it predicts the
+accuracy outcome: no pre-ViT score can find "the important half" because
+importance at this granularity is not a pixel-space property.
 
 ## 9. Selector overhead & honest cost accounting
 
@@ -159,7 +223,50 @@ No hidden CPU↔GPU copies: everything runs on the already-on-GPU
 
 ## 10. Verdict
 
-(pending accuracy)
+# **KILL** — the pre-encoder token-dropping direction, not just RetinaGate.
+
+Both kill conditions of the prereg fired, and they are structural, not
+tuning failures:
+
+1. **Gate A passed** (real wall-clock exists: −54 ms ViT, −149 ms TTFT at
+   50 %), so the *engineering* is fine.
+2. **Gate D failed absolutely.**  Direct resolution reduction dominates the
+   entire pre-ViT selection axis at every comparator: R-res at the same
+   budget (80.9/89.8/141) beats the best selector (variance, 77.9/89.9/137)
+   and crushes RetinaGate (69.9/71.5/115); R-res at *half* the budget still
+   beats RetinaGate at 50 %.  Lowering resolution preserves each kept
+   token's encoder context (every token still sees the whole image);
+   dropping pre-encoder tokens removes both raw signal (unrecoverable) and
+   the ViT context of the kept tokens (the kept features themselves
+   degrade).  That mechanism cannot be fixed by a better cheap score — the
+   diagnostics show no cheap score even correlates with post-encoder
+   importance (§8), and the two best "selectors" (variance, R-res) work by
+   preserving coverage/context, not by finding importance.
+3. The specific RetinaGate claims falsified:
+   * **Base Lattice — negative** (aliasing destroys text structure; the
+     uniform-lattice arm is *worse than random*, and base+event < event);
+   * **Opponent channels — near-inert** (identical predictions to
+     luminance-only on 299/300 DocVQA questions; +4.4 on natural images,
+     still far behind plain variance);
+   * **Retina event > simple heuristics — false** (loses to variance by
+     5–14 points everywhere, ties or loses to graydog).
+
+Per the prereg stop rule ("if A or D clearly fail, record the negative
+evidence and stop"), no further selector work, no rescue designs, no
+parameter search were run.  The one extra confirmation (K=256 trend) was
+recorded to make the negative result reusable.
+
+What survives from this round:
+* a bit-exact, genuinely wall-clock-reducing sparse-ViT path for Qwen3-VL
+  (group-structured, DeepStack- and mRoPE-preserving, N1-style verified);
+* the measured A40 scaling law of the encoder (§4) and the ~35–40 ms CPU
+  preprocessing share of TTFT that any production pre-encoder gate would
+  want to absorb (gate before the resize);
+* a strong, well-controlled negative: at matched budget, **context
+  preservation (R-res) beats importance selection (any cheap pre-ViT
+  score) by 5–30 points** on OCR-type workloads — a useful prior for the
+  next round: if encoder compute must shrink, reduce resolution or merge
+  (context-preserving), do not drop.
 
 ## 11. Reproducibility
 
