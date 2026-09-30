@@ -1,0 +1,288 @@
+{
+ "split": "confirm",
+ "arms": [
+  "BASE",
+  "U025",
+  "NORM",
+  "SHUF"
+ ],
+ "table": {
+  "BASE": {
+   "per_ds": {
+    "TextVQA_VAL": 83.29999999999998,
+    "DocVQA_VAL": 76.5262983068655,
+    "OCRBench": 72.5
+   },
+   "macro": 77.44209943562183,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  },
+  "U025": {
+   "per_ds": {
+    "TextVQA_VAL": 83.6,
+    "DocVQA_VAL": 76.91317326765349,
+    "OCRBench": 76.0
+   },
+   "macro": 78.83772442255116,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  },
+  "NORM": {
+   "per_ds": {
+    "TextVQA_VAL": 83.5,
+    "DocVQA_VAL": 76.09078870776892,
+    "OCRBench": 73.5
+   },
+   "macro": 77.69692956925631,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  },
+  "SHUF": {
+   "per_ds": {
+    "TextVQA_VAL": 82.79999999999998,
+    "DocVQA_VAL": 75.57080440929522,
+    "OCRBench": 72.0
+   },
+   "macro": 76.79026813643173,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  }
+ },
+ "bank_stats": {
+  "TextVQA_VAL": {
+   "n_samples": 200,
+   "group_size_mean": 3.0,
+   "group_size_p50": 2.0,
+   "group_size_p90": 6.0,
+   "group_size_max": 61,
+   "singleton_frac": 0.1470703125,
+   "rnorm_main_mean": 0.46522653806640624,
+   "rnorm_main_p90": 0.820607,
+   "cos_am_main_mean": 0.9463331822070313,
+   "rnorm_ds_mean": 0.5155670211132813,
+   "cos_am_ds_mean": 0.8276784607421875
+  },
+  "DocVQA_VAL": {
+   "n_samples": 200,
+   "group_size_mean": 3.0,
+   "group_size_p50": 3.0,
+   "group_size_p90": 6.0,
+   "group_size_max": 61,
+   "singleton_frac": 0.07236328125,
+   "rnorm_main_mean": 0.5307092374218749,
+   "rnorm_main_p90": 0.880742,
+   "cos_am_main_mean": 0.9293624783007813,
+   "rnorm_ds_mean": 0.5123706776953125,
+   "cos_am_ds_mean": 0.841447954296875
+  },
+  "OCRBench": {
+   "n_samples": 200,
+   "group_size_mean": 3.0,
+   "group_size_p50": 2.0,
+   "group_size_p90": 6.0,
+   "group_size_max": 120,
+   "singleton_frac": 0.14162109375,
+   "rnorm_main_mean": 0.42268432687499996,
+   "rnorm_main_p90": 0.7049761999999998,
+   "cos_am_main_mean": 0.9527033978515626,
+   "rnorm_ds_mean": 0.4714381190234375,
+   "cos_am_ds_mean": 0.8547368668359376
+  }
+ },
+ "manifest_sha": {
+  "TextVQA_VAL": {
+   "dev": "54e0182fd93838f5b68d0063e7b96f449a5f1a73132a4e067aaec6876807eeff",
+   "confirm": "a8212a1ce661184eee2c50020ac11fddfb6a5d02e96c5a0ba76e9dc2038d3336"
+  },
+  "DocVQA_VAL": {
+   "dev": "16b2f3be96fe7c372bd9517c9954817a791af653badb0515e80c81fcc825821f",
+   "confirm": "1715e9af80094e5b9e0a7eaa213ae984e0603266f96b1d51b908069d4256076c"
+  },
+  "OCRBench": {
+   "dev": "b913f8e7a15edcdd8f076071b6cf52ef7e7d4e560217552637132163c67551e0",
+   "confirm": "23bb524f123db52a40215efdd9d184f9c0ccae680f26316bd794d27e689db48e"
+  }
+ },
+ "contrasts": {
+  "U025_vs_BASE": {
+   "delta": 1.3956249869293336,
+   "ci": [
+    0.32433267272063593,
+    2.569395050893025
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 0.30000000000001137,
+    "DocVQA_VAL": 0.3868749607879862,
+    "OCRBench": 3.500000000000003
+   },
+   "rescued": 11,
+   "broken": 3,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 1,
+     "broken": 0
+    },
+    "DocVQA_VAL": {
+     "rescued": 3,
+     "broken": 3
+    },
+    "OCRBench": {
+     "rescued": 7,
+     "broken": 0
+    }
+   }
+  },
+  "NORM_vs_BASE": {
+   "delta": 0.25483013363447604,
+   "ci": [
+    -0.5733136244848214,
+    1.132313948955384
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 0.20000000000001128,
+    "DocVQA_VAL": -0.43550959909658404,
+    "OCRBench": 1.0000000000000009
+   },
+   "rescued": 4,
+   "broken": 3,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 1,
+     "broken": 1
+    },
+    "DocVQA_VAL": {
+     "rescued": 0,
+     "broken": 1
+    },
+    "OCRBench": {
+     "rescued": 3,
+     "broken": 1
+    }
+   }
+  },
+  "SHUF_vs_BASE": {
+   "delta": -0.6518312991900939,
+   "ci": [
+    -1.8229429123675243,
+    0.5126724770511104
+   ],
+   "per_ds": {
+    "TextVQA_VAL": -0.5000000000000004,
+    "DocVQA_VAL": -0.9554938975702809,
+    "OCRBench": -0.5000000000000004
+   },
+   "rescued": 5,
+   "broken": 9,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 1,
+     "broken": 2
+    },
+    "DocVQA_VAL": {
+     "rescued": 2,
+     "broken": 4
+    },
+    "OCRBench": {
+     "rescued": 2,
+     "broken": 3
+    }
+   }
+  },
+  "U025_vs_NORM": {
+   "delta": 1.1407948532948575,
+   "ci": [
+    0.09109073622029194,
+    2.3026370046749585
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 0.10000000000000009,
+    "DocVQA_VAL": 0.8223845598845703,
+    "OCRBench": 2.500000000000002
+   }
+  },
+  "U025_vs_SHUF": {
+   "delta": 2.047456286119427,
+   "ci": [
+    0.8722573835983674,
+    3.3301107615432013
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 0.8000000000000118,
+    "DocVQA_VAL": 1.3423688583582671,
+    "OCRBench": 4.0000000000000036
+   }
+  }
+ }
+}

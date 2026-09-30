@@ -1,0 +1,57 @@
+{
+ "base_commit": "a724122db9587b35aa8f6a7234e851ae29c520cb",
+ "gates": {
+  "G1": {
+   "desc": "keep-all native vs stock (prefill + 32 decode logits)",
+   "max_d_prefill": 0.0,
+   "max_d_decode": 0.0,
+   "token_mismatch": 0,
+   "ok": true
+  },
+  "G2": {
+   "desc": "merge-code lam0 == b1 plain gather (features, logits, prediction); bank == live recomputation",
+   "feat_bitexact": 12,
+   "feat_total": 48,
+   "logit_max_diff": 0.0,
+   "pred_mismatch": 0,
+   "bank_mismatch": 0,
+   "ok": true
+  },
+  "G3": {
+   "desc": "group_sum/softmax merge vs naive per-group reference (synthetic fp32 + one real sample)",
+   "max_rel_syn": 1.1639999040864079e-07,
+   "max_rel_real": 3.193073533801302e-08,
+   "ok": true,
+   "real_bf16_cast_bitexact": true
+  },
+  "G4": {
+   "desc": "degenerate cases + per-sample invariants (256 visual tokens, each dropped token exactly one group, layer/cache bookkeeping)",
+   "syn_ok": true,
+   "invariants_ok": 12,
+   "invariants_total": 12,
+   "ok": true
+  },
+  "G5": {
+   "desc": "in-process repeat (predictions identical) + cross-process hash comparison",
+   "inproc_pred_mismatch": 0,
+   "inproc_total": 3,
+   "crossprocess_equal": true,
+   "ok": true
+  }
+ },
+ "repro": {
+  "TextVQA_VAL_43": {
+   "merge_hash": "cbc2ac761e4796ba",
+   "pred": "vodka"
+  },
+  "TextVQA_VAL_44": {
+   "merge_hash": "ae6d1325c52ebf1a",
+   "pred": "chase"
+  },
+  "TextVQA_VAL_55": {
+   "merge_hash": "faa4fa05816915e2",
+   "pred": "life cycle"
+  }
+ },
+ "all_passed": true
+}

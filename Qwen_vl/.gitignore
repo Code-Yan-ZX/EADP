@@ -74,3 +74,15 @@ outputs/m12/acc/*
 !outputs/m12/acc/*/
 outputs/m12/acc/*/*
 !outputs/m12/acc/*/*/*_score.json
+# Anchor-Merge Pilot deliverables: manifest, frozen anchor banks, correctness,
+# analysis and paired-perf JSONs plus official-score summaries (with per-
+# question scores inside), same evidence convention as outputs/e0. Prediction
+# shards, run logs and TSV/xlsx stay local (regenerable via run_all.sh).
+!outputs/anchor_merge_pilot/
+outputs/anchor_merge_pilot/*
+!outputs/anchor_merge_pilot/*.json
+!outputs/anchor_merge_pilot/bank_*.json.gz
+!outputs/anchor_merge_pilot/acc/
+outputs/anchor_merge_pilot/acc/**
+!outputs/anchor_merge_pilot/acc/**/
+!outputs/anchor_merge_pilot/acc/**/*_score.json
