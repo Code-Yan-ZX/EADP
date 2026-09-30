@@ -35,9 +35,24 @@ def load_json(path):
     return None
 
 
-def headline(ds, official):
+def headline_from_score(score_json):
+    """Headline number for a dataset from a *_score.json (M12 convention).
+
+    OCRBench reports 'Final Score' directly; TextVQA/DocVQA nested result
+    dicts are summarized by the mean of per-question eval scores x100 (the
+    same protocol as M12's analysis).
+    """
+    if score_json is None:
+        return None
+    ds = score_json["ds"]
+    official = score_json.get("official", {})
     v = mc.headline(ds, official)
-    return float(v) if v is not None else None
+    if isinstance(v, (int, float)):
+        return float(v)
+    per_q = score_json.get("per_question")
+    if per_q:
+        return 100.0 * sum(per_q.values()) / len(per_q)
+    return None
 
 
 def med(records, key):
