@@ -1,0 +1,447 @@
+{
+ "split": "dev",
+ "arms": [
+  "BASE",
+  "A_G1",
+  "A_G2",
+  "A_G3",
+  "B_G1",
+  "B_G2",
+  "B_G3",
+  "C_G1"
+ ],
+ "lam": 1.0,
+ "tag": "lam1",
+ "table": {
+  "BASE": {
+   "per_ds": {
+    "TextVQA_VAL": 78.7,
+    "DocVQA_VAL": 78.77225008178955,
+    "OCRBench": 86.0
+   },
+   "macro": 81.15741669392985,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   },
+   "selector_ms": null
+  },
+  "A_G1": {
+   "per_ds": {
+    "TextVQA_VAL": 80.60000000000001,
+    "DocVQA_VAL": 76.87018996393996,
+    "OCRBench": 83.0
+   },
+   "macro": 80.15672998797999,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   },
+   "selector_ms": null
+  },
+  "A_G2": {
+   "per_ds": {
+    "TextVQA_VAL": 79.0,
+    "DocVQA_VAL": 76.52074357699358,
+    "OCRBench": 87.0
+   },
+   "macro": 80.84024785899787,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   },
+   "selector_ms": null
+  },
+  "A_G3": {
+   "per_ds": {
+    "TextVQA_VAL": 79.89999999999999,
+    "DocVQA_VAL": 72.67945285017653,
+    "OCRBench": 87.0
+   },
+   "macro": 79.85981761672551,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   },
+   "selector_ms": null
+  },
+  "B_G1": {
+   "per_ds": {
+    "TextVQA_VAL": 79.4,
+    "DocVQA_VAL": 74.95987041940988,
+    "OCRBench": 85.0
+   },
+   "macro": 79.78662347313663,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   },
+   "selector_ms": null
+  },
+  "B_G2": {
+   "per_ds": {
+    "TextVQA_VAL": 81.70000000000002,
+    "DocVQA_VAL": 73.30617608742608,
+    "OCRBench": 86.0
+   },
+   "macro": 80.33539202914203,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   },
+   "selector_ms": null
+  },
+  "B_G3": {
+   "per_ds": {
+    "TextVQA_VAL": 79.4,
+    "DocVQA_VAL": 75.31079351243824,
+    "OCRBench": 87.0
+   },
+   "macro": 80.57026450414608,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   },
+   "selector_ms": null
+  },
+  "C_G1": {
+   "per_ds": {
+    "TextVQA_VAL": 80.2,
+    "DocVQA_VAL": 74.4666181041181,
+    "OCRBench": 87.0
+   },
+   "macro": 80.55553936803936,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   },
+   "selector_ms": null
+  }
+ },
+ "contrasts": {
+  "A_G1_vs_BASE": {
+   "delta": -1.0006867059498639,
+   "ci": [
+    -3.7524060883319574,
+    1.7312129637358515
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 1.9000000000000017,
+    "DocVQA_VAL": -1.902060117849591,
+    "OCRBench": -3.0000000000000027
+   },
+   "rescued": 9,
+   "broken": 12,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 2,
+     "broken": 0
+    },
+    "DocVQA_VAL": {
+     "rescued": 4,
+     "broken": 6
+    },
+    "OCRBench": {
+     "rescued": 3,
+     "broken": 6
+    }
+   }
+  },
+  "A_G2_vs_BASE": {
+   "delta": -0.3171688349319912,
+   "ci": [
+    -2.8109536051803303,
+    2.2132608360247614
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 0.30000000000000027,
+    "DocVQA_VAL": -2.251506504795975,
+    "OCRBench": 1.0000000000000009
+   },
+   "rescued": 10,
+   "broken": 12,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 1,
+     "broken": 1
+    },
+    "DocVQA_VAL": {
+     "rescued": 6,
+     "broken": 9
+    },
+    "OCRBench": {
+     "rescued": 3,
+     "broken": 2
+    }
+   }
+  },
+  "A_G3_vs_BASE": {
+   "delta": -1.2975990772043442,
+   "ci": [
+    -4.053272950313555,
+    1.5220718883358508
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 1.19999999999999,
+    "DocVQA_VAL": -6.092797231613023,
+    "OCRBench": 1.0000000000000009
+   },
+   "rescued": 9,
+   "broken": 12,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 2,
+     "broken": 0
+    },
+    "DocVQA_VAL": {
+     "rescued": 3,
+     "broken": 9
+    },
+    "OCRBench": {
+     "rescued": 4,
+     "broken": 3
+    }
+   }
+  },
+  "B_G1_vs_BASE": {
+   "delta": -1.370793220793224,
+   "ci": [
+    -3.7770892657773816,
+    1.014437737010304
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 0.7000000000000006,
+    "DocVQA_VAL": -3.8123796623796724,
+    "OCRBench": -1.0000000000000009
+   },
+   "rescued": 6,
+   "broken": 9,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 2,
+     "broken": 1
+    },
+    "DocVQA_VAL": {
+     "rescued": 3,
+     "broken": 6
+    },
+    "OCRBench": {
+     "rescued": 1,
+     "broken": 2
+    }
+   }
+  },
+  "B_G2_vs_BASE": {
+   "delta": -0.8220246647878201,
+   "ci": [
+    -3.475557959632132,
+    1.799815198906821
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 3.0000000000000138,
+    "DocVQA_VAL": -5.466073994363474,
+    "OCRBench": 0.0
+   },
+   "rescued": 9,
+   "broken": 10,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 4,
+     "broken": 0
+    },
+    "DocVQA_VAL": {
+     "rescued": 3,
+     "broken": 8
+    },
+    "OCRBench": {
+     "rescued": 2,
+     "broken": 2
+    }
+   }
+  },
+  "B_G3_vs_BASE": {
+   "delta": -0.5871521897837721,
+   "ci": [
+    -2.814386037013633,
+    1.6740890585677106
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 0.7000000000000006,
+    "DocVQA_VAL": -3.4614565693513177,
+    "OCRBench": 1.0000000000000009
+   },
+   "rescued": 6,
+   "broken": 7,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 2,
+     "broken": 1
+    },
+    "DocVQA_VAL": {
+     "rescued": 1,
+     "broken": 4
+    },
+    "OCRBench": {
+     "rescued": 3,
+     "broken": 2
+    }
+   }
+  },
+  "C_G1_vs_BASE": {
+   "delta": -0.6018773258904837,
+   "ci": [
+    -3.2123856201914243,
+    2.0892595545095642
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 1.5000000000000013,
+    "DocVQA_VAL": -4.305631977671453,
+    "OCRBench": 1.0000000000000009
+   },
+   "rescued": 9,
+   "broken": 9,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 3,
+     "broken": 0
+    },
+    "DocVQA_VAL": {
+     "rescued": 1,
+     "broken": 5
+    },
+    "OCRBench": {
+     "rescued": 5,
+     "broken": 4
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,196 @@
+{
+ "arm": "C_G1",
+ "diag": "../../outputs/stage1_grounding/acc/dev/C_G1_lam1/K256/TextVQA_VAL_diag.jsonl",
+ "n_samples": 100,
+ "population": {
+  "n_sets": 100,
+  "n_tokens": 378,
+  "corr_ent_g": 0.18159515990653505,
+  "flip_rate": 0.77
+ },
+ "canonical": {
+  "hi_entropy_strong_grounding": {
+   "count": 0,
+   "top_tokens": []
+  },
+  "lo_entropy_weak_grounding": {
+   "count": 96,
+   "top_tokens": [
+    [
+     ".",
+     15,
+     0.14466145833333333
+    ],
+    [
+     "is",
+     13,
+     0.1416015625
+    ],
+    [
+     "phrases",
+     6,
+     0.14453125
+    ],
+    [
+     "of",
+     4,
+     0.140625
+    ],
+    [
+     "the",
+     3,
+     0.1455078125
+    ],
+    [
+     "conc",
+     3,
+     0.13834635416666666
+    ],
+    [
+     "blue",
+     3,
+     0.13671875
+    ],
+    [
+     "on",
+     2,
+     0.1494140625
+    ],
+    [
+     "?",
+     2,
+     0.1435546875
+    ],
+    [
+     "green",
+     2,
+     0.142578125
+    ],
+    [
+     "5",
+     2,
+     0.14208984375
+    ],
+    [
+     "3",
+     2,
+     0.13818359375
+    ]
+   ]
+  }
+ },
+ "outcome_flips": {
+  "rescued": [
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 1951,
+    "score_a": 1.0,
+    "score_b": 0.3
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 1309,
+    "score_a": 1.0,
+    "score_b": 0.0
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 475,
+    "score_a": 0.6,
+    "score_b": 0.3
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 1604,
+    "score_a": 1.0,
+    "score_b": 0.0
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 555,
+    "score_a": 1.0,
+    "score_b": 0.0
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 263,
+    "score_a": 1.0,
+    "score_b": 0.0
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 539,
+    "score_a": 1.0,
+    "score_b": 0.0
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 533,
+    "score_a": 1.0,
+    "score_b": 0.0
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 350,
+    "score_a": 1.0,
+    "score_b": 0.0
+   }
+  ],
+  "broken": [
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 660,
+    "score_a": 0.0,
+    "score_b": 1.0
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 928,
+    "score_a": 0.0,
+    "score_b": 0.84375
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 459,
+    "score_a": 0.0,
+    "score_b": 1.0
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 764,
+    "score_a": 0.5,
+    "score_b": 0.5714285714285714
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 367,
+    "score_a": 0.0,
+    "score_b": 1.0
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 381,
+    "score_a": 0.0,
+    "score_b": 1.0
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 509,
+    "score_a": 0.0,
+    "score_b": 1.0
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 551,
+    "score_a": 0.0,
+    "score_b": 1.0
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 321,
+    "score_a": 0.0,
+    "score_b": 1.0
+   }
+  ]
+ }
+}

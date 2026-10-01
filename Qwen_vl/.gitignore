@@ -86,3 +86,17 @@ outputs/anchor_merge_pilot/*
 outputs/anchor_merge_pilot/acc/**
 !outputs/anchor_merge_pilot/acc/**/
 !outputs/anchor_merge_pilot/acc/**/*_score.json
+
+# Stage-1 grounding discovery (2026-10-01): score/analysis JSONs are evidence;
+# prediction shards, TSVs, raw diag jsonl and the archived invalid-broadcast
+# shards stay local (regenerable via scripts/stage1_grounding/*).
+!outputs/stage1_grounding/
+outputs/stage1_grounding/*
+!outputs/stage1_grounding/*.json
+!outputs/stage1_grounding/diag/
+outputs/stage1_grounding/diag/*
+!outputs/stage1_grounding/diag/*.json
+!outputs/stage1_grounding/acc/
+outputs/stage1_grounding/acc/**
+!outputs/stage1_grounding/acc/**/
+!outputs/stage1_grounding/acc/**/*_score.json

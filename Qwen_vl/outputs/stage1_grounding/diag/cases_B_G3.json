@@ -1,0 +1,166 @@
+{
+ "arm": "B_G3",
+ "diag": "../../outputs/stage1_grounding/acc/dev/B_G3_lam1/K256/TextVQA_VAL_diag.jsonl",
+ "n_samples": 100,
+ "population": {
+  "n_sets": 100,
+  "n_tokens": 378,
+  "corr_ent_g": -0.1093912323789461,
+  "flip_rate": 0.67
+ },
+ "canonical": {
+  "hi_entropy_strong_grounding": {
+   "count": 0,
+   "top_tokens": []
+  },
+  "lo_entropy_weak_grounding": {
+   "count": 83,
+   "top_tokens": [
+    [
+     "what",
+     14,
+     1.8937080757958549
+    ],
+    [
+     "conc",
+     8,
+     1.8683800846338272
+    ],
+    [
+     "the",
+     7,
+     1.9889226470674788
+    ],
+    [
+     "phrases",
+     7,
+     1.8850458349500383
+    ],
+    [
+     "?",
+     5,
+     1.9369426250457764
+    ],
+    [
+     "when",
+     4,
+     1.9602161943912506
+    ],
+    [
+     "short",
+     4,
+     1.9480145275592804
+    ],
+    [
+     "words",
+     4,
+     1.88517227768898
+    ],
+    [
+     "or",
+     3,
+     1.939743955930074
+    ],
+    [
+     "ely",
+     3,
+     1.925439675649007
+    ],
+    [
+     "of",
+     3,
+     1.8807080586751301
+    ],
+    [
+     "container",
+     2,
+     1.9816455841064453
+    ]
+   ]
+  }
+ },
+ "outcome_flips": {
+  "rescued": [
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 1309,
+    "score_a": 1.0,
+    "score_b": 0.0
+   },
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 1817,
+    "score_a": 1.0,
+    "score_b": 0.3
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 1604,
+    "score_a": 1.0,
+    "score_b": 0.0
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 555,
+    "score_a": 1.0,
+    "score_b": 0.0
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 452,
+    "score_a": 1.0,
+    "score_b": 0.0
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 350,
+    "score_a": 1.0,
+    "score_b": 0.0
+   }
+  ],
+  "broken": [
+   {
+    "ds": "TextVQA_VAL",
+    "idx": 289,
+    "score_a": 0.0,
+    "score_b": 1.0
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 1557,
+    "score_a": 0.0,
+    "score_b": 1.0
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 660,
+    "score_a": 0.0,
+    "score_b": 1.0
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 1120,
+    "score_a": 0.0,
+    "score_b": 0.8787878787878788
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "idx": 1102,
+    "score_a": 0.0,
+    "score_b": 0.8888888888888888
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 210,
+    "score_a": 0.0,
+    "score_b": 1.0
+   },
+   {
+    "ds": "OCRBench",
+    "idx": 509,
+    "score_a": 0.0,
+    "score_b": 1.0
+   }
+  ]
+ }
+}

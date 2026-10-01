@@ -1,0 +1,157 @@
+{
+ "split": "dev",
+ "arms": [
+  "BASE",
+  "A_G1",
+  "B_G1"
+ ],
+ "lam": 0.5,
+ "tag": "smoke_lam0.5",
+ "table": {
+  "BASE": {
+   "per_ds": {
+    "TextVQA_VAL": 78.7,
+    "DocVQA_VAL": 78.77225008178955,
+    "OCRBench": 86.0
+   },
+   "macro": 81.15741669392985,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   },
+   "selector_ms": null
+  },
+  "A_G1": {
+   "per_ds": {
+    "TextVQA_VAL": 86.0,
+    "DocVQA_VAL": 98.09090909090908,
+    "OCRBench": 100.0
+   },
+   "macro": 94.69696969696969,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 10,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 10,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 10,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   },
+   "selector_ms": null
+  },
+  "B_G1": {
+   "per_ds": {
+    "TextVQA_VAL": 86.0,
+    "DocVQA_VAL": 98.09090909090908,
+    "OCRBench": 100.0
+   },
+   "macro": 94.69696969696969,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 10,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 10,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 10,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   },
+   "selector_ms": null
+  }
+ },
+ "contrasts": {
+  "A_G1_vs_BASE": {
+   "delta": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 0.0,
+    "DocVQA_VAL": 0.0,
+    "OCRBench": 0.0
+   },
+   "rescued": 0,
+   "broken": 0,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 0,
+     "broken": 0
+    },
+    "DocVQA_VAL": {
+     "rescued": 0,
+     "broken": 0
+    },
+    "OCRBench": {
+     "rescued": 0,
+     "broken": 0
+    }
+   }
+  },
+  "B_G1_vs_BASE": {
+   "delta": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 0.0,
+    "DocVQA_VAL": 0.0,
+    "OCRBench": 0.0
+   },
+   "rescued": 0,
+   "broken": 0,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 0,
+     "broken": 0
+    },
+    "DocVQA_VAL": {
+     "rescued": 0,
+     "broken": 0
+    },
+    "OCRBench": {
+     "rescued": 0,
+     "broken": 0
+    }
+   }
+  }
+ }
+}
