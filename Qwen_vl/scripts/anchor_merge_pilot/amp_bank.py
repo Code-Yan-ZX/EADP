@@ -15,14 +15,15 @@ Bank record per sample:
   rnorm_ds[256]             mean over the 3 DS streams of ||m-a||/||a||
   cos_am_ds[256]            mean over the 3 DS streams of cos(a, m)
 
-Usage: python amp_bank.py --split dev [--limit N]
-       python amp_bank.py --split confirm
+Usage: python amp_bank.py --split dev [--limit N] [--selector b1|b2] [--K 256]
+       python amp_bank.py --split confirm --selector b2 --K 128
 """
 
 from __future__ import annotations
 
 import argparse
 import gzip
+import hashlib
 import json
 import os
 import sys
@@ -33,18 +34,19 @@ import torch
 import amp_common as AC
 
 
-def build_for_split(split: str, limit: int | None):
+def build_for_split(split: str, limit: int | None, selector: str = "b1",
+                    K_budget: int = 256):
     manifest = json.load(open(os.path.join(AC.OUT_DIR, "manifest.json")))
     model = AC.common.load_model(AC.common.BASELINE_MODEL, max_new_tokens=64)
     from model.native_qwen3 import NativeEngine
     eng = NativeEngine(model)
-    K = AC.K
+    K = K_budget
 
     for ds in AC.DS_LIST:
         items = manifest["datasets"][ds][split]
         if limit:
             items = items[:limit]
-        out_path = AC.bank_path(split, ds)
+        out_path = AC.bank_path(split, ds, selector, K, legacy_ok=False)
         bank = {}
         if os.path.exists(out_path):
             with gzip.open(out_path, "rt") as f:
@@ -70,7 +72,13 @@ def build_for_split(split: str, limit: int | None):
             text_mean, text_seq = eng.instruction_embeds(msg, ds)
             ctx = dict(prep=prep, V=V, DS=DS, K=K, engine=eng,
                        text_mean=text_mean, text_seq=text_seq)
-            keep = AC.official_facility_keep(ctx, K)
+            if selector == "b1":
+                keep = AC.official_facility_keep(ctx, K)      # official facility
+            elif selector == "b2":
+                from model.e0_selectors import _eadp_parts
+                keep = _eadp_parts(K, ctx, "block8")          # block8 (E0 b2)
+            else:
+                raise KeyError(selector)
             dropped_idx, gid, _ = AC.compute_assignment(V, keep)
             gid = gid.cpu()
             Kd = int(keep.numel())
@@ -109,16 +117,20 @@ def build_for_split(split: str, limit: int | None):
         with gzip.open(tmp, "wt") as f:
             json.dump(bank, f)
         os.replace(tmp, out_path)
+        real_sha = hashlib.sha256(open(out_path, "rb").read()).hexdigest()[:12]
         print(f"[saved] {out_path} ({len(bank)} records, "
-              f"sha {AC.bank_sha256(split, ds)[:12]})", flush=True)
+              f"sha {real_sha})", flush=True)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--split", required=True, choices=["dev", "confirm"])
     ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--selector", default="b1", choices=["b1", "b2"],
+                    help="b1 = official facility, b2 = block8 (E0 naming)")
+    ap.add_argument("--K", type=int, default=256)
     args = ap.parse_args()
-    build_for_split(args.split, args.limit)
+    build_for_split(args.split, args.limit, args.selector, args.K)
 
 
 if __name__ == "__main__":

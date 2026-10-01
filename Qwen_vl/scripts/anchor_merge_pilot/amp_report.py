@@ -18,10 +18,11 @@ def load(split, arms):
     out = {}
     for arm in arms:
         for ds in AC.DS_LIST:
-            p = os.path.join(AC.OUT_DIR, "acc", split, arm, "K256",
-                             f"{ds}_score.json")
-            if os.path.exists(p):
-                s = json.load(open(p))
+            import glob as _glob
+            hits = sorted(_glob.glob(os.path.join(
+                AC.OUT_DIR, "acc", split, arm, "K*", f"{ds}_score.json")))
+            if hits:
+                s = json.load(open(hits[-1]))
                 if s.get("per_question"):
                     out[(arm, ds)] = s
     return out

@@ -27,8 +27,8 @@ import amp_common as AC
 ACC_DIR = os.path.join(AC.OUT_DIR, "acc")
 
 
-def shard_path(split: str, arm: str, ds: str) -> str:
-    d = os.path.join(ACC_DIR, split, arm, "K256")
+def shard_path(split: str, arm: str, ds: str, K: int = 256) -> str:
+    d = os.path.join(ACC_DIR, split, arm, f"K{K}")
     os.makedirs(d, exist_ok=True)
     return os.path.join(d, f"{ds}.json")
 
@@ -63,12 +63,13 @@ def run_gen(args, eng, manifest):
         items = manifest["datasets"][ds][args.split]
         if smoke:
             items = items[:smoke]
-        bank = AC.load_bank(args.split, ds)
+        bank = AC.load_bank(args.split, ds, args.selector, args.K)
         dataset = AC.common.build_dataset(ds)
         eng.vlm.set_dump_image(dataset.dump_image)
         cfg = AC.arm_cfg(args.arm, args.winner_lam, args.winner_kind)
+        cfg["selector"], cfg["K"] = args.selector, args.K
         t0 = time.time()
-        path = shard_path(args.split, args.arm, ds)
+        path = shard_path(args.split, args.arm, ds, args.K)
         shard = load_shard(path)
         for n, it in enumerate(items):
             key = str(it["idx"])
@@ -91,8 +92,10 @@ def run_gen(args, eng, manifest):
                        degeneracy=degeneracy(out["text"]))
             shard["records"][key] = rec
             shard.setdefault("meta", dict(
-                split=args.split, arm=args.arm, ds=ds, K=AC.K,
-                bank_sha256=AC.bank_sha256(args.split, ds),
+                split=args.split, arm=args.arm, ds=ds, K=args.K,
+                selector=args.selector,
+                bank_sha256=AC.bank_sha256(args.split, ds,
+                                           args.selector, args.K),
                 base_commit=manifest["base_commit"],
                 max_new_tokens=args.max_new_tokens))
             if len(shard["records"]) % 10 == 0 or len(shard["records"]) == len(items):
@@ -123,7 +126,7 @@ def run_score(args, manifest):
     from vlmeval.dataset import build_dataset as vlmeval_build
 
     for ds in AC.DS_LIST:
-        path = shard_path(args.split, args.arm, ds)
+        path = shard_path(args.split, args.arm, ds, args.K)
         shard = load_shard(path)
         done = sorted(int(k) for k in shard["records"])
         if not done:
@@ -159,7 +162,8 @@ def run_score(args, manifest):
             else:
                 h = _headline(res)
                 chk = None if h is None else abs(m - h) < 1.0
-        summary = dict(arm=args.arm, split=args.split, K=AC.K, ds=ds,
+        summary = dict(arm=args.arm, split=args.split, K=args.K,
+                       selector=args.selector, ds=ds,
                        n=len(done), official={
                            k: (float(v) if isinstance(v, (int, float)) else str(v))
                            for k, v in res.items()},
@@ -245,6 +249,8 @@ def main():
                     help="limit each ds to N items and tag shards with smoke")
     ap.add_argument("--winner-lam", type=float, default=0.0)
     ap.add_argument("--winner-kind", default="uniform")
+    ap.add_argument("--selector", default="b1", choices=["b1", "b2"])
+    ap.add_argument("--K", type=int, default=256)
     args = ap.parse_args()
 
     manifest = json.load(open(os.path.join(AC.OUT_DIR, "manifest.json")))

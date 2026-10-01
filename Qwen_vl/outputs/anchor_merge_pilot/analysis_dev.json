@@ -3,9 +3,14 @@
  "arms": [
   "BASE",
   "U025",
-  "U050",
-  "U100",
-  "S025"
+  "MAIN025",
+  "DS025",
+  "B2BASE",
+  "B2U025",
+  "K128BASE",
+  "K128U025",
+  "B2K128BASE",
+  "B2K128U025"
  ],
  "table": {
   "BASE": {
@@ -64,13 +69,69 @@
     }
    }
   },
-  "U050": {
+  "MAIN025": {
+   "per_ds": {
+    "TextVQA_VAL": 81.3,
+    "DocVQA_VAL": 80.50175689550689,
+    "OCRBench": 88.0
+   },
+   "macro": 83.2672522985023,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  },
+  "DS025": {
+   "per_ds": {
+    "TextVQA_VAL": 80.0,
+    "DocVQA_VAL": 76.97225008178955,
+    "OCRBench": 88.0
+   },
+   "macro": 81.65741669392985,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  },
+  "B2BASE": {
    "per_ds": {
     "TextVQA_VAL": 79.60000000000001,
-    "DocVQA_VAL": 79.637868006618,
+    "DocVQA_VAL": 74.06518967143967,
     "OCRBench": 88.0
    },
-   "macro": 82.41262266887267,
+   "macro": 80.55506322381324,
    "quality": {
     "TextVQA_VAL": {
      "n": 100,
@@ -92,13 +153,13 @@
     }
    }
   },
-  "U100": {
+  "B2U025": {
    "per_ds": {
-    "TextVQA_VAL": 79.89999999999999,
-    "DocVQA_VAL": 75.07570122603018,
+    "TextVQA_VAL": 80.60000000000001,
+    "DocVQA_VAL": 75.70849775224777,
     "OCRBench": 90.0
    },
-   "macro": 81.65856707534338,
+   "macro": 82.10283258408259,
    "quality": {
     "TextVQA_VAL": {
      "n": 100,
@@ -120,13 +181,97 @@
     }
    }
   },
-  "S025": {
+  "K128BASE": {
    "per_ds": {
-    "TextVQA_VAL": 81.0,
-    "DocVQA_VAL": 78.36618947572894,
-    "OCRBench": 88.0
+    "TextVQA_VAL": 76.6,
+    "DocVQA_VAL": 60.3749225999226,
+    "OCRBench": 82.0
    },
-   "macro": 82.45539649190965,
+   "macro": 72.99164086664086,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  },
+  "K128U025": {
+   "per_ds": {
+    "TextVQA_VAL": 73.9,
+    "DocVQA_VAL": 61.430694718194715,
+    "OCRBench": 83.0
+   },
+   "macro": 72.77689823939824,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  },
+  "B2K128BASE": {
+   "per_ds": {
+    "TextVQA_VAL": 66.8,
+    "DocVQA_VAL": 47.49913632823115,
+    "OCRBench": 77.0
+   },
+   "macro": 63.766378776077055,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  },
+  "B2K128U025": {
+   "per_ds": {
+    "TextVQA_VAL": 66.69999999999999,
+    "DocVQA_VAL": 49.73159276068758,
+    "OCRBench": 78.0
+   },
+   "macro": 64.8105309202292,
    "quality": {
     "TextVQA_VAL": {
      "n": 100,
@@ -233,27 +378,27 @@
     }
    }
   },
-  "U050_vs_BASE": {
-   "delta": 1.255205974942819,
+  "MAIN025_vs_BASE": {
+   "delta": 2.109835604572441,
    "ci": [
-    -0.702569095446591,
-    3.193561395145763
+    0.4895771938950445,
+    3.93263330251206
    ],
    "per_ds": {
-    "TextVQA_VAL": 0.9000000000000008,
-    "DocVQA_VAL": 0.8656179248284546,
+    "TextVQA_VAL": 2.599999999999991,
+    "DocVQA_VAL": 1.7295068137173297,
     "OCRBench": 2.0000000000000018
    },
-   "rescued": 9,
-   "broken": 5,
+   "rescued": 8,
+   "broken": 1,
    "rescue_break_per_ds": {
     "TextVQA_VAL": {
-     "rescued": 3,
-     "broken": 1
+     "rescued": 4,
+     "broken": 0
     },
     "DocVQA_VAL": {
-     "rescued": 4,
-     "broken": 4
+     "rescued": 2,
+     "broken": 1
     },
     "OCRBench": {
      "rescued": 2,
@@ -261,64 +406,201 @@
     }
    }
   },
-  "U100_vs_BASE": {
-   "delta": 0.5011503814135398,
+  "DS025_vs_BASE": {
+   "delta": 0.5000000000000004,
    "ci": [
-    -2.0946307517978364,
-    3.1724739534811968
+    -0.8203635038787069,
+    1.9248123759188016
    ],
    "per_ds": {
-    "TextVQA_VAL": 1.19999999999999,
-    "DocVQA_VAL": -3.696548855759374,
-    "OCRBench": 4.0000000000000036
-   },
-   "rescued": 13,
-   "broken": 9,
-   "rescue_break_per_ds": {
-    "TextVQA_VAL": {
-     "rescued": 5,
-     "broken": 2
-    },
-    "DocVQA_VAL": {
-     "rescued": 4,
-     "broken": 7
-    },
-    "OCRBench": {
-     "rescued": 4,
-     "broken": 0
-    }
-   }
-  },
-  "S025_vs_BASE": {
-   "delta": 1.297979797979798,
-   "ci": [
-    0.017652543873916973,
-    2.6828507105004467
-   ],
-   "per_ds": {
-    "TextVQA_VAL": 2.300000000000002,
-    "DocVQA_VAL": -0.4060606060606098,
+    "TextVQA_VAL": 1.3000000000000012,
+    "DocVQA_VAL": -1.8000000000000016,
     "OCRBench": 2.0000000000000018
    },
-   "rescued": 5,
-   "broken": 1,
+   "rescued": 4,
+   "broken": 2,
    "rescue_break_per_ds": {
     "TextVQA_VAL": {
-     "rescued": 3,
+     "rescued": 2,
      "broken": 0
     },
     "DocVQA_VAL": {
      "rescued": 0,
-     "broken": 1
+     "broken": 2
     },
     "OCRBench": {
      "rescued": 2,
      "broken": 0
     }
    }
+  },
+  "B2BASE_vs_BASE": {
+   "delta": -0.6023534701166271,
+   "ci": [
+    -3.3173090773422675,
+    2.0698669266519367
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 0.9000000000000008,
+    "DocVQA_VAL": -4.707060410349884,
+    "OCRBench": 2.0000000000000018
+   },
+   "rescued": 12,
+   "broken": 12,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 4,
+     "broken": 1
+    },
+    "DocVQA_VAL": {
+     "rescued": 3,
+     "broken": 8
+    },
+    "OCRBench": {
+     "rescued": 5,
+     "broken": 3
+    }
+   }
+  },
+  "B2U025_vs_BASE": {
+   "delta": 0.945415890152738,
+   "ci": [
+    -1.8949425682806904,
+    3.8816983167892567
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 1.9000000000000017,
+    "DocVQA_VAL": -3.063752329541791,
+    "OCRBench": 4.0000000000000036
+   },
+   "rescued": 16,
+   "broken": 11,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 5,
+     "broken": 1
+    },
+    "DocVQA_VAL": {
+     "rescued": 5,
+     "broken": 8
+    },
+    "OCRBench": {
+     "rescued": 6,
+     "broken": 2
+    }
+   }
+  },
+  "K128BASE_vs_BASE": {
+   "delta": -8.16577582728899,
+   "ci": [
+    -12.089092250339368,
+    -4.124608021358894
+   ],
+   "per_ds": {
+    "TextVQA_VAL": -2.100000000000013,
+    "DocVQA_VAL": -18.397327481866952,
+    "OCRBench": -4.0000000000000036
+   },
+   "rescued": 10,
+   "broken": 30,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 3,
+     "broken": 3
+    },
+    "DocVQA_VAL": {
+     "rescued": 5,
+     "broken": 21
+    },
+    "OCRBench": {
+     "rescued": 2,
+     "broken": 6
+    }
+   }
+  },
+  "K128U025_vs_BASE": {
+   "delta": -8.380518454531611,
+   "ci": [
+    -12.398978313231536,
+    -4.180337223509696
+   ],
+   "per_ds": {
+    "TextVQA_VAL": -4.799999999999994,
+    "DocVQA_VAL": -17.34155536359484,
+    "OCRBench": -3.0000000000000027
+   },
+   "rescued": 10,
+   "broken": 32,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 2,
+     "broken": 5
+    },
+    "DocVQA_VAL": {
+     "rescued": 6,
+     "broken": 22
+    },
+    "OCRBench": {
+     "rescued": 2,
+     "broken": 5
+    }
+   }
+  },
+  "B2K128BASE_vs_BASE": {
+   "delta": -17.391037917852803,
+   "ci": [
+    -22.146061028791664,
+    -12.82965795674405
+   ],
+   "per_ds": {
+    "TextVQA_VAL": -11.900000000000011,
+    "DocVQA_VAL": -31.273113753558402,
+    "OCRBench": -8.999999999999996
+   },
+   "rescued": 7,
+   "broken": 56,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 1,
+     "broken": 12
+    },
+    "DocVQA_VAL": {
+     "rescued": 4,
+     "broken": 33
+    },
+    "OCRBench": {
+     "rescued": 2,
+     "broken": 11
+    }
+   }
+  },
+  "B2K128U025_vs_BASE": {
+   "delta": -16.34688577370066,
+   "ci": [
+    -21.142184977537692,
+    -11.88359461460941
+   ],
+   "per_ds": {
+    "TextVQA_VAL": -12.00000000000001,
+    "DocVQA_VAL": -29.04065732110197,
+    "OCRBench": -7.9999999999999964
+   },
+   "rescued": 7,
+   "broken": 53,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 1,
+     "broken": 12
+    },
+    "DocVQA_VAL": {
+     "rescued": 4,
+     "broken": 31
+    },
+    "OCRBench": {
+     "rescued": 2,
+     "broken": 10
+    }
+   }
   }
- },
- "winner": "U025",
- "winner_rule": "max DEV macro among candidates; ties -> U025 then simpler (frozen)",
- "any_positive": true
+ }
 }

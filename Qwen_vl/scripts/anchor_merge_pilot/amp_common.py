@@ -49,10 +49,14 @@ os.makedirs(OUT_DIR, exist_ok=True)
 DS_LIST = ["TextVQA_VAL", "DocVQA_VAL", "OCRBench"]
 K = 256
 
-# frozen arm registry (protocol §3 / §6)
+# frozen arm registry (protocol §3 / §6; round-2 axes appended per
+# docs/anchor_merge_pilot_round2_protocol.md)
 DEV_ARMS = ["BASE", "U025", "U050", "U100", "S025"]
 CANDIDATES = ["U025", "U050", "U100", "S025"]
 CONFIRM_CONTROLS = ["NORM", "SHUF"]
+R2_SCOPES = ["MAIN025", "DS025"]           # BOTH == U025 (round 1)
+R2_B2 = ["B2BASE", "B2U025"]
+R2_K128 = ["K128BASE", "K128U025", "B2K128BASE", "B2K128U025"]
 
 SHUF_SEED = 20261001          # protocol §6 (frozen)
 BOOT_SEED = 20261001
@@ -62,20 +66,40 @@ N_BOOT = 5000
 def arm_cfg(name: str, winner_lam: float = 0.0,
             winner_kind: str = "uniform") -> dict:
     if name == "BASE":
-        return dict(kind="base", lam=0.0)
+        return dict(kind="base", lam=0.0, selector="b1", K=256)
     if name == "U025":
-        return dict(kind="uniform", lam=0.25)
+        return dict(kind="uniform", lam=0.25, selector="b1", K=256)
     if name == "U050":
-        return dict(kind="uniform", lam=0.50)
+        return dict(kind="uniform", lam=0.50, selector="b1", K=256)
     if name == "U100":
-        return dict(kind="uniform", lam=1.00)
+        return dict(kind="uniform", lam=1.00, selector="b1", K=256)
     if name == "S025":
-        return dict(kind="sim", lam=0.25, tau=0.1)
+        return dict(kind="sim", lam=0.25, tau=0.1, selector="b1", K=256)
     if name == "NORM":       # winner's y, rescaled to its own norm
-        return dict(kind="norm", lam=winner_lam, winner_kind=winner_kind)
+        return dict(kind="norm", lam=winner_lam, winner_kind=winner_kind,
+                    selector="b1", K=256)
     if name == "SHUF":       # winner's delta, permuted + rescaled
         return dict(kind="shuf", lam=winner_lam, seed=SHUF_SEED,
-                    winner_kind=winner_kind)
+                    winner_kind=winner_kind, selector="b1", K=256)
+    # ---------------- round 2 (docs/anchor_merge_pilot_round2_protocol.md) --
+    if name == "MAIN025":    # aggregate ONLY the main feature stream
+        return dict(kind="uniform", lam=0.25, scope="main",
+                    selector="b1", K=256)
+    if name == "DS025":      # aggregate ONLY the three DeepStack streams
+        return dict(kind="uniform", lam=0.25, scope="ds",
+                    selector="b1", K=256)
+    if name == "B2BASE":     # block8 selection, identity gather
+        return dict(kind="base", lam=0.0, selector="b2", K=256)
+    if name == "B2U025":     # block8 anchors + uniform merge
+        return dict(kind="uniform", lam=0.25, selector="b2", K=256)
+    if name == "K128BASE":   # official facility @128, identity gather
+        return dict(kind="base", lam=0.0, selector="b1", K=128)
+    if name == "K128U025":
+        return dict(kind="uniform", lam=0.25, selector="b1", K=128)
+    if name == "B2K128BASE":
+        return dict(kind="base", lam=0.0, selector="b2", K=128)
+    if name == "B2K128U025":
+        return dict(kind="uniform", lam=0.25, selector="b2", K=128)
     raise KeyError(name)
 
 
@@ -211,22 +235,30 @@ def merge_stream(feat: torch.Tensor, keep: torch.Tensor, dropped_idx,
 
 
 # ---------------------------------------------------------------------------
-# bank (frozen S + assignment, protocol §3.3)
+# bank (frozen S + assignment, protocol §3.3; round-2 banks carry the
+# selector and budget in the filename)
 # ---------------------------------------------------------------------------
-def bank_path(split: str, ds: str) -> str:
-    return os.path.join(OUT_DIR, f"bank_{split}_{ds}.json.gz")
+def bank_path(split: str, ds: str, selector: str = "b1",
+              K: int = 256, legacy_ok: bool = True) -> str:
+    if (selector, K) == ("b1", 256) and legacy_ok:
+        legacy = os.path.join(OUT_DIR, f"bank_{split}_{ds}.json.gz")
+        if os.path.exists(legacy):
+            return legacy
+    return os.path.join(OUT_DIR,
+                        f"bank_{split}_{selector}_K{K}_{ds}.json.gz")
 
 
-def load_bank(split: str, ds: str) -> dict:
-    p = bank_path(split, ds)
+def load_bank(split: str, ds: str, selector: str = "b1", K: int = 256) -> dict:
+    p = bank_path(split, ds, selector, K)
     if not os.path.exists(p):
         raise FileNotFoundError(p)
     with gzip.open(p, "rt") as f:
         return json.load(f)
 
 
-def bank_sha256(split: str, ds: str) -> str:
-    with open(bank_path(split, ds), "rb") as f:
+def bank_sha256(split: str, ds: str, selector: str = "b1",
+                K: int = 256) -> str:
+    with open(bank_path(split, ds, selector, K), "rb") as f:
         return hashlib.sha256(f.read()).hexdigest()
 
 
@@ -239,7 +271,7 @@ def run_one(eng, msg, ds, bank_rec, cfg: dict, max_new_tokens: int = 2048,
             diag: Optional[dict] = None):
     """One generation for one arm.  Returns engine.generate-shaped dict."""
     timings = timings if timings is not None else {}
-    K_ = 256
+    K_ = int(cfg.get("K", 256))
     wall0 = time.perf_counter()
     prep = eng.prepare(msg, ds)
     timings["image_preprocess_ms"] = (time.perf_counter() - wall0) * 1e3
@@ -257,6 +289,7 @@ def run_one(eng, msg, ds, bank_rec, cfg: dict, max_new_tokens: int = 2048,
         keep = torch.arange(n_vis, device=V.device)
 
     kind, lam = cfg["kind"], cfg.get("lam", 0.0)
+    scope = cfg.get("scope", "both")      # 'both' | 'main' | 'ds' (round 2)
     V_sel = DS_sel = None
     perm = None
     if kind not in ("base",):
@@ -267,14 +300,17 @@ def run_one(eng, msg, ds, bank_rec, cfg: dict, max_new_tokens: int = 2048,
             g.manual_seed(int(cfg["seed"]))
             perm = torch.randperm(keep.numel(), generator=g).to(V.device)
         wk = cfg.get("winner_kind")
-        y = merge_stream(V, keep, dropped_idx, gid, kind, lam,
-                         cfg.get("tau", 0.1), sim, perm, winner_kind=wk)
-        ys = [merge_stream(ds_, keep, dropped_idx, gid, kind, lam,
-                           cfg.get("tau", 0.1), sim, perm, winner_kind=wk)
-              for ds_ in DS]
+        if scope in ("both", "main"):
+            y = merge_stream(V, keep, dropped_idx, gid, kind, lam,
+                             cfg.get("tau", 0.1), sim, perm, winner_kind=wk)
+            V_sel = y
+        if scope in ("both", "ds"):
+            ys = [merge_stream(ds_, keep, dropped_idx, gid, kind, lam,
+                               cfg.get("tau", 0.1), sim, perm,
+                               winner_kind=wk) for ds_ in DS]
+            DS_sel = ys
         torch.cuda.synchronize()
         timings["merge_ms"] = (time.perf_counter() - t0) * 1e3
-        V_sel, DS_sel = y, ys
 
     ev = [torch.cuda.Event(enable_timing=True) for _ in range(2)]
     ev[0].record()

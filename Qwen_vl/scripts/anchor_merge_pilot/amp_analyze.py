@@ -26,13 +26,16 @@ ACC_DIR = os.path.join(AC.OUT_DIR, "acc")
 
 
 def load_scores(split, arms):
+    """K/selector-agnostic: each arm's shard dir carries its own K."""
+    import glob as _glob
     out = {}
     for arm in arms:
         for ds in AC.DS_LIST:
-            p = os.path.join(ACC_DIR, split, arm, "K256", f"{ds}_score.json")
-            if not os.path.exists(p):
+            hits = sorted(_glob.glob(os.path.join(
+                ACC_DIR, split, arm, "K*", f"{ds}_score.json")))
+            if not hits:
                 continue
-            s = json.load(open(p))
+            s = json.load(open(hits[-1]))
             if not s.get("per_question"):
                 continue
             out[(arm, ds)] = s
@@ -113,9 +116,12 @@ def run_quality(scores, arm, split):
     for ds in AC.DS_LIST:
         if (arm, ds) not in scores:
             continue
-        shard = os.path.join(ACC_DIR, split, arm, "K256", f"{ds}.json")
-        if not os.path.exists(shard):
+        import glob as _glob
+        hits = sorted(_glob.glob(os.path.join(
+            ACC_DIR, split, arm, "K*", f"{ds}.json")))
+        if not hits:
             continue
+        shard = hits[-1]
         sh = json.load(open(shard))
         recs = list(sh["records"].values())
         n = len(recs)
@@ -203,7 +209,7 @@ def main():
     result["contrasts"] = contrasts
 
     # winner rule (dev split, or explicit for confirm)
-    if args.split == "dev" and all(table[a]["macro"] is not None
+    if args.split == "dev" and all(a in table and table[a]["macro"] is not None
                                    for a in AC.CANDIDATES):
         best = max(AC.CANDIDATES, key=lambda a: table[a]["macro"])
         ties = [a for a in AC.CANDIDATES
