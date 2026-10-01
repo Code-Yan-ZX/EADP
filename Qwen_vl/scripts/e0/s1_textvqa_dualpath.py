@@ -137,18 +137,26 @@ def run_analyze():
     import e0_analyze
 
     def per_q_of(arm_id):
-        """Per-question eval_score from the vlmeval detail file, keyed by the
-        dataset's original row id (the detail `index` column)."""
-        p = os.path.join(ACC_DIR, arm_id, f"K{K}", f"{DS}_pred_results.xlsx")
-        d = pd.read_excel(p)
-        s = {str(int(r["index"])): float(r["eval_score"])
-             for _, r in d.iterrows()}
-        off = json.load(open(os.path.join(ACC_DIR, arm_id, f"K{K}",
-                                          f"{DS}_score.json")))["official"]
-        return s, off
+        """Per-question eval_score keyed by DEV positional index: the detail
+        rows follow the shard's sorted positions 1:1 (the detail's own
+        `index` column is the dataset's global id, NOT a row position)."""
+        base = os.path.join(ACC_DIR, arm_id, f"K{K}", DS)
+        shard = json.load(open(base + ".json"))
+        positions = sorted(int(k) for k in shard["records"])
+        d = pd.read_excel(base + "_pred_results.xlsx")
+        if len(positions) != len(d):
+            raise SystemExit(f"{arm_id}: shard/detail size mismatch "
+                             f"({len(positions)} vs {len(d)})")
+        s = {str(pos): float(sc) for pos, sc in zip(positions, d["eval_score"])}
+        ids = [int(v) for v in d["index"]]
+        off = json.load(open(base + "_score.json"))["official"]
+        return s, ids, off
 
-    pq_leg, off_leg = per_q_of(ARM_ID)
-    pq_nat, off_nat = per_q_of("b0")
+    pq_leg, ids_leg, off_leg = per_q_of(ARM_ID)
+    pq_nat, ids_nat, off_nat = per_q_of("b0")
+    if ids_leg != ids_nat:
+        raise SystemExit("detail row order mismatch between arms; refusing "
+                         "to pair by position (S0 discipline)")
     common_idx = sorted(set(pq_leg) & set(pq_nat), key=int)
     if len(common_idx) < 300:
         print(f"[analyze] WARNING: only {len(common_idx)} common rows")

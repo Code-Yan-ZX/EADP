@@ -71,6 +71,11 @@
    "TextVQA_VAL"
   ],
   [
+   "b0legacy",
+   1024,
+   "TextVQA_VAL"
+  ],
+  [
    "b2",
    64,
    "ChartQA_TEST"
@@ -455,77 +460,244 @@
   "b0|K=1024": {
    "ocr": 65.78204734377442,
    "general": 0.75,
-   "total": 33.26602367188721
+   "total": 33.26602367188721,
+   "missing_ocr": [],
+   "missing_general": []
   },
   "rres256|K=1024": {
    "ocr": 31.224255490286154,
    "general": null,
-   "total": 31.224255490286154
+   "total": 31.224255490286154,
+   "missing_ocr": [],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
   },
   "visionzip|K=64": {
    "ocr": 25.48635115928349,
    "general": null,
-   "total": 25.48635115928349
+   "total": 25.48635115928349,
+   "missing_ocr": [],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
   },
   "visionzip|K=256": {
    "ocr": 55.4758373713088,
    "general": 0.75,
-   "total": 28.1129186856544
+   "total": 28.1129186856544,
+   "missing_ocr": [],
+   "missing_general": []
   },
   "pdrop|K=64": {
    "ocr": 27.230391719688118,
    "general": null,
-   "total": 27.230391719688118
+   "total": 27.230391719688118,
+   "missing_ocr": [],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
   },
   "pdrop|K=256": {
    "ocr": 35.287297280408836,
    "general": 0.75,
-   "total": 18.018648640204418
+   "total": 18.018648640204418,
+   "missing_ocr": [],
+   "missing_general": []
   },
   "rres512|K=1024": {
    "ocr": 64.43419476914485,
    "general": 0.75,
-   "total": 32.592097384572426
+   "total": 32.592097384572426,
+   "missing_ocr": [],
+   "missing_general": []
+  },
+  "b0legacy|K=1024": {
+   "ocr": 75.33333333333333,
+   "general": null,
+   "total": 75.33333333333333,
+   "missing_ocr": [
+    "DocVQA_VAL",
+    "OCRBench",
+    "ChartQA_TEST"
+   ],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
   },
   "b2|K=64": {
    "ocr": 25.11016072725659,
    "general": null,
-   "total": 25.11016072725659
+   "total": 25.11016072725659,
+   "missing_ocr": [],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
   },
   "b2|K=256": {
    "ocr": 58.595542574001904,
    "general": 0.75,
-   "total": 29.672771287000952
+   "total": 29.672771287000952,
+   "missing_ocr": [],
+   "missing_general": []
   },
   "a2|K=256": {
    "ocr": 51.49206545271998,
    "general": null,
-   "total": 51.49206545271998
+   "total": 51.49206545271998,
+   "missing_ocr": [
+    "ChartQA_TEST"
+   ],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
   },
   "a1|K=256": {
    "ocr": 47.308408840654856,
    "general": null,
-   "total": 47.308408840654856
+   "total": 47.308408840654856,
+   "missing_ocr": [
+    "ChartQA_TEST"
+   ],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
   },
   "cdpruner|K=256": {
    "ocr": 56.422793505833766,
    "general": 0.75,
-   "total": 28.586396752916883
+   "total": 28.586396752916883,
+   "missing_ocr": [],
+   "missing_general": []
   },
   "fastv|K=64": {
    "ocr": 6.557391543199664,
    "general": null,
-   "total": 6.557391543199664
+   "total": 6.557391543199664,
+   "missing_ocr": [],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
   },
   "fastv|K=256": {
    "ocr": 22.776342492816582,
    "general": 0.75,
-   "total": 11.763171246408291
+   "total": 11.763171246408291,
+   "missing_ocr": [],
+   "missing_general": []
   },
   "divprune|K=256": {
    "ocr": 57.50322036982796,
    "general": 0.75,
-   "total": 29.126610184913975
+   "total": 29.126610184913975,
+   "missing_ocr": [],
+   "missing_general": []
+  }
+ },
+ "macros_coverage": {
+  "rres256|K=1024": {
+   "missing_ocr": [],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
+  },
+  "visionzip|K=64": {
+   "missing_ocr": [],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
+  },
+  "pdrop|K=64": {
+   "missing_ocr": [],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
+  },
+  "b0legacy|K=1024": {
+   "missing_ocr": [
+    "DocVQA_VAL",
+    "OCRBench",
+    "ChartQA_TEST"
+   ],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
+  },
+  "b2|K=64": {
+   "missing_ocr": [],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
+  },
+  "a2|K=256": {
+   "missing_ocr": [
+    "ChartQA_TEST"
+   ],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
+  },
+  "a1|K=256": {
+   "missing_ocr": [
+    "ChartQA_TEST"
+   ],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
+  },
+  "fastv|K=64": {
+   "missing_ocr": [],
+   "missing_general": [
+    "MMBench_DEV_EN_V11",
+    "MMStar",
+    "RealWorldQA",
+    "POPE"
+   ]
   }
  },
  "paired_vs_b2": {
@@ -873,18 +1045,30 @@
   }
  },
  "D1": {
-  "rule": "|native B2 - A1| >= 2 macro with CI excluding 0",
-  "ocr_datasets_delta_b2_minus_a1": 0.07510753218630233,
+  "rule": "|native B2 - A1| >= 2 macro points with CI excluding 0",
   "per_ds": [
-   -0.09846347930884154,
-   0.03757028189874428,
-   -0.1644293991488097
+   {
+    "ds": "TextVQA_VAL",
+    "n": 300,
+    "mean_b2_minus_a1": 0.09833333333333333
+   },
+   {
+    "ds": "DocVQA_VAL",
+    "n": 300,
+    "mean_b2_minus_a1": -0.03729405192032014
+   },
+   {
+    "ds": "OCRBench",
+    "n": 164,
+    "mean_b2_minus_a1": 0.16463414634146342
+   }
   ],
+  "macro_delta_b2_minus_a1": 0.07522447591815887,
   "ci": [
-   -0.08422490143865491,
-   -0.03496423315132866
+   0.048879939605979764,
+   0.10145757559633387
   ],
-  "fires": false
+  "fires": true
  },
  "D3": {
   "rule": "ViTshare>=0.5 & PACE TTFT -15% & PACE OCR -2 -> E1; PACE OCR no-drop & faster -> occupied; ViTshare<0.35 -> stop",

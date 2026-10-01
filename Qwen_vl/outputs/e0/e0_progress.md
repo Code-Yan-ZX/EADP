@@ -165,3 +165,60 @@ not obviously in the engine. Suspects, in order:
    CONTRIBUTING NOTHING (macros over 1-2 datasets only).
 D1/D3 conclusions are ON HOLD until this is root-caused. Do not cite the
 numbers above.
+
+## ✅ 2026-10-02 — BLOCKED 销案（S0/S1/S2 完成）
+
+**结论：09-30 的"异常"没有一个来自预测生成；全部是评分/参照层的问题。
+预测 shard 有效，无需重跑。**
+
+### S0 — 代码 diff（无 GPU）
+
+`discovery/common.py`（build_message）自 M1 (796d7f9) 起零改动；e0 与存档
+SAGE-conf 管线用同一个 `common.build_message`（sage_deploy.py:70），且 N5
+已端到端 32/32 复现 → 嫌疑 #1（消息路径不同）不成立。
+
+补丁（commit 4e01e0c）：`e0_accuracy.run_score` 空 official / evaluate 异常
+= 硬失败（写 `score_failures.jsonl`，非零退出，不再静默写空 dict）；
+`e0_analyze.macros` 显式记录 `missing_ocr/missing_general`，决策规则经
+`require_panel` 拒读不完整面板；`official_main` 支持嵌套 dict。
+
+### S2 — OCRBench 子集公式（嫌疑 #2，证实）
+
+official Final Score 的类别聚合在 164 行子集上崩溃（s2
+_ocrbench_subset_check.json，逐题 scorer 为 round-1 验证版 27/27）：
+
+| arm | official-on-subset | 逐题重评 |
+|---|---:|---:|
+| a1 (legacy B2) | 10.3 | **62.80**（历史带：sage_conf_B2 62.08） |
+| b0 | 14.3 | 87.20 |
+| b2 | 13.1 | 79.88 |
+
+→ "OCRBench −48" 为子集公式假象。**规定：official OCRBench 分只在全量集
+上报；DEV/子集一律用逐题分。**
+
+### S1 — TextVQA 双配置归因（嫌疑 #1 的行为学验证）
+
+同一 DEV-300 行，b0 (identity K=1024) legacy 配置（DS off + 1D pos，
+即历史 harness 配置，research_reset M2 §1.4）：**75.33**；native 配置：
+85.03。配对差 **+10.0 点 [cluster-bootstrap CI +5, +14]**（38/10，
+s1_dualpath.json）。75.33 落历史带（73.6 / sage_conf_B2 74.21）→
+"+11" 完全归因于 native 修复（DeepStack + 3D mRoPE），两侧数字各自有效。
+
+### D1 判定修复（原实现两处 bug）
+
+原 D1 段 (1) 对两臂 per_q `dict.values()` 直接逐元素相减（键集不对齐时
+静默错配，出现 mean 与 CI 矛盾）；(2) 阈值写成 2.0（per_q 为 0/1，2 点
+应为 0.02）。修复后（键对齐 + image-cluster bootstrap）：
+**D1 fires=True：native B2 − legacy A1 macro = +7.52 点 [CI +4.89,
++10.15]**（TV +9.83 / DV **−3.73** / OCR +16.46）。TextVQA 与 S1 的 b0
+归因（+10）交叉一致。DV 的 −3.73 如实记录。
+
+### 遗留（S3，未销案）
+
+FastV（per-q OCR 34.15）/ PDrop（54.88）仍显著低于其论文自报水平：查截断
+率与 in-LLM pruning × DeepStack 交互，或主表脚注 + 附录 sanity。其余端口
+（visionzip/divprune/cdpruner）逐题水平正常。D2/D3 仍 INCOMPLETE（perf
+文件不在），不影响本销案。
+
+**引用规则**：`e0_verdict.json` 的 official-on-subset OCRBench 数字作废；
+一切 DEV 对比用逐题分（本文件及 s1/s2 JSON）。

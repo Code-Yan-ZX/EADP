@@ -1,0 +1,25 @@
+{
+ "ds": "TextVQA_VAL",
+ "n": 300,
+ "native_b0_official": {
+  "Overall": "{0: 85.03333333333333}"
+ },
+ "legacy_b0_official": {
+  "Overall": {
+   "0": 75.33333333333333
+  }
+ },
+ "per_q_mean_native": 0.8503333333333334,
+ "per_q_mean_legacy": 0.7533333333333333,
+ "paired_native_minus_legacy": {
+  "delta": 0.09693471568520834,
+  "ci": [
+   0.052631578947368474,
+   0.1421755879118001
+  ],
+  "rescued": 38,
+  "broken": 10
+ },
+ "historical_reference": "sage_conf_B2 TextVQA 74.21 (n=240, legacy config, different 240-row panel); research_reset M2 \u00a71.4 legacy harness",
+ "verdict": null
+}

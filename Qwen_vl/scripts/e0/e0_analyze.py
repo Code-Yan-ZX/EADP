@@ -52,6 +52,11 @@ def official_main(ds, official):
             m = re.findall(r"-?\d+\.?\d*", v)   # MMBench circular round-trip
             if m:
                 return float(m[-1])
+        if isinstance(v, dict):          # e.g. {'Overall': {'0': 86.0}}
+            try:
+                return official_main(ds, v)
+            except KeyError:
+                continue
     raise KeyError(f"no headline in {official}")
 
 
@@ -247,44 +252,46 @@ def main():
     verdict["paired_vs_b2"] = contrasts
 
     # ---------------- D1 修复效应 ----------------
-    d1 = {"rule": "|native B2 - A1| >= 2 macro with CI excluding 0"}
+    d1 = {"rule": "|native B2 - A1| >= 2 macro points with CI excluding 0"}
     d1_need = ("a1", 256), ("b2", 256)
     d1_missing = [f"{a}|K={k}|{ds}" for (a, k) in d1_need
                   for ds in ("TextVQA_VAL", "DocVQA_VAL", "OCRBench")
-                  if (a, k, ds) not in scores]
+                  if (a, k, ds) not in scores
+                  or not scores[(a, k, ds)].get("per_question")]
     if d1_missing:
         d1["fires"] = None
         d1["note"] = f"missing per-question cells: {d1_missing}"
-    elif ("a1", 256, "TextVQA_VAL") in scores:
-        a1_vals, b2_vals, keys_all = [], [], None
+    else:
+        # macro over 3 datasets = mean of per-ds means (equal dataset weight).
+        # 2026-10-02 fix: align per-question keys (the previous elementwise
+        # subtraction of dict.values() silently misaligned questions) and
+        # threshold in points (per_q scores are 0/1, so 2 points == 0.02).
+        rng = np.random.default_rng(SEED)
+        per_ds = []
         for ds in ("TextVQA_VAL", "DocVQA_VAL", "OCRBench"):
             a1_pq = scores[("a1", 256, ds)]["per_question"]
-            b2_pq_d = scores[("b2", 256, ds)]["per_question"]
-            keys = image_keys(ds, sorted(set(a1_pq) & set(b2_pq_d), key=int))
-            d, lo, hi = paired_bootstrap(a1_pq, b2_pq_d, keys, keys)
-            a1_vals.append(d)
-        delta = -float(np.mean(a1_vals))   # A1 - B2
-        d1.update(ocr_datasets_delta_b2_minus_a1=-float(np.mean(a1_vals)),
-                  per_ds=a1_vals)
-        # CI for macro difference: bootstrap over datasets is not valid;
-        # use per-dataset CIs: fire only if every |delta| CI excludes 0 and
-        # mean |delta| >= 2 -> prereg's macro-level test approximated by the
-        # mean of per-dataset deltas with a pooled bootstrap over questions.
-        pooled_a1, pooled_b2 = [], []
-        for ds in ("TextVQA_VAL", "DocVQA_VAL", "OCRBench"):
-            pooled_a1 += list(scores[("a1", 256, ds)]["per_question"].values())
-            pooled_b2 += list(scores[("b2", 256, ds)]["per_question"].values())
-        rng = np.random.default_rng(SEED)
-        pooled = np.asarray(pooled_a1) - np.asarray(pooled_b2)
-        boots = [pooled[rng.integers(0, len(pooled), len(pooled))].mean()
-                 for _ in range(N_BOOT)]
-        ci = np.percentile(boots, [2.5, 97.5])
-        d1["ci"] = [float(ci[0]), float(ci[1])]
-        d1["fires"] = bool(abs(d1["ocr_datasets_delta_b2_minus_a1"]) >= 2.0
-                           and ci[0] * ci[1] > 0)
-    else:
-        d1["fires"] = None
-        d1["note"] = "A1 not run/present"
+            b2_pq = scores[("b2", 256, ds)]["per_question"]
+            keys = sorted(set(a1_pq) & set(b2_pq), key=int)
+            diff = np.asarray([b2_pq[i] - a1_pq[i] for i in keys])
+            img = image_keys(ds, keys)
+            cl = np.asarray([img[i] for i in keys])
+            uk = np.unique(cl)
+            idx_by_k = [np.where(cl == k)[0] for k in uk]
+            boots = []
+            for _ in range(N_BOOT):
+                sel = rng.choice(len(uk), len(uk), replace=True)
+                boots.append(diff[np.concatenate([idx_by_k[j] for j in sel])].mean())
+            per_ds.append(dict(ds=ds, n=len(keys),
+                               mean_b2_minus_a1=float(diff.mean()),
+                               boot=np.asarray(boots)))
+        d1["per_ds"] = [{k: v[k] for k in ("ds", "n", "mean_b2_minus_a1")}
+                        for v in per_ds]
+        macro = float(np.mean([v["mean_b2_minus_a1"] for v in per_ds]))
+        boot_macro = np.mean([v["boot"] for v in per_ds], axis=0)
+        lo, hi = np.percentile(boot_macro, [2.5, 97.5])
+        d1["macro_delta_b2_minus_a1"] = macro
+        d1["ci"] = [float(lo), float(hi)]
+        d1["fires"] = bool(abs(macro) >= 0.02 and lo * hi > 0)
     verdict["D1"] = d1
 
     # ---------------- D3 编码器轴 ----------------
