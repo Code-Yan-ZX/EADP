@@ -123,14 +123,38 @@ def load_scores():
 
 
 def macros(scores, arm, K):
-    """OCR macro, general macro, total macro (only over datasets present)."""
+    """OCR macro, general macro, total macro (only over datasets present).
+
+    S0 hardening (2026-10-02, after the 09-30 BLOCKED incident): a macro
+    computed over an incomplete panel used to be silently narrowed to the
+    datasets present.  Missing datasets are now reported in the returned
+    dict (`missing_ocr` / `missing_general`); any decision rule that
+    consumes an incomplete macro must go through `require_panel`, which
+    raises instead of deciding on partial evidence."""
     def macro(panel):
         vals = [official_main(ds, scores[(arm, K, ds)]["official"])
                 for ds in panel if (arm, K, ds) in scores]
         return float(np.mean(vals)) if len(vals) == len(panel) and vals else \
             (float(np.mean(vals)) if vals else None)
-    return dict(ocr=macro(OCR_PANEL), general=macro(GENERAL_PANEL),
-                total=macro(OCR_PANEL + GENERAL_PANEL))
+
+    def missing(panel):
+        return [ds for ds in panel if (arm, K, ds) not in scores]
+
+    out = dict(ocr=macro(OCR_PANEL), general=macro(GENERAL_PANEL),
+               total=macro(OCR_PANEL + GENERAL_PANEL))
+    out["missing_ocr"] = missing(OCR_PANEL)
+    out["missing_general"] = missing(GENERAL_PANEL)
+    return out
+
+
+def require_panel(m, panel_name, what):
+    """Refuse to let a decision rule read a macro whose panel is incomplete."""
+    missing = m.get(f"missing_{panel_name}")
+    if missing:
+        raise ValueError(
+            f"{what}: {panel_name} panel incomplete for this arm/K "
+            f"(missing {missing}); refusing to decide on partial evidence "
+            f"(S0 rule, 2026-10-02)")
 
 
 def image_keys(ds, rows):
@@ -191,6 +215,18 @@ def main():
     for (arm, K, ds) in list(scores):
         mtable.setdefault((arm, K), macros(scores, arm, K))
     verdict["macros"] = {f"{a}|K={k}": v for (a, k), v in mtable.items()}
+    # S0: surface every incomplete panel instead of silently narrowing macros
+    verdict["macros_coverage"] = {
+        f"{a}|K={k}": {"missing_ocr": m["missing_ocr"],
+                       "missing_general": m["missing_general"]}
+        for (a, k), m in mtable.items()
+        if m["missing_ocr"] or m["missing_general"]}
+    if verdict["macros_coverage"]:
+        print("!! INCOMPLETE PANELS (macros over present datasets only; "
+              "decision rules below refuse to read these):", flush=True)
+        for key, cov in verdict["macros_coverage"].items():
+            print(f"!!   {key}: missing_ocr={cov['missing_ocr']} "
+                  f"missing_general={cov['missing_general']}", flush=True)
 
     # paired contrasts vs native B2 (per dataset, per-question)
     b2_pq = {(k): scores.get(("b2", k, ds), {}).get("per_question")
@@ -212,7 +248,14 @@ def main():
 
     # ---------------- D1 修复效应 ----------------
     d1 = {"rule": "|native B2 - A1| >= 2 macro with CI excluding 0"}
-    if ("a1", 256, "TextVQA_VAL") in scores:
+    d1_need = ("a1", 256), ("b2", 256)
+    d1_missing = [f"{a}|K={k}|{ds}" for (a, k) in d1_need
+                  for ds in ("TextVQA_VAL", "DocVQA_VAL", "OCRBench")
+                  if (a, k, ds) not in scores]
+    if d1_missing:
+        d1["fires"] = None
+        d1["note"] = f"missing per-question cells: {d1_missing}"
+    elif ("a1", 256, "TextVQA_VAL") in scores:
         a1_vals, b2_vals, keys_all = [], [], None
         for ds in ("TextVQA_VAL", "DocVQA_VAL", "OCRBench"):
             a1_pq = scores[("a1", 256, ds)]["per_question"]
@@ -270,6 +313,8 @@ def main():
         if pace_ttft and ("pace", 256) in mtable and \
                 mtable[("pace", 256)]["ocr"] is not None and \
                 mtable[("b2", 256)]["ocr"] is not None:
+            require_panel(mtable[("pace", 256)], "ocr", "D3 (pace)")
+            require_panel(mtable[("b2", 256)], "ocr", "D3 (b2)")
             pace_ocr = mtable[("pace", 256)]["ocr"]
             b2_ocr = mtable[("b2", 256)]["ocr"]
             ttft_drop = 1 - pace_ttft / b2_ttft
@@ -297,11 +342,13 @@ def main():
     best25, best_name = None, None
     for arm in B235:
         if (arm, 256) in mtable and mtable[(arm, 256)]["ocr"] is not None:
+            require_panel(mtable[(arm, 256)], "ocr", f"D2/D4 ({arm})")
             v = mtable[(arm, 256)]["ocr"]
             if best25 is None or v > best25:
                 best25, best_name = v, arm
     d2["best24_25"] = {"arm": best_name, "ocr_macro": best25}
     if ("rres512", 1024) in mtable and mtable[("rres512", 1024)]["ocr"] is not None:
+        require_panel(mtable[("rres512", 1024)], "ocr", "D2 (rres512)")
         rres_ocr = mtable[("rres512", 1024)]["ocr"]
         d2["rres_ocr_macro"] = rres_ocr
         if best25 is not None and os.path.exists(perf_path):

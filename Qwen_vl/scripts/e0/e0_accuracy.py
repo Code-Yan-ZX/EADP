@@ -145,8 +145,23 @@ def run_gen(eng, args, plan):
 
 
 def run_score(args, plan):
+    """S0 hardening (2026-10-02, after the 09-30 BLOCKED incident):
+    an empty official dict or an evaluate() exception is a hard failure,
+    never a silently-written/partial _score.json.  Failures are appended to
+    outputs/e0/score_failures.jsonl and the process exits non-zero."""
     from vlmeval.dataset import build_dataset as vlmeval_build
     import pandas as pd
+
+    fail_log = os.path.join(OUT_DIR, "score_failures.jsonl")
+    failures = []
+
+    def record_failure(arm_id, K, ds, kind, detail):
+        entry = dict(arm=arm_id, K=K, ds=ds, kind=kind, detail=str(detail))
+        failures.append(entry)
+        with open(fail_log, "a") as f:
+            f.write(json.dumps(entry) + "\n")
+        print(f"[score FAIL] {arm_id} K={K} {ds}: {kind}: {detail}",
+              flush=True)
 
     arm, K = args.arm, args.K
     ds_list = args.ds.split(",") if args.ds else ALL_DATASETS
@@ -180,10 +195,16 @@ def run_score(args, plan):
             try:
                 res = dataset.evaluate(tsv)
             except Exception as e:
-                print(f"[score FAIL] {arm_id} K={K_eff} {ds}: {e}", flush=True)
+                record_failure(arm_id, K_eff, ds, "evaluate_exception", e)
                 continue
             if hasattr(res, "to_dict"):
                 res = res.to_dict()
+            if not res:
+                # never write an _score.json with empty official: that is the
+                # silent mode that produced the 09-30 BLOCKED macros
+                record_failure(arm_id, K_eff, ds, "empty_official",
+                               f"evaluate returned nothing for tsv={tsv}")
+                continue
             per_q = None
             det = path.replace(".json", "_pred_results.tsv")
             if os.path.exists(det):
@@ -198,6 +219,11 @@ def run_score(args, plan):
             with open(path.replace(".json", "_score.json"), "w") as f:
                 json.dump(summary, f, indent=1)
             print(f"[scored] {arm_id} K={K_eff} {ds}: {res}", flush=True)
+
+    if failures:
+        raise SystemExit(
+            f"run_score: {len(failures)} scoring failure(s) recorded in "
+            f"{fail_log}; _score.json for the affected cells was NOT written")
 
 
 def main():
