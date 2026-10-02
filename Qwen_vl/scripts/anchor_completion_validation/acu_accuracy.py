@@ -30,6 +30,7 @@ import sys
 import time
 
 import torch
+from statistics import mean as _mean
 
 import acu_common as AU
 from acu_common import common as C
@@ -158,21 +159,39 @@ def _per_q_ocerbench(shard, ds):
 
 
 def _per_q_generic(tsv, ds, shard):
-    """Extract per-row scores from the official results file when present."""
+    """Extract per-row scores from the official results file when present.
+
+    File naming differs per dataset (verified 2026-10-02 against live
+    evaluate() runs):
+      ChartQA/TextVQA/DocVQA : <stem>_results.xlsx  (eval_score / eval_match)
+      MMStar/RealWorldQA/MMBench: <stem>_exact_matching_result.xlsx (hit)
+      POPE                   : <stem>_auxmatch.xlsx (score bool per row)
+    """
     import numpy as np
     import pandas as pd
-    for det in (tsv.replace(".tsv", "_results.xlsx"),
-                tsv.replace(".tsv", "_results.tsv")):
+    stem = tsv[:-4] if tsv.endswith(".tsv") else tsv
+    candidates = [stem + "_results.xlsx", stem + "_results.tsv",
+                  stem + "_exact_matching_result.xlsx",
+                  stem + "_auxmatch.xlsx"]
+    positions = sorted(int(k) for k in shard["records"])
+    for det in candidates:
         if not os.path.exists(det):
             continue
         d = pd.read_excel(det) if det.endswith("xlsx") \
             else pd.read_csv(det, sep="\t")
-        positions = sorted(int(k) for k in shard["records"])
-        if "eval_score" in d.columns and "index" in d.columns:
+        col_hit = ("hit" if "hit" in d.columns
+                   else "score" if "score" in d.columns else None)
+        # index-mapping when the file's index column IS the row position;
+        # otherwise the results file preserves input order -> map by order
+        idx_match = ("index" in d.columns
+                     and set(d["index"].astype(int)) == set(positions)
+                     and len(d) == len(positions))
+        if "eval_score" in d.columns and "index" in d.columns \
+                and set(positions) <= set(d["index"].astype(int)) \
+                and len(d) >= len(positions):
             m = dict(zip(d["index"].astype(int),
                          d["eval_score"].astype(float)))
-            if set(positions) <= set(m):
-                return {str(p): float(m[p]) for p in positions}
+            return {str(p): float(m[p]) for p in positions}
         if "eval_match" in d.columns and len(d) == len(positions):
             per_q = {}
             for pos, (_, r) in zip(positions, d.iterrows()):
@@ -180,14 +199,38 @@ def _per_q_generic(tsv, ds, shard):
                 if isinstance(m, str):
                     m = ast.literal_eval(m)
                 m = list(m)
-                if ds in ("DocVQA_VAL",):
+                if ds == "DocVQA_VAL":
                     md = float(np.min(m))
                     hit = 0.0 if 1 - md < 0.5 else 1 - md
                 else:
                     hit = float(np.mean(m))
                 per_q[str(pos)] = hit
             return per_q
+        if idx_match:
+            m = dict(zip(d["index"].astype(int), d[col_hit].astype(float)))
+            return {str(p): float(1.0 if v else 0.0) if col_hit == "score"
+                    else float(v) for p, v in ((p, m[p]) for p in positions)}
+        if len(d) == len(positions):
+            # order-preserving mapping (e.g. MMBench 'index' is the dataset's
+            # own question id, not the iloc row)
+            vals = d[col_hit].astype(float).tolist()
+            return {str(p): float(1.0 if v else 0.0) if col_hit == "score"
+                    else float(v) for p, v in zip(positions, vals)}
     return None
+
+
+def _headline100(official: dict, ds: str):
+    """Headline on the 0-100 scale.  POPE official primary metric is
+    accuracy ('acc'; the 'Overall' key is F1 — disclosed in the report);
+    MMStar/RealWorldQA/MMBench return 0-1 fractions and are scaled."""
+    if ds == "POPE" and "acc" in official:
+        v = official["acc"]
+        val = v[0] if isinstance(v, dict) else v
+        return float(val)
+    h = _headline(official)
+    if h is not None and h <= 1.0000001:
+        h *= 100.0
+    return h
 
 
 def derive_fresh_formal(args, arm, ds):
@@ -282,14 +325,27 @@ def run_score(args):
                 m = 100.0 * sum(float(v) for v in per_q.values()) / len(per_q)
                 if ds == "OCRBench" and "Final Score" in res:
                     h = 100.0 * float(res["Final Score"]) / len(done)
-                else:
-                    h = _headline(res)
-                if h is not None:
                     diff = abs(m - h)
-                    # headline rounding granularity: OCRBench official is an
-                    # integer 0-1000 -> /100 step 0.1 on our scale when
-                    # normalized; others round to 0.1-1.0.  Fail beyond 0.05.
                     chk = diff <= 0.05
+                elif ds == "POPE":
+                    # official 'acc' = mean over the category-EXPLODED frame
+                    # (a row in k categories counts k times) — reproduce it
+                    # exactly; the per-question currency stays row-level.
+                    cats = [str(dataset.data.iloc[int(k)]["category"])
+                            .split(",") for k in done]
+                    exploded = [float(per_q[str(k)]) for k, cs in
+                                zip(done, cats) for _ in cs]
+                    h = _headline100(res, ds)
+                    diff = abs(100.0 * float(_mean(exploded)) - h)
+                    chk = diff <= 1e-6
+                    m = 100.0 * float(_mean([float(v) for v in
+                                              per_q.values()]))
+                else:
+                    h = _headline100(res, ds)
+                    if h is not None:
+                        diff = abs(m - h)
+                        # headline rounding granularity: fail beyond 0.05
+                        chk = diff <= 0.05
             if chk is False:
                 failures.append(fail(
                     arm, ds, "perq_headline_mismatch",
