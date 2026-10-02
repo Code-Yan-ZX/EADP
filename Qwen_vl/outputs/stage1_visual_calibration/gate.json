@@ -1,0 +1,142 @@
+{
+ "g1_pass": true,
+ "g1_n": 9,
+ "g2_pass": true,
+ "g2_n": 9,
+ "g3_smoke": {
+  "A/TextVQA_VAL": {
+   "selector_ms": 79.74204048514366,
+   "keep_n": 256,
+   "pred_len": 5,
+   "finite": true
+  },
+  "B/TextVQA_VAL": {
+   "selector_ms": 76.4218382537365,
+   "keep_n": 256,
+   "pred_len": 5,
+   "finite": true
+  },
+  "C/TextVQA_VAL": {
+   "selector_ms": 79.63552139699459,
+   "keep_n": 256,
+   "pred_len": 5,
+   "finite": true
+  },
+  "D/TextVQA_VAL": {
+   "selector_ms": 79.60178144276142,
+   "keep_n": 256,
+   "pred_len": 5,
+   "finite": true
+  },
+  "A/DocVQA_VAL": {
+   "selector_ms": 76.18664018809795,
+   "keep_n": 256,
+   "pred_len": 7,
+   "finite": true
+  },
+  "B/DocVQA_VAL": {
+   "selector_ms": 80.10068908333778,
+   "keep_n": 256,
+   "pred_len": 7,
+   "finite": true
+  },
+  "C/DocVQA_VAL": {
+   "selector_ms": 84.82443168759346,
+   "keep_n": 256,
+   "pred_len": 7,
+   "finite": true
+  },
+  "D/DocVQA_VAL": {
+   "selector_ms": 76.45877823233604,
+   "keep_n": 256,
+   "pred_len": 7,
+   "finite": true
+  },
+  "A/OCRBench": {
+   "selector_ms": 80.70033229887486,
+   "keep_n": 256,
+   "pred_len": 6,
+   "finite": true
+  },
+  "B/OCRBench": {
+   "selector_ms": 80.9381790459156,
+   "keep_n": 256,
+   "pred_len": 6,
+   "finite": true
+  },
+  "C/OCRBench": {
+   "selector_ms": 79.7432791441679,
+   "keep_n": 256,
+   "pred_len": 6,
+   "finite": true
+  },
+  "D/OCRBench": {
+   "selector_ms": 78.96794937551022,
+   "keep_n": 256,
+   "pred_len": 6,
+   "finite": true
+  }
+ },
+ "g4_corr": {
+  "A/TextVQA_VAL": {
+   "pearson": 0.9886,
+   "signal_pearson": -0.1096,
+   "keep_delta": 42
+  },
+  "B/TextVQA_VAL": {
+   "pearson": 0.9316,
+   "signal_pearson": -0.1096,
+   "keep_delta": 98
+  },
+  "C/TextVQA_VAL": {
+   "pearson": 0.7751,
+   "signal_pearson": -0.1096,
+   "keep_delta": 128
+  },
+  "D/TextVQA_VAL": {
+   "pearson": 0.9131,
+   "signal_pearson": 0.1307,
+   "keep_delta": 82
+  },
+  "A/DocVQA_VAL": {
+   "pearson": 0.9782,
+   "signal_pearson": -0.0109,
+   "keep_delta": 78
+  },
+  "B/DocVQA_VAL": {
+   "pearson": 0.8828,
+   "signal_pearson": -0.0109,
+   "keep_delta": 80
+  },
+  "C/DocVQA_VAL": {
+   "pearson": 0.6826,
+   "signal_pearson": -0.0109,
+   "keep_delta": 96
+  },
+  "D/DocVQA_VAL": {
+   "pearson": 0.8692,
+   "signal_pearson": -0.0314,
+   "keep_delta": 70
+  },
+  "A/OCRBench": {
+   "pearson": 0.9887,
+   "signal_pearson": -0.1742,
+   "keep_delta": 82
+  },
+  "B/OCRBench": {
+   "pearson": 0.9298,
+   "signal_pearson": -0.1742,
+   "keep_delta": 104
+  },
+  "C/OCRBench": {
+   "pearson": 0.7614,
+   "signal_pearson": -0.1742,
+   "keep_delta": 134
+  },
+  "D/OCRBench": {
+   "pearson": 0.923,
+   "signal_pearson": 0.0676,
+   "keep_delta": 100
+  }
+ }
+}

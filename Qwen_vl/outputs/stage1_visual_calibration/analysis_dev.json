@@ -1,0 +1,341 @@
+{
+ "split": "dev",
+ "arms": [
+  "BASE",
+  "A",
+  "B",
+  "C",
+  "D"
+ ],
+ "table": {
+  "BASE": {
+   "per_ds": {
+    "TextVQA_VAL": 78.7,
+    "DocVQA_VAL": 78.77225008178955,
+    "OCRBench": 86.0
+   },
+   "macro": 81.15741669392985,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  },
+  "A": {
+   "per_ds": {
+    "TextVQA_VAL": 81.4,
+    "DocVQA_VAL": 71.89490263865264,
+    "OCRBench": 86.0
+   },
+   "macro": 79.76496754621755,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  },
+  "B": {
+   "per_ds": {
+    "TextVQA_VAL": 79.10000000000001,
+    "DocVQA_VAL": 73.94745324120323,
+    "OCRBench": 87.0
+   },
+   "macro": 80.01581774706774,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  },
+  "C": {
+   "per_ds": {
+    "TextVQA_VAL": 80.70000000000002,
+    "DocVQA_VAL": 76.18818334443334,
+    "OCRBench": 88.0
+   },
+   "macro": 81.62939444814445,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  },
+  "D": {
+   "per_ds": {
+    "TextVQA_VAL": 76.9,
+    "DocVQA_VAL": 77.2103889896653,
+    "OCRBench": 87.0
+   },
+   "macro": 80.37012966322176,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 100,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  }
+ },
+ "contrasts": {
+  "A_vs_BASE": {
+   "delta": -1.3924491477123047,
+   "ci": [
+    -3.6853189867466405,
+    1.1141754212819557
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 2.7000000000000024,
+    "DocVQA_VAL": -6.877347443136916,
+    "OCRBench": 0.0
+   },
+   "rescued": 7,
+   "broken": 11,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 3,
+     "broken": 0
+    },
+    "DocVQA_VAL": {
+     "rescued": 3,
+     "broken": 10
+    },
+    "OCRBench": {
+     "rescued": 1,
+     "broken": 1
+    }
+   }
+  },
+  "B_vs_BASE": {
+   "delta": -1.1415989468621066,
+   "ci": [
+    -3.653106060412572,
+    1.4553835009688987
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 0.40000000000000036,
+    "DocVQA_VAL": -4.824796840586321,
+    "OCRBench": 1.0000000000000009
+   },
+   "rescued": 8,
+   "broken": 12,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 2,
+     "broken": 1
+    },
+    "DocVQA_VAL": {
+     "rescued": 3,
+     "broken": 9
+    },
+    "OCRBench": {
+     "rescued": 3,
+     "broken": 2
+    }
+   }
+  },
+  "C_vs_BASE": {
+   "delta": 0.47197775421459937,
+   "ci": [
+    -2.3233689338103938,
+    3.4979869440531672
+   ],
+   "per_ds": {
+    "TextVQA_VAL": 2.000000000000013,
+    "DocVQA_VAL": -2.5840667373562165,
+    "OCRBench": 2.0000000000000018
+   },
+   "rescued": 12,
+   "broken": 10,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 3,
+     "broken": 0
+    },
+    "DocVQA_VAL": {
+     "rescued": 6,
+     "broken": 9
+    },
+    "OCRBench": {
+     "rescued": 3,
+     "broken": 1
+    }
+   }
+  },
+  "D_vs_BASE": {
+   "delta": -0.7872870307080837,
+   "ci": [
+    -3.142225133049423,
+    1.3908450136630557
+   ],
+   "per_ds": {
+    "TextVQA_VAL": -1.8000000000000016,
+    "DocVQA_VAL": -1.5618610921242504,
+    "OCRBench": 1.0000000000000009
+   },
+   "rescued": 9,
+   "broken": 7,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 2,
+     "broken": 2
+    },
+    "DocVQA_VAL": {
+     "rescued": 5,
+     "broken": 4
+    },
+    "OCRBench": {
+     "rescued": 2,
+     "broken": 1
+    }
+   }
+  }
+ },
+ "overlap_vs_base": {
+  "A": {
+   "TextVQA_VAL": {
+    "overlap": 0.8786328125,
+    "n_changed": 100,
+    "n": 100
+   },
+   "DocVQA_VAL": {
+    "overlap": 0.8842578125,
+    "n_changed": 100,
+    "n": 100
+   },
+   "OCRBench": {
+    "overlap": 0.880703125,
+    "n_changed": 100,
+    "n": 100
+   }
+  },
+  "B": {
+   "TextVQA_VAL": {
+    "overlap": 0.7978125,
+    "n_changed": 100,
+    "n": 100
+   },
+   "DocVQA_VAL": {
+    "overlap": 0.806796875,
+    "n_changed": 100,
+    "n": 100
+   },
+   "OCRBench": {
+    "overlap": 0.7954296875,
+    "n_changed": 100,
+    "n": 100
+   }
+  },
+  "C": {
+   "TextVQA_VAL": {
+    "overlap": 0.72953125,
+    "n_changed": 100,
+    "n": 100
+   },
+   "DocVQA_VAL": {
+    "overlap": 0.7479296875,
+    "n_changed": 100,
+    "n": 100
+   },
+   "OCRBench": {
+    "overlap": 0.7217578125,
+    "n_changed": 100,
+    "n": 100
+   }
+  },
+  "D": {
+   "TextVQA_VAL": {
+    "overlap": 0.80640625,
+    "n_changed": 100,
+    "n": 100
+   },
+   "DocVQA_VAL": {
+    "overlap": 0.8108203125,
+    "n_changed": 100,
+    "n": 100
+   },
+   "OCRBench": {
+    "overlap": 0.7984375,
+    "n_changed": 100,
+    "n": 100
+   }
+  }
+ },
+ "go_kill": {
+  "best_arm": "C",
+  "best_delta": 0.47197775421459937,
+  "verdict": "GO"
+ }
+}

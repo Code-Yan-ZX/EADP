@@ -1,0 +1,119 @@
+{
+ "split": "confirm",
+ "arms": [
+  "BASE",
+  "C"
+ ],
+ "table": {
+  "BASE": {
+   "per_ds": {
+    "TextVQA_VAL": 83.29999999999998,
+    "DocVQA_VAL": 76.5262983068655,
+    "OCRBench": 72.5
+   },
+   "macro": 77.44209943562183,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  },
+  "C": {
+   "per_ds": {
+    "TextVQA_VAL": 82.75,
+    "DocVQA_VAL": 71.95724776136471,
+    "OCRBench": 73.5
+   },
+   "macro": 76.06908258712157,
+   "quality": {
+    "TextVQA_VAL": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "DocVQA_VAL": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    },
+    "OCRBench": {
+     "n": 200,
+     "empty": 0,
+     "truncated": 0,
+     "degenerate_repeat": 0
+    }
+   }
+  }
+ },
+ "contrasts": {
+  "C_vs_BASE": {
+   "delta": -1.373016848500256,
+   "ci": [
+    -3.554516213423009,
+    0.8339356151324563
+   ],
+   "per_ds": {
+    "TextVQA_VAL": -0.5499999999999838,
+    "DocVQA_VAL": -4.569050545500786,
+    "OCRBench": 1.0000000000000009
+   },
+   "rescued": 20,
+   "broken": 30,
+   "rescue_break_per_ds": {
+    "TextVQA_VAL": {
+     "rescued": 3,
+     "broken": 5
+    },
+    "DocVQA_VAL": {
+     "rescued": 8,
+     "broken": 18
+    },
+    "OCRBench": {
+     "rescued": 9,
+     "broken": 7
+    }
+   }
+  }
+ },
+ "overlap_vs_base": {
+  "C": {
+   "TextVQA_VAL": {
+    "overlap": 0.728984375,
+    "n_changed": 200,
+    "n": 200
+   },
+   "DocVQA_VAL": {
+    "overlap": 0.74109375,
+    "n_changed": 200,
+    "n": 200
+   },
+   "OCRBench": {
+    "overlap": 0.73689453125,
+    "n_changed": 200,
+    "n": 200
+   }
+  }
+ },
+ "go_kill": {
+  "best_arm": "C",
+  "best_delta": -1.373016848500256,
+  "verdict": "KILL"
+ }
+}
