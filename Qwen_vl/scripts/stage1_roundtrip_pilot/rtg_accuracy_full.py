@@ -142,6 +142,17 @@ def _score_one_full(ds):
             h = 100.0 * float(res["Final Score"]) / len(done)
             diff = abs(m - h)
             chk = diff <= 0.05
+        elif ds == "POPE":
+            # official 'acc' = mean over the category-EXPLODED frame
+            from statistics import mean as _mean
+            cats = [str(dataset.data.iloc[int(k)]["category"]).split(",")
+                    for k in done]
+            exploded = [float(per_q[str(k)]) for k, cs in zip(done, cats)
+                        for _ in cs]
+            h = _headline100(res, ds)
+            diff = abs(100.0 * float(_mean(exploded)) - h)
+            chk = diff <= 1e-6
+            m = 100.0 * float(_mean([float(v) for v in per_q.values()]))
         else:
             h = _headline100(res, ds)
             if h is not None:
