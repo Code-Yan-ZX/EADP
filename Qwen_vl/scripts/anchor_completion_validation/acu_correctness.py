@@ -168,10 +168,6 @@ def gate_g2(res, eng):
         ok_real &= (sum(v["gsize"]) == v["n_vis"] - AU.K) and \
                    (max(v["gsize"]) >= 1)
     res["G2"]["real_bank_sane"] = bool(ok_real)
-    print(f"[G2] real_bank_sane={ok_real} "
-          f"concat={res['G2']['multi_image_concat_equals_independent']} "
-          f"no_cross={res['G2']['multi_image_no_cross_assignment']}",
-          flush=True)
 
     # multi-image isolation on a concatenated ctx
     dataset = C.build_dataset("TextVQA_VAL")
@@ -223,6 +219,11 @@ def gate_g2(res, eng):
     res["G2"]["ok"] = bool(res["G2"]["real_bank_sane"]
                            and res["G2"]["multi_image_concat_equals_independent"]
                            and res["G2"]["multi_image_no_cross_assignment"])
+    print(f"[G2] real_bank_sane={res['G2']['real_bank_sane']} "
+          f"concat={res['G2']['multi_image_concat_equals_independent']} "
+          f"no_cross={res['G2']['multi_image_no_cross_assignment']} "
+          f"n_le_k_entries={res['G2']['n_le_k_keepall_entries']}",
+          flush=True)
 
 
 # ---------------------------------------------------------------------------
