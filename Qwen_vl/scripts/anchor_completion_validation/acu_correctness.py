@@ -343,17 +343,36 @@ def gate_g3_g4(res, eng, per_ds: int):
 
 
 def verify_g3():
-    """Compare gate greedy outputs with the accuracy shards (bitwise text)."""
+    """Compare gate greedy outputs with the accuracy shards (bitwise text).
+    BASE/MAIN025 generate on the FULL main panel -> every gate sample must
+    match.  MAIN100/MAIN_SIM025 generate ONLY on the frozen fresh panel
+    (protocol §6.3); gate rows outside it are marked na (their formal-arm
+    correctness is already covered bitwise at the feature level in G3)."""
     preds = json.load(open(G3_PRED))
+    fresh = json.load(open(os.path.join(AU.OUT_DIR,
+                                        "fresh_panel_manifest.json")))
+    fresh_rows = {ds: {str(i) for i in d.get("rows", [])}
+                  for ds, d in fresh["datasets"].items()}
     out = {}
     for name, rec in preds.items():
         ds, key = name.split(":")
         for arm in ("BASE", "MAIN025", "MAIN100", "MAIN_SIM025"):
-            shard = AU.load_shard(AU.shard_path("main", arm, ds))
+            if arm in AU.ARMS_ABLATION:
+                if key not in fresh_rows.get(ds, set()):
+                    out[f"{name}:{arm}"] = "na"
+                    continue
+                shard = AU.load_shard(AU.shard_path("fresh", arm, ds))
+            else:
+                shard = AU.load_shard(AU.shard_path("main", arm, ds))
             got = shard["records"].get(key, {}).get("prediction")
             out[f"{name}:{arm}"] = (got == rec[arm.lower()
                                               if arm == "BASE" else arm])
-    ok = all(out.values())
+    ok = all(v is True or v == "na" for v in out.values())
+    na = sum(1 for v in out.values() if v == "na")
+    with open(os.path.join(AU.OUT_DIR, "g3_verify.json"), "w") as f:
+        json.dump(dict(ok=ok, details=out, na_count=na), f, indent=1)
+    print(f"G3 verify: {'PASS' if ok else 'FAIL'} (na={na})")
+    return ok
     with open(os.path.join(AU.OUT_DIR, "g3_verify.json"), "w") as f:
         json.dump(dict(ok=ok, details=out), f, indent=1)
     print(f"G3 verify vs accuracy shards: {'PASS' if ok else 'FAIL'}")
