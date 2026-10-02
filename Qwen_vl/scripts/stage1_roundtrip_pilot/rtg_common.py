@@ -355,6 +355,7 @@ def load_shard(path: str) -> dict:
 
 
 def save_shard(path: str, shard: dict) -> None:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     tmp = path + ".tmp"
     with open(tmp, "w") as f:
         json.dump(shard, f, indent=1)

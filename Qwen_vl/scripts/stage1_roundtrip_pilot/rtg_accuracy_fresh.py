@@ -41,11 +41,11 @@ def bank_path(ds: str) -> str:
     return os.path.join(FRESH, f"bank_fresh_rtg_{ds}.json.gz")
 
 
-def load_or_build_bank(ds: str, eng):
-    """Bank for the fresh rows (rtg scorer; keep/gid cached resumably)."""
+def load_or_build_bank(ds: str, eng, scorer: str = "rtg"):
+    """Bank for the fresh rows for ONE scorer (per-arm anchors; cached)."""
     import gzip
-    path = bank_path(ds)
-    bank = {"meta": dict(scorer="rtg", split="fresh", ds=ds, K=RC.K,
+    path = bank_path(ds).replace("rtg", scorer)
+    bank = {"meta": dict(scorer=scorer, split="fresh", ds=ds, K=RC.K,
                          base_commit=RC.git_commit()), "samples": {}}
     if os.path.exists(path):
         with gzip.open(path, "rt") as f:
@@ -68,7 +68,7 @@ def load_or_build_bank(ds: str, eng):
         ctx = dict(prep=prep, V=V, DS=DS, K=RC.K, engine=eng,
                    text_mean=text_mean, text_seq=text_seq,
                    ds=ds, qid=int(i))
-        keep, _ = RC.select_keep("rtg", ctx, RC.K)
+        keep, _ = RC.select_keep(scorer, ctx, RC.K)
         dropped_idx, gid, _ = AC.compute_assignment(V, keep)
         gid = gid.cpu()
         counts = torch.bincount(gid, minlength=int(keep.numel()))
@@ -103,9 +103,12 @@ def run_gen():
     from model.native_qwen3 import NativeEngine
     eng = NativeEngine(model)
     for ds in DS_FRESH:
-        bank, dataset = load_or_build_bank(ds, eng)
-        eng.vlm.set_dump_image(dataset.dump_image)
+        eng.vlm.set_dump_image(dataset_dump := None) if False else None
+        dataset = AC.common.build_dataset(ds)
         for arm in ARMS:
+            scorer = RC.ARMS[arm]["scorer"]
+            bank, dataset = load_or_build_bank(ds, eng, scorer=scorer)
+            eng.vlm.set_dump_image(dataset.dump_image)
             cfg = RC.arm_cfg(arm)
             path = shard_path(arm, ds)
             shard = RC.load_shard(path)

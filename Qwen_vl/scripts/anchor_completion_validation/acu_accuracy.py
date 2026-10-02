@@ -227,6 +227,14 @@ def _headline100(official: dict, ds: str):
         v = official["acc"]
         val = v[0] if isinstance(v, dict) else v
         return float(val)
+    if "Overall" in official:
+        v = official["Overall"]
+        val = v[0] if isinstance(v, dict) else v
+        if isinstance(val, (int, float)):
+            h = float(val)
+            if h <= 1.0000001:
+                h *= 100.0
+            return h
     h = _headline(official)
     if h is not None and h <= 1.0000001:
         h *= 100.0
