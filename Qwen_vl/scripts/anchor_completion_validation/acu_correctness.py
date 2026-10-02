@@ -296,9 +296,16 @@ def gate_g3_g4(res, eng, per_ds: int):
                     V.float(), rec["keep"], di.cpu().tolist(),
                     gid.cpu().tolist(), cfg["kind"], cfg["lam"],
                     cfg.get("tau", 0.1))
-                entry[f"{arm}_ref_rel"] = rel(y_ref, y_prod.float())
+                # round-1 G3 convention: (a) FP32-domain math agreement with
+                # the independent reference; (b) the production bf16 output
+                # must equal the FP32 computation cast to bf16 bitwise.
+                y_prod32 = AU.merge_stream(
+                    V.float(), keep_bank, di, gid, cfg["kind"], cfg["lam"],
+                    cfg.get("tau", 0.1),
+                    sim if cfg["kind"] == "sim" else None)
+                entry[f"{arm}_ref_rel_fp32"] = rel(y_ref, y_prod32)
                 entry[f"{arm}_bf16_cast_bitwise"] = bool(
-                    torch.equal(y_prod, y_ref.to(y_prod.dtype)))
+                    torch.equal(y_prod, y_prod32.to(y_prod.dtype)))
                 entry[f"{arm}_n_vis_kept"] = int(out["meta"]["n_vis_kept"])
                 entry[f"{arm}_layer_calls_ok"] = bool(
                     out["meta"]["layer_calls_ok"])
@@ -316,7 +323,8 @@ def gate_g3_g4(res, eng, per_ds: int):
                 **entry)
             print(f"[G3 {ds}:{key}] keep_eq={keep_eq} gid_eq={gid_eq} "
                   f"logits={entry['base_prefill_logits_bitwise']} "
-                  f"ref_rel={entry['MAIN025_ref_rel']:.2e}", flush=True)
+                  f"ref_rel_fp32={entry['MAIN025_ref_rel_fp32']:.2e} "
+                  f"cast={entry['MAIN025_bf16_cast_bitwise']}", flush=True)
     with open(G3_PRED, "w") as f:
         json.dump(preds, f)
     res["G3"]["ok"] = all(
