@@ -54,7 +54,9 @@ def run_live(eng, msg, ds, scorer: str, lam: float, timings: dict,
     n_vis = prep["n_vis"]
     V_sel = None
     keep = None
-    if n_vis <= K_:
+    if scorer == "full":
+        keep = torch.arange(n_vis, device=V.device)   # keep-all reference
+    elif n_vis <= K_:
         keep = torch.arange(n_vis, device=V.device)
     elif scorer == "eadp":
         t0 = time.perf_counter()
@@ -141,7 +143,8 @@ def main():
     ap.add_argument("--out",
                     default=os.path.join(RC.OUT_DIR, "rtg_perf.json"))
     args = ap.parse_args()
-    arms = [("E_MAIN025", "eadp", 0.25), ("R_MAIN025", "rtg", 0.25)]
+    arms = [("FULL", "full", 0.0), ("E_GATHER", "eadp", 0.0),
+            ("E_MAIN025", "eadp", 0.25), ("R_MAIN025", "rtg", 0.25)]
 
     model = AC.common.load_model(AC.common.BASELINE_MODEL,
                                  max_new_tokens=FIXED_TOKENS)

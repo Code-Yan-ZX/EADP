@@ -56,13 +56,13 @@ def save_shard(path: str, shard: dict) -> None:
     os.replace(tmp, path)
 
 
-def run_gen():
+def run_gen(datasets=None):
     model = AC.common.load_model(AC.common.BASELINE_MODEL,
                                  max_new_tokens=2048)
     from model.native_qwen3 import NativeEngine
     eng = NativeEngine(model)
     cfg = RC.arm_cfg("R_MAIN025")
-    for ds in RC.DS_LIST:
+    for ds in (datasets or RC.DS_LIST):
         bank_path = os.path.join(RC.OUT_DIR, "full",
                                  f"bank_full_rtg_{ds}.json.gz")
         with __import__("gzip").open(bank_path, "rt") as f:
@@ -163,9 +163,9 @@ def _score_one_full(ds):
     return True
 
 
-def run_score():
+def run_score(datasets=None):
     ok = True
-    for ds in RC.DS_LIST:
+    for ds in (datasets or RC.DS_LIST):
         ok &= _score_one_full(ds)
     if not ok:
         raise SystemExit("full-panel scoring failures recorded")
@@ -175,11 +175,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", default="both", choices=["gen", "score",
                                                        "both"])
+    ap.add_argument("--datasets", default=None,
+                    help="comma list; default = main 3")
     args = ap.parse_args()
+    dsets = args.datasets.split(",") if args.datasets else None
     if args.mode in ("gen", "both"):
-        run_gen()
+        run_gen(dsets)
     if args.mode in ("score", "both"):
-        run_score()
+        run_score(dsets)
 
 
 if __name__ == "__main__":
