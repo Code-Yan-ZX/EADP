@@ -186,3 +186,16 @@ GPU 时间）与完整续跑命令。提交并推送本分支，不合并 main�
 ## 8. 偏离记录
 
 （运行中追加；当前为空。）
+
+## 9. 偏离记录（续）
+
+6. **D-7（2026-10-03 04:0x，任何 fresh 消融分析发布前）**：fresh 面板
+   F_MAIN025/S_MAIN025 首次生成误用 RTG bank（`load_or_build_bank` 硬编码
+   scorer），且旧分片的首次清理因相对路径错误静默失败，导致 F≡S≡R 的
+   错误评分（发现方式：R−F 与 R−S 的 Δ 恒为 0）。已改为 per-arm bank、
+   绝对路径清理并重新生成全部 F/S 分片；错误数据未进入任何已交付分析表
+   （首次 fresh 对比表在发现异常后未对外交付）。R_GATHER 分片同样重建。
+7. **D-8（2026-10-03 04:5x）**：ChartQA 首评硬失败暴露 `_headline100` 取
+   首个数值键 `test_human` 而非 `Overall` 的 bug；POPE 首评硬失败暴露
+   `rtg_accuracy_full._score_one_full` 缺 category-explode 复算分支。
+   两处修复后重评 diff=0；S0 硬失败语义按设计拦截了错误分。
