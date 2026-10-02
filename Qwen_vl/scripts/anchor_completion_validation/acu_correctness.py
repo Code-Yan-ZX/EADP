@@ -51,7 +51,7 @@ def ref_merge_full(feat: torch.Tensor, keep: list[int],
     """assign[i] = anchor rank for dropped[i].  Returns y [K, D] fp32."""
     K = len(keep)
     a = feat[keep].clone()
-    members = [[j] for j in range(K)]                # anchor's own rank first
+    members = [[keep[j]] for j in range(K)]          # anchor global index first
     for li, j in enumerate(assign):
         members[j].append(dropped[li])
     y = a.clone()
@@ -110,7 +110,16 @@ def gate_g1(res):
         sim = (x @ a.t()) if kind == "sim" else None
         y_prod = AU.merge_stream(V, kt, di, gt, kind, lam, 0.1, sim)
         r = rel(y_ref, y_prod.float())
-        cast_ok = bool(torch.equal(y_prod, y_ref.to(y_prod.dtype)))
+        # bf16 cast convention (round-1 G3): production runs on bf16 model
+        # features; the FP32 reference cast to bf16 must match bitwise.
+        Vb = V.to(torch.bfloat16)
+        simb = ((F.normalize(Vb[dropped].float(), dim=1)
+                 @ F.normalize(Vb[keep].float(), dim=1).t())
+                if kind == "sim" else None)
+        y_prod_b = AU.merge_stream(Vb, kt, di, gt, kind, lam, 0.1, simb)
+        y_ref_b = ref_merge_full(Vb.float(), keep, dropped, gid,
+                                 kind, lam).to(torch.bfloat16)
+        cast_ok = bool(torch.equal(y_prod_b, y_ref_b))
         res["G1"][name] = dict(rel=r, bf16_cast_bitwise=cast_ok,
                                ok=bool(r < 1e-5 and cast_ok))
     # empty dropped -> identity
@@ -170,7 +179,8 @@ def gate_g2(res, eng):
     ctx_cat = dict(prep=dict(gthw=torch.cat(gthws, dim=0),
                              n_vis=V_cat.shape[0]),
                    V=V_cat, K=AU.K, engine=eng,
-                   text_mean=[tm0, tm1], text_seq=[ts0, ts1])
+                   text_mean=torch.cat([tm0, tm1], dim=0),   # [2, D]
+                   text_seq=torch.cat([ts0, ts1], dim=0))    # [2, M, D]
     keep_cat = _eadp_parts(AU.K, ctx_cat, "facility")
     k0 = AU.official_facility_keep(
         dict(prep=preps[0], V=Vs[0], K=AU.K, engine=eng,

@@ -75,6 +75,14 @@ def run_gen(args, eng):
         eng.vlm.set_dump_image(dataset.dump_image)
         t0 = time.time()
         for arm in args.arms.split(","):
+            if args.panel == "fresh" and arm in AU.ARMS_FORMAL:
+                # protocol §6.3: BASE/MAIN025 fresh-panel predictions are
+                # TAKEN from the verified full-panel run (same config,
+                # same rows) — never regenerated on the fresh panel.
+                print(f"[skip] fresh/{arm} {ds}: formal-method predictions "
+                      f"are reused from the main panel (frozen rule)",
+                      flush=True)
+                continue
             cfg = AU.arm_cfg(arm)
             path = AU.shard_path(args.panel, arm, ds)
             shard = AU.load_shard(path)
@@ -182,11 +190,54 @@ def _per_q_generic(tsv, ds, shard):
     return None
 
 
+def derive_fresh_formal(args, arm, ds):
+    """Fresh-panel score entry for BASE/MAIN025: subset of the verified
+    main-panel per-question scores over the frozen fresh rows (no new
+    generation — provenance recorded)."""
+    man = json.load(open(os.path.join(AU.OUT_DIR,
+                                      "fresh_panel_manifest.json")))
+    d = man["datasets"][ds]
+    if d["status"] != "ok":
+        return
+    main_score_path = AU.shard_path("main", arm, ds).replace(
+        ".json", "_score.json")
+    if not os.path.exists(main_score_path):
+        return
+    main_score = json.load(open(main_score_path))
+    want = [str(i) for i in d["rows"]]
+    per_q = {k: main_score["per_question"][k] for k in want
+             if k in main_score["per_question"]}
+    if not per_q:
+        return
+    path = AU.shard_path("fresh", arm, ds)
+    summary = dict(panel="fresh", arm=arm, ds=ds, n=len(per_q),
+                   derived_from=dict(
+                       panel="main", shard=os.path.relpath(
+                           AU.shard_path("main", arm, ds), AU.QWEN_ROOT),
+                       rule="same-config same-row reuse (protocol §6.3)",
+                       fresh_manifest_sha256=man["sha256"]),
+                   official={},
+                   per_question=per_q,
+                   perq_vs_headline_diff=None,
+                   perq_reproduces_headline=None,
+                   base_commit=AU.repo_commit())
+    with open(path.replace(".json", "_score.json"), "w") as f:
+        json.dump(summary, f, indent=1)
+    acc = 100.0 * sum(float(v) for v in per_q.values()) / len(per_q)
+    print(f"[fresh-derived] {arm} {ds}: n={len(per_q)} acc={acc:.3f}",
+          flush=True)
+
+
 def run_score(args):
     from vlmeval.dataset import build_dataset as vlmeval_build
     import pandas as pd
 
     failures = []
+    if args.panel == "fresh":
+        for ds in AU.DS_MAIN:
+            for arm in args.arms.split(","):
+                if arm in AU.ARMS_FORMAL:
+                    derive_fresh_formal(args, arm, ds)
     for ds in (args.ds.split(",") if args.ds else AU.DS_ALL):
         if args.panel == "main" and ds not in AU.DS_MAIN:
             continue
