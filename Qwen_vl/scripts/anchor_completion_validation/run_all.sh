@@ -55,6 +55,15 @@ $PY acu_accuracy.py --panel main --arms BASE,MAIN025 --mode both \
 M=$?
 echo "[chain] $(date) main panel exit=$M"
 
+# ---- G3 verify: gate greedy outputs vs accuracy shards (bitwise) ----------
+$PY acu_correctness.py --verify-g3 > g3_verify.log 2>&1
+V3=$?
+echo "[chain] $(date) g3 verify exit=$V3"
+if [ $V3 -ne 0 ]; then
+  echo "[chain] G3 VERIFY FAILED — chain stopped."
+  exit 1
+fi
+
 # ---- nonreg banks + panel --------------------------------------------------
 $PY acu_bank.py --datasets ChartQA_TEST,MMBench_DEV_EN_V11,MMStar,RealWorldQA,POPE \
   > bank_nonreg.log 2>&1
