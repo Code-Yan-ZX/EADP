@@ -28,7 +28,8 @@ def score_path(ds: str, arm: str):
     if arm == "R_MAIN025":
         return os.path.join(RC.OUT_DIR, "full", "acc", "R_MAIN025",
                             f"{ds}_score.json")
-    return os.path.join(ACV_OUT, "acc", "main", arm, "K256",
+    core = {"E_MAIN025": "MAIN025", "E_GATHER": "BASE"}.get(arm, arm)
+    return os.path.join(ACV_OUT, "acc", "main", core, "K256",
                         f"{ds}_score.json")
 
 
