@@ -40,8 +40,8 @@ def reference_stage1(scorer: str, V: torch.Tensor, DS_list, sim: torch.Tensor,
     m = min(m, N - 1)
     if scorer == "uniform":
         return torch.ones(N, dtype=torch.float64)
-    w = torch.full((N,), floor, dtype=torch.float64)
     streams = [V] if scorer == "main_residual" else DS_list
+    zs = torch.zeros(N, dtype=torch.float64)
     for st in streams:
         H = (st.double() / st.double().norm(dim=-1, keepdim=True)
              .clamp_min(eps))
@@ -53,8 +53,9 @@ def reference_stage1(scorer: str, V: torch.Tensor, DS_list, sim: torch.Tensor,
             nb = [-c[1] for c in cand[:m]]
             mu = H[nb].mean(dim=0)
             d[i] = ((H[i] - mu) ** 2).sum()
-        w = w + d / (d.mean() + eps)
-    return w.float()
+        zs += d / (d.mean() + eps)
+    # protocol §3.5: w = floor + MEAN over streams (D-6 fix)
+    return (floor + zs / len(streams)).float()
 
 
 def gate_g1(res):
@@ -79,11 +80,13 @@ def gate_g1(res):
         det = bool(torch.equal(w_vec, w2))
         ok_s = rel < 1e-5 and finite and det
         if scorer == "cross_stream":
-            # the all-zero third stream must be counted and contribute zero:
-            # w with 3 streams (one zero) == reference over the 2 real streams
+            # the all-zero third stream is counted and contributes zero to
+            # the sum, pulling the MEAN to 2/3 of the two-stream value:
+            # w(3 streams, one zero) == floor + 2/3 * (z1+z2)
             ref2 = reference_stage1("cross_stream", V, DS_list[:2], sim)
+            expect = XC.FLOOR + (ref2.double() - XC.FLOOR) * 2.0 / 3.0
             ok_s = ok_s and diag["zero_norm"] == [0, 0, N] \
-                and float((w_vec.double() - ref2.double()).abs().max()) < 1e-5
+                and float((w_vec.double() - expect).abs().max()) < 1e-5
         res["gates"]["G1"][scorer] = dict(rel=rel, finite=finite,
                                           deterministic=det,
                                           zero_norm=diag["zero_norm"],
@@ -127,9 +130,12 @@ class _FakeEng:
 
 
 def gate_g2(res):
-    """Multi-image: no cross-image neighbourhood / grouping."""
+    """Multi-image, PRUNING path (K=16 < N=64 per image, D-6 fix: the first
+    version used K=256 which hit the keep-all branch and never exercised
+    scoring+facility under multi-image): no cross-image neighbourhood /
+    grouping, and each image independently pruned to K."""
     torch.manual_seed(11)
-    N, D = 64, 8
+    N, D, Kg = 64, 8, 16
     V1, V2 = torch.randn(N, D), torch.randn(N, D)
     DS1 = [torch.randn(N, D) for _ in range(3)]
     DS2 = [torch.randn(N, D) for _ in range(3)]
@@ -139,17 +145,22 @@ def gate_g2(res):
                    V=V_cat, DS=DS_cat, engine=_FakeEng())
     ok = True
     for scorer in ("cross_stream", "main_residual", "uniform"):
-        keep_cat, _ = XC.select_keep(scorer, ctx_cat, XC.K)
+        keep_cat, _ = XC.select_keep(scorer, ctx_cat, Kg)
         k1, _ = XC.select_keep(
             scorer, dict(prep=dict(gthw=torch.tensor([[1, 16, 16]])),
-                         V=V1, DS=DS1, engine=_FakeEng()), XC.K)
+                         V=V1, DS=DS1, engine=_FakeEng()), Kg)
         k2, _ = XC.select_keep(
             scorer, dict(prep=dict(gthw=torch.tensor([[1, 16, 16]])),
-                         V=V2, DS=DS2, engine=_FakeEng()), XC.K)
+                         V=V2, DS=DS2, engine=_FakeEng()), Kg)
+        # anti-vacuity: each image must actually be pruned (N > K)
+        pruned = int(k1.numel()) == Kg and int(k2.numel()) == Kg
         eq = bool(torch.equal(keep_cat, torch.cat([k1, k2 + N])))
-        res["gates"]["G2"][scorer] = dict(concat_eq_independent=eq, ok=eq)
-        ok = ok and eq
-        print(f"[G2] {scorer} concat_eq_independent={eq}", flush=True)
+        res["gates"]["G2"][scorer] = dict(pruned=pruned,
+                                          concat_eq_independent=eq,
+                                          ok=bool(pruned and eq))
+        ok = ok and pruned and eq
+        print(f"[G2] {scorer} pruned={pruned} concat_eq_independent={eq}",
+              flush=True)
     res["gates"]["G2"]["ok"] = bool(ok)
 
 
@@ -162,14 +173,13 @@ def gate_g3(res):
     V = torch.randn(N, D)
     DS_list = [torch.randn(N, D) for _ in range(3)]
     sim = F.normalize(V, dim=1) @ F.normalize(V, dim=1).t()
-    # zero third stream contributes exactly zero: w(3 streams, one zero) ==
-    # reference over the two real streams; the stream is still counted
+    # zero third stream: contributes zero to the sum, mean scaled by 2/3
     DS_zero = [DS_list[0], DS_list[1], torch.zeros(N, D)]
     wz, dz = XC.stage1_importance("cross_stream", V, DS_zero, sim)
     ref2 = reference_stage1("cross_stream", V, DS_list[:2], sim)
+    expect = XC.FLOOR + (ref2.double() - XC.FLOOR) * 2.0 / 3.0
     zero_contrib = (dz["d_mean"][2] == 0.0
-                    and float((wz.double() - ref2.double()).abs().max())
-                    < 1e-5)
+                    and float((wz.double() - expect).abs().max()) < 1e-5)
     # N <= K -> keep-all, no scoring
     keep, _ = XC.select_keep("cross_stream",
                              dict(prep=dict(gthw=torch.tensor([[1, 8, 16]])),

@@ -145,6 +145,7 @@ def stage1_importance(scorer: str, V: torch.Tensor, DS_list, sim: torch.Tensor,
         streams = list(DS_list)
         assert len(streams) == 3, "expected all three DeepStack streams"
     w = torch.full((N,), floor, dtype=torch.float32, device=V.device)
+    zs = []
     for st in streams:
         nrm = st.float().norm(dim=-1)
         diag["zero_norm"].append(int((nrm <= eps).sum().item()))
@@ -152,7 +153,10 @@ def stage1_importance(scorer: str, V: torch.Tensor, DS_list, sim: torch.Tensor,
         d = knn_residual(H, nbr)
         dm = float(d.mean().item())
         diag["d_mean"].append(dm)
-        w = w + d / (dm + eps)          # z_s = d_s / (mean(d_s)+eps)
+        zs.append(d / (dm + eps))       # z_s = d_s / (mean(d_s)+eps)
+    # protocol §3.5: w = floor + MEAN over streams (D-6 fix; the first run
+    # summed the streams instead — archived under prefix_sum_run/)
+    w = w + torch.stack(zs, dim=0).mean(dim=0)
     assert torch.isfinite(w).all() and bool((w >= 0).all())
     return w, diag
 
