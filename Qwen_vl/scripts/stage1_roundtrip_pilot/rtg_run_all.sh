@@ -11,11 +11,13 @@ set -u
 cd "$(dirname "$0")"
 PY=/home/dell/miniconda3/envs/qwen3vl_clean/bin/python
 BUDGET_S=7200
-START=$(date +%s)
 elapsed() { echo $(( $(date +%s) - START )); }
 
 echo "[rtg] $(date) waiting for the core main-panel process to exit..."
 while pgrep -f "acu_accuracy.py --panel main" >/dev/null; do sleep 60; done
+# budget clock starts HERE — waiting for the core job is NOT counted
+# (dispatch §6: 不计等待原作业和 CPU 实现)
+START=$(date +%s)
 echo "[rtg] $(date) core main panel exited — starting pilot (budget ${BUDGET_S}s)"
 
 # ---- pilot stage 1: scorer banks (rtg/flat/shuf x 3 DEV datasets) --------

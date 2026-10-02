@@ -386,7 +386,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--gates", default="G1,G2,G5")
     ap.add_argument("--per-ds", type=int, default=3)
+    ap.add_argument("--verify-g3", action="store_true",
+                    help="compare gate_g3_predictions vs accuracy shards")
     args = ap.parse_args()
+    if args.verify_g3:
+        ok = verify_g3()
+        raise SystemExit(0 if ok else 1)
     gates = args.gates.split(",")
     res = {}
     if os.path.exists(OUT):
