@@ -1,0 +1,297 @@
+"""Anchor Completion Validation — generation + official scoring driver.
+
+Full-split resumable shards per (panel, arm, dataset).  Scoring semantics
+(frozen):
+  * official VLMEvalKit evaluators;
+  * S0 hard failure: empty official dict / evaluate() exception ->
+    score_failures.jsonl + nonzero exit, NO partial _score.json;
+  * per-question scores: TextVQA mean-of-matches; DocVQA ANLS-correct
+    (hit = 0 if 1-minANLS < 0.5 else 1-minANLS); OCRBench verbatim official
+    branch structure (D-4: math branch no lowercase, strip + \n->' ' both
+    sides); generic datasets: eval_score / eval_match column of the official
+    results file when present;
+  * per-question mean MUST reproduce the official headline inside its
+    rounding granularity (hard-fail beyond; never a ±0.5 slack).
+
+Usage:
+  python acu_accuracy.py --panel main --arms BASE,MAIN025 --mode both
+  python acu_accuracy.py --panel main --arms BASE --mode gen --smoke 5
+  python acu_accuracy.py --panel nonreg --arms BASE,MAIN025 --mode both
+  python acu_accuracy.py --panel fresh --arms MAIN100,MAIN_SIM025 --mode both
+"""
+
+from __future__ import annotations
+
+import argparse
+import ast
+import json
+import os
+import sys
+import time
+
+import torch
+
+import acu_common as AU
+from acu_common import common as C
+
+FAIL_LOG = os.path.join(AU.OUT_DIR, "score_failures.jsonl")
+
+
+def fail(arm, ds, kind, detail):
+    entry = dict(arm=arm, ds=ds, kind=kind, detail=str(detail))
+    with open(FAIL_LOG, "a") as f:
+        f.write(json.dumps(entry) + "\n")
+    print(f"[score FAIL] {arm} {ds}: {kind}: {detail}", flush=True)
+    return entry
+
+
+def panel_rows(panel: str, ds: str):
+    """Row indices for a panel.  main/nonreg: ALL official rows.
+    fresh: the frozen fresh-panel manifest rows."""
+    if panel in ("main", "nonreg"):
+        dataset = C.build_dataset(ds)
+        return list(range(len(dataset.data))), dataset
+    if panel == "fresh":
+        man = json.load(open(os.path.join(AU.OUT_DIR,
+                                          "fresh_panel_manifest.json")))
+        d = man["datasets"][ds]
+        if d["status"] != "ok":
+            return [], None
+        return d["rows"], C.build_dataset(ds)
+    raise KeyError(panel)
+
+
+def run_gen(args, eng):
+    for ds in (args.ds.split(",") if args.ds else AU.DS_ALL):
+        if args.panel == "main" and ds not in AU.DS_MAIN:
+            continue
+        if args.panel == "nonreg" and ds not in AU.DS_NONREG:
+            continue
+        bank = AU.load_bank(ds)
+        rows, dataset = panel_rows(args.panel, ds)
+        if not rows:
+            print(f"[skip] {args.panel}/{ds}: empty row list", flush=True)
+            continue
+        eng.vlm.set_dump_image(dataset.dump_image)
+        t0 = time.time()
+        for arm in args.arms.split(","):
+            cfg = AU.arm_cfg(arm)
+            path = AU.shard_path(args.panel, arm, ds)
+            shard = AU.load_shard(path)
+            if "meta" not in shard:
+                shard["meta"] = AU.shard_meta(args.panel, arm, ds,
+                                              AU.repo_commit(),
+                                              args.max_new_tokens)
+            for n, i in enumerate(rows):
+                key = str(i)
+                if key in shard["records"] or key not in bank:
+                    continue
+                rec_bank = bank[key]
+                row = dataset.data.iloc[i]
+                msg = C.build_message(eng.vlm, dataset, ds, row)
+                timings = {}
+                out = AU.run_one(eng, msg, ds, rec_bank, cfg,
+                                 max_new_tokens=args.max_new_tokens,
+                                 timings=timings)
+                shard["records"][key] = dict(
+                    prediction=out["text"],
+                    truncated=len(out["gen_ids"]) >= args.max_new_tokens,
+                    n_vis_kept=int(out["meta"]["n_vis_kept"]),
+                    n_vis=int(rec_bank.get("n_vis", -1)),
+                    ttft_ms=timings.get("ttft_ms"),
+                    merge_ms=timings.get("merge_ms"),
+                    vision_ms=timings.get("vision_ms"),
+                    llm_prefill_ms=timings.get("llm_prefill_ms"),
+                    layer_calls_ok=bool(out["meta"]["layer_calls_ok"]),
+                    degeneracy=AU.degeneracy(out["text"]))
+                if len(shard["records"]) % 20 == 0:
+                    AU.save_shard(path, shard)
+                if n % 20 == 0:
+                    el = time.time() - t0
+                    print(f"[{args.panel}/{arm} {ds}] {n}/{len(rows)} "
+                          f"({el/max(1, n+1):.2f}s/q)", flush=True)
+            AU.save_shard(path, shard)
+            print(f"[done] {args.panel}/{arm} {ds}: "
+                  f"{len(shard['records'])} records", flush=True)
+
+
+def _headline(official: dict):
+    for v in official.values():
+        if isinstance(v, dict):
+            for vv in v.values():
+                if isinstance(vv, (int, float)):
+                    return float(vv)
+        elif isinstance(v, (int, float)):
+            return float(v)
+    return None
+
+
+def _per_q_ocerbench(shard, ds):
+    from vlmeval.dataset import build_dataset as _bd
+    dso = _bd(ds)
+    per_q = {}
+    for k, rec in shard["records"].items():
+        row = dso.data.iloc[int(k)]
+        predict = str(rec["prediction"]).strip()
+        answers = ast.literal_eval(row["answer"])
+        hit = 0.0
+        if row["category"] == "Handwritten Mathematical Expression Recognition":
+            p2 = predict.replace("\n", " ").replace(" ", "")
+            if any(a.strip().replace("\n", " ").replace(" ", "") in p2
+                   for a in answers):
+                hit = 1.0
+        else:
+            pr = predict.lower().strip().replace("\n", " ")
+            if any(a.lower().strip().replace("\n", " ") in pr
+                   for a in answers):
+                hit = 1.0
+        per_q[str(k)] = hit
+    return per_q
+
+
+def _per_q_generic(tsv, ds, shard):
+    """Extract per-row scores from the official results file when present."""
+    import numpy as np
+    import pandas as pd
+    for det in (tsv.replace(".tsv", "_results.xlsx"),
+                tsv.replace(".tsv", "_results.tsv")):
+        if not os.path.exists(det):
+            continue
+        d = pd.read_excel(det) if det.endswith("xlsx") \
+            else pd.read_csv(det, sep="\t")
+        positions = sorted(int(k) for k in shard["records"])
+        if "eval_score" in d.columns and "index" in d.columns:
+            m = dict(zip(d["index"].astype(int),
+                         d["eval_score"].astype(float)))
+            if set(positions) <= set(m):
+                return {str(p): float(m[p]) for p in positions}
+        if "eval_match" in d.columns and len(d) == len(positions):
+            per_q = {}
+            for pos, (_, r) in zip(positions, d.iterrows()):
+                m = r["eval_match"]
+                if isinstance(m, str):
+                    m = ast.literal_eval(m)
+                m = list(m)
+                if ds in ("DocVQA_VAL",):
+                    md = float(np.min(m))
+                    hit = 0.0 if 1 - md < 0.5 else 1 - md
+                else:
+                    hit = float(np.mean(m))
+                per_q[str(pos)] = hit
+            return per_q
+    return None
+
+
+def run_score(args):
+    from vlmeval.dataset import build_dataset as vlmeval_build
+    import pandas as pd
+
+    failures = []
+    for ds in (args.ds.split(",") if args.ds else AU.DS_ALL):
+        if args.panel == "main" and ds not in AU.DS_MAIN:
+            continue
+        if args.panel == "nonreg" and ds not in AU.DS_NONREG:
+            continue
+        for arm in args.arms.split(","):
+            path = AU.shard_path(args.panel, arm, ds)
+            shard = AU.load_shard(path)
+            done = sorted(int(k) for k in shard["records"])
+            if not done:
+                continue
+            dataset = vlmeval_build(ds)
+            data = dataset.data
+            sub = data.iloc[done].copy()
+            for col in ("image",):
+                if col in sub.columns:
+                    sub = sub.drop(columns=[col])
+            sub["prediction"] = [shard["records"][str(i)]["prediction"]
+                                 for i in done]
+            sub["truncated"] = [shard["records"][str(i)]["truncated"]
+                                for i in done]
+            tsv = path.replace(".json", "_pred.tsv")
+            sub.to_csv(tsv, sep="\t", index=False)
+            try:
+                res = dataset.evaluate(tsv)
+            except Exception as e:
+                failures.append(fail(arm, ds, "evaluate_exception", e))
+                continue
+            if hasattr(res, "to_dict"):
+                res = res.to_dict()
+            if not res:
+                failures.append(fail(arm, ds, "empty_official",
+                                     f"evaluate returned nothing tsv={tsv}"))
+                continue
+            if ds == "OCRBench":
+                per_q = _per_q_ocerbench(shard, ds)
+            else:
+                per_q = _per_q_generic(tsv, ds, shard)
+            # strict headline reproduction check
+            chk, diff = None, None
+            if per_q:
+                m = 100.0 * sum(float(v) for v in per_q.values()) / len(per_q)
+                if ds == "OCRBench" and "Final Score" in res:
+                    h = 100.0 * float(res["Final Score"]) / len(done)
+                else:
+                    h = _headline(res)
+                if h is not None:
+                    diff = abs(m - h)
+                    # headline rounding granularity: OCRBench official is an
+                    # integer 0-1000 -> /100 step 0.1 on our scale when
+                    # normalized; others round to 0.1-1.0.  Fail beyond 0.05.
+                    chk = diff <= 0.05
+            if chk is False:
+                failures.append(fail(
+                    arm, ds, "perq_headline_mismatch",
+                    f"perq_mean={m:.6f} headline={h:.6f} diff={diff:.6f}"))
+                continue
+            summary = dict(panel=args.panel, arm=arm, ds=ds, n=len(done),
+                           official={k: (float(v) if isinstance(v, (int, float))
+                                         else str(v))
+                                     for k, v in res.items()},
+                           per_question=per_q,
+                           perq_vs_headline_diff=diff,
+                           perq_reproduces_headline=chk,
+                           base_commit=AU.repo_commit())
+            with open(path.replace(".json", "_score.json"), "w") as f:
+                json.dump(summary, f, indent=1)
+            print(f"[scored] {args.panel}/{arm} {ds}: n={len(done)} "
+                  f"diff={None if diff is None else round(diff, 6)} "
+                  f"official={{'main': {_headline(res)}}}", flush=True)
+    if failures:
+        raise SystemExit(f"run_score: {len(failures)} scoring failure(s) "
+                         f"recorded in {FAIL_LOG}; affected _score.json "
+                         f"NOT written")
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--panel", required=True,
+                    choices=["main", "nonreg", "fresh"])
+    ap.add_argument("--arms", required=True)
+    ap.add_argument("--mode", default="both", choices=["gen", "score", "both"])
+    ap.add_argument("--ds", default=None)
+    ap.add_argument("--max-new-tokens", type=int, default=2048)
+    ap.add_argument("--smoke", type=int, default=None,
+                    help="limit each ds to first N bank-covered rows")
+    args = ap.parse_args()
+
+    if args.smoke:
+        # smoke = first N rows per ds that already have a bank entry
+        orig = panel_rows
+
+        def limited(panel, ds):
+            rows, dataset = orig(panel, ds)
+            bank = AU.load_bank(ds)
+            rows = [i for i in rows if str(i) in bank][:args.smoke]
+            return rows, dataset
+        globals()["panel_rows"] = limited
+
+    if args.mode in ("gen", "both"):
+        eng = AU.load_engine(max_new_tokens=args.max_new_tokens)
+        run_gen(args, eng)
+    if args.mode in ("score", "both"):
+        run_score(args)
+
+
+if __name__ == "__main__":
+    main()
