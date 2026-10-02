@@ -28,6 +28,8 @@ import hashlib
 import json
 import os
 import sys
+import time
+from typing import Optional
 
 import torch
 
@@ -178,3 +180,115 @@ from amp_common import (  # noqa: E402,F401
     official_facility_keep,
     run_one,
 )
+
+
+# ---------------------------------------------------------------------------
+# per-image assignment (frozen rule: 多图不可跨图分组)
+#
+# amp_common.compute_assignment does a GLOBAL cos-argmax over all anchors;
+# every sample in this round's panels is single-image, where per-image ==
+# global bitwise.  For hypothetical multi-image inputs the frozen spec
+# demands that a dropped token only be assigned to anchors of ITS OWN image,
+# so the acu run/bank/gate paths use this wrapper.  Single-image behaviour
+# is unchanged (same slices, same FP32 math).
+# ---------------------------------------------------------------------------
+def split_sizes_from_gthw(prep, spatial_merge_size: int):
+    gthw = prep["gthw"]
+    return (gthw.prod(-1) // (spatial_merge_size ** 2)).tolist()
+
+
+def compute_assignment_per_image(V: torch.Tensor, keep: torch.Tensor,
+                                 split_sizes):
+    """Per-image cos-argmax assignment.  Returns (dropped_idx, gid, sim)
+    with gid = GLOBAL anchor ranks into `keep`; dropped tokens of image i
+    can only map to anchors inside image i."""
+    dropped_all, gid_all, sim_all = [], [], []
+    tok_offset = 0
+    rank_offset = 0
+    have_sim = None
+    for n in split_sizes:
+        lo, hi = tok_offset, tok_offset + n
+        local_keep = keep[(keep >= lo) & (keep < hi)] - lo
+        di, g, sim = compute_assignment(V[lo:hi], local_keep)
+        dropped_all.append(di + lo)
+        gid_all.append(g + rank_offset)
+        if sim is not None:
+            have_sim = True
+            sim_all.append(sim)
+        rank_offset += int(local_keep.numel())
+        tok_offset = hi
+    if not dropped_all:
+        e = torch.empty(0, dtype=torch.long, device=V.device)
+        return e, e, None
+    dropped = torch.cat(dropped_all)
+    gid = torch.cat(gid_all)
+    sim_out = torch.cat(sim_all, dim=0) if have_sim else None
+    return dropped, gid, sim_out
+
+
+@torch.no_grad()
+def run_one(eng, msg, ds, bank_rec, cfg: dict, max_new_tokens: int = 2048,
+            ignore_eos: bool = False, timings: Optional[dict] = None,
+            diag: Optional[dict] = None):
+    """acu variant of amp_common.run_one — the ONLY delta is that the
+    assignment uses compute_assignment_per_image (frozen multi-image rule);
+    for the single-image samples of every panel in this round the two are
+    bitwise identical (verified by gate G3)."""
+    timings = timings if timings is not None else {}
+    K_ = int(cfg.get("K", 256))
+    wall0 = time.perf_counter()
+    prep = eng.prepare(msg, ds)
+    timings["image_preprocess_ms"] = (time.perf_counter() - wall0) * 1e3
+
+    ev = [torch.cuda.Event(enable_timing=True) for _ in range(2)]
+    ev[0].record()
+    V, DS = eng.encode(prep)
+    ev[1].record()
+    torch.cuda.synchronize()
+    timings["vision_ms"] = ev[0].elapsed_time(ev[1])
+
+    n_vis = prep["n_vis"]
+    keep = torch.as_tensor(bank_rec["keep"], dtype=torch.long, device=V.device)
+    if n_vis <= K_:                       # degenerate: keep everything
+        keep = torch.arange(n_vis, device=V.device)
+
+    kind, lam = cfg["kind"], cfg.get("lam", 0.0)
+    scope = cfg.get("scope", "both")
+    V_sel = DS_sel = None
+    perm = None
+    if kind not in ("base",):
+        t0 = time.perf_counter()
+        split_sizes = split_sizes_from_gthw(prep, eng.inner.visual.spatial_merge_size)
+        dropped_idx, gid, sim = compute_assignment_per_image(V, keep,
+                                                             split_sizes)
+        if kind == "shuf":
+            raise KeyError("shuf controls are not part of this round")
+        if scope in ("both", "main"):
+            y = merge_stream(V, keep, dropped_idx, gid, kind, lam,
+                             cfg.get("tau", 0.1), sim)
+            V_sel = y
+        if scope in ("both", "ds"):
+            ys = [merge_stream(ds_, keep, dropped_idx, gid, kind, lam,
+                               cfg.get("tau", 0.1), sim) for ds_ in DS]
+            DS_sel = ys
+        torch.cuda.synchronize()
+        timings["merge_ms"] = (time.perf_counter() - t0) * 1e3
+
+    ev = [torch.cuda.Event(enable_timing=True) for _ in range(2)]
+    ev[0].record()
+    st = eng.prefill(prep, V, DS, keep, V_sel=V_sel, DS_sel=DS_sel)
+    ev[1].record()
+    torch.cuda.synchronize()
+    timings["llm_prefill_ms"] = ev[0].elapsed_time(ev[1])
+    timings["ttft_ms"] = (time.perf_counter() - wall0) * 1e3
+
+    wall1 = time.perf_counter()
+    gen_ids, text = eng.decode(st, max_new_tokens, ignore_eos=ignore_eos)
+    timings["decode_wall_ms"] = (time.perf_counter() - wall1) * 1e3
+    torch.cuda.synchronize()
+
+    meta = eng.invariants(prep, st, V, DS, n_decode=len(gen_ids))
+    if diag is not None:
+        diag["merge_ms"] = timings.get("merge_ms")
+    return dict(text=text, gen_ids=gen_ids, keep_idx=st.keep_idx, meta=meta,
+                timings=timings, state=st)

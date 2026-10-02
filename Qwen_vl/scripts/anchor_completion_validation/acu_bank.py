@@ -53,7 +53,10 @@ def build_bank(ds: str, limit: int | None, eng) -> None:
         ctx = dict(prep=prep, V=V, DS=DS, K=AU.K, engine=eng,
                    text_mean=text_mean, text_seq=text_seq)
         keep = AU.official_facility_keep(ctx, AU.K)
-        dropped_idx, gid, _ = AU.compute_assignment(V, keep)
+        split_sizes = AU.split_sizes_from_gthw(
+            prep, eng.inner.visual.spatial_merge_size)
+        dropped_idx, gid, _ = AU.compute_assignment_per_image(V, keep,
+                                                              split_sizes)
         gid = gid.cpu()
         counts = torch.bincount(gid, minlength=int(keep.numel()))
         bank[key] = dict(idx=int(i), image_key=_image_key(ds, row),

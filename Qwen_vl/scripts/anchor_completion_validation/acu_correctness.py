@@ -70,7 +70,8 @@ def ref_merge_full(feat: torch.Tensor, keep: list[int],
                 else:
                     v = F.normalize(feat[gi], dim=0)
                     logits.append(float(an @ v) / tau)
-            w = torch.softmax(torch.tensor(logits, dtype=torch.float32), dim=0)
+            w = torch.softmax(torch.tensor(logits, dtype=torch.float32,
+                                           device=feat.device), dim=0)
             m = (w.unsqueeze(1) * feat[idxs]).sum(dim=0)
         else:
             raise KeyError(kind)
@@ -206,12 +207,24 @@ def gate_g2(res, eng):
     res["G2"]["multi_image_concat_equals_independent"] = bool(
         torch.equal(keep_cat.sort().values, expect.sort().values))
     # dropped tokens of image B must map to image-B anchors only
-    dropped_idx, gid, _ = AU.compute_assignment(V_cat, keep_cat.sort().values)
-    b_dropped = dropped_idx[dropped_idx >= n0]
-    b_gid = gid[dropped_idx >= n0]
+    # per-image assignment must keep image-B drops on image-B anchors AND
+    # reproduce the independent per-image assignments bitwise
+    split_cat = [Vs[0].shape[0], Vs[1].shape[0]]
+    di_cat, gid_cat, _ = AU.compute_assignment_per_image(
+        V_cat, keep_cat.sort().values, split_cat)
+    k1g = k1 + n0
+    di1, g1, _ = AU.compute_assignment(Vs[1], k1)
+    b_sel = di_cat >= n0
+    b_dropped = di_cat[b_sel]
+    b_gid = gid_cat[b_sel]
     n_keep0 = int(k0.numel())
+    no_cross = bool((b_gid >= n_keep0).all()) if b_gid.numel() else True
+    same_as_independent = bool(
+        torch.equal(b_dropped.sort().values, (di1 + n0).sort().values)
+        and torch.equal(b_gid.sort().values,
+                        (g1 + n_keep0).sort().values))
     res["G2"]["multi_image_no_cross_assignment"] = bool(
-        (b_gid >= n_keep0).all()) if b_gid.numel() else True
+        no_cross and same_as_independent)
 
     # N<=K keep-all bank entry
     deg = [v for v in bank.values() if v["n_vis"] <= AU.K]
@@ -252,7 +265,10 @@ def gate_g3_g4(res, eng, per_ds: int):
                                   device=V.device)
             keep_eq = bool(torch.equal(keep_live.sort().values,
                                        keep_bank.sort().values))
-            di, gid, sim = AU.compute_assignment(V, keep_bank)
+            split_sizes = AU.split_sizes_from_gthw(
+                prep, eng.inner.visual.spatial_merge_size)
+            di, gid, sim = AU.compute_assignment_per_image(V, keep_bank,
+                                                           split_sizes)
             gid_eq = bool(torch.equal(gid.cpu(),
                                       torch.tensor(rec["gid"])))
             entry = dict(keep_eq=keep_eq, gid_eq=gid_eq)
