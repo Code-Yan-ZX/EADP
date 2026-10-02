@@ -16,9 +16,10 @@ import os
 
 import numpy as np
 
+import xsp_common as XC
 import amp_common as AC
 import amp_analyze as AN
-import xsp_common as XC
+
 
 ACC_DIR = os.path.join(XC.OUT_DIR, "acc")
 
@@ -44,6 +45,66 @@ def macro_of(scores, arm):
     vals = [acc100(scores[(arm, ds)]) for ds in XC.DS_LIST
             if (arm, ds) in scores]
     return float(np.mean(vals)) if len(vals) == len(XC.DS_LIST) else None
+
+
+def run_quality(arm):
+    """empty / truncated / degenerate-repeat counts from the gen shards."""
+    import json as _json
+    out = {}
+    for ds in XC.DS_LIST:
+        p = os.path.join(ACC_DIR, arm, f"{ds}.json")
+        if not os.path.exists(p):
+            continue
+        sh = _json.load(open(p))
+        recs = list(sh["records"].values())
+        out[ds] = dict(
+            n=len(recs),
+            empty=sum(r["degeneracy"]["empty"] for r in recs),
+            truncated=sum(r["truncated"] for r in recs),
+            degenerate_repeat=sum(r["degeneracy"]["repeat4"] >= 10
+                                  for r in recs))
+    return out
+
+
+def interaction_bootstrap(scores, manifest, arms=("X_MAIN025", "X_GATHER",
+                                                  "E_MAIN025", "E_GATHER"),
+                          n_boot=XC.N_BOOT, seed=XC.BOOT_SEED):
+    """Joint cluster bootstrap of (X_MAIN025 - X_GATHER) -
+    (E_MAIN025 - E_GATHER): all four arms resampled on the SAME draws."""
+    import numpy as _np
+    rng = _np.random.default_rng(seed)
+    per_ds = {}
+    for ds in XC.DS_LIST:
+        cols = {}
+        for arm in arms:
+            pq = scores[(arm, ds)]["per_question"]
+            keys = AN.image_clusters(manifest, "dev", ds)
+            common = sorted(set(pq), key=int)
+            cols[arm] = _np.array([float(pq[q]) for q in common])
+        cl = _np.array([keys[q] for q in common])
+        uk = _np.unique(cl)
+        idx_by_k = [_np.where(cl == k)[0] for k in uk]
+        per_ds[ds] = (cols, idx_by_k, len(uk))
+    deltas = _np.zeros(n_boot)
+    for b in range(n_boot):
+        dsd = []
+        for ds in XC.DS_LIST:
+            cols, idx_by_k, nk = per_ds[ds]
+            sel = rng.integers(0, nk, nk)
+            idx = _np.concatenate([idx_by_k[j] for j in sel])
+            dX = cols["X_MAIN025"][idx].mean() - cols["X_GATHER"][idx].mean()
+            dE = cols["E_MAIN025"][idx].mean() - cols["E_GATHER"][idx].mean()
+            dsd.append(dX - dE)
+        deltas[b] = float(_np.mean(dsd))
+    point = float(_np.mean([_np.mean(per_ds[ds][0]["X_MAIN025"])
+                            - _np.mean(per_ds[ds][0]["X_GATHER"])
+                            - _np.mean(per_ds[ds][0]["E_MAIN025"])
+                            + _np.mean(per_ds[ds][0]["E_GATHER"])
+                            for ds in XC.DS_LIST]))
+    lo, hi = _np.percentile(deltas, [2.5, 97.5])
+    return dict(point=100.0 * point, ci=[100.0 * float(lo), 100.0 * float(hi)],
+                definition="(X_MAIN025-X_GATHER) - (E_MAIN025-E_GATHER), "
+                           "joint cluster bootstrap, same draws")
 
 
 def bootstrap(scores, manifest, arm_a, arm_b, n_boot=XC.N_BOOT,
@@ -171,7 +232,8 @@ def main():
         per = {ds: (acc100(scores[(arm, ds)]) if (arm, ds) in scores else None)
                for ds in XC.DS_LIST}
         table[arm] = dict(per_ds=per, macro=macro_of(scores, arm),
-                          scorer=XC.ARMS[arm]["scorer"], lam=XC.ARMS[arm]["lam"])
+                          scorer=XC.ARMS[arm]["scorer"], lam=XC.ARMS[arm]["lam"],
+                          quality=run_quality(arm))
 
     # pre-registered contrasts (protocol §6)
     pairs = [
@@ -192,20 +254,13 @@ def main():
         c["rescued"] = sum(v["rescued"] for v in rb.values())
         c["broken"] = sum(v["broken"] for v in rb.values())
         contrasts[f"{a}_minus_{b}"] = c
-    # completion 2x2 interaction: (X_MAIN - X_GATH) - (E_MAIN - E_GATH)
-    c1 = bootstrap(scores, manifest, "X_MAIN025", "X_GATHER")
-    c2 = bootstrap(scores, manifest, "E_MAIN025", "E_GATHER")
-    if c1 and c2:
-        # point estimate of the interaction and a bootstrap on the
-        # difference-of-differences (same resampling indices per draw is not
-        # available across the two independent calls; report the point
-        # estimate plus both CIs, and note this limitation explicitly)
-        contrasts["completion_2x2_interaction"] = dict(
-            point=c1["delta"] - c2["delta"],
-            ci_main=[c1["ci"], c2["ci"]],
-            note=("point = (X_MAIN025-X_GATHER) - (E_MAIN025-E_GATHER); no "
-                  "joint CI because the two deltas use independent bootstrap "
-                  "runs; treat as descriptive"))
+    # completion 2x2 interaction: (X_MAIN - X_GATH) - (E_MAIN - E_GATH),
+    # joint cluster bootstrap (all four arms on the same resamples)
+    if all((a, ds) in scores for a in ("X_MAIN025", "X_GATHER",
+                                       "E_MAIN025", "E_GATHER")
+           for ds in XC.DS_LIST):
+        contrasts["completion_2x2_interaction"] = interaction_bootstrap(
+            scores, manifest)
     result = dict(round="stage1_cross_stream_pilot", split="dev", arms=arms,
                   boot=dict(n=XC.N_BOOT, seed=XC.BOOT_SEED),
                   margin=XC.MARGIN, table=table, contrasts=contrasts,

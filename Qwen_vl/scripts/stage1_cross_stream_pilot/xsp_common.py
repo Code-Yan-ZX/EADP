@@ -348,12 +348,34 @@ def build_scorer_bank(scorer: str, ds: str, split: str = SPLIT,
             w_cat = torch.cat(ws) if ws else None
             diag = None
         else:
-            w_cat, diag = None, None
+            # diagnostics-only recompute of w for the bank record (selection
+            # itself goes through select_keep, the gate-verified path)
+            from model.pruner import _sim_visual_impl
+            sms = eng.inner.visual.spatial_merge_size
+            offset = 0
+            split_sizes = (prep["gthw"].prod(-1) // (sms ** 2)).tolist()
+            ws, zero_acc, dmean_acc = [], [], []
+            for i, n_img in enumerate(split_sizes):
+                if min(K, n_img) >= n_img:
+                    offset += n_img
+                    continue
+                sim01 = _sim_visual_impl(
+                    V[offset:offset + n_img].unsqueeze(0))
+                w_img, diag_i = stage1_importance(
+                    scorer, V[offset:offset + n_img],
+                    [d[offset:offset + n_img] for d in DS], sim01[0])
+                ws.append(w_img.detach().float().cpu())
+                for j, z in enumerate(diag_i["zero_norm"]):
+                    zero_acc.append(z)
+                for j, dm in enumerate(diag_i["d_mean"]):
+                    dmean_acc.append(dm)
+                offset += n_img
+            w_cat = torch.cat(ws) if ws else torch.ones(prep["n_vis"])
+            diag = dict(scorer=scorer, zero_norm=zero_acc,
+                        d_mean=dmean_acc)
         keep, _ = select_keep(scorer, ctx, K)
         dropped_idx, gid, _ = AC.compute_assignment(V, keep)
         rec = build_record(it, keep, dropped_idx, gid, V, DS, w_cat, diag)
-        if scorer == "eadp" and w_cat is not None:
-            rec["w"] = [round(float(x), 6) for x in w_cat]
         bank["samples"][key] = rec
         if (n + 1) % 20 == 0 or n + 1 == len(items):
             el = time.time() - t0

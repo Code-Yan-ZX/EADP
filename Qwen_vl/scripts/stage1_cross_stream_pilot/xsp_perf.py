@@ -25,10 +25,11 @@ import os
 import time
 
 import numpy as np
+
+import xsp_common as XC
+import amp_common as AC
 import torch
 
-import amp_common as AC
-import xsp_common as XC
 
 N_WARMUP = 15
 FIXED_TOKENS = 64

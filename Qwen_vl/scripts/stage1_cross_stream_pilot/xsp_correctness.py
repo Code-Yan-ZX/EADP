@@ -17,8 +17,9 @@ import os
 import torch
 import torch.nn.functional as F
 
-import amp_common as AC
 import xsp_common as XC
+import amp_common as AC
+
 
 N_SAMPLES_PER_DS = 3
 DECODE_TOKENS = 2048        # full greedy output for the E-reproduction gate
@@ -37,9 +38,9 @@ def reference_stage1(scorer: str, V: torch.Tensor, DS_list, sim: torch.Tensor,
     """Explicit per-point Python reference (slow, unambiguous)."""
     N = V.shape[0]
     m = min(m, N - 1)
-    w = torch.full((N,), floor, dtype=torch.float64)
     if scorer == "uniform":
-        return w
+        return torch.ones(N, dtype=torch.float64)
+    w = torch.full((N,), floor, dtype=torch.float64)
     streams = [V] if scorer == "main_residual" else DS_list
     for st in streams:
         H = (st.double() / st.double().norm(dim=-1, keepdim=True)
@@ -78,12 +79,11 @@ def gate_g1(res):
         det = bool(torch.equal(w_vec, w2))
         ok_s = rel < 1e-5 and finite and det
         if scorer == "cross_stream":
-            # the all-zero third stream must be counted, contribute zero and
-            # leave w identical to the two-stream computation
-            w2s, _ = XC.stage1_importance(
-                "cross_stream", V, DS_list[:2], sim)
+            # the all-zero third stream must be counted and contribute zero:
+            # w with 3 streams (one zero) == reference over the 2 real streams
+            ref2 = reference_stage1("cross_stream", V, DS_list[:2], sim)
             ok_s = ok_s and diag["zero_norm"] == [0, 0, N] \
-                and bool(torch.equal(w_vec, w2s))
+                and float((w_vec.double() - ref2.double()).abs().max()) < 1e-5
         res["gates"]["G1"][scorer] = dict(rel=rel, finite=finite,
                                           deterministic=det,
                                           zero_norm=diag["zero_norm"],
@@ -162,11 +162,14 @@ def gate_g3(res):
     V = torch.randn(N, D)
     DS_list = [torch.randn(N, D) for _ in range(3)]
     sim = F.normalize(V, dim=1) @ F.normalize(V, dim=1).t()
-    # zero third stream contributes exactly zero
+    # zero third stream contributes exactly zero: w(3 streams, one zero) ==
+    # reference over the two real streams; the stream is still counted
     DS_zero = [DS_list[0], DS_list[1], torch.zeros(N, D)]
-    w3, _ = XC.stage1_importance("cross_stream", V, DS_list, sim)
     wz, dz = XC.stage1_importance("cross_stream", V, DS_zero, sim)
-    zero_contrib = bool(torch.equal(w3, wz)) and dz["d_mean"][2] == 0.0
+    ref2 = reference_stage1("cross_stream", V, DS_list[:2], sim)
+    zero_contrib = (dz["d_mean"][2] == 0.0
+                    and float((wz.double() - ref2.double()).abs().max())
+                    < 1e-5)
     # N <= K -> keep-all, no scoring
     keep, _ = XC.select_keep("cross_stream",
                              dict(prep=dict(gthw=torch.tensor([[1, 8, 16]])),
@@ -357,7 +360,7 @@ def main():
 
     res: dict = dict(base_commit=XC.git_commit(), gates={})
     for fn in (gate_g1, gate_g2, gate_g3, gate_g4, gate_g5, gate_g6, gate_g7):
-        res["gates"][fn.__name__.replace("gate_", "")] = {"ok": False}
+        res["gates"][fn.__name__.replace("gate_", "").upper()] = {"ok": False}
     gate_g1(res)
     gate_g2(res)
     gate_g3(res)

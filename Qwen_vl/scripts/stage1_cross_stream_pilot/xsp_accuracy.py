@@ -27,9 +27,10 @@ import time
 
 import torch
 
+import xsp_common as XC
 import amp_common as AC
 import amp_accuracy as AA
-import xsp_common as XC
+
 
 ACC_DIR = os.path.join(XC.OUT_DIR, "acc")
 
