@@ -184,3 +184,13 @@ BASE。原 EADP 参数以当前 b1 路径为准(alpha=0.5、beta=2.0),不得误�
    联合 bootstrap(分析增强)。
 4. **D-5**:bank/shard 元数据 code_commit=`7db444a`;其后仅测试/分析脚本
    与 bank 诊断字段变更,选择/评分代码未变。
+5. **D-6(2026-10-02 外部复核发现,commit 753cb99 纠错)**:首次运行的
+   `stage1_importance` 将三路 z **求和**(w mean≈3.10),偏离协议 §3.5 的
+   **均值**定义(w=0.1+mean_s z_s);G1 参考实现同样求和,故该门验证的是
+   实现而非协议;G2 的多图测试 K=256≥N=64 走 keep-all 分支,未测剪枝路径。
+   纠错:公式改均值、G1 参考改均值、G2 改 K=16<N 实测剪枝并加防退化断言、
+   零流语义检查改均值口径(零流使均值缩至 2/3)。求和版全部产物归档于
+   `outputs/stage1_cross_stream_pilot/prefix_sum_run/`;修正版重跑范围:
+   cross_stream bank 重建 → 逐题 anchors 对比 → 仅重生成 anchors 改变的
+   X_GATHER/X_MAIN025 样本(E/U/V 四组的评分与求和/均值无关,不重跑;
+   uniform 恒 1、main_residual 单流不受影响)。

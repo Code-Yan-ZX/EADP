@@ -1,0 +1,86 @@
+{
+ "base_commit": "753cb9909a84264aeac74d6f51610cc7e46d574d",
+ "gates": {
+  "G1": {
+   "ok": true,
+   "cross_stream": {
+    "rel": 1.951611865513906e-07,
+    "finite": true,
+    "deterministic": true,
+    "zero_norm": [
+     0,
+     0,
+     48
+    ],
+    "ok": true
+   },
+   "main_residual": {
+    "rel": 2.5157629319439166e-07,
+    "finite": true,
+    "deterministic": true,
+    "zero_norm": [
+     1
+    ],
+    "ok": true
+   },
+   "uniform": {
+    "rel": 0.0,
+    "finite": true,
+    "deterministic": true,
+    "zero_norm": [],
+    "ok": true
+   },
+   "neighbors": {
+    "tie_order_ok": true,
+    "matrix_untouched": true,
+    "no_self": true,
+    "diag_never_selected": true
+   }
+  },
+  "G2": {
+   "ok": true,
+   "cross_stream": {
+    "pruned": true,
+    "concat_eq_independent": true,
+    "ok": true
+   },
+   "main_residual": {
+    "pruned": true,
+    "concat_eq_independent": true,
+    "ok": true
+   },
+   "uniform": {
+    "pruned": true,
+    "concat_eq_independent": true,
+    "ok": true
+   }
+  },
+  "G3": {
+   "zero_stream_contributes_zero": true,
+   "n_le_k_keep_all": true,
+   "duplicate_deterministic": true,
+   "ok": true
+  },
+  "G4": {
+   "ok": true
+  },
+  "G5": {
+   "ok": true
+  },
+  "G6": {
+   "ok": true
+  },
+  "G7": {
+   "ok": true
+  }
+ },
+ "all_passed": true,
+ "env": {
+  "python": "3.10.20",
+  "torch": "2.10.0+cu128",
+  "transformers": "4.57.6",
+  "cuda": "12.8",
+  "gpu": "NVIDIA A40",
+  "base_model": "Qwen3-VL-8B-Instruct-1024"
+ }
+}
