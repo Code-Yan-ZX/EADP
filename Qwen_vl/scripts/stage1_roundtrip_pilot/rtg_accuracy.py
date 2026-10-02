@@ -191,9 +191,14 @@ def _score_one(arm, ds, eng_needed=False):
                    base_commit=RC.git_commit())
     with open(path.replace(".json", "_score.json"), "w") as f:
         json.dump(summary, f, indent=1)
+    h_show = None
+    if ds == "OCRBench" and "Final Score" in res:
+        h_show = 100.0 * float(res["Final Score"]) / len(done)
+    else:
+        h_show = _headline100(res, ds)
     print(f"[scored] {arm} {ds}: n={len(done)} "
           f"diff={None if diff is None else round(diff, 6)} "
-          f"headline={_headline100(res, ds)}", flush=True)
+          f"headline={h_show}", flush=True)
     return True
 
 

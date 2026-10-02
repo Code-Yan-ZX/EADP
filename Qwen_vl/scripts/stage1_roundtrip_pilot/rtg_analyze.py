@@ -154,7 +154,7 @@ def main():
                                  float(np.percentile(vals, 97.5))])
             mv.append([d_inter[idx_sets[ds][bi]].mean() for bi in
                        range(RC.N_BOOT)])
-        macro_vals = np.mean(np.stack(mv, dim=0), axis=0)
+        macro_vals = np.mean(np.stack(mv, axis=0), axis=0)
         out["contrasts"]["2x2_interaction"] = dict(
             per_task=inter,
             macro=dict(delta=float(macro_vals.mean()) * 100.0,
@@ -213,12 +213,26 @@ def main():
         s_m = out["contrasts"].get("R_MAIN025-S_MAIN025", {}).get("macro")
         go1 = macro_d >= -0.5
         go2 = dv >= -1.0
-        go3 = bool(f_m and s_m and macro_d > f_m["delta"]
-                   and macro_d > s_m["delta"])
+        # frozen rule: R macro strictly higher than F and S macros
+        # (point estimates; CI crossing zero -> mechanism hint only)
+        go3 = bool(f_m and s_m and f_m["delta"] > 0 and s_m["delta"] > 0)
         out["go_gate"] = dict(cond1_macro_ge_m05=go1, cond2_docvqa_ge_m1=go2,
                               cond3_beats_F_and_S=go3,
                               cond4_ttft_le_5pct=None, go=None,
                               macro_delta=macro_d, docvqa_delta=dv)
+    # GO gate condition 4 from rtg_perf (if it exists)
+    perf_p = os.path.join(RC.OUT_DIR, "rtg_perf.json")
+    if os.path.exists(perf_p):
+        pf = json.load(open(perf_p))
+        if "go_gate" in out:
+            out["go_gate"]["cond4_ttft_le_5pct"] = bool(
+                pf.get("ttft_increment_pct", 99.0) <= 5.0)
+            out["go_gate"]["ttft_increment_pct"] = pf.get("ttft_increment_pct")
+            g = out["go_gate"]
+            out["go_gate"]["go"] = bool(g["cond1_macro_ge_m05"]
+                                        and g["cond2_docvqa_ge_m1"]
+                                        and g["cond3_beats_F_and_S"]
+                                        and g["cond4_ttft_le_5pct"])
     with open(os.path.join(RC.OUT_DIR, "analysis.json"), "w") as f:
         json.dump(out, f, indent=1)
     print("written analysis.json")
