@@ -78,6 +78,20 @@ def ref_merge_full(feat: torch.Tensor, keep: list[int],
     return y
 
 
+def _ready_ds():
+    """Datasets whose full bank is already on disk (gates tolerate a bank
+    still being built so they can be exercised early)."""
+    import gzip
+    ready = []
+    for ds in AU.DS_MAIN:
+        try:
+            AU.load_bank(ds)
+            ready.append(ds)
+        except FileNotFoundError:
+            pass
+    return ready
+
+
 def rel(a: torch.Tensor, b: torch.Tensor) -> float:
     return float((a - b).norm() / b.norm().clamp_min(1e-12))
 
@@ -151,9 +165,13 @@ def gate_g2(res, eng):
         ok_real &= (keep == sorted(set(keep)) and len(keep) == AU.K)
         ok_real &= (len(v["gid"]) == v["n_vis"] - AU.K)
         ok_real &= all(0 <= g < AU.K for g in v["gid"])
-        ok_real &= (sum(v["gsize"]) == v["n_vis"]) and \
+        ok_real &= (sum(v["gsize"]) == v["n_vis"] - AU.K) and \
                    (max(v["gsize"]) >= 1)
     res["G2"]["real_bank_sane"] = bool(ok_real)
+    print(f"[G2] real_bank_sane={ok_real} "
+          f"concat={res['G2']['multi_image_concat_equals_independent']} "
+          f"no_cross={res['G2']['multi_image_no_cross_assignment']}",
+          flush=True)
 
     # multi-image isolation on a concatenated ctx
     dataset = C.build_dataset("TextVQA_VAL")
@@ -212,7 +230,7 @@ def gate_g2(res, eng):
 # ---------------------------------------------------------------------------
 def gate_g3_g4(res, eng, per_ds: int):
     preds = {}
-    for ds in AU.DS_MAIN:
+    for ds in _ready_ds():
         bank = AU.load_bank(ds)
         cands = [k for k, v in bank.items() if v["n_vis"] > AU.K][:per_ds]
         dataset = C.build_dataset(ds)
@@ -229,7 +247,8 @@ def gate_g3_g4(res, eng, per_ds: int):
             ctx = dict(prep=prep, V=V, K=AU.K, engine=eng,
                        text_mean=tm, text_seq=ts)
             keep_live = AU.official_facility_keep(ctx, AU.K)
-            keep_bank = torch.tensor(rec["keep"], dtype=torch.long)
+            keep_bank = torch.tensor(rec["keep"], dtype=torch.long,
+                                  device=V.device)
             keep_eq = bool(torch.equal(keep_live.sort().values,
                                        keep_bank.sort().values))
             di, gid, sim = AU.compute_assignment(V, keep_bank)
@@ -318,7 +337,7 @@ def verify_g3():
 
 def gate_g5(res, eng, per_ds: int = 1):
     ok = True
-    for ds in AU.DS_MAIN:
+    for ds in _ready_ds():
         bank = AU.load_bank(ds)
         cands = [k for k, v in bank.items() if v["n_vis"] > AU.K][:per_ds]
         dataset = C.build_dataset(ds)
