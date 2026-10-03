@@ -68,6 +68,8 @@ def run_gen(args, eng):
             continue
         if args.panel == "nonreg" and ds not in AU.DS_NONREG:
             continue
+        if args.panel == "fresh" and ds not in AU.DS_MAIN:
+            continue   # fresh panel covers main tasks only
         bank = AU.load_bank(ds)
         rows, dataset = panel_rows(args.panel, ds)
         if not rows:
@@ -293,6 +295,8 @@ def run_score(args):
         if args.panel == "main" and ds not in AU.DS_MAIN:
             continue
         if args.panel == "nonreg" and ds not in AU.DS_NONREG:
+            continue
+        if args.panel == "fresh" and ds not in AU.DS_MAIN:
             continue
         for arm in args.arms.split(","):
             path = AU.shard_path(args.panel, arm, ds)

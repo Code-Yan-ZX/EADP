@@ -93,29 +93,57 @@
 - **G4 不变量**：NOT_RUN
 - **G5 λ=0 恒等**：NOT_RUN
 
-## 4. 主面板（BASE vs MAIN025 全量配对）
+## 4. 主面板（BASE vs MAIN025 全量配对）✓
 
-（NOT_RUN。预注册判定：pooled cluster bootstrap 5000、seed 20261002；
-改善成立 = pooled CI>0 且三任务方向一致。将报告每任务与等权 macro 的
-Δ/CI、20000 次嵌套敏感性、rescue/break、full/exposed/fresh 分解、
-coverage 门。）
+| 任务 | Δ(MAIN025−BASE) | 95% CI | n |
+|---|---:|---|---:|
+| TextVQA_VAL | +0.230 | [−0.142, +0.604] | 5000 |
+| DocVQA_VAL | +1.061 | [+0.583, +1.534] | 5349 |
+| OCRBench | +1.500 | [+0.499, +2.579] | 1000 |
+| **pooled（主判定）** | **+0.734** | **[+0.427, +1.030]** | 11349 |
 
-## 5. 非回归面板
+改善成立（pooled CI>0 且三任务方向一致）；20000 次嵌套敏感性一致；
+BOTH025 预案未触发（CI 未跨零，机械条件不满足）。
+fresh 全行独立确认：TV +0.164 [−0.488, +0.810] / DV +0.871 [−0.104, +1.852] /
+pooled(2814) +0.517 [−0.114, +0.990]——**跨零，独立确认不成立**；
+OCRBench fresh=0（无法独立比较）。
 
-（NOT_RUN。ChartQA/MMBench/MMStar/RealWorldQA/POPE 全量，逐 benchmark
-Δ 与 CI；POPE headline 用官方 'acc'（'Overall' 为 F1），逐题分为行级
-score、官方聚合经 category-explode 精确复算 diff=0。）
+## 5. 非回归面板 ✓
 
-## 6. fresh 对照面板（算子消融）
+| 任务 | BASE | MAIN025 | Δ | 95% CI |
+|---|---:|---:|---:|---|
+| ChartQA_TEST | 66.88 | 68.08 | +1.20 | 见 analysis_nonreg |
+| MMBench_DEV_EN_V11 | 83.82 | 83.82* | — | *headline 口径 |
+| MMStar | 60.93 | 60.60 | −0.33 | 见 analysis_nonreg |
+| RealWorldQA | 66.27 | 65.88 | −0.39 | 见 analysis_nonreg |
+| POPE | 91.48 | 91.52 | +0.04 | 见 analysis_nonreg |
 
-（NOT_RUN。对比：MAIN025−MAIN100（更新幅度）、MAIN025−MAIN_SIM025
-（权重形式），每任务与 macro Δ/CI；均为补充比较，CI 跨零 ≠ 相等/非劣。
-MAIN025−完整方法：**未运行**（§1.3），醒目标明。）
+（精确 Δ/CI 见 `analysis_nonreg.json`；POPE 官方 acc 为 category-explode
+均值，逐题行级分与官方聚合经精确复算 diff=0；MMBench 逐题分受循环评测
+结果文件限制见 RTG 报告 §6。）
 
-## 7. 效率
+## 6. fresh 对照面板（算子消融，EADP 锚，TV/DV 各 200 题）✓
 
-（NOT_RUN。30 题配对、现场全路径、64 token、ignore_eos、交错+预热、
-每轮释放 state/KV 后 reset peak。完整方法对照无计时——见 §1.3。）
+| 对比 | macro Δ | 95% CI |
+|---|---:|---|
+| MAIN025 − MAIN100（更新幅度 λ=1） | −2.006 | [−4.354, +0.401] |
+| MAIN025 − MAIN_SIM025（权重形式） | +0.369 | [−0.879, +1.634] |
+
+均 CI 跨零 → 更新幅度与权重形式的差异**不可分辨**（λ=1 点估计更差，
+提示阻尼幅度有益但未过确认线）。OCRBench 无 fresh 行，排除并如实标注。
+MAIN025 − 完整方法（PruMerge/Libra）：**未运行**（§1.3），醒目标明。
+
+## 7. 效率 ✓
+
+| 臂 | TTFT(ms) | s1+fac / fac | Completion | decode64 | VRAM(MB) |
+|---|---:|---:|---:|---:|---:|
+| FULL(keep-all) | 475.5 | — | — | 2645 | 17063 |
+| E_GATHER | 402.1 | 81.25 | — | 2640 | 16933 |
+| E_MAIN025 | 404.2 | 81.56 | 2.86 | 2657 | 16933 |
+| R_MAIN025(RTG, 另报告) | 404.7 | 2.14+78.71 | 2.81 | 2633 | 16933 |
+
+30 题配对、现场全路径、64 token、ignore_eos、交错+15 预热、每轮释放
+state/KV 并 reset peak；完整方法对照（PruMerge/Libra）无计时——见 §1.3。
 
 ## 8. 偏离记录
 

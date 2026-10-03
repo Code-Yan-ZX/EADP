@@ -210,33 +210,36 @@ def analyze_fresh():
                         [float(v) for v in s["per_question"].values()])))
     for a, b in (("MAIN025", "MAIN100"), ("MAIN025", "MAIN_SIM025")):
         per_task, boots = {}, {}
-        ok = True
+        ok = False
         for ds in AU.DS_MAIN:
-            pr = paired("fresh", a, b, ds)
+            pr = paired("fresh", a, ds and b, ds) if False else \
+                paired("fresh", a, b, ds)
             if pr is None:
-                ok = False
-                break
+                continue          # OCRBench has no fresh rows: skipped
             per_task[ds] = pr
             boots[ds] = Boot(pr["clusters"], BOOT_SEED)
+            ok = True
         if not ok:
             out["contrasts"][f"{a}-{b}"] = dict(
                 status="unavailable",
-                note="fresh panel missing for at least one task (OCRBench "
-                     "has zero fresh rows -> 无法独立比较)")
+                note="no fresh rows available for any task")
             continue
-        idx = {ds: boots[ds].draws(N_PRIMARY) for ds in AU.DS_MAIN}
-        deltas = {ds: per_task[ds]["diffs"] for ds in AU.DS_MAIN}
-        entry = dict(per_task={}, macro={})
-        for ds in AU.DS_MAIN:
+        idx = {ds: boots[ds].draws(N_PRIMARY) for ds in per_task}
+        deltas = {ds: per_task[ds]["diffs"] for ds in per_task}
+        ds_list = list(per_task)
+        entry = dict(per_task={}, macro={},
+                     tasks=ds_list,
+                     note="OCRBench excluded (zero fresh rows)")
+        for ds in per_task:
             m, lo, hi = boot_ci(deltas[ds], idx[ds])
             entry["per_task"][ds] = dict(
                 n=per_task[ds]["n"], n_images=per_task[ds]["n_images"],
                 delta=m, ci=[lo, hi])
-        mv = [np.mean([deltas[ds][idx[ds][bi]].mean() for ds in AU.DS_MAIN])
+        mv = [np.mean([deltas[ds][idx[ds][bi]].mean() for ds in per_task])
               for bi in range(N_PRIMARY)]
         entry["macro"] = dict(
             delta=float(np.mean([deltas[ds].mean()
-                                 for ds in AU.DS_MAIN])) * 100.0,
+                                 for ds in per_task])) * 100.0,
             ci=[float(np.percentile(mv, 2.5)) * 100.0,
                 float(np.percentile(mv, 97.5)) * 100.0])
         out["contrasts"][f"{a}-{b}"] = entry
