@@ -265,3 +265,22 @@ M1 已证明 60->240 的收益来自数据而不是 optimizer steps；240->480 �
 > 请先阅读 `docs/project_handoff.md`，继续 EADP method discovery。
 
 读取后应优先检查最新 Git 提交和服务器新结果，再根据本文第 6--7 节推进；不要要求用户重新复述项目背景。
+
+## 11. 2026-10-03 增量：Anchor Completion 全量验证 + RTG 候选（当前状态）
+
+- **主判定（全量，预注册）**：MAIN025（EADP+Completion）相对 BASE（EADP 硬剪枝）
+  pooled Δ=+0.734 [+0.427, +1.030]，三任务方向一致 → 改善成立；
+  fresh 全行 pooled +0.517 [−0.114, +0.990] 跨零（独立确认不成立；
+  OCRBench fresh=0）。BOTH025 预案未触发。
+- **RTG 候选（round-trip 文本权重，LoFTR 启发）**：GO 门 4/4 → R_MAIN025
+  全量已跑。主要比较 R−E_MAIN025 = +0.047 [−0.541, +0.637]：**未支持非劣**
+  （差 0.04 于边界）；补充比较 R−E_GATHER = **+0.978 [+0.363, +1.598]** 显著正。
+  fresh 机制对照 R−S 反转（−0.981），跨列空间对应机制未获独立确认。
+  完整方法相对硬剪枝的优势主要由 Completion+权重在 DocVQA/OCRBench 贡献。
+- **文献对照**：PruMerge（无 CLS token）与 Libra（LLM 层 attention+代码未发布）
+  均不可忠实移植；"最近完整方法数值对照"记未完成。
+- 非回归（R−E_GATHER）：RWQA +2.88✓ / ChartQA +1.92✓ / MMStar +0.47 / POPE +0.04；
+  MMBench 仅 headline −0.39（逐题 CI 未完成）。E_MAIN025 非回归与 EADP 锚
+  fresh 消融在截止时间前部分完成，见运行台账。
+- 报告：`docs/anchor_completion_validation_report.md`、
+  `docs/stage1_roundtrip_pilot_report.md`；全部偏离 D-1~D-8 入协议。
