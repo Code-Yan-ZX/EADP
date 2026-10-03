@@ -284,3 +284,59 @@ M1 已证明 60->240 的收益来自数据而不是 optimizer steps；240->480 �
   fresh 消融在截止时间前部分完成，见运行台账。
 - 报告：`docs/anchor_completion_validation_report.md`、
   `docs/stage1_roundtrip_pilot_report.md`；全部偏离 D-1~D-8 入协议。
+
+## 12. 2026-10-03 增量：BASE vs EADP 论文表4 差距审计 + 恢复审计闭环
+
+两轮 CPU-only 审计（未启动 GPU 生成、未调参、原仓库与预测全程只读），
+产物在 `/media/disk2/YZX/research/audit_base_gap_20261003/`
+（`SHA256SUMS.txt` + `archive_recovery/20261003_r2/SHA256SUMS_r2.txt`，未入库）。
+
+**定位结论（已闭环）**：本地 BASE 显著高于 EADP 论文表4
+（TV +6.4 / ChartQA +11.4 / DV +9.3 / MMB +3.3）的主因是
+**官方 EADP 的 Qwen3-VL 剪枝路径只传 `inputs_embeds` 给 `generate`，
+丢弃 DeepStack 三路注入、3D mRoPE 退化为 1D 位置**；本地 BASE 用修复后的
+native E0 引擎。证据链：
+
+- 官方 repo（SJTU-DeepVisionLab/EADP @ `e1a0880`）的
+  `model_fixed_res.py`/`pruner.py` 与本地 legacy 路径 byte-identical；
+  EADP 超参（α=0.5, β=2.0 等）、facility、1024²、K=256、greedy、评分器全同。
+- 恢复审计找回官方 wrapper 原始逐题预测（旧 clone `research/EADP` 下
+  `outputs/eadp/.../T20260921/22_Ge1a08801`，启动命令与运行日志齐全），
+  独立重评 diff=0：TextVQA **71.042** / DocVQA **61.136** / OCRBench **623**，
+  ≈ 论文表4（71.4/62.8/625）→ 论文数字 = 官方代码行为。
+- 全量同题配对（交集 5000/5349/1000，零缺失；image-cluster bootstrap
+  5000 次 seed=20261002）旧官方wrapper − native BASE：TV −6.75
+  [−7.66,−5.85] / DV −10.98 [−12.06,−9.90] / OCR −11.90 [−14.48,−9.28]，
+  等权 macro **−9.88 [−10.86,−8.90]**。
+- 受控消融锚点：keep-all（TextVQA DEV-300, K=1024）native 85.03 vs
+  legacy 75.33（s1_dualpath，原始 shard 逐字复核）；K=256 同 B2 selector
+  只切引擎 flag（D1 门）macro +7.52 [4.89,10.15]（DEV-300，缺 ChartQA；
+  DocVQA 单任务 −3.7，单 flag 因素分解未闭合）。
+
+**评分侧审计（本地分数全部可信）**：TextVQA/DocVQA/OCRBench/ChartQA
+独立重评 diff=0.0；BASE TextVQA 正确值 **77.788**（此前口头转述的 77.54
+无任何出处）；R_MAIN025 TextVQA 绝对分 vs 配对差无矛盾（DEV-100 子集噪声）；
+MMBench headline 0.8382 实际仅覆盖 1292/4876 题（VLMEvalKit
+`mcq_circular_eval` 的 `index%1e6` 静默丢弃 index≥1e6 的 3584 题，
+"circular"退化单轮）——引用 MMBench headline 时必须注明口径；
+DocVQA 4 行字面 NA→'nan' 丢配（绝对分 −0.04，delta 不变）。
+
+**对既有结论的影响**：R 相对 BASE 的配对提升（R−E_GATHER +0.978
+[+0.363,+1.598] 等）**不受影响**（同引擎同评分器配对；复算 +0.981
+[+0.363,+1.605]）。论文 EADP@256 行与本地 BASE **不可直接比较**；
+论文内部 pruned 行之间（同走 CDPruner inputs_embeds 路径）内部可比但
+绝对水平整体被压低；论文 full-token 行 ≈ 本地 native 不剪枝（DEV-300 佐证）。
+
+**定性边界**：native 引擎对 DeepStack/3D mRoPE 的处理属 Qwen 已有架构的
+正确传递，记为**实现/复现修复**，不是方法创新；修复效应对非 EADP
+selector 的普适性无证据（它们只跑过 native，无 legacy 对照）。
+
+**缺失测量（如实标注）**：同臂 legacy vs native 配对 TTFT 不存在——
+RTG 的 404.7−402.1=2.6ms 是 native-vs-native，不得引用为修复成本；
+E0 计划的 `e0_perf_paired.json` 从未产出（D3=INCOMPLETE）。
+
+详细产物：第一轮 `audit_base_gap_20261003/{evidence,extracts,rescore}/`
+（DeepStack 代码证据、论文全文提取、独立重评分）；恢复审计
+`audit_base_gap_20261003/archive_recovery/20261003_r2/`
+（`CONCLUSION.md`、`old_vs_new_scores.csv`、逐题分明细、配置对照、
+消融/效率/出处盘点）。
