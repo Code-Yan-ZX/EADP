@@ -1,0 +1,74 @@
+{
+  "audit_id": "p0_audit_table4_20261004",
+  "date": "2026-10-04",
+  "subject": "P0 audit of L_R_MAIN025 ten-task Table-4 panel (official_legacy)",
+  "arm": "L_R_MAIN025",
+  "pipeline": "official_legacy",
+  "base_commit": "a330eb66f65e",
+  "artifacts_root": "Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/",
+
+  "avg_formula": {
+    "verdict": "VERIFIED",
+    "formula": "mean of 8 percent columns + OCRBench_raw/10 + MME_raw/20, divided by 10",
+    "evidence": "reproduces all 10 paper Table-4 Avg cells within 0.052 (paper rounds to 1 decimal): UB -0.009, Div512 +0.017, CD512 -0.011, EADP512 -0.045, Div256 -0.044, CD256 +0.033, EADP256 +0.052, Div128 +0.031, CD128 +0.029, EADP128 +0.041",
+    "ours_candidate_avg": 68.024,
+    "note": "candidate 68.02 now formula-verified; still conditional on HallusionBench column metric = fAcc (see below). Do not present as final until P1 E_GATHER comparison completes."
+  },
+
+  "hallusionbench": {
+    "paper_column_metric": "fAcc (inferred)",
+    "inference_evidence": "aAcc excluded as upper bound: local K=256 aAcc 64.46 > paper FULL 51.2; local native keep-all fAcc 50.29 vs paper FULL 51.2 (diff -0.9); local L_R_MAIN025 fAcc 41.04 vs paper EADP row 42.8",
+    "local": {"aAcc": 64.458, "fAcc": 41.04, "qAcc": 38.022, "n": 951},
+    "official_group_rule_recompute": {"match": true, "method": "fAcc=mean(all()) over (l2-cat,set_id,figure_id); qAcc over (l2-cat,set_id,question_id); aAcc=row mean", "script": "Qwen_vl/scripts/stage1_roundtrip_pilot/rtg_score_new5.py crosscheck_hallusion"}
+  },
+
+  "mme": {
+    "local": {"perception": 1655.781, "reasoning": 547.143, "total": 2202.924, "n": 2374},
+    "paper": 2202.4,
+    "diff_vs_paper": 0.524,
+    "official_group_rule_recompute": {"match": true, "method": "acc+ per image_path pair (prod of pair scores) + acc per category; category score = acc+acc+; P/R are sums", "script": "rtg_score_new5.py crosscheck_mme"}
+  },
+
+  "mmbench": {
+    "verdict": "MECHANISM CORRECTED (supersedes earlier 'F3 circular degenerates to single round / silent index%1e6 drop' framing)",
+    "official_pinned_file_structure": {
+      "MMBench_DEV_EN_V11": {"rows": 4876, "unique_base_questions": 1292, "rotation_rows_index_ge_1e6": 3584},
+      "MMBench_DEV_CN_V11": {"rows": 4876, "unique_base_questions": 1292, "rotation_rows_index_ge_1e6": 3584}
+    },
+    "eval_semantics": "mcq_circular_eval groups rows by g_index=index%1e6; per-group hit = ALL rotations correct (circular consistency); headline = mean over 1292 base questions. This is TRUE circular eval, not degenerate single-round.",
+    "exact_recompute": {
+      "EN": {"groups_evaluated": 1288, "correct": 1027, "failed_groups_counted_0": 4, "headline": "1027/1292 = 0.794892 == official 0.794892 (bit-exact)"},
+      "CN": {"groups_evaluated": 1291, "correct": 1013, "failed_groups_counted_0": 1, "headline": "1013/1292 = 0.784056 == official 0.784056 (bit-exact)"}
+    },
+    "comparability": "paper used VLMEvalKit 'official configuration' per Sec 5.1 quote -> same official V11 files -> same 1292-question effective coverage; reported-vs-reproduced same-protocol comparison VALID",
+    "caveat": "evaluation failures (prefetch/exact-match) are silently counted hit=0 (4 EN, 1 CN); affects all VLMEvalKit-based numbers equally including paper's"
+  },
+
+  "infovqa": {
+    "verdict": "SELF-CONSISTENT, VERSION MISMATCH DOCUMENTED",
+    "pinned_md5_vs_actual": "VLMEvalKit pinned hash mismatches (upstream re-export); actual file md5 2342e9c225222f0ef4dec545ebb126fe recorded 2026-10-04",
+    "row_alignment_check": "fresh re-download vs generation-time pred tsv: 2801/2801 rows, question/answer/index zero mismatches (column count 12 vs 13 explained by image-column drop + prediction/truncated append at scoring time)",
+    "impact": "scoring self-consistent; absolute number not comparable to a differently-versioned external run beyond the same re-export"
+  },
+
+  "per_score_json_provenance": {
+    "checked": ["TextVQA_VAL", "ChartQA_TEST", "AI2D_TEST", "OCRBench", "HallusionBench", "MME", "MMBench_DEV_EN_V11", "MMBench_DEV_CN_V11", "DocVQA_VAL", "InfoVQA_VAL"],
+    "arm": "L_R_MAIN025 (all 10)",
+    "pipeline": "official_legacy (all 10)",
+    "base_commit": "a330eb66f65e (all 10)",
+    "perq_reproduces_headline": "exact (diff<=3.6e-13) on TextVQA/ChartQA/AI2D/DocVQA/OCRBench; MME+HallusionBench via official group-rule crosscheck match=True; MMB EN/CN headline-only (bit-exact group recompute recorded above); InfoVQA ANLS perq crosscheck via DocVQA-validated extractor",
+    "n": {"TextVQA_VAL": 5000, "ChartQA_TEST": 2500, "AI2D_TEST": 3088, "OCRBench": 1000, "HallusionBench": 951, "MME": 2374, "MMBench_DEV_EN_V11": 4876, "MMBench_DEV_CN_V11": 4876, "DocVQA_VAL": 5349, "InfoVQA_VAL": 2801}
+  },
+
+  "ten_task_values_reproduced": {
+    "TextVQA": 72.012, "ChartQA": 55.04, "AI2D": 74.773, "OCRBench": 632.0,
+    "HallusionBench_fAcc": 41.04, "MME": 2202.924, "MMB_EN": 79.489,
+    "MMB_CN": 78.406, "DocVQA": 63.104, "InfoVQA": 43.033,
+    "Avg_formula_verified": 68.024
+  },
+
+  "outstanding_before_final_avg": [
+    "HallusionBench paper-column metric = fAcc is inferred (strong evidence, not read from paper text; arXiv HTML render truncated before supplementary metric table)",
+    "P1 E_GATHER same-protocol deltas must be in place before any ours-vs-EADP comparison table is finalized"
+  ]
+}
