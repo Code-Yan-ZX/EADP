@@ -1,0 +1,183 @@
+{
+ "arm_lr": "L_R_MAIN025",
+ "arm_eg": "E_GATHER (official EADP)",
+ "pipeline": "official_legacy",
+ "n_boot": 5000,
+ "seed": 20261004,
+ "tasks": {
+  "TextVQA_VAL": {
+   "n": 5000,
+   "lr_mean": 72.012,
+   "eg_mean": 71.042,
+   "delta_pct": 0.97,
+   "boot": {
+    "point": 0.0097,
+    "ci": [
+     0.17934981565891364,
+     1.7698998622671047
+    ],
+    "n": 5000,
+    "n_clusters": 3166
+   },
+   "note": "E-side = audit-recovered official EADP predictions"
+  },
+  "DocVQA_VAL": {
+   "n": 5349,
+   "lr_mean": 63.10443271500505,
+   "eg_mean": 61.13557770823,
+   "delta_pct": 1.9688550067750517,
+   "boot": {
+    "point": 0.019688550067750516,
+    "ci": [
+     0.979158527983587,
+     2.9956910249417503
+    ],
+    "n": 5349,
+    "n_clusters": 1286
+   },
+   "note": "E-side = audit-recovered official EADP predictions"
+  },
+  "OCRBench": {
+   "n": 1000,
+   "lr_mean": 63.2,
+   "eg_mean": 62.3,
+   "delta_pct": 0.8999999999999999,
+   "boot": {
+    "point": 0.009,
+    "ci": [
+     -1.2,
+     3.0
+    ],
+    "n": 1000,
+    "n_clusters": 1000
+   },
+   "note": "E-side = audit-recovered official EADP predictions; clusters = per-row (no image key column available)"
+  },
+  "ChartQA_TEST": {
+   "n": 2500,
+   "lr_mean": 55.04,
+   "eg_mean": 54.800000000000004,
+   "delta_pct": 0.24,
+   "boot": {
+    "point": 0.0024,
+    "ci": [
+     -1.28,
+     1.76
+    ],
+    "n": 2500,
+    "n_clusters": 2500
+   },
+   "note": "E-side = L_E_GATHER; clusters = per-row (no image key column available)"
+  },
+  "AI2D_TEST": {
+   "n": 3088,
+   "lr_mean": 74.77331606217616,
+   "eg_mean": 74.54663212435233,
+   "delta_pct": 0.22668393782383417,
+   "boot": {
+    "point": 0.0022668393782383418,
+    "ci": [
+     -0.8015582472905103,
+     1.2650326958804838
+    ],
+    "n": 3088,
+    "n_clusters": 1204
+   },
+   "note": "E-side = L_E_GATHER"
+  },
+  "InfoVQA_VAL": {
+   "n": 2801,
+   "lr_mean": 51.312732856411984,
+   "eg_mean": 52.08639009433055,
+   "delta_pct": -0.7736572379185735,
+   "boot": {
+    "point": -0.0077365723791857355,
+    "ci": [
+     -1.75862727006297,
+     0.21779102249685958
+    ],
+    "n": 2801,
+    "n_clusters": 500
+   },
+   "note": "E-side = L_E_GATHER"
+  },
+  "HallusionBench": {
+   "n": 951,
+   "lr_facc": 41.040462427745666,
+   "eg_facc": 41.040462427745666,
+   "delta": 0.0,
+   "ci": [
+    -3.179190751445084,
+    3.179190751445084
+   ],
+   "n_clusters": 346,
+   "lr_aAcc": 64.45846477392219
+  },
+  "MME": {
+   "n": 2374,
+   "lr_total": 2202.923769507803,
+   "eg_total": 2212.6946778711485,
+   "delta": -9.77090836334537,
+   "ci": [
+    -50.48358930019811,
+    31.281069229421245
+   ],
+   "n_clusters": 1187
+  },
+  "MMBench_DEV_EN_V11": {
+   "n_questions": 1288,
+   "lr_headline": 79.4891640866873,
+   "lr_correct": 1027,
+   "eg_correct": 1032,
+   "delta_pct": -0.38819875776396895,
+   "ci": [
+    -1.3975155279503104,
+    0.6211180124223614
+   ],
+   "note": "clusters = circular question groups (1292); groups that failed evaluation carry hit=0 in both arms (official semantics)"
+  },
+  "MMBench_DEV_CN_V11": {
+   "n_questions": 1291,
+   "lr_headline": 78.40557275541795,
+   "lr_correct": 1013,
+   "eg_correct": 1019,
+   "delta_pct": -0.4647560030983766,
+   "ci": [
+    -1.6266460108443015,
+    0.6196746707978318
+   ],
+   "note": "clusters = circular question groups (1292); groups that failed evaluation carry hit=0 in both arms (official semantics)"
+  }
+ },
+ "avg10": {
+  "formula": "(8 pct + OCR/10 + MME/20)/10 (p0-audit verified)",
+  "note": "InfoVQA columns use official ANLS; per-task InfoVQA delta uses the paired local extractor",
+  "lr": 68.02441500348633,
+  "eg": 67.69448215814414,
+  "delta": 0.32993284534218503,
+  "lr_columns": {
+   "TextVQA": 72.012,
+   "ChartQA": 55.04,
+   "AI2D": 74.77331606217616,
+   "HallusionBench": 41.040462427745666,
+   "MMB_EN": 79.4891640866873,
+   "MMB_CN": 78.40557275541795,
+   "DocVQA": 63.10443271500505,
+   "InfoVQA": 43.03301351244087,
+   "OCRBench": 632.0,
+   "MME": 2202.923769507803
+  },
+  "eg_columns": {
+   "TextVQA": 71.042,
+   "ChartQA": 54.800000000000004,
+   "AI2D": 74.54663212435233,
+   "HallusionBench": 41.040462427745666,
+   "MMB_EN": 80.12422360248446,
+   "MMB_CN": 78.93106119287374,
+   "DocVQA": 61.13557770823,
+   "InfoVQA": 42.39013063219771,
+   "OCRBench": 623.0,
+   "MME": 2212.6946778711485
+  }
+ }
+}

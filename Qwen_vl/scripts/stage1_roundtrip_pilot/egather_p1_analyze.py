@@ -109,8 +109,8 @@ def boot_mean_delta(a, b, cl, rng):
         idx = np.concatenate([by[u] for u in pick])
         stats[r] = d[idx].mean()
     lo, hi = np.percentile(stats, [2.5, 97.5])
-    return dict(point=point, ci=[float(lo), float(hi)], n=int(len(d)),
-                n_clusters=int(len(uc)))
+    return dict(point=point, ci=[float(lo) * 100.0, float(hi) * 100.0],
+                n=int(len(d)), n_clusters=int(len(uc)))
 
 
 def analyze_vqa_style(ds, eg_source):
@@ -316,8 +316,22 @@ def main():
                    InfoVQA=t["InfoVQA_VAL"]["eg_mean"],
                    OCRBench=t["OCRBench"]["eg_mean"] * 10.0,
                    MME=t["MME"]["eg_total"])
+    # InfoVQA: per-question deltas use the local ANLS extractor (same on
+    # both arms -> paired comparison valid), but the Avg columns must use
+    # the OFFICIAL InfoVQA ANLS (the extractor differs from official).
+    def official_infovqa(root):
+        sj = json.load(open(os.path.join(root, "InfoVQA_VAL_score.json")))
+        v = sj["official"]["Overall"]
+        if isinstance(v, dict):
+            v = next(iter(v.values()))
+        return float(str(v).split(":")[-1].strip(" {}'\""))  # percent
+
+    lr_vals["InfoVQA"] = official_infovqa(LR)
+    eg_vals["InfoVQA"] = official_infovqa(EG)
     out["avg10"] = dict(
         formula="(8 pct + OCR/10 + MME/20)/10 (p0-audit verified)",
+        note="InfoVQA columns use official ANLS; per-task InfoVQA "
+             "delta uses the paired local extractor",
         lr=avg10(lr_vals), eg=avg10(eg_vals),
         delta=avg10(lr_vals) - avg10(eg_vals),
         lr_columns=lr_vals, eg_columns=eg_vals)

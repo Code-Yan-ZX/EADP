@@ -169,6 +169,7 @@ def run_gen(datasets=None, limit=None, arm=None):
             n_rows = min(n_rows, limit)
         t0 = time.time()
         n_done = 0
+        n_new = 0           # freshly generated this run (rate denominator)
         for n, i in enumerate(range(n_rows)):
             key = str(i)
             if key in shard["records"]:
@@ -194,12 +195,14 @@ def run_gen(datasets=None, limit=None, arm=None):
                 layer_calls_ok=bool(out["meta"]["layer_calls_ok"]),
                 degeneracy=degeneracy(out["text"]))
             n_done += 1
+            n_new += 1
             if n_done % 25 == 0:
                 save_shard(path, shard)
             if n % 50 == 0:
                 el = time.time() - t0
                 print(f"[{ARM} full {ds}] {n}/{n_rows} "
-                      f"({el/max(1, n_done):.2f}s/q)", flush=True)
+                      f"({el/max(1, n_new):.2f}s/q, +{n_new})",
+                      flush=True)
         save_shard(path, shard)
         print(f"[done] {ARM} full {ds}: {len(shard['records'])} records",
               flush=True)
@@ -211,11 +214,14 @@ def run_score(datasets=None, arm=None):
     ok = True
     dsets = datasets or ARM_SPECS[ARM][2]
     classic = [d for d in dsets if d not in
-               ("AI2D_TEST", "HallusionBench", "MME",
+               ("HallusionBench", "MME",
                 "MMBench_DEV_CN_V11", "InfoVQA_VAL")]
     new5 = [d for d in dsets if d in
-            ("AI2D_TEST", "HallusionBench", "MME",
-             "MMBench_DEV_CN_V11", "InfoVQA_VAL")]
+            ("HallusionBench", "MME", "MMBench_DEV_CN_V11",
+             "InfoVQA_VAL")]
+    # AI2D_TEST intentionally goes through the classic path (its official
+    # intermediate is "_exact_matching_result", not "_auxmatch"; matches
+    # how the L_R_MAIN025 run scored it: perq via _per_q_generic).
     for ds in classic:
         ok &= RAL._score_one(ds)
     if new5:
