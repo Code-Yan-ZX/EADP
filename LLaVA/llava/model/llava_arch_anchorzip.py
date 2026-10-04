@@ -20,7 +20,7 @@ decisions are FROZEN there and must not be changed here:
     the official paths untouched.
 
 The official llava_arch.py is NOT modified; this module monkey-patches
-LlavaMetaModel.encode_images at load time when enabled.
+LlavaMetaForCausalLM.encode_images at load time when enabled.
 """
 
 from __future__ import annotations
@@ -43,6 +43,10 @@ from llava.model import llava_arch as LA  # noqa: E402
 INV_TEMP = 100.0            # frozen (rtg_common.py:66)
 ALPHA = 0.5                 # official fusion weight
 LAM = 0.25                  # frozen Completion strength
+# "rtg" = AnchorZip main method; "official_replay" = the port replays the
+# OFFICIAL entropy/aggregation/fusion steps inline (G1 identity gate:
+# must reproduce the official encode_images keep masks bit-exactly).
+MODE = "rtg"
 
 
 def _text_weight_rtg(A: torch.Tensor) -> torch.Tensor:
@@ -93,12 +97,28 @@ def _anchorzip_encode_images(self, images, texts=None, split_sizes=None):
     global_sim, local_sim_all = self.sim_cross(
         text_embeds, text_embeds_seq, image_embeds, original_B, original_N)
 
-    # ---- (2.1)+(2.2)+(2.3) REPLACED by the frozen RTG stage -----------
-    A = local_sim_all[0, :, 0, :]            # [N, L]
-    g = global_sim[0, :, 0]                  # [N]
-    w = _text_weight_rtg(A)
-    local = (A * w.unsqueeze(0)).sum(dim=1)  # [N]
-    text_sim = ALPHA * g + (1.0 - ALPHA) * local
+    # ---- (2.1)+(2.2)+(2.3): RTG stage, or official replay for G1 ------
+    if MODE == "official_replay":
+        # verbatim official three steps (same ops the official
+        # encode_images runs) — used only by the G1 identity gate
+        filtered, top_vals = self.entrpy_filter(
+            local_sim_all, T=100.0, entropy_keep_ratio=0.2)
+        local_agg = self.local_aggregation(
+            filtered_local_sim=filtered, top_entropy_vals=top_vals,
+            M_temp=0.01, strategy="negative_entropy")
+        text_sim_all = ALPHA * global_sim + (1.0 - ALPHA) * local_agg
+        text_sim = text_sim_all.mean(dim=-1)
+    else:
+        # frozen RTG stage, PER CROP (Qwen round applies the text
+        # weight per image; B here = crops of one image)
+        rows = []
+        for b in range(B_f):
+            A_b = local_sim_all[b, :, 0, :]          # [N, L]
+            g_b = global_sim[b, :, 0]                # [N]
+            w_b = _text_weight_rtg(A_b)
+            rows.append(ALPHA * g_b + (1.0 - ALPHA)
+                        * (A_b * w_b.unsqueeze(0)).sum(dim=1))
+        text_sim = torch.stack(rows)                 # [B, N]
 
     # ---- official (2.4)-(2.6) + facility, VERBATIM ---------------------
     text_sim = text_sim.view(B_joint, N_joint)
@@ -155,8 +175,8 @@ def _anchorzip_encode_images(self, images, texts=None, split_sizes=None):
 
 
 def install():
-    """Monkey-patch LlavaMetaModel.encode_images with the AnchorZip
+    """Monkey-patch LlavaMetaForCausalLM.encode_images with the AnchorZip
     path.  Returns a restore function."""
-    orig = LA.LlavaMetaModel.encode_images
-    LA.LlavaMetaModel.encode_images = _anchorzip_encode_images
-    return lambda: setattr(LA.LlavaMetaModel, "encode_images", orig)
+    orig = LA.LlavaMetaForCausalLM.encode_images
+    LA.LlavaMetaForCausalLM.encode_images = _anchorzip_encode_images
+    return lambda: setattr(LA.LlavaMetaForCausalLM, "encode_images", orig)
