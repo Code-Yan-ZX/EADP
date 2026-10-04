@@ -1,0 +1,102 @@
+{
+ "arm": "L_R_MAIN025",
+ "pipeline": "official_legacy",
+ "panel": "full_new5",
+ "ds": "MMBench_DEV_CN_V11",
+ "n": 4876,
+ "official": {
+  "split": {
+   "0": "dev"
+  },
+  "Overall": {
+   "0": 0.7840557275541795
+  },
+  "AR": {
+   "0": 0.8475609756097561
+  },
+  "CP": {
+   "0": 0.8011049723756906
+  },
+  "FP-C": {
+   "0": 0.7150837988826816
+  },
+  "FP-S": {
+   "0": 0.8581314878892734
+  },
+  "LR": {
+   "0": 0.5806451612903226
+  },
+  "RR": {
+   "0": 0.7816091954022989
+  },
+  "action_recognition": {
+   "0": 0.8589743589743589
+  },
+  "attribute_comparison": {
+   "0": 0.7254901960784313
+  },
+  "attribute_recognition": {
+   "0": 0.9
+  },
+  "celebrity_recognition": {
+   "0": 0.9696969696969697
+  },
+  "function_reasoning": {
+   "0": 0.9166666666666666
+  },
+  "future_prediction": {
+   "0": 0.7
+  },
+  "identity_reasoning": {
+   "0": 1.0
+  },
+  "image_emotion": {
+   "0": 0.8333333333333334
+  },
+  "image_quality": {
+   "0": 0.4523809523809524
+  },
+  "image_scene": {
+   "0": 0.9166666666666666
+  },
+  "image_style": {
+   "0": 0.9032258064516129
+  },
+  "image_topic": {
+   "0": 0.9666666666666667
+  },
+  "nature_relation": {
+   "0": 0.8548387096774194
+  },
+  "object_localization": {
+   "0": 0.5857142857142857
+  },
+  "ocr": {
+   "0": 0.95
+  },
+  "physical_property_reasoning": {
+   "0": 0.6226415094339622
+  },
+  "physical_relation": {
+   "0": 0.52
+  },
+  "social_relation": {
+   "0": 0.9193548387096774
+  },
+  "spatial_relationship": {
+   "0": 0.48
+  },
+  "structuralized_imagetext_understanding": {
+   "0": 0.5
+  }
+ },
+ "per_question": {},
+ "auxmatch_path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/MMBench_DEV_CN_V11_pred_auxmatch.xlsx",
+ "aggregate_crosscheck": {
+  "metric": "circular headline (F3 subset)",
+  "local": null,
+  "match": null,
+  "note": "per-question mapping unavailable (rotated dedup); headline only"
+ },
+ "base_commit": "a330eb66f65e"
+}

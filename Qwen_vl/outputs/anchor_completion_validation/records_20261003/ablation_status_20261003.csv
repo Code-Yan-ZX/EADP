@@ -1,0 +1,11 @@
+ablation,contrast,status,what_exists,note
+Completion vs 硬剪枝,MAIN025(E_MAIN025) - BASE(E_GATHER),DONE_FULL,"主面板3任务全量配对 pooled +0.734[+0.427,+1.030] + 非回归5项; fresh全行跨零",预注册主判定: 改善成立但独立确认不成立
+完整方法 vs 硬剪枝,R_MAIN025 - E_GATHER,DONE_FULL,"R−E_GATHER +0.978[0.363,1.598] 显著正 (8数据集K256全量工件在库)","同引擎同评分器, 配对差不受官方wrapper缺陷影响"
+替换Stage-1条件差异,R_MAIN025 - E_MAIN025,DONE_FULL,"+0.047[-0.541,0.637] 未支持非劣(margin 0.5, 差0.04于边界); MMBench逐题CI除外",非劣判定未过
+RTG单独贡献(无Completion),R_GATHER - E_GATHER,DEV_ONLY,DEV-300 六组中 R_GATHER 臂存在(stage1_roundtrip_pilot/acc/R_GATHER); 全量未跑,论文如需'RTG单独贡献'需独立全量R_GATHER; 不能用三主臂硬算
+更新幅度消融,MAIN025 - MAIN100 (λ=1),DONE_FRESH,"fresh TV/DV各200题: -2.006[-4.354,+0.401] 跨零",λ=1点估计更差; OCRBench无fresh行
+权重形式消融,MAIN025 - MAIN_SIM025 (τ=0.1),DONE_FRESH,"+0.369[-0.879,+1.634] 跨零",fresh面板
+RTG机制对照,FLAT/SHUF,DONE_DEV,DEV-300 F_MAIN025/S_MAIN025 臂+bank,机制对照
+2×2交互(Stage1×Completion),未定义,NOT_RUN,"需独立因子设计, 现有三臂不支持",登记为未测
+最近完整方法数值对照(PruMerge/Libra),完整方法对照,NOT_RUN_UNFAITHABLE,"PruMerge需CLIP-ViT CLS attention(Qwen3-VL ViT无CLS, 结构性不存在); Libra官方代码未发布+论文W维度矛盾","按预授权记未完成, 不造弱基线"
+native旧lambda/权重消融,旧pipeline,KEPT_AS_IS,保持原pipeline标签(anchor_merge_pilot等),不自动充作legacy证据

@@ -1,0 +1,14 @@
+item,gap_kind,status,what_is_needed,note
+Table4:AI2D,dataset_missing,NOT_RUN,"数据集获取+版本/split/输入/评分资格核实(不能只凭简称), 然后三臂K256生成+官方评分","表4缺失列; 数据集未在仓库, 核实前不排期"
+Table4:HallBench,dataset_missing,NOT_RUN,"数据集获取+版本/split/输入/评分资格核实(不能只凭简称), 然后三臂K256生成+官方评分","表4缺失列; 数据集未在仓库, 核实前不排期"
+Table4:MME,dataset_missing,NOT_RUN,"数据集获取+版本/split/输入/评分资格核实(不能只凭简称), 然后三臂K256生成+官方评分","表4缺失列; 数据集未在仓库, 核实前不排期"
+Table4:MMB-CN,dataset_missing,NOT_RUN,"数据集获取+版本/split/输入/评分资格核实(不能只凭简称), 然后三臂K256生成+官方评分","表4缺失列; 数据集未在仓库, 核实前不排期"
+Table4:InfoVQA,dataset_missing,NOT_RUN,"数据集获取+版本/split/输入/评分资格核实(不能只凭简称), 然后三臂K256生成+官方评分","表4缺失列; 数据集未在仓库, 核实前不排期"
+FULL_1024 全量 keep-all 参照(10任务),reference_missing,NOT_RUN,本地 native keep-all 全量生成(或明确改用DEV-300/30题口径并声明),效率比/FLOPs比/准确率保留率的FULL对照目前只有DEV-300与30题
+MMBench 逐题配对 CI,scoring_gap,PARTIAL,"循环评测结果文件(1292行旋转去重)与4876行预测1:1对齐方案, 或改用可对齐口径重评","审计F3: headline仅覆盖26.5%题目; 官方VLMEvalKit行为, 照实复现"
+MMB-CN,dataset_missing,NOT_RUN,MMBench_DEV_CN_V11获取+中文prompt配置,表4缺失列
+正常EOS解码口径 perf,protocol_gap,NOT_RUN,固定64token(ignore_eos)之外增加正常EOS任务回答; 保存实际长度分布,"旧64token数据原样保留, 新口径不覆盖"
+FLOPs 字段,metric_missing,NOT_RUN,"统一边界重测(llm_prefill/vision/pruning/decode/total_request GFLOPs); run_efficiency_qwen3vl.py仅包装语言模型且FULL/pruned进入边界不一致, 只能单列official_script_metric(partial)",不得用视觉token减少比例换算
+逐题run manifest(第2节字段),record_gap,PENDING_BACKFILL,为K=256已完成的8数据集×3臂写工件级映射(pred.tsv/results/acc/bank/analysis->manifest字段); 新分片直接带manifest,"工件已在库, 映射脚本未写; hash引用不偷换原产物元数据"
+"paper_avg10 (表4平均, 论文84.3)",formula_unverified,UNVERIFIED,核对原汇总代码; 候选约定 OCRBench/10+MME/20+其余原值 十列均值=84.291为算术推断,avg_formula_status=unverified; 确认前不填paper_avg10; OCRBench raw与MME raw不得直接平均
+K=512 / K=128 全臂,budget_missing,SECONDARY_NOT_SCHEDULED,排期决策(现有全量队列×3时间成本); 排期后更新matrix schedule_status,"pilot轮K128 bank gz存在(旧pipeline标签, 不作本轮证据)"

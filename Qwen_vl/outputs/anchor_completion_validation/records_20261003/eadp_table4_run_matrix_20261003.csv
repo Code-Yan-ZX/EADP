@@ -1,0 +1,140 @@
+table4_col,repo_dataset_id,split,budget,arm,status,coverage_n,metric,headline_value,artifact_dir,notes,schedule_status
+TextVQA,TextVQA_VAL,val,FULL_1024,E_GATHER,NOT_RUN_FULL_N,,VQA accuracy (mean-of-matches),,,仅DEV-300 native keep-all(84.x量级)+perf 30题; 全量keep-all未跑,not_scheduled
+TextVQA,TextVQA_VAL,val,FULL_1024,E_MAIN025,NOT_RUN_FULL_N,,VQA accuracy (mean-of-matches),,,仅DEV-300 native keep-all(84.x量级)+perf 30题; 全量keep-all未跑,not_scheduled
+TextVQA,TextVQA_VAL,val,FULL_1024,R_MAIN025,NOT_RUN_FULL_N,,VQA accuracy (mean-of-matches),,,仅DEV-300 native keep-all(84.x量级)+perf 30题; 全量keep-all未跑,not_scheduled
+TextVQA,TextVQA_VAL,val,K512,E_GATHER,NOT_RUN,,VQA accuracy (mean-of-matches),,,,secondary_not_scheduled
+TextVQA,TextVQA_VAL,val,K512,E_MAIN025,NOT_RUN,,VQA accuracy (mean-of-matches),,,,secondary_not_scheduled
+TextVQA,TextVQA_VAL,val,K512,R_MAIN025,NOT_RUN,,VQA accuracy (mean-of-matches),,,,secondary_not_scheduled
+TextVQA,TextVQA_VAL,val,K256,E_GATHER,RUN_FULL_PERQ,5000,VQA accuracy (mean-of-matches),77.788,"acc/{main,nonreg}/BASE/K256",逐题pred.tsv+官方results(xlsx/pkl)+acc.csv+独立重评diff=0; bank gz; headline=77.788,main_queue_done
+TextVQA,TextVQA_VAL,val,K256,E_MAIN025,RUN_FULL_PERQ,5000,VQA accuracy (mean-of-matches),78.018,"acc/{main,nonreg}/MAIN025/K256",逐题pred.tsv+官方results(xlsx/pkl)+acc.csv+独立重评diff=0; bank gz; headline=78.018,main_queue_done
+TextVQA,TextVQA_VAL,val,K256,R_MAIN025,RUN_FULL_PERQ,5000,VQA accuracy (mean-of-matches),77.77,stage1_roundtrip_pilot/full/acc/R_MAIN025,逐题pred.tsv+官方results(xlsx/pkl)+acc.csv+独立重评diff=0; bank gz; headline=77.77,main_queue_done
+TextVQA,TextVQA_VAL,val,K128,E_GATHER,NOT_RUN,,VQA accuracy (mean-of-matches),,,"anchor_merge_pilot 轮存在 b1/b2 K128 bank gz(旧pipeline标签,不作本轮证据)",secondary_not_scheduled
+TextVQA,TextVQA_VAL,val,K128,E_MAIN025,NOT_RUN,,VQA accuracy (mean-of-matches),,,"anchor_merge_pilot 轮存在 b1/b2 K128 bank gz(旧pipeline标签,不作本轮证据)",secondary_not_scheduled
+TextVQA,TextVQA_VAL,val,K128,R_MAIN025,NOT_RUN,,VQA accuracy (mean-of-matches),,,"anchor_merge_pilot 轮存在 b1/b2 K128 bank gz(旧pipeline标签,不作本轮证据)",secondary_not_scheduled
+ChartQA,ChartQA_TEST,test,FULL_1024,E_GATHER,NOT_RUN_FULL_N,,relaxed accuracy (human/aug Overall),,,仅DEV-300 native keep-all(84.x量级)+perf 30题; 全量keep-all未跑,not_scheduled
+ChartQA,ChartQA_TEST,test,FULL_1024,E_MAIN025,NOT_RUN_FULL_N,,relaxed accuracy (human/aug Overall),,,仅DEV-300 native keep-all(84.x量级)+perf 30题; 全量keep-all未跑,not_scheduled
+ChartQA,ChartQA_TEST,test,FULL_1024,R_MAIN025,NOT_RUN_FULL_N,,relaxed accuracy (human/aug Overall),,,仅DEV-300 native keep-all(84.x量级)+perf 30题; 全量keep-all未跑,not_scheduled
+ChartQA,ChartQA_TEST,test,K512,E_GATHER,NOT_RUN,,relaxed accuracy (human/aug Overall),,,,secondary_not_scheduled
+ChartQA,ChartQA_TEST,test,K512,E_MAIN025,NOT_RUN,,relaxed accuracy (human/aug Overall),,,,secondary_not_scheduled
+ChartQA,ChartQA_TEST,test,K512,R_MAIN025,NOT_RUN,,relaxed accuracy (human/aug Overall),,,,secondary_not_scheduled
+ChartQA,ChartQA_TEST,test,K256,E_GATHER,RUN_FULL_PERQ,2500,relaxed accuracy (human/aug Overall),66.88,"acc/{main,nonreg}/BASE/K256",逐题pred.tsv+官方results(xlsx/pkl)+acc.csv+独立重评diff=0; bank gz; headline=66.88,main_queue_done
+ChartQA,ChartQA_TEST,test,K256,E_MAIN025,RUN_FULL_PERQ,2500,relaxed accuracy (human/aug Overall),68.08,"acc/{main,nonreg}/MAIN025/K256",逐题pred.tsv+官方results(xlsx/pkl)+acc.csv+独立重评diff=0; bank gz; headline=68.08,main_queue_done
+ChartQA,ChartQA_TEST,test,K256,R_MAIN025,RUN_FULL_PERQ,2500,relaxed accuracy (human/aug Overall),68.8,stage1_roundtrip_pilot/full/acc/R_MAIN025,逐题pred.tsv+官方results(xlsx/pkl)+acc.csv+独立重评diff=0; bank gz; headline=68.8,main_queue_done
+ChartQA,ChartQA_TEST,test,K128,E_GATHER,NOT_RUN,,relaxed accuracy (human/aug Overall),,,,secondary_not_scheduled
+ChartQA,ChartQA_TEST,test,K128,E_MAIN025,NOT_RUN,,relaxed accuracy (human/aug Overall),,,,secondary_not_scheduled
+ChartQA,ChartQA_TEST,test,K128,R_MAIN025,NOT_RUN,,relaxed accuracy (human/aug Overall),,,,secondary_not_scheduled
+AI2D,AI2D_TEST 或 AI2D_TEST_NO_MASK(未核实),test(未核实),FULL_1024,E_GATHER,NOT_RUN_FULL_N,,accuracy(未核实),,,无本地keep-all参照,not_scheduled
+AI2D,AI2D_TEST 或 AI2D_TEST_NO_MASK(未核实),test(未核实),FULL_1024,E_MAIN025,NOT_RUN_FULL_N,,accuracy(未核实),,,无本地keep-all参照,not_scheduled
+AI2D,AI2D_TEST 或 AI2D_TEST_NO_MASK(未核实),test(未核实),FULL_1024,R_MAIN025,NOT_RUN_FULL_N,,accuracy(未核实),,,无本地keep-all参照,not_scheduled
+AI2D,AI2D_TEST 或 AI2D_TEST_NO_MASK(未核实),test(未核实),K512,E_GATHER,NOT_RUN,,accuracy(未核实),,,,secondary_not_scheduled
+AI2D,AI2D_TEST 或 AI2D_TEST_NO_MASK(未核实),test(未核实),K512,E_MAIN025,NOT_RUN,,accuracy(未核实),,,,secondary_not_scheduled
+AI2D,AI2D_TEST 或 AI2D_TEST_NO_MASK(未核实),test(未核实),K512,R_MAIN025,NOT_RUN,,accuracy(未核实),,,,secondary_not_scheduled
+AI2D,AI2D_TEST 或 AI2D_TEST_NO_MASK(未核实),test(未核实),K256,E_GATHER,NOT_RUN,,accuracy(未核实),,,,secondary_not_scheduled
+AI2D,AI2D_TEST 或 AI2D_TEST_NO_MASK(未核实),test(未核实),K256,E_MAIN025,NOT_RUN,,accuracy(未核实),,,,secondary_not_scheduled
+AI2D,AI2D_TEST 或 AI2D_TEST_NO_MASK(未核实),test(未核实),K256,R_MAIN025,NOT_RUN,,accuracy(未核实),,,,secondary_not_scheduled
+AI2D,AI2D_TEST 或 AI2D_TEST_NO_MASK(未核实),test(未核实),K128,E_GATHER,NOT_RUN,,accuracy(未核实),,,,secondary_not_scheduled
+AI2D,AI2D_TEST 或 AI2D_TEST_NO_MASK(未核实),test(未核实),K128,E_MAIN025,NOT_RUN,,accuracy(未核实),,,,secondary_not_scheduled
+AI2D,AI2D_TEST 或 AI2D_TEST_NO_MASK(未核实),test(未核实),K128,R_MAIN025,NOT_RUN,,accuracy(未核实),,,,secondary_not_scheduled
+OCRBench,"OCRBench(v1,已核实)",val/test 合一,FULL_1024,E_GATHER,NOT_RUN_FULL_N,,官方 Final Score raw /1000 + 百分制,,,仅DEV-300 native keep-all(84.x量级)+perf 30题; 全量keep-all未跑,not_scheduled
+OCRBench,"OCRBench(v1,已核实)",val/test 合一,FULL_1024,E_MAIN025,NOT_RUN_FULL_N,,官方 Final Score raw /1000 + 百分制,,,仅DEV-300 native keep-all(84.x量级)+perf 30题; 全量keep-all未跑,not_scheduled
+OCRBench,"OCRBench(v1,已核实)",val/test 合一,FULL_1024,R_MAIN025,NOT_RUN_FULL_N,,官方 Final Score raw /1000 + 百分制,,,仅DEV-300 native keep-all(84.x量级)+perf 30题; 全量keep-all未跑,not_scheduled
+OCRBench,"OCRBench(v1,已核实)",val/test 合一,K512,E_GATHER,NOT_RUN,,官方 Final Score raw /1000 + 百分制,,,,secondary_not_scheduled
+OCRBench,"OCRBench(v1,已核实)",val/test 合一,K512,E_MAIN025,NOT_RUN,,官方 Final Score raw /1000 + 百分制,,,,secondary_not_scheduled
+OCRBench,"OCRBench(v1,已核实)",val/test 合一,K512,R_MAIN025,NOT_RUN,,官方 Final Score raw /1000 + 百分制,,,,secondary_not_scheduled
+OCRBench,"OCRBench(v1,已核实)",val/test 合一,K256,E_GATHER,RUN_FULL_PERQ,1000,官方 Final Score raw /1000 + 百分制,742,"acc/{main,nonreg}/BASE/K256",逐题pred.tsv+官方results(xlsx/pkl)+acc.csv+独立重评diff=0; bank gz; headline=742; fresh=0无法独立比较,main_queue_done
+OCRBench,"OCRBench(v1,已核实)",val/test 合一,K256,E_MAIN025,RUN_FULL_PERQ,1000,官方 Final Score raw /1000 + 百分制,757,"acc/{main,nonreg}/MAIN025/K256",逐题pred.tsv+官方results(xlsx/pkl)+acc.csv+独立重评diff=0; bank gz; headline=757; fresh=0无法独立比较,main_queue_done
+OCRBench,"OCRBench(v1,已核实)",val/test 合一,K256,R_MAIN025,RUN_FULL_PERQ,1000,官方 Final Score raw /1000 + 百分制,757,stage1_roundtrip_pilot/full/acc/R_MAIN025,逐题pred.tsv+官方results(xlsx/pkl)+acc.csv+独立重评diff=0; bank gz; headline=757; fresh=0无法独立比较,main_queue_done
+OCRBench,"OCRBench(v1,已核实)",val/test 合一,K128,E_GATHER,NOT_RUN,,官方 Final Score raw /1000 + 百分制,,,"anchor_merge_pilot 轮存在 b1/b2 K128 bank gz(旧pipeline标签,不作本轮证据)",secondary_not_scheduled
+OCRBench,"OCRBench(v1,已核实)",val/test 合一,K128,E_MAIN025,NOT_RUN,,官方 Final Score raw /1000 + 百分制,,,"anchor_merge_pilot 轮存在 b1/b2 K128 bank gz(旧pipeline标签,不作本轮证据)",secondary_not_scheduled
+OCRBench,"OCRBench(v1,已核实)",val/test 合一,K128,R_MAIN025,NOT_RUN,,官方 Final Score raw /1000 + 百分制,,,"anchor_merge_pilot 轮存在 b1/b2 K128 bank gz(旧pipeline标签,不作本轮证据)",secondary_not_scheduled
+HallBench,HallusionBench(未核实),未核实,FULL_1024,E_GATHER,NOT_RUN_FULL_N,,aAcc/fAcc/qAcc 待查明论文采用项,,,无本地keep-all参照,not_scheduled
+HallBench,HallusionBench(未核实),未核实,FULL_1024,E_MAIN025,NOT_RUN_FULL_N,,aAcc/fAcc/qAcc 待查明论文采用项,,,无本地keep-all参照,not_scheduled
+HallBench,HallusionBench(未核实),未核实,FULL_1024,R_MAIN025,NOT_RUN_FULL_N,,aAcc/fAcc/qAcc 待查明论文采用项,,,无本地keep-all参照,not_scheduled
+HallBench,HallusionBench(未核实),未核实,K512,E_GATHER,NOT_RUN,,aAcc/fAcc/qAcc 待查明论文采用项,,,,secondary_not_scheduled
+HallBench,HallusionBench(未核实),未核实,K512,E_MAIN025,NOT_RUN,,aAcc/fAcc/qAcc 待查明论文采用项,,,,secondary_not_scheduled
+HallBench,HallusionBench(未核实),未核实,K512,R_MAIN025,NOT_RUN,,aAcc/fAcc/qAcc 待查明论文采用项,,,,secondary_not_scheduled
+HallBench,HallusionBench(未核实),未核实,K256,E_GATHER,NOT_RUN,,aAcc/fAcc/qAcc 待查明论文采用项,,,,secondary_not_scheduled
+HallBench,HallusionBench(未核实),未核实,K256,E_MAIN025,NOT_RUN,,aAcc/fAcc/qAcc 待查明论文采用项,,,,secondary_not_scheduled
+HallBench,HallusionBench(未核实),未核实,K256,R_MAIN025,NOT_RUN,,aAcc/fAcc/qAcc 待查明论文采用项,,,,secondary_not_scheduled
+HallBench,HallusionBench(未核实),未核实,K128,E_GATHER,NOT_RUN,,aAcc/fAcc/qAcc 待查明论文采用项,,,,secondary_not_scheduled
+HallBench,HallusionBench(未核实),未核实,K128,E_MAIN025,NOT_RUN,,aAcc/fAcc/qAcc 待查明论文采用项,,,,secondary_not_scheduled
+HallBench,HallusionBench(未核实),未核实,K128,R_MAIN025,NOT_RUN,,aAcc/fAcc/qAcc 待查明论文采用项,,,,secondary_not_scheduled
+MME,MME(未核实版本),未核实,FULL_1024,E_GATHER,NOT_RUN_FULL_N,,perception/reasoning/总分; acc+ 逐图对,,,无本地keep-all参照,not_scheduled
+MME,MME(未核实版本),未核实,FULL_1024,E_MAIN025,NOT_RUN_FULL_N,,perception/reasoning/总分; acc+ 逐图对,,,无本地keep-all参照,not_scheduled
+MME,MME(未核实版本),未核实,FULL_1024,R_MAIN025,NOT_RUN_FULL_N,,perception/reasoning/总分; acc+ 逐图对,,,无本地keep-all参照,not_scheduled
+MME,MME(未核实版本),未核实,K512,E_GATHER,NOT_RUN,,perception/reasoning/总分; acc+ 逐图对,,,,secondary_not_scheduled
+MME,MME(未核实版本),未核实,K512,E_MAIN025,NOT_RUN,,perception/reasoning/总分; acc+ 逐图对,,,,secondary_not_scheduled
+MME,MME(未核实版本),未核实,K512,R_MAIN025,NOT_RUN,,perception/reasoning/总分; acc+ 逐图对,,,,secondary_not_scheduled
+MME,MME(未核实版本),未核实,K256,E_GATHER,NOT_RUN,,perception/reasoning/总分; acc+ 逐图对,,,,secondary_not_scheduled
+MME,MME(未核实版本),未核实,K256,E_MAIN025,NOT_RUN,,perception/reasoning/总分; acc+ 逐图对,,,,secondary_not_scheduled
+MME,MME(未核实版本),未核实,K256,R_MAIN025,NOT_RUN,,perception/reasoning/总分; acc+ 逐图对,,,,secondary_not_scheduled
+MME,MME(未核实版本),未核实,K128,E_GATHER,NOT_RUN,,perception/reasoning/总分; acc+ 逐图对,,,,secondary_not_scheduled
+MME,MME(未核实版本),未核实,K128,E_MAIN025,NOT_RUN,,perception/reasoning/总分; acc+ 逐图对,,,,secondary_not_scheduled
+MME,MME(未核实版本),未核实,K128,R_MAIN025,NOT_RUN,,perception/reasoning/总分; acc+ 逐图对,,,,secondary_not_scheduled
+MMB-EN,MMBench_DEV_EN_V11,dev,FULL_1024,E_GATHER,NOT_RUN_FULL_N,,"官方 headline accuracy (circular); 仅覆盖1292/4876, 见F3",,,无本地keep-all参照,not_scheduled
+MMB-EN,MMBench_DEV_EN_V11,dev,FULL_1024,E_MAIN025,NOT_RUN_FULL_N,,"官方 headline accuracy (circular); 仅覆盖1292/4876, 见F3",,,无本地keep-all参照,not_scheduled
+MMB-EN,MMBench_DEV_EN_V11,dev,FULL_1024,R_MAIN025,NOT_RUN_FULL_N,,"官方 headline accuracy (circular); 仅覆盖1292/4876, 见F3",,,无本地keep-all参照,not_scheduled
+MMB-EN,MMBench_DEV_EN_V11,dev,K512,E_GATHER,NOT_RUN,,"官方 headline accuracy (circular); 仅覆盖1292/4876, 见F3",,,,secondary_not_scheduled
+MMB-EN,MMBench_DEV_EN_V11,dev,K512,E_MAIN025,NOT_RUN,,"官方 headline accuracy (circular); 仅覆盖1292/4876, 见F3",,,,secondary_not_scheduled
+MMB-EN,MMBench_DEV_EN_V11,dev,K512,R_MAIN025,NOT_RUN,,"官方 headline accuracy (circular); 仅覆盖1292/4876, 见F3",,,,secondary_not_scheduled
+MMB-EN,MMBench_DEV_EN_V11,dev,K256,E_GATHER,RUN_FULL_PERQ,4876,"官方 headline accuracy (circular); 仅覆盖1292/4876, 见F3",83.82,"acc/{main,nonreg}/BASE/K256","逐题pred.tsv+官方results(xlsx/pkl)+acc.csv+独立重评diff=0; bank gz; headline=83.82; headline实际仅1292/4876题(F3), 逐题配对CI未完成",main_queue_done
+MMB-EN,MMBench_DEV_EN_V11,dev,K256,E_MAIN025,RUN_FULL_PERQ,4876,"官方 headline accuracy (circular); 仅覆盖1292/4876, 见F3",83.82,"acc/{main,nonreg}/MAIN025/K256","逐题pred.tsv+官方results(xlsx/pkl)+acc.csv+独立重评diff=0; bank gz; headline=83.82; headline实际仅1292/4876题(F3), 逐题配对CI未完成",main_queue_done
+MMB-EN,MMBench_DEV_EN_V11,dev,K256,R_MAIN025,RUN_FULL_PERQ,4876,"官方 headline accuracy (circular); 仅覆盖1292/4876, 见F3",83.44,stage1_roundtrip_pilot/full/acc/R_MAIN025,"逐题pred.tsv+官方results(xlsx/pkl)+acc.csv+独立重评diff=0; bank gz; headline=83.44; headline实际仅1292/4876题(F3), 逐题配对CI未完成",main_queue_done
+MMB-EN,MMBench_DEV_EN_V11,dev,K128,E_GATHER,NOT_RUN,,"官方 headline accuracy (circular); 仅覆盖1292/4876, 见F3",,,,secondary_not_scheduled
+MMB-EN,MMBench_DEV_EN_V11,dev,K128,E_MAIN025,NOT_RUN,,"官方 headline accuracy (circular); 仅覆盖1292/4876, 见F3",,,,secondary_not_scheduled
+MMB-EN,MMBench_DEV_EN_V11,dev,K128,R_MAIN025,NOT_RUN,,"官方 headline accuracy (circular); 仅覆盖1292/4876, 见F3",,,,secondary_not_scheduled
+MMB-CN,MMBench_DEV_CN_V11 等(未核实),dev(未核实),FULL_1024,E_GATHER,NOT_RUN_FULL_N,,同 MMB-EN; 中文 prompt 不可借用英文配置,,,无本地keep-all参照,not_scheduled
+MMB-CN,MMBench_DEV_CN_V11 等(未核实),dev(未核实),FULL_1024,E_MAIN025,NOT_RUN_FULL_N,,同 MMB-EN; 中文 prompt 不可借用英文配置,,,无本地keep-all参照,not_scheduled
+MMB-CN,MMBench_DEV_CN_V11 等(未核实),dev(未核实),FULL_1024,R_MAIN025,NOT_RUN_FULL_N,,同 MMB-EN; 中文 prompt 不可借用英文配置,,,无本地keep-all参照,not_scheduled
+MMB-CN,MMBench_DEV_CN_V11 等(未核实),dev(未核实),K512,E_GATHER,NOT_RUN,,同 MMB-EN; 中文 prompt 不可借用英文配置,,,,secondary_not_scheduled
+MMB-CN,MMBench_DEV_CN_V11 等(未核实),dev(未核实),K512,E_MAIN025,NOT_RUN,,同 MMB-EN; 中文 prompt 不可借用英文配置,,,,secondary_not_scheduled
+MMB-CN,MMBench_DEV_CN_V11 等(未核实),dev(未核实),K512,R_MAIN025,NOT_RUN,,同 MMB-EN; 中文 prompt 不可借用英文配置,,,,secondary_not_scheduled
+MMB-CN,MMBench_DEV_CN_V11 等(未核实),dev(未核实),K256,E_GATHER,NOT_RUN,,同 MMB-EN; 中文 prompt 不可借用英文配置,,,,secondary_not_scheduled
+MMB-CN,MMBench_DEV_CN_V11 等(未核实),dev(未核实),K256,E_MAIN025,NOT_RUN,,同 MMB-EN; 中文 prompt 不可借用英文配置,,,,secondary_not_scheduled
+MMB-CN,MMBench_DEV_CN_V11 等(未核实),dev(未核实),K256,R_MAIN025,NOT_RUN,,同 MMB-EN; 中文 prompt 不可借用英文配置,,,,secondary_not_scheduled
+MMB-CN,MMBench_DEV_CN_V11 等(未核实),dev(未核实),K128,E_GATHER,NOT_RUN,,同 MMB-EN; 中文 prompt 不可借用英文配置,,,,secondary_not_scheduled
+MMB-CN,MMBench_DEV_CN_V11 等(未核实),dev(未核实),K128,E_MAIN025,NOT_RUN,,同 MMB-EN; 中文 prompt 不可借用英文配置,,,,secondary_not_scheduled
+MMB-CN,MMBench_DEV_CN_V11 等(未核实),dev(未核实),K128,R_MAIN025,NOT_RUN,,同 MMB-EN; 中文 prompt 不可借用英文配置,,,,secondary_not_scheduled
+DocVQA,DocVQA_VAL,val,FULL_1024,E_GATHER,NOT_RUN_FULL_N,,"ANLS 逐题分 (1-minANLS>=0.5), NA-quirk 已披露",,,仅DEV-300 native keep-all(84.x量级)+perf 30题; 全量keep-all未跑,not_scheduled
+DocVQA,DocVQA_VAL,val,FULL_1024,E_MAIN025,NOT_RUN_FULL_N,,"ANLS 逐题分 (1-minANLS>=0.5), NA-quirk 已披露",,,仅DEV-300 native keep-all(84.x量级)+perf 30题; 全量keep-all未跑,not_scheduled
+DocVQA,DocVQA_VAL,val,FULL_1024,R_MAIN025,NOT_RUN_FULL_N,,"ANLS 逐题分 (1-minANLS>=0.5), NA-quirk 已披露",,,仅DEV-300 native keep-all(84.x量级)+perf 30题; 全量keep-all未跑,not_scheduled
+DocVQA,DocVQA_VAL,val,K512,E_GATHER,NOT_RUN,,"ANLS 逐题分 (1-minANLS>=0.5), NA-quirk 已披露",,,,secondary_not_scheduled
+DocVQA,DocVQA_VAL,val,K512,E_MAIN025,NOT_RUN,,"ANLS 逐题分 (1-minANLS>=0.5), NA-quirk 已披露",,,,secondary_not_scheduled
+DocVQA,DocVQA_VAL,val,K512,R_MAIN025,NOT_RUN,,"ANLS 逐题分 (1-minANLS>=0.5), NA-quirk 已披露",,,,secondary_not_scheduled
+DocVQA,DocVQA_VAL,val,K256,E_GATHER,RUN_FULL_PERQ,5349,"ANLS 逐题分 (1-minANLS>=0.5), NA-quirk 已披露",72.074,"acc/{main,nonreg}/BASE/K256",逐题pred.tsv+官方results(xlsx/pkl)+acc.csv+独立重评diff=0; bank gz; headline=72.074,main_queue_done
+DocVQA,DocVQA_VAL,val,K256,E_MAIN025,RUN_FULL_PERQ,5349,"ANLS 逐题分 (1-minANLS>=0.5), NA-quirk 已披露",73.135,"acc/{main,nonreg}/MAIN025/K256",逐题pred.tsv+官方results(xlsx/pkl)+acc.csv+独立重评diff=0; bank gz; headline=73.135,main_queue_done
+DocVQA,DocVQA_VAL,val,K256,R_MAIN025,RUN_FULL_PERQ,5349,"ANLS 逐题分 (1-minANLS>=0.5), NA-quirk 已披露",73.525,stage1_roundtrip_pilot/full/acc/R_MAIN025,逐题pred.tsv+官方results(xlsx/pkl)+acc.csv+独立重评diff=0; bank gz; headline=73.525,main_queue_done
+DocVQA,DocVQA_VAL,val,K128,E_GATHER,NOT_RUN,,"ANLS 逐题分 (1-minANLS>=0.5), NA-quirk 已披露",,,"anchor_merge_pilot 轮存在 b1/b2 K128 bank gz(旧pipeline标签,不作本轮证据)",secondary_not_scheduled
+DocVQA,DocVQA_VAL,val,K128,E_MAIN025,NOT_RUN,,"ANLS 逐题分 (1-minANLS>=0.5), NA-quirk 已披露",,,"anchor_merge_pilot 轮存在 b1/b2 K128 bank gz(旧pipeline标签,不作本轮证据)",secondary_not_scheduled
+DocVQA,DocVQA_VAL,val,K128,R_MAIN025,NOT_RUN,,"ANLS 逐题分 (1-minANLS>=0.5), NA-quirk 已披露",,,"anchor_merge_pilot 轮存在 b1/b2 K128 bank gz(旧pipeline标签,不作本轮证据)",secondary_not_scheduled
+InfoVQA,InfoVQA_VAL(未核实),val(未核实),FULL_1024,E_GATHER,NOT_RUN_FULL_N,,ANLS 逐题分 + headline,,,无本地keep-all参照,not_scheduled
+InfoVQA,InfoVQA_VAL(未核实),val(未核实),FULL_1024,E_MAIN025,NOT_RUN_FULL_N,,ANLS 逐题分 + headline,,,无本地keep-all参照,not_scheduled
+InfoVQA,InfoVQA_VAL(未核实),val(未核实),FULL_1024,R_MAIN025,NOT_RUN_FULL_N,,ANLS 逐题分 + headline,,,无本地keep-all参照,not_scheduled
+InfoVQA,InfoVQA_VAL(未核实),val(未核实),K512,E_GATHER,NOT_RUN,,ANLS 逐题分 + headline,,,,secondary_not_scheduled
+InfoVQA,InfoVQA_VAL(未核实),val(未核实),K512,E_MAIN025,NOT_RUN,,ANLS 逐题分 + headline,,,,secondary_not_scheduled
+InfoVQA,InfoVQA_VAL(未核实),val(未核实),K512,R_MAIN025,NOT_RUN,,ANLS 逐题分 + headline,,,,secondary_not_scheduled
+InfoVQA,InfoVQA_VAL(未核实),val(未核实),K256,E_GATHER,NOT_RUN,,ANLS 逐题分 + headline,,,,secondary_not_scheduled
+InfoVQA,InfoVQA_VAL(未核实),val(未核实),K256,E_MAIN025,NOT_RUN,,ANLS 逐题分 + headline,,,,secondary_not_scheduled
+InfoVQA,InfoVQA_VAL(未核实),val(未核实),K256,R_MAIN025,NOT_RUN,,ANLS 逐题分 + headline,,,,secondary_not_scheduled
+InfoVQA,InfoVQA_VAL(未核实),val(未核实),K128,E_GATHER,NOT_RUN,,ANLS 逐题分 + headline,,,,secondary_not_scheduled
+InfoVQA,InfoVQA_VAL(未核实),val(未核实),K128,E_MAIN025,NOT_RUN,,ANLS 逐题分 + headline,,,,secondary_not_scheduled
+InfoVQA,InfoVQA_VAL(未核实),val(未核实),K128,R_MAIN025,NOT_RUN,,ANLS 逐题分 + headline,,,,secondary_not_scheduled
+TextVQA,TextVQA_VAL,val,FULL_1024,FULL(keep-all),NOT_RUN_FULL_N,,VQA accuracy (mean-of-matches),,,本地keep-all全量未跑; 仅perf 30题(FULL keep-all); DEV-300 native keep-all存在(s1_dualpath),not_scheduled
+ChartQA,ChartQA_TEST,test,FULL_1024,FULL(keep-all),NOT_RUN_FULL_N,,relaxed accuracy (human/aug Overall),,,本地keep-all全量未跑; 仅perf 30题(FULL keep-all); DEV-300 native keep-all存在(s1_dualpath),not_scheduled
+AI2D,AI2D_TEST 或 AI2D_TEST_NO_MASK(未核实),test(未核实),FULL_1024,FULL(keep-all),NOT_RUN_FULL_N,,accuracy(未核实),,,无本地keep-all参照,not_scheduled
+OCRBench,"OCRBench(v1,已核实)",val/test 合一,FULL_1024,FULL(keep-all),NOT_RUN_FULL_N,,官方 Final Score raw /1000 + 百分制,,,本地keep-all全量未跑; 仅perf 30题(FULL keep-all); DEV-300 native keep-all存在(s1_dualpath),not_scheduled
+HallBench,HallusionBench(未核实),未核实,FULL_1024,FULL(keep-all),NOT_RUN_FULL_N,,aAcc/fAcc/qAcc 待查明论文采用项,,,无本地keep-all参照,not_scheduled
+MME,MME(未核实版本),未核实,FULL_1024,FULL(keep-all),NOT_RUN_FULL_N,,perception/reasoning/总分; acc+ 逐图对,,,无本地keep-all参照,not_scheduled
+MMB-EN,MMBench_DEV_EN_V11,dev,FULL_1024,FULL(keep-all),NOT_RUN_FULL_N,,"官方 headline accuracy (circular); 仅覆盖1292/4876, 见F3",,,本地keep-all全量未跑; 仅perf 30题(FULL keep-all),not_scheduled
+MMB-CN,MMBench_DEV_CN_V11 等(未核实),dev(未核实),FULL_1024,FULL(keep-all),NOT_RUN_FULL_N,,同 MMB-EN; 中文 prompt 不可借用英文配置,,,无本地keep-all参照,not_scheduled
+DocVQA,DocVQA_VAL,val,FULL_1024,FULL(keep-all),NOT_RUN_FULL_N,,"ANLS 逐题分 (1-minANLS>=0.5), NA-quirk 已披露",,,本地keep-all全量未跑; 仅perf 30题(FULL keep-all); DEV-300 native keep-all存在(s1_dualpath),not_scheduled
+InfoVQA,InfoVQA_VAL(未核实),val(未核实),FULL_1024,FULL(keep-all),NOT_RUN_FULL_N,,ANLS 逐题分 + headline,,,无本地keep-all参照,not_scheduled
+"MMStar(扩展,不替代表4)",MMStar,见corrected_absolute_scores.csv,K256,E_GATHER,RUN_FULL_PERQ,,见CSV列metric来源,60.93,acc/nonreg + stage1_roundtrip_pilot/full,扩展任务,main_queue_done
+"MMStar(扩展,不替代表4)",MMStar,见corrected_absolute_scores.csv,K256,E_MAIN025,RUN_FULL_PERQ,,见CSV列metric来源,60.6,acc/nonreg + stage1_roundtrip_pilot/full,扩展任务,main_queue_done
+"MMStar(扩展,不替代表4)",MMStar,见corrected_absolute_scores.csv,K256,R_MAIN025,RUN_FULL_PERQ,,见CSV列metric来源,61.4,acc/nonreg + stage1_roundtrip_pilot/full,扩展任务,main_queue_done
+"RealWorldQA(扩展,不替代表4)",RealWorldQA,见corrected_absolute_scores.csv,K256,E_GATHER,RUN_FULL_PERQ,,见CSV列metric来源,66.27,acc/nonreg + stage1_roundtrip_pilot/full,扩展任务,main_queue_done
+"RealWorldQA(扩展,不替代表4)",RealWorldQA,见corrected_absolute_scores.csv,K256,E_MAIN025,RUN_FULL_PERQ,,见CSV列metric来源,65.88,acc/nonreg + stage1_roundtrip_pilot/full,扩展任务,main_queue_done
+"RealWorldQA(扩展,不替代表4)",RealWorldQA,见corrected_absolute_scores.csv,K256,R_MAIN025,RUN_FULL_PERQ,,见CSV列metric来源,69.15,acc/nonreg + stage1_roundtrip_pilot/full,扩展任务,main_queue_done
+"POPE(扩展,不替代表4)",POPE,见corrected_absolute_scores.csv,K256,E_GATHER,RUN_FULL_PERQ,,见CSV列metric来源,89.5,acc/nonreg + stage1_roundtrip_pilot/full,扩展任务,main_queue_done
+"POPE(扩展,不替代表4)",POPE,见corrected_absolute_scores.csv,K256,E_MAIN025,RUN_FULL_PERQ,,见CSV列metric来源,89.04,acc/nonreg + stage1_roundtrip_pilot/full,扩展任务,main_queue_done
+"POPE(扩展,不替代表4)",POPE,见corrected_absolute_scores.csv,K256,R_MAIN025,RUN_FULL_PERQ,,见CSV列metric来源,89.04,acc/nonreg + stage1_roundtrip_pilot/full,扩展任务,main_queue_done

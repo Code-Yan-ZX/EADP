@@ -229,11 +229,18 @@ def compute_assignment_per_image(V: torch.Tensor, keep: torch.Tensor,
 @torch.no_grad()
 def run_one(eng, msg, ds, bank_rec, cfg: dict, max_new_tokens: int = 2048,
             ignore_eos: bool = False, timings: Optional[dict] = None,
-            diag: Optional[dict] = None):
+            diag: Optional[dict] = None,
+            deepstack: bool = True, pos: str = "mrope3d"):
     """acu variant of amp_common.run_one — the ONLY delta is that the
     assignment uses compute_assignment_per_image (frozen multi-image rule);
     for the single-image samples of every panel in this round the two are
-    bitwise identical (verified by gate G3)."""
+    bitwise identical (verified by gate G3).
+
+    ``deepstack``/``pos`` pass straight through to ``eng.prefill``; defaults
+    keep the native path bitwise unchanged.  ``deepstack=False, pos='1d'``
+    is the official EADP legacy config (DeepStack off, 1-D positions) —
+    engine flags verified bit-exact against archived official predictions
+    by e0 gate N5 and s1_dualpath."""
     timings = timings if timings is not None else {}
     K_ = int(cfg.get("K", 256))
     wall0 = time.perf_counter()
@@ -276,7 +283,8 @@ def run_one(eng, msg, ds, bank_rec, cfg: dict, max_new_tokens: int = 2048,
 
     ev = [torch.cuda.Event(enable_timing=True) for _ in range(2)]
     ev[0].record()
-    st = eng.prefill(prep, V, DS, keep, V_sel=V_sel, DS_sel=DS_sel)
+    st = eng.prefill(prep, V, DS, keep, V_sel=V_sel, DS_sel=DS_sel,
+                     deepstack=deepstack, pos=pos)
     ev[1].record()
     torch.cuda.synchronize()
     timings["llm_prefill_ms"] = ev[0].elapsed_time(ev[1])
