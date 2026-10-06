@@ -23,7 +23,8 @@ need_vram_mb=26000   # NeXT peak ~23.5GB + margin
 gpu_wait () {
   while true; do
     local used=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits | head -1)
-    local free=$(( (nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits | head -1) - used ))
+    local total=$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits | head -1)
+    local free=$((total - used))
     if [ "$free" -ge "$need_vram_mb" ]; then return 0; fi
     echo "[laneB] GPU short (${free}MB free) $(date +%T)"; sleep 300
   done
