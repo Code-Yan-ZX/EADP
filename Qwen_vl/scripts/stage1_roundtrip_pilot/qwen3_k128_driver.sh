@@ -9,10 +9,22 @@ cd "$(dirname "$0")"
 PY=/home/dell/miniconda3/envs/qwen3vl_clean/bin/python
 DS=TextVQA_VAL,ChartQA_TEST,DocVQA_VAL,OCRBench,AI2D_TEST,HallusionBench,MME,MMBench_DEV_EN_V11,MMBench_DEV_CN_V11,InfoVQA_VAL
 
-while ! mkdir /tmp/llava_full_driver.lock 2>/dev/null; do
-  echo "[k128] waiting for lock $(date +%T)"; sleep 300
+# Concurrency (user, 2026-10-06): runs alongside LLaVA lane A (v1.5
+# ~16GB) -- Qwen K=128 peaks ~22GB, combined ~38GB on the 46GB card.
+# Gate = mmben driver's lock dir disappearing + per-stage VRAM guard.
+while [ -d /tmp/llava_full_driver.lock ]; do
+  echo "[k128] waiting for mmben $(date +%T)"; sleep 300
 done
-trap "rmdir /tmp/llava_full_driver.lock" EXIT
+vram_wait () {
+  while true; do
+    local used=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits | head -1)
+    local total=$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits | head -1)
+    local free=$((total - used))
+    [ "$free" -ge 24000 ] && return 0
+    echo "[k128] GPU short (${free}MB free) $(date +%T)"; sleep 300
+  done
+}
+vram_wait
 
 echo "[k128] $(date) bank build starts (10 datasets)"
 $PY qwen3_k128_launcher.py --stage bank --datasets $DS \
