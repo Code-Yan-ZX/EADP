@@ -112,7 +112,9 @@ def run_arm(args, samples):
         beta=args.beta, alpha=args.alpha)
     if args.anchorzip:
         import llava_arch_anchorzip as _AZ
-        _AZ.MODE = "rtg"
+        _AZ.MODE = args.az_mode
+        if args.az_lam is not None:
+            _AZ.LAM = args.az_lam
         az_install()
     install_probes(model)
 
@@ -201,6 +203,12 @@ def main():
     p.add_argument("--conv-mode", default="vicuna_v1")
     p.add_argument("--visual-token-num", type=int, default=0)
     p.add_argument("--anchorzip", action="store_true")
+    p.add_argument("--az-mode", default="rtg", choices=["rtg", "official_replay"],
+                   help="rtg=AnchorZip main; official_replay=official EADP "
+                        "steps (G1-verified) for the E-side efficiency row")
+    p.add_argument("--az-lam", type=float, default=None,
+                   help="override Completion lam; 0.0 = hard pruning (no "
+                        "completion), used with --az-mode official_replay")
     p.add_argument("--beta", type=float, default=2.0)
     p.add_argument("--alpha", type=float, default=0.5)
     p.add_argument("--n", type=int, default=24)

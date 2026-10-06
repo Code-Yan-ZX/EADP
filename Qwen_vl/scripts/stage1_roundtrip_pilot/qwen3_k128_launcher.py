@@ -27,22 +27,26 @@ def main():
     ap.add_argument("--stage", required=True, choices=["bank", "run"])
     ap.add_argument("--datasets", required=True)
     ap.add_argument("--mode", default="both", choices=["gen", "score", "both"])
+    ap.add_argument("--k", type=int, default=128,
+                    help="budget; 128 (default) matches the original "
+                         "k128 round, 64 gives the third Qwen budget point")
+    ap.add_argument("--arm", default="L_R_MAIN0125")
+    ap.add_argument("--out-root", default="stage1_roundtrip_pilot_k128")
     args, passthrough = ap.parse_known_args()
 
     import rtg_common as RC
-    RC.K = 128
-    RC.OUT_DIR = os.path.join(os.path.dirname(RC.OUT_DIR),
-                              "stage1_roundtrip_pilot_k128")
+    RC.K = args.k
+    RC.OUT_DIR = os.path.join(os.path.dirname(RC.OUT_DIR), args.out_root)
     os.makedirs(os.path.join(RC.OUT_DIR, "full"), exist_ok=True)
 
     _orig_arm_cfg = RC.arm_cfg
 
-    def arm_cfg_k128(name: str) -> dict:
+    def arm_cfg_k(name: str) -> dict:
         cfg = dict(_orig_arm_cfg(name))
-        cfg["K"] = 128          # the ONLY change; lam=0.25 frozen
+        cfg["K"] = args.k          # the ONLY change; lam=0.25 frozen
         return cfg
 
-    RC.arm_cfg = arm_cfg_k128
+    RC.arm_cfg = arm_cfg_k
     # re-inject --datasets: parse_known_args consumed it, but the child
     # parsers (rtg_bank_full / rtg_accuracy_legacy) need it too — without
     # this they silently fall back to their 3-dataset / Table-4 defaults
@@ -57,11 +61,10 @@ def main():
         RBF.main()
     else:
         import rtg_accuracy_legacy as RAL
-        RAL.ARM = "L_R_MAIN0125"
+        RAL.ARM = args.arm
         # retarget the import-time-derived path constants (egather
         # set_arm pattern): FULL/FAIL_LOG were built from the default arm
-        RAL.FULL = os.path.join(RC.OUT_DIR, "legacy_full", "acc",
-                                "L_R_MAIN0125")
+        RAL.FULL = os.path.join(RC.OUT_DIR, "legacy_full", "acc", args.arm)
         os.makedirs(RAL.FULL, exist_ok=True)
         RAL.FAIL_LOG = os.path.join(RC.OUT_DIR, "legacy_full",
                                     "score_failures.jsonl")
