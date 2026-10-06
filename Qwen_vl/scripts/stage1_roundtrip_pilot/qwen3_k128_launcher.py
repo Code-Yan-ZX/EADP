@@ -43,6 +43,12 @@ def main():
         return cfg
 
     RC.arm_cfg = arm_cfg_k128
+    # re-inject --datasets: parse_known_args consumed it, but the child
+    # parsers (rtg_bank_full / rtg_accuracy_legacy) need it too — without
+    # this they silently fall back to their 3-dataset / Table-4 defaults
+    # (root cause of the 2026-10-06 bank 3/10 + ChartQA crash incident).
+    if args.datasets and "--datasets" not in passthrough:
+        passthrough = passthrough + ["--datasets", args.datasets]
     sys_argv_backup = sys.argv
     sys.argv = [sys.argv[0]] + passthrough
 
