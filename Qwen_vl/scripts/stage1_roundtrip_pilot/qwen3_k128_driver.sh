@@ -25,3 +25,5 @@ $PY qwen3_k128_launcher.py --stage run --datasets $DS --mode both \
   > k128_run.log 2>&1
 G=$?
 echo "[k128] $(date) run rc=$G -- QWEN3 K128 DONE (bank=$B run=$G)"
+touch /tmp/qwen3_k128_done.marker
+echo "[k128] $(date) marker /tmp/qwen3_k128_done.marker set"

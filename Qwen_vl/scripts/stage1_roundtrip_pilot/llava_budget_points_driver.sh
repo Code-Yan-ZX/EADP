@@ -17,6 +17,11 @@ MP15=/media/disk2/YZX/doct/FastV/llava-v1.5-7b
 MPNX=/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b
 cd $LL; export PYTHONPATH=$LL
 
+# Queue order (user, 2026-10-06): mmben -> qwen3 K128 -> this driver.
+while [ ! -f /tmp/qwen3_k128_done.marker ]; do
+  echo "[budget] waiting for qwen3 K128 to finish $(date +%T)"; sleep 300
+done
+
 while ! mkdir /tmp/llava_full_driver.lock 2>/dev/null; do
   echo "[budget] waiting for lock $(date +%T)"; sleep 300
 done
