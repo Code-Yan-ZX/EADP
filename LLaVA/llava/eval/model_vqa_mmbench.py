@@ -65,9 +65,25 @@ def eval_model(args):
         alpha=args.alpha,
     )
 
+    if getattr(args, "anchorzip", False):
+        import sys
+        sys.path.insert(0, "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model")
+        sys.path.insert(0, "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot")
+        import llava_arch_anchorzip as _AZ
+        _AZ.MODE = "rtg"
+        _AZ.install()
+
     # Data
     questions = pd.read_table(os.path.expanduser(args.question_file))
     questions = get_chunk(questions, args.num_chunks, args.chunk_idx)
+
+    # V11 circular rotation rows carry the image ID (e.g. '250'), not
+    # base64 -- resolve each row's image from its base row (index % 1e6).
+    _img_map = {}
+    for _i, _r in questions.iterrows():
+        _im = _r['image']
+        if isinstance(_im, str) and len(_im) > 100:
+            _img_map[int(_r['index']) % 1000000] = _im
     answers_file = os.path.expanduser(args.answers_file)
     os.makedirs(os.path.dirname(answers_file), exist_ok=True)
     ans_file = open(answers_file, "w")
@@ -91,7 +107,10 @@ def eval_model(args):
             idx = row['index']
             question = row['question']
             hint = row['hint']
-            image = load_image_from_base64(row['image'])
+            _im = row['image']
+            if not (isinstance(_im, str) and len(_im) > 100):
+                _im = _img_map[int(row['index']) % 1000000]
+            image = load_image_from_base64(_im)
             if not is_none(hint):
                 question = hint + '\n' + question
             for option_char, option in zip(all_options[:len(options)], options):
@@ -174,6 +193,7 @@ if __name__ == "__main__":
     parser.add_argument("--all-rounds", action="store_true")
     parser.add_argument("--single-pred-prompt", action="store_true")
     parser.add_argument("--lang", type=str, default="en")
+    parser.add_argument("--anchorzip", action="store_true")
     parser.add_argument("--visual_token_num", type=int, default=576)
     parser.add_argument("--beta", type=float, default=1.0)
     parser.add_argument("--alpha", type=float, default=0.5)
