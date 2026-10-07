@@ -101,7 +101,19 @@ def install_probes(model):
     model.forward = fwd_timed
 
 
-def run_arm(args, samples):
+_PREP_CACHE = {}
+
+
+def prepare_model(args):
+    """Load + patch + probe ONCE per (model, config); run_arm reuses this so
+    the measurement pass does not reload the model after the warmup pass
+    (audit 2026-10-08: warmup was invalidated by a second load_pretrained_
+    model call inside run_arm)."""
+    key = (os.path.expanduser(args.model_path), args.visual_token_num,
+           args.beta, args.alpha, args.anchorzip, args.az_mode,
+           args.az_lam)
+    if key in _PREP_CACHE:
+        return _PREP_CACHE[key]
     sys.path.insert(0, LLAVA_ROOT + "/llava/model")
     from llava_arch_anchorzip import install as az_install  # noqa: E402
     disable_torch_init()
@@ -117,6 +129,12 @@ def run_arm(args, samples):
             _AZ.LAM = args.az_lam
         az_install()
     install_probes(model)
+    _PREP_CACHE[key] = (tokenizer, model, image_processor)
+    return _PREP_CACHE[key]
+
+
+def run_arm(args, samples):
+    tokenizer, model, image_processor = prepare_model(args)
 
     T.clear(); C.clear()
     records = []

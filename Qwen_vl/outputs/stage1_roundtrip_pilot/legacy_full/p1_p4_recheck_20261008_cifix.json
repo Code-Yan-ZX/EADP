@@ -1,0 +1,203 @@
+{
+ "meta": {
+  "seed": 20261007,
+  "n_boot": 5000,
+  "fixes": [
+   "R1 ocrbench 620->623",
+   "R2 p4 effects unified+cluster CI",
+   "R3 infovqa official ANLS pairing",
+   "R4 chartqa image clusters",
+   "R5 mme/mmb single-source recompute"
+  ]
+ },
+ "p4_effects": {
+  "TextVQA_VAL": {
+   "n": 5000,
+   "clusters": "image (3166 unique)",
+   "completion_effect": {
+    "point": 0.7639999999999999,
+    "ci": [
+     0.3251055504915982,
+     1.2338912558631119
+    ],
+    "n": 5000,
+    "n_clusters": 3166
+   },
+   "rtg_effect": {
+    "point": 0.36999999999999983,
+    "ci": [
+     -0.4122265537082155,
+     1.1744751427192714
+    ],
+    "n": 5000,
+    "n_clusters": 3166
+   },
+   "interaction": {
+    "point": -0.16399999999999984,
+    "ci": [
+     -0.7644904111756589,
+     0.4359989267456933
+    ],
+    "n": 5000,
+    "n_clusters": 3166
+   },
+   "means": {
+    "L_E_GATHER": 71.042,
+    "L_E_MAIN025": 71.806,
+    "L_R_GATHER": 71.41199999999999,
+    "L_R_MAIN025": 72.012
+   }
+  },
+  "ChartQA_TEST": {
+   "n": 2500,
+   "clusters": "image (1509 unique)",
+   "completion_effect": {
+    "point": 0.24,
+    "ci": [
+     -0.5973715651135006,
+     1.0821643286573146
+    ],
+    "n": 2500,
+    "n_clusters": 1509
+   },
+   "rtg_effect": {
+    "point": -0.12,
+    "ci": [
+     -1.7070605078006278,
+     1.5342225396726794
+    ],
+    "n": 2500,
+    "n_clusters": 1509
+   },
+   "interaction": {
+    "point": 0.12,
+    "ci": [
+     -1.0510133186782522,
+     1.2346171460650912
+    ],
+    "n": 2500,
+    "n_clusters": 1509
+   },
+   "means": {
+    "L_E_GATHER": 54.800000000000004,
+    "L_E_MAIN025": 55.04,
+    "L_R_GATHER": 54.67999999999999,
+    "L_R_MAIN025": 55.04
+   }
+  },
+  "DocVQA_VAL": {
+   "n": 5349,
+   "clusters": "image (1286 unique)",
+   "completion_effect": {
+    "point": 0.9536994036565072,
+    "ci": [
+     0.4507878914294846,
+     1.4613721855671709
+    ],
+    "n": 5349,
+    "n_clusters": 1286
+   },
+   "rtg_effect": {
+    "point": 1.1763258406222488,
+    "ci": [
+     0.14598419600677046,
+     2.1774452748147697
+    ],
+    "n": 5349,
+    "n_clusters": 1286
+   },
+   "interaction": {
+    "point": -0.16117023750370457,
+    "ci": [
+     -0.8507006486573565,
+     0.5341593886360698
+    ],
+    "n": 5349,
+    "n_clusters": 1286
+   },
+   "means": {
+    "L_E_GATHER": 61.13557770823,
+    "L_E_MAIN025": 62.08927711188651,
+    "L_R_GATHER": 62.31190354885226,
+    "L_R_MAIN025": 63.10443271500505
+   }
+  },
+  "OCRBench": {
+   "n": 1000,
+   "means": {
+    "L_E_GATHER": 62.3,
+    "L_E_MAIN025": 63.800000000000004,
+    "L_R_GATHER": 62.0,
+    "L_R_MAIN025": 63.2
+   },
+   "audited_eg_baseline": 62.3,
+   "completion_effect": 1.500000000000007,
+   "rtg_effect": -0.29999999999999716,
+   "interaction": -0.30000000000000426,
+   "clusters": "per-row (OCRBench rows are independent questions)",
+   "note": "\u00a713's E_GATHER=620 was inconsistent with the audited per-question file (mean 0.6230 -> 623); corrected here."
+  }
+ },
+ "infovqa_official_pairing": {
+  "n": 2801,
+  "lr_official_mean": 43.03301351244087,
+  "lr_headline": 43.03301351244087,
+  "lr_reproduces": true,
+  "eg_official_mean": 42.39013063219771,
+  "eg_headline": 42.39013063219771,
+  "eg_reproduces": true,
+  "delta_pct": 0.6428828802431515,
+  "ci": [
+   -0.6684410615428953,
+   1.9351133303909411
+  ],
+  "n_clusters": 500,
+  "note": "R3: official hit_calculate semantics from each arm's _pred_results.xlsx eval_match; replaces the local-extractor pairing in the original analysis."
+ },
+ "chartqa_reclustered": {
+  "n": 2500,
+  "clusters": "image (1509 unique, md5 of base64)",
+  "lr_mean": 55.04,
+  "eg_mean": 54.800000000000004,
+  "delta_pct": 0.24,
+  "ci": [
+   -1.3677277964176981,
+   1.8637392812409652
+  ],
+  "note": "R4: was per-row in the original analysis."
+ },
+ "mme": {
+  "n": 2374,
+  "n_clusters": 1187,
+  "lr_total": 2202.923769507803,
+  "eg_total": 2212.6946778711485,
+  "delta": -9.77090836334537,
+  "ci": [
+   -63.9668437604433,
+   42.65507010936421
+  ],
+  "note": "R5: image-pair clusters (recomputed under the recheck seed for a single-source record)."
+ },
+ "mmbench_en": {
+  "n_groups": 1292,
+  "lr_correct": 1027,
+  "eg_correct": 1032,
+  "delta_pct": -0.38699690402477227,
+  "ci": [
+   -1.393188854489169,
+   0.6191950464396356
+  ],
+  "note": "R5: full official circular-group denominator (hit=0 for evaluation-failed groups, official semantics)."
+ },
+ "mmbench_cn": {
+  "n_groups": 1292,
+  "lr_correct": 1013,
+  "eg_correct": 1019,
+  "delta_pct": -0.4643962848297267,
+  "ci": [
+   -1.6253869969040213,
+   0.6211300309597311
+  ],
+  "note": "R5: full official circular-group denominator (hit=0 for evaluation-failed groups, official semantics)."
+ }
+}

@@ -42,7 +42,7 @@ OLD = ("/media/disk2/YZX/research/audit_base_gap_20261003/"
 N_BOOT = 5000
 SEED = 20261007
 OUT = os.path.join(RC.OUT_DIR, "legacy_full",
-                   "p1_p4_recheck_20261007.json")
+                   "p1_p4_recheck_20261008_cifix.json")
 
 ARMS = ["L_E_GATHER", "L_E_MAIN025", "L_R_GATHER", "L_R_MAIN025"]
 
@@ -249,9 +249,13 @@ def mme_recheck():
     assert list(pL) == list(pE)
 
     def totals(items):
+        # BUGFIX 2026-10-08: keying by (cat, img) alone silently OVERWROTE
+        # image pairs picked more than once by the bootstrap (duplicate
+        # clusters collapsed, CI too narrow).  Keying by occurrence index
+        # keeps multiplicity; identical for the point estimate (unique keys).
         g = {}
-        for (cat, img), ss in items:
-            g.setdefault(cat, {})[img] = ss
+        for i, ((cat, img), ss) in enumerate(items):
+            g.setdefault(cat, {})[(img, i)] = ss
         tot = 0.0
         for cat, dg in g.items():
             acc = np.mean([np.mean(v) for v in dg.values()])

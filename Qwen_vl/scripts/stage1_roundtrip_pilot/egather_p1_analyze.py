@@ -194,9 +194,13 @@ def analyze_mme():
     cats = list({c for c, _ in pL})
 
     def totals(items):
+        # BUGFIX 2026-10-08: keying by (cat, img) alone silently OVERWROTE
+        # image pairs picked more than once by the bootstrap (duplicate
+        # clusters collapsed, CI too narrow).  Keying by occurrence index
+        # keeps multiplicity; identical for the point estimate (unique keys).
         stats = {}
-        for (cat, img), ss in items:
-            stats.setdefault(cat, {})[img] = ss
+        for i, ((cat, img), ss) in enumerate(items):
+            stats.setdefault(cat, {})[(img, i)] = ss
         tot = 0.0
         for cat, g in stats.items():
             acc = np.mean([np.mean(v) for v in g.values()])
