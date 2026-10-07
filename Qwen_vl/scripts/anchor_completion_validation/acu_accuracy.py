@@ -183,13 +183,22 @@ def _per_q_generic(tsv, ds, shard):
             else pd.read_csv(det, sep="\t")
         col_hit = ("hit" if "hit" in d.columns
                    else "score" if "score" in d.columns else None)
+
+        def _int_set(col):
+            # some official aux files (e.g. HallusionBench) use string
+            # question ids in `index`; treat unparseable index as absent
+            try:
+                return set(col.astype(int))
+            except (ValueError, TypeError):
+                return None
+
+        idx_int = _int_set(d["index"]) if "index" in d.columns else None
         # index-mapping when the file's index column IS the row position;
         # otherwise the results file preserves input order -> map by order
-        idx_match = ("index" in d.columns
-                     and set(d["index"].astype(int)) == set(positions)
+        idx_match = (idx_int is not None and idx_int == set(positions)
                      and len(d) == len(positions))
-        if "eval_score" in d.columns and "index" in d.columns \
-                and set(positions) <= set(d["index"].astype(int)) \
+        if "eval_score" in d.columns and idx_int is not None \
+                and set(positions) <= idx_int \
                 and len(d) >= len(positions):
             m = dict(zip(d["index"].astype(int),
                          d["eval_score"].astype(float)))

@@ -185,8 +185,17 @@ def _score_one(ds):
         else:
             h = _headline100(res, ds)
             if h is not None:
-                diff = abs(m - h)
-                chk = diff <= 0.05
+                # MME headline is a SUM score while per_q is mean accuracy,
+                # and InfoVQA headline uses the official ANLS extractor vs
+                # the local one here — cross-check not applicable for both
+                # (established by the audited K=256 round, where their
+                # score jsons carry perq_reproduces_headline=None).
+                if ds in ("MME", "InfoVQA_VAL"):
+                    diff = None
+                    chk = None
+                else:
+                    diff = abs(m - h)
+                    chk = diff <= 0.05
     if chk is False:
         return fail(ds, "perq_headline_mismatch",
                     f"perq={m:.6f} headline={h:.6f} diff={diff:.6f}")
