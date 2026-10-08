@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "CPU_only": true,
+  "GPU_started_by_this_task": false,
+  "finished_utc": "2026-10-08T16:34:15.875133+00:00",
+  "worker": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_streamwait_worker.py",
+  "worker_sha256": "1c8bb72fc855ffc26b3273ac6dfdf327c8d2fb56eded19e7d8cf4cb4c2f31fe3",
+  "test_file": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/test_legacy_streamwait_worker.py",
+  "test_sha256": "cb2891201dec4f016497587a49734c337939c69bb9e6577abf7e278e80379f71",
+  "log": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_worker_cpu_tests.log",
+  "log_sha256": "6a91304c41372981aa9809a168667e9a91a6ee567b26a06da672aa1935b92e54",
+  "n_tests": 37,
+  "tests_elapsed_seconds": 33.383,
+  "n_jobs": 32,
+  "n_predictions": 224199,
+  "inventory_sha256": "56088479e236ad9d9606b3ecb96f08c98e92029dea5e89a3df707657e120f6f9",
+  "n_groups_expected": 29,
+  "next_attempt": 2,
+  "prepare_owned_by": "rerun_scheduler",
+  "checks": {
+    "all_32_historical_nonempty_official_reports_equal_after_input_order_normalization": true,
+    "canonical_MME_GT_2374_and_all_empty_complete_denominator": true,
+    "GQA_12578_all_empty_complete_denominator": true,
+    "MMBench_4876_rows_1292_groups_unparseable_and_empty_answer_count_wrong": true,
+    "GQA_and_VizWiz_each_two_real_CPU_subprocesses_hashseeds_1_2_identical_full_report_sha256": true,
+    "GQA_and_VizWiz_report_and_value_in_original_question_order": true,
+    "wrong_budget_source_hash_partial_order_identity_failed_exit_immutable_protocol_marker_job_rejected": true,
+    "after_generate_observation_verified_with_CPU_simulation": true,
+    "CPU_gate_only_exact_empty_rejection_removed_and_AST_restoration_identical": true,
+    "original_scorer_modules_not_mutated": true,
+    "production_and_other_frozen_workers_not_modified": true
+  },
+  "CPU_score_gate_AST_validation": {
+    "mme_canonical_score.py": {
+      "patch_required": true,
+      "function": "checked_records",
+      "removed_expression": "not answer.strip()",
+      "original_ast_sha256": "33abc63ddf067c746c570f6d6454aca3a570f1c12d48b1d664fda6a71cdfcd48",
+      "patched_ast_sha256": "30bd280382612347c3db769272b87e0771c5129cef84a25158e32cd66204b5d5",
+      "restoration_ast_identical": true,
+      "source_file_modified": false,
+      "isolated_globals": true
+    },
+    "official_score.py": {
+      "patch_required": true,
+      "function": "checked_predictions",
+      "removed_expression": "not str(value).strip()",
+      "original_ast_sha256": "257061eee9ddcf7eef0ecf636fa889f22506645708cba45f2a08ccf5bb316906",
+      "patched_ast_sha256": "90bad3162005fc2452e52b89aeb3c7ce4fa6aa1ba72f7b117603b68210ca9ad0",
+      "restoration_ast_identical": true,
+      "source_file_modified": false,
+      "isolated_globals": true
+    }
+  },
+  "identity_manifests": {
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_gqa_identities.manifest.json": "ea47c7b3ddcaa7b7247e692e72813433631a716f6d8a30fc52b9251f0ca8bc34",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_mmbcn_identities.manifest.json": "6a7b1c2c16329e52f7f3de080fd7ab7c5d1475aaa8693245f321c40b68e45339",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_mmben_identities.manifest.json": "d4a01752feb169cc53d9c85aeedeb99edd5ca0ef1bef360a7dab2ade8b385617",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_mme_identities.manifest.json": "28d7b08ff20a970689c810d3766a7e89a1627e626ac929fdabfa59e718387386",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_pope_identities.manifest.json": "ffcf16483e42961a3f2d3f6834c58851cb23521e62ae5bba15673056e556dd64",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_vizwiz_identities.manifest.json": "ec7ea248791cc7d462d00e9ee5f8a2c5146daad2ba62ede7445f906d099a2eea"
+  },
+  "image_manifests": {
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_gqa_images.manifest.json": "07de57dd3878953e768e180ff57eb80d7ccae72606ca2219ef634fc203da79d2",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_mmbcn_images.manifest.json": "8c40e747793d2778527057aeb4a0a03d374dfd073676269fb389fef82faf0470",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_mmben_images.manifest.json": "fdbacdde25bd8e92d4682fcdce48192e431edff317d1d2861248bf6427c93827",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_mme_images.manifest.json": "1ebaa84ee228209ec3c7ad9f1ec6bcb573fd6930124830662cd838df76fdb7c8",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_pope_images.manifest.json": "d53e7e979e970deade9407faa23b2dcfdc4ff7e7e1dcc5e95a36eade8e3ce4bf",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_vizwiz_images.manifest.json": "1939a381a51ecded03eb25fe6c15b83dd73e3eb617a0af5d9eb332c0fc38efb3"
+  },
+  "prepared_only_recovery_provenance": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_prepared_only_recovery_provenance.json",
+  "historical_identity_limit": "Recovered original archived recipe; historical external environment and original per-process argv were not recorded. No claim that every old score was wrong."
+}

@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-08T16:34:00.432510+00:00",
+  "CPU_only": true,
+  "GPU_started": false,
+  "publisher_source_modified": false,
+  "real_state_prepare_called": false,
+  "Git_or_publication_called": false,
+  "service_changed": false,
+  "frozen_sources": {
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/publish_repair_results.py": "ae9fc06bcb69dc20c2e2987badda79a95474019fa38c1ef58f9a7eed7a477d57",
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/test_publish_repair_results.py": "5d47b61a296c6fee60faaeb4f333dd7f471e9bac204e7703ccb84f271aeab2b8"
+  },
+  "fixtures": {
+    "command": "python -m unittest Qwen_vl/scripts/stage1_roundtrip_pilot/test_publish_repair_results.py",
+    "tests_run": 57,
+    "passed": 57,
+    "failed": 0,
+    "rerun_at_report_creation": true,
+    "coverage": [
+      "original Git/live-index/fast-forward/noop/retry/reply-loss regression",
+      "prepared versus actually started scope",
+      "registered scope disappearance rejection",
+      "full raw/runtime/native/control protocol/official score/source SHA gates",
+      "partial pairs never published",
+      "beta1 remains independent EADP default sensitivity",
+      "MME raw perception points and other original metric scales",
+      "legacy single_audit cannot produce paired differences",
+      "MMBCN historical lang=en explicit",
+      "complete MMB unparsed answers counted wrong and retained",
+      "registered MMB embedded-image TSV omission and exact non-image labels",
+      "verified MME GT ZIP omission and canonical 2374 labels",
+      "unknown TSV/ZIP, private/state/environment/model payload and excluded user drivers rejected"
+    ]
+  },
+  "real_phase1_contract": {
+    "actual_started_utc": "2026-10-08T16:13:39.395256+00:00",
+    "n_registered_jobs": 12,
+    "n_publication_groups": 7,
+    "controller_plan_sha256": "c9e3f6248d2e0e2f032663fcbb1972ed30aab74f35496c583848d9159917c850",
+    "frozen_paths_and_protocol_sha_verified": 12,
+    "CPU_source_map_sha_verified": 57,
+    "completion_claimed": false
+  },
+  "legacy_static_contract": {
+    "n_jobs": 32,
+    "n_groups": 29,
+    "n_predictions": 224199,
+    "kind_counts": {
+      "pair": 3,
+      "FULL": 3,
+      "single_audit": 23
+    },
+    "exact_group_fields_match_controller": true,
+    "controller_snapshot_sha256": "82a7ce81194bf15b0f4d898b23f14a68ef88a8756b8c81ab25e18b94bcd77f77",
+    "static_contract_does_not_register_or_complete_jobs": true,
+    "phase2_actual_registration_not_assessed_in_this_report": true
+  },
+  "completion_scope_policy": {
+    "before_phase2_actual_registration": 26,
+    "after_all_32_actual_registered": 55,
+    "prepare_only_not_expanded": true,
+    "registered_scope_cannot_disappear": true,
+    "all_expected_groups_required_for_completion": true
+  },
+  "metric_policy": {
+    "mme": "MME perception acc+paired-image-acc category sum",
+    "pope": "POPE three-category mean F1 (%)",
+    "gqa": "GQA exact-match accuracy (%)",
+    "vizwiz": "VizWiz official leave-one-out accuracy (%)",
+    "mmben": "MMBench circular accuracy (%)",
+    "mmbcn": "MMBench circular accuracy (%)"
+  },
+  "publication_table_policy": {
+    "paired_results.csv": "only completed genuine pairs and FULL; all original scores retained",
+    "repaired_legacy_results.csv": "legacy original-metric method rows with paired_group flag; single_audit has no AZ_minus_EADP",
+    "MMBCN_guidance_language": "historical en; distinct from Chinese dataset language",
+    "no_highest_score_selection_or_replacement": true
+  },
+  "real_non_image_input_policy_verification": {
+    "mmben": {
+      "input_sha256": "27a54ae2e8f54502361cc5a41ed5fc35f4253af74734b5593d7b1de545eb5656",
+      "input_bytes": 52285836,
+      "derived_rows": 4876,
+      "derived_bytes": 2006545,
+      "derived_sha256": "1d205196b842133162d52de2dda50f339717a66bc73317b98f21f3d5e1959c5f",
+      "columns": [
+        "index",
+        "question",
+        "hint",
+        "A",
+        "B",
+        "C",
+        "D",
+        "answer",
+        "category",
+        "l2-category"
+      ],
+      "image_payload_excluded": true,
+      "source_payload_not_archived": true
+    },
+    "mmbcn": {
+      "input_sha256": "4de91ee6fa5220a06ed4b418f8f53b372886b218c79e5035207d1fa233ac5dd5",
+      "input_bytes": 52199109,
+      "derived_rows": 4876,
+      "derived_bytes": 1919814,
+      "derived_sha256": "7c51bdad50e595f650749bfacc37719af69b1393ecf5e8114b50231815305d9c",
+      "columns": [
+        "index",
+        "question",
+        "hint",
+        "A",
+        "B",
+        "C",
+        "D",
+        "answer",
+        "category",
+        "l2-category"
+      ],
+      "image_payload_excluded": true,
+      "source_payload_not_archived": true
+    },
+    "mme": {
+      "official_zip_sha256": "b8125e2a7c3418e5761c12b3cfe4f1624b3c53ba44009e75b7d3f797d3d8acee",
+      "input_bytes": 107320,
+      "derived_rows": 2374,
+      "derived_bytes": 473020,
+      "derived_sha256": "70351ab452f9de53c2cfc6d289e8f788d2440c85f127993a53eb2b870e6c5b22",
+      "canonical_gt_two_copies_verified": true,
+      "original_archive_payload_not_archived": true
+    }
+  },
+  "archive_policy": {
+    "raw_full_predictions_and_runtime_required": true,
+    "official_full_scores_required": true,
+    "source_symlinks_materialized_as_regular_bytes": true,
+    "no_model_weights_or_image_payload": true,
+    "unknown_zip_or_tsv_rejected": true,
+    "explicit_omitted_source_payloads_manifest": true,
+    "mutable_state_private_environment_hourly_events_and_excluded_user_drivers_not_archived": true
+  },
+  "publisher_health_read_only_snapshot": {
+    "pid": 2423330,
+    "process_observed_running": true,
+    "status": "published",
+    "updated_utc": "2026-10-08T16:33:55.429115+00:00",
+    "published_groups": 16,
+    "expected_groups": 26,
+    "error": null,
+    "pending_commit": null,
+    "pending_publication": null,
+    "remote_head_from_state_only": "3eb644a9bcbd9c515a50691f64a70125c2c50477",
+    "remote_head_not_independently_queried": true
+  }
+}

@@ -1,0 +1,299 @@
+{
+  "success": true,
+  "CPU_only": true,
+  "checks": {
+    "exact_12_jobs_39119_questions": true,
+    "no_imported_torch": true,
+    "wrapper_source_matches_original_lane": true,
+    "all_12_patch_AST_restore_identical": true,
+    "all_12_launcher_hash_matches": true,
+    "all_12_sources_frozen_match": true,
+    "only_two_FULL_exclusive_32000": true,
+    "FULL_budget_zero_no_anchorzip": true,
+    "no_duplicate_K32_Text_registered": true,
+    "all_paths_stay_fixed_directory": true,
+    "native_argv_only_answers_path_changed": true,
+    "next_text_E128_official_exact_m4c_matches_original": true,
+    "next_text_E128_reject_missing_complete_gate": true,
+    "next_text_AZ128_official_exact_m4c_matches_original": true,
+    "next_text_AZ128_reject_missing_complete_gate": true,
+    "next_text_E64_official_exact_m4c_matches_original": true,
+    "next_text_E64_reject_missing_complete_gate": true,
+    "next_text_AZ64_official_exact_m4c_matches_original": true,
+    "next_text_AZ64_reject_missing_complete_gate": true,
+    "next_text_FULL_reject_missing_complete_gate": true,
+    "next_sqa_E128_exact_original_2017_ID_prompt_order": true,
+    "next_sqa_E128_official_AST_score_matches_original": true,
+    "next_sqa_E128_reject_missing_complete_gate": true,
+    "next_sqa_AZ128_exact_original_2017_ID_prompt_order": true,
+    "next_sqa_AZ128_official_AST_score_matches_original": true,
+    "next_sqa_AZ128_reject_missing_complete_gate": true,
+    "next_sqa_E64_exact_original_2017_ID_prompt_order": true,
+    "next_sqa_E64_official_AST_score_matches_original": true,
+    "next_sqa_E64_reject_missing_complete_gate": true,
+    "next_sqa_AZ64_exact_original_2017_ID_prompt_order": true,
+    "next_sqa_AZ64_official_AST_score_matches_original": true,
+    "next_sqa_AZ64_reject_missing_complete_gate": true,
+    "next_sqa_E32_exact_original_2017_ID_prompt_order": true,
+    "next_sqa_E32_official_AST_score_matches_original": true,
+    "next_sqa_E32_reject_missing_complete_gate": true,
+    "next_sqa_AZ32_exact_original_2017_ID_prompt_order": true,
+    "next_sqa_AZ32_official_AST_score_matches_original": true,
+    "next_sqa_AZ32_reject_missing_complete_gate": true,
+    "next_sqa_FULL_exact_original_2017_ID_prompt_order": true,
+    "next_sqa_FULL_official_AST_score_matches_original": true,
+    "next_sqa_FULL_reject_missing_complete_gate": true,
+    "FULL_rejects_other_model_before_cuda_import": true,
+    "FULL_rejects_free31999_before_cuda_import": true,
+    "pruned_rejects_free22499_before_cuda_import": true,
+    "still_no_imported_torch": true,
+    "prepare_idempotent_protocol_hash": true,
+    "no_GPU_or_prediction_runtime_created": true
+  },
+  "historical_exact_score_validation": {
+    "next_text_E128": {
+      "accuracy_percent": 57.95800000000021,
+      "evaluator_sha256": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7"
+    },
+    "next_text_AZ128": {
+      "accuracy_percent": 57.58800000000021,
+      "evaluator_sha256": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7"
+    },
+    "next_text_E64": {
+      "accuracy_percent": 55.35200000000011,
+      "evaluator_sha256": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7"
+    },
+    "next_text_AZ64": {
+      "accuracy_percent": 56.02600000000012,
+      "evaluator_sha256": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7"
+    },
+    "next_sqa_E128": {
+      "accuracy_percent": 67.67476450173525,
+      "n_correct": 1365,
+      "n_total": 2017,
+      "n_image": 2017,
+      "image_accuracy_percent": 67.67476450173525,
+      "evaluator_sha256": "91f48f4db46297b26235e10a959f1385333a852886de846d92e4b18d69e6f6df"
+    },
+    "next_sqa_AZ128": {
+      "accuracy_percent": 68.07139315815567,
+      "n_correct": 1373,
+      "n_total": 2017,
+      "n_image": 2017,
+      "image_accuracy_percent": 68.07139315815567,
+      "evaluator_sha256": "91f48f4db46297b26235e10a959f1385333a852886de846d92e4b18d69e6f6df"
+    },
+    "next_sqa_E64": {
+      "accuracy_percent": 67.22855726326227,
+      "n_correct": 1356,
+      "n_total": 2017,
+      "n_image": 2017,
+      "image_accuracy_percent": 67.22855726326227,
+      "evaluator_sha256": "91f48f4db46297b26235e10a959f1385333a852886de846d92e4b18d69e6f6df"
+    },
+    "next_sqa_AZ64": {
+      "accuracy_percent": 67.57560733763015,
+      "n_correct": 1363,
+      "n_total": 2017,
+      "n_image": 2017,
+      "image_accuracy_percent": 67.57560733763015,
+      "evaluator_sha256": "91f48f4db46297b26235e10a959f1385333a852886de846d92e4b18d69e6f6df"
+    },
+    "next_sqa_E32": {
+      "accuracy_percent": 67.57560733763015,
+      "n_correct": 1363,
+      "n_total": 2017,
+      "n_image": 2017,
+      "image_accuracy_percent": 67.57560733763015,
+      "evaluator_sha256": "91f48f4db46297b26235e10a959f1385333a852886de846d92e4b18d69e6f6df"
+    },
+    "next_sqa_AZ32": {
+      "accuracy_percent": 67.17897868120971,
+      "n_correct": 1355,
+      "n_total": 2017,
+      "n_image": 2017,
+      "image_accuracy_percent": 67.17897868120971,
+      "evaluator_sha256": "91f48f4db46297b26235e10a959f1385333a852886de846d92e4b18d69e6f6df"
+    },
+    "next_sqa_FULL": {
+      "accuracy_percent": 67.67476450173525,
+      "n_correct": 1365,
+      "n_total": 2017,
+      "n_image": 2017,
+      "image_accuracy_percent": 67.67476450173525,
+      "evaluator_sha256": "91f48f4db46297b26235e10a959f1385333a852886de846d92e4b18d69e6f6df"
+    }
+  },
+  "worker_sha256": "d2b213ab51bf6cdee1a20f92b5a8b236f64a8ea144bea0a61b82d36b2552fafd",
+  "protocols": {
+    "next_text_E128": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_text_E128_streamwait.control.protocol.json",
+      "sha256": "3ed1af09db5c444dfc6ad10deb77b867c301b69e7553924ab24fe52bf638d3e4",
+      "n": 5000,
+      "generate_command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/streamwait_repair_worker.py",
+        "--run",
+        "--job-id",
+        "next_text_E128",
+        "--attempt",
+        "1"
+      ]
+    },
+    "next_text_AZ128": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_text_AZ128_streamwait.control.protocol.json",
+      "sha256": "1da0acc836c76c2be0e91b0b7f6a4c0f2bd169f0e8c37d65345ce2cbf9d9dc99",
+      "n": 5000,
+      "generate_command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/streamwait_repair_worker.py",
+        "--run",
+        "--job-id",
+        "next_text_AZ128",
+        "--attempt",
+        "1"
+      ]
+    },
+    "next_text_E64": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_text_E64_streamwait.control.protocol.json",
+      "sha256": "632a762cc571d8f150cdf128943d50b5bc8b56b87c9ced236c56c761b7bae19b",
+      "n": 5000,
+      "generate_command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/streamwait_repair_worker.py",
+        "--run",
+        "--job-id",
+        "next_text_E64",
+        "--attempt",
+        "1"
+      ]
+    },
+    "next_text_AZ64": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_text_AZ64_streamwait.control.protocol.json",
+      "sha256": "2c3ab009dd5d272c9c797c4fb3aa2eb23620010fcab8c44574e911c3c6312021",
+      "n": 5000,
+      "generate_command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/streamwait_repair_worker.py",
+        "--run",
+        "--job-id",
+        "next_text_AZ64",
+        "--attempt",
+        "1"
+      ]
+    },
+    "next_text_FULL": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_text_FULL_streamwait.control.protocol.json",
+      "sha256": "6e5e364ff74b53ee39ddb35d192fabd6961ac74b4a4eed2741c8cc3c8d61b5e9",
+      "n": 5000,
+      "generate_command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/streamwait_repair_worker.py",
+        "--run",
+        "--job-id",
+        "next_text_FULL",
+        "--attempt",
+        "1"
+      ]
+    },
+    "next_sqa_E128": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_sqa_E128_streamwait.control.protocol.json",
+      "sha256": "96ec8b6ebc8a62b0007d3baffa42046d4131c7f57eeeccaf7f9e76d1e9546958",
+      "n": 2017,
+      "generate_command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/streamwait_repair_worker.py",
+        "--run",
+        "--job-id",
+        "next_sqa_E128",
+        "--attempt",
+        "1"
+      ]
+    },
+    "next_sqa_AZ128": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_sqa_AZ128_streamwait.control.protocol.json",
+      "sha256": "7002017bb5dbf559f67c172221d1386e362ba036cf774b603c037a2c55b6ae67",
+      "n": 2017,
+      "generate_command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/streamwait_repair_worker.py",
+        "--run",
+        "--job-id",
+        "next_sqa_AZ128",
+        "--attempt",
+        "1"
+      ]
+    },
+    "next_sqa_E64": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_sqa_E64_streamwait.control.protocol.json",
+      "sha256": "af49ed40199612fb2e3be1fbeff1f0d053fea4c66dec16fe7abe65c9bb85598c",
+      "n": 2017,
+      "generate_command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/streamwait_repair_worker.py",
+        "--run",
+        "--job-id",
+        "next_sqa_E64",
+        "--attempt",
+        "1"
+      ]
+    },
+    "next_sqa_AZ64": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_sqa_AZ64_streamwait.control.protocol.json",
+      "sha256": "280abe1ba86fb50bb34eff0d3300769b0e9652bacc6680b864852d6fd435abd3",
+      "n": 2017,
+      "generate_command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/streamwait_repair_worker.py",
+        "--run",
+        "--job-id",
+        "next_sqa_AZ64",
+        "--attempt",
+        "1"
+      ]
+    },
+    "next_sqa_E32": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_sqa_E32_streamwait.control.protocol.json",
+      "sha256": "7f0cea27ba22123d9b3f7a06d1998b0522e2f9a8dd2f237fd1682aa08a65c4c4",
+      "n": 2017,
+      "generate_command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/streamwait_repair_worker.py",
+        "--run",
+        "--job-id",
+        "next_sqa_E32",
+        "--attempt",
+        "1"
+      ]
+    },
+    "next_sqa_AZ32": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_sqa_AZ32_streamwait.control.protocol.json",
+      "sha256": "81c74ab73ed23982cfc6e03add07b55715f9253632bee506de81e6f4c3169db3",
+      "n": 2017,
+      "generate_command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/streamwait_repair_worker.py",
+        "--run",
+        "--job-id",
+        "next_sqa_AZ32",
+        "--attempt",
+        "1"
+      ]
+    },
+    "next_sqa_FULL": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_sqa_FULL_streamwait.control.protocol.json",
+      "sha256": "617c6d66951be0ef97a1c01204037fa4c07b5d5cb9a1c1eb294d71e7abafad2b",
+      "n": 2017,
+      "generate_command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/streamwait_repair_worker.py",
+        "--run",
+        "--job-id",
+        "next_sqa_FULL",
+        "--attempt",
+        "1"
+      ]
+    }
+  },
+  "safety": "No model load/CUDA initialization/prediction runtime generated; gates checked before CUDA import"
+}

@@ -1,0 +1,2972 @@
+{
+  "schema": "legacy_affected_inventory_draft_v1",
+  "n_jobs": 32,
+  "n_predictions": 224199,
+  "jobs": [
+    {
+      "jobid": "v15_pope_FULL",
+      "model": "v15",
+      "task": "pope",
+      "arm": "FULL",
+      "K": 0,
+      "n": 8910,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/pope/FULL.jsonl",
+      "original_prediction_sha256": "7fe090d1825904594fdae963fec56a113e27433f23c671429402769e3ddccc7e",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/pope/FULL.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "0",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 0,
+        "anchorzip": false,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+      "question_sha256": "1d3b41f0dced74b4f361c659787ef673497cfac54a6be7bde00eb405bab03c70",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/official_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_random.json",
+          "exists": true,
+          "sha256": "ac25245170b975a5bdf9080b23fd431dfe6be458bc038259c1f4f09a6bef7994"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_popular.json",
+          "exists": true,
+          "sha256": "72c1a8ad45d0c13514f5f22598261df41d3b533854d29682e924db50ed8aa753"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_adversarial.json",
+          "exists": true,
+          "sha256": "420b3407db1fa9f1187a805dca41cb7b97fd91504e6c2179706188c107fb8ef8"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh",
+          "sha256": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_full_driver.sh",
+          "sha256": "f91f2cc0bbbc4698c611e1a81fa3b95ce18a1bbd27258e707b9a3dbf9d02d7fa"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/pope/FULL.log",
+          "completed_tqdm_elapsed": "32:02",
+          "seconds": 1922,
+          "sha256": "72512a33a2fda7acdde74f8e2036356d744f059cb59c2f9e176f19a85911b669"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "v15_pope_EGATHER",
+      "model": "v15",
+      "task": "pope",
+      "arm": "EGATHER",
+      "K": 128,
+      "n": 8910,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/pope/EGATHER.jsonl",
+      "original_prediction_sha256": "a2697f9282eaaaff2e0c7511e6b5aacc7a1f8f76b0e0befa42a0a0a4dcda11ce",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/pope/EGATHER.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "128",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 128,
+        "anchorzip": false,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+      "question_sha256": "1d3b41f0dced74b4f361c659787ef673497cfac54a6be7bde00eb405bab03c70",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/official_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_random.json",
+          "exists": true,
+          "sha256": "ac25245170b975a5bdf9080b23fd431dfe6be458bc038259c1f4f09a6bef7994"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_popular.json",
+          "exists": true,
+          "sha256": "72c1a8ad45d0c13514f5f22598261df41d3b533854d29682e924db50ed8aa753"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_adversarial.json",
+          "exists": true,
+          "sha256": "420b3407db1fa9f1187a805dca41cb7b97fd91504e6c2179706188c107fb8ef8"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh",
+          "sha256": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_full_driver.sh",
+          "sha256": "f91f2cc0bbbc4698c611e1a81fa3b95ce18a1bbd27258e707b9a3dbf9d02d7fa"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/pope/EGATHER.log",
+          "completed_tqdm_elapsed": "25:41",
+          "seconds": 1541,
+          "sha256": "ff95edae209349f2b211e26d5055df614756560b1d2aca818021b0f00447453b"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "v15_pope_LRMAIN025",
+      "model": "v15",
+      "task": "pope",
+      "arm": "LRMAIN025",
+      "K": 128,
+      "n": 8910,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/pope/LRMAIN025.jsonl",
+      "original_prediction_sha256": "69ca058ed3b3fc5a474a7dfa953fa3a114b8b3011f38801dc15026bb92d0b32a",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/pope/LRMAIN025.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "128",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 128,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+      "question_sha256": "1d3b41f0dced74b4f361c659787ef673497cfac54a6be7bde00eb405bab03c70",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/official_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_random.json",
+          "exists": true,
+          "sha256": "ac25245170b975a5bdf9080b23fd431dfe6be458bc038259c1f4f09a6bef7994"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_popular.json",
+          "exists": true,
+          "sha256": "72c1a8ad45d0c13514f5f22598261df41d3b533854d29682e924db50ed8aa753"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_adversarial.json",
+          "exists": true,
+          "sha256": "420b3407db1fa9f1187a805dca41cb7b97fd91504e6c2179706188c107fb8ef8"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh",
+          "sha256": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_full_driver.sh",
+          "sha256": "f91f2cc0bbbc4698c611e1a81fa3b95ce18a1bbd27258e707b9a3dbf9d02d7fa"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/pope/LRMAIN025.log",
+          "completed_tqdm_elapsed": "26:02",
+          "seconds": 1562,
+          "sha256": "4cf67653de5319be87f92d2d3b625238f4b441d523bb12223dda69a33769e0ec"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "v15_pope_LRMAIN0125",
+      "model": "v15",
+      "task": "pope",
+      "arm": "LRMAIN0125",
+      "K": 64,
+      "n": 8910,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/pope/LRMAIN0125.jsonl",
+      "original_prediction_sha256": "c7867acf1fd8f7b26373aee9826b1304bfc1da0edffcf08a92c7c55b4c656d90",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/pope/LRMAIN0125.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "64",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 64,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+      "question_sha256": "1d3b41f0dced74b4f361c659787ef673497cfac54a6be7bde00eb405bab03c70",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/official_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_random.json",
+          "exists": true,
+          "sha256": "ac25245170b975a5bdf9080b23fd431dfe6be458bc038259c1f4f09a6bef7994"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_popular.json",
+          "exists": true,
+          "sha256": "72c1a8ad45d0c13514f5f22598261df41d3b533854d29682e924db50ed8aa753"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_adversarial.json",
+          "exists": true,
+          "sha256": "420b3407db1fa9f1187a805dca41cb7b97fd91504e6c2179706188c107fb8ef8"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh",
+          "sha256": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_full_driver.sh",
+          "sha256": "f91f2cc0bbbc4698c611e1a81fa3b95ce18a1bbd27258e707b9a3dbf9d02d7fa"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/pope/LRMAIN0125.log",
+          "completed_tqdm_elapsed": "22:03",
+          "seconds": 1323,
+          "sha256": "5730b4330dec1740fb8ec3b6714287c559ee03b2f8340a0632748bd6eb0a98a8"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "v15_mme_FULL",
+      "model": "v15",
+      "task": "mme",
+      "arm": "FULL",
+      "K": 0,
+      "n": 2374,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mme/FULL.jsonl",
+      "original_prediction_sha256": "d2123fc79654aae1bf78d0aebda584a077367158f547c798e85a67c9d864eff8",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mme/FULL.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "0",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 0,
+        "anchorzip": false,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+      "question_sha256": "9f67707cb72d2a71df955d0dce84337f2f22eafe2ed473ca3e148c187ac360c5",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/eval_tool.zip",
+          "exists": true,
+          "sha256": "b8125e2a7c3418e5761c12b3cfe4f1624b3c53ba44009e75b7d3f797d3d8acee"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh",
+          "sha256": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_full_driver.sh",
+          "sha256": "f91f2cc0bbbc4698c611e1a81fa3b95ce18a1bbd27258e707b9a3dbf9d02d7fa"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mme/FULL.log",
+          "completed_tqdm_elapsed": "09:09",
+          "seconds": 549,
+          "sha256": "5267f4fd8bd544effb873823f15c0dda581e87f22ca0b190de60e7270ff29100"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "v15_mme_EGATHER",
+      "model": "v15",
+      "task": "mme",
+      "arm": "EGATHER",
+      "K": 128,
+      "n": 2374,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mme/EGATHER.jsonl",
+      "original_prediction_sha256": "799fb92cea2100b62082f7abfba3428e2d3e722a514b7c88b8d66510372a0fa0",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mme/EGATHER.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "128",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 128,
+        "anchorzip": false,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+      "question_sha256": "9f67707cb72d2a71df955d0dce84337f2f22eafe2ed473ca3e148c187ac360c5",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/eval_tool.zip",
+          "exists": true,
+          "sha256": "b8125e2a7c3418e5761c12b3cfe4f1624b3c53ba44009e75b7d3f797d3d8acee"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh",
+          "sha256": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_full_driver.sh",
+          "sha256": "f91f2cc0bbbc4698c611e1a81fa3b95ce18a1bbd27258e707b9a3dbf9d02d7fa"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mme/EGATHER.log",
+          "completed_tqdm_elapsed": "06:56",
+          "seconds": 416,
+          "sha256": "a06727aa59d12258a0be989626a5c8dad27088dd68970d95004651bfef263143"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "v15_mme_LRMAIN025",
+      "model": "v15",
+      "task": "mme",
+      "arm": "LRMAIN025",
+      "K": 128,
+      "n": 2374,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mme/LRMAIN025.jsonl",
+      "original_prediction_sha256": "5da3be6f02d0c87137ef9b56c79688ee6c2a2d490637e71626df42856e1aff6c",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mme/LRMAIN025.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "128",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 128,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+      "question_sha256": "9f67707cb72d2a71df955d0dce84337f2f22eafe2ed473ca3e148c187ac360c5",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/eval_tool.zip",
+          "exists": true,
+          "sha256": "b8125e2a7c3418e5761c12b3cfe4f1624b3c53ba44009e75b7d3f797d3d8acee"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh",
+          "sha256": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_full_driver.sh",
+          "sha256": "f91f2cc0bbbc4698c611e1a81fa3b95ce18a1bbd27258e707b9a3dbf9d02d7fa"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mme/LRMAIN025.log",
+          "completed_tqdm_elapsed": "07:01",
+          "seconds": 421,
+          "sha256": "582ece0d57b560637c9431023bb85babf1fe7e566cb1c59e63de9ade76cfdce1"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "v15_mme_LRMAIN0125",
+      "model": "v15",
+      "task": "mme",
+      "arm": "LRMAIN0125",
+      "K": 64,
+      "n": 2374,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mme/LRMAIN0125.jsonl",
+      "original_prediction_sha256": "acf988a47757913f8014e30ef059c24d30d9f07269f7aba65aafacd40029ff34",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mme/LRMAIN0125.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "64",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 64,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+      "question_sha256": "9f67707cb72d2a71df955d0dce84337f2f22eafe2ed473ca3e148c187ac360c5",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/eval_tool.zip",
+          "exists": true,
+          "sha256": "b8125e2a7c3418e5761c12b3cfe4f1624b3c53ba44009e75b7d3f797d3d8acee"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh",
+          "sha256": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_full_driver.sh",
+          "sha256": "f91f2cc0bbbc4698c611e1a81fa3b95ce18a1bbd27258e707b9a3dbf9d02d7fa"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mme/LRMAIN0125.log",
+          "completed_tqdm_elapsed": "06:01",
+          "seconds": 361,
+          "sha256": "dfaa77e473f98bd47b489b1f15b0290fba4fee23c19dadfb9084c851268a135a"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "v15_mme_LRMAIN00625",
+      "model": "v15",
+      "task": "mme",
+      "arm": "LRMAIN00625",
+      "K": 32,
+      "n": 2374,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mme/LRMAIN00625.jsonl",
+      "original_prediction_sha256": "5be7c6ba1854de1a5e2310a08c0fabd078cdd862ab99f9cc895d104458187f5c",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mme/LRMAIN00625.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "32",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 32,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+      "question_sha256": "9f67707cb72d2a71df955d0dce84337f2f22eafe2ed473ca3e148c187ac360c5",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/eval_tool.zip",
+          "exists": true,
+          "sha256": "b8125e2a7c3418e5761c12b3cfe4f1624b3c53ba44009e75b7d3f797d3d8acee"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh",
+          "sha256": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mme/LRMAIN00625.log",
+          "completed_tqdm_elapsed": "09:11",
+          "seconds": 551,
+          "sha256": "1c820e8f47dd96c61fd12801e7693cb436fe9f918a8e578a21444a78a7b9f0d8"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "v15_gqa_FULL",
+      "model": "v15",
+      "task": "gqa",
+      "arm": "FULL",
+      "K": 0,
+      "n": 12578,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/gqa/FULL.jsonl",
+      "original_prediction_sha256": "faf7dfd1fd697e6ced9f12f216e19cd38376f58e6d04314db6e727b6a10e2e1b",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/gqa/FULL.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "0",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 0,
+        "anchorzip": false,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+      "question_sha256": "515aab3142889269480c71212d3b5b8118704d8da6637d767a0cb5bdf80a3d35",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/gqa_score.py",
+      "score_data": [
+        {
+          "path": "/tmp/gqa12/testdev_balanced_questions.json",
+          "exists": true,
+          "sha256": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh",
+          "sha256": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_gqa_driver.sh",
+          "sha256": "f8af4e4da7b93fc357d466a10a5d39b1fe07de47fd132234a71000f03dd5a252"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/gqa/FULL.log",
+          "completed_tqdm_elapsed": "50:24",
+          "seconds": 3024,
+          "sha256": "d525a773478e9c24c302567f086721add5cea29805961404c0c60b9602f206b4"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "v15_gqa_EGATHER",
+      "model": "v15",
+      "task": "gqa",
+      "arm": "EGATHER",
+      "K": 128,
+      "n": 12578,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/gqa/EGATHER.jsonl",
+      "original_prediction_sha256": "d92d5483c1332945cead4c27dfc688f996bb827dfe4a16a865c2332277557466",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/gqa/EGATHER.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "128",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 128,
+        "anchorzip": false,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+      "question_sha256": "515aab3142889269480c71212d3b5b8118704d8da6637d767a0cb5bdf80a3d35",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/gqa_score.py",
+      "score_data": [
+        {
+          "path": "/tmp/gqa12/testdev_balanced_questions.json",
+          "exists": true,
+          "sha256": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh",
+          "sha256": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_gqa_driver.sh",
+          "sha256": "f8af4e4da7b93fc357d466a10a5d39b1fe07de47fd132234a71000f03dd5a252"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/gqa/EGATHER.log",
+          "completed_tqdm_elapsed": "39:33",
+          "seconds": 2373,
+          "sha256": "f082415a359c121f16ebc5b46d8b039c4735d10b190ceab81d93cb863bf0ff65"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "v15_gqa_LRMAIN025",
+      "model": "v15",
+      "task": "gqa",
+      "arm": "LRMAIN025",
+      "K": 128,
+      "n": 12578,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/gqa/LRMAIN025.jsonl",
+      "original_prediction_sha256": "47feed262d5f6469ae6177ff260bde34f5f4f1e661ef453fc0932cdfcbc97075",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/gqa/LRMAIN025.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "128",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 128,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+      "question_sha256": "515aab3142889269480c71212d3b5b8118704d8da6637d767a0cb5bdf80a3d35",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/gqa_score.py",
+      "score_data": [
+        {
+          "path": "/tmp/gqa12/testdev_balanced_questions.json",
+          "exists": true,
+          "sha256": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh",
+          "sha256": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_gqa_driver.sh",
+          "sha256": "f8af4e4da7b93fc357d466a10a5d39b1fe07de47fd132234a71000f03dd5a252"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/gqa/LRMAIN025.log",
+          "completed_tqdm_elapsed": "40:03",
+          "seconds": 2403,
+          "sha256": "b93ebad25d5e93e8d49609f3421f66138c87522bb386c68110f0ba1027b7a89e"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "v15_gqa_LRMAIN0125",
+      "model": "v15",
+      "task": "gqa",
+      "arm": "LRMAIN0125",
+      "K": 64,
+      "n": 12578,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/gqa/LRMAIN0125.jsonl",
+      "original_prediction_sha256": "c0f31c183765808a896db583a60038797eb99edf6d99bd9c99fca3a17e03dd45",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/gqa/LRMAIN0125.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "64",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 64,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+      "question_sha256": "515aab3142889269480c71212d3b5b8118704d8da6637d767a0cb5bdf80a3d35",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/gqa_score.py",
+      "score_data": [
+        {
+          "path": "/tmp/gqa12/testdev_balanced_questions.json",
+          "exists": true,
+          "sha256": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh",
+          "sha256": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_gqa_driver.sh",
+          "sha256": "f8af4e4da7b93fc357d466a10a5d39b1fe07de47fd132234a71000f03dd5a252"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/gqa/LRMAIN0125.log",
+          "completed_tqdm_elapsed": "34:37",
+          "seconds": 2077,
+          "sha256": "6bfff718f12310ff805f25990644dcff1fd24a14c94aa2583c410eddc005cd07"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "v15_gqa_LRMAIN00625",
+      "model": "v15",
+      "task": "gqa",
+      "arm": "LRMAIN00625",
+      "K": 32,
+      "n": 12578,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/gqa/LRMAIN00625.jsonl",
+      "original_prediction_sha256": "05d3de7b56d4f9a3a365bb45ba3bb488997ada41ccbdfc86b330f387fe376e19",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/gqa/LRMAIN00625.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "32",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 32,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+      "question_sha256": "515aab3142889269480c71212d3b5b8118704d8da6637d767a0cb5bdf80a3d35",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/gqa_score.py",
+      "score_data": [
+        {
+          "path": "/tmp/gqa12/testdev_balanced_questions.json",
+          "exists": true,
+          "sha256": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh",
+          "sha256": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/gqa/LRMAIN00625.log",
+          "completed_tqdm_elapsed": "32:25",
+          "seconds": 1945,
+          "sha256": "ae69ae8b3f7e7b597e71318cade8c9dd13575ebd59893154075e8ae29949149f"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_pope_LRMAIN025",
+      "model": "next",
+      "task": "pope",
+      "arm": "LRMAIN025",
+      "K": 128,
+      "n": 8910,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_pope/LRMAIN025.jsonl",
+      "original_prediction_sha256": "1f49e11d3e7d6fb290d5e851a9e5da0df8cea83bb75889530911f29a0f893711",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_pope/LRMAIN025.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "128",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 128,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+      "question_sha256": "1d3b41f0dced74b4f361c659787ef673497cfac54a6be7bde00eb405bab03c70",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/official_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_random.json",
+          "exists": true,
+          "sha256": "ac25245170b975a5bdf9080b23fd431dfe6be458bc038259c1f4f09a6bef7994"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_popular.json",
+          "exists": true,
+          "sha256": "72c1a8ad45d0c13514f5f22598261df41d3b533854d29682e924db50ed8aa753"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_adversarial.json",
+          "exists": true,
+          "sha256": "420b3407db1fa9f1187a805dca41cb7b97fd91504e6c2179706188c107fb8ef8"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_next2_driver.sh",
+          "sha256": "fa29b8a6ef158bea2dae2a2108c2cfcbd34407622838ab4c58489061f9a5280e"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_pope/LRMAIN025.log",
+          "completed_tqdm_elapsed": "48:22",
+          "seconds": 2902,
+          "sha256": "3fe04fe742b3ab14eb97699e695d518e756820da25903e1774bd8286b9a5e5a7"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_pope_LRMAIN0125",
+      "model": "next",
+      "task": "pope",
+      "arm": "LRMAIN0125",
+      "K": 64,
+      "n": 8910,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_pope/LRMAIN0125.jsonl",
+      "original_prediction_sha256": "3a5c36dc72041171841a674af46f9f2ace845261eddcd447e9fffed247da381d",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_pope/LRMAIN0125.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "64",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 64,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+      "question_sha256": "1d3b41f0dced74b4f361c659787ef673497cfac54a6be7bde00eb405bab03c70",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/official_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_random.json",
+          "exists": true,
+          "sha256": "ac25245170b975a5bdf9080b23fd431dfe6be458bc038259c1f4f09a6bef7994"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_popular.json",
+          "exists": true,
+          "sha256": "72c1a8ad45d0c13514f5f22598261df41d3b533854d29682e924db50ed8aa753"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_adversarial.json",
+          "exists": true,
+          "sha256": "420b3407db1fa9f1187a805dca41cb7b97fd91504e6c2179706188c107fb8ef8"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_next2_driver.sh",
+          "sha256": "fa29b8a6ef158bea2dae2a2108c2cfcbd34407622838ab4c58489061f9a5280e"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_pope/LRMAIN0125.log",
+          "completed_tqdm_elapsed": "33:11",
+          "seconds": 1991,
+          "sha256": "8b7018e1e278366152243d6244df04c60df22cc89648d8c475f68cda35336de4"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_pope_LRMAIN00625",
+      "model": "next",
+      "task": "pope",
+      "arm": "LRMAIN00625",
+      "K": 32,
+      "n": 8910,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_pope/LRMAIN00625.jsonl",
+      "original_prediction_sha256": "18c833ff5414581605e7aab26ad41c9dd680c853a17cc628f825058c83d8fe78",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_pope/LRMAIN00625.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "32",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 32,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+      "question_sha256": "1d3b41f0dced74b4f361c659787ef673497cfac54a6be7bde00eb405bab03c70",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/val2014",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/official_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_random.json",
+          "exists": true,
+          "sha256": "ac25245170b975a5bdf9080b23fd431dfe6be458bc038259c1f4f09a6bef7994"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_popular.json",
+          "exists": true,
+          "sha256": "72c1a8ad45d0c13514f5f22598261df41d3b533854d29682e924db50ed8aa753"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/coco_pope_adversarial.json",
+          "exists": true,
+          "sha256": "420b3407db1fa9f1187a805dca41cb7b97fd91504e6c2179706188c107fb8ef8"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_next2_driver.sh",
+          "sha256": "fa29b8a6ef158bea2dae2a2108c2cfcbd34407622838ab4c58489061f9a5280e"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_pope/LRMAIN00625.log",
+          "completed_tqdm_elapsed": "26:50",
+          "seconds": 1610,
+          "sha256": "68573e0ba18fc7bd0028a4826b02d73b12d7f3a22fec5ed6b44b87bcc02e01c2"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_mme_LRMAIN025",
+      "model": "next",
+      "task": "mme",
+      "arm": "LRMAIN025",
+      "K": 128,
+      "n": 2374,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mme/LRMAIN025.jsonl",
+      "original_prediction_sha256": "0b5e36f9664092e28963dd766e7090f60df5813d880b9ce538d54a3b28bf26b7",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mme/LRMAIN025.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "128",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 128,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+      "question_sha256": "9f67707cb72d2a71df955d0dce84337f2f22eafe2ed473ca3e148c187ac360c5",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/eval_tool.zip",
+          "exists": true,
+          "sha256": "b8125e2a7c3418e5761c12b3cfe4f1624b3c53ba44009e75b7d3f797d3d8acee"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_next2_driver.sh",
+          "sha256": "fa29b8a6ef158bea2dae2a2108c2cfcbd34407622838ab4c58489061f9a5280e"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mme/LRMAIN025.log",
+          "completed_tqdm_elapsed": "12:56",
+          "seconds": 776,
+          "sha256": "a71e8397c030d2cfdc3b6361b4819698f9a8ad7b395c357ca4e6b80352c2a9ff"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_mme_LRMAIN0125",
+      "model": "next",
+      "task": "mme",
+      "arm": "LRMAIN0125",
+      "K": 64,
+      "n": 2374,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mme/LRMAIN0125.jsonl",
+      "original_prediction_sha256": "6fc094e47c234a5efb297dbb9e49ddffd37ed3db7ffd85cac765e5cf9f5eec51",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mme/LRMAIN0125.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "64",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 64,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+      "question_sha256": "9f67707cb72d2a71df955d0dce84337f2f22eafe2ed473ca3e148c187ac360c5",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/eval_tool.zip",
+          "exists": true,
+          "sha256": "b8125e2a7c3418e5761c12b3cfe4f1624b3c53ba44009e75b7d3f797d3d8acee"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_next2_driver.sh",
+          "sha256": "fa29b8a6ef158bea2dae2a2108c2cfcbd34407622838ab4c58489061f9a5280e"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mme/LRMAIN0125.log",
+          "completed_tqdm_elapsed": "09:08",
+          "seconds": 548,
+          "sha256": "84673659fd8474eae870b337ba364386da7273f3482830d42ca9bd832388666d"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_mme_LRMAIN00625",
+      "model": "next",
+      "task": "mme",
+      "arm": "LRMAIN00625",
+      "K": 32,
+      "n": 2374,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mme/LRMAIN00625.jsonl",
+      "original_prediction_sha256": "25f897defa01c0a3fcb027b9676b9c3a3246422ca16f46ca2eec8fee1bd9a7b6",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mme/LRMAIN00625.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "32",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 32,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl",
+      "question_sha256": "9f67707cb72d2a71df955d0dce84337f2f22eafe2ed473ca3e148c187ac360c5",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/MME_Benchmark",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/eval_tool.zip",
+          "exists": true,
+          "sha256": "b8125e2a7c3418e5761c12b3cfe4f1624b3c53ba44009e75b7d3f797d3d8acee"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_next2_driver.sh",
+          "sha256": "fa29b8a6ef158bea2dae2a2108c2cfcbd34407622838ab4c58489061f9a5280e"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mme/LRMAIN00625.log",
+          "completed_tqdm_elapsed": "07:11",
+          "seconds": 431,
+          "sha256": "ce38258b04d279fd8a03e439b9118d4087c2d41391ca7cadcad8ce25ce0090eb"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_gqa_LRMAIN025",
+      "model": "next",
+      "task": "gqa",
+      "arm": "LRMAIN025",
+      "K": 128,
+      "n": 12578,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_gqa/LRMAIN025.jsonl",
+      "original_prediction_sha256": "b5fe0cab8db1d4effbcec8fcbcab84ae8a87ce824b626bb6fe65766c1aa3c30b",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_gqa/LRMAIN025.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "128",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 128,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+      "question_sha256": "515aab3142889269480c71212d3b5b8118704d8da6637d767a0cb5bdf80a3d35",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/gqa_score.py",
+      "score_data": [
+        {
+          "path": "/tmp/gqa12/testdev_balanced_questions.json",
+          "exists": true,
+          "sha256": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_next2_driver.sh",
+          "sha256": "fa29b8a6ef158bea2dae2a2108c2cfcbd34407622838ab4c58489061f9a5280e"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_gqa/LRMAIN025.log",
+          "completed_tqdm_elapsed": "1:11:35",
+          "seconds": 4295,
+          "sha256": "5666eb3ebee7c8004a2940f5632433101bc255ad50571803112e3ce90d7ac402"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_gqa_LRMAIN0125",
+      "model": "next",
+      "task": "gqa",
+      "arm": "LRMAIN0125",
+      "K": 64,
+      "n": 12578,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_gqa/LRMAIN0125.jsonl",
+      "original_prediction_sha256": "91fc2287f352ee44a3b696e1f5e7eb90fb67d6260b333314b2a1cddab768601e",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_gqa/LRMAIN0125.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "64",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 64,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+      "question_sha256": "515aab3142889269480c71212d3b5b8118704d8da6637d767a0cb5bdf80a3d35",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/gqa_score.py",
+      "score_data": [
+        {
+          "path": "/tmp/gqa12/testdev_balanced_questions.json",
+          "exists": true,
+          "sha256": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_next2_driver.sh",
+          "sha256": "fa29b8a6ef158bea2dae2a2108c2cfcbd34407622838ab4c58489061f9a5280e"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_gqa/LRMAIN0125.log",
+          "completed_tqdm_elapsed": "50:41",
+          "seconds": 3041,
+          "sha256": "3478b4704ff97c32eff3027f2f9a40bb666b221307dc5ab19b6ff428cf12951b"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_gqa_LRMAIN00625",
+      "model": "next",
+      "task": "gqa",
+      "arm": "LRMAIN00625",
+      "K": 32,
+      "n": 12578,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_gqa/LRMAIN00625.jsonl",
+      "original_prediction_sha256": "93d275c25ef16be9308c2827957df5ced8ce0c95569cebeacf015d68830e489c",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_gqa/LRMAIN00625.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "32",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 32,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl",
+      "question_sha256": "515aab3142889269480c71212d3b5b8118704d8da6637d767a0cb5bdf80a3d35",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/data/images",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/gqa_score.py",
+      "score_data": [
+        {
+          "path": "/tmp/gqa12/testdev_balanced_questions.json",
+          "exists": true,
+          "sha256": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_next2_driver.sh",
+          "sha256": "fa29b8a6ef158bea2dae2a2108c2cfcbd34407622838ab4c58489061f9a5280e"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+          "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_gqa/LRMAIN00625.log",
+          "completed_tqdm_elapsed": "40:52",
+          "seconds": 2452,
+          "sha256": "9a41b0042bfc82628d684207e8cea8129f9795a27c0f041691eef30ab0c8653b"
+        }
+      ],
+      "risk": "nonblocking caller CUDA transfer/dtype conversion consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_vizwiz_LRMAIN025",
+      "model": "next",
+      "task": "vizwiz",
+      "arm": "LRMAIN025",
+      "K": 128,
+      "n": 4319,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_vizwiz/LRMAIN025.jsonl",
+      "original_prediction_sha256": "25c8cbfe2b6b31ff51a006beb9ab84fed2cfa0bd29ba98eb1b4b12ec50398384",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/llava_val.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_vizwiz/LRMAIN025.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "128",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 128,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 1024,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/llava_val.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/llava_val.jsonl",
+      "question_sha256": "89a42dce0ba8cc26325bdd8937dd461df4f201f376f5fdb46b33ee052dea8c0b",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/vizwiz_val_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val.json",
+          "exists": true,
+          "sha256": "f96a6a42da56fa067d023ec25a841df840d6c5989b1b0e7b0e6f0d269c617ab7"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py",
+          "sha256": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_vizwiz/LRMAIN025.log",
+          "completed_tqdm_elapsed": "1:00:20",
+          "seconds": 3620,
+          "sha256": "16f639a93b534c0409ac4fe12f7b0e659ed026b38a0860c703be7140856ac987"
+        }
+      ],
+      "risk": "blocking outer transfer followed by AnyRes caller CUDA torch.cat consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_vizwiz_LRMAIN0125",
+      "model": "next",
+      "task": "vizwiz",
+      "arm": "LRMAIN0125",
+      "K": 64,
+      "n": 4319,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_vizwiz/LRMAIN0125.jsonl",
+      "original_prediction_sha256": "9fabda78e133b8fbfe0f9c1b3319da5145004da956829036d2d59f4be10a8ac1",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/llava_val.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_vizwiz/LRMAIN0125.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "64",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 64,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 1024,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/llava_val.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/llava_val.jsonl",
+      "question_sha256": "89a42dce0ba8cc26325bdd8937dd461df4f201f376f5fdb46b33ee052dea8c0b",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/vizwiz_val_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val.json",
+          "exists": true,
+          "sha256": "f96a6a42da56fa067d023ec25a841df840d6c5989b1b0e7b0e6f0d269c617ab7"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py",
+          "sha256": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_vizwiz/LRMAIN0125.log",
+          "completed_tqdm_elapsed": "43:59",
+          "seconds": 2639,
+          "sha256": "3c2b70ef9477337cb3316e1eadaf808aea53c70189645375f37a22414fa744ac"
+        }
+      ],
+      "risk": "blocking outer transfer followed by AnyRes caller CUDA torch.cat consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_vizwiz_LRMAIN00625",
+      "model": "next",
+      "task": "vizwiz",
+      "arm": "LRMAIN00625",
+      "K": 32,
+      "n": 4319,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_vizwiz/LRMAIN00625.jsonl",
+      "original_prediction_sha256": "ff2a3e4bf53d4aec351d86085074cea2db05263aac33c41fb5fa1348a02d7d34",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/llava_val.jsonl",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_vizwiz/LRMAIN00625.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "32",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--image-folder",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val",
+        "--anchorzip"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 32,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 1024,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/llava_val.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val",
+        "model_base": null
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/llava_val.jsonl",
+      "question_sha256": "89a42dce0ba8cc26325bdd8937dd461df4f201f376f5fdb46b33ee052dea8c0b",
+      "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/vizwiz_val_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val.json",
+          "exists": true,
+          "sha256": "f96a6a42da56fa067d023ec25a841df840d6c5989b1b0e7b0e6f0d269c617ab7"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py",
+          "sha256": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_vizwiz/LRMAIN00625.log",
+          "completed_tqdm_elapsed": "23:27",
+          "seconds": 1407,
+          "sha256": "8f8624406640b9e7851603e4fa41b5fd08ce0255f9c82c44041946da7e56994b"
+        }
+      ],
+      "risk": "blocking outer transfer followed by AnyRes caller CUDA torch.cat consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_mmben_LRMAIN025",
+      "model": "next",
+      "task": "mmben",
+      "arm": "LRMAIN025",
+      "K": 128,
+      "n": 4876,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmben/LRMAIN025.jsonl",
+      "original_prediction_sha256": "5f61197f31d60f82ee6b9eed1bcc36537f0e2021422c6a5b3fd554515a5b4f78",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_EN_V11.tsv",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmben/LRMAIN025.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "128",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--anchorzip",
+        "--single-pred-prompt"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 128,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 1024,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_EN_V11.tsv",
+        "image_folder": "",
+        "model_base": null,
+        "lang": "en",
+        "all_rounds": false,
+        "single_pred_prompt": true
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_EN_V11.tsv",
+      "question_sha256": "27a54ae2e8f54502361cc5a41ed5fc35f4253af74734b5593d7b1de545eb5656",
+      "image_folder": "",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mmben_circular_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_EN_V11.tsv",
+          "exists": true,
+          "sha256": "27a54ae2e8f54502361cc5a41ed5fc35f4253af74734b5593d7b1de545eb5656"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_mmben_driver.sh",
+          "sha256": "8c369f1a61c30ee4a9d3173a35ca2c0dbb4b7c2b052c409e65d4f17f65bf1d99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+          "sha256": "a5fd1379fc521b647e96cb3b983386624aa8992482e8076cea748fa8486da156"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmben/LRMAIN025.log",
+          "completed_tqdm_elapsed": "30:31",
+          "seconds": 1831,
+          "sha256": "183b9e5ce6a049ef60cbe803e43a6af71c901a210e42a69a8f919d421be64e30"
+        }
+      ],
+      "risk": "blocking outer transfer followed by AnyRes caller CUDA torch.cat consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_mmben_LRMAIN0125",
+      "model": "next",
+      "task": "mmben",
+      "arm": "LRMAIN0125",
+      "K": 64,
+      "n": 4876,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmben/LRMAIN0125.jsonl",
+      "original_prediction_sha256": "ebae2c18af9a445229c9ca18ce1c01bab23250e1960474df1e3a526f7e328caf",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_EN_V11.tsv",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmben/LRMAIN0125.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "64",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--anchorzip",
+        "--single-pred-prompt"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 64,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 1024,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_EN_V11.tsv",
+        "image_folder": "",
+        "model_base": null,
+        "lang": "en",
+        "all_rounds": false,
+        "single_pred_prompt": true
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_EN_V11.tsv",
+      "question_sha256": "27a54ae2e8f54502361cc5a41ed5fc35f4253af74734b5593d7b1de545eb5656",
+      "image_folder": "",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mmben_circular_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_EN_V11.tsv",
+          "exists": true,
+          "sha256": "27a54ae2e8f54502361cc5a41ed5fc35f4253af74734b5593d7b1de545eb5656"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_mmben_driver.sh",
+          "sha256": "8c369f1a61c30ee4a9d3173a35ca2c0dbb4b7c2b052c409e65d4f17f65bf1d99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+          "sha256": "a5fd1379fc521b647e96cb3b983386624aa8992482e8076cea748fa8486da156"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmben/LRMAIN0125.log",
+          "completed_tqdm_elapsed": "23:28",
+          "seconds": 1408,
+          "sha256": "e187d6034c5d2e7e09bf80f4359b7ace75f6c913f6cc727579513f10ea519dad"
+        }
+      ],
+      "risk": "blocking outer transfer followed by AnyRes caller CUDA torch.cat consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_mmben_LRMAIN00625",
+      "model": "next",
+      "task": "mmben",
+      "arm": "LRMAIN00625",
+      "K": 32,
+      "n": 4876,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmben/LRMAIN00625.jsonl",
+      "original_prediction_sha256": "38c2036e2a847069c9e6f1bd62887f29861255647295cf79583c04e3f665fe04",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_EN_V11.tsv",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmben/LRMAIN00625.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "32",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--anchorzip",
+        "--single-pred-prompt"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 32,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 1024,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_EN_V11.tsv",
+        "image_folder": "",
+        "model_base": null,
+        "lang": "en",
+        "all_rounds": false,
+        "single_pred_prompt": true
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_EN_V11.tsv",
+      "question_sha256": "27a54ae2e8f54502361cc5a41ed5fc35f4253af74734b5593d7b1de545eb5656",
+      "image_folder": "",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mmben_circular_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_EN_V11.tsv",
+          "exists": true,
+          "sha256": "27a54ae2e8f54502361cc5a41ed5fc35f4253af74734b5593d7b1de545eb5656"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_mmben_driver.sh",
+          "sha256": "8c369f1a61c30ee4a9d3173a35ca2c0dbb4b7c2b052c409e65d4f17f65bf1d99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+          "sha256": "a5fd1379fc521b647e96cb3b983386624aa8992482e8076cea748fa8486da156"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmben/LRMAIN00625.log",
+          "completed_tqdm_elapsed": "19:10",
+          "seconds": 1150,
+          "sha256": "781f5d5ecd0508dd1cc6d33ce9bfbef5901a3ec2fa95e34d26e48797fe6e5a7b"
+        }
+      ],
+      "risk": "blocking outer transfer followed by AnyRes caller CUDA torch.cat consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_mmbcn_LRMAIN025",
+      "model": "next",
+      "task": "mmbcn",
+      "arm": "LRMAIN025",
+      "K": 128,
+      "n": 4876,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN025.jsonl",
+      "original_prediction_sha256": "b648c9d1af4ce1c7509a2645118489511b3a057884d4f969f95c44104c7bc78b",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_CN_V11.tsv",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN025.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "128",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--anchorzip",
+        "--single-pred-prompt"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 128,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 1024,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_CN_V11.tsv",
+        "image_folder": "",
+        "model_base": null,
+        "lang": "en",
+        "all_rounds": false,
+        "single_pred_prompt": true
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_CN_V11.tsv",
+      "question_sha256": "4de91ee6fa5220a06ed4b418f8f53b372886b218c79e5035207d1fa233ac5dd5",
+      "image_folder": "",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mmben_circular_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_CN_V11.tsv",
+          "exists": true,
+          "sha256": "4de91ee6fa5220a06ed4b418f8f53b372886b218c79e5035207d1fa233ac5dd5"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+          "sha256": "a5fd1379fc521b647e96cb3b983386624aa8992482e8076cea748fa8486da156"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN025.log",
+          "completed_tqdm_elapsed": "30:54",
+          "seconds": 1854,
+          "sha256": "d0f6eefec4715334a95f92765d6ce9a99080c5f882f84d476ea71c8d0a6b577f"
+        }
+      ],
+      "risk": "blocking outer transfer followed by AnyRes caller CUDA torch.cat consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_mmbcn_LRMAIN0125",
+      "model": "next",
+      "task": "mmbcn",
+      "arm": "LRMAIN0125",
+      "K": 64,
+      "n": 4876,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN0125.jsonl",
+      "original_prediction_sha256": "58120544b183fc1a7441177a02a04f4a39448698177b3c2810513adab4c7e5ca",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_CN_V11.tsv",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN0125.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "64",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--anchorzip",
+        "--single-pred-prompt"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 64,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 1024,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_CN_V11.tsv",
+        "image_folder": "",
+        "model_base": null,
+        "lang": "en",
+        "all_rounds": false,
+        "single_pred_prompt": true
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_CN_V11.tsv",
+      "question_sha256": "4de91ee6fa5220a06ed4b418f8f53b372886b218c79e5035207d1fa233ac5dd5",
+      "image_folder": "",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mmben_circular_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_CN_V11.tsv",
+          "exists": true,
+          "sha256": "4de91ee6fa5220a06ed4b418f8f53b372886b218c79e5035207d1fa233ac5dd5"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+          "sha256": "a5fd1379fc521b647e96cb3b983386624aa8992482e8076cea748fa8486da156"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN0125.log",
+          "completed_tqdm_elapsed": "23:51",
+          "seconds": 1431,
+          "sha256": "6b093559c798d20b082b04cb3946827d2935997ab394fb700c1ba16b923a5eec"
+        }
+      ],
+      "risk": "blocking outer transfer followed by AnyRes caller CUDA torch.cat consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    },
+    {
+      "jobid": "next_mmbcn_LRMAIN00625",
+      "model": "next",
+      "task": "mmbcn",
+      "arm": "LRMAIN00625",
+      "K": 32,
+      "n": 4876,
+      "original_prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN00625.jsonl",
+      "original_prediction_sha256": "168baa43d577b17ac500b697b935380a2e71350abd570acc5b507f48fb66a9e1",
+      "native_entry": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+      "original_command_recovered_from_scripts": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+        "--model-path",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "--question-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_CN_V11.tsv",
+        "--answers-file",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN00625.jsonl",
+        "--temperature",
+        "0",
+        "--conv-mode",
+        "vicuna_v1",
+        "--visual_token_num",
+        "32",
+        "--beta",
+        "2.0",
+        "--alpha",
+        "0.5",
+        "--anchorzip",
+        "--single-pred-prompt"
+      ],
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.5,
+        "beta": 2.0,
+        "visual_token_num": 32,
+        "anchorzip": true,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 1024,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_CN_V11.tsv",
+        "image_folder": "",
+        "model_base": null,
+        "lang": "en",
+        "all_rounds": false,
+        "single_pred_prompt": true
+      },
+      "native_question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_CN_V11.tsv",
+      "question_sha256": "4de91ee6fa5220a06ed4b418f8f53b372886b218c79e5035207d1fa233ac5dd5",
+      "image_folder": "",
+      "score_entry": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mmben_circular_score.py",
+      "score_data": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_CN_V11.tsv",
+          "exists": true,
+          "sha256": "4de91ee6fa5220a06ed4b418f8f53b372886b218c79e5035207d1fa233ac5dd5"
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+          "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+          "sha256": "a5fd1379fc521b647e96cb3b983386624aa8992482e8076cea748fa8486da156"
+        }
+      ],
+      "environment_from_driver": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA"
+      },
+      "environment_not_recovered": "Historical external env and per-process argv were not recorded; archived script configuration is the recoverable evidence",
+      "historical_completed_duration": [
+        {
+          "log": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN00625.log",
+          "completed_tqdm_elapsed": "20:16",
+          "seconds": 1216,
+          "sha256": "fc0d449edf1715dec909d6dd429163158fbda593e761b325de15b30879ebc48b"
+        }
+      ],
+      "risk": "blocking outer transfer followed by AnyRes caller CUDA torch.cat consumed by CLIP new image_stream without caller dependency",
+      "scientific_limit": "Static affected-path classification does not assert every old prediction or score was wrong"
+    }
+  ],
+  "excluded": [
+    "obsolete historical TextVQA/CQMI SQA replaced by newest repaired protocol",
+    "NeXT POPE FULL1901/E1287 partial",
+    "MMVet no complete official score",
+    "v15 POPE AZ32 and same-budget EADP32 already complete wait controls",
+    "v15 blocking 4D Text/SQA/MMBench/VizWiz/MMVet lack this concrete producer dependency"
+  ],
+  "scope_note": "Complete existing raw latest-method-comparison cells; whether a particular raw cell is used in the current paper is root policy, not inferred from availability",
+  "GPU_started": false
+}
