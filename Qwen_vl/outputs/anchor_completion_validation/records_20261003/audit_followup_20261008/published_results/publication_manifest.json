@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-08T14:24:19.183141+00:00",
+  "updated_utc": "2026-10-08T14:31:49.748209+00:00",
   "new_groups": [
-    "next_sqa_FULL"
+    "v15_textvqa_K32"
   ],
   "published_groups": {
     "v15_textvqa_K128": {
@@ -474,6 +474,7 @@
     },
     "next_sqa_FULL": {
       "identity": "ae9f4141e286c6a18a83f7e9bbe95809b735fc5d265874ab2968021f7c4cf899",
+      "commit": "4e15799b3b5a392f04216cc7312203b723bda56d",
       "scores": [
         {
           "accuracy": 67.67476450173525,
@@ -506,11 +507,49 @@
             "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/scienceqa/llava_test_CQM-A.json": "a2dc5ea9fba561b0d0d8ecc80e688d3b0e1ff308e06c4f4f94cff86b20ec2f0a"
           }
         }
+      ],
+      "published_utc": "2026-10-08T14:24:30.780732+00:00"
+    },
+    "v15_textvqa_K32": {
+      "identity": "5e0a55062bb08d9d8276c2d75132495d8738bab6d97aca7a56d1c64e5b7fa3ca",
+      "scores": [
+        {
+          "accuracy": 52.53200000000001,
+          "n": 5000,
+          "metric": "official TextVQA accuracy",
+          "runtime_trace_available": true,
+          "output": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/textvqa_official_20261008/EGATHER_K32.jsonl",
+          "prediction_sha256": "50ff3737d39abfd0841c71d54ab1270e0a5c28e156ea3b8ae13a17832dc67305",
+          "verified_source_sha256": {
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/conversation.py": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9"
+          }
+        },
+        {
+          "accuracy": 52.54200000000001,
+          "n": 5000,
+          "metric": "official TextVQA accuracy",
+          "runtime_trace_available": true,
+          "output": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/textvqa_official_20261008/LRMAIN00625.jsonl",
+          "prediction_sha256": "2838b2de741a7c09e2ab87f76cf37e90f2dd05628c29b1d256ca8971a7fdcc5d",
+          "verified_source_sha256": {
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/conversation.py": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639"
+          }
+        }
       ]
     }
   },
   "local_head_preserved": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
-  "parent_remote_head": "1cb014635781755ac7454db76c995102b454427d",
+  "parent_remote_head": "4e15799b3b5a392f04216cc7312203b723bda56d",
   "allowlist": [
     "Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
     "docs/project_handoff.md",
