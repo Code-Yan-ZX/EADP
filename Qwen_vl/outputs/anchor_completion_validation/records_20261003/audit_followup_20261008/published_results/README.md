@@ -5,6 +5,8 @@ Read [paired_results.csv](paired_results.csv) for scores and each group manifest
 
 TextVQA uses all 5000 official validation questions. ScienceQA uses the 2017 image questions in the shipped CQM-A input. POPE uses the three-category mean F1 over 8910 predictions with the controlled CUDA stream wait.
 
+For NeXT, K128/K64/K32 denotes the per-crop budget parameter (nominal 640/320/160 for five crops). Actual retained tokens are recorded per sample in the runtime evidence.
+
 | Group | EADP | AnchorZip | AZ − EADP | FULL | Evidence |
 |---|---:|---:|---:|---:|---|
 | next_sqa_K128 | 67.675 | 68.071 | 0.397 |  | [manifest](next_sqa_K128/manifest.json) |
