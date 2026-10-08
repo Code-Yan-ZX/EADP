@@ -340,3 +340,318 @@ E0 计划的 `e0_perf_paired.json` 从未产出（D3=INCOMPLETE）。
 `audit_base_gap_20261003/archive_recovery/20261003_r2/`
 （`CONCLUSION.md`、`old_vs_new_scores.csv`、逐题分明细、配置对照、
 消融/效率/出处盘点）。
+
+## 13. 2026-10-08 增量：最新 EADP_amp 多模型结果的输入/评分追查
+
+本轮用户指定对象为 **EADP_amp 最新多模型、多数据集结果**。起始分支
+`codex/anchor-completion-validation`、HEAD `194562d`。必须结合最新台账 §23–24 和
+`docs/evaluation_reproduction_audit_20261008.md` 使用本文；历史审计的推断不自动沿用。
+
+- **MME（LLaVA）主因确认**：本机重建 `MME_Benchmark_release_version` 的 GT 有
+  162 个 Yes/No 标签与官方 eval_tool.zip 模板相反；当前 LMUData TSV 的全部
+  2374 道题/标签与官方一致。8 份本地 LLaVA 臂共享这一错误。
+  保留原预测 CPU 重评，v1.5 FULL perception **1420.43→1506.93**（论文1513.4，
+  残差−6.47），复现 EADP K128 **1339.10→1429.40**（论文1439.0，残差−9.60）。
+  AnchorZip K128 正确 perception **1445.69**，与同机 EADP 配对 **+16.2941**；
+  cognition 单列 −2.5。旧错误 GT 上的绝对分数及派生结果不能继续引用。
+  不能将本事件自动扩展到 Qwen：Qwen 使用另一条 TSV 评测链，需独立核验依赖。
+- **SQA（v1.5）主因验证**：本地重建 CQM-I 与 LLaVA 原包 CQM-A 的 4241 个题面
+  全部不同；作者实际 CQM-I 未发布。冻结模型/图像/greedy/vicuna/评分器，原包题面
+  对全部 2017 图题的 FULL 对照为 **64.8488→69.5092**（+4.6604 点，论文69.6，
+  残差−0.0908）。归因范围是整体题面格式替换；不能称已证明作者文件身份，
+  也不能把 FULL 增益自动套到各剪枝臂。原包题面两 K128 臂完整配对完成：
+  EADP69.5588 / AnchorZip69.2117，净−7题/−0.3471点，配对95%CI
+  [−0.9420,+0.2479]跨0；论文EADP128为69.0，不能凭跨论文+0.2117判方法增益。
+- **TextVQA**：历史 model_vqa 与官方 loader 的 LLM 提示相同，但 EADP guidance
+  前者含答案指令后缀，后者删除；5000 题均不同、298 题改变 CLIP 文本分段。
+  已增加严格官方入口与独立输出名；固定面板验证只切 guidance 的影响，不调参。
+- **评分入口**：新 live scorer 接入 VizWiz/POPE/GQA；22 份完整文件与 Oct8 正确
+  快照逐题/混淆矩阵一致，缺失/重复/未知ID/FAILED 拒绝。SQA 旧 QCM 恢复入口停用，
+  重建 CQMI 入口增加完整题面复用检查。POPE 保留用户选择的 random2910 as-asked。
+- **预算证据勘误**：NeXT SQA 为1全局+4局部=5 crops，ViT输入2880 tokens；
+  旧 tqdm 刷新计数不是 question_id，不能验证逐题保留数。独立 v2 清单只保留正确
+  输入几何，实际预算待 ID 对齐 runtime trace；新 wrapper 已记录返回的保留数量。
+- **仍需如实处理低分**：v1.5 K32 POPE F1 80.008 vs论文EADP86.7，popular recall70；
+  MME 正确 GT 后仍只有1092.63 vs论文EADP1347。没有同机完整 EADP K32 对照前，
+  不把整个跨论文差距当作方法增量。不能通过换题集、换指标或调参抹平。
+  运行稳定性另发现：POPE同图同完整题面2334组中，K32有182组Yes/No分歧，
+  全部GT为Yes；K128/K64/E128为0。旧预测低分的原因还需排除运行异常。
+  固定16分歧组用于重复重放，不用其估计benchmark准确率。
+  当前重放16组×3共48次均Yes、16阶段hash一致，未复现历史分歧；
+  旧8910长序列可重复性/原因仍未证实。输入跨CUDA stream缺显式依赖是候选风险，
+  未证实因果、未改生产代码，不能用短面板替代全量重跑。
+- **修正旧解释**：第12节“MMBench 1292/4876 说明丢题”的历史推断已被最新工件
+  推翻：1292是循环组数，3584是旋转行，应查组内循环准确性，不能自动宣称漏评。
+  最新 Qwen legacy Avg10 AnchorZip68.0244 / EADP67.6636，增量+0.3608；
+  native的DeepStack/mRoPE修复与方法创新继续分开。
+
+主要独立工件：`Qwen_vl/outputs/audit_followup_20261008/` 的
+`paper_reference.json`、`comparison.csv`、`mme_official_gt_rescore.json`、
+`sqa_input_comparison.json`、`textvqa_guidance_*`、`budget_manifests_v2/`；
+canonical MME 完整转换另在 `records_20261003/audit_followup_20261008/mme_canonical_gt/`。
+具体入口修复、来源哈希、剩余边界和可重复命令见本轮审计报告。
+
+### 13.1 用户授权的并发重跑（2026-10-08 下午启动）
+
+用户要求立即重跑并尽量并发，明确论文用结果截止为**北京时间2026-10-09 12:00**。
+已在同一A40上启动两GPU任务：v1.5 AnchorZip K32 POPE完整8910题与NeXT官方
+TextVQA K128 EADP/AnchorZip配对。显存峰约42325/46068MiB，
+只保留两个GPU子进程；本轮并发结果用于准确率，不能作为独占延迟基准。
+
+后续通过 `run_repair_queue.py` 持久执行：v1.5通路在POPE完整核验和重评分后接
+TextVQA K128配对、SQA K64/K32配对、TextVQA K64/K32配对及FULL；NeXT通路
+在首批TextVQA两臂完成后接剩余同预算配对及FULL。每模型TextVQA共7臂，
+SQA新跑v1.5剩4臂/NeXT7臂，加POPE共**26个新GPU实验/101097次生成**。
+不补POPE random90题，不调alpha=.5/beta=2/Completion lambda=.25。
+
+计划/状态/日志在 `Qwen_vl/outputs/audit_followup_20261008/rerun_batch/`，
+`lane1_v15_{plan,state}.json` 与 `lane2_next_{plan,state}.json` 是实际任务依据。
+所有新输出与旧预测分开，逐项完整性通过才评分；TextVQA的question_id实际上是
+image_id（5000题仅3166唯一ID），用 `(question_id,完整prompt)` 校验5000唯一题，
+禁止按单一ID去重。新的TextVQA逐题runtime记录输入位置、prompt哈希、实际保留数；
+初始NeXT K128两臂沿已启动旧入口执行，无这一新增runtime trace，不能假装已有。
+
+临时工期按实际双路吞吐估计：K128关键配对下午至傍晚可用；完整批次保守估至
+10月9日凌晨3–6点，随后上午核表。此为预测而非完成证明，需随状态/吞吐更新。
+当前仍不能声称整体稳定超过EADP：Qwen legacy Avg10同机+0.3608点但对论文−0.1756点，
+v1.5 K128多项略高、SQA原包配对−0.3471点；NeXT历史TextVQA同机−0.544点，
+官方新协议全量结果尚未完成，不能拿前缀预测作最终准确率。
+
+并发POPE完整重放已出现新的运行证据：15:37累计4596/8910，845个已重复输入组
+中77组Yes/No分歧，所有题面与实际保留数32一致。它复现了旧K32的不一致，
+不能把“重跑一次”视为已经修复，也不能把所有低分归因于方法退化。保留as-is
+8910完整生成/评分，另准备只增加CLIP两流等待caller的全8910控制实验，不改
+生产CLIP源码，不调参数。v1.5后续队列在as-is评分后等待该独立控制实验完成。
+控制完成marker的success表示完整性/评分通过，**不要求分歧消失**；阴性结果也
+须保存并释放后续任务。stream风险与旧低分的因果仍待完整干预证据。
+
+根据信息增量，额外完整控制最终预先决定为**AZ32 streamwait + 同机EADP32
+streamwait**各8910题，固定同预算/同输入/同等待，仅AnchorZip安装不同；两项
+完整评分后再释放v15队列，不根据高低分择跑。共26主实验+2控制=28臂/118917
+新预测。K128配对预计傍晚至19点左右可用；完整批次目标Oct9凌晨3–6点，保守
+预留至8点，仍为动态工期预测。详细受控计划与AST身份在 `rerun_fast/`，生产
+CLIP文件保持原样，以区分as-is与只增加wait的因果对照。
+
+### 13.2 每小时主动巡检（Oct8 16:06启用）
+
+用户明确要求每一个小时主动检查，避免卡死。当前会话没有automation_update/
+定时唤醒工具；已核对官方OpenAI文档与本机能力，改用本机systemd user timer
+实际启动独立Codex CLI巡检，沿用已登录ChatGPT账号与既有模型配置。不是原生
+聊天定时任务，不会自动在当前聊天发消息；异常/恢复/全部完成发本人桌面通知，
+正常只留本机记录。首轮16:06:36已启动，下一轮17:06:36北京时间；全部实验与
+官方评分完整通过才自动disable timer，科学结果高低不影响停止判定。
+
+服务名 `codex-eadp-repair-monitor-20261008.{timer,service}`；unit在
+`/home/dell/.config/systemd/user/`。runner `run_hourly_repair_agent.py`，
+只读快照 `monitor_repair_hourly.py --once --record`；登记、prompt、schema、
+每次agent日志/结果在 `rerun_batch/hourly_monitor/`。快照16个CPU边界验证通过，
+systemd unit语法通过；CLI首轮已经认证并执行真实工具，通知D-Bus读查询成功。
+每次核对worker身份、输出/日志进度、崩溃/OOM/评分/来源SHA/后续接续；生成连续
+30分钟输出和日志无变化需处理，加载宽限10分钟，合法控制marker等待豁免。
+恢复限已授权可逆队列故障；保留预测/协议/日志，严格最多2GPU，不改冻结数学、
+题集或参数、不忽略SHA漂移、不杀外来进程、不做commit/push或外部消息。
+
+最新as-is POPE32已完整8910：均F1 **78.541**（旧80.008），2334重复输入组有
+226分歧（旧182）；它没有自然恢复稳定性。独立wait-only控制已经自动生成，
+后续同预算EADP32公平基线在同一控制监督器中串行，完整评分后释放v15队列。
+
+### 13.3 Oct8 16:45 增量：完整同步干预与首份官方TextVQA基线
+
+本次as-is AZ32 POPE完整8910题均F1为78.541，重复同图同完整题面2334组中
+226组出现Yes/No分歧。仅在内存增加caller流依赖的完整AZ32控制已于16:32评分：
+均F1 **83.084**（random84.601/popular84.066/adversarial80.585），实际保留数
+8910/8910均为32，完整题面逐字对齐，**重复组分歧为0/2334**。较as-is
+**+4.543点**，image-cluster配对95%CI[3.984684,5.129300]；较历史80.008
++3.076点。本次完整干预支持同步问题影响了运行结果，但每配置仅一次完整运行，
+不能声称独立重跑可重复性已验证、所有stream/allocator风险均已消除，或修复增益
+就是方法创新。生产CLIP源码仍冻结。原包random2910口径不变。
+
+NeXT官方TextVQA第一臂EADP K128（名义640）已完整5000题并官方评分，
+独立CPU精确复算 **57.958%**，较旧协议本机E58.136低0.178点、较论文59.2
+低1.242点。AnchorZip同协议尚在生成，不能使用前缀准确率或跨协议旧方法分数
+配对新基线。当前确定的原包v15 SQA128配对仍是AZ69.2117/E69.5588，
+净−7题/−0.3471点、CI跨0；总体不能宣称已稳定超过EADP。
+
+16:40巡检发现控制第2阶段等待条件把外部Ollama的**0 MiB CUDA上下文**也当成
+GPU模型，导致EADP32未能接续；该外部进程不是我们可杀的实验worker。已把只读
+监控改为只忽略明确Ollama runner的0 MiB上下文（未知0仍计入），并为两控制阶段
+之间的并发等待增加10分钟加载宽限告警；9个相关CPU边界用例均通过。后续恢复
+必须保留第一阶段预测/协议/评分，只重接第2阶段，保持两个实际GPU模型上限，
+不修改冻结worker/数学/参数。恢复登记和实际启动结果见控制state及独立resume记录。
+
+16:52:47已实际接续EADP32：新监督器1692429、冻结worker1692442，状态generating，
+与NeXT worker1643948并发；外部Ollama未动。原监督器确认等待且无child后才终止，
+旧state按UTC归档；AZ8910/协议/评分和原worker来源SHA均保留。新门采用实际
+memory.free（扣reserved）、实测v15峰19134MiB+400MiB余量，启动时free19608，
+并发门7个CPU分支通过。状态内旧gpu_gate来自此前失败的空闲等待快照；实际启动
+条件以 `concurrency_at_launch.ready=true` 与当前status/child为准。恢复证据在
+`rerun_fast/pope_streamwait_stage2_recovery.json`，新监督程序为
+`rerun_fast/resume_pope_streamwait_stage2.py`，小时巡检identity已同步更新。
+
+按NeXT E128完整生成75分钟及当前并发实测，暂估NeXT Text128配对17:40–18:00、
+其SQA128配对18:30–19:15，v15 Text128配对19:00–20:00；完整批次工期更新为
+Oct9 **03:00–07:00**、保守预留08:00。仍是动态预测，尤其FULL时长和首份v15
+Text热身后需要校准；不构成赶在12:00前完成的证明。
+
+完整证据：`rerun_fast/pope_v15_AZ32_streamwait.comparison.json`、
+`.official.score.json`；新TextVQA/SQA完整成绩见
+`rerun_batch/repaired_results_summary.json`。小时监控边界验证在
+`rerun_batch/hourly_monitor/zero_context_gate_monitor_validation.json`。
+
+### 13.4 Oct8 18:12 增量：控制闭环与小时巡检
+
+独立EADP32 streamwait已完整生成/评分8910题，三类均F1 **84.073**；
+同协议AZ32为83.084，AZ−EADP **−0.989点**，image-cluster配对95%CI
+[−1.817871,−0.163651]。两臂2334重复输入组均无Yes/No分歧，random仍为
+2910题，生成退出码均0。合法success marker于17:32:33释放，lane1于
+17:32:37自动接续官方TextVQA E128；success只表示完整性与评分合法。
+控制监督器完成后正常退出，不是丢失监督器。该公平控制结果不支持AZ32
+在此POPE设置超过EADP；每配置一次全量运行仍不能证明独立重复性。
+
+NeXT官方TextVQA K128两臂均完整5000复合题键并官方评分，CPU精确核验
+EADP **57.958%**、AnchorZip **57.588%**，同协议方法差 **−0.370点**。
+初始两臂没有新runtime trace，不能补称已记录逐题实际保留数。NeXT原包
+SQA E128于18:07:50完整2017题评分（1365正确，**67.6747645%**），随后
+自动接续AZ128；其配对方法差尚未完成，不能用生成前缀估计。
+
+本次独立巡检完整读取本文并核验Git、实际/proc命令、父子与启动身份。
+18:09:30→18:11:21，v15 TextE128为4045→4241/5000、NeXT SQA AZ128为
+150→340/2017，两worker PID1779765/1829368保持相同启动身份，输出和日志
+均连续推进。A40实际两个GPU模型；28实验产物路径、25相关日志无异常。
+两lane来源SHA22/22与21/21、两wait控制各8/8及launcher、as-is来源均通过；
+汇总6完整行且errors=[]。两lane仍在生成，整体未完成，距Oct9 12:00截止
+约17小时48分。本次未重启进程或改生成代码/参数，CPU快照与独立完整性、
+评分、SHA审计保存在 `rerun_batch/hourly_monitor/check_20261008T100930Z/`。
+
+### 13.5 Oct8 19:15 增量：两组新完整配对与独立巡检
+
+v1.5官方TextVQA K128两臂各完整5000复合题键、题面/顺序/新增runtime
+trace及官方评分通过，独立CPU精确复算EADP **56.390%**、AnchorZip
+**56.604%**，同协议方法差 **+0.214点**（官方打印AZ为四舍五入56.60）。
+两臂分别18:18:20、19:06:00完成评分，lane1已自动接续原包SQA E64。
+NeXT原包SQA K128两臂各2017题：EADP1365正确/**67.6747645%**、
+AnchorZip1373正确/**68.0713932%**，净 **+8题/+0.3966287点**；AZ于
+18:27:39完整评分后lane2正常接续官方TextVQA E64。未重做这些新配对的
+bootstrap，不据点估计宣称显著增益或整体稳定胜出。NeXT Text128的
+完整同协议方法差仍为−0.370点，POPE公平控制差仍为−0.989点。
+
+本次巡检完整读取本文并核对Git（分支/HEAD仍为此前记录）；实际/proc完整
+argv、父子关系、启动ticks和已结束worker的评分/接续均通过。19:07:54→
+19:14:54，同一PID1908673的v15 SQA E64为307→1579/2017，同一PID1856362
+的NeXT Text E64为3931→4618/5000，输出和日志同时推进，末次mtime均不足
+0.05秒。A40实际两个本计划GPU模型；两lane监督器与summary watcher正常，
+控制state complete、两8910完整评分/exit0及合法success marker再次通过。
+
+28个新实验已完整评分9个，共50764/118917条完整新预测；2个生成中、17个
+尚未启动。summary的9完整行是6个新Text/SQA加3个历史v15 SQA，POPE另行
+审计，不能把汇总行数直接当28实验计数。JSON/CSV一致、errors=[]；全部
+记录来源SHA实际988/988匹配（两lane冻结来源22/22、21/21），25相关日志
+无Traceback/OOM/FAILED，独立精确评分/分母审计errors=[]。初始NeXT
+Text128仍无新增runtime trace，不补称有此证据。
+
+证据与三次CPU只读快照保存在
+`rerun_batch/hourly_monitor/check_20261008T110754Z/`，含独立评分、来源/
+日志、进程身份、活跃前缀题面/runtime与进度审计。本次无进程重启或生成
+代码/参数/预测修改。两lane仍generating，整体未完成；截止尚余约16小时
+45分，已有工期预测不构成按时完成证明。
+
+### 13.6 Oct8 20:15 增量：SQA64/32、NeXT Text64完整配对与正常接续
+
+v15原包SQA K64两臂各2017题，EADP1388正确/**68.8150719%**、
+AnchorZip1394正确/**69.1125434%**，净 **+6题/+0.2974715点**；
+K32为1387/**68.7654933%** 对1402/**69.5091720%**，净
+**+15题/+0.7436787点**。独立逐题解析、完整题面、runtime及分母通过。
+NeXT官方TextVQA K64两臂各完整5000复合题键、完整题面/顺序/runtime及
+官方评分通过，独立CPU精确成绩EADP **55.352%**、AnchorZip **56.026%**，
+方法差 **+0.674点**；官方打印55.35/56.03为四舍五入。未为这三组新配对
+计算bootstrap，不据点估计宣称显著或整体稳定超过EADP。
+
+本次完整读取交接并核对Git，分支仍为`codex/anchor-completion-validation`、
+HEAD `194562d`，未见更新提交。20:08:34→20:15:19，同PID1969775的v15
+TextE64完整行 **2285→3189/5000**，输出和日志同时推进。NeXT TextAZ64
+由4590/5000完成，20:12:46.016923评分后于.067979启动下一项TextE32，
+接续约0.051秒；原PID1927134已退出，新PID2003306的实际完整命令、父子、
+启动身份及来源门通过，20:13:36→20:15:19完整行 **71→256/5000**，
+20:15:21补证为260条合法预测/runtime。两lane监督器和summary watcher均
+存活，A40实际两个计划内GPU模型；已完成控制监督器正常退出，合法success
+marker及两控制8910完整评分再次通过。队列任务exit0由冻结监督器非零退出
+硬门与completed状态推断；POPE控制另有直接exit_code=0证据。
+
+28新实验已完整评分 **15个/68832条预测**，2个生成中、11个未启动。
+12:13:50 UTC独立评分审计时共71897/118917条已写完整JSONL行（含活跃
+前缀），不把前缀当完整实验。summary于20:13:39刷新为15完整行，实际
+为12个新Text/SQA加3个历史v15 SQA；三POPE另行核验。JSON/CSV一致，
+summary.errors与独立audit_errors均为空。来源审计 **1138/1138 SHA**
+匹配（571唯一文件），新接续另 **42/42** 补证通过；两lane冻结来源
+22/22、21/21无漂移，35份相关日志及4份接续日志无异常。
+
+证据在`rerun_batch/hourly_monitor/check_20261008T120800Z/`，包含五次CPU
+只读快照、独立评分/来源与接续审计、实际进程身份、活跃前缀runtime、进度
+对照和本机巡检登记。未重启进程或修改冻结生成代码、模型、参数、预测，
+未提交推送或发外部消息。两lane仍generating，整体未完成；20:15:19距
+Oct9 12:00截止约15小时45分，已有工期预测继续不构成按时完成证明。
+
+### 13.7 Oct8 21:12 增量：Text64完整配对与正常接续
+
+v15官方TextVQA K64两臂各完整5000复合题键、完整prompt/顺序/runtime、
+预测SHA及官方评分通过，独立CPU精确成绩EADP **54.918%**、AnchorZip
+**54.978%**，同协议方法差 **+0.060点**；官方打印54.92/54.98是四舍五入。
+NeXT官方TextVQA E32已完整5000题，精确 **51.996%**（官方打印52.00），
+AZ32仍生成，不能据前缀计算配对成绩。未为新Text64配对计算bootstrap，
+不据点估计宣称显著或整体稳定胜出。
+
+本次完整读取交接、核对Git，分支仍为`codex/anchor-completion-validation`、
+HEAD `194562d`，无新提交。v15 AZ64于21:10:35.183352评分后.241644自动
+接续TextE32，约0.058秒；旧PID2026207正常退出，新PID2084699完整argv、
+父子、启动身份、冻结来源/协议通过，21:11:19→21:12:31完整行 **77→247**，
+输出与日志同时推进。NeXT AZ32 PID2064425保持身份，21:08:02→21:12:31为
+**1175→1674/5000**，输出与日志推进。A40实际两个计划内模型（显存
+21662/19342MiB），两lane监督器与summary watcher正常；控制complete、
+两8910完整评分、direct exit0及合法success marker再次通过。
+
+28新实验已完整评分 **18个/83832条预测**，2个生成中、8个未启动。
+独立评分审计21:11:10的完整JSONL行数85411/118917包含活跃前缀，不能当作
+全部评分结果；随后summary正常从17刷新至18完整行，即15新Text/SQA+
+3历史v15 SQA，三POPE另行审计。JSON/CSV一致，summary.errors和独立
+audit_errors均为空。来源 **1265/1265 SHA**（575唯一比较文件）、两lane
+冻结来源22/22和21/21无漂移，43份唯一计划相关日志无异常。21:12:53补证
+新E32的298预测/runtime、NeXT AZ32的1717预测/runtime完整身份通过；
+NeXT实际保留数随输入几何变化，不将名义32误写为总保留数。初始NeXT
+Text128无新runtime trace的边界继续保留。
+
+本机证据在`rerun_batch/hourly_monitor/check_20261008T130802Z/`，含五次
+CPU只读快照、评分/来源接续补证、实际进程身份、完整分母与进度对照。
+本次无故障恢复、GPU启动、预测或冻结生成代码/参数修改、commit/push及
+外部消息。两lane仍generating，整体未完成；21:12:31距Oct9 12:00截止
+约14小时47分，旧工期预测不构成按时完成证明，授权队列继续执行。
+
+### 13.8 Oct8 21:20 用户请求的进度核查与工期更新
+
+21:17:59→21:20:18只读快照确认v15 TextE32为1004→1346/5000、NeXT TextAZ32
+为2270→2509/5000，两worker持续推进、实际两个GPU模型，needs_attention=false。
+新完整实验18/28，2项运行、8项未启动；完整评分预测83832/118917，活跃前缀
+不算完整实验。summary18完整行包含15新Text/SQA+3历史控制，三新POPE另计。
+完整同预算配对9组中点估计6高3低；POPE32公平差−0.989，仍不支持整体胜出。
+
+实测v15 Text5000用时约40–47分钟、SQA2017约10–11分钟；NeXT Text5000约
+44–54分钟、SQA128约20–21分钟。剩余v15预计23:00–00:00结束；NeXT余5项
+SQA和1项FULL Text，FULL本轮尚无实测，保守给60–120分钟。整体工期更新为
+Oct9 **00:30–02:30，保守预留03:00**，比原03:00–07:00预测提前；这是剩余
+任务量与当前吞吐的估计，尚非完成证明。小时巡检21:07触发、21:15:50成功
+退出healthy，下一次22:07:12。此次未启动或重启GPU、未改冻结源/参数/预测。
+
+### 13.9 Oct8 用户新增授权：每完整一组立即提交推送
+
+用户先要求跑完后推送，随后明确改为**“跑完一组就推一组”**。该后续指令覆盖
+13.2及此前小时巡检的“不做commit/push”约束：现在允许在完整评分/来源核验
+后将本轮结果与审计修复提交并推送 `origin/codex/anchor-completion-validation`。
+确认本轮开始时本地、tracking及真实远端均停在194562d，下午新结果尚未提交。
+一组按同模型/同任务/同预算的EADP和AnchorZip完整配对计，FULL单臂可独立；
+POPE仅完整8910公平同步配对，as-is作为审计辅证。未完成前缀不发布方法成绩。
+
+增量发布需精确allowlist，保留原预测及live Git index/用户暂存，只取本轮修复
+源码、docs与完整结果/协议/官方score/runtime/来源SHA，保留初始NeXT Text128
+无新增runtime的事实。用户已有figure/export/screen/mmben/p3_data_serial脚本
+及llava_round2_driver.sh先前图像路径改动不夹带。禁止向upstream推送、force
+push或重置用户工作；每次需查询实际远端确认提交到达后才记成功。独立CPU
+按组发布服务与GPU队列解耦，失败保留待重试状态；小时巡检监控其健康。

@@ -1,0 +1,156 @@
+{
+  "group_id": "next_textvqa_K64",
+  "identity": "9818a0a7cc8dba7da9fbeb55853adb0de7075b156c56016c3968b80ff5824cdf",
+  "prepared_utc": "2026-10-08T13:56:36.553618+00:00",
+  "scores": [
+    {
+      "accuracy": 55.35200000000011,
+      "n": 5000,
+      "metric": "official TextVQA accuracy",
+      "runtime_trace_available": true,
+      "output": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K64.jsonl",
+      "prediction_sha256": "a1ca15a89567aa6c3b51857fde052100a9b6a85ebde880555e4f5c2782ee5700",
+      "verified_source_sha256": {
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/conversation.py": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9"
+      }
+    },
+    {
+      "accuracy": 56.02600000000012,
+      "n": 5000,
+      "metric": "official TextVQA accuracy",
+      "runtime_trace_available": true,
+      "output": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/LRMAIN0125.jsonl",
+      "prediction_sha256": "e5f6e08cc9097658cc32d1c75dc2e897e6b1e4e788874cb236d6efeaa713d419",
+      "verified_source_sha256": {
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/conversation.py": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639"
+      }
+    }
+  ],
+  "files": {
+    "LLaVA/llava/conversation.py": {
+      "sha256": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+      "bytes": 15418,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/eval/m4c_evaluator.py": {
+      "sha256": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7",
+      "bytes": 10642,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/mm_utils.py": {
+      "sha256": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+      "bytes": 9919,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/builder.py": {
+      "sha256": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+      "bytes": 8897,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/llava_arch.py": {
+      "sha256": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+      "bytes": 41627,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/llava_arch_anchorzip.py": {
+      "sha256": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+      "bytes": 8123,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/multimodal_encoder/clip_encoder.py": {
+      "sha256": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+      "bytes": 6958,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K64.jsonl": {
+      "sha256": "a1ca15a89567aa6c3b51857fde052100a9b6a85ebde880555e4f5c2782ee5700",
+      "bytes": 2313850,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K64.jsonl.protocol.json": {
+      "sha256": "7eaae3b1d5cf62209069bf896518de28bbc2621c90a03bb289191b0a1b6c53c9",
+      "bytes": 2027,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K64.jsonl.runtime.jsonl": {
+      "sha256": "768b81104bb0f215b096feea1b92b3b63d78235dac442304954061087794cb5c",
+      "bytes": 3114242,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K64.log": {
+      "sha256": "a5453ba60441fc97e12b583fa1214631aba7a9e08ef546d4a3941e49848cce20",
+      "bytes": 924061,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K64.score.txt": {
+      "sha256": "5c5f431f5a45516d2aa1e1c1010b9ec545f0588cb190e3a6100bf34fd8658b24",
+      "bytes": 44,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/LRMAIN0125.jsonl": {
+      "sha256": "e5f6e08cc9097658cc32d1c75dc2e897e6b1e4e788874cb236d6efeaa713d419",
+      "bytes": 2314436,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/LRMAIN0125.jsonl.protocol.json": {
+      "sha256": "f7f4183d432433099e38c2137a7fea34594fdbe7a4f55751c070eb989c0347a3",
+      "bytes": 2263,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/LRMAIN0125.jsonl.runtime.jsonl": {
+      "sha256": "9610b6ebb3c7b07da4cb4f351bab705a90eda7ab2f3ea7e5e86cf3de15790c37",
+      "bytes": 3114242,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/LRMAIN0125.log": {
+      "sha256": "0155b2f25a3b15107fb1d445ff89ac793f5aa61da9556f66895fe6960c8e7971",
+      "bytes": 924207,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/LRMAIN0125.score.txt": {
+      "sha256": "5e22ff7dc3c09e8f8dfaded65ed52722288536ca0227ebe05863d5c285cb94ca",
+      "bytes": 43,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/textvqa/TextVQA_0.5.1_val.json": {
+      "sha256": "4ceb5aadc1a41719d0a3e4dfdf06838bcfee1db569a9a65ee67d31c99893081d",
+      "bytes": 3116162,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl": {
+      "sha256": "9f60db6fb89e369263ed676dc26b48d00d4a462e73f0930c09d23394e9dcf3a3",
+      "bytes": 1548730,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": {
+      "sha256": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639",
+      "bytes": 14972,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py": {
+      "sha256": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534",
+      "bytes": 9382,
+      "archived_as": "regular_file"
+    }
+  },
+  "source_symlinks_dereferenced": true,
+  "contains_weights_or_images": false,
+  "archive_sha256": "ee0683fecc9bcebcb7bfe5e562bbc36e2f0a5b5932f8ae8d33b3557eb225a3ca",
+  "blobs": [
+    {
+      "filename": "evidence.tar.gz",
+      "sha256": "ee0683fecc9bcebcb7bfe5e562bbc36e2f0a5b5932f8ae8d33b3557eb225a3ca",
+      "bytes": 2530227
+    }
+  ]
+}

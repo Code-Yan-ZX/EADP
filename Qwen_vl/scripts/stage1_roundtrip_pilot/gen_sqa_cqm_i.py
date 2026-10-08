@@ -1,4 +1,4 @@
-"""Generate llava_test_CQM-I.json for the OFFICIAL EADP/LLaVA SQA protocol.
+"""Reconstruct llava_test_CQM-I.json from the published prompt converter.
 
 The official EADP LLaVA fork (scripts/v1_5/eval/sqa.sh) evaluates SQA with
 SPLIT="llava_test_CQM-I" + conv vicuna_v1, but no shipped converter has the
@@ -8,8 +8,16 @@ test_example=True semantics, where every format collapses to output="Answer:"
 official CQM branch verbatim.  Post-processing mirrors convert_to_llava
 exactly (prefix stripping, <image> placement, indent=2 dump).
 
+Input provenance caveat (2026-10-08 follow-up): EADP's script names CQM-I,
+but its repository does not ship that question file. This reconstruction
+has NOT been verified against the authors' actual input. The original
+LLaVA eval.zip CQM-A file differs on all 4241 user prompts (choice layout,
+Context/Question/Options labels and empty-context handling). Matching a
+filename and the input-format letters is not an input-identity check.
+Use separately labelled artifacts when testing the shipped CQM-A input.
+
 Audit item #1 (2026-10-08): our previous SQA runs used llava_test_QCM-LEPA +
-conv llava_v1, which is NOT the official protocol.
+conv llava_v1, which differs from the EADP script's named input and conv.
 """
 import json
 import os

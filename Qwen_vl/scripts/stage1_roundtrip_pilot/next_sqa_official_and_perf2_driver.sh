@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Round 2026-10-08 evening (user-approved):
-#  Phase 1: NeXT (llava-v1.6) SQA three arms under the OFFICIAL protocol
+#  Phase 1: NeXT (llava-v1.6) SQA three arms under the local RECONSTRUCTED CQM-I protocol
 #           (llava_test_CQM-I + vicuna_v1 + greedy).  Frozen hyper-params
 #           unchanged (beta 2.0 / alpha 0.5 / lambda 0.25; vtn = per-crop).
 #  Phase 2: re-measure the LLaVA efficiency panels with the FIXED
@@ -10,6 +10,8 @@
 #           perf/ preserved).  E* (official_replay+lam0) rows stay
 #           archived as invalid_as_baseline_timing and are NOT re-run.
 #           Qwen K128/K64 points need no re-run (P2 harness loads once).
+# The author CQM-I input file is unavailable; these rows are local-protocol
+# comparisons and do not by themselves establish paper-input equivalence.
 set -u
 PY=/home/dell/miniconda3/envs/llava_pruner/bin/python
 WRAP=/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot
@@ -57,6 +59,8 @@ run_next_sqa () { local arm=$1 vtn=$2
     local rc=$? n; n=$(wc -l < "$out" 2>/dev/null || echo 0)
     [ "$rc" -eq 0 ] && [ "$n" -eq 4241 ] || { echo "[next-sqa] GEN FAIL $arm rc=$rc n=$n"; return 1; }
   fi
+  # Reuse/scoring requires the complete unique CQMI question set.
+  $PY $WRAP/check_sqa_reuse.py --question-file "$QF" --result-file "$out" || return 1
   if [ ! -s "$res" ]; then
     $PY -m llava.eval.eval_science_qa --base-dir $EV/scienceqa \
       --result-file $out --output-file $VS/${arm}_CQMI_vicuna_output.json \

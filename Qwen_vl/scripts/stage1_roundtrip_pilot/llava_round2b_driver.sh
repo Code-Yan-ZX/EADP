@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 set -u
+# This archived driver incorrectly sent ScienceQA questions to the GQA loader.
+echo "Retired driver: use sqa_arms_official_driver.sh for CQMI SQA and llava_lane_a_v15.sh for GQA." >&2
+exit 1
 PY=/home/dell/miniconda3/envs/llava_pruner/bin/python
 WRAP=/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot
 EV=/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval

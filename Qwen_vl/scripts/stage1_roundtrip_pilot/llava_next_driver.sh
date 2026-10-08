@@ -41,11 +41,7 @@ done
 for arm in "${ARM_ORDER[@]}"; do
   run pope $arm loader $EV/pope/llava_pope_test.jsonl $EV/pope/val2014
 done
-for arm in "${ARM_ORDER[@]}"; do
-  run sqa $arm science \
-    $EV/scienceqa/llava_test_QCM-LEPA.json $EV/scienceqa/test 2.0 \
-    "--single-pred-prompt --conv-mode llava_v1"
-done
+echo "[retired SQA protocol] Use next_sqa_official_and_perf2_driver.sh; QCM-LEPA outputs are archived."
 for arm in "${ARM_ORDER[@]}"; do
   run gqa $arm loader \
     $EV/gqa/llava_gqa_testdev_balanced.jsonl $EV/gqa/data/images

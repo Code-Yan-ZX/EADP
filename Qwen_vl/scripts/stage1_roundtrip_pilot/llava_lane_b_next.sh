@@ -84,7 +84,7 @@ gen_mmb next_mmbcn LRMAIN00625 32 $CN
 gen2 next_textvqa LRMAIN00625 32 $EV/textvqa/llava_textvqa_val_v051_ocr.jsonl $EV/textvqa/train_images model_vqa
 gen2 next_pope LRMAIN00625 32 $EV/pope/llava_pope_test.jsonl $EV/pope/val2014 loader
 gen2 next_mme LRMAIN00625 32 $EV/MME/llava_mme.jsonl $EV/MME/MME_Benchmark loader
-gen2 next_sqa LRMAIN00625 32 $EV/scienceqa/llava_test_QCM-LEPA.json $EV/scienceqa/test science 2.0 "--single-pred-prompt --conv-mode llava_v1"
+echo "[retired SQA protocol] Use next_sqa_official_and_perf2_driver.sh; QCM-LEPA outputs are archived."
 gen2 next_gqa LRMAIN00625 32 $EV/gqa/llava_gqa_testdev_balanced.jsonl $EV/gqa/data/images loader
 gen2 next_mmvet LRMAIN00625 32 $EV/mm-vet/llava-mm-vet.jsonl $EV/mmvet/mm-vet/images model_vqa 1.0
 gen2 next_vizwiz LRMAIN00625 32 $EV/vizwiz/llava_val.jsonl $EV/vizwiz/val model_vqa
@@ -93,9 +93,10 @@ gen_mmb next_mmben LRMAIN00625 32 $EN
 # ---- 4) NeXT-side scoring ----
 for arm in LRMAIN025 LRMAIN0125 LRMAIN00625; do
   out=$V/next_vizwiz/$arm.jsonl
-  [ -s "$out" ] && [ ! -s "$V/next_vizwiz/${arm}.score.json" ] && \
+  if [ -s "$out" ]; then
     $PY $WRAP/vizwiz_val_score.py --gt-file $EV/vizwiz/val.json \
-      --result-file $out --out $V/next_vizwiz/${arm}.score.json
+      --result-file $out --out $V/next_vizwiz/${arm}.official.score.json || exit 1
+  fi
 done
 for task in next_mmbcn next_mmben; do
   local_tsv=$EN; [ "$task" = "next_mmbcn" ] && local_tsv=$CN
@@ -111,27 +112,30 @@ out=$V/next_textvqa/$arm.jsonl
 [ -s "$out" ] && [ ! -s "$V/next_textvqa/${arm}.score.txt" ] && \
   $PY -m llava.eval.eval_textvqa --annotation-file $EV/textvqa/TextVQA_0.5.1_val.json \
     --result-file $out > $V/next_textvqa/${arm}.score.txt 2>&1
-out=$V/next_pope/$arm.jsonl
-[ -s "$out" ] && [ ! -s "$V/next_pope/${arm}.score.txt" ] && \
-  $PY -m llava.eval.eval_pope --annotation-dir $EV/pope \
-    --question-file $EV/pope/llava_pope_test.jsonl \
-    --result-file $out > $V/next_pope/${arm}.score.txt 2>&1
-out=$V/next_sqa/$arm.jsonl
-[ -s "$out" ] && [ ! -s "$V/next_sqa/${arm}_result.json" ] && \
-  $PY -m llava.eval.eval_science_qa --base-dir $EV/scienceqa \
-    --result-file $out --output-file $V/next_sqa/${arm}_output.json \
-    --output-result $V/next_sqa/${arm}_result.json > $V/next_sqa/${arm}.score.txt 2>&1
-out=$V/next_gqa/$arm.jsonl
-[ -s "$out" ] && [ ! -s "$V/next_gqa/${arm}.score.json" ] && \
-  $PY $WRAP/gqa_score.py --gt-file /tmp/gqa12/testdev_balanced_questions.json \
-    --result-file $out --out $V/next_gqa/${arm}.score.json
-out=$V/next_mme/$arm.jsonl
-if [ -s "$out" ] && [ ! -s "$V/next_mme/${arm}.score.txt" ]; then
-  (cd $EV/MME && cp $out answers/budget_next_${arm}.jsonl && \
-   $PY convert_answer_to_mme.py --experiment budget_next_${arm} >/dev/null 2>&1 && \
-   $PY calc_scores.py --results_dir eval_tool/answers/budget_next_${arm} \
-     > $V/next_mme/${arm}.score.txt 2>&1)
-fi
+# Repaired protocols; refresh all requested budgets without reusing old scores.
+for score_arm in LRMAIN025 LRMAIN0125 LRMAIN00625; do
+  out=$V/next_pope/$score_arm.jsonl
+  if [ -s "$out" ]; then
+    $PY $WRAP/official_score.py --dataset pope --annotation-dir $EV/pope \
+      --question-file $EV/pope/llava_pope_test.jsonl --result-file "$out" \
+      --out $V/next_pope/${score_arm}.official.score.json || exit 1
+  fi
+  out=$V/next_gqa/$score_arm.jsonl
+  if [ -s "$out" ]; then
+    $PY $WRAP/gqa_score.py --gt-file /tmp/gqa12/testdev_balanced_questions.json \
+      --result-file "$out" --out $V/next_gqa/${score_arm}.official.score.json || exit 1
+  fi
+done
+# SQA is generated/scored only by the dedicated CQMI drivers above.
+# Never reuse historical .score.txt: reconstructed release GT had 162 wrong labels.
+for score_arm in LRMAIN025 LRMAIN0125 LRMAIN00625; do
+  out=$V/next_mme/$score_arm.jsonl
+  if [ -s "$out" ]; then
+    $PY $WRAP/mme_canonical_score.py --result-file "$out" \
+      --question-file $EV/MME/llava_mme.jsonl --gt-archive $EV/MME/eval_tool.zip \
+      --out $V/next_mme/${score_arm}.canonical_gt.score.json || exit 1
+  fi
+done
 
 # ---- 5) perf panels for the new budgets ----
 Q=$EV/textvqa/llava_textvqa_val_v051_ocr.jsonl

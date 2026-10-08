@@ -1,13 +1,17 @@
 """NeXT (llava-v1.6 anyres) per-question actual budget manifest (N06, audit
 2026-10-08).  CPU-only.
 
-For each SQA CQMI arm log we parse the tqdm fragments' per-question
-``vtn=<n>`` postfix (the ACTUAL visual tokens kept, as reported by the model)
-and pair it with the per-question crop count C and patch count N computed
-offline from the image size + the model config's image_grid_pinpoints via
-LLaVA's own select_best_resolution.
+Per-question input crop geometry is computed from the image size and the
+model's image_grid_pinpoints. AnyRes adds ONE global image to the local
+grid crops. This is vision-input geometry, not retained LLM sequence length.
 
-Outputs (audit_rescore_20261008/rescored/):
+The historical tqdm logs do not contain question IDs. Their refresh counters
+can repeat/skip and set_postfix runs before iterator advancement. They cannot
+support an aligned per-question retained-token manifest. Parsed display
+postfixes are quarantined as UNALIGNED diagnostics; missing/zero/shifted
+readings must never be assigned to an image question as its actual budget.
+
+Default outputs (outputs/audit_followup_20261008/budget_manifests_v2/):
   next_budget_manifest_<arm>.json  {per_question: [...], summary: {...}}
 """
 import argparse
@@ -20,7 +24,7 @@ LL = "/media/disk2/YZX/research/EADP_amp/LLaVA"
 IMGF = os.path.join(LL, "playground/data/eval/scienceqa/test")
 QFILE = os.path.join(LL, "playground/data/eval/scienceqa/llava_test_CQM-I.json")
 MODEL = "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b"
-OUT = "/media/disk2/YZX/research/audit_rescore_20261008/rescored"
+OUT = "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/budget_manifests_v2"
 LOGS = os.path.join(LL, "playground/data/eval/anchorzip_p3/next_sqa")
 
 sys.path.insert(0, LL)
@@ -29,7 +33,7 @@ from PIL import Image  # noqa: E402
 
 
 def parse_log_vtn(path):
-    """Last vtn reading per tqdm iteration index (1-based)."""
+    """UNALIGNED last postfix per display counter, not a question index."""
     raw = open(path, errors="replace").read()
     frag = re.split(r"[\r\n]", raw)
     per_it = {}
@@ -42,10 +46,35 @@ def parse_log_vtn(path):
     return per_it
 
 
+def runtime_trace(path, questions):
+    """Only ID-aligned metadata written during generation can verify budgets."""
+    if not os.path.exists(path):
+        return {}
+    predictions = [json.loads(line) for line in open(path)]
+    ids = [str(row["question_id"]) for row in predictions]
+    expected = {str(q["id"]): q for q in questions}
+    if len(ids) != len(set(ids)) or set(ids) != set(expected):
+        raise ValueError(f"runtime trace question identity mismatch: {path}")
+    trace = {}
+    for row in predictions:
+        qid = str(row["question_id"])
+        meta = row.get("metadata", {})
+        value = meta.get("actual_visual_tokens_retained")
+        if value is None:
+            continue
+        if not isinstance(value, int) or isinstance(value, bool) or value < 0:
+            raise ValueError(f"invalid retained-token count: {qid}: {value}")
+        if "image" in expected[qid] and value == 0:
+            raise ValueError(f"image question has zero retained tokens: {qid}")
+        trace[qid] = value
+    return trace
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--arms", default="FULL_CQMI_vicuna,LRMAIN025_CQMI_vicuna,"
                                       "LRMAIN0125_CQMI_vicuna,LRMAIN00625_CQMI_vicuna")
+    ap.add_argument("--out-dir", default=OUT)
     args = ap.parse_args()
 
     cfg = json.load(open(os.path.join(MODEL, "config.json")))
@@ -71,51 +100,53 @@ def main():
             c_cache[img_path] = None
             continue
         bh, bw = best
-        c = int((bh // 336) * (bw // 336))
-        c_cache[img_path] = {"crops": c, "patches": c * 576}
+        local_crops = int((bh // 336) * (bw // 336))
+        c_cache[img_path] = {"local_crops": local_crops,
+                             "global_crops": 1,
+                             "total_crops": local_crops + 1,
+                             "vision_input_tokens": (local_crops + 1) * 576}
 
-    os.makedirs(OUT, exist_ok=True)
+    os.makedirs(args.out_dir, exist_ok=True)
     for arm in args.arms.split(","):
         log = os.path.join(LOGS, f"{arm}.log")
         if not os.path.exists(log):
             print(f"[skip] no log for {arm}")
             continue
         vtn = parse_log_vtn(log)
-        rows, missing_vtn = [], 0
+        trace = runtime_trace(os.path.join(LOGS, f"{arm}.jsonl"), q)
+        rows = []
         for i, x in enumerate(q):
             row = {"i": i, "id": x["id"], "has_image": "image" in x}
             if "image" in x:
                 info = c_cache.get(os.path.join(IMGF, x["image"]))
                 if info:
                     row.update(info)
-            if (i + 1) in vtn:
-                row["vtn_logged"] = vtn[i + 1]
-            else:
-                missing_vtn += 1
+            row["actual_retained_tokens"] = trace.get(str(x["id"]))
+            row["retained_tokens_status"] = ("verified: question-ID runtime trace"
+                                              if str(x["id"]) in trace else
+                                              "unavailable: no question-ID runtime trace")
             rows.append(row)
-        have = [r for r in rows if "vtn_logged" in r]
-        img_rows = [r for r in have if r.get("crops")]
+        img_rows = [r for r in rows if r.get("total_crops")]
         crops_dist = {}
         for r in img_rows:
-            crops_dist[r["crops"]] = crops_dist.get(r["crops"], 0) + 1
-        vtn_vals = [r["vtn_logged"] for r in img_rows]
+            crops_dist[r["total_crops"]] = crops_dist.get(r["total_crops"], 0) + 1
         summary = {
             "arm": arm,
             "n_questions": len(q),
             "n_with_image": sum(1 for x in q if "image" in x),
-            "n_vtn_parsed": len(have),
-            "n_vtn_missing": missing_vtn,
-            "crops_distribution": dict(sorted(crops_dist.items())),
-            "vtn_min": min(vtn_vals) if vtn_vals else None,
-            "vtn_max": max(vtn_vals) if vtn_vals else None,
-            "vtn_mean": round(sum(vtn_vals) / len(vtn_vals), 1) if vtn_vals else None,
-            "note": "vtn_logged = model-reported visual tokens kept "
-                    "(tqdm postfix, last reading per question); crops/patches "
-                    "computed offline from image size + config grid pinpoints "
-                    "(select_best_resolution).  Nominal K640 = 128/crop x 5.",
+            "n_geometry_verified": len(img_rows),
+            "total_crops_distribution": dict(sorted(crops_dist.items())),
+            "n_actual_retained_tokens_verified": len(trace),
+            "actual_budget_status": ("VERIFIED" if len(trace) == len(q) else
+                                      "UNVERIFIED: requires complete runtime question-ID trace"),
+            "note": "AnyRes input = 1 global crop + local grid crops. Nominal "
+                    "K640 = 128 x 5; importance allocation changes per-crop quotas. "
+                    "Input geometry does not establish retained LLM tokens.",
         }
-        out = os.path.join(OUT, f"next_budget_manifest_{arm}.json")
-        json.dump({"summary": summary, "per_question": rows},
+        out = os.path.join(args.out_dir, f"next_budget_manifest_{arm}.json")
+        json.dump({"summary": summary, "per_question": rows,
+                   "unaligned_log_display_postfixes": vtn,
+                   "log_display_status": "UNALIGNED; not per-question measurements"},
                   open(out, "w"), indent=1)
         print(f"[manifest] {arm}: {json.dumps(summary)}")
 

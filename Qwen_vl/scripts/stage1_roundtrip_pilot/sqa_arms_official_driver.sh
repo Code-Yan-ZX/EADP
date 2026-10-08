@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-# SQA AnchorZip arms (K128/K64/K32) with the OFFICIAL EADP/LLaVA protocol:
+# SQA AnchorZip arms (K128/K64/K32) with the local RECONSTRUCTED CQM-I protocol:
 # llava_test_CQM-I + vicuna_v1, greedy (temperature 0), single-pred-prompt.
 # Frozen method hyper-params unchanged from the budget-point rounds:
 # beta=2.0, alpha=0.5, anchorzip rtg (lambda=0.25 baked in the port).
 # Writes NEW files (*_CQMI_vicuna.jsonl); old QCM-LEPA/llava_v1 files untouched.
+# The author CQM-I input file is unavailable; these rows are local-protocol
+# comparisons and do not by themselves establish paper-input equivalence.
 set -u
 PY=/home/dell/miniconda3/envs/llava_pruner/bin/python
 WRAP=/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot
@@ -51,6 +53,8 @@ run_arm () { local arm=$1 vtn=$2
       echo "[sqa-arms] GEN FAIL $arm rc=$rc n=$n"; return 1
     fi
   fi
+  # Reuse/scoring requires the complete unique CQMI question set.
+  $PY $WRAP/check_sqa_reuse.py --question-file "$QF" --result-file "$out" || return 1
   if [ ! -s "$res" ]; then
     $PY -m llava.eval.eval_science_qa --base-dir $EV/scienceqa \
       --result-file $out \

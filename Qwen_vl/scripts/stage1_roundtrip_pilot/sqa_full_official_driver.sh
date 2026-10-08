@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
-# SQA FULL with the OFFICIAL EADP/LLaVA protocol: llava_test_CQM-I question
+# SQA FULL with the local RECONSTRUCTED CQM-I protocol: llava_test_CQM-I question
 # file + vicuna_v1 conv, greedy (--temperature 0), single-pred-prompt.
 # Audit item #1 fix step B (2026-10-08).  Writes NEW files only; the old
 # FULL.jsonl (QCM-LEPA / llava_v1) is left untouched.
+# The author CQM-I input file is unavailable; these rows are local-protocol
+# comparisons and do not by themselves establish paper-input equivalence.
 set -u
 PY=/home/dell/miniconda3/envs/llava_pruner/bin/python
+WRAP=/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot
 EV=/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval
 LL=/media/disk2/YZX/research/EADP_amp/LLaVA
 MP15=/media/disk2/YZX/doct/FastV/llava-v1.5-7b
@@ -55,6 +58,8 @@ if [ ! -s "$OUT" ]; then
 else
   echo "[sqa-cqmi] gen already done ($(wc -l < "$OUT") lines)"
 fi
+
+$PY $WRAP/check_sqa_reuse.py --question-file $EV/scienceqa/llava_test_CQM-I.json --result-file "$OUT" || exit 1
 
 if [ ! -s "$RES" ]; then
   $PY -m llava.eval.eval_science_qa \

@@ -5,8 +5,8 @@
 # next_textvqa 4-arm outputs are kept as-is and only the two AnchorZip arms
 # are used for the remaining tasks. Task order: pope -> mme -> sqa -> gqa -> mmvet.
 # MME generation reuses $EV/MME/llava_mme.jsonl (2374 q) like the v1.5 round;
-# answer conversion reuses MME/convert_answer_to_mme.py, GT in
-# MME/MME_Benchmark_release_version.
+# Scoring uses mme_canonical_score.py with verified eval_tool.zip GT; the
+# reconstructed MME_Benchmark_release_version labels are invalid for scoring.
 set -u
 
 # Wait for the orphaned pope/LRMAIN0125 eval (launched by the retired
@@ -67,11 +67,7 @@ done
 for arm in "${ARM_ORDER[@]}"; do
   run mme $arm loader $EV/MME/llava_mme.jsonl $EV/MME/MME_Benchmark
 done
-for arm in "${ARM_ORDER[@]}"; do
-  run sqa $arm science \
-    $EV/scienceqa/llava_test_QCM-LEPA.json $EV/scienceqa/test 2.0 \
-    "--single-pred-prompt --conv-mode llava_v1"
-done
+echo "[retired SQA protocol] Use next_sqa_official_and_perf2_driver.sh; QCM-LEPA outputs are archived."
 for arm in "${ARM_ORDER[@]}"; do
   run gqa $arm loader \
     $EV/gqa/llava_gqa_testdev_balanced.jsonl $EV/gqa/data/images

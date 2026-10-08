@@ -107,6 +107,9 @@ def eval_model(args):
                 max_new_tokens=1024,
                 use_cache=True,
             )
+            # Capture the actual returned sequence count with its question ID.
+            # tqdm display counters are not reliable per-question identifiers.
+            runtime_retained_tokens = int(visual_token_num)
             if hasattr(model.model, 'visual_token_num'):
                 visual_token_num = model.model.visual_token_num
             data_bar.set_postfix(vtn=f"{visual_token_num}")
@@ -119,7 +122,12 @@ def eval_model(args):
                                    "text": outputs,
                                    "answer_id": ans_id,
                                    "model_id": model_name,
-                                   "metadata": {}}) + "\n")
+                                   "metadata": {
+                                       "actual_visual_tokens_retained": runtime_retained_tokens,
+                                       "visual_token_budget_parameter": args.visual_token_num,
+                                       "has_image": images is not None,
+                                       "source": "model.generate returned visual-token count",
+                                   }}) + "\n")
         ans_file.flush()
     ans_file.close()
 

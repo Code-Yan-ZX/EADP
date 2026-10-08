@@ -18,6 +18,71 @@ import math
 LLAVA_ROOT = "/media/disk2/YZX/research/EADP_amp/LLaVA"
 
 
+def generation_text_settings(cur_prompt, official_textvqa=False):
+    """Match the official TextVQA loader without changing the LLM prompt."""
+    if official_textvqa:
+        return cur_prompt.replace(
+            "\nAnswer the question using a single word or phrase.", ""), 128
+    return cur_prompt, 1024
+
+
+def write_official_textvqa_protocol(args):
+    """Refuse to overwrite an existing prediction; record this new run."""
+    from pathlib import Path
+    import hashlib
+    import datetime
+    import subprocess
+
+    answers = Path(os.path.expanduser(args.answers_file))
+    sidecar = Path(str(answers) + ".protocol.json")
+    if answers.exists() or sidecar.exists():
+        raise FileExistsError(
+            f"Official TextVQA needs a new artifact path; existing file: {answers}")
+    question_path = Path(os.path.expanduser(args.question_file))
+    questions = [json.loads(s) for s in question_path.open()]
+    suffix = "\nAnswer the question using a single word or phrase."
+    if not questions or not all("Reference OCR token: " in r.get("text", "")
+                                and r["text"].endswith(suffix) for r in questions):
+        raise ValueError("--official-textvqa requires the official TextVQA OCR question file")
+    commit = subprocess.check_output(
+        ["git", "-C", LLAVA_ROOT, "rev-parse", "HEAD"], text=True).strip()
+    metadata = dict(
+        protocol="official_textvqa_loader", task="TextVQA_VAL",
+        model_path=os.path.realpath(os.path.expanduser(args.model_path)),
+        question_file=str(question_path.resolve()),
+        question_file_sha256=hashlib.sha256(question_path.read_bytes()).hexdigest(),
+        question_rows=len(questions), num_chunks=args.num_chunks, chunk_idx=args.chunk_idx,
+        image_folder=os.path.realpath(args.image_folder),
+        answers_file=str(answers.resolve()), conv_mode=args.conv_mode,
+        score_text_transform="remove exact single-word-or-phrase answer suffix",
+        llm_prompt_transform="unchanged full TextVQA prompt, including OCR and answer suffix",
+        max_new_tokens=128, temperature=args.temperature, top_p=args.top_p,
+        num_beams=args.num_beams, visual_token_num=args.visual_token_num,
+        alpha=args.alpha, beta=args.beta, anchorzip=bool(args.anchorzip),
+        git_commit=commit,
+        wrapper_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        torch_version=torch.__version__, transformers_version=__import__("transformers").__version__,
+        created_utc=datetime.datetime.now(datetime.timezone.utc).isoformat())
+    for basename in ("config.json", "generation_config.json"):
+        config_path = Path(metadata["model_path"]) / basename
+        if config_path.is_file():
+            metadata[basename + "_sha256"] = hashlib.sha256(config_path.read_bytes()).hexdigest()
+    source_paths = ["llava/model/llava_arch.py", "llava/model/builder.py",
+                    "llava/model/multimodal_encoder/clip_encoder.py",
+                    "llava/mm_utils.py", "llava/conversation.py"]
+    if args.anchorzip:
+        source_paths.append("llava/model/llava_arch_anchorzip.py")
+        source_paths.append("../Qwen_vl/scripts/anchor_merge_pilot/amp_common.py")
+    metadata["source_sha256"] = {
+        rel: hashlib.sha256((Path(LLAVA_ROOT) / rel).read_bytes()).hexdigest()
+        for rel in source_paths}
+    answers.parent.mkdir(parents=True, exist_ok=True)
+    tmp = Path(str(sidecar) + ".tmp")
+    tmp.write_text(json.dumps(metadata, indent=2))
+    os.replace(tmp, sidecar)
+    return metadata
+
+
 def split_list(lst, n):
     """Split a list into n (roughly) equal-sized chunks"""
     chunk_size = math.ceil(len(lst) / n)  # integer division
@@ -30,6 +95,8 @@ def get_chunk(lst, n, k):
 
 
 def eval_model(args):
+    official_textvqa = getattr(args, "official_textvqa", False)
+    protocol = write_official_textvqa_protocol(args) if official_textvqa else None
     # Model
     disable_torch_init()
     model_path = os.path.expanduser(args.model_path)
@@ -73,7 +140,7 @@ def eval_model(args):
         conv.append_message(conv.roles[1], None)
         prompt = conv.get_prompt()
 
-        question = cur_prompt
+        question, max_new_tokens = generation_text_settings(cur_prompt, official_textvqa)
 
         input_ids = tokenizer_image_token(prompt, tokenizer, IMAGE_TOKEN_INDEX, return_tensors='pt').unsqueeze(0).cuda()
 
@@ -91,7 +158,7 @@ def eval_model(args):
                 top_p=args.top_p,
                 num_beams=args.num_beams,
                 # no_repeat_ngram_size=3,
-                max_new_tokens=1024,
+                max_new_tokens=max_new_tokens,
                 use_cache=True)
             if hasattr(model.model, 'visual_token_num'):
                 visual_token_num = model.model.visual_token_num
@@ -105,7 +172,10 @@ def eval_model(args):
                                    "text": outputs,
                                    "answer_id": ans_id,
                                    "model_id": model_name,
-                                   "metadata": {}}) + "\n")
+                                   "metadata": ({"protocol": protocol["protocol"],
+                                                 "max_new_tokens": 128,
+                                                 "score_text_suffix_removed": True}
+                                                if protocol is not None else {})}) + "\n")
         ans_file.flush()
     ans_file.close()
 
@@ -124,6 +194,8 @@ if __name__ == "__main__":
     parser.add_argument("--num_beams", type=int, default=1)
     parser.add_argument("--visual_token_num", type=int, default=576)
     parser.add_argument("--anchorzip", action="store_true")
+    parser.add_argument("--official-textvqa", action="store_true",
+                        help="Use official TextVQA score texts and 128-token decoding; requires a new answers path")
     parser.add_argument("--beta", type=float, default=1.0)
     parser.add_argument("--alpha", type=float, default=0.5)
     args = parser.parse_args()
