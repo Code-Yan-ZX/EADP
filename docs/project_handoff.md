@@ -1283,3 +1283,48 @@ FULL预算0的前缀检查并保留来源，没有修改冻结生成代码、数
 phase1尚有TextFULL与SQA FULL、legacy32项未开始；历史legacy理想双槽7.649
 小时下界单独已超过剩余时间，存在明显截止风险，继续已授权队列。小时timer
 保持active，全部实际登记任务及55组远端确认前all_experiments_complete=false。
+
+### 13.20 Oct9 07:14 独立小时巡检：phase1完成，legacy正常接续
+
+本次完整分段读取1285行交接并核对live Git，分支仍为
+codex/anchor-completion-validation、HEAD194562d、index SHA87ad06fd…，用户既有
+变动保留。原28项118917/118917预测、完整题面/复合键/官方分母和CPU评分再次
+通过；1411/1411来源SHA、61日志及summary JSON/CSV28行通过，errors=[]。
+原监督器/helper/watcher及17个历史worker身份实际退出，31关闭工件SHA不变；
+初始NeXT Text128两臂仍无新增runtime，不补称已有此证据。
+
+128面板128/512与三项K32各5000的完整评分/来源/runtime/marker再次通过。
+phase1于北京时间07:07:04完整12/12、39119/39119并写合法success marker，
+监督器2558610与全部children实际退出。新增FULL独立精确复算为TextVQA
+60.370000000000225%，SQA1364/2017=67.62518591968269%；保持原结果，不据点估计
+声称方法显著或整体胜出。新增17055/17055文件SHA及2584/2584内嵌图像SHA通过，
+四plan来源32/38/57/164、用户登记固定source与recovery plan SHA均匹配。
+
+phase2于07:07:27自动启动首MME，距phase1成功marker约22.469秒；当前真实
+dependencies ready、12项上游严格复核与marker SHA一致。两MME K128 worker
+PID3104762/3109792的完整argv、父子、启动ticks与attempt2登记通过；
+07:10:06→07:13:05完整预测/runtime由245/13增至784/549，各分母2374，
+输出和日志mtime同步推进，末次age小于0.3秒。扩展审计07:13:52补证925/685，
+不将前缀作为成绩；phase2尚0/32完整，2项生成、30项pending。A40恰两个
+实际登记模型/reservation，无未知CUDA context；第二槽启动时首context
+17494MiB且完整首prediction/runtime已出现，free26619MiB>=22500。全部14个
+已启动continuation任务门与6次phase1组间接续通过。
+
+native loader的四CPU fork子进程继承相同argv；初轮审计器误作额外模型的证据
+保留，按真实父子、原num_workers=4和无NVML context修订仅本次独立checker。
+没有豁免任何未知零CUDA context。旧supervisor.log的01:51 KeyboardInterrupt
+属于已登记CPU恢复历史；当前两recovery_supervisor.log为空且真实fd目标通过，
+无新失败，不据旧dependency/gpu_gate快照判故障。
+
+publisher PID2560860 active/running，授权overlay/冻结target/实际argv通过，
+maintenance=false/source_ready=true。07:10独立ls-remote确认origin
+2ea966201e47b36220aabfe6004809a85187af24；26/55组提交均为远端ancestor，phase1
+七组全部发布，剩29个legacy组合法pending，pending_commit/publication/error空。
+27归档/1003member/1055来源检查/45预测170177归档行与248提交路径allowlist
+通过；新增配对/FULL/独立beta1摘要与原score精确一致，beta1未混入paired CSV。
+
+证据保存于rerun_batch/hourly_monitor/check_20261008T230812Z/。只执行CPU
+只读审计、保存本机快照和追加本段事实，未启动/停止/重启任何实验或监督器、
+改冻结源码/参数/预测、stage/commit/push或改定时器。距12:00不足5小时，legacy
+32项刚开始，历史理想双槽7.649小时下界仍提示明显deadline风险，继续授权
+队列；全部实际登记任务及55组远端确认之前all_experiments_complete=false。
