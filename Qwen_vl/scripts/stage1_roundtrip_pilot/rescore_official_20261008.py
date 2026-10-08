@@ -57,36 +57,56 @@ def load_official_eval():
 def vizwiz_official_score(pred_file, gt_file, ev):
     """Official accuracy: for each of the 10 GT answers i, hold it out,
     acc_i = min(1, (# of the other 9 matching the normalized prediction)/3),
-    average the 10 values.  vqaEval.py lines 96-104."""
+    average the 10 values.  vqaEval.py lines 96-104.
+    N05 gate (audit 2026-10-08): real line count / duplicate / unknown ids
+    counted BEFORE any dict; final score only emitted when the prediction
+    id set exactly covers the 4319 validation questions."""
     # GT is val.json (list); predictions' question_id = index in this list,
     # same mapping the generation pipeline and old scorer used (verified by
     # prompt == gt[i]["question"] on arm LRMAIN025).
     gt = {i: q for i, q in enumerate(json.load(open(gt_file)))}
-    per = []
-    n = c = 0.0
-    missing = 0
+    gt_ids = set(gt.keys())
+    raw_ids, dup_ids, unknown_ids = [], [], []
+    texts = {}
     for line in open(pred_file):
         d = json.loads(line)
         qid = int(d["question_id"])
-        g = gt.get(qid)
-        if g is None:
-            missing += 1
-            continue
-        resAns = str(d["text"]).replace("\n", " ").replace("\t", " ").strip()
-        resAns = ev.processPunctuation(resAns)
-        resAns = ev.processDigitArticle(resAns)
-        answers = g["answers"]
-        gtAcc = []
-        for i, _ in enumerate(answers):
-            other = [item for j, item in enumerate(answers) if i != j]
-            matching = [item for item in other if item["answer"] == resAns]
-            gtAcc.append(min(1, float(len(matching)) / 3))
-        avg = float(sum(gtAcc)) / len(gtAcc)
-        c += avg
-        n += 1
-        per.append({"question_id": qid, "acc": avg})
-    return {"n": n, "accuracy": round(100 * c / n, 2), "missing_gt": missing,
-            "metric": "official VizWiz leave-one-out VQA accuracy (vqaEval.py:96-104)"}, per
+        raw_ids.append(qid)
+        if qid in texts:
+            dup_ids.append(qid)
+        if qid not in gt_ids:
+            unknown_ids.append(qid)
+        texts[qid] = str(d["text"])
+    n_lines = len(raw_ids)
+    n_unique = len(set(raw_ids))
+    missing_ids = sorted(gt_ids - set(raw_ids))
+    complete = (n_lines == len(gt_ids) and n_unique == len(gt_ids)
+                and not dup_ids and not unknown_ids and not missing_ids)
+    per, n, c = [], 0, 0.0
+    if complete:
+        for qid in gt_ids:
+            resAns = texts[qid].replace("\n", " ").replace("\t", " ").strip()
+            resAns = ev.processPunctuation(resAns)
+            resAns = ev.processDigitArticle(resAns)
+            answers = gt[qid]["answers"]
+            gtAcc = []
+            for i, _ in enumerate(answers):
+                other = [item for j, item in enumerate(answers) if i != j]
+                matching = [item for item in other if item["answer"] == resAns]
+                gtAcc.append(min(1, float(len(matching)) / 3))
+            avg = float(sum(gtAcc)) / len(gtAcc)
+            c += avg
+            n += 1
+            per.append({"question_id": qid, "acc": avg})
+    return {"n_lines": n_lines, "n_unique_ids": n_unique,
+            "n_gt_ids": len(gt_ids),
+            "n_dup": len(dup_ids), "n_unknown": len(unknown_ids),
+            "n_missing": len(missing_ids),
+            "complete": complete,
+            "accuracy": round(100 * c / n, 2) if complete else None,
+            "metric": "official VizWiz leave-one-out VQA accuracy "
+                      "(vqaEval.py:96-104); hard gate: pred ids == 4319 "
+                      "val ids (N05 fix)"}, per
 
 
 def old_vizwiz_compare(arm, per_new):
@@ -163,6 +183,16 @@ def pope_official_score(pred_file, qfile, gt_dir):
         gt_by_key = {_pope_key(g["image"], g["text"]): g["label"] for g in gt_lines}
         cur = [a for a in answers
                if questions[a["question_id"]]["category"] == cat]
+        gt_keys = [_pope_key(g["image"], g["text"]) for g in gt_lines]
+        if len(set(gt_keys)) != len(gt_keys):
+            results[cat] = {"ERROR": "duplicate GT (image,text) keys"}
+            continue
+        pred_keys = [_pope_key(questions[a["question_id"]]["image"],
+                               questions[a["question_id"]]["text"]) for a in cur]
+        if len(set(pred_keys)) != len(pred_keys):
+            results[cat] = {"ERROR": "duplicate pred (image,text) keys"}
+            continue
+        missing_gt = sorted(set(gt_keys) - set(pred_keys))
         pairs, unmatched = [], 0
         for a in cur:
             q = questions[a["question_id"]]
@@ -175,6 +205,8 @@ def pope_official_score(pred_file, qfile, gt_dir):
         m = pope_metrics(pairs)
         m["unmatched"] = unmatched
         m["n_pred"] = len(cur)
+        m["n_gt"] = len(gt_lines)
+        m["n_gt_without_pred"] = len(missing_gt)  # set-identity gap (N02)
         results[cat] = m
         f1s.append(m["f1"])
         # historical order-zip (what the in-round eval_pope.py runs did)
@@ -192,24 +224,43 @@ def pope_official_score(pred_file, qfile, gt_dir):
 # ------------------------------------------------------------------- GQA ----
 
 def gqa_official_score(pred_file, gt_file):
+    """N03 fix (audit 2026-10-08): count REAL lines and duplicate ids BEFORE
+    building the dict (dict construction silently overwrote duplicates, so
+    the old check could never fail).  Gate: pred id set must EQUAL the GT id
+    set exactly; on any violation no final accuracy is emitted."""
     gt = json.load(open(gt_file))
-    preds = _gqa_pred_map(pred_file)
-    ids = list(preds.keys())
-    n_total, n_unique = len(ids), len(set(ids))
-    in_gt = sum(1 for i in ids if i in gt)
-    c = 0
-    per = []
-    for i in ids:
-        g = gt.get(i)
-        if g is None:
-            continue
-        ok = str(g["answer"]).strip().lower() == preds[i]
-        c += ok
-        per.append({"question_id": i, "correct": bool(ok)})
-    return {"n_lines": n_total, "n_unique_ids": n_unique, "ids_in_gt": in_gt,
-            "complete": n_total == 12578 and n_unique == 12578 and in_gt == 12578,
-            "accuracy": round(100 * c / n_unique, 2) if n_unique else None,
-            "metric": "exact-match lowercase-strip, GQA testdev (12578 unique ids enforced)"}, per
+    gt_ids = set(gt.keys())
+    raw_ids, dup_ids, unknown_ids = [], [], []
+    texts = {}
+    for ln, line in enumerate(open(pred_file)):
+        d = json.loads(line)
+        qid = str(d["question_id"])
+        raw_ids.append(qid)
+        if qid in texts:
+            dup_ids.append(qid)
+        if qid not in gt_ids:
+            unknown_ids.append(qid)
+        texts[qid] = str(d["text"]).strip().lower()
+    n_lines = len(raw_ids)
+    n_unique = len(set(raw_ids))
+    missing_ids = sorted(gt_ids - set(raw_ids))
+    complete = (n_lines == len(gt_ids) and n_unique == len(gt_ids)
+                and not dup_ids and not unknown_ids and not missing_ids)
+    per, c = [], 0
+    if complete:
+        for qid in gt_ids:  # fixed GT denominator
+            ok = str(gt[qid]["answer"]).strip().lower() == texts[qid]
+            c += ok
+            per.append({"question_id": qid, "correct": bool(ok)})
+    return {"n_lines": n_lines, "n_unique_ids": n_unique,
+            "n_gt_ids": len(gt_ids),
+            "dup_ids": dup_ids[:50], "n_dup": len(dup_ids),
+            "unknown_ids": unknown_ids[:50], "n_unknown": len(unknown_ids),
+            "missing_ids_count": len(missing_ids),
+            "complete": complete,
+            "accuracy": round(100 * c / len(gt_ids), 2) if complete else None,
+            "metric": "exact-match lowercase-strip, GQA testdev; "
+                      "hard gate: pred id set == GT id set (N03 fix)"}, per
 
 
 def _gqa_pred_map(pred_file):
@@ -219,6 +270,47 @@ def _gqa_pred_map(pred_file):
         m[str(d["question_id"])] = str(d["text"]).strip().lower()
     return m
 
+
+
+def model_of(d):
+    return "next" if d.startswith("next") else "v15"
+
+
+# ------------------------------------------------------------------- SQA ----
+
+def sqa_check(jsonl_path, qfile):
+    """N01 gate (audit 2026-10-08): completeness/identity check for SQA
+    prediction files.  Verifies real line count, unique question ids, id-set
+    equality with the question file, IMG subset count, and FAILED-style
+    answers.  No rescoring here -- the official eval_science_qa is the
+    scorer; this is the reuse/generation gate."""
+    q = json.load(open(qfile))
+    q_ids = [x["id"] for x in q]
+    q_id_set = set(q_ids)
+    n_img = sum(1 for x in q if "image" in x)
+    raw_ids, dups, bad_text = [], 0, 0
+    texts = set()
+    for line in open(jsonl_path):
+        d = json.loads(line)
+        qid = d["question_id"]
+        raw_ids.append(qid)
+        if qid in texts:
+            dups += 1
+        texts.add(qid)
+        t = str(d.get("text", "")).strip()
+        if not t or t.upper().startswith("FAILED"):
+            bad_text += 1
+    n_lines = len(raw_ids)
+    unique = len(texts)
+    unknown = sum(1 for i in raw_ids if i not in q_id_set)
+    missing = len(q_id_set - texts)
+    return {"n_lines": n_lines, "n_unique": unique, "n_question_file": len(q_ids),
+            "n_img_questions": n_img,
+            "dup_ids": dups, "unknown_ids": unknown,
+            "missing_ids": missing,
+            "failed_or_empty_text": bad_text,
+            "complete": (n_lines == len(q_ids) and unique == len(q_ids)
+                         and dups == 0 and unknown == 0 and missing == 0)}
 
 # ------------------------------------------------------------------ main ----
 
@@ -244,7 +336,7 @@ def main():
                 res["vs_old_scorer"] = old_vizwiz_compare(arm, per)
                 rows[f"{d}/{arm}"] = res
                 json.dump({"summary": res, "per_question": per},
-                          open(os.path.join(OUT, f"vizwiz_{arm}_official.json"), "w"))
+                          open(os.path.join(OUT, f"vizwiz_{model_of(d)}_{arm}_official.json"), "w"))
         summary["vizwiz"] = rows
 
     if "pope" in tasks:
@@ -264,7 +356,7 @@ def main():
                 res = pope_official_score(
                     os.path.join(SNAP, os.path.join("raw_snapshot", "anchorzip_p3"), d, f), qfile, gt_dir)
                 rows[f"{d}/{arm}"] = res
-                json.dump(res, open(os.path.join(OUT, f"pope_{arm}_official.json"), "w"))
+                json.dump(res, open(os.path.join(OUT, f"pope_{model_of(d)}_{arm}_official.json"), "w"))
         summary["pope"] = rows
 
     if "gqa" in tasks:
@@ -279,8 +371,27 @@ def main():
                     os.path.join(SNAP, os.path.join("raw_snapshot", "anchorzip_p3"), d, f), gt)
                 rows[f"{d}/{arm}"] = res
                 json.dump({"summary": res, "per_question": per},
-                          open(os.path.join(OUT, f"gqa_{arm}_official.json"), "w"))
+                          open(os.path.join(OUT, f"gqa_{model_of(d)}_{arm}_official.json"), "w"))
         summary["gqa"] = rows
+
+    if "sqa" in tasks:
+        rows = {}
+        qfile = ("/media/disk2/YZX/research/EADP_amp/LLaVA/playground/"
+                 "data/eval/scienceqa/llava_test_CQM-I.json")
+        base = os.path.join(SNAP, "raw_snapshot", "anchorzip_p3")
+        # live CQMI outputs live next to the snapshot source tree
+        live = ("/media/disk2/YZX/research/EADP_amp/LLaVA/playground/"
+                "data/eval/anchorzip_p3")
+        for d in ("sqa", "next_sqa"):
+            for f in sorted(os.listdir(os.path.join(live, d))):
+                if not f.endswith("_CQMI_vicuna.jsonl"):
+                    continue
+                arm = f[:-len("_CQMI_vicuna.jsonl")]
+                res = sqa_check(os.path.join(live, d, f), qfile)
+                rows[f"{d}/{arm}"] = res
+                json.dump(res, open(os.path.join(
+                    OUT, f"sqa_{model_of(d)}_{arm}_CQMI_check.json"), "w"))
+        summary["sqa"] = rows
 
     json.dump(summary, open(os.path.join(OUT, "rescore_summary.json"), "w"), indent=1)
     print(json.dumps(summary, indent=1))

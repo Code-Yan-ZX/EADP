@@ -1,0 +1,183 @@
+{
+ "arm_lr": "L_R_MAIN025",
+ "arm_eg": "E_GATHER (official EADP)",
+ "pipeline": "official_legacy",
+ "n_boot": 5000,
+ "seed": 20261004,
+ "tasks": {
+  "TextVQA_VAL": {
+   "n": 5000,
+   "lr_mean": 72.012,
+   "eg_mean": 71.042,
+   "delta_pct": 0.97,
+   "boot": {
+    "point": 0.0097,
+    "ci": [
+     0.17934981565891364,
+     1.7698998622671047
+    ],
+    "n": 5000,
+    "n_clusters": 3166
+   },
+   "note": "E-side = audit-recovered official EADP predictions"
+  },
+  "DocVQA_VAL": {
+   "n": 5349,
+   "lr_mean": 63.10443271500505,
+   "eg_mean": 61.13557770823,
+   "delta_pct": 1.9688550067750517,
+   "boot": {
+    "point": 0.019688550067750516,
+    "ci": [
+     0.979158527983587,
+     2.9956910249417503
+    ],
+    "n": 5349,
+    "n_clusters": 1286
+   },
+   "note": "E-side = audit-recovered official EADP predictions"
+  },
+  "OCRBench": {
+   "n": 1000,
+   "lr_mean": 63.2,
+   "eg_mean": 62.3,
+   "delta_pct": 0.8999999999999999,
+   "boot": {
+    "point": 0.009,
+    "ci": [
+     -1.2,
+     3.0
+    ],
+    "n": 1000,
+    "n_clusters": 1000
+   },
+   "note": "E-side = audit-recovered official EADP predictions; clusters = per-row (no image key column available)"
+  },
+  "ChartQA_TEST": {
+   "n": 2500,
+   "clusters": "image (1509 unique, md5 of base64)",
+   "lr_mean": 55.04,
+   "eg_mean": 54.800000000000004,
+   "delta_pct": 0.24,
+   "ci": [
+    -1.3677277964176981,
+    1.8637392812409652
+   ],
+   "note": "R4: was per-row in the original analysis.",
+   "source": "p1_p4_recheck_20261008_cifix.json (image-cluster bootstrap)"
+  },
+  "AI2D_TEST": {
+   "n": 3088,
+   "lr_mean": 74.77331606217616,
+   "eg_mean": 74.54663212435233,
+   "delta_pct": 0.22668393782383417,
+   "boot": {
+    "point": 0.0022668393782383418,
+    "ci": [
+     -0.8015582472905103,
+     1.2650326958804838
+    ],
+    "n": 3088,
+    "n_clusters": 1204
+   },
+   "note": "E-side = L_E_GATHER"
+  },
+  "InfoVQA_VAL": {
+   "n": 2801,
+   "lr_official_mean": 43.03301351244087,
+   "lr_headline": 43.03301351244087,
+   "lr_reproduces": true,
+   "eg_official_mean": 42.39013063219771,
+   "eg_headline": 42.39013063219771,
+   "eg_reproduces": true,
+   "delta_pct": 0.6428828802431515,
+   "ci": [
+    -0.6684410615428953,
+    1.9351133303909411
+   ],
+   "n_clusters": 500,
+   "note": "R3: official hit_calculate semantics from each arm's _pred_results.xlsx eval_match; replaces the local-extractor pairing in the original analysis.",
+   "source": "p1_p4_recheck_20261008_cifix.json (official ANLS pairing)"
+  },
+  "HallusionBench": {
+   "n": 951,
+   "lr_facc": 41.040462427745666,
+   "eg_facc": 41.040462427745666,
+   "delta": 0.0,
+   "ci": [
+    -3.179190751445084,
+    3.179190751445084
+   ],
+   "n_clusters": 346,
+   "lr_aAcc": 64.45846477392219
+  },
+  "MME": {
+   "n": 2374,
+   "lr_total": 2202.923769507803,
+   "eg_total": 2212.6946778711485,
+   "delta": -9.77090836334537,
+   "ci": [
+    -63.9668437604433,
+    42.65507010936421
+   ],
+   "n_clusters": 1187,
+   "bootstrap_fixed": "N02/N03 bugfix 2026-10-08"
+  },
+  "MMBench_DEV_EN_V11": {
+   "n_groups": 1292,
+   "lr_correct": 1027,
+   "eg_correct": 1032,
+   "delta_pct": -0.38699690402477227,
+   "ci": [
+    -1.393188854489169,
+    0.6191950464396356
+   ],
+   "note": "R5: full official circular-group denominator (hit=0 for evaluation-failed groups, official semantics).",
+   "source": "p1_p4_recheck_20261008_cifix.json (1292 circular groups)"
+  },
+  "MMBench_DEV_CN_V11": {
+   "n_groups": 1292,
+   "lr_correct": 1013,
+   "eg_correct": 1019,
+   "delta_pct": -0.4643962848297267,
+   "ci": [
+    -1.6253869969040213,
+    0.6211300309597311
+   ],
+   "note": "R5: full official circular-group denominator (hit=0 for evaluation-failed groups, official semantics).",
+   "source": "p1_p4_recheck_20261008_cifix.json (1292 circular groups)"
+  }
+ },
+ "avg10": {
+  "formula": "(8 pct + OCR/10 + MME/20)/10 (p0-audit verified)",
+  "lr": 68.02441500348633,
+  "eg": 67.66356668170428,
+  "delta": 0.3608483217820435,
+  "lr_columns": {
+   "TextVQA": 72.012,
+   "ChartQA": 55.04,
+   "AI2D": 74.77331606217616,
+   "HallusionBench": 41.040462427745666,
+   "MMB_EN": 79.4891640866873,
+   "MMB_CN": 78.40557275541795,
+   "DocVQA": 63.10443271500505,
+   "InfoVQA": 43.03301351244087,
+   "OCRBench": 632.0,
+   "MME": 2202.923769507803
+  },
+  "eg_columns": {
+   "TextVQA": 71.042,
+   "ChartQA": 54.800000000000004,
+   "AI2D": 74.54663212435233,
+   "HallusionBench": 41.040462427745666,
+   "MMB_EN": 79.87616099071208,
+   "MMB_CN": 78.86996904024768,
+   "DocVQA": 61.13557770823,
+   "InfoVQA": 42.39013063219771,
+   "OCRBench": 623.0,
+   "MME": 2212.6946778711485
+  },
+  "note": "E-side MMB_EN/MMB_CN recomputed from 1292 circular-group counts (1032/1292, 1019/1292); all other columns unchanged from the p0-audit-verified values."
+ },
+ "supersede_note": "UNIFIED P1 analysis (2026-10-08, audit N07).  Supersedes fields of p1_egather_vs_lrmain_analysis.json: InfoVQA per-task pairing now uses the official ANLS extractor (recheck R3); ChartQA bootstrap now uses image clusters (R4); MMB EN/CN now use the full 1292 circular-group denominator (R5); MME CI uses multiplicity-preserving cluster resampling (N02/N03 bugfix).  Avg10 E-side MMB columns recomputed."
+}
