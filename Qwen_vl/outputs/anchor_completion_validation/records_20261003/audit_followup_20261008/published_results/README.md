@@ -31,3 +31,5 @@ Legacy single-method audit arms are in [repaired_legacy_results.csv](repaired_le
 | v15_textvqa_K128 | 56.390 | 56.604 | 0.214 |  | [manifest](v15_textvqa_K128/manifest.json) |
 | v15_textvqa_K32 | 52.532 | 52.542 | 0.010 |  | [manifest](v15_textvqa_K32/manifest.json) |
 | v15_textvqa_K64 | 54.918 | 54.978 | 0.060 |  | [manifest](v15_textvqa_K64/manifest.json) |
+
+EADP K32 beta1 script-default sensitivity control: 50.966% over 5000 questions, with the same stream wait. This is a separate EADP control; its parameters are not verified to be the paper configuration. [manifest](next_textvqa_K32_default_beta1/manifest.json).
