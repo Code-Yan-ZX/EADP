@@ -14,6 +14,7 @@ import hashlib
 import importlib.util
 import io
 import json
+import math
 import os
 from pathlib import Path
 import shutil
@@ -56,6 +57,43 @@ CONTROL_GROUPS = {
     'next_textvqa_K32_streamwait': ('EADP_beta2', 'AZ_beta2'),
     'next_textvqa_K32_default_beta1': ('EADP_beta1',),
 }
+CONTINUATION_GROUPS = {
+    'next_textvqa_K128_streamwait': ('next_text_E128', 'next_text_AZ128'),
+    'next_textvqa_K64_streamwait': ('next_text_E64', 'next_text_AZ64'),
+    'next_textvqa_FULL_streamwait': ('next_text_FULL',),
+    'next_sqa_K128_streamwait': ('next_sqa_E128', 'next_sqa_AZ128'),
+    'next_sqa_K64_streamwait': ('next_sqa_E64', 'next_sqa_AZ64'),
+    'next_sqa_K32_streamwait': ('next_sqa_E32', 'next_sqa_AZ32'),
+    'next_sqa_FULL_streamwait': ('next_sqa_FULL',),
+}
+LEGACY_COUNTS = dict(mme=2374,pope=8910,mmben=4876,mmbcn=4876,vizwiz=4319,gqa=12578)
+LEGACY_METRICS = {
+    'mme': 'MME perception acc+paired-image-acc category sum',
+    'pope': 'POPE three-category mean F1 (%)',
+    'gqa': 'GQA exact-match accuracy (%)',
+    'vizwiz': 'VizWiz official leave-one-out accuracy (%)',
+    'mmben': 'MMBench circular accuracy (%)',
+    'mmbcn': 'MMBench circular accuracy (%)',
+}
+
+
+def legacy_group_contracts():
+    groups={}
+    def append(model,task,budget,kind,jobs):
+        suffix=f'K{budget}' if kind=='pair' else 'FULL' if kind=='FULL' else f'AZ_K{budget}'
+        key=f'legacy_{model}_{task}_{suffix}_streamwait'
+        groups[key]=dict(model=model,task=task,budget=budget,kind=kind,job_ids=jobs,
+                        arms=['EADP','AnchorZip'] if kind=='pair' else ['FULL'] if kind=='FULL' else ['AnchorZip'])
+    for task in ('mme','pope','mmben','mmbcn','vizwiz','gqa'):
+        if task in ('mme','pope','gqa'):
+            append('v15',task,128,'pair',[f'v15_{task}_EGATHER',f'v15_{task}_LRMAIN025'])
+            append('v15',task,0,'FULL',[f'v15_{task}_FULL'])
+            for budget,suffix in ((64,'0125'),(32,'00625')):
+                if task!='pope' or budget!=32:
+                    append('v15',task,budget,'single_audit',[f'v15_{task}_LRMAIN{suffix}'])
+        for budget,suffix in ((128,'025'),(64,'0125'),(32,'00625')):
+            append('next',task,budget,'single_audit',[f'next_{task}_LRMAIN{suffix}'])
+    return groups
 
 
 def now():
@@ -380,6 +418,302 @@ def validate_control(registration,arm):
     return files,score
 
 
+def continuation_directory():
+    return OUT/'streamwait_continuation_20261008'
+
+
+def load_continuation_worker():
+    path=continuation_directory()/'streamwait_repair_worker.py'
+    spec=importlib.util.spec_from_file_location('publication_continuation_worker',path)
+    loaded=importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(loaded)
+    return loaded
+
+
+def continuation_registration():
+    directory=continuation_directory()
+    state_path=directory/'streamwait_repair_continuation.state.json'
+    if not state_path.is_file():
+        return None
+    state=read(state_path)
+    if not state.get('started_utc'):
+        return None
+    datetime.datetime.fromisoformat(state['started_utc'])
+    registered=state.get('registered_jobs',[])
+    expected_jobs={job for jobs in CONTINUATION_GROUPS.values() for job in jobs}
+    if len(registered)!=len(expected_jobs) or set(registered)!=expected_jobs:
+        raise ValueError('Continuation registration differs from authorized twelve jobs')
+    plan_path=directory/'streamwait_repair_continuation.plan.json'
+    plan=read(plan_path)
+    if state.get('plan_sha256')!=sha(plan_path):
+        raise ValueError('Registered continuation plan hash changed')
+    controller_path=directory/'schedule_streamwait_repair_continuation.py'
+    worker_path=directory/'streamwait_repair_worker.py'
+    if (plan.get('controller_sha256')!=sha(controller_path)
+            or plan.get('source_and_input_sha256',{}).get(str(worker_path))!=sha(worker_path)):
+        raise ValueError('Registered continuation source hash changed')
+    checked_source_maps(plan)
+    groups=plan.get('groups',[])
+    expected=[group['group_id'] for group in groups]
+    if len(expected)!=7 or set(expected)!=set(CONTINUATION_GROUPS) or state.get('publication_expected_groups')!=expected:
+        raise ValueError('Continuation publication groups differ from authorized scope')
+    if set(plan.get('jobs',{}))!=expected_jobs:
+        raise ValueError('Continuation plan jobs differ from registered jobs')
+    for group in groups:
+        jobs=CONTINUATION_GROUPS[group['group_id']]
+        parts=group['group_id'].split('_')
+        budget=0 if parts[2]=='FULL' else int(parts[2][1:])
+        if (group.get('model')!='next' or group.get('task')!=parts[1]
+                or group.get('budget')!=budget or tuple(group.get('job_ids',[]))!=jobs
+                or group.get('kind')!=('FULL' if len(jobs)==1 else 'pair')
+                or not group.get('protocol_label')):
+            raise ValueError('Continuation group task/budget/method contract differs')
+    return dict(started_utc=state['started_utc'],registered_jobs=registered,expected_groups=expected,
+                plan_path=str(plan_path),plan_sha256=sha(plan_path),plan=plan,
+                controller_path=str(controller_path),worker_path=str(worker_path))
+
+
+def continuation_paths(registration,job_id):
+    worker=load_continuation_worker()
+    job=registration['plan']['jobs'][job_id]
+    paths=worker.paths(job_id,job['attempt'])
+    directory=continuation_directory().resolve()
+    if any(not Path(path).resolve().is_relative_to(directory) for path in paths.values()):
+        raise ValueError('Continuation output path outside authorized directory')
+    if (job.get('job_id')!=job_id or job['output_paths']!={name:str(path) for name,path in paths.items()}
+            or job['control_protocol']!=str(paths['control_protocol'])
+            or job['control_protocol_sha256']!=sha(paths['control_protocol'])):
+        raise ValueError('Continuation output or protocol differs from registered plan')
+    return worker,paths
+
+
+def continuation_group_ready(registration,group):
+    return all(continuation_paths(registration,job_id)[1]['finished'].is_file() for job_id in group['job_ids'])
+
+
+def validate_continuation_job(registration,group,job_id):
+    worker,paths=continuation_paths(registration,job_id)
+    protocol=read(paths['control_protocol'])
+    verified=checked_source_maps(protocol)
+    verified.update(checked_source_maps(registration['plan']))
+    if protocol.get('launcher_sha256')!=sha(Path(worker.__file__)):
+        raise ValueError('Continuation worker hash differs from frozen protocol')
+    # This interface only reads finished evidence and runs official CPU scoring.
+    # It cannot prepare a job, launch generation, or mutate its completion state.
+    validated=worker.validate_finished(job_id,attempt=registration['plan']['jobs'][job_id]['attempt'])
+    finished=validated['finished'];exact=validated['score']
+    if finished.get('success') is not True or finished.get('complete') is not True or validated['protocol']!=protocol:
+        raise ValueError('Continuation worker completion validation failed')
+    stored=read(paths['score'])
+    if any(stored.get(key)!=value for key,value in exact.items()):
+        raise ValueError('Continuation exact official score differs from stored score')
+    if finished.get('score_sha256')!=sha(paths['score']) or finished.get('prediction_sha256')!=sha(paths['prediction']):
+        raise ValueError('Continuation finished score/prediction hash mismatch')
+    files={}
+    required=('prediction','runtime','native_protocol','control_protocol','score','finished')
+    for name in required:
+        selected=Path(paths[name])
+        if validated['files'].get(str(selected))!=sha(selected):
+            raise ValueError('Continuation validator omitted or redirected required evidence')
+    selected_files=dict(verified)
+    for path,expected in validated['files'].items():
+        if sha(path)!=expected:
+            raise ValueError('Continuation selected evidence hash changed')
+        selected_files[path]=expected
+    for path in selected_files:
+        source=Path(path)
+        if source.suffix.lower() not in ('.py','.sh','.json','.jsonl','.txt','.csv','.md'):
+            raise ValueError('Continuation source map contains a model or image payload')
+        if any(token in str(source).lower() for token in ('.state.','environment','agent.events','/hourly_monitor/')):
+            raise ValueError('Continuation source map contains mutable/private state')
+        add_files(files,[source])
+    for key in ('image_manifest','image_manifest_path'):
+        if protocol.get(key):
+            add_files(files,[protocol[key]])
+    add_files(files,[registration['plan_path'],registration['controller_path'],registration['worker_path']])
+    method='FULL' if group['kind']=='FULL' else ('AnchorZip' if '_AZ' in job_id else 'EADP')
+    expected_n=5000 if group['task']=='textvqa' else 2017
+    if exact.get('n',exact.get('n_image',exact.get('n_total'))) != expected_n:
+        raise ValueError('Continuation official score uses an incomplete denominator')
+    if (exact.get('success') is not True or exact.get('method')!=method
+            or exact.get('task')!=group['task'] or exact.get('budget')!=group['budget']):
+        raise ValueError('Continuation official score method/task/budget mismatch')
+    score=dict(method=method,accuracy=exact['accuracy_percent'],n=expected_n,
+               metric='official TextVQA accuracy' if group['task']=='textvqa' else 'ScienceQA IMG',
+               model=group['model'],task=group['task'],budget=group['budget'],group_kind=group['kind'],
+               protocol=group['protocol_label'],output=str(paths['prediction']),
+               prediction_sha256=sha(paths['prediction']),verified_source_sha256=verified,
+               interpretation='same stream wait repair, separate results; original protocol results preserved')
+    return files,score
+
+
+def load_legacy_worker():
+    path=continuation_directory()/'legacy_streamwait_worker.py'
+    spec=importlib.util.spec_from_file_location('publication_legacy_worker',path)
+    loaded=importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(loaded)
+    return loaded
+
+
+def legacy_registration():
+    directory=continuation_directory();state_path=directory/'legacy_streamwait_continuation.state.json'
+    if not state_path.is_file():
+        return None
+    state=read(state_path)
+    if not state.get('started_utc'):
+        return None
+    datetime.datetime.fromisoformat(state['started_utc'])
+    contracts=legacy_group_contracts();authorized_jobs={job for group in contracts.values() for job in group['job_ids']}
+    registered=state.get('registered_jobs',[])
+    if len(registered)!=32 or set(registered)!=authorized_jobs:
+        raise ValueError('Legacy registration differs from authorized thirty-two jobs')
+    plan_path=directory/'legacy_streamwait_continuation.plan.json';plan=read(plan_path)
+    if state.get('plan_sha256')!=sha(plan_path):
+        raise ValueError('Registered legacy plan hash changed')
+    controller_path=directory/'schedule_legacy_streamwait_continuation.py'
+    worker_path=directory/'legacy_streamwait_worker.py'
+    if (plan.get('controller_sha256')!=sha(controller_path) or plan.get('worker_sha256')!=sha(worker_path)
+            or plan.get('worker_path')!=str(worker_path)):
+        raise ValueError('Registered legacy controller/worker source changed')
+    checked_source_maps(plan)
+    groups=plan.get('groups',[]);expected=[group['group_id'] for group in groups]
+    if len(expected)!=29 or set(expected)!=set(contracts) or state.get('publication_expected_groups')!=expected:
+        raise ValueError('Legacy publication groups differ from authorized scope')
+    if set(plan.get('jobs',{}))!=authorized_jobs:
+        raise ValueError('Legacy plan jobs differ from registered jobs')
+    for group in groups:
+        if any(group.get(key)!=value for key,value in contracts[group['group_id']].items()) or not group.get('protocol_label'):
+            raise ValueError('Legacy group methods/task/budget/kind contract differs')
+        for index,job_id in enumerate(group['job_ids']):
+            job=plan['jobs'][job_id]
+            if (job.get('job_id')!=job_id or job.get('model')!=group['model'] or job.get('task')!=group['task']
+                    or job.get('method')!=group['arms'][index] or job.get('budget')!=group['budget']
+                    or job.get('n')!=LEGACY_COUNTS[group['task']]):
+                raise ValueError('Legacy registered job identity differs from group')
+    return dict(started_utc=state['started_utc'],registered_jobs=registered,expected_groups=expected,
+                plan_path=str(plan_path),plan_sha256=sha(plan_path),plan=plan,
+                controller_path=str(controller_path),worker_path=str(worker_path))
+
+
+def legacy_paths(registration,job_id):
+    worker=load_legacy_worker();job=registration['plan']['jobs'][job_id]
+    paths=worker.paths(job_id,job['attempt'])
+    if any(Path(path).parent.resolve()!=continuation_directory().resolve() for path in paths.values()):
+        raise ValueError('Legacy output path outside authorized directory')
+    if (job['output_paths']!={name:str(path) for name,path in paths.items()}
+            or job['control_protocol']!=str(paths['control_protocol'])
+            or job['control_protocol_sha256']!=sha(paths['control_protocol'])):
+        raise ValueError('Legacy output or protocol differs from registered plan')
+    return worker,paths
+
+
+def legacy_group_ready(registration,group):
+    return all(legacy_paths(registration,job)[1]['finished'].is_file() for job in group['job_ids'])
+
+
+def allowed_legacy_payload(path):
+    source=Path(path)
+    relative=str(source.relative_to(ROOT)) if source.is_relative_to(ROOT) else None
+    if (relative in EXCLUDED or source.name.startswith(('assemble_fig','export_anchorzip_figure','fig1_',
+          'screen_anchorzip','p3_data_serial','llava_mmben_driver'))
+            or any(token in str(source).lower() for token in
+                   ('.state.','private','environment','agent.events','/hourly_monitor/','/.codex/','.lock'))
+            or source.name in ('env.json','credentials.json','.env')):
+        raise ValueError('Legacy source selection contains excluded user or private state')
+    if source.suffix.lower() not in ('.py','.sh','.json','.jsonl','.txt','.csv','.md'):
+        raise ValueError('Legacy selection contains a model or image payload')
+
+
+def mmbench_labels_without_images(source,expected_sha,expected_n):
+    # TSVs embed image bytes. Archive the exact scoring fields separately and
+    # preserve the full original source hash, without archiving the image column.
+    previous=csv.field_size_limit();csv.field_size_limit(sys.maxsize)
+    try:
+        with Path(source).open(newline='') as stream:
+            reader=csv.DictReader(stream,delimiter='\t')
+            columns=[name for name in ('index','question','hint','A','B','C','D','answer','category','l2-category') if name in reader.fieldnames]
+            if not {'index','answer'}<=set(columns):
+                raise ValueError('MMBench source omits exact scoring labels')
+            rows=[{name:row[name] for name in columns} for row in reader]
+    finally:
+        csv.field_size_limit(previous)
+    if len(rows)!=expected_n or sha(source)!=expected_sha:
+        raise ValueError('MMBench scoring labels count/source changed')
+    return json.dumps(dict(source=str(source),source_sha256=expected_sha,n_rows=len(rows),columns=columns,
+                           image_payload_excluded=True,rows=rows),ensure_ascii=False,indent=2).encode()
+
+
+def mme_gt_without_archive(source,expected_sha):
+    scorer=module('mme_canonical_score')
+    gt=scorer.canonical_gt(source)
+    if len(gt)!=2374 or sha(source)!=expected_sha:
+        raise ValueError('MME canonical label count/source changed')
+    rows=[dict(category=category,image_id=image,question=question,answer=answer)
+          for (category,image,question),answer in sorted(gt.items())]
+    return json.dumps(dict(source=str(source),source_sha256=expected_sha,n=2374,
+                           original_archive_payload_excluded=True,rows=rows),ensure_ascii=False,indent=2).encode()
+
+
+def validate_legacy_job(registration,group,job_id):
+    worker,paths=legacy_paths(registration,job_id);protocol=read(paths['control_protocol'])
+    checked_source_maps(protocol)
+    if protocol.get('launcher_sha256')!=sha(Path(worker.__file__)):
+        raise ValueError('Legacy worker hash differs from frozen protocol')
+    validated=worker.validate_finished(job_id,attempt=registration['plan']['jobs'][job_id]['attempt'])
+    finished=validated['finished'];exact=validated['score']
+    method=group['arms'][group['job_ids'].index(job_id)]
+    if (validated['protocol']!=protocol or finished.get('success') is not True or finished.get('complete') is not True
+            or finished.get('n')!=LEGACY_COUNTS[group['task']] or finished.get('job_id')!=job_id
+            or type(finished.get('generation_exit_code')) is not int or finished['generation_exit_code']!=0
+            or exact.get('success') is not True or exact.get('model')!=group['model']
+            or exact.get('task')!=group['task'] or exact.get('method')!=method
+            or exact.get('budget')!=group['budget'] or exact.get('n')!=LEGACY_COUNTS[group['task']]
+            or exact.get('metric')!=LEGACY_METRICS[group['task']]):
+        raise ValueError('Legacy full completion/score/task/method/metric gate failed')
+    if not isinstance(exact.get('value'),(int,float)) or not math.isfinite(exact['value']):
+        raise ValueError('Legacy score is not a finite original metric value')
+    if read(paths['score'])!=exact or finished['score_sha256']!=sha(paths['score']) or finished['prediction_sha256']!=sha(paths['prediction']):
+        raise ValueError('Legacy official score or completion hash differs')
+    required=('prediction','runtime','native_protocol','control_protocol','score','finished')
+    if any(validated['files'].get(str(paths[name]))!=sha(paths[name]) for name in required):
+        raise ValueError('Legacy validator omitted required full evidence')
+    files={};references={}
+    for filename,expected in validated['files'].items():
+        source=Path(filename)
+        if sha(source)!=expected:
+            raise ValueError('Legacy selected evidence source hash changed')
+        if source.suffix.lower()=='.tsv':
+            if group['task'] not in ('mmben','mmbcn') or str(source)!=protocol['parameters']['question_file']:
+                raise ValueError('Unexpected embedded image source selection')
+            references[str(source)]=dict(sha256=expected,bytes=source.stat().st_size,archived=False,
+                                         reason='original TSV embeds images; exact non-image scoring labels archived')
+            files[f'derived_inputs/{group["task"]}_labels_without_images.json']=mmbench_labels_without_images(source,expected,exact['n'])
+            continue
+        if source.suffix.lower()=='.zip':
+            registered_gt={entry['path']:entry['sha256'] for entry in protocol['origin']['score_data']}
+            if group['task']!='mme' or source.name!='eval_tool.zip' or registered_gt.get(str(source))!=expected:
+                raise ValueError('Unexpected compressed ground-truth source selection')
+            references[str(source)]=dict(sha256=expected,bytes=source.stat().st_size,archived=False,
+                                         reason='verified official MME archive; canonical GT labels archived as JSON')
+            files['derived_inputs/mme_canonical_ground_truth.json']=mme_gt_without_archive(source,expected)
+            continue
+        allowed_legacy_payload(source);add_files(files,[source])
+    for key in ('identity_manifest','image_manifest'):
+        path=Path(protocol[key])
+        if validated['files'].get(str(path))!=protocol[key+'_sha256']:
+            raise ValueError('Legacy validator omitted input/image identity manifest')
+    add_files(files,[registration['plan_path'],registration['controller_path'],registration['worker_path']])
+    if references:
+        files['EXTERNAL_SOURCE_REFERENCES.json']=json.dumps(references,sort_keys=True,indent=2).encode()
+    score=dict(method=method,accuracy=exact['value'],value=exact['value'],n=exact['n'],metric=exact['metric'],
+               model=group['model'],task=group['task'],budget=group['budget'],group_kind=group['kind'],
+               protocol=group['protocol_label'],guidance_language=protocol['parameters'].get('lang',''),
+               output=str(paths['prediction']),prediction_sha256=sha(paths['prediction']),
+               official_score_sha256=sha(paths['score']),verified_source_sha256=validated['files'],
+               interpretation='independent native-protocol stream-wait repair; single arms have no paired local EADP comparison')
+    return files,score
+
+
 def diagnostic_metadata():
     """Only the coordinator's hashed, explicit complete-evidence selection."""
     report_path=OUT/'next_gap_diagnosis_report.json'
@@ -425,6 +759,26 @@ def diagnostic_metadata():
     return files
 
 
+def continuation_metadata():
+    report_path=OUT/'streamwait_continuation_scope.json'
+    if not report_path.is_file():
+        return {}
+    report=read(report_path);files={}
+    for entry in report.get('files',[]):
+        relative=Path(entry['path']);source=ROOT/relative
+        if (relative.is_absolute() or '..' in relative.parts
+                or not source.resolve().is_relative_to(continuation_directory().resolve())
+                or source.suffix.lower() not in ('.py','.json','.md','.csv')
+                or any(token in str(relative).lower() for token in
+                       ('private','environment','agent.events','/hourly_monitor/','.state.','.lock','.finished.'))):
+            raise ValueError('Continuation static selection contains private, partial or redirected evidence')
+        if sha(source)!=entry['sha256'] or source.stat().st_size!=entry['bytes'] or entry['bytes']>=90*1024*1024:
+            raise ValueError('Continuation static selected source hash/size mismatch')
+        add_files(files,[source])
+    add_files(files,[report_path])
+    return files
+
+
 def publication_complete(plan,state):
     return plan['all_experiments_complete'] and set(plan['expected_groups'])<=set(state.get('published_groups',{}))
 
@@ -434,6 +788,8 @@ def bundle(group_id, files, scores):
     identity=digest(json.dumps(entries,sort_keys=True).encode())
     manifest=dict(group_id=group_id,identity=identity,prepared_utc=now(),scores=scores,files=entries,
                   source_symlinks_dereferenced=True,contains_weights_or_images=False)
+    if 'EXTERNAL_SOURCE_REFERENCES.json' in files:
+        manifest['omitted_source_payloads']=json.loads(files['EXTERNAL_SOURCE_REFERENCES.json'])
     directory=LOCAL/'prepared'/group_id;directory.mkdir(parents=True,exist_ok=True)
     archive=directory/'evidence.tar.gz'
     with tarfile.open(archive,'w:gz',compresslevel=6) as tar:
@@ -472,6 +828,20 @@ def prepare(state):
     if not previous<=set(dynamic):
         raise ValueError('Previously registered diagnostic controls disappeared')
     expected.extend(dynamic)
+    continuation=continuation_registration()
+    continuation_groups=continuation['plan']['groups'] if continuation else []
+    continuation_expected=[group['group_id'] for group in continuation_groups]
+    previous_continuation=set(state.get('expected_groups',[]))&set(CONTINUATION_GROUPS)
+    if not previous_continuation<=set(continuation_expected):
+        raise ValueError('Previously registered continuation scope disappeared')
+    expected.extend(continuation_expected)
+    legacy=legacy_registration()
+    legacy_groups=legacy['plan']['groups'] if legacy else []
+    legacy_expected=[group['group_id'] for group in legacy_groups]
+    previous_legacy=set(state.get('expected_groups',[]))&set(legacy_group_contracts())
+    if not previous_legacy<=set(legacy_expected):
+        raise ValueError('Previously registered legacy scope disappeared')
+    expected.extend(legacy_expected)
     for group_id,jobs in original_groups:
         if group_id in state.get('published_groups',{}):
             continue
@@ -486,6 +856,17 @@ def prepare(state):
             for job in jobs:
                 members,score=validate_job(job,summarizer);files.update(members);scores.append(score)
         candidates.append(bundle(group_id,files,scores))
+    for group in continuation_groups:
+        group_id=group['group_id']
+        if group_id in state.get('published_groups',{}):
+            continue
+        if not continuation_group_ready(continuation,group):
+            pending.append(group_id);continue
+        files={};scores=[]
+        for job_id in group['job_ids']:
+            members,score=validate_continuation_job(continuation,group,job_id)
+            files.update(members);scores.append(score)
+        candidates.append(bundle(group_id,files,scores))
     for group_id in dynamic:
         if group_id in state.get('published_groups',{}):
             continue
@@ -495,6 +876,17 @@ def prepare(state):
         files={};scores=[]
         for arm in arms:
             members,score=validate_control(registration,arm);files.update(members);scores.append(score)
+        candidates.append(bundle(group_id,files,scores))
+    for group in legacy_groups:
+        group_id=group['group_id']
+        if group_id in state.get('published_groups',{}):
+            continue
+        if not legacy_group_ready(legacy,group):
+            pending.append(group_id);continue
+        files={};scores=[]
+        for job_id in group['job_ids']:
+            members,score=validate_legacy_job(legacy,group,job_id)
+            files.update(members);scores.append(score)
         candidates.append(bundle(group_id,files,scores))
     common_files={}
     for filename in ['paper_reference.json','mme_official_gt_rescore.json','sqa_input_identity.json',
@@ -509,7 +901,8 @@ def prepare(state):
     else:common=None
     return dict(prepared_utc=now(),available_groups=candidates,pending_groups=pending,
                 common_audit=common,all_experiments_complete=monitor['all_complete'],allowlist=ALLOWLIST,
-                expected_groups=expected,control_registration=registration)
+                expected_groups=expected,control_registration=registration,continuation_registration=continuation,
+                legacy_registration=legacy)
 
 
 def remote_head():
@@ -526,18 +919,25 @@ def index_fingerprint():
 
 def readable_results(history):
     stream=io.StringIO(newline='')
-    columns=['group_id','model','task','budget','EADP','AnchorZip','AZ_minus_EADP','FULL','n','metric','manifest']
+    columns=['group_id','model','task','budget','EADP','AnchorZip','AZ_minus_EADP','FULL','n','metric','protocol','manifest']
     writer=csv.DictWriter(stream,fieldnames=columns);writer.writeheader()
     lines=['# Published repaired-protocol results','',
            'Only complete, independently scored comparison groups appear here. ',
            'Read [paired_results.csv](paired_results.csv) for scores and each group manifest for prediction, input and source SHA256 evidence.',
            '', 'TextVQA uses all 5000 official validation questions. ScienceQA uses the 2017 image questions in the shipped CQM-A input. POPE uses the three-category mean F1 over 8910 predictions with the controlled CUDA stream wait.',
            '', 'For NeXT, K128/K64/K32 denotes the per-crop budget parameter (nominal 640/320/160 for five crops). Actual retained tokens are recorded per sample in the runtime evidence.',
+           '', 'The continuation rows use a frozen stream-wait repair. Their protocol is shown in the CSV; original scores remain separate, regardless of which score is higher.',
+           '', 'Legacy single-method audit arms are in [repaired_legacy_results.csv](repaired_legacy_results.csv); they have no paired EADP difference. MME retains its raw perception points. MMBCN retains the historical English instruction (`lang=en`); this is recorded separately from the dataset language.',
            '', '| Group | EADP | AnchorZip | AZ − EADP | FULL | Evidence |',
            '|---|---:|---:|---:|---:|---|']
     control_notes=[]
     for group_id,entry in sorted(history.items()):
-        scores=entry['scores'];parts=group_id.split('_');full=group_id.endswith('_FULL')
+        scores=entry['scores'];parts=group_id.split('_')
+        full=scores[0].get('group_kind')=='FULL' or group_id.endswith('_FULL')
+        if scores[0].get('group_kind')=='single_audit':
+            if len(scores)!=1 or scores[0].get('method')!='AnchorZip':
+                raise ValueError('Legacy single-method audit mislabeled as a comparison')
+            continue
         if group_id=='next_textvqa_K32_default_beta1':
             if len(scores)!=1 or scores[0].get('method')!='EADP' or scores[0].get('beta')!=1.:
                 raise ValueError('Default beta1 control mislabeled')
@@ -553,16 +953,39 @@ def readable_results(history):
             if scores[0].get('method','').startswith('AnchorZip'):az,e=scores
             else:e,az=scores
         manifest=group_id+'/manifest.json'
-        row=dict(group_id=group_id,model=parts[0],task=parts[1],budget=parts[2],
+        row=dict(group_id=group_id,model=scores[0].get('model',parts[0]),task=scores[0].get('task',parts[1]),
+                 budget=('FULL' if full else 'K'+str(scores[0]['budget'])) if 'budget' in scores[0] else parts[2],
                  EADP='' if e is None else e['accuracy'],AnchorZip='' if az is None else az['accuracy'],
                  AZ_minus_EADP='' if e is None else az['accuracy']-e['accuracy'],
-                 FULL='' if full_value is None else full_value,n=scores[0]['n'],metric=scores[0]['metric'],manifest=manifest)
+                 FULL='' if full_value is None else full_value,n=scores[0]['n'],metric=scores[0]['metric'],
+                 protocol=scores[0].get('protocol','streamwait' if 'streamwait' in group_id else 'original repaired-input protocol'),manifest=manifest)
         writer.writerow(row)
         values=[row[k] for k in ('EADP','AnchorZip','AZ_minus_EADP','FULL')]
         display=['' if value=='' else f'{value:.3f}' for value in values]
         lines.append('| '+group_id+' | '+' | '.join(display)+' | [manifest]('+manifest+') |')
     lines.extend(control_notes)
     return stream.getvalue(), '\n'.join(lines)+'\n'
+
+
+def readable_legacy_results(history):
+    stream=io.StringIO(newline='')
+    columns=['group_id','model','task','budget','method','score','metric','n','group_kind','paired_group',
+             'protocol','guidance_language','prediction_sha256','official_score_sha256','manifest']
+    writer=csv.DictWriter(stream,fieldnames=columns);writer.writeheader()
+    for group_id,entry in sorted(history.items()):
+        if group_id not in legacy_group_contracts():
+            continue
+        contract=legacy_group_contracts()[group_id];scores=entry['scores']
+        if len(scores)!=len(contract['arms']) or [score['method'] for score in scores]!=contract['arms']:
+            raise ValueError('Legacy readable score methods differ from registered group')
+        for score in scores:
+            writer.writerow(dict(group_id=group_id,model=score['model'],task=score['task'],
+                budget='FULL' if score['budget']==0 else 'K'+str(score['budget']),method=score['method'],
+                score=score['value'],metric=score['metric'],n=score['n'],group_kind=score['group_kind'],
+                paired_group=score['group_kind']=='pair',protocol=score['protocol'],
+                guidance_language=score.get('guidance_language',''),prediction_sha256=score['prediction_sha256'],
+                official_score_sha256=score['official_score_sha256'],manifest=group_id+'/manifest.json'))
+    return stream.getvalue()
 
 
 def metadata_snapshot(plan,state):
@@ -582,10 +1005,10 @@ def metadata_snapshot(plan,state):
         source=OUT/name;data=source.read_bytes() if source.is_file() else None
         artifacts[name]=None if data is None else dict(sha256=digest(data),bytes=len(data))
         if data is not None:files[str(DEST/'audit_metadata'/name)]=data
-    for relative,data in diagnostic_metadata().items():
+    for relative,data in {**diagnostic_metadata(),**continuation_metadata()}.items():
         source=Path(relative)
-        if relative==str((OUT/'next_gap_diagnosis_report.json').relative_to(ROOT)):
-            name='next_gap_diagnosis_report.json'
+        if relative in [str((OUT/name).relative_to(ROOT)) for name in ('next_gap_diagnosis_report.json','streamwait_continuation_scope.json')]:
+            name=source.name
         else:
             name=str(source.relative_to(OUT.relative_to(ROOT)))
         artifacts[name]=dict(sha256=digest(data),bytes=len(data))
@@ -597,9 +1020,22 @@ def metadata_snapshot(plan,state):
         data=json.dumps(stable,sort_keys=True,indent=2).encode()
         files[str(DEST/'audit_metadata/full_control_registration.json')]=data
         artifacts['full_control_registration.json']=dict(sha256=digest(data),bytes=len(data))
+    continuation=plan.get('continuation_registration')
+    if continuation:
+        stable={key:continuation[key] for key in ('started_utc','registered_jobs','expected_groups','plan_sha256')}
+        data=json.dumps(stable,sort_keys=True,indent=2).encode()
+        files[str(DEST/'audit_metadata/continuation_registration.json')]=data
+        artifacts['continuation_registration.json']=dict(sha256=digest(data),bytes=len(data))
+    legacy=plan.get('legacy_registration')
+    if legacy:
+        stable={key:legacy[key] for key in ('started_utc','registered_jobs','expected_groups','plan_sha256')}
+        data=json.dumps(stable,sort_keys=True,indent=2).encode()
+        files[str(DEST/'audit_metadata/legacy_registration.json')]=data
+        artifacts['legacy_registration.json']=dict(sha256=digest(data),bytes=len(data))
     table,readme=readable_results(history)
     files[str(DEST/'paired_results.csv')]=table.encode()
     files[str(DEST/'README.md')]=readme.encode()
+    files[str(DEST/'repaired_legacy_results.csv')]=readable_legacy_results(history).encode()
     files[str(DEST/'audit_metadata/manifest.json')]=json.dumps(
         {name:entry for name,entry in artifacts.items() if entry is not None},ensure_ascii=False,indent=2).encode()
     memo=dict(allowlist=list(ALLOWLIST),metadata_artifacts=list(METADATA_ARTIFACTS),

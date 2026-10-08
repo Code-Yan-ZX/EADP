@@ -15,7 +15,8 @@ p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
 
 class PublisherSafety(unittest.TestCase):
     def setUp(self):
-        for name,value in [('diagnostic_metadata',{}),('control_registration',None)]:
+        for name,value in [('diagnostic_metadata',{}),('control_registration',None),
+                           ('continuation_metadata',{}),('continuation_registration',None),('legacy_registration',None)]:
             patch=mock.patch.object(p,name,return_value=value)
             patch.start();self.addCleanup(patch.stop)
 
@@ -330,6 +331,432 @@ class DynamicPublication(unittest.TestCase):
                 with mock.patch.object(p,'control_paths',return_value=(worker,paths)),self.assertRaises(ValueError):
                     p.validate_control(registration,'EADP_beta2')
                 if mode!='official_mismatch':worker.validate_and_score.assert_not_called()
+
+
+class ContinuationPublication(unittest.TestCase):
+    write=DynamicPublication.write
+
+    def setUp(self):
+        DynamicPublication.setUp(self)
+        self.continuation=p.continuation_directory();self.continuation.mkdir()
+        self.cworker=self.continuation/'streamwait_repair_worker.py';self.cworker.write_text('frozen continuation worker')
+        self.ccontroller=self.continuation/'schedule_streamwait_repair_continuation.py';self.ccontroller.write_text('frozen continuation controller')
+        self.cplan_path=self.continuation/'streamwait_repair_continuation.plan.json'
+        self.cstate_path=self.continuation/'streamwait_repair_continuation.state.json'
+        self.input=self.continuation/'questions.jsonl';self.input.write_text('{}\n')
+        self.images=self.continuation/'images.json';self.write(self.images,{})
+        self.cgroups=[];self.cjobs={};self.cpaths={};self.validated={}
+        for group_id,job_ids in p.CONTINUATION_GROUPS.items():
+            parts=group_id.split('_');budget=0 if parts[2]=='FULL' else int(parts[2][1:])
+            group={'group_id':group_id,'model':'next','task':parts[1],'budget':budget,
+                   'protocol_label':'wait-only CUDA stream repair; original CQM-A','kind':'FULL' if len(job_ids)==1 else 'pair',
+                   'arms':['FULL'] if len(job_ids)==1 else ['EADP','AnchorZip'],'job_ids':list(job_ids)}
+            self.cgroups.append(group)
+            for job_id in job_ids:
+                paths={name:self.continuation/(job_id+'.'+name+'.json') for name in
+                       ['prediction','runtime','native_protocol','control_protocol','score','finished','state']}
+                for path in paths.values():self.write(path,{})
+                protocol={'job_id':job_id,'launcher_sha256':p.sha(self.cworker),
+                          'source_and_input_sha256':{str(self.cworker):p.sha(self.cworker),str(self.input):p.sha(self.input)},
+                          'image_manifest':str(self.images),'output_paths':{name:str(path) for name,path in paths.items()}}
+                self.write(paths['control_protocol'],protocol)
+                exact={'accuracy_percent':50.,'n':5000 if parts[1]=='textvqa' else 2017,
+                       'success':True,'method':'FULL' if len(job_ids)==1 else ('AnchorZip' if '_AZ' in job_id else 'EADP'),
+                       'task':parts[1],'budget':budget}
+                self.write(paths['score'],exact)
+                finished={'success':True,'complete':True,'score_sha256':p.sha(paths['score']),
+                          'prediction_sha256':p.sha(paths['prediction'])}
+                self.write(paths['finished'],finished)
+                self.cjobs[job_id]={'job_id':job_id,'attempt':1,'control_protocol':str(paths['control_protocol']),
+                                   'control_protocol_sha256':p.sha(paths['control_protocol']),
+                                   'output_paths':{name:str(path) for name,path in paths.items()}}
+                self.cpaths[job_id]=paths
+                public={str(path):p.sha(path) for name,path in paths.items() if name!='state'}
+                public[str(self.input)]=p.sha(self.input);public[str(self.images)]=p.sha(self.images)
+                self.validated[job_id]={'score':exact,'files':public,'finished':finished,'protocol':protocol}
+        self.cplan={'groups':self.cgroups,'jobs':self.cjobs,'controller_sha256':p.sha(self.ccontroller),
+                    'source_and_input_sha256':{str(self.cworker):p.sha(self.cworker)}}
+        self.write(self.cplan_path,self.cplan)
+        self.fakeworker=SimpleNamespace(__file__=str(self.cworker),
+            paths=mock.Mock(side_effect=lambda job_id,attempt:self.cpaths[job_id]),
+            validate_finished=mock.Mock(side_effect=lambda job_id,attempt:self.validated[job_id]))
+
+    def cregistered(self,**overrides):
+        state={'started_utc':'2026-10-09T00:00:00+08:00','registered_jobs':list(self.cjobs),
+               'publication_expected_groups':[group['group_id'] for group in self.cgroups],
+               'plan_sha256':p.sha(self.cplan_path)}
+        state.update(overrides);self.write(self.cstate_path,state)
+        return p.continuation_registration()
+
+    def test_continuation_prepared_does_not_expand(self):
+        self.write(self.cstate_path,{'started_utc':None,'registered_jobs':[],'publication_expected_groups':[]})
+        self.assertIsNone(p.continuation_registration())
+
+    def test_continuation_actual_registration_expands_to_twenty_six(self):
+        registration=self.cregistered()
+        expected=['old'+str(index) for index in range(19)]+registration['expected_groups']
+        plan={'all_experiments_complete':True,'expected_groups':expected}
+        state={'published_groups':dict.fromkeys(expected[:19],{})}
+        self.assertEqual(len(expected),26);self.assertFalse(p.publication_complete(plan,state))
+        state['published_groups']=dict.fromkeys(expected,{})
+        self.assertTrue(p.publication_complete(plan,state))
+
+    def test_continuation_scope_and_source_changes_rejected(self):
+        for mode in ['job_missing','group_missing','plan_hash','controller','worker','group_kind']:
+            with self.subTest(mode=mode):
+                if mode=='job_missing':override={'registered_jobs':list(self.cjobs)[:-1]}
+                elif mode=='group_missing':override={'publication_expected_groups':[]}
+                elif mode=='plan_hash':override={'plan_sha256':'wrong'}
+                elif mode=='controller':
+                    self.ccontroller.write_text('changed');override={}
+                elif mode=='worker':
+                    self.cworker.write_text('changed');override={}
+                else:
+                    self.cplan['groups'][0]['kind']='FULL';self.write(self.cplan_path,self.cplan);override={}
+                with self.assertRaises(ValueError):self.cregistered(**override)
+                self.ccontroller.write_text('frozen continuation controller');self.cworker.write_text('frozen continuation worker')
+
+    def test_continuation_scope_cannot_disappear(self):
+        summary={'rows':[{'output':'unused','status':'pending'} for _ in range(28)],'errors':[]}
+        with mock.patch.object(p,'command',return_value=json.dumps({'needs_attention':False,'all_complete':True})),mock.patch.object(p,'read',return_value=summary),mock.patch.object(p,'module'),mock.patch.object(p,'group_definitions',return_value=[]),mock.patch.object(p,'control_registration',return_value=None),mock.patch.object(p,'continuation_registration',return_value=None):
+            with self.assertRaisesRegex(ValueError,'continuation scope disappeared'):
+                p.prepare({'expected_groups':['next_sqa_FULL_streamwait']})
+
+    def test_continuation_partial_pair_cannot_publish(self):
+        registration=self.cregistered();group=self.cgroups[0]
+        self.cpaths[group['job_ids'][1]]['finished'].unlink()
+        with mock.patch.object(p,'load_continuation_worker',return_value=self.fakeworker):
+            self.assertFalse(p.continuation_group_ready(registration,group))
+        self.fakeworker.validate_finished.assert_not_called()
+
+    def test_continuation_fixed_path_and_protocol_drift_rejected(self):
+        registration=self.cregistered();job_id=self.cgroups[0]['job_ids'][0]
+        with mock.patch.object(p,'load_continuation_worker',return_value=self.fakeworker):
+            self.cpaths[job_id]['prediction']=self.root/'user.json'
+            with self.assertRaisesRegex(ValueError,'outside authorized'):
+                p.continuation_paths(registration,job_id)
+            self.cpaths[job_id]['prediction']=self.continuation/(job_id+'.prediction.json')
+            self.cpaths[job_id]['control_protocol'].write_text('{}')
+            with self.assertRaisesRegex(ValueError,'protocol differs'):
+                p.continuation_paths(registration,job_id)
+
+    def test_complete_continuation_archives_all_public_evidence_no_state(self):
+        registration=self.cregistered();group=self.cgroups[0];job_id=group['job_ids'][0]
+        with mock.patch.object(p,'load_continuation_worker',return_value=self.fakeworker):
+            files,score=p.validate_continuation_job(registration,group,job_id)
+        self.assertEqual(score['accuracy'],50.);self.assertEqual(score['method'],'EADP')
+        self.assertEqual(score['protocol'],group['protocol_label'])
+        for name in ['prediction','runtime','native_protocol','control_protocol','score','finished']:
+            self.assertIn(str(self.cpaths[job_id][name].relative_to(self.root)),files)
+        self.assertIn(str(self.input.relative_to(self.root)),files)
+        self.assertIn(str(self.images.relative_to(self.root)),files)
+        self.assertFalse(any('.state.' in path for path in files))
+        self.fakeworker.validate_finished.assert_called_once_with(job_id,attempt=1)
+
+    def test_continuation_frozen_cpu_validator_failure_propagates(self):
+        registration=self.cregistered();group=self.cgroups[0]
+        self.fakeworker.validate_finished.side_effect=ValueError('official score mismatch')
+        with mock.patch.object(p,'load_continuation_worker',return_value=self.fakeworker),self.assertRaisesRegex(ValueError,'official score mismatch'):
+            p.validate_continuation_job(registration,group,group['job_ids'][0])
+
+    def test_continuation_source_drift_rejected_before_validation(self):
+        registration=self.cregistered();group=self.cgroups[0];self.input.write_text('changed')
+        with mock.patch.object(p,'load_continuation_worker',return_value=self.fakeworker),self.assertRaisesRegex(ValueError,'SHA mismatch'):
+            p.validate_continuation_job(registration,group,group['job_ids'][0])
+        self.fakeworker.validate_finished.assert_not_called()
+
+    def test_continuation_invalid_score_or_archive_selection_rejected(self):
+        registration=self.cregistered();group=self.cgroups[0];job_id=group['job_ids'][0]
+        for mode in ['accuracy','denominator','finished','missing_runtime','private_state','payload']:
+            with self.subTest(mode=mode):
+                validated=json.loads(json.dumps(self.validated[job_id]))
+                if mode=='accuracy':validated['score']['accuracy_percent']=99.
+                elif mode=='denominator':validated['score']['n']=4999
+                elif mode=='finished':validated['finished']['complete']=False
+                elif mode=='missing_runtime':validated['files'].pop(str(self.cpaths[job_id]['runtime']))
+                elif mode=='private_state':validated['files'][str(self.cpaths[job_id]['state'])]=p.sha(self.cpaths[job_id]['state'])
+                else:
+                    payload=self.continuation/'model.safetensors';payload.write_text('payload')
+                    validated['files'][str(payload)]=p.sha(payload)
+                self.fakeworker.validate_finished.side_effect=None;self.fakeworker.validate_finished.return_value=validated
+                with mock.patch.object(p,'load_continuation_worker',return_value=self.fakeworker),self.assertRaises(ValueError):
+                    p.validate_continuation_job(registration,group,job_id)
+
+    def test_continuation_full_and_pair_readable_preserve_original_scores(self):
+        history={'next_textvqa_K128':{'scores':[{'accuracy':57.,'n':5000,'metric':'TextVQA'},
+                                              {'accuracy':56.,'n':5000,'metric':'TextVQA'}]},
+                 'next_textvqa_K128_streamwait':{'scores':[{'method':'EADP','accuracy':55.,'n':5000,'metric':'TextVQA','protocol':'wait-only'},
+                    {'method':'AnchorZip','accuracy':54.,'n':5000,'metric':'TextVQA','protocol':'wait-only'}]},
+                 'next_sqa_FULL_streamwait':{'scores':[{'method':'FULL','accuracy':67.,'n':2017,'metric':'SQA','group_kind':'FULL','protocol':'wait-only CQM-A'}]}}
+        table,readme=p.readable_results(history)
+        rows=list(__import__('csv').DictReader(io.StringIO(table)))
+        self.assertEqual(len(rows),3)
+        by={row['group_id']:row for row in rows}
+        self.assertEqual(by['next_textvqa_K128']['EADP'],'57.0')
+        self.assertEqual(by['next_textvqa_K128_streamwait']['EADP'],'55.0')
+        self.assertEqual(by['next_sqa_FULL_streamwait']['FULL'],'67.0')
+        self.assertEqual(by['next_sqa_FULL_streamwait']['AnchorZip'],'')
+        self.assertEqual(by['next_sqa_FULL_streamwait']['protocol'],'wait-only CQM-A')
+        self.assertIn('original scores remain separate',readme)
+
+    def test_continuation_progress_does_not_change_metadata_fingerprint(self):
+        registration=self.cregistered(status='waiting',child_pids=[])
+        plan={'available_groups':[],'continuation_registration':registration}
+        before,files,_=p.metadata_snapshot(plan,{})
+        plan['continuation_registration']=self.cregistered(status='running',child_pids=[123])
+        after,_,_=p.metadata_snapshot(plan,{})
+        self.assertEqual(before,after)
+        self.assertFalse(any('.state.' in path for path in files))
+
+    def test_continuation_static_scope_is_exact_and_hashed(self):
+        selected=[self.cworker,self.ccontroller,self.cplan_path]
+        report={'files':[{'path':str(path.relative_to(self.root)),'sha256':p.sha(path),'bytes':path.stat().st_size} for path in selected]}
+        report_path=self.out/'streamwait_continuation_scope.json';self.write(report_path,report)
+        self.assertEqual(len(p.continuation_metadata()),4)
+        self.cworker.write_text('changed')
+        with self.assertRaisesRegex(ValueError,'hash/size'):p.continuation_metadata()
+
+    def test_continuation_static_scope_excludes_private_and_partial(self):
+        for suffix in ['.state.json','.finished.json','.jsonl','.safetensors']:
+            with self.subTest(suffix=suffix):
+                path=self.continuation/('partial'+suffix);path.write_text('{}')
+                report={'files':[{'path':str(path.relative_to(self.root)),'sha256':p.sha(path),'bytes':path.stat().st_size}]}
+                self.write(self.out/'streamwait_continuation_scope.json',report)
+                with self.assertRaises(ValueError):p.continuation_metadata()
+
+
+class LegacyPublication(unittest.TestCase):
+    write=DynamicPublication.write
+
+    def setUp(self):
+        DynamicPublication.setUp(self)
+        self.directory=p.continuation_directory();self.directory.mkdir()
+        self.worker=self.directory/'legacy_streamwait_worker.py';self.worker.write_text('frozen legacy worker')
+        self.controller=self.directory/'schedule_legacy_streamwait_continuation.py';self.controller.write_text('frozen legacy controller')
+        self.plan_path=self.directory/'legacy_streamwait_continuation.plan.json'
+        self.state_path=self.directory/'legacy_streamwait_continuation.state.json'
+        self.input=self.directory/'questions.jsonl';self.input.write_text('{}\n')
+        self.image=self.directory/'images.manifest.json';self.write(self.image,{'kind':'files'})
+        self.identity=self.directory/'identities.manifest.json';self.write(self.identity,{'n':1})
+        self.groups=[dict(value,group_id=key,protocol_label='legacy_native_caller_stream_wait_only_beta2')
+                     for key,value in p.legacy_group_contracts().items()]
+        self.jobs={};self.paths={};self.validated={}
+        for group in self.groups:
+            for job_id,method in zip(group['job_ids'],group['arms']):
+                paths={name:self.directory/(job_id+'.'+name+'.json') for name in
+                       ['prediction','runtime','native_protocol','control_protocol','score','finished','state']}
+                for path in paths.values():self.write(path,{})
+                protocol={'job_id':job_id,'launcher_sha256':p.sha(self.worker),'parameters':{'question_file':str(self.input),'lang':'en'},
+                          'origin':{'score_data':[]},'identity_manifest':str(self.identity),'identity_manifest_sha256':p.sha(self.identity),
+                          'image_manifest':str(self.image),'image_manifest_sha256':p.sha(self.image),
+                          'source_and_input_sha256':{str(self.worker):p.sha(self.worker),str(self.input):p.sha(self.input)}}
+                self.write(paths['control_protocol'],protocol)
+                score={'success':True,'n':p.LEGACY_COUNTS[group['task']],'model':group['model'],'task':group['task'],
+                       'method':method,'budget':group['budget'],'value':1429.4 if group['task']=='mme' else 65.1234,
+                       'metric':p.LEGACY_METRICS[group['task']]}
+                self.write(paths['score'],score)
+                finished={'success':True,'complete':True,'n':score['n'],'job_id':job_id,'generation_exit_code':0,
+                          'score_sha256':p.sha(paths['score']),'prediction_sha256':p.sha(paths['prediction'])}
+                self.write(paths['finished'],finished)
+                files={str(path):p.sha(path) for name,path in paths.items() if name!='state'}
+                for path in [self.worker,self.input,self.identity,self.image]:files[str(path)]=p.sha(path)
+                self.validated[job_id]={'score':score,'files':files,'finished':finished,'protocol':protocol}
+                self.paths[job_id]=paths
+                self.jobs[job_id]={'job_id':job_id,'model':group['model'],'task':group['task'],'method':method,
+                    'budget':group['budget'],'n':score['n'],'attempt':1,'output_paths':{name:str(path) for name,path in paths.items()},
+                    'control_protocol':str(paths['control_protocol']),'control_protocol_sha256':p.sha(paths['control_protocol'])}
+        self.plan={'groups':self.groups,'jobs':self.jobs,'worker_path':str(self.worker),'worker_sha256':p.sha(self.worker),
+                   'controller_sha256':p.sha(self.controller),'source_and_input_sha256':{str(self.worker):p.sha(self.worker)}}
+        self.write(self.plan_path,self.plan)
+        self.fakeworker=SimpleNamespace(__file__=str(self.worker),paths=mock.Mock(side_effect=lambda job,attempt:self.paths[job]),
+                     validate_finished=mock.Mock(side_effect=lambda job,attempt:self.validated[job]))
+
+    def registered(self,**overrides):
+        state={'started_utc':'2026-10-09T01:00:00+08:00','registered_jobs':list(self.jobs),
+               'publication_expected_groups':[group['group_id'] for group in self.groups],'plan_sha256':p.sha(self.plan_path)}
+        state.update(overrides);self.write(self.state_path,state)
+        return p.legacy_registration()
+
+    def group(self,task,kind='single_audit'):
+        return next(group for group in self.groups if group['task']==task and group['kind']==kind)
+
+    def validate(self,group):
+        registration=self.registered()
+        with mock.patch.object(p,'load_legacy_worker',return_value=self.fakeworker):
+            return p.validate_legacy_job(registration,group,group['job_ids'][0])
+
+    def test_legacy_exact_counts_and_prepare_only_scope(self):
+        self.assertEqual(len(self.groups),29);self.assertEqual(len(self.jobs),32)
+        self.assertEqual(sum(job['n'] for job in self.jobs.values()),224199)
+        self.assertEqual(sum(group['kind']=='single_audit' for group in self.groups),23)
+        self.write(self.state_path,{'started_utc':None,'registered_jobs':[],'publication_expected_groups':[]})
+        self.assertIsNone(p.legacy_registration())
+
+    def test_legacy_registered_scope_requires_fifty_five_groups(self):
+        registration=self.registered();old=['old'+str(index) for index in range(26)]
+        plan={'all_experiments_complete':True,'expected_groups':old+registration['expected_groups']}
+        state={'published_groups':dict.fromkeys(old,{})}
+        self.assertEqual(len(plan['expected_groups']),55)
+        self.assertFalse(p.publication_complete(plan,state))
+        state['published_groups']=dict.fromkeys(plan['expected_groups'],{})
+        self.assertTrue(p.publication_complete(plan,state))
+
+    def test_legacy_missing_registration_or_changed_source_rejected(self):
+        with self.assertRaises(ValueError):self.registered(registered_jobs=list(self.jobs)[:-1])
+        with self.assertRaises(ValueError):self.registered(publication_expected_groups=[])
+        with self.assertRaises(ValueError):self.registered(plan_sha256='wrong')
+        self.worker.write_text('changed')
+        with self.assertRaisesRegex(ValueError,'source changed'):self.registered()
+
+    def test_legacy_registered_scope_cannot_disappear(self):
+        summary={'rows':[{'output':'unused','status':'pending'} for _ in range(28)],'errors':[]}
+        with mock.patch.object(p,'command',return_value=json.dumps({'needs_attention':False,'all_complete':True})),mock.patch.object(p,'read',return_value=summary),mock.patch.object(p,'module'),mock.patch.object(p,'group_definitions',return_value=[]),mock.patch.object(p,'control_registration',return_value=None),mock.patch.object(p,'continuation_registration',return_value=None),mock.patch.object(p,'legacy_registration',return_value=None):
+            with self.assertRaisesRegex(ValueError,'legacy scope disappeared'):
+                p.prepare({'expected_groups':[self.groups[0]['group_id']]})
+
+    def test_partial_legacy_pair_never_scores(self):
+        registration=self.registered();group=self.group('pope','pair')
+        self.paths[group['job_ids'][1]]['finished'].unlink()
+        with mock.patch.object(p,'load_legacy_worker',return_value=self.fakeworker):
+            self.assertFalse(p.legacy_group_ready(registration,group))
+        self.fakeworker.validate_finished.assert_not_called()
+
+    def test_legacy_complete_raw_point_metric_and_evidence(self):
+        group=self.group('mme','pair');files,score=self.validate(group)
+        self.assertEqual(score['value'],1429.4);self.assertEqual(score['accuracy'],1429.4)
+        self.assertEqual(score['metric'],p.LEGACY_METRICS['mme'])
+        for name in ['prediction','runtime','native_protocol','control_protocol','score','finished']:
+            self.assertIn(str(self.paths[group['job_ids'][0]][name].relative_to(self.root)),files)
+        self.assertFalse(any('.state.' in key for key in files))
+
+    def test_legacy_bad_finished_official_score_or_method_rejected(self):
+        group=self.group('pope','pair');job=group['job_ids'][0];original=self.validated[job]
+        for mode in ['exit','partial','score','metric','method','missing_runtime','hash']:
+            with self.subTest(mode=mode):
+                validated=json.loads(json.dumps(original))
+                if mode=='exit':validated['finished']['generation_exit_code']=False
+                elif mode=='partial':validated['finished']['n']-=1
+                elif mode=='score':validated['score']['value']=99.
+                elif mode=='metric':validated['score']['metric']='accuracy_percent'
+                elif mode=='method':validated['score']['method']='AnchorZip'
+                elif mode=='missing_runtime':validated['files'].pop(str(self.paths[job]['runtime']))
+                else:validated['files'][str(self.identity)]='wrong'
+                self.validated[job]=validated
+                with self.assertRaises(ValueError):self.validate(group)
+        self.validated[job]=original
+
+    def test_legacy_frozen_cpu_validator_error_propagates(self):
+        group=self.group('gqa','pair');self.fakeworker.validate_finished.side_effect=RuntimeError('official mismatch')
+        with self.assertRaisesRegex(RuntimeError,'official mismatch'):self.validate(group)
+
+    def test_legacy_user_private_and_model_payload_rejected(self):
+        group=self.group('gqa','pair');job=group['job_ids'][0]
+        for name in ['unknown.tsv','unknown.zip','model.safetensors','agent.events.json','user.state.json','llava_round2_driver.sh','llava_mmben_driver.sh','fig1_user.py']:
+            with self.subTest(name=name):
+                if name=='llava_round2_driver.sh':path=self.root/'Qwen_vl/scripts/stage1_roundtrip_pilot'/name;path.parent.mkdir(parents=True,exist_ok=True)
+                else:path=self.directory/name
+                path.write_text('{}');self.validated[job]['files'][str(path)]=p.sha(path)
+                with self.assertRaises(ValueError):self.validate(group)
+                self.validated[job]['files'].pop(str(path))
+
+    def test_legacy_single_rows_never_make_fair_pair(self):
+        group=self.group('mmbcn');_,score=self.validate(group)
+        history={group['group_id']:{'scores':[score]}}
+        paired,readme=p.readable_results(history)
+        rows=list(__import__('csv').DictReader(io.StringIO(paired)))
+        self.assertEqual(rows,[])
+        legacy=list(__import__('csv').DictReader(io.StringIO(p.readable_legacy_results(history))))
+        self.assertEqual(len(legacy),1);self.assertEqual(legacy[0]['method'],'AnchorZip')
+        self.assertEqual(legacy[0]['paired_group'],'False');self.assertEqual(legacy[0]['guidance_language'],'en')
+        self.assertNotIn('AZ_minus_EADP',legacy[0]);self.assertIn('lang=en',readme)
+
+    def test_legacy_pair_and_full_use_explicit_model_task(self):
+        history={}
+        for kind in ['pair','FULL']:
+            group=self.group('mme',kind);scores=[]
+            for job in group['job_ids']:
+                with mock.patch.object(p,'load_legacy_worker',return_value=self.fakeworker):
+                    _,score=p.validate_legacy_job(self.registered(),group,job)
+                scores.append(score)
+            history[group['group_id']]={'scores':scores}
+        table,_=p.readable_results(history);rows=list(__import__('csv').DictReader(io.StringIO(table)))
+        self.assertEqual({row['model'] for row in rows},{'v15'})
+        self.assertEqual({row['task'] for row in rows},{'mme'})
+        self.assertEqual({row['budget'] for row in rows},{'K128','FULL'})
+        full=next(row for row in rows if row['budget']=='FULL')
+        self.assertEqual(full['FULL'],'1429.4');self.assertEqual(full['AnchorZip'],'')
+
+    def test_legacy_progress_does_not_change_metadata_fingerprint(self):
+        plan={'available_groups':[],'legacy_registration':self.registered(status='waiting')}
+        before,files,_=p.metadata_snapshot(plan,{})
+        plan['legacy_registration']=self.registered(status='running',child_pids=[123])
+        after,_,_=p.metadata_snapshot(plan,{})
+        self.assertEqual(before,after);self.assertFalse(any('.state.' in key for key in files))
+
+    def test_mmbench_embedded_images_replaced_with_exact_labels(self):
+        source=self.directory/'MMBench.tsv'
+        source.write_text('index\tquestion\thint\tA\tB\tanswer\timage\n1\tquestion\thint\ta\tb\tB\tPRIVATE_BASE64_IMAGE\n')
+        result=json.loads(p.mmbench_labels_without_images(source,p.sha(source),1))
+        self.assertEqual(result['rows'][0]['answer'],'B');self.assertNotIn('image',result['columns'])
+        self.assertNotIn('PRIVATE_BASE64_IMAGE',str(result));self.assertEqual(result['source_sha256'],p.sha(source))
+        with self.assertRaises(ValueError):p.mmbench_labels_without_images(source,p.sha(source),2)
+
+    def test_mme_archive_replaced_by_complete_canonical_labels(self):
+        source=self.directory/'eval_tool.zip';source.write_bytes(b'original archive')
+        gt={('existence',str(index),'question'): 'yes' for index in range(2374)}
+        with mock.patch.object(p,'module',return_value=SimpleNamespace(canonical_gt=lambda path:gt)):
+            result=json.loads(p.mme_gt_without_archive(source,p.sha(source)))
+        self.assertEqual(result['n'],2374);self.assertEqual(result['source_sha256'],p.sha(source))
+        self.assertTrue(result['original_archive_payload_excluded'])
+
+    def test_mmb_unparsed_complete_wrong_answers_are_preserved(self):
+        group=self.group('mmben');job=group['job_ids'][0]
+        score=self.validated[job]['score'];score['unparsed_rows_counted_wrong']=7;score['failed_groups_counted_0']=2
+        self.write(self.paths[job]['score'],score)
+        self.validated[job]['finished']['score_sha256']=p.sha(self.paths[job]['score'])
+        self.write(self.paths[job]['finished'],self.validated[job]['finished'])
+        for name in ['score','finished']:self.validated[job]['files'][str(self.paths[job][name])]=p.sha(self.paths[job][name])
+        _,published=self.validate(group)
+        self.assertEqual(published['value'],65.1234)
+
+    def attach_source(self,group,source,compressed_gt=False):
+        job=group['job_ids'][0];validated=self.validated[job];protocol=validated['protocol']
+        protocol['source_and_input_sha256'][str(source)]=p.sha(source)
+        if compressed_gt:protocol['origin']['score_data']=[{'path':str(source),'sha256':p.sha(source)}]
+        else:protocol['parameters']['question_file']=str(source)
+        self.write(self.paths[job]['control_protocol'],protocol)
+        self.jobs[job]['control_protocol_sha256']=p.sha(self.paths[job]['control_protocol'])
+        validated['files'][str(self.paths[job]['control_protocol'])]=p.sha(self.paths[job]['control_protocol'])
+        validated['files'][str(source)]=p.sha(source)
+        self.write(self.plan_path,self.plan)
+
+    def test_mmb_group_archive_explicitly_omits_embedded_image_source(self):
+        group=self.group('mmben');source=self.directory/'MMBench.tsv'
+        source.write_text('index\tquestion\thint\tA\tB\tanswer\timage\n'+''.join(
+            f'{index}\tquestion\thint\ta\tb\tB\tPRIVATE_BASE64_IMAGE\n' for index in range(4876)))
+        self.attach_source(group,source)
+        files,score=self.validate(group)
+        self.assertNotIn(str(source.relative_to(self.root)),files)
+        labels=json.loads(files['derived_inputs/mmben_labels_without_images.json'])
+        self.assertEqual(labels['n_rows'],4876)
+        self.assertNotIn('PRIVATE_BASE64_IMAGE',str(labels))
+        with mock.patch.object(p,'LOCAL',self.directory/'publication'):
+            package=p.bundle(group['group_id'],files,[score])
+        self.assertEqual(package['manifest']['omitted_source_payloads'][str(source)]['sha256'],p.sha(source))
+        self.assertFalse(package['manifest']['contains_weights_or_images'])
+
+    def test_mme_group_archive_uses_canonical_labels_and_original_zip_hash(self):
+        group=self.group('mme','pair');source=self.directory/'eval_tool.zip';source.write_bytes(b'fixture original archive')
+        self.attach_source(group,source,compressed_gt=True)
+        gt={('existence',str(index),'question'): 'yes' for index in range(2374)}
+        with mock.patch.object(p,'module',return_value=SimpleNamespace(canonical_gt=lambda path:gt)):
+            files,_=self.validate(group)
+        self.assertNotIn(str(source.relative_to(self.root)),files)
+        labels=json.loads(files['derived_inputs/mme_canonical_ground_truth.json'])
+        self.assertEqual(labels['n'],2374)
+        references=json.loads(files['EXTERNAL_SOURCE_REFERENCES.json'])
+        self.assertEqual(references[str(source)]['sha256'],p.sha(source))
+        self.assertFalse(references[str(source)]['archived'])
 
 
 if __name__=='__main__':unittest.main()

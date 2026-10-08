@@ -7,6 +7,10 @@ TextVQA uses all 5000 official validation questions. ScienceQA uses the 2017 ima
 
 For NeXT, K128/K64/K32 denotes the per-crop budget parameter (nominal 640/320/160 for five crops). Actual retained tokens are recorded per sample in the runtime evidence.
 
+The continuation rows use a frozen stream-wait repair. Their protocol is shown in the CSV; original scores remain separate, regardless of which score is higher.
+
+Legacy single-method audit arms are in [repaired_legacy_results.csv](repaired_legacy_results.csv); they have no paired EADP difference. MME retains its raw perception points. MMBCN retains the historical English instruction (`lang=en`); this is recorded separately from the dataset language.
+
 | Group | EADP | AnchorZip | AZ − EADP | FULL | Evidence |
 |---|---:|---:|---:|---:|---|
 | next_sqa_FULL |  |  |  | 67.675 | [manifest](next_sqa_FULL/manifest.json) |

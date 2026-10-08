@@ -1,8 +1,6 @@
 {
-  "updated_utc": "2026-10-08T15:45:27.818685+00:00",
-  "new_groups": [
-    "next_sqa_K32"
-  ],
+  "updated_utc": "2026-10-08T16:31:40.688925+00:00",
+  "new_groups": [],
   "published_groups": {
     "v15_textvqa_K128": {
       "identity": "75830ccc2830cb6d3a72624c63344d5b0952710a335445f16805912eaaa0df28",
@@ -642,6 +640,7 @@
     },
     "next_sqa_K32": {
       "identity": "ed1202f09b927a0bcd5b65974bc8d4fbb74ef78d510ec9ac72dcd9c3b6f4bf1b",
+      "commit": "0d52f50eda0527bf8e28cdcc87e6e4db4630df47",
       "scores": [
         {
           "accuracy": 67.57560733763015,
@@ -705,11 +704,12 @@
             "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/scienceqa/llava_test_CQM-A.json": "a2dc5ea9fba561b0d0d8ecc80e688d3b0e1ff308e06c4f4f94cff86b20ec2f0a"
           }
         }
-      ]
+      ],
+      "published_utc": "2026-10-08T15:46:26.921259+00:00"
     }
   },
   "local_head_preserved": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
-  "parent_remote_head": "fd68c5b6635cf4c3d2f8140242247b80a752bf17",
+  "parent_remote_head": "0d52f50eda0527bf8e28cdcc87e6e4db4630df47",
   "allowlist": [
     "Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
     "docs/project_handoff.md",
@@ -765,6 +765,13 @@
     "next_sqa_FULL",
     "v15_pope_K32_streamwait",
     "next_textvqa_K32_streamwait",
-    "next_textvqa_K32_default_beta1"
+    "next_textvqa_K32_default_beta1",
+    "next_textvqa_K64_streamwait",
+    "next_textvqa_K128_streamwait",
+    "next_sqa_K32_streamwait",
+    "next_sqa_K64_streamwait",
+    "next_sqa_K128_streamwait",
+    "next_textvqa_FULL_streamwait",
+    "next_sqa_FULL_streamwait"
   ]
 }
