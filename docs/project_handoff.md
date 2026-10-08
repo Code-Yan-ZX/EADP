@@ -716,3 +716,47 @@ errors=[]；旧error字段保留的是已被成功发布超越的历史网络错
 `rerun_batch/hourly_monitor/check_20261008T140736Z/`。本次未启动或重启GPU，
 未修改冻结生成代码、参数或预测，未新建定时任务或发外部消息。距Oct9
 12:00截止约13小时47分，剩余队列继续执行；已有ETA不是按时完成证明。
+
+### 13.11 Oct8 23:12 独立巡检：24项完整评分与14组发布核验
+
+本次完整读取交接并核对Git，live分支仍为`codex/anchor-completion-validation`、
+HEAD `194562d`，tracking落后10个提交；独立publisher使用detached工作区，
+不能据live HEAD判断发布丢失。23:10:01独立CPU审计确认28新实验已完整评分
+**24项/104883条预测**，2项生成中、2项未启动。summary JSON/CSV24行一致，
+实际为21个新Text/SQA加3个历史v15 SQA；三新POPE另核。summary.errors、
+独立audit_errors均为空；完整预测SHA、TextVQA5000复合题键/完整prompt/顺序、
+可用runtime、SQA2017及POPE8910(random2910)评分分母通过。来源
+**1357/1357 SHA**（584唯一文件）、两lane冻结来源22/22和21/21匹配，
+55份计划相关日志无Traceback/OOM/FAILED。两控制complete、各8910完整评分、
+direct exit0/wait-only来源与合法success marker再次通过。
+
+新增v15官方TextVQA K32完整配对精确EADP **52.532%**、AnchorZip
+**52.542%**，差 **+0.010点**；官方打印52.53/52.54为四舍五入。
+NeXT原包SQA FULL为1365/2017、**67.6747645%**；K64配对EADP
+1356/**67.2285573%**、AnchorZip1363/**67.5756073%**，净
+**+7题/+0.3470501点**。未计算这些新增配对的bootstrap，不据点估计宣称
+显著或整体稳定胜出。初始NeXT Text128无新增runtime trace的边界继续保留。
+
+23:08:37→23:11:08，同PID2199422的v15 Text FULL完整行
+**3903→4190/5000**，同PID2275562的NeXT SQA E32为**778→1100/2017**，
+输出和日志同时推进，末次mtime均不足0.23秒。23:12:02补证完整前缀与runtime
+分别4292/1215无错误。完整argv、父子、cwd、启动ticks/时间与计划一致；
+两监督器和summary watcher存活，A40实际两个计划内GPU模型（19054/21362MiB）。
+上轮worker已正常退出且完整评分，新任务最近接续分别0.355549/0.083558秒；
+queue退出0仍由冻结监督器硬门及completed推断，不补称存在独立per-job exit字段。
+
+按组发布服务PID2175988 active/running且身份/启动ticks未变，14/17组已发布，
+新增`v15_textvqa_K32`、`next_sqa_FULL`、`next_sqa_K64`；三剩余组合法等待。
+23:10:09独立安全ls-remote确认origin指定分支为
+`0746b5d9d80e34fe72df4b81a40b869b79b5974d`，与publish_state一致；
+status=published，pending_commit/publication/error均为空。23:11:59独立
+归档审计15 blob/15内嵌manifest/366 evidence member的SHA/size、265来源SHA、
+已发布预测分母/复合键/分数及69提交路径allowlist通过，errors=[]。
+live HEAD/index字节/暂存状态与上轮一致，用户figure等排除文件未夹带；
+本巡检未自行stage/commit/push或重启publisher。
+
+三次CPU只读快照及评分/来源/日志/进程/发布核验保存在
+`rerun_batch/hourly_monitor/check_20261008T150749Z/`。本次无故障恢复或GPU启动，
+未改冻结生成代码、参数、预测、计划状态或定时任务，未发外部消息。
+整体尚未完成，23:12距Oct9 12:00截止约12小时48分；授权队列继续执行，
+已有ETA仍不是按时完成证明。
