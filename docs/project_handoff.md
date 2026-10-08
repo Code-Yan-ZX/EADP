@@ -1027,3 +1027,70 @@ metadata范围复制到streamwait_continuation_20261008/additional_audit_2026100
 保留原sourceSHA，不修改55组/44续跑/3先行control计数；独立修正候选不伪装注册。
 不能承诺本轮全部达到paper，更不能给每个方法统一加两点；完整补齐120格远超
 现队列，截止Oct9中午按已有完整核心对照交付，剩余协议修正需独立冻结全量控制。
+
+
+## 13.15 用户0.2点数值验收与CPU评分门恢复（2026-10-09 01:55 北京时间）
+
+用户明确：同模型/任务/预算的EADP完整复现低paper不超过0.1–0.2点可接受，
+高于paper不为贴论文数字继续重跑；明显低于paper优先排错，以公平显示新方法
+贡献。采用0.2上限、未舍入值Decimal比较；数值状态与协议/来源caveat分列。
+已确认输入/评分/执行错误仍纠正，低分不自动证明bug，不承诺修正必涨分。
+公共修复同施E/AZ，同预算同输入配对，不选seed/参数/指标最好分。
+新的POLICY.md及deficit_triage.json/.csv在threshold_triage_20261009。
+按120主表baseline格，34完整评分中17数值接受（9超过+8低<=.2），16低>.2
+继续排查，另1Qwenlegacy HallB FULL为刻意1D/noDeepStack控制不可比paper FULL；
+86缺/未评分单列，不算不达标，不以AZ填E，未算缺项总体Avg。MME raw照列，
+/20仅paper Avg等效单位非准确率；OCR/10。NeXT TextFULL60.37 vs60.3等数值
+达标不为贴分再跑，但已注册同步对照用途不因高分取消冻结协议。
+
+01:35两个NeXT TextK32wait-only worker已各完整5000生成、recorded exit0、
+官方score/state/finished合法；controller却failed，publisher failed_retryable，
+phase1/phase2合法等待，GPU空。具体CPU bug为validate_and_score返回
+actual_count_distribution=Counter整数键，JSON保存成字符串键，后续strict dict
+比较机械误拒。固定真实Python3.10两个hashseed独立10000题复核：唯一不等
+字段就是键类型，其他含accuracy逐位exact一致；3.12审核sum尾位差不是实际
+事故主因，没有给生产加容差。E52.086000000000055/AZ53.26200000000008，
+方法差+1.176pp；对旧as-is E+.090/AZ+.088，不解释剩余E对paper54.2差2.114。
+
+原failed controllerstate/marker/plan及两臂完整score/state/finished/protocol共16
+份精确copy至threshold_triage_20261009/json_gate_failure_originals/；原预测/
+runtime/score及生产/冻结源码、controllerplan/protocol始终不改。新独立
+json_count_distribution_overlay.py SHA2a0a0cb07e1bd9779ee60349fd1cc23b76b4d6c5be5262208595f33f87973406
+只在CPU读入确切原worker80affa...且SHA匹配后，包装其严格validate_and_score
+输出count键str化；原5000复合题键、runtime/预算、官方数学、源SHA门全部
+保留，数字不改、数值容差无。27CPU门包含真实两臂原gate、两个hashseed、
+错误SHA/分母/count/1e-10分数严格拒绝。任何其它动态模块加载原样透传，hook
+退出恢复；GPU子进程仍原command，不安装该CPUwrapper或改模型math。
+
+新recovery resume_next_full_controls_after_json_gate.py SHAce871705c2a868a8eb888702be288b87f0405f1e84c35777cb2d4903a4a1d6ec，
+planSHA12d2d3e6413b6bdce8000345b753718214ef26ccb197625d3a927c4a798c04d5，
+16CPU恢复门+真实全部图像/oldarchiveSHA通过。01:49:56 root实际--run启动
+新supervisor2556883，preserve原started/三arm/两发布组，复用两beta2完成臂，
+只跑原已登记未开始beta1 command，GPU child2556913；不重复生成beta2。
+原失败canonical marker精确归档核验后移除，完整beta1 exit0/三臂再严格校验
+才写真实全controller成功marker退出，不能跳过beta1或仅twoarms释放phase1。
+
+仅两个waiting且无child的CPU接续supervisor2391998/2430956被root按真实/proc
+身份停止，signal前后state精确保留于waiting_controller_recovery_originals/；
+无GPU子进程被杀。canonicalstate以显式recovery provenance恢复原prepared
+入口后，原controller通过固定overlay/runpy重新登记相同12/32项、原plan/源SHA
+不改；phase1新PID2558610、phase2新PID2558609分别等待前3control/phase1，
+child=[]，当前全部pending。originalstarted/PID/SHA留recovery字段，不冒称从未
+注册。新CPUoverlayargv含--target原脚本路径 -- --run --plan，hourlyprompt已
+更新实际身份，不能按旧直接Python -u误报，未知其它wrapper不豁免。
+
+publisher01:45:23暂停CPU做此恢复，01:52:10服务恢复active新PID2560860；原
+sourceae9...不改，唯一systemd drop-in 30-json-score-key-overlay.conf把ExecStart
+包为固定Python3.10+同overlay --target原publisher -- --watch --interval30，
+原主unit/EnvironmentFile保持。private registration maintenance结束/source_ready
+true，新PIDs及overlaySHA/实际restore证据已记；小时prompt对应恢复完毕。
+01:53实际beta1进度501/5000、单GPU21456MiB、两新controller合法waiting；
+publisher已完整发布K32wait pair为第18/55组，status published、error及pending
+为空，remote记录f8dafb90...。后续需独立ls-remote/归档验证，不仅信state。
+现55scope不增，不为本次新验收随意删既定控制；新CN/逐crop候选仍未GPU注册。
+
+新阈值表按最新预定wait协议K32 E52.086主选，不是选两个结果高分；旧51.996
+出处保留。优先残差为v15POPE32 -2.6264、NeXTText32 -2.114/64 -1.648/
+128 -1.242、QwenHallB256 -1.7595（bank身份未闭合）/Doc256 -1.6644/AI2D256
+-1.1534。先完成原β1单因素公开默认控制，再依明确source/输入/actual配置证据
+决定新修正，不把默认参数当paper主表实际argv，不做追分参数搜索。
