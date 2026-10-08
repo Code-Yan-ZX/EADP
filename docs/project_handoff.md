@@ -1179,3 +1179,13 @@ bb0bbb4d911fb4d603857613b433af14d610a090；19/55组commit均为远端ancestor，
 legacy最理想双槽7.649小时下界尚不含前序，全部scope按时完成仍有风险。
 授权队列和既有小时timer继续，全部已登记任务及55组远端确认前保持
 all_experiments_complete=false，基础monitor的原28 all_complete=true不构成停止条件。
+
+03:17收尾增量：巡检期间K64两worker已各5000完整exit0并实际退出，固定
+Python3.10/授权CPU overlay独立严格validate_job再次通过：E55.4100000000001%、
+AZ56.29200000000013%，同协议差+0.882pp，不据点估计称显著。phase1自动接续
+K128，真实PID2707803/2708023完整argv、父子、start_ticks通过；03:16:37→
+03:17:34完整预测35→107、2→73，输出与日志推进，两个实际模型/reservation。
+新K128全文prompt复合键/顺序/runtime来源/预算及第二槽启动门另行只读核验通过。
+03:17:35独立ls-remote确认origin d99d82f1159db78e895ecc4db89b88eb8a47ec11，
+新增K64组后20/55组均远端ancestor，pending/error仍空。phase1完成2/12、
+phase2仍32项等待；剩42任务/35发布组不构成整体完成，小时timer继续。
