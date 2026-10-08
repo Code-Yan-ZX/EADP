@@ -22,6 +22,7 @@ Legacy single-method audit arms are in [repaired_legacy_results.csv](repaired_le
 | next_textvqa_K32 | 51.996 | 53.174 | 1.178 |  | [manifest](next_textvqa_K32/manifest.json) |
 | next_textvqa_K32_streamwait | 52.086 | 53.262 | 1.176 |  | [manifest](next_textvqa_K32_streamwait/manifest.json) |
 | next_textvqa_K64 | 55.352 | 56.026 | 0.674 |  | [manifest](next_textvqa_K64/manifest.json) |
+| next_textvqa_K64_streamwait | 55.410 | 56.292 | 0.882 |  | [manifest](next_textvqa_K64_streamwait/manifest.json) |
 | v15_pope_K32_streamwait | 84.073 | 83.084 | -0.989 |  | [manifest](v15_pope_K32_streamwait/manifest.json) |
 | v15_sqa_FULL |  |  |  | 69.509 | [manifest](v15_sqa_FULL/manifest.json) |
 | v15_sqa_K128 | 69.559 | 69.212 | -0.347 |  | [manifest](v15_sqa_K128/manifest.json) |
