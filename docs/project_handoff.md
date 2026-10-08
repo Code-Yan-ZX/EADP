@@ -904,3 +904,58 @@ publisher已于00:31:37恢复active PID2423330，冻SHA
 32项旧日志累计15.297 GPU小时，理想双槽7.649小时只是下界；连同前序关键控制，
 核心暂估Oct9上午07–09点，全部legacy可能持续到Oct9下午或更晚，不能承诺12点
 全部完成。以真实进度更新ETA，优先交付论文核心对照，不承诺方法或复现必增2点。
+
+### 13.14 Oct9 01:15 独立巡检：原28完成，新增控制正常接续
+
+本次完整读取交接并核对Git，live分支仍为`codex/anchor-completion-validation`、
+HEAD `194562d`。独立CPU逐题/来源核验确认原28项全部完整评分，合计
+**118917/118917新预测**；TextVQA5000复合题键与全文prompt/顺序、SQA2017、
+POPE8910（random2910）、可用runtime及官方分母通过。来源1411/1411 SHA
+（590唯一路径）匹配，61份日志无Traceback/OOM/FAILED，独立errors=[]。
+summary JSON/CSV28行一致且errors=[]，其中25新Text/SQA加3历史v15 SQA，
+三新POPE另核，不能用summary行数替代实际28项。两lane、两POPE控制及合法
+success marker均完成；原监督器和summary watcher实际已退出，watcher最后
+成功导出与冻结源码正常退出规则一致，未补称存在独立持久化退出码。
+
+最后NeXT TextVQA FULL完整5000题精确**60.37%**，5000条runtime实际均2880
+tokens；评分完成于北京时间00:48:03.977605，随后约0.632秒接上新增K32
+EADP_beta2，首条完整runtime后再接AZ_beta2。初始NeXT Text128两臂无新增
+runtime的边界保留；原queue逐job退出0由冻结监督器硬门和完成记录推断，
+两POPE控制另有直接exit0证据。overall_run_plan旧进度/ETA仍为历史估计，
+当前完整预测、官方评分和lane状态优先；基础monitor的all_complete=true
+只覆盖原28，不能据此结束新增任务巡检。
+
+01:11:22→01:14:52，同一启动身份的PID2451780/2452469分别由
+**2436→2817/5000、2403→2783/5000**，prediction/runtime完整行一致，输出
+与日志mtime同步推进，最后age分别约0.015/0.275秒；A40实际仅两个登记模型，
+无未知零CUDA context或额外加载reservation。控制监督PID2325219正常，
+beta1仍pending且EADP_beta2完整5000官方评分硬门尚未释放，不报告任何新
+全量对照成绩。AZ启动记录free27891MiB、首worker真实context16358MiB且
+首条runtime时间早于AZ启动，第二槽门通过。
+
+128面板complete、128样本/512生成、success/result SHA及独立官方逐题
+复算再次通过；回答分歧as-is5/wait0、count分歧43/0，面板没有准确率改善
+证据，不能解释全5000题或论文2.204点差距。新增控制/phase1/phase2审计
+4987/4987 SHA匹配（1693来源/工件、3294图像payload，3337唯一路径）；
+四份计划来源表32/38/57/164全部通过。phase1 PID2391998已登记12任务/7组，
+phase2 PID2430956已登记32任务/29组且全部attempt2；实际Python -u启动身份、
+controller/worker/plan/协议SHA通过，分别合法waiting_for_existing_controls和
+waiting_for_phase1，child=[]。未把pending manifest或活跃前缀当完整评分，
+未启动、信号或修改这些只读巡检对象。
+
+publisher维护已结束，source_ready=true/maintenance_active=false，服务
+active/running PID2423330且冻结SHA通过。17/55组已发布、38组合法等待；
+01:10:32独立ls-remote确认origin指定分支为
+`f0adb8ae6b19163821e76350487fe3ee0ae3a1c5`，与当时publish_state一致，
+pending_commit/publication/error为空。新增next_textvqa_FULL远端组已确认。
+18归档/18内嵌manifest/429 evidence member SHA与size、104 metadata SHA、
+317来源SHA、30预测/116058归档行及176提交路径allowlist通过，用户figure等
+未夹带，live index/暂存保持。本巡检没有自行stage/commit/push或重启服务。
+
+本机快照、独立评分/来源/进程/新增scope/发布证据保存于
+`rerun_batch/hourly_monitor/check_20261008T170827Z/`，独立审计器修正了对
+Python -u的首轮身份误报并保留原检查证据，不是实验故障。整体仍未完成：
+新增3控制、12+32续跑任务及全部55远端组均纳入停止条件。01:15距12:00约
+10小时45分，legacy尚32项、前序尚未结束；旧日志双槽7.649小时下界不足以
+证明全scope能按时完成，截止风险仍存在，授权队列继续执行。小时timer仍
+active，本次未改定时任务、冻结生成源码、模型、参数或预测，未发外部消息。
