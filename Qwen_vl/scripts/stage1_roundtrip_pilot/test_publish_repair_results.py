@@ -80,5 +80,62 @@ class PublisherSafety(unittest.TestCase):
             with self.assertRaises(ValueError):p.finish_pending(state)
             run.assert_not_called()
 
+    def test_unchanged_noop_uses_no_git_and_clears_error(self):
+        plan={'available_groups':[],'common_audit':None,'pending_groups':['waiting']}
+        with tempfile.TemporaryDirectory() as temporary:
+            directory=Path(temporary);(directory/'source.py').write_text('same')
+            with mock.patch.object(p,'ROOT',directory),mock.patch.object(p,'OUT',directory),mock.patch.object(p,'STATE',directory/'state.json'),mock.patch.object(p,'ALLOWLIST',['source.py']),mock.patch.object(p,'METADATA_ARTIFACTS',[]):
+                fingerprint,_,_=p.metadata_snapshot(plan,{})
+                state={'metadata_fingerprint':fingerprint,'status':'failed_retryable','error':'network timeout'}
+                with mock.patch.object(p,'command') as run:
+                    result=p.publish(plan,state)
+                run.assert_not_called();self.assertEqual(result['status'],'published')
+                self.assertNotIn('error',result);self.assertTrue(result['no_op'])
+
+    def test_source_and_metadata_edits_request_git(self):
+        plan={'available_groups':[],'common_audit':None,'pending_groups':[]}
+        for name in ('source.py','evidence.json'):
+            with self.subTest(name=name),tempfile.TemporaryDirectory() as temporary:
+                directory=Path(temporary)
+                for filename in ('source.py','evidence.json'):(directory/filename).write_text('original')
+                with mock.patch.object(p,'ROOT',directory),mock.patch.object(p,'OUT',directory),mock.patch.object(p,'ALLOWLIST',['source.py']),mock.patch.object(p,'METADATA_ARTIFACTS',['evidence.json']):
+                    fingerprint,_,_=p.metadata_snapshot(plan,{})
+                    (directory/name).write_text('edited')
+                    with mock.patch.object(p,'command',side_effect=RuntimeError('Git requested')) as run:
+                        with self.assertRaisesRegex(RuntimeError,'Git requested'):
+                            p.publish(plan,{'metadata_fingerprint':fingerprint})
+                    run.assert_called_once()
+
+    def test_new_group_cannot_use_noop(self):
+        package={'group_id':'v15_sqa_FULL','identity':'new','manifest':{'scores':[{'accuracy':70.,'n':2017,'metric':'ScienceQA IMG'}]}}
+        plan={'available_groups':[package],'common_audit':None,'pending_groups':[]}
+        with mock.patch.object(p,'ALLOWLIST',[]),mock.patch.object(p,'METADATA_ARTIFACTS',[]):
+            fingerprint,_,_=p.metadata_snapshot(plan,{})
+            with mock.patch.object(p,'command',side_effect=RuntimeError('Git requested')) as run:
+                with self.assertRaisesRegex(RuntimeError,'Git requested'):
+                    p.publish(plan,{'metadata_fingerprint':fingerprint})
+            run.assert_called_once()
+
+    def test_fingerprint_captures_before_edit_not_after(self):
+        plan={'available_groups':[],'common_audit':None,'pending_groups':[]}
+        with tempfile.TemporaryDirectory() as temporary:
+            directory=Path(temporary);source=directory/'source.py';source.write_text('captured')
+            with mock.patch.object(p,'ROOT',directory),mock.patch.object(p,'ALLOWLIST',['source.py']),mock.patch.object(p,'METADATA_ARTIFACTS',[]):
+                before,files,_=p.metadata_snapshot(plan,{})
+                source.write_text('later edit');after,_,_=p.metadata_snapshot(plan,{})
+                self.assertEqual(files['source.py'],b'captured');self.assertNotEqual(before,after)
+
+    def test_exact_allowlists_and_readable_scores_affect_fingerprint(self):
+        plan={'available_groups':[],'common_audit':None,'pending_groups':[]}
+        with mock.patch.object(p,'ALLOWLIST',[]),mock.patch.object(p,'METADATA_ARTIFACTS',[]):
+            baseline,_,_=p.metadata_snapshot(plan,{})
+            with mock.patch.object(p,'ALLOWLIST',['missing-allowlisted-source.py']):
+                declared,_,_=p.metadata_snapshot(plan,{})
+            with mock.patch.object(p,'METADATA_ARTIFACTS',['missing-artifact.json']):
+                artifacts,_,_=p.metadata_snapshot(plan,{})
+            score_state={'published_groups':{'v15_sqa_FULL':{'scores':[{'accuracy':70.,'n':2017,'metric':'ScienceQA IMG'}]}}}
+            scored,_,_=p.metadata_snapshot(plan,score_state)
+        self.assertEqual(len({baseline,declared,artifacts,scored}),4)
+
 
 if __name__=='__main__':unittest.main()
