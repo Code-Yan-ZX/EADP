@@ -1,0 +1,201 @@
+{
+  "RTG_first_segment_behavior": {
+    "second_segment_only_perturbation": 10.0,
+    "original_score": [
+      0.59697026014328,
+      0.4596901535987854,
+      -0.13984930515289307,
+      0.060978978872299194
+    ],
+    "perturbed_score": [
+      0.59697026014328,
+      0.4596901535987854,
+      -0.13984930515289307,
+      0.060978978872299194
+    ],
+    "bit_exact": true,
+    "interpretation": "Current port excludes segments after index0; not by itself proof of deviation from explicitly specified RTG method, since LLaVA multi-segment mapping is undocumented.",
+    "official_guidance_clip_segments": {
+      "1": 4119,
+      "2": 676,
+      "3": 175,
+      "4": 25,
+      "5": 4,
+      "6": 1
+    },
+    "n_multisegment": 881,
+    "n_questions": 5000,
+    "example_multisegment": [
+      {
+        "position": 3,
+        "question_id": "831bcec304a17054",
+        "clip_tokens": 128,
+        "clip_segments": 2
+      },
+      {
+        "position": 4,
+        "question_id": "831bcec304a17054",
+        "clip_tokens": 131,
+        "clip_segments": 2
+      },
+      {
+        "position": 8,
+        "question_id": "30f9b48158fc56e6",
+        "clip_tokens": 146,
+        "clip_segments": 2
+      }
+    ],
+    "shipped_SQA_IMG_guidance_clip_segments": {
+      "4": 29,
+      "1": 1465,
+      "3": 145,
+      "2": 376,
+      "6": 2
+    },
+    "shipped_SQA_IMG_n_multisegment": 552
+  },
+  "Completion_cross_crop_prereg_deviation": {
+    "crops": 5,
+    "tokens_per_crop": 2,
+    "split_sizes": [
+      5
+    ],
+    "features": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        -1.0,
+        0.0
+      ],
+      [
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0
+      ],
+      [
+        0.0,
+        -1.0
+      ],
+      [
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "keep_indices": [
+      0,
+      2,
+      4,
+      6,
+      8
+    ],
+    "dropped_indices": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "anchor_ranks": [
+      1,
+      0,
+      2,
+      3,
+      4
+    ],
+    "assigned_anchor_indices": [
+      2,
+      0,
+      4,
+      6,
+      8
+    ],
+    "cross_crop_assignments": [
+      {
+        "drop": 1,
+        "drop_crop": 0,
+        "anchor": 2,
+        "anchor_crop": 1
+      },
+      {
+        "drop": 3,
+        "drop_crop": 1,
+        "anchor": 0,
+        "anchor_crop": 0
+      }
+    ],
+    "actual_all_crop_merge": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "preregistered_per_crop_merge": [
+      [
+        0.875,
+        0.125
+      ],
+      [
+        0.125,
+        0.875
+      ],
+      [
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "max_abs_difference": 0.125,
+    "causal_limit": "Synthetic mechanism counterexample only: no accuracy effect measured, no generation or frozen code changed."
+  },
+  "production_model_packages_imported": false,
+  "cuda_initialized": false,
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+    "/media/disk2/YZX/research/EADP_amp/docs/anchorzip_llava_port_prereg.md": "2c4c7254202835aa36ac5ab7508868cee0d3ff03d56a1216f6d455dfb07b365c",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639"
+  }
+}

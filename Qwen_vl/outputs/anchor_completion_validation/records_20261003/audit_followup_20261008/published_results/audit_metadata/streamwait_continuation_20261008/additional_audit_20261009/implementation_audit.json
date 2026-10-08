@@ -1,0 +1,730 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-08T17:14:38.589132+00:00",
+  "scope": "Read-only additional implementation/environment audit. No GPU initialization, production model imports, new generation, downloads of model weights, changed frozen sources/parameters/environments/queues/protocols/predictions. One 1.712GB shared CLIP payload hashed once; existing 14.1GB NeXT identity proof reused.",
+  "git": {
+    "live_head": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
+    "live_branch": "codex/anchor-completion-validation",
+    "handoff_lines": 906,
+    "handoff_sha256": "c50e18d8d5ae39b9fbdd8af97fde3b56aa7ac854bb3c1bafc2e7244d4c36060f",
+    "handoff_read": "complete in this audit"
+  },
+  "full_baseline": [
+    {
+      "model": "v15",
+      "task": "textvqa",
+      "arm": "FULL",
+      "method": "FULL",
+      "budget_parameter": 0,
+      "nominal_budget": null,
+      "protocol": "official_textvqa_loader",
+      "expected_n": 5000,
+      "generated_n": 5000,
+      "status": "complete",
+      "accuracy": 58.22600000000014,
+      "delta_anchorzip_minus_same_local_e": null,
+      "output": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/textvqa_official_20261008/FULL.jsonl",
+      "prediction_sha256": "bd74d52d8644844fc0fa4e0bd0b8fe3d58a0471b1d6519ae61ea9328a1c048de",
+      "score_sources": {
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/TextVQA_0.5.1_val.json": "4ceb5aadc1a41719d0a3e4dfdf06838bcfee1db569a9a65ee67d31c99893081d",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/m4c_evaluator.py": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7"
+      }
+    },
+    {
+      "model": "next",
+      "task": "textvqa",
+      "arm": "FULL",
+      "method": "FULL",
+      "budget_parameter": 0,
+      "nominal_budget": null,
+      "protocol": "official_textvqa_loader",
+      "expected_n": 5000,
+      "generated_n": 5000,
+      "status": "complete",
+      "accuracy": 60.370000000000225,
+      "delta_anchorzip_minus_same_local_e": null,
+      "output": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/FULL.jsonl",
+      "prediction_sha256": "acf08dce4fba4f1d26cd9f806a217714ead99b71260547119c2642475415cf1f",
+      "score_sources": {
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/TextVQA_0.5.1_val.json": "4ceb5aadc1a41719d0a3e4dfdf06838bcfee1db569a9a65ee67d31c99893081d",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/m4c_evaluator.py": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7"
+      }
+    }
+  ],
+  "full_baseline_inference": "v15 58.226 vs paper58.2; NeXT60.370 vs paper60.3. This narrows global model/input/decoding faults but cannot prove pruning correctness or author hyperparameters. FULL bypasses CLIP text/scoring.",
+  "current_processes": [
+    {
+      "pid": 2451780,
+      "present": true,
+      "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+      "argv": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_full_streamwait.py",
+        "--run",
+        "--arm",
+        "EADP_beta2",
+        "--attempt",
+        "1"
+      ],
+      "restricted_environment": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "HF_HUB_OFFLINE": "1",
+        "TRANSFORMERS_OFFLINE": "1",
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "mapped_cuda_libraries": [
+        "/home/dell/miniconda3/envs/llava_pruner/lib/python3.10/site-packages/torch/lib/libcublas.so.11",
+        "/home/dell/miniconda3/envs/llava_pruner/lib/python3.10/site-packages/torch/lib/libcublasLt.so.11",
+        "/home/dell/miniconda3/envs/llava_pruner/lib/python3.10/site-packages/torch/lib/libcudnn.so.8",
+        "/home/dell/miniconda3/envs/llava_pruner/lib/python3.10/site-packages/torch/lib/libcudnn_cnn_infer.so.8",
+        "/home/dell/miniconda3/envs/llava_pruner/lib/python3.10/site-packages/torch/lib/libcudnn_ops_infer.so.8",
+        "/home/dell/miniconda3/envs/llava_pruner/lib/python3.10/site-packages/torch/lib/libnvrtc-672ee683.so.11.2",
+        "/home/dell/miniconda3/envs/llava_pruner/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so",
+        "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+        "/usr/local/cuda-11.2/targets/x86_64-linux/lib/libnvrtc.so.11.2.67"
+      ]
+    },
+    {
+      "pid": 2452469,
+      "present": true,
+      "cwd": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+      "argv": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_full_streamwait.py",
+        "--run",
+        "--arm",
+        "AZ_beta2",
+        "--attempt",
+        "1"
+      ],
+      "restricted_environment": {
+        "PYTHONPATH": "/media/disk2/YZX/research/EADP_amp/LLaVA",
+        "HF_HUB_OFFLINE": "1",
+        "TRANSFORMERS_OFFLINE": "1",
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "mapped_cuda_libraries": [
+        "/home/dell/miniconda3/envs/llava_pruner/lib/python3.10/site-packages/torch/lib/libcublas.so.11",
+        "/home/dell/miniconda3/envs/llava_pruner/lib/python3.10/site-packages/torch/lib/libcublasLt.so.11",
+        "/home/dell/miniconda3/envs/llava_pruner/lib/python3.10/site-packages/torch/lib/libcudnn.so.8",
+        "/home/dell/miniconda3/envs/llava_pruner/lib/python3.10/site-packages/torch/lib/libcudnn_cnn_infer.so.8",
+        "/home/dell/miniconda3/envs/llava_pruner/lib/python3.10/site-packages/torch/lib/libcudnn_ops_infer.so.8",
+        "/home/dell/miniconda3/envs/llava_pruner/lib/python3.10/site-packages/torch/lib/libnvrtc-672ee683.so.11.2",
+        "/home/dell/miniconda3/envs/llava_pruner/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so",
+        "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+        "/usr/local/cuda-11.2/targets/x86_64-linux/lib/libnvrtc.so.11.2.67"
+      ]
+    }
+  ],
+  "current_wait_control_protocols": [
+    {
+      "arm": "EADP_beta2",
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/train_images",
+        "conv_mode": "vicuna_v1",
+        "alpha": 0.5,
+        "visual_token_num": 32,
+        "temperature": 0.0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "anchorzip": false,
+        "beta": 2.0
+      },
+      "control_protocol": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.control.protocol.json",
+      "control_protocol_sha256": "caac3108d0c305ed0c94a88a57c5bc218ad3d3393243af5b9c33d18a49d1f210",
+      "native_protocol": {
+        "protocol": "official_textvqa_loader",
+        "task": "TextVQA_VAL",
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl",
+        "question_file_sha256": "9f60db6fb89e369263ed676dc26b48d00d4a462e73f0930c09d23394e9dcf3a3",
+        "question_rows": 5000,
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/train_images",
+        "answers_file": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.jsonl",
+        "conv_mode": "vicuna_v1",
+        "score_text_transform": "remove exact single-word-or-phrase answer suffix",
+        "llm_prompt_transform": "unchanged full TextVQA prompt, including OCR and answer suffix",
+        "max_new_tokens": 128,
+        "temperature": 0.0,
+        "top_p": null,
+        "num_beams": 1,
+        "visual_token_num": 32,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "anchorzip": false,
+        "git_commit": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
+        "wrapper_sha256": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534",
+        "torch_version": "2.1.2+cu118",
+        "transformers_version": "4.37.2",
+        "created_utc": "2026-10-08T16:48:08.401985+00:00",
+        "config.json_sha256": "60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60",
+        "generation_config.json_sha256": "c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6",
+        "source_sha256": {
+          "llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+          "llava/model/builder.py": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+          "llava/model/multimodal_encoder/clip_encoder.py": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+          "llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+          "llava/conversation.py": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9"
+        }
+      },
+      "n_runtime_prefix": 2792,
+      "actual_token_histogram": {
+        "158": 1298,
+        "157": 1231,
+        "156": 135,
+        "159": 128
+      },
+      "image_shape_histogram": {
+        "[1, 5, 3, 336, 336]": 2792
+      },
+      "runtime_budget_parameter_values": [
+        32
+      ],
+      "frozen_sources_checked": 18,
+      "changed_sources": [],
+      "actual_parameter_observation_boundary": "Returned visual token counts and input shapes are dynamically logged. Alpha/beta/lambda follow frozen argv/source routes; exact loaded object attributes/class/dtypes/TF32 were not dynamically logged.",
+      "AST_validation": {
+        "production_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py",
+        "production_source_sha256": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+        "original_forward_ast_sha256": "f6aef31d798826b4bb5e4198e5b87b87c9174c4ca478cd339e3d8a0c26325858",
+        "patched_forward_ast_sha256": "d7dece035ae5cf3f4b5cc535fe5b6bc8bfc3f96c30f05426f02bab4ca37fdbb7",
+        "restoration_ast_identical": true,
+        "inserted_nodes": [
+          "caller_stream = torch.cuda.current_stream(device=self.device)",
+          "image_stream.wait_stream(caller_stream)",
+          "text_stream.wait_stream(caller_stream)"
+        ],
+        "preserved": [
+          "original math",
+          "original no_grad decorator",
+          "original trailing torch.cuda.synchronize()",
+          "list and attention branches",
+          "allocation and precision settings"
+        ],
+        "record_stream_added": false,
+        "patched_forward_source": "@torch.no_grad()\ndef forward(self, images, texts=None, return_attentions=False):\n    if type(images) is list:\n        image_features = []\n        for image in images:\n            image_forward_out = self.vision_tower(image.to(device=self.device, dtype=self.dtype).unsqueeze(0), output_hidden_states=True)\n            image_feature = self.feature_select(image_forward_out).to(image.dtype)\n            image_features.append(image_feature)\n    else:\n        if return_attentions and texts is None:\n            image_forward_outs = self.vision_tower(images.to(device=self.device, dtype=self.dtype), output_hidden_states=True, output_attentions=True)\n            image_features = self.feature_select(image_forward_outs).to(images.dtype)\n            return (image_features, image_forward_outs.attentions)\n        image_stream = torch.cuda.Stream()\n        text_stream = torch.cuda.Stream()\n        caller_stream = torch.cuda.current_stream(device=self.device)\n        image_stream.wait_stream(caller_stream)\n        text_stream.wait_stream(caller_stream)\n        with torch.cuda.stream(image_stream):\n            image_forward_outs = self.vision_tower(images.to(device=self.device, dtype=self.dtype), output_hidden_states=True)\n            image_outputs = self.feature_select(image_forward_outs)\n            image_features = image_outputs.to(images.dtype)\n        if texts is not None:\n            with torch.cuda.stream(text_stream):\n                text_inputs = self.text_tokenizer(text=texts, return_tensors='pt')\n                text_segment = (text_inputs.input_ids.shape[1] - 1) // self.max_position_embeddings + 1\n                text_padding = self.max_position_embeddings * text_segment - text_inputs.input_ids.shape[1]\n                text_inputs = {k: torch.cat([v, v.new_zeros((v.shape[0], text_padding))], dim=1).reshape(-1, self.max_position_embeddings).to(device=self.device) for (k, v) in text_inputs.items()}\n                outputs = self.text_tower(**text_inputs)\n                text_embeds = outputs.text_embeds\n                text_embeds_seq = outputs.last_hidden_state\n                if hasattr(self.text_tower, 'text_projection'):\n                    text_embeds_seq = self.text_tower.text_projection(text_embeds_seq)\n        torch.cuda.synchronize()\n        if texts is not None:\n            image_embeds = self.vision_tower.vision_model.post_layernorm(image_outputs)\n            proj_dtype = self.vision_tower.visual_projection.weight.dtype\n            image_embeds = self.vision_tower.visual_projection(image_embeds.to(proj_dtype))\n            image_features = (image_features, image_embeds, text_embeds, text_embeds_seq)\n    return image_features"
+      }
+    },
+    {
+      "arm": "AZ_beta2",
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/train_images",
+        "conv_mode": "vicuna_v1",
+        "alpha": 0.5,
+        "visual_token_num": 32,
+        "temperature": 0.0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "anchorzip": true,
+        "beta": 2.0
+      },
+      "control_protocol": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.control.protocol.json",
+      "control_protocol_sha256": "b0cdf4c574775de6a31ca90950468141a0449867d92eee12ed5857ac38b16c3a",
+      "native_protocol": {
+        "protocol": "official_textvqa_loader",
+        "task": "TextVQA_VAL",
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl",
+        "question_file_sha256": "9f60db6fb89e369263ed676dc26b48d00d4a462e73f0930c09d23394e9dcf3a3",
+        "question_rows": 5000,
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/train_images",
+        "answers_file": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.jsonl",
+        "conv_mode": "vicuna_v1",
+        "score_text_transform": "remove exact single-word-or-phrase answer suffix",
+        "llm_prompt_transform": "unchanged full TextVQA prompt, including OCR and answer suffix",
+        "max_new_tokens": 128,
+        "temperature": 0.0,
+        "top_p": null,
+        "num_beams": 1,
+        "visual_token_num": 32,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "anchorzip": true,
+        "git_commit": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
+        "wrapper_sha256": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534",
+        "torch_version": "2.1.2+cu118",
+        "transformers_version": "4.37.2",
+        "created_utc": "2026-10-08T16:48:23.341551+00:00",
+        "config.json_sha256": "60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60",
+        "generation_config.json_sha256": "c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6",
+        "source_sha256": {
+          "llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+          "llava/model/builder.py": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+          "llava/model/multimodal_encoder/clip_encoder.py": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+          "llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+          "llava/conversation.py": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+          "llava/model/llava_arch_anchorzip.py": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+          "../Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639"
+        }
+      },
+      "n_runtime_prefix": 2756,
+      "actual_token_histogram": {
+        "157": 1256,
+        "158": 1278,
+        "159": 110,
+        "156": 112
+      },
+      "image_shape_histogram": {
+        "[1, 5, 3, 336, 336]": 2756
+      },
+      "runtime_budget_parameter_values": [
+        32
+      ],
+      "frozen_sources_checked": 18,
+      "changed_sources": [],
+      "actual_parameter_observation_boundary": "Returned visual token counts and input shapes are dynamically logged. Alpha/beta/lambda follow frozen argv/source routes; exact loaded object attributes/class/dtypes/TF32 were not dynamically logged.",
+      "AST_validation": {
+        "production_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py",
+        "production_source_sha256": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+        "original_forward_ast_sha256": "f6aef31d798826b4bb5e4198e5b87b87c9174c4ca478cd339e3d8a0c26325858",
+        "patched_forward_ast_sha256": "d7dece035ae5cf3f4b5cc535fe5b6bc8bfc3f96c30f05426f02bab4ca37fdbb7",
+        "restoration_ast_identical": true,
+        "inserted_nodes": [
+          "caller_stream = torch.cuda.current_stream(device=self.device)",
+          "image_stream.wait_stream(caller_stream)",
+          "text_stream.wait_stream(caller_stream)"
+        ],
+        "preserved": [
+          "original math",
+          "original no_grad decorator",
+          "original trailing torch.cuda.synchronize()",
+          "list and attention branches",
+          "allocation and precision settings"
+        ],
+        "record_stream_added": false,
+        "patched_forward_source": "@torch.no_grad()\ndef forward(self, images, texts=None, return_attentions=False):\n    if type(images) is list:\n        image_features = []\n        for image in images:\n            image_forward_out = self.vision_tower(image.to(device=self.device, dtype=self.dtype).unsqueeze(0), output_hidden_states=True)\n            image_feature = self.feature_select(image_forward_out).to(image.dtype)\n            image_features.append(image_feature)\n    else:\n        if return_attentions and texts is None:\n            image_forward_outs = self.vision_tower(images.to(device=self.device, dtype=self.dtype), output_hidden_states=True, output_attentions=True)\n            image_features = self.feature_select(image_forward_outs).to(images.dtype)\n            return (image_features, image_forward_outs.attentions)\n        image_stream = torch.cuda.Stream()\n        text_stream = torch.cuda.Stream()\n        caller_stream = torch.cuda.current_stream(device=self.device)\n        image_stream.wait_stream(caller_stream)\n        text_stream.wait_stream(caller_stream)\n        with torch.cuda.stream(image_stream):\n            image_forward_outs = self.vision_tower(images.to(device=self.device, dtype=self.dtype), output_hidden_states=True)\n            image_outputs = self.feature_select(image_forward_outs)\n            image_features = image_outputs.to(images.dtype)\n        if texts is not None:\n            with torch.cuda.stream(text_stream):\n                text_inputs = self.text_tokenizer(text=texts, return_tensors='pt')\n                text_segment = (text_inputs.input_ids.shape[1] - 1) // self.max_position_embeddings + 1\n                text_padding = self.max_position_embeddings * text_segment - text_inputs.input_ids.shape[1]\n                text_inputs = {k: torch.cat([v, v.new_zeros((v.shape[0], text_padding))], dim=1).reshape(-1, self.max_position_embeddings).to(device=self.device) for (k, v) in text_inputs.items()}\n                outputs = self.text_tower(**text_inputs)\n                text_embeds = outputs.text_embeds\n                text_embeds_seq = outputs.last_hidden_state\n                if hasattr(self.text_tower, 'text_projection'):\n                    text_embeds_seq = self.text_tower.text_projection(text_embeds_seq)\n        torch.cuda.synchronize()\n        if texts is not None:\n            image_embeds = self.vision_tower.vision_model.post_layernorm(image_outputs)\n            proj_dtype = self.vision_tower.visual_projection.weight.dtype\n            image_embeds = self.vision_tower.visual_projection(image_embeds.to(proj_dtype))\n            image_features = (image_features, image_embeds, text_embeds, text_embeds_seq)\n    return image_features"
+      }
+    },
+    {
+      "arm": "EADP_beta1",
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/train_images",
+        "conv_mode": "vicuna_v1",
+        "alpha": 0.5,
+        "visual_token_num": 32,
+        "temperature": 0.0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "anchorzip": false,
+        "beta": 1.0
+      },
+      "control_protocol": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta1_streamwait.control.protocol.json",
+      "control_protocol_sha256": "6bdb49b4f544410e105c8288fdff4e6c1ea14d10e230ac785a6ad3a9c5344d4d",
+      "native_protocol": null,
+      "n_runtime_prefix": 0,
+      "actual_token_histogram": {},
+      "image_shape_histogram": {},
+      "runtime_budget_parameter_values": [],
+      "frozen_sources_checked": 18,
+      "changed_sources": [],
+      "actual_parameter_observation_boundary": "Returned visual token counts and input shapes are dynamically logged. Alpha/beta/lambda follow frozen argv/source routes; exact loaded object attributes/class/dtypes/TF32 were not dynamically logged.",
+      "AST_validation": {
+        "production_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py",
+        "production_source_sha256": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+        "original_forward_ast_sha256": "f6aef31d798826b4bb5e4198e5b87b87c9174c4ca478cd339e3d8a0c26325858",
+        "patched_forward_ast_sha256": "d7dece035ae5cf3f4b5cc535fe5b6bc8bfc3f96c30f05426f02bab4ca37fdbb7",
+        "restoration_ast_identical": true,
+        "inserted_nodes": [
+          "caller_stream = torch.cuda.current_stream(device=self.device)",
+          "image_stream.wait_stream(caller_stream)",
+          "text_stream.wait_stream(caller_stream)"
+        ],
+        "preserved": [
+          "original math",
+          "original no_grad decorator",
+          "original trailing torch.cuda.synchronize()",
+          "list and attention branches",
+          "allocation and precision settings"
+        ],
+        "record_stream_added": false,
+        "patched_forward_source": "@torch.no_grad()\ndef forward(self, images, texts=None, return_attentions=False):\n    if type(images) is list:\n        image_features = []\n        for image in images:\n            image_forward_out = self.vision_tower(image.to(device=self.device, dtype=self.dtype).unsqueeze(0), output_hidden_states=True)\n            image_feature = self.feature_select(image_forward_out).to(image.dtype)\n            image_features.append(image_feature)\n    else:\n        if return_attentions and texts is None:\n            image_forward_outs = self.vision_tower(images.to(device=self.device, dtype=self.dtype), output_hidden_states=True, output_attentions=True)\n            image_features = self.feature_select(image_forward_outs).to(images.dtype)\n            return (image_features, image_forward_outs.attentions)\n        image_stream = torch.cuda.Stream()\n        text_stream = torch.cuda.Stream()\n        caller_stream = torch.cuda.current_stream(device=self.device)\n        image_stream.wait_stream(caller_stream)\n        text_stream.wait_stream(caller_stream)\n        with torch.cuda.stream(image_stream):\n            image_forward_outs = self.vision_tower(images.to(device=self.device, dtype=self.dtype), output_hidden_states=True)\n            image_outputs = self.feature_select(image_forward_outs)\n            image_features = image_outputs.to(images.dtype)\n        if texts is not None:\n            with torch.cuda.stream(text_stream):\n                text_inputs = self.text_tokenizer(text=texts, return_tensors='pt')\n                text_segment = (text_inputs.input_ids.shape[1] - 1) // self.max_position_embeddings + 1\n                text_padding = self.max_position_embeddings * text_segment - text_inputs.input_ids.shape[1]\n                text_inputs = {k: torch.cat([v, v.new_zeros((v.shape[0], text_padding))], dim=1).reshape(-1, self.max_position_embeddings).to(device=self.device) for (k, v) in text_inputs.items()}\n                outputs = self.text_tower(**text_inputs)\n                text_embeds = outputs.text_embeds\n                text_embeds_seq = outputs.last_hidden_state\n                if hasattr(self.text_tower, 'text_projection'):\n                    text_embeds_seq = self.text_tower.text_projection(text_embeds_seq)\n        torch.cuda.synchronize()\n        if texts is not None:\n            image_embeds = self.vision_tower.vision_model.post_layernorm(image_outputs)\n            proj_dtype = self.vision_tower.visual_projection.weight.dtype\n            image_embeds = self.vision_tower.visual_projection(image_embeds.to(proj_dtype))\n            image_features = (image_features, image_embeds, text_embeds, text_embeds_seq)\n    return image_features"
+      }
+    }
+  ],
+  "import_routes_without_importing_model_packages": {
+    "llava": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/__init__.py",
+    "llava.model": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/__init__.py",
+    "llava.model.builder": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py",
+    "llava_arch_anchorzip": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py",
+    "amp_common": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot/amp_common.py"
+  },
+  "environment_packages": [
+    {
+      "package": "torch",
+      "installed": "2.1.2+cu118",
+      "released_requirement": "2.1.2+cu118",
+      "matches_released": true
+    },
+    {
+      "package": "torchvision",
+      "installed": "0.16.2+cu118",
+      "released_requirement": "0.16.2+cu118",
+      "matches_released": true
+    },
+    {
+      "package": "transformers",
+      "installed": "4.37.2",
+      "released_requirement": "4.37.2",
+      "matches_released": true
+    },
+    {
+      "package": "tokenizers",
+      "installed": "0.15.2",
+      "released_requirement": "0.15.1",
+      "matches_released": false
+    },
+    {
+      "package": "safetensors",
+      "installed": "0.8.0",
+      "released_requirement": "0.7.0",
+      "matches_released": false
+    },
+    {
+      "package": "flash-attn",
+      "installed": null,
+      "released_requirement": "2.3.6",
+      "matches_released": false
+    },
+    {
+      "package": "accelerate",
+      "installed": "0.21.0",
+      "released_requirement": "0.21.0",
+      "matches_released": true
+    },
+    {
+      "package": "huggingface_hub",
+      "installed": "0.36.2",
+      "released_requirement": "0.36.2",
+      "matches_released": true
+    },
+    {
+      "package": "Pillow",
+      "installed": "12.3.0",
+      "released_requirement": "10.4.0",
+      "matches_released": false
+    },
+    {
+      "package": "numpy",
+      "installed": "1.26.4",
+      "released_requirement": "1.26.4",
+      "matches_released": true
+    },
+    {
+      "package": "sentencepiece",
+      "installed": "0.2.2",
+      "released_requirement": "0.1.99",
+      "matches_released": false
+    },
+    {
+      "package": "ftfy",
+      "installed": null,
+      "released_requirement": "6.3.1",
+      "matches_released": false
+    }
+  ],
+  "confirmed_bugs": [
+    {
+      "id": "AZ_COMPLETION_SCOPE",
+      "classification": "Confirmed preregistered mapping deviation; AZ-only, NeXT multi-crop",
+      "finding": "Actual Completion flattens all crops of each image and allows cross-crop dropped-to-anchor assignment. Preregistration and implementation comments say per crop.",
+      "evidence": [
+        {
+          "file": "/media/disk2/YZX/research/EADP_amp/docs/anchorzip_llava_port_prereg.md",
+          "line": 51,
+          "meaning": "Explicit NeXT per-crop Completion commitment"
+        },
+        {
+          "file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py",
+          "line": 16,
+          "meaning": "Implementation header claims per image crop"
+        },
+        {
+          "file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py",
+          "line": 654,
+          "meaning": "split_sizes=number of crops per image, therefore [5] for these traces"
+        },
+        {
+          "file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py",
+          "line": 158,
+          "meaning": "Group is a whole split_sizes image; flatten at167 before assignment"
+        }
+      ],
+      "cpu_counterexample": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/az_mapping_cpu_counterexamples.json",
+      "cross_crop_examples": [
+        {
+          "drop": 1,
+          "drop_crop": 0,
+          "anchor": 2,
+          "anchor_crop": 1
+        },
+        {
+          "drop": 3,
+          "drop_crop": 1,
+          "anchor": 0,
+          "anchor_crop": 0
+        }
+      ],
+      "max_abs_feature_difference_vs_per_crop": 0.125,
+      "causal_boundary": "Mathematically different grouping is proved, no downstream accuracy effect measured; does not explain EADP reproduction gap, does not affect v15 one-crop grouping.",
+      "candidate": "Prepare a separate per-crop Completion implementation/arm/output/protocol, preserve existing global-per-image method and all wait-only controls; no current algorithm edited."
+    }
+  ],
+  "confirmed_differences_and_behavior": [
+    {
+      "id": "RTG_SEGMENT0",
+      "status": "Confirmed input coverage behavior; unproven method bug",
+      "finding": "RTG reads only CLIP segment0 global/local embeddings. Current repaired TextVQA has881/5000 multi-segment guidance; shipped SQA_IMG has552/2017.",
+      "evidence": [
+        {
+          "file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py",
+          "line": 116,
+          "meaning": "Explicit index0 for A and g"
+        },
+        {
+          "file": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/rtg_common.py",
+          "line": 160,
+          "meaning": "Original Qwen RTG documented shape has exactly one text row M=1"
+        },
+        {
+          "file": "/media/disk2/YZX/research/EADP_amp/docs/anchorzip_llava_port_prereg.md",
+          "line": 43,
+          "meaning": "Does not specify multi-segment LLaVA mapping"
+        }
+      ],
+      "cpu_result": "Changing only segment1 leaves current RTG fused scores bit-exact unchanged",
+      "causal_boundary": "Difference from EADP averaging all segments does not alone prove incorrect method. Intent for M>1 is unspecified; cannot cause EADP-only paper gap.",
+      "candidate": "Explicitly document current segment0 scope; register a separate all-segment RTG comparison only if scientifically authorized, no silent change to current frozen method."
+    },
+    {
+      "id": "ENVIRONMENT_LOCK_DRIFT",
+      "status": "Confirmed installed package differences from byte-identical released requirements",
+      "versions": [
+        {
+          "package": "tokenizers",
+          "installed": "0.15.2",
+          "released_requirement": "0.15.1",
+          "matches_released": false
+        },
+        {
+          "package": "safetensors",
+          "installed": "0.8.0",
+          "released_requirement": "0.7.0",
+          "matches_released": false
+        },
+        {
+          "package": "flash-attn",
+          "installed": null,
+          "released_requirement": "2.3.6",
+          "matches_released": false
+        },
+        {
+          "package": "Pillow",
+          "installed": "12.3.0",
+          "released_requirement": "10.4.0",
+          "matches_released": false
+        },
+        {
+          "package": "sentencepiece",
+          "installed": "0.2.2",
+          "released_requirement": "0.1.99",
+          "matches_released": false
+        },
+        {
+          "package": "ftfy",
+          "installed": null,
+          "released_requirement": "6.3.1",
+          "matches_released": false
+        }
+      ],
+      "causal_boundary": "Installed packages differ, but author executed versions unknown. No measured accuracy effect. Missing flash-attn/ftfy do not directly affect the active default SDPA/fast-tokenizer route; do not update live env."
+    }
+  ],
+  "suspicious_not_proved": [
+    {
+      "id": "BETA_MAIN_TABLE_IDENTITY",
+      "finding": "Frozen beta2 differs published shell default beta1; q=.2 main call differs helper default .5 and paper panels do not pin a unique author main-table configuration.",
+      "evidence": [
+        {
+          "file": "/media/disk2/YZX/research/EADP_amp/LLaVA/scripts/v1_6/eval/textvqa.sh",
+          "line": 11,
+          "meaning": "beta1 shell default"
+        },
+        {
+          "file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py",
+          "line": 586,
+          "meaning": "q=.2 actual call"
+        }
+      ],
+      "causal_boundary": "Not a new source mismatch. Existing separately registered beta1 control remains pending; no q/beta search performed."
+    },
+    {
+      "id": "LOADED_OBJECT_PROVENANCE",
+      "finding": "Current frozen native protocol records requested args/config hashes and versions; runtime logs actual retained tokens/input shapes, not actual loaded class, tensor dtype, module training, alpha/beta/lambda or per-worker TF32 flags.",
+      "causal_boundary": "Source and import routing support expected defaults but cannot replace absent dynamic object traces. No live-worker instrumentation added."
+    },
+    {
+      "id": "PACKAGE_NUMERICS",
+      "finding": "Pillow12.3 vs10.4, tokenizers.15.2 vs.15.1, safetensors.8 vs.7, sentencepiece.2.2 vs.1.99 are candidates for small input/token differences compared with author environment.",
+      "causal_boundary": "Official reference comparisons performed under same local libraries cannot prove author pixels/token IDs. Baselines close to paper weaken gross fault hypothesis but do not exclude per-question churn; no controlled cross-version effect measured."
+    },
+    {
+      "id": "ALLOCATOR_LIFETIME",
+      "finding": "CLIP has no record_stream calls, but input/concat references remain live and original forward globally synchronizes both streams before returning.",
+      "evidence": [
+        {
+          "file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py",
+          "line": 656,
+          "meaning": "concat_images retained in caller stack through encode return"
+        },
+        {
+          "file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py",
+          "line": 114,
+          "meaning": "global synchronize before returned tensors leave forward"
+        }
+      ],
+      "causal_boundary": "No specific use-after-free path demonstrated. Missing record_stream alone is not a confirmed extra bug. Existing wait-only dependency repair remains frozen; cannot claim every allocator risk excluded."
+    }
+  ],
+  "excluded_candidates": [
+    {
+      "id": "SHARED_CLIP_LOCAL_CORRUPTION",
+      "status": "Excluded at file identity level",
+      "model_repo": "openai/clip-vit-large-patch14-336",
+      "revision": "ce19dc912ca5cd21c8a653c79e251e808ccabcd1",
+      "file": "pytorch_model.bin",
+      "size": 1711974081,
+      "local_sha256": "c6032c2e0caae3dc2d4fba35535fa6307dbb49df59c7e182b1bc4b3329b81801",
+      "official_lfs_sha256": "c6032c2e0caae3dc2d4fba35535fa6307dbb49df59c7e182b1bc4b3329b81801",
+      "payload_matches": true,
+      "stat_unchanged": true,
+      "small_files_matches": true,
+      "files": [
+        "config.json",
+        "merges.txt",
+        "preprocessor_config.json",
+        "special_tokens_map.json",
+        "tokenizer.json",
+        "tokenizer_config.json",
+        "vocab.json"
+      ],
+      "route": "Both model configs name this repo; load_model CLIPVisionModel, load_text_tower CLIPVisionModelWithProjection.visual_projection and CLIPTextModelWithProjection/CLIPTokenizerFast all read it.",
+      "checkpoint_selector": "Transformers4.37.2 default use_safetensors=None tries absent main safe file, then main bin; cached PR20 safetensors is not selected by this route.",
+      "evidence": [
+        {
+          "file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py",
+          "line": 32,
+          "meaning": "Shared pretrained source"
+        },
+        {
+          "file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py",
+          "line": 41,
+          "meaning": "Shared projection and text pretrained source"
+        }
+      ],
+      "causal_boundary": "Confirms shared CLIP payload/config/tokenizer files match the official HF revision. Does not prove paper used this exact revision, actual in-memory objects, or v15 full LLM payload identity. NeXT LLM/projector payload identity only reuses earlier proof.",
+      "official_metadata_url": "https://huggingface.co/api/models/openai/clip-vit-large-patch14-336/revision/ce19dc912ca5cd21c8a653c79e251e808ccabcd1?blobs=true"
+    },
+    {
+      "id": "CLIP_METADATA_RED_HERRINGS",
+      "finding": "CLIP tokenizer_config name_or_path says base-patch32, but its entire file matches official large336 repo and vocab. CLIP config eos2 uses legacy argmax pooling in4.37, tokenizer EOS49407 is maximum ID. logit_scale is not used by this negated normalized cosine scoring route.",
+      "causal_boundary": "Metadata naming/EOS convention alone does not prove wrong tokenizer or pooled embeddings."
+    },
+    {
+      "id": "CORE_CODE_OR_PROJECTOR_ROUTE_DRIFT",
+      "extended_source_identity": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/extended_source_identity.json",
+      "identical_files": 13,
+      "interpretation": "Official clone and local builder/arch/vision/projector builders/conversation/utils/loader/environment/requirements files all byte-identical; no local formula substitution for EADP detected."
+    },
+    {
+      "id": "BUDGET_GEOMETRY",
+      "finding": "Text controls actual prefix shape always[1,5,3,336,336], per-crop parameter32, resulting156–159. Official importance allocation floor/min1 may leave nominal160 unspent, and different scorers can receive different actual counts.",
+      "causal_boundary": "Expected released allocation behavior, not missing global crop or mistaken total32. No budget or allocator changed."
+    },
+    {
+      "id": "DECODING_PROMPT_CONFIG_DRIFT",
+      "finding": "New explicit official Text wrapper removes only score-text suffix, keeps full OCR LLM chat, vicuna_v1, greedy/do_sampleFalse, beams1, top_pNone, max_new128/use_cacheTrue; eos2/bos1/pad0 match checkpoint and release.",
+      "causal_boundary": "Old model_vqa1024/suffix drift is already repaired by separate outputs; exact author argv still unavailable."
+    },
+    {
+      "id": "FLASH_ATTENTION_CONFIG_MISREAD",
+      "finding": "NeXT generation_config attn_implementation=flash_attention_2 is arbitrary generation metadata. Model config attention internal isNone; builder use_flash_attnFalse does not request external Flash2. Transformers4.37.2 Llama supports default SDPA, expected active implementation is SDPA.",
+      "evidence": [
+        {
+          "file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py",
+          "line": 26,
+          "meaning": "use_flash_attn defaultFalse"
+        },
+        {
+          "file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py",
+          "line": 45,
+          "meaning": "only explicitTrue requests flash2"
+        }
+      ],
+      "causal_boundary": "Do not infer actual Flash2 from generation_config. Exact live attention object not recorded; current route matches release default under this torch/transformers."
+    },
+    {
+      "id": "CUDA12_LIBRARY_CONFLICT",
+      "finding": "Actual mapped worker libraries are torch-bundled libcublas.so.11, libcudnn.so.8 and CUDA11 nvrtc; no external flash_attn library mapping. Requirements list unused CUDA12 distributions but maps show active cu118 path.",
+      "causal_boundary": "No detected worker loaded CUDA12 CUBLAS/cuDNN conflict; driver/hardware/author low-level versions not matched here."
+    },
+    {
+      "id": "HISTORICAL_CROSS_QUESTION_CACHE",
+      "finding": "Similarity debug cache is write-only disabled by default; active RTG/uniform has no RNG; greed_select allocates coverage/masks each call. Original scalar/gather route source unchanged.",
+      "causal_boundary": "Static analysis excludes these specific persistent-state candidates, not all CUDA nondeterminism. Synchronization instability already demonstrated in separate prior full/panel controls."
+    }
+  ],
+  "artifacts": {
+    "clip_payload": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/clip_weight_local_sha256.json",
+    "clip_official_metadata": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/clip_official_hf_revision_metadata.json",
+    "clip_small_files": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/clip_small_file_identity.json",
+    "method_cpu_counterexamples": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/az_mapping_cpu_counterexamples.json",
+    "extended_source_identity": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/extended_source_identity.json",
+    "prior_NeXT_payload_identity": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/input_identity/weight_payload_identity.json"
+  },
+  "final_causal_limit": "No newly proved EADP-paper residual root cause. Shared CLIP and extended local source drift candidates narrowed; new confirmed algorithm mapping deviation is AZ-only. Wait-only controls and beta1 predefined comparison remain unchanged, current prefixes not scored as complete runs.",
+  "prepared_per_crop_completion_candidate": {
+    "adapter": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/per_crop_completion_adapter.py",
+    "adapter_sha256": "9f64e1f4f79e5aab6291073b5652fa6e2242eea9b75aa2dafb8ff07f5882e0da",
+    "validation": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/per_crop_completion_adapter_cpu_validation.json",
+    "validation_sha256": "28f4f148ed9794709158cc45f4e0433faf49669ff950ff9d96f0ad05a6120128",
+    "CPU_gates": {
+      "single_crop_bit_exact": true,
+      "caller_features_unchanged": true,
+      "caller_keep_unchanged": true,
+      "five_crop_calls_only_576_tokens": true,
+      "five_crop_local_indices_in_range": true,
+      "five_crop_independent_formula_bit_exact": true,
+      "counterexample_differs_from_cross_crop": true,
+      "selected_count_unchanged": true,
+      "global_gather_order_ascending": true,
+      "lambda0_bit_exact_gather": true,
+      "full_keep_no_dropped_bit_exact": true,
+      "full_keep_same_as_original": true,
+      "empty_keep_legal": true,
+      "unselected_crops_skip_legal": true,
+      "no_production_model_import": true,
+      "no_cuda_initialization": true
+    },
+    "installed": false,
+    "registered_in_existing_queue": false,
+    "measured_GPU_accuracy": false,
+    "implementation": "Factory wraps the unchanged original Completion callable, groups flattened tokens in576-token crops, calls original assignment/merge independently, preserves ascending global gather order.",
+    "untouched": "RTG segment0 scope, alpha/beta/lambda, visual features, facility/quota, keep IDs and every existing source/queue/protocol/prediction/environment.",
+    "next_decision": "Review this concrete isolated candidate, then independently register a paired comparison if requested; no silent switch of the55 current publication groups."
+  }
+}

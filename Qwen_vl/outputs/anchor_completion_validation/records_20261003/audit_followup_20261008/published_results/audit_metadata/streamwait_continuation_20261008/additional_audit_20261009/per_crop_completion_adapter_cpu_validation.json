@@ -1,0 +1,84 @@
+{
+  "candidate": "Per-crop Completion adapter, not installed or registered",
+  "lambda_completion": 0.25,
+  "crop_tokens": 576,
+  "seed": 20261009,
+  "gates": {
+    "single_crop_bit_exact": true,
+    "caller_features_unchanged": true,
+    "caller_keep_unchanged": true,
+    "five_crop_calls_only_576_tokens": true,
+    "five_crop_local_indices_in_range": true,
+    "five_crop_independent_formula_bit_exact": true,
+    "counterexample_differs_from_cross_crop": true,
+    "selected_count_unchanged": true,
+    "global_gather_order_ascending": true,
+    "lambda0_bit_exact_gather": true,
+    "full_keep_no_dropped_bit_exact": true,
+    "full_keep_same_as_original": true,
+    "empty_keep_legal": true,
+    "unselected_crops_skip_legal": true,
+    "no_production_model_import": true,
+    "no_cuda_initialization": true
+  },
+  "legacy_counterexample_cross_crop_assignments": 1150,
+  "legacy_output": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0
+    ],
+    [
+      -1.0,
+      0.0
+    ],
+    [
+      0.0,
+      -1.0
+    ],
+    [
+      1.0,
+      1.0
+    ]
+  ],
+  "candidate_output": [
+    [
+      0.75048828125,
+      0.24951171875
+    ],
+    [
+      0.24951171875,
+      0.75048828125
+    ],
+    [
+      -1.0,
+      0.0
+    ],
+    [
+      0.0,
+      -1.0
+    ],
+    [
+      1.0,
+      1.0
+    ]
+  ],
+  "candidate_vs_legacy_max_abs_difference": 0.24951171875,
+  "original_function_AST_sha256": {
+    "group_sum": "ec973a21ba6a4fa452a246b388ca1ebcff34e38bc506798c0a9b69cb020878af",
+    "compute_assignment": "56b2e70db84a50dc44a09f772f1495435e133b91e2cbf68cac8a9ae5a75fc000",
+    "merge_stream": "a9f416d3ea078fb62fe4a4a78ed0cea01a78871a695451f2c570389d30344052",
+    "_completion_stream": "07d744d73036c888bbe359c9e6499ddbecb458a5e0e794310de15865d19b3f7c"
+  },
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/validate_per_crop_completion_adapter.py": "aa0173ddcf224d435086869c2aa005cb162fdb35e22812340df1e311532ae882",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/per_crop_completion_adapter.py": "9f64e1f4f79e5aab6291073b5652fa6e2242eea9b75aa2dafb8ff07f5882e0da"
+  },
+  "scope": "Only Completion grouping differs. Original functions perform all mathematics; RTG segment0, parameters, quota/facility/indices/gather order unchanged. No existing frozen file, queue, protocol, prediction, env or GPU touched.",
+  "causal_boundary": "All gates are CPU synthetic mechanism checks, not measured downstream accuracy or a claim of improvement."
+}

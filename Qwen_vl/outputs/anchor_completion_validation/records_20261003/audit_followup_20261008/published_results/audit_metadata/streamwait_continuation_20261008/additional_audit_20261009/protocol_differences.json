@@ -1,0 +1,3319 @@
+{
+  "schema": "additional-reproduction-protocol-audit-v1",
+  "created_at_utc": "2026-10-08T17:14:19.582322+00:00",
+  "scope": "Read-only LLaVA benchmark protocol audit beyond CUDA waits; no environment, queue, production source, parameter, prediction or frozen worker mutation.",
+  "git_branch": "codex/anchor-completion-validation",
+  "live_git_HEAD": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
+  "handoff_lines_read": 906,
+  "official_EADP_commit": "e1a08801461c181871b9ff1cb0803b8e9966f083",
+  "paper_primary_url": "https://arxiv.org/html/2607.02484v1",
+  "upstream_LLaVA_evaluation_primary_url": "https://github.com/haotian-liu/LLaVA/blob/main/docs/Evaluation.md",
+  "scientific_limits": [
+    "Static recipe differences do not prove an accuracy increase or identify paper main-table argv.",
+    "Within-version method comparisons require complete same-input same-budget EADP and AnchorZip arms; most historical MMBench/VizWiz arms have no EADP mate.",
+    "JPEG/pixel equality and approximate dHash visual similarity are different facts; low dHash distance is not exact input identity.",
+    "Current stream-only queues intentionally preserve their frozen historical language, max tokens and alpha/beta. Additional corrections must use independent provenance and outputs."
+  ],
+  "sources": {
+    "official_scripts": {
+      "v1_5/vqav2": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_5/eval/vqav2.sh",
+        "sha256": "27dcdd95006d41f72205c520ace547b2c2c33254a62c18241890771ed6b675a9",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            18
+          ],
+          "BETA=": [
+            17
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            39
+          ],
+          "SPLIT=": [
+            14
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_5/eval/vqav2.sh"
+      },
+      "v1_5/gqa": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_5/eval/gqa.sh",
+        "sha256": "4f2a3f219469c60c3b561181a7feb49d7424e2ccf6782be610935e9d5e216009",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            18
+          ],
+          "BETA=": [
+            17
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            38
+          ],
+          "SPLIT=": [
+            14
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_5/eval/gqa.sh"
+      },
+      "v1_5/vizwiz": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_5/eval/vizwiz.sh",
+        "sha256": "2f849a971efdeca4c7607aecb7119c4e143bd96f607ad6f08b0d295428e84354",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            24
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_5/eval/vizwiz.sh"
+      },
+      "v1_5/vizwiz_val": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_5/eval/vizwiz_val.sh",
+        "sha256": "152642de5dfac8f351c2a57f76eb290a7ddde8a5034b711384eb655e1324c80c",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            11
+          ],
+          "BETA=": [
+            10
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            67
+          ],
+          "SPLIT=": []
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_5/eval/vizwiz_val.sh"
+      },
+      "v1_5/sqa": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_5/eval/sqa.sh",
+        "sha256": "5d6e67581eb6b9bb2911d205ea69c4aeab2fab389be2ddb85639987e8dbc053a",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            47
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_5/eval/sqa.sh"
+      },
+      "v1_5/textvqa": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_5/eval/textvqa.sh",
+        "sha256": "4e32cb2497b6cf46486a0543b4797dd9febb36bd067ce14ec7d68ca01807dc03",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            46
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_5/eval/textvqa.sh"
+      },
+      "v1_5/pope": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_5/eval/pope.sh",
+        "sha256": "f5e903dc957f04deee181c6645f918e64e441eb3040e320f6ae7a159e0f58303",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            46
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_5/eval/pope.sh"
+      },
+      "v1_5/mme": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_5/eval/mme.sh",
+        "sha256": "cc06dfb6b1ef3c2db78a72d14feb03e07bbd00f2af212d3a1f004a0c3607c26c",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            46
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_5/eval/mme.sh"
+      },
+      "v1_5/mmbench": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_5/eval/mmbench.sh",
+        "sha256": "0e2b8cf1acda58005e50b5d33c4c887d54296858034bd284e204ae262edd4316",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            25
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_5/eval/mmbench.sh"
+      },
+      "v1_5/mmbench_cn": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_5/eval/mmbench_cn.sh",
+        "sha256": "b8c9803a689bd28c769c9e60a61fff856ac7acd0f17d2393519f1f405736f0aa",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [
+            23
+          ],
+          "--conv-mode": [
+            26
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_5/eval/mmbench_cn.sh"
+      },
+      "v1_5/mmvet": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_5/eval/mmvet.sh",
+        "sha256": "0691944c3c84a87184af9a8d2f580f4e87e59af019726b490e63b868f3a9f84f",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            25
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_5/eval/mmvet.sh"
+      },
+      "v1_6/vqav2": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_6/eval/vqav2.sh",
+        "sha256": "d805d7dd92b295bb8324597f039198d123574f06422bc526a7c6a615ea5f5d94",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            18
+          ],
+          "BETA=": [
+            17
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            39
+          ],
+          "SPLIT=": [
+            14
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_6/eval/vqav2.sh"
+      },
+      "v1_6/gqa": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_6/eval/gqa.sh",
+        "sha256": "e36e0808640c82fe6bec87e5f91e3fc9dc997a9343547242f7005feb7c7023fd",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            18
+          ],
+          "BETA=": [
+            17
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            38
+          ],
+          "SPLIT=": [
+            14
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_6/eval/gqa.sh"
+      },
+      "v1_6/vizwiz": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_6/eval/vizwiz.sh",
+        "sha256": "dff1e12f65b5a254d7ed4ae12f14eb70cb077b205dcdd863ebcbb1040efc7d1d",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            24
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_6/eval/vizwiz.sh"
+      },
+      "v1_6/vizwiz_val": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_6/eval/vizwiz_val.sh",
+        "sha256": "b1f578ee6d8424ded0a82e888c4a6d04da49dc07646c6113a9babd7bd1d12d8b",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            11
+          ],
+          "BETA=": [
+            10
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            45
+          ],
+          "SPLIT=": []
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_6/eval/vizwiz_val.sh"
+      },
+      "v1_6/sqa": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_6/eval/sqa.sh",
+        "sha256": "76d54a12456aeb15b93a2cb40c4b0ebe4d0e469b449c9befd22451094b7dac7a",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            25
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_6/eval/sqa.sh"
+      },
+      "v1_6/textvqa": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_6/eval/textvqa.sh",
+        "sha256": "ffe4c29ffb4d1b1c37c222d1a8f8ef7712621194c2f0f97630c58a858cd36a77",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            24
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_6/eval/textvqa.sh"
+      },
+      "v1_6/pope": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_6/eval/pope.sh",
+        "sha256": "6768f249ced026044b022dea11fffde0494dcd777613e2fdb64fd0e26af3ff33",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            25
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_6/eval/pope.sh"
+      },
+      "v1_6/mme": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_6/eval/mme.sh",
+        "sha256": "39c52f837ca387eaa470c5fe41e436e6d23349d51bee71024310f455313b6319",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            24
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_6/eval/mme.sh"
+      },
+      "v1_6/mmbench": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_6/eval/mmbench.sh",
+        "sha256": "d5c7cd93c66e8f99881b47c6fc9a9d78a77b8ba1aa814d24a99135ba83d63218",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            25
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_6/eval/mmbench.sh"
+      },
+      "v1_6/mmbench_cn": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_6/eval/mmbench_cn.sh",
+        "sha256": "2db3cec1eb8876e69aaf55a2fe142b4a93666bd3990bbc11e1a0701ecad9fc04",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [
+            23
+          ],
+          "--conv-mode": [
+            26
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_6/eval/mmbench_cn.sh"
+      },
+      "v1_6/mmvet": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_6/eval/mmvet.sh",
+        "sha256": "1d92cf969c23e52c0f37c18632c72cdbb4a906d7ee08c75be2f8ad1ecd86b96e",
+        "matching_line_numbers": {
+          "ALPHA=": [
+            12
+          ],
+          "BETA=": [
+            11
+          ],
+          "--lang": [],
+          "--conv-mode": [
+            25
+          ],
+          "SPLIT=": [
+            8
+          ]
+        },
+        "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/v1_6/eval/mmvet.sh"
+      }
+    },
+    "official_mmbench_native": {
+      "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/llava/eval/model_vqa_mmbench.py",
+      "sha256": "957de2b23d0eae76afabb8e3e9d87ae62898185c046e8dd0c1bd398ccab7ca3e",
+      "matching_line_numbers": {
+        "max_new_tokens=": [
+          136
+        ],
+        "args.lang == 'cn'": [
+          106
+        ],
+        "cur_prompt = question": [
+          99
+        ],
+        "--lang": [
+          176
+        ],
+        "--all-rounds": [
+          174
+        ]
+      },
+      "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/llava/eval/model_vqa_mmbench.py"
+    },
+    "local_mmbench_native": {
+      "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py",
+      "sha256": "a5fd1379fc521b647e96cb3b983386624aa8992482e8076cea748fa8486da156",
+      "matching_line_numbers": {
+        "max_new_tokens=": [
+          155
+        ],
+        "args.lang == 'cn'": [
+          125
+        ],
+        "cur_prompt = question": [
+          118
+        ],
+        "--lang": [
+          195
+        ],
+        "_img_map": [
+          82,
+          86,
+          112
+        ],
+        "--all-rounds": [
+          193
+        ]
+      }
+    },
+    "official_loader": {
+      "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/llava/eval/model_vqa_loader.py",
+      "sha256": "6c9580ed3e62231c0f30708c5f1ec2c47cf44c266c0c228ef22c1b3b0e79164a",
+      "matching_line_numbers": {
+        "question.replace": [
+          114
+        ],
+        "--max_new_tokens": [
+          160
+        ],
+        "texts=question": [
+          124
+        ]
+      },
+      "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/llava/eval/model_vqa_loader.py"
+    },
+    "local_model_vqa_wrapper": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py",
+      "sha256": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534",
+      "matching_line_numbers": {
+        "generation_text_settings": [
+          21,
+          143
+        ],
+        "return cur_prompt, 1024": [
+          26
+        ],
+        "official_textvqa": [
+          21,
+          23,
+          29,
+          50,
+          98,
+          99,
+          143
+        ]
+      }
+    },
+    "local_loader_wrapper": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py",
+      "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5",
+      "matching_line_numbers": {
+        "question.replace": [
+          123
+        ],
+        "--max_new_tokens": [
+          169
+        ]
+      }
+    },
+    "local_science_wrapper": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_science.py",
+      "sha256": "cc36820fe106140a3997609cfb741283ed0d7e1d5f22db2a7b08f91feadc5ee4",
+      "matching_line_numbers": {
+        "single_pred_prompt": [
+          83
+        ],
+        "question.replace": [
+          95
+        ],
+        "max_new_tokens=": [
+          107
+        ]
+      }
+    },
+    "official_science_native": {
+      "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/llava/eval/model_vqa_science.py",
+      "sha256": "36896c128d4c2e29e964f062915a638558034ca4d3376f2f5bf49284bcad0575",
+      "matching_line_numbers": {
+        "single_pred_prompt": [
+          74
+        ],
+        "question.replace": [
+          86
+        ],
+        "max_new_tokens=": [
+          98
+        ]
+      },
+      "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/llava/eval/model_vqa_science.py"
+    },
+    "released_vizwiz_scorer": {
+      "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/eval_vizwiz.py",
+      "sha256": "6d92bfefff9fbea9cb49ea85b63ce6ec6d1fd57dba4eed08d26cceef86179b26",
+      "matching_line_numbers": {
+        "match_count": [
+          57,
+          60,
+          62
+        ],
+        "min(1.0": [
+          62
+        ],
+        "processor(ans)": [
+          54
+        ],
+        "continue": [
+          46
+        ]
+      },
+      "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/eval_vizwiz.py"
+    },
+    "released_vizwiz_converter": {
+      "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/convert_vizwiz_val_to_llava.py",
+      "sha256": "14a06b1fbdcd7123b1f52db6d301a08fc13c06bbd887881b4ad16a89b3ddb4fe",
+      "matching_line_numbers": {
+        "prompt_suffix": [
+          22,
+          40
+        ],
+        "'question_id'": [
+          27
+        ]
+      },
+      "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/convert_vizwiz_val_to_llava.py"
+    },
+    "official_benchmark_vizwiz_API": {
+      "path": "/media/disk2/YZX/research/audit_rescore_20261008/scripts_snapshot/vizwiz_official_vqaEval.py",
+      "sha256": "d26ef7ac2db06351444c3531f8d95fd9c454423fbcb9fd5dd984f12281146694",
+      "matching_line_numbers": {
+        "otherGTAns": [
+          99,
+          100
+        ],
+        "avgGTAcc": [
+          103,
+          104,
+          109,
+          110,
+          111
+        ]
+      },
+      "primary_url": "https://vizwiz.org/wp-content/uploads/2020/06/API.zip"
+    },
+    "local_official_live_scorer": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/official_score.py",
+      "sha256": "53760295975d468de59bac0877aaceb3a90e88250bd24ff673ddb1af19e2a114",
+      "matching_line_numbers": {
+        "VizWizNormalizer": [
+          17,
+          119
+        ],
+        "three-category mean F1": [
+          105
+        ],
+        "checked_predictions": [
+          26,
+          99,
+          113
+        ]
+      }
+    },
+    "local_official_math": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/rescore_official_20261008.py",
+      "sha256": "1626ad817776efab8d3b045dd8f3533ab4bda722157748f0302802444873543c",
+      "matching_line_numbers": {
+        "def vizwiz_official_score": [
+          57
+        ],
+        "other =": [
+          94
+        ],
+        "def gqa_official_score": [
+          226
+        ]
+      }
+    },
+    "local_mmbench_circular_scorer": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mmben_circular_score.py",
+      "sha256": "562cb0f1be7408f7d9d19a950415f557f5483956b17571d4ca328d53ae3991a2",
+      "matching_line_numbers": {
+        "extract_letter": [
+          15,
+          49
+        ],
+        "1000000": [
+          34
+        ],
+        "all(x == 1": [
+          54
+        ]
+      }
+    },
+    "local_vlmevalkit_matcher": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/VLMEvalKit/vlmeval/utils/matching_util.py",
+      "sha256": "03435cedaeaf6282599816aed4ba57f26dd4858f2a37399490acca98d9f8f5f2",
+      "matching_line_numbers": {
+        "def can_infer_option": [
+          8
+        ],
+        "def can_infer_text": [
+          97
+        ],
+        "def can_infer(": [
+          114
+        ]
+      },
+      "primary_reference_url": "https://github.com/open-compass/VLMEvalKit/blob/main/vlmeval/utils/matching_util.py"
+    },
+    "local_v15_driver": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh",
+      "sha256": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae",
+      "matching_line_numbers": {
+        "gen_mmb ()": [
+          61
+        ],
+        "--single-pred-prompt": [
+          73
+        ],
+        "gen_mmb mmbcn": [
+          81,
+          82,
+          83
+        ]
+      }
+    },
+    "local_next_driver": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh",
+      "sha256": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99",
+      "matching_line_numbers": {
+        "gen_mmb ()": [
+          60
+        ],
+        "--single-pred-prompt": [
+          72
+        ],
+        "gen_mmb next_mmbcn": [
+          80,
+          81,
+          82
+        ]
+      }
+    },
+    "mme_canonical_scorer": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py",
+      "sha256": "cf689cad1a922455f004e59ad8677863a3a3952132ce68e3bf16821bbd75fc26",
+      "matching_line_numbers": {
+        "GT_ARCHIVE_SHA256": [
+          16,
+          29
+        ],
+        "PERCEPTION": [
+          18,
+          35,
+          111,
+          126
+        ],
+        "parse_prediction": [
+          91,
+          103
+        ],
+        "100 * (acc + acc_plus)": [
+          124
+        ]
+      }
+    },
+    "official_POPE_scorer": {
+      "path": "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/llava/eval/eval_pope.py",
+      "sha256": "60577ecd8dcdd0a29d608e62dd75902e54cb4ecb8f5cccd619919f16da33c4fc",
+      "matching_line_numbers": {
+        "zip(pred_list, label_list)": [
+          40
+        ],
+        "avg_f1": [
+          96,
+          97,
+          109
+        ]
+      },
+      "primary_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/llava/eval/eval_pope.py"
+    },
+    "cpu_collector": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/collect_protocol_cpu.py",
+      "sha256": "bce3c9f2b51d29c9af3df257df8aba1f188b66de7c88b0e53d53ea0ba486786c"
+    },
+    "cpu_report_builder": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/build_protocol_report.py",
+      "sha256": "2c8f45d0f4afb046bb77be5a43321d921d44ba505f6cc4225a6544ce3cf432b0"
+    },
+    "cpu_identity_and_scores": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/cpu_protocol_identity_and_scores.json",
+      "sha256": "ee5b9ff0eedf34520a94eda7b2d2b0effef6cb435d9bca30b0b478cb2107e2ab"
+    },
+    "mmbcn_prompt_identity": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/mmbcn_prompt_identity.json",
+      "sha256": "dce6d9a9e04959eaba5baa7a5218cdd7708a5b09238e6f2bd4ddacebaff91c21"
+    },
+    "pope_primary_GT_verification": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/pope_original_primary_GT_verification.json",
+      "sha256": "450964eb91460d7f82dc88194e8b0dd57aa3b50d4b092674051df2b31ca3e86b"
+    }
+  },
+  "findings": [
+    {
+      "id": "MMBCN_LANG",
+      "status": "confirmed_project_protocol_error",
+      "title": "Chinese MMBench used English option-answer instruction",
+      "detail": "Both official EADP model-family scripts explicitly pass --lang cn; both historical local lane scripts omit it and native default is en. All 4876 LLM prompts change under cn, while EADP guidance and saved prompt fields are unchanged. Existing stream-only controls deliberately retain en and do not fix this separate mismatch.",
+      "evidence_keys": [
+        "official_scripts.v1_5/mmbench_cn",
+        "official_scripts.v1_6/mmbench_cn",
+        "local_mmbench_native",
+        "local_v15_driver",
+        "local_next_driver"
+      ],
+      "affected_complete_old_arms": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mmbcn/LRMAIN00625.jsonl",
+          "sha256": "c1861f2256c5a049fc691fcf15100ed5a1378f7e9c56ceb5db2d041ad5f549d4",
+          "n": 4876,
+          "n_prompt_mismatches": 0,
+          "round_id_distribution": {
+            "0": 4876
+          },
+          "n_multiple_distinct_capital_options": 0,
+          "n_regex_parse_failures": 0,
+          "n_parser_differences_vs_toolkit_no_judge": 0,
+          "parser_difference_examples": [],
+          "local_regex_circular_acc_percent": 47.29102167182663,
+          "toolkit_no_judge_circular_acc_percent": 47.29102167182663
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mmbcn/LRMAIN0125.jsonl",
+          "sha256": "f3435605d726f40912992c85be0ac9b748fe7da1067347fe902bb67378ff7144",
+          "n": 4876,
+          "n_prompt_mismatches": 0,
+          "round_id_distribution": {
+            "0": 4876
+          },
+          "n_multiple_distinct_capital_options": 0,
+          "n_regex_parse_failures": 0,
+          "n_parser_differences_vs_toolkit_no_judge": 0,
+          "parser_difference_examples": [],
+          "local_regex_circular_acc_percent": 51.1609907120743,
+          "toolkit_no_judge_circular_acc_percent": 51.1609907120743
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mmbcn/LRMAIN025.jsonl",
+          "sha256": "bacdfd5060e32c1f90fa0a30ba5da49a4b38aa6cc33617a43ccc0c7b164d8b4b",
+          "n": 4876,
+          "n_prompt_mismatches": 0,
+          "round_id_distribution": {
+            "0": 4876
+          },
+          "n_multiple_distinct_capital_options": 0,
+          "n_regex_parse_failures": 0,
+          "n_parser_differences_vs_toolkit_no_judge": 0,
+          "parser_difference_examples": [],
+          "local_regex_circular_acc_percent": 53.01857585139319,
+          "toolkit_no_judge_circular_acc_percent": 53.01857585139319
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN00625.jsonl",
+          "sha256": "168baa43d577b17ac500b697b935380a2e71350abd570acc5b507f48fb66a9e1",
+          "n": 4876,
+          "n_prompt_mismatches": 0,
+          "round_id_distribution": {
+            "0": 4876
+          },
+          "n_multiple_distinct_capital_options": 0,
+          "n_regex_parse_failures": 0,
+          "n_parser_differences_vs_toolkit_no_judge": 0,
+          "parser_difference_examples": [],
+          "local_regex_circular_acc_percent": 51.39318885448916,
+          "toolkit_no_judge_circular_acc_percent": 51.39318885448916
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN0125.jsonl",
+          "sha256": "58120544b183fc1a7441177a02a04f4a39448698177b3c2810513adab4c7e5ca",
+          "n": 4876,
+          "n_prompt_mismatches": 0,
+          "round_id_distribution": {
+            "0": 4876
+          },
+          "n_multiple_distinct_capital_options": 0,
+          "n_regex_parse_failures": 0,
+          "n_parser_differences_vs_toolkit_no_judge": 0,
+          "parser_difference_examples": [],
+          "local_regex_circular_acc_percent": 54.3343653250774,
+          "toolkit_no_judge_circular_acc_percent": 54.3343653250774
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN025.jsonl",
+          "sha256": "b648c9d1af4ce1c7509a2645118489511b3a057884d4f969f95c44104c7bc78b",
+          "n": 4876,
+          "n_prompt_mismatches": 0,
+          "round_id_distribution": {
+            "0": 4876
+          },
+          "n_multiple_distinct_capital_options": 0,
+          "n_regex_parse_failures": 0,
+          "n_parser_differences_vs_toolkit_no_judge": 0,
+          "parser_difference_examples": [],
+          "local_regex_circular_acc_percent": 56.26934984520124,
+          "toolkit_no_judge_circular_acc_percent": 56.26934984520124
+        }
+      ],
+      "cpu_prompt_identity": {
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_CN_V11.tsv",
+        "sha256": "4de91ee6fa5220a06ed4b418f8f53b372886b218c79e5035207d1fa233ac5dd5",
+        "n_rows": 4876,
+        "n_groups": 1292,
+        "group_size_distribution": {
+          "2": 83,
+          "3": 126,
+          "4": 1083
+        },
+        "unique_indices": 4876,
+        "n_base_rows": 1292,
+        "circular_structural_observations": [
+          {
+            "index": 34,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1000034,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2000034,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1009,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001009,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001009,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1012,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001012,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001012,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1014,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001014,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001014,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1189,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001189,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001189,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1192,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001192,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001192,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1193,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001193,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001193,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1195,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001195,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001195,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1198,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001198,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001198,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1200,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001200,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001200,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1201,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001201,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001201,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1210,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001210,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001210,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1212,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001212,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001212,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1214,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001214,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001214,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1216,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001216,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001216,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1218,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001218,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001218,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1219,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001219,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001219,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1229,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001229,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001229,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1230,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001230,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001230,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1549,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001549,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001549,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1551,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001551,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001551,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 1553,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1001553,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2001553,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2532,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1002532,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2002532,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2540,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1002540,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2002540,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2555,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1002555,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2002555,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2558,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1002558,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2002558,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2570,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1002570,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2002570,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2573,
+            "error": "n_rotations_vs_options"
+          },
+          {
+            "index": 1002573,
+            "error": "not_cyclic_permutation"
+          },
+          {
+            "index": 2002573,
+            "error": "not_cyclic_permutation"
+          }
+        ],
+        "rotation_option_multiset_or_GT_content_errors": 0,
+        "rotation_observation_interpretation": "28 official V11 groups retain D fixed and rotate ABC only; this is present in input TSV, not missing generated rows or incorrect GT mapping.",
+        "completed_predictions": [
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mmbcn/LRMAIN00625.jsonl",
+            "sha256": "c1861f2256c5a049fc691fcf15100ed5a1378f7e9c56ceb5db2d041ad5f549d4",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 47.29102167182663,
+            "toolkit_no_judge_circular_acc_percent": 47.29102167182663
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mmbcn/LRMAIN0125.jsonl",
+            "sha256": "f3435605d726f40912992c85be0ac9b748fe7da1067347fe902bb67378ff7144",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 51.1609907120743,
+            "toolkit_no_judge_circular_acc_percent": 51.1609907120743
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mmbcn/LRMAIN025.jsonl",
+            "sha256": "bacdfd5060e32c1f90fa0a30ba5da49a4b38aa6cc33617a43ccc0c7b164d8b4b",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 53.01857585139319,
+            "toolkit_no_judge_circular_acc_percent": 53.01857585139319
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN00625.jsonl",
+            "sha256": "168baa43d577b17ac500b697b935380a2e71350abd570acc5b507f48fb66a9e1",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 51.39318885448916,
+            "toolkit_no_judge_circular_acc_percent": 51.39318885448916
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN0125.jsonl",
+            "sha256": "58120544b183fc1a7441177a02a04f4a39448698177b3c2810513adab4c7e5ca",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 54.3343653250774,
+            "toolkit_no_judge_circular_acc_percent": 54.3343653250774
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN025.jsonl",
+            "sha256": "b648c9d1af4ce1c7509a2645118489511b3a057884d4f969f95c44104c7bc78b",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 56.26934984520124,
+            "toolkit_no_judge_circular_acc_percent": 56.26934984520124
+          }
+        ],
+        "n_llm_prompt_changes_if_lang_cn": 4876,
+        "n_guidance_changes_if_lang_cn": 0,
+        "native_prediction_prompt_field_excludes_language_instruction": true
+      },
+      "independent_correction_scope": {
+        "existing_arms": 6,
+        "questions_each": 4876,
+        "predictions": 29256,
+        "change_only": {
+          "lang": "cn"
+        },
+        "retain_other_fields": [
+          "V11 input bytes",
+          "alpha=.5",
+          "beta=2",
+          "max_new_tokens=1024",
+          "vicuna_v1",
+          "single_pred_prompt=True",
+          "all_rounds=False",
+          "wait-only patch"
+        ],
+        "scheduled_by_this_audit": false
+      },
+      "accuracy_effect": "Unmeasured; no assumed improvement. Guidance suffix identity means this is primarily an LLM prompt correction, not a different pruning guidance string."
+    },
+    {
+      "id": "MMB_SPLIT_VERSION",
+      "status": "confirmed_protocol_difference_effect_unmeasured",
+      "title": "Current V11 differs from released LLaVA/EADP 2023 datasets",
+      "detail": "Official scripts name EN20230712/CN20231003; current generation uses official V11 TSVs. EN local legacy file has4377 rows/1176 base groups versus V114876/1292. Shared base IDs do not establish question, GT, or pixel identity. Actual paper input bytes and matching-server configuration remain unavailable.",
+      "evidence_keys": [
+        "official_scripts.v1_5/mmbench",
+        "official_scripts.v1_6/mmbench",
+        "official_scripts.v1_5/mmbench_cn",
+        "official_scripts.v1_6/mmbench_cn"
+      ],
+      "en_exact_comparison": {
+        "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/mmbench_dev_20230712.tsv",
+        "sha256": "52d45f29876e56138d3d4feb169dc9a7323f6ed2ee3f439ae7e4af94192b3324",
+        "n_rows": 4377,
+        "n_legacy_base_groups": 1176,
+        "n_v11_base_groups": 1292,
+        "n_shared_base_indices": 950,
+        "v11_base_not_in_legacy": 342,
+        "legacy_not_in_v11_base": 226,
+        "changed_fields_counts": {
+          "question": 8,
+          "hint": 0,
+          "A": 1,
+          "B": 1,
+          "C": 4,
+          "D": 1,
+          "answer": 16
+        },
+        "n_changed_content_or_gt": 31,
+        "shared_base_id_same_image_bytes": 7,
+        "shared_base_id_same_RGB_pixels_and_dimensions": 7,
+        "shared_base_id_same_dimensions": 950,
+        "shared_base_id_dhash_hamming_distribution": {
+          "0": 875,
+          "2": 18,
+          "1": 50,
+          "9": 1,
+          "4": 2,
+          "3": 4
+        },
+        "legacy_base_dimensions_distribution": {
+          "[302, 232]": 6,
+          "[232, 302]": 1,
+          "[312, 237]": 3,
+          "[512, 398]": 1,
+          "[202, 202]": 6,
+          "[166, 180]": 1,
+          "[364, 208]": 1,
+          "[314, 283]": 1,
+          "[342, 453]": 2,
+          "[294, 129]": 1,
+          "[318, 371]": 1,
+          "[512, 283]": 1,
+          "[200, 202]": 2,
+          "[426, 283]": 2,
+          "[252, 192]": 5,
+          "[491, 250]": 1,
+          "[302, 202]": 6,
+          "[512, 264]": 1,
+          "[331, 350]": 1,
+          "[512, 380]": 1,
+          "[512, 268]": 1,
+          "[353, 206]": 1,
+          "[512, 310]": 1,
+          "[400, 267]": 9,
+          "[384, 120]": 1,
+          "[320, 192]": 1,
+          "[55, 256]": 1,
+          "[338, 162]": 1,
+          "[357, 227]": 1,
+          "[242, 196]": 1,
+          "[183, 487]": 1,
+          "[497, 53]": 1,
+          "[512, 333]": 2,
+          "[341, 512]": 9,
+          "[512, 341]": 113,
+          "[512, 192]": 32,
+          "[512, 141]": 1,
+          "[493, 171]": 2,
+          "[460, 171]": 1,
+          "[512, 82]": 1,
+          "[512, 125]": 2,
+          "[512, 377]": 5,
+          "[512, 274]": 2,
+          "[378, 249]": 5,
+          "[378, 251]": 3,
+          "[402, 302]": 1,
+          "[342, 229]": 2,
+          "[202, 302]": 2,
+          "[341, 400]": 1,
+          "[500, 400]": 3,
+          "[512, 309]": 4,
+          "[375, 250]": 1,
+          "[512, 165]": 4,
+          "[252, 327]": 2,
+          "[300, 200]": 2,
+          "[512, 384]": 77,
+          "[449, 222]": 1,
+          "[512, 330]": 1,
+          "[480, 320]": 10,
+          "[275, 183]": 12,
+          "[250, 166]": 1,
+          "[265, 190]": 1,
+          "[225, 225]": 12,
+          "[288, 175]": 1,
+          "[269, 187]": 1,
+          "[300, 168]": 8,
+          "[254, 199]": 1,
+          "[277, 182]": 2,
+          "[512, 317]": 2,
+          "[512, 307]": 2,
+          "[512, 335]": 1,
+          "[379, 275]": 1,
+          "[399, 327]": 1,
+          "[387, 324]": 1,
+          "[512, 329]": 4,
+          "[512, 158]": 1,
+          "[512, 465]": 1,
+          "[512, 324]": 1,
+          "[512, 270]": 1,
+          "[512, 299]": 1,
+          "[512, 374]": 3,
+          "[447, 203]": 1,
+          "[512, 246]": 2,
+          "[246, 512]": 1,
+          "[249, 512]": 1,
+          "[512, 244]": 1,
+          "[244, 512]": 2,
+          "[512, 251]": 2,
+          "[475, 223]": 1,
+          "[296, 135]": 1,
+          "[308, 149]": 1,
+          "[512, 255]": 1,
+          "[508, 512]": 1,
+          "[512, 367]": 1,
+          "[512, 243]": 2,
+          "[512, 320]": 7,
+          "[512, 512]": 42,
+          "[512, 342]": 36,
+          "[411, 512]": 1,
+          "[512, 359]": 2,
+          "[440, 440]": 1,
+          "[512, 240]": 1,
+          "[512, 319]": 1,
+          "[374, 485]": 1,
+          "[478, 491]": 1,
+          "[512, 466]": 2,
+          "[512, 314]": 3,
+          "[512, 453]": 1,
+          "[512, 306]": 1,
+          "[479, 501]": 1,
+          "[350, 275]": 1,
+          "[512, 386]": 3,
+          "[324, 483]": 1,
+          "[323, 433]": 1,
+          "[384, 437]": 1,
+          "[335, 493]": 1,
+          "[396, 448]": 1,
+          "[343, 470]": 1,
+          "[450, 460]": 1,
+          "[370, 494]": 1,
+          "[294, 484]": 1,
+          "[452, 509]": 1,
+          "[512, 332]": 1,
+          "[512, 387]": 2,
+          "[512, 450]": 1,
+          "[512, 381]": 1,
+          "[486, 512]": 2,
+          "[328, 512]": 1,
+          "[512, 382]": 6,
+          "[369, 512]": 1,
+          "[512, 436]": 2,
+          "[512, 489]": 2,
+          "[512, 372]": 5,
+          "[512, 470]": 1,
+          "[384, 512]": 27,
+          "[378, 512]": 1,
+          "[512, 434]": 1,
+          "[512, 340]": 14,
+          "[512, 373]": 5,
+          "[512, 497]": 2,
+          "[286, 237]": 1,
+          "[262, 184]": 1,
+          "[277, 256]": 1,
+          "[262, 237]": 1,
+          "[253, 222]": 1,
+          "[220, 211]": 1,
+          "[208, 196]": 1,
+          "[256, 229]": 1,
+          "[261, 244]": 1,
+          "[500, 336]": 1,
+          "[301, 450]": 1,
+          "[342, 512]": 6,
+          "[512, 288]": 29,
+          "[288, 512]": 3,
+          "[512, 343]": 5,
+          "[512, 449]": 1,
+          "[500, 333]": 2,
+          "[500, 390]": 1,
+          "[362, 512]": 2,
+          "[512, 267]": 1,
+          "[500, 321]": 1,
+          "[500, 305]": 1,
+          "[500, 320]": 1,
+          "[500, 191]": 1,
+          "[334, 500]": 1,
+          "[512, 346]": 1,
+          "[333, 500]": 2,
+          "[512, 365]": 3,
+          "[512, 485]": 2,
+          "[339, 512]": 3,
+          "[512, 339]": 4,
+          "[346, 512]": 1,
+          "[512, 351]": 1,
+          "[512, 338]": 2,
+          "[306, 408]": 1,
+          "[512, 348]": 1,
+          "[500, 500]": 3,
+          "[512, 293]": 11,
+          "[512, 260]": 2,
+          "[307, 222]": 1,
+          "[512, 122]": 6,
+          "[512, 187]": 4,
+          "[389, 512]": 9,
+          "[512, 209]": 2,
+          "[368, 125]": 5,
+          "[450, 477]": 1,
+          "[500, 325]": 1,
+          "[512, 236]": 2,
+          "[356, 164]": 1,
+          "[500, 313]": 1,
+          "[410, 512]": 2,
+          "[344, 512]": 1,
+          "[275, 512]": 1,
+          "[512, 256]": 1,
+          "[281, 179]": 1,
+          "[511, 512]": 2,
+          "[350, 418]": 1,
+          "[212, 237]": 1,
+          "[231, 218]": 1,
+          "[480, 360]": 1,
+          "[510, 512]": 4,
+          "[402, 450]": 1,
+          "[402, 444]": 1,
+          "[396, 444]": 1,
+          "[509, 512]": 4,
+          "[512, 507]": 3,
+          "[512, 504]": 2,
+          "[270, 480]": 1,
+          "[370, 208]": 1,
+          "[320, 240]": 1,
+          "[426, 240]": 1,
+          "[290, 174]": 1,
+          "[313, 161]": 1,
+          "[285, 177]": 1,
+          "[276, 183]": 2,
+          "[512, 410]": 3,
+          "[375, 500]": 2,
+          "[500, 375]": 5,
+          "[512, 442]": 1,
+          "[512, 289]": 2,
+          "[512, 390]": 2,
+          "[512, 424]": 1,
+          "[500, 379]": 1,
+          "[300, 447]": 1,
+          "[512, 461]": 1,
+          "[492, 512]": 2,
+          "[512, 399]": 1,
+          "[512, 352]": 1,
+          "[512, 344]": 6,
+          "[512, 362]": 2,
+          "[194, 260]": 1,
+          "[259, 194]": 2,
+          "[387, 512]": 3,
+          "[209, 241]": 1,
+          "[458, 385]": 1,
+          "[354, 512]": 1,
+          "[198, 255]": 1,
+          "[310, 163]": 1,
+          "[512, 385]": 25,
+          "[256, 256]": 8,
+          "[304, 512]": 1,
+          "[512, 302]": 1,
+          "[512, 334]": 3,
+          "[191, 220]": 1,
+          "[332, 500]": 1,
+          "[382, 512]": 1,
+          "[512, 303]": 5,
+          "[512, 214]": 1,
+          "[512, 308]": 2,
+          "[100, 100]": 9,
+          "[512, 439]": 2,
+          "[340, 512]": 1,
+          "[500, 272]": 1,
+          "[366, 512]": 1,
+          "[512, 419]": 1,
+          "[512, 300]": 1,
+          "[512, 388]": 1,
+          "[469, 512]": 1,
+          "[500, 334]": 1,
+          "[512, 287]": 2,
+          "[512, 301]": 2,
+          "[365, 512]": 1,
+          "[500, 346]": 1,
+          "[500, 310]": 1,
+          "[512, 284]": 1,
+          "[512, 142]": 1,
+          "[377, 512]": 1,
+          "[381, 500]": 1,
+          "[349, 512]": 1,
+          "[512, 370]": 2,
+          "[512, 451]": 2,
+          "[512, 510]": 1,
+          "[302, 306]": 1,
+          "[512, 266]": 1,
+          "[512, 369]": 2,
+          "[359, 512]": 1,
+          "[512, 417]": 3,
+          "[422, 454]": 1,
+          "[512, 445]": 1,
+          "[512, 435]": 1,
+          "[512, 350]": 1,
+          "[330, 220]": 1,
+          "[271, 186]": 1,
+          "[512, 318]": 1,
+          "[512, 366]": 2,
+          "[512, 258]": 1,
+          "[512, 327]": 1,
+          "[200, 200]": 2,
+          "[507, 512]": 1,
+          "[474, 512]": 2,
+          "[512, 478]": 1,
+          "[260, 300]": 1,
+          "[512, 280]": 1,
+          "[160, 160]": 3,
+          "[400, 237]": 1,
+          "[363, 270]": 2,
+          "[268, 285]": 1,
+          "[424, 283]": 1,
+          "[474, 266]": 2,
+          "[402, 270]": 1,
+          "[394, 270]": 1,
+          "[512, 493]": 2,
+          "[512, 347]": 1,
+          "[512, 316]": 1,
+          "[357, 276]": 1,
+          "[351, 259]": 1,
+          "[308, 278]": 1,
+          "[342, 247]": 1,
+          "[280, 257]": 1,
+          "[323, 255]": 1,
+          "[351, 256]": 1,
+          "[231, 249]": 1,
+          "[304, 245]": 1,
+          "[265, 240]": 1,
+          "[332, 256]": 1,
+          "[324, 257]": 1,
+          "[263, 238]": 1,
+          "[273, 253]": 1,
+          "[173, 239]": 1,
+          "[181, 248]": 1,
+          "[174, 252]": 1,
+          "[284, 201]": 1,
+          "[268, 175]": 1,
+          "[236, 199]": 1,
+          "[512, 383]": 1,
+          "[277, 254]": 1,
+          "[263, 249]": 1,
+          "[271, 272]": 1,
+          "[166, 140]": 1,
+          "[400, 266]": 1,
+          "[358, 512]": 1,
+          "[512, 418]": 2,
+          "[512, 315]": 1,
+          "[512, 361]": 1,
+          "[368, 512]": 1,
+          "[512, 354]": 2,
+          "[512, 358]": 1,
+          "[352, 512]": 1,
+          "[504, 512]": 2,
+          "[512, 401]": 1,
+          "[512, 415]": 1,
+          "[512, 430]": 1,
+          "[512, 321]": 1,
+          "[512, 375]": 1,
+          "[512, 364]": 1,
+          "[419, 423]": 1,
+          "[321, 255]": 1,
+          "[411, 408]": 1,
+          "[294, 421]": 1,
+          "[419, 421]": 1,
+          "[512, 408]": 3,
+          "[444, 512]": 2,
+          "[274, 396]": 1,
+          "[423, 420]": 1,
+          "[453, 493]": 1,
+          "[367, 347]": 1,
+          "[399, 390]": 1,
+          "[428, 414]": 1,
+          "[444, 345]": 1,
+          "[242, 312]": 1,
+          "[287, 194]": 1,
+          "[329, 410]": 1,
+          "[314, 235]": 1,
+          "[319, 405]": 1,
+          "[307, 420]": 1,
+          "[325, 371]": 1,
+          "[483, 407]": 1,
+          "[409, 413]": 1,
+          "[512, 376]": 1,
+          "[286, 386]": 1,
+          "[231, 315]": 1,
+          "[328, 391]": 1,
+          "[300, 93]": 1,
+          "[300, 140]": 1,
+          "[220, 360]": 1,
+          "[330, 400]": 1,
+          "[512, 414]": 10,
+          "[341, 93]": 1,
+          "[106, 56]": 1,
+          "[512, 29]": 1,
+          "[512, 49]": 1,
+          "[55, 236]": 1,
+          "[97, 94]": 1,
+          "[78, 79]": 1,
+          "[287, 63]": 1,
+          "[512, 150]": 1,
+          "[436, 190]": 1,
+          "[512, 167]": 2,
+          "[508, 112]": 1,
+          "[380, 166]": 1,
+          "[334, 119]": 1,
+          "[501, 135]": 1,
+          "[217, 314]": 1,
+          "[257, 201]": 1,
+          "[275, 95]": 1,
+          "[444, 146]": 1,
+          "[319, 126]": 1,
+          "[231, 151]": 1,
+          "[308, 215]": 1,
+          "[512, 220]": 1,
+          "[512, 178]": 1,
+          "[236, 138]": 1,
+          "[512, 136]": 1,
+          "[310, 120]": 1,
+          "[411, 95]": 1,
+          "[512, 183]": 1,
+          "[175, 94]": 1,
+          "[452, 86]": 1,
+          "[214, 185]": 1,
+          "[448, 83]": 1,
+          "[512, 100]": 1,
+          "[512, 433]": 1,
+          "[512, 498]": 1,
+          "[405, 388]": 1,
+          "[512, 511]": 1,
+          "[512, 395]": 1,
+          "[497, 368]": 1,
+          "[387, 331]": 1,
+          "[512, 292]": 1,
+          "[512, 476]": 1,
+          "[450, 512]": 1,
+          "[512, 508]": 1,
+          "[512, 360]": 1,
+          "[512, 467]": 1,
+          "[407, 357]": 1,
+          "[512, 502]": 1,
+          "[512, 305]": 1,
+          "[194, 259]": 1,
+          "[383, 512]": 1,
+          "[357, 507]": 1,
+          "[219, 87]": 1,
+          "[185, 77]": 1,
+          "[339, 105]": 1,
+          "[189, 267]": 1,
+          "[220, 229]": 1,
+          "[242, 209]": 1,
+          "[120, 83]": 1,
+          "[137, 103]": 1,
+          "[101, 90]": 1,
+          "[105, 74]": 1,
+          "[150, 101]": 1,
+          "[133, 93]": 1,
+          "[146, 93]": 1,
+          "[111, 72]": 1,
+          "[114, 66]": 1,
+          "[240, 100]": 1,
+          "[124, 73]": 1,
+          "[512, 345]": 1,
+          "[512, 201]": 1,
+          "[491, 256]": 1,
+          "[512, 219]": 1,
+          "[500, 331]": 1,
+          "[192, 262]": 1,
+          "[500, 328]": 1,
+          "[512, 275]": 9,
+          "[512, 279]": 1,
+          "[512, 229]": 1,
+          "[512, 393]": 2,
+          "[512, 322]": 2,
+          "[512, 278]": 1,
+          "[512, 455]": 1,
+          "[512, 452]": 1,
+          "[512, 487]": 1,
+          "[512, 505]": 1,
+          "[512, 425]": 1,
+          "[512, 423]": 1,
+          "[500, 512]": 1,
+          "[512, 412]": 1,
+          "[508, 400]": 1,
+          "[403, 412]": 1,
+          "[485, 512]": 1,
+          "[447, 415]": 1,
+          "[512, 263]": 1,
+          "[285, 244]": 1,
+          "[260, 260]": 1,
+          "[435, 512]": 1,
+          "[512, 277]": 1,
+          "[325, 300]": 1,
+          "[474, 287]": 1,
+          "[320, 317]": 1,
+          "[399, 512]": 1,
+          "[266, 189]": 1,
+          "[410, 237]": 1,
+          "[438, 266]": 1,
+          "[270, 189]": 1,
+          "[439, 270]": 1,
+          "[438, 285]": 1,
+          "[180, 270]": 1,
+          "[512, 296]": 1,
+          "[431, 300]": 1,
+          "[383, 132]": 1
+        },
+        "v11_base_dimensions_distribution": {
+          "[302, 232]": 5,
+          "[476, 53]": 1,
+          "[364, 208]": 1,
+          "[342, 453]": 2,
+          "[426, 283]": 1,
+          "[252, 192]": 1,
+          "[302, 202]": 2,
+          "[331, 350]": 1,
+          "[512, 380]": 1,
+          "[512, 268]": 1,
+          "[512, 310]": 2,
+          "[400, 267]": 9,
+          "[384, 120]": 1,
+          "[320, 192]": 1,
+          "[338, 162]": 1,
+          "[357, 227]": 1,
+          "[242, 196]": 1,
+          "[183, 487]": 1,
+          "[497, 53]": 1,
+          "[512, 341]": 110,
+          "[512, 192]": 33,
+          "[512, 367]": 3,
+          "[300, 168]": 11,
+          "[343, 147]": 1,
+          "[280, 180]": 1,
+          "[292, 173]": 1,
+          "[275, 183]": 22,
+          "[257, 196]": 1,
+          "[242, 208]": 1,
+          "[367, 137]": 1,
+          "[299, 168]": 2,
+          "[276, 183]": 3,
+          "[249, 202]": 1,
+          "[512, 384]": 74,
+          "[512, 512]": 51,
+          "[512, 340]": 15,
+          "[450, 300]": 1,
+          "[512, 141]": 1,
+          "[493, 171]": 2,
+          "[460, 171]": 1,
+          "[512, 82]": 1,
+          "[512, 125]": 2,
+          "[512, 377]": 5,
+          "[378, 249]": 5,
+          "[378, 251]": 3,
+          "[402, 302]": 1,
+          "[341, 400]": 1,
+          "[500, 400]": 2,
+          "[480, 400]": 1,
+          "[512, 309]": 3,
+          "[252, 327]": 2,
+          "[202, 202]": 1,
+          "[480, 320]": 8,
+          "[250, 166]": 1,
+          "[265, 190]": 1,
+          "[225, 225]": 17,
+          "[288, 175]": 1,
+          "[269, 187]": 2,
+          "[254, 199]": 1,
+          "[277, 182]": 4,
+          "[512, 317]": 2,
+          "[512, 307]": 3,
+          "[512, 335]": 1,
+          "[379, 275]": 1,
+          "[399, 327]": 1,
+          "[387, 324]": 1,
+          "[512, 329]": 4,
+          "[512, 158]": 1,
+          "[512, 465]": 1,
+          "[512, 324]": 1,
+          "[512, 270]": 1,
+          "[512, 374]": 2,
+          "[447, 203]": 1,
+          "[512, 246]": 2,
+          "[246, 512]": 1,
+          "[249, 512]": 1,
+          "[512, 244]": 1,
+          "[244, 512]": 2,
+          "[512, 251]": 2,
+          "[475, 223]": 1,
+          "[296, 135]": 1,
+          "[308, 149]": 1,
+          "[512, 255]": 2,
+          "[508, 512]": 1,
+          "[512, 243]": 2,
+          "[512, 320]": 6,
+          "[512, 89]": 1,
+          "[279, 212]": 1,
+          "[284, 216]": 1,
+          "[512, 426]": 1,
+          "[291, 173]": 1,
+          "[512, 295]": 1,
+          "[512, 258]": 2,
+          "[512, 342]": 40,
+          "[512, 286]": 2,
+          "[259, 194]": 8,
+          "[512, 366]": 4,
+          "[512, 347]": 2,
+          "[502, 512]": 1,
+          "[1219, 774]": 2,
+          "[2880, 1008]": 2,
+          "[411, 512]": 1,
+          "[384, 512]": 20,
+          "[512, 359]": 2,
+          "[440, 440]": 1,
+          "[512, 319]": 1,
+          "[374, 485]": 1,
+          "[512, 453]": 1,
+          "[479, 501]": 1,
+          "[350, 275]": 1,
+          "[337, 319]": 1,
+          "[323, 433]": 1,
+          "[384, 437]": 1,
+          "[294, 484]": 1,
+          "[452, 509]": 1,
+          "[512, 381]": 1,
+          "[328, 512]": 1,
+          "[400, 299]": 1,
+          "[270, 270]": 1,
+          "[512, 289]": 2,
+          "[512, 401]": 2,
+          "[289, 281]": 1,
+          "[286, 237]": 1,
+          "[262, 184]": 1,
+          "[277, 256]": 1,
+          "[262, 237]": 1,
+          "[253, 222]": 1,
+          "[220, 211]": 1,
+          "[208, 196]": 1,
+          "[256, 229]": 1,
+          "[261, 244]": 1,
+          "[500, 336]": 1,
+          "[301, 450]": 1,
+          "[342, 512]": 7,
+          "[512, 288]": 55,
+          "[512, 343]": 3,
+          "[500, 375]": 7,
+          "[500, 390]": 1,
+          "[512, 267]": 2,
+          "[500, 321]": 1,
+          "[512, 386]": 3,
+          "[500, 305]": 1,
+          "[500, 320]": 1,
+          "[500, 191]": 1,
+          "[334, 500]": 1,
+          "[512, 346]": 1,
+          "[512, 382]": 5,
+          "[512, 485]": 2,
+          "[339, 512]": 2,
+          "[512, 351]": 1,
+          "[512, 348]": 1,
+          "[512, 293]": 5,
+          "[512, 260]": 4,
+          "[512, 122]": 6,
+          "[512, 187]": 4,
+          "[389, 512]": 9,
+          "[512, 209]": 2,
+          "[450, 477]": 1,
+          "[500, 325]": 1,
+          "[512, 236]": 2,
+          "[500, 313]": 1,
+          "[512, 333]": 3,
+          "[410, 512]": 2,
+          "[288, 512]": 2,
+          "[344, 512]": 1,
+          "[275, 512]": 1,
+          "[512, 256]": 1,
+          "[281, 179]": 1,
+          "[511, 512]": 2,
+          "[350, 418]": 1,
+          "[480, 360]": 1,
+          "[510, 512]": 4,
+          "[402, 444]": 1,
+          "[396, 444]": 1,
+          "[509, 512]": 4,
+          "[512, 507]": 2,
+          "[512, 504]": 2,
+          "[370, 208]": 1,
+          "[320, 240]": 1,
+          "[290, 174]": 3,
+          "[313, 161]": 1,
+          "[285, 177]": 1,
+          "[512, 365]": 2,
+          "[512, 410]": 3,
+          "[375, 500]": 4,
+          "[500, 333]": 4,
+          "[333, 500]": 1,
+          "[512, 442]": 1,
+          "[512, 339]": 5,
+          "[512, 390]": 2,
+          "[512, 424]": 2,
+          "[500, 379]": 1,
+          "[300, 447]": 1,
+          "[512, 461]": 1,
+          "[500, 500]": 3,
+          "[492, 512]": 2,
+          "[512, 387]": 1,
+          "[512, 399]": 1,
+          "[512, 352]": 1,
+          "[512, 344]": 5,
+          "[512, 362]": 2,
+          "[194, 260]": 2,
+          "[387, 512]": 3,
+          "[209, 241]": 1,
+          "[458, 385]": 1,
+          "[512, 314]": 2,
+          "[354, 512]": 1,
+          "[198, 255]": 1,
+          "[310, 163]": 1,
+          "[512, 385]": 20,
+          "[256, 256]": 23,
+          "[304, 512]": 1,
+          "[512, 302]": 1,
+          "[191, 220]": 1,
+          "[382, 512]": 2,
+          "[512, 214]": 1,
+          "[512, 308]": 3,
+          "[100, 100]": 9,
+          "[512, 439]": 2,
+          "[381, 500]": 1,
+          "[366, 512]": 1,
+          "[512, 274]": 1,
+          "[512, 419]": 1,
+          "[512, 300]": 1,
+          "[512, 388]": 1,
+          "[469, 512]": 2,
+          "[500, 334]": 1,
+          "[512, 338]": 2,
+          "[512, 287]": 2,
+          "[512, 301]": 2,
+          "[512, 334]": 2,
+          "[365, 512]": 1,
+          "[500, 346]": 1,
+          "[500, 310]": 1,
+          "[512, 284]": 2,
+          "[512, 142]": 2,
+          "[377, 512]": 1,
+          "[349, 512]": 1,
+          "[341, 512]": 9,
+          "[512, 370]": 2,
+          "[512, 451]": 2,
+          "[512, 510]": 1,
+          "[512, 369]": 2,
+          "[512, 417]": 4,
+          "[422, 454]": 1,
+          "[512, 350]": 1,
+          "[330, 220]": 1,
+          "[512, 318]": 1,
+          "[512, 327]": 1,
+          "[200, 200]": 1,
+          "[507, 512]": 1,
+          "[474, 512]": 3,
+          "[512, 478]": 1,
+          "[260, 300]": 1,
+          "[512, 280]": 1,
+          "[160, 160]": 1,
+          "[400, 237]": 1,
+          "[363, 270]": 2,
+          "[268, 285]": 1,
+          "[424, 283]": 1,
+          "[474, 266]": 2,
+          "[402, 270]": 1,
+          "[394, 270]": 1,
+          "[512, 373]": 5,
+          "[512, 493]": 2,
+          "[512, 316]": 2,
+          "[357, 276]": 1,
+          "[351, 259]": 1,
+          "[308, 278]": 1,
+          "[342, 247]": 1,
+          "[280, 257]": 1,
+          "[323, 255]": 1,
+          "[351, 256]": 1,
+          "[231, 249]": 1,
+          "[304, 245]": 1,
+          "[265, 240]": 1,
+          "[332, 256]": 1,
+          "[324, 257]": 1,
+          "[263, 238]": 1,
+          "[273, 253]": 1,
+          "[173, 239]": 1,
+          "[181, 248]": 1,
+          "[174, 252]": 1,
+          "[284, 201]": 1,
+          "[268, 175]": 1,
+          "[236, 199]": 1,
+          "[512, 383]": 1,
+          "[277, 254]": 1,
+          "[263, 249]": 1,
+          "[271, 272]": 1,
+          "[125, 139]": 1,
+          "[166, 140]": 1,
+          "[400, 266]": 1,
+          "[358, 512]": 1,
+          "[512, 418]": 2,
+          "[512, 315]": 1,
+          "[512, 361]": 2,
+          "[368, 512]": 1,
+          "[512, 354]": 3,
+          "[512, 358]": 1,
+          "[352, 512]": 1,
+          "[504, 512]": 1,
+          "[512, 415]": 1,
+          "[512, 321]": 3,
+          "[512, 375]": 1,
+          "[512, 364]": 1,
+          "[419, 423]": 1,
+          "[321, 255]": 1,
+          "[411, 408]": 1,
+          "[294, 421]": 1,
+          "[419, 421]": 1,
+          "[512, 408]": 3,
+          "[444, 512]": 2,
+          "[274, 396]": 1,
+          "[423, 420]": 1,
+          "[453, 493]": 1,
+          "[367, 347]": 1,
+          "[399, 390]": 1,
+          "[428, 414]": 1,
+          "[444, 345]": 1,
+          "[242, 312]": 1,
+          "[287, 194]": 1,
+          "[329, 410]": 1,
+          "[314, 235]": 1,
+          "[319, 405]": 1,
+          "[307, 420]": 1,
+          "[325, 371]": 1,
+          "[483, 407]": 1,
+          "[409, 413]": 1,
+          "[512, 376]": 1,
+          "[286, 386]": 1,
+          "[231, 315]": 1,
+          "[328, 391]": 1,
+          "[300, 93]": 1,
+          "[300, 140]": 1,
+          "[220, 360]": 1,
+          "[330, 400]": 1,
+          "[512, 414]": 9,
+          "[341, 93]": 1,
+          "[106, 56]": 1,
+          "[512, 29]": 1,
+          "[512, 49]": 1,
+          "[55, 236]": 1,
+          "[97, 94]": 1,
+          "[287, 63]": 1,
+          "[512, 150]": 1,
+          "[436, 190]": 1,
+          "[512, 167]": 2,
+          "[508, 112]": 1,
+          "[380, 166]": 1,
+          "[334, 119]": 1,
+          "[501, 135]": 1,
+          "[217, 314]": 1,
+          "[257, 201]": 1,
+          "[275, 95]": 1,
+          "[444, 146]": 1,
+          "[231, 151]": 1,
+          "[308, 215]": 1,
+          "[512, 220]": 1,
+          "[512, 178]": 1,
+          "[236, 138]": 1,
+          "[310, 120]": 1,
+          "[175, 94]": 1,
+          "[452, 86]": 1,
+          "[214, 185]": 1,
+          "[448, 83]": 1,
+          "[512, 433]": 1,
+          "[512, 498]": 1,
+          "[405, 388]": 1,
+          "[486, 512]": 1,
+          "[512, 489]": 1,
+          "[512, 395]": 1,
+          "[497, 368]": 1,
+          "[512, 292]": 1,
+          "[512, 476]": 1,
+          "[450, 512]": 1,
+          "[512, 508]": 1,
+          "[512, 360]": 1,
+          "[407, 357]": 1,
+          "[512, 502]": 1,
+          "[468, 512]": 1,
+          "[512, 305]": 1,
+          "[194, 259]": 1,
+          "[383, 512]": 1,
+          "[219, 87]": 1,
+          "[185, 77]": 1,
+          "[339, 105]": 1,
+          "[189, 267]": 1,
+          "[182, 276]": 1,
+          "[220, 229]": 1,
+          "[242, 209]": 1,
+          "[120, 83]": 1,
+          "[137, 103]": 1,
+          "[105, 74]": 1,
+          "[150, 101]": 1,
+          "[133, 93]": 1,
+          "[146, 93]": 1,
+          "[111, 72]": 1,
+          "[240, 100]": 1,
+          "[124, 73]": 1,
+          "[512, 345]": 2,
+          "[512, 201]": 1,
+          "[491, 256]": 1,
+          "[512, 219]": 2,
+          "[500, 331]": 1,
+          "[500, 328]": 1,
+          "[512, 275]": 8,
+          "[512, 279]": 1,
+          "[512, 303]": 3,
+          "[512, 372]": 4,
+          "[512, 229]": 1,
+          "[512, 393]": 2,
+          "[512, 322]": 2,
+          "[512, 278]": 1,
+          "[512, 455]": 1,
+          "[512, 452]": 1,
+          "[512, 487]": 1,
+          "[512, 505]": 1,
+          "[512, 425]": 1,
+          "[512, 423]": 1,
+          "[500, 512]": 1,
+          "[512, 412]": 1,
+          "[512, 436]": 1,
+          "[508, 400]": 1,
+          "[403, 412]": 1,
+          "[485, 512]": 1,
+          "[447, 415]": 1,
+          "[512, 263]": 1,
+          "[285, 244]": 1,
+          "[260, 260]": 1,
+          "[435, 512]": 1,
+          "[512, 277]": 1,
+          "[325, 300]": 1,
+          "[474, 287]": 1,
+          "[320, 317]": 1,
+          "[399, 512]": 1,
+          "[266, 189]": 1,
+          "[410, 237]": 1,
+          "[438, 266]": 1,
+          "[270, 189]": 1,
+          "[439, 270]": 1,
+          "[438, 285]": 1,
+          "[180, 270]": 1,
+          "[512, 296]": 1,
+          "[431, 300]": 1,
+          "[383, 132]": 1,
+          "[362, 512]": 1,
+          "[398, 512]": 1,
+          "[260, 194]": 1,
+          "[488, 490]": 1,
+          "[224, 224]": 1,
+          "[423, 89]": 1,
+          "[512, 71]": 1,
+          "[445, 512]": 1,
+          "[374, 512]": 1,
+          "[512, 331]": 1,
+          "[450, 281]": 1,
+          "[393, 512]": 1,
+          "[340, 512]": 1,
+          "[494, 512]": 1,
+          "[512, 285]": 1,
+          "[512, 169]": 1,
+          "[276, 182]": 1,
+          "[180, 279]": 1,
+          "[446, 512]": 1,
+          "[226, 216]": 1,
+          "[188, 268]": 1,
+          "[220, 294]": 1,
+          "[512, 472]": 1,
+          "[211, 239]": 1,
+          "[235, 214]": 1,
+          "[268, 188]": 1,
+          "[262, 192]": 1,
+          "[256, 197]": 2,
+          "[274, 184]": 1,
+          "[236, 214]": 1,
+          "[183, 275]": 2,
+          "[512, 429]": 1,
+          "[278, 181]": 1,
+          "[247, 204]": 1,
+          "[414, 512]": 1,
+          "[300, 201]": 1,
+          "[512, 400]": 1,
+          "[329, 512]": 1,
+          "[202, 295]": 1,
+          "[512, 323]": 1,
+          "[390, 280]": 1,
+          "[512, 337]": 1,
+          "[465, 512]": 2,
+          "[512, 394]": 1,
+          "[197, 255]": 1,
+          "[512, 336]": 1,
+          "[245, 206]": 1,
+          "[303, 202]": 3,
+          "[303, 166]": 1,
+          "[279, 180]": 1,
+          "[347, 145]": 1,
+          "[500, 227]": 1,
+          "[316, 159]": 1,
+          "[299, 169]": 1,
+          "[487, 325]": 1,
+          "[512, 247]": 1,
+          "[512, 406]": 1,
+          "[356, 512]": 1,
+          "[482, 512]": 1,
+          "[512, 148]": 1,
+          "[512, 172]": 1,
+          "[512, 441]": 1,
+          "[512, 480]": 1,
+          "[512, 250]": 2,
+          "[1024, 668]": 1,
+          "[1024, 1024]": 9,
+          "[1024, 684]": 5,
+          "[1024, 682]": 4,
+          "[768, 1024]": 1,
+          "[1000, 666]": 1,
+          "[1024, 666]": 1,
+          "[682, 1024]": 1,
+          "[684, 1024]": 1,
+          "[668, 1000]": 1,
+          "[1024, 796]": 1,
+          "[1024, 768]": 4,
+          "[978, 1024]": 1,
+          "[1000, 750]": 1,
+          "[1024, 508]": 1,
+          "[272, 480]": 1,
+          "[426, 240]": 1,
+          "[1434, 1308]": 1,
+          "[1797, 1593]": 2,
+          "[1798, 481]": 1,
+          "[1789, 495]": 2,
+          "[1153, 847]": 3,
+          "[1920, 1380]": 1,
+          "[853, 480]": 1,
+          "[836, 529]": 1,
+          "[1247, 792]": 1,
+          "[693, 355]": 1
+        },
+        "shared_base_id_exact_question_options_GT_image": 7,
+        "n_shared_question_hint_unordered_choices_answer_text_RGB_exact_unique_keys": 7,
+        "n_shared_question_hint_unordered_choices_answer_text_without_image": 758,
+        "n_unique_images_legacy": 1132,
+        "n_unique_images_v11": 1250,
+        "n_shared_image_bytes": 7
+      },
+      "image_identity_limit": "RGB hashes include dimensions. Exact pixels agree for7 shared IDs; dimensions agree for950. dHash agreement875/950 and low distances in74 others are approximate visual evidence, not proof of identity or wrong-image evidence.",
+      "cn_old_split_content_identity": "Not verified: old CN20231003 TSV was not available locally. Do not transfer EN counts to CN.",
+      "required_control": "A separate clearly labeled released-2023-split EADP/AnchorZip comparison at identical K and corrected CN language, with exact frozen source/input/image manifest and the same scoring protocol. Existing V11 controls remain valuable within-version comparisons; do not compare V11 directly to paper as a proven same-dataset reproduction."
+    },
+    {
+      "id": "VIZWIZ_GENERATION",
+      "status": "confirmed_protocol_difference_effect_unmeasured",
+      "title": "VizWiz uses model_vqa instead of released loader",
+      "detail": "All4319 validation questions and image filenames exactly match the released conversion. LLM question text is unchanged. Local model_vqa guidance retains the single-word answer instruction; official EADP loader removes that instruction. Decoder limit is1024 locally versus128 in the released loader. The Unanswerable instruction remains in both guidance strings.",
+      "evidence_keys": [
+        "official_scripts.v1_5/vizwiz_val",
+        "official_scripts.v1_6/vizwiz_val",
+        "official_loader",
+        "local_model_vqa_wrapper",
+        "released_vizwiz_converter"
+      ],
+      "n": 4319,
+      "n_changed_guidance": 4319,
+      "independent_parameter_differences": {
+        "released_val_alpha": 0.0,
+        "local_alpha": 0.5,
+        "released_beta": 1.0,
+        "local_beta": 2.0
+      },
+      "accuracy_effect": "Unmeasured. A larger decoding bound only changes generations that would otherwise reach it; this audit does not assume truncation or effect.",
+      "required_controls": [
+        "With wait-only and all other fields fixed, change only guidance suffix removal; save full runtime counts and prediction identity.",
+        "Separately change only max_new_tokens1024→128; do not combine that with guidance, alpha or beta when assigning causality.",
+        "If evaluating the public default recipe, preregister one released-alpha/beta recipe separately and retain all outcomes; its result is not proof of paper argv."
+      ]
+    },
+    {
+      "id": "VIZWIZ_SCORING",
+      "status": "published_code_vs_benchmark_metric_difference",
+      "title": "Official local score differs from EADP released validation scorer",
+      "detail": "Published EADP eval_vizwiz.py uses normalized-GT min(match_count/3), while the benchmark API averages scores leaving each of10 annotator answers out. Current local official scorer follows the benchmark API and is correct. The auxiliary published-code score is computed on the same complete4319 raw answers, without editing them or replacing official scores. Paper scorer identity is unverified.",
+      "evidence_keys": [
+        "released_vizwiz_scorer",
+        "official_benchmark_vizwiz_API",
+        "local_official_live_scorer",
+        "local_official_math"
+      ],
+      "formulas": {
+        "released_code": "min(1, count(processed_GT == processed_prediction)/3)",
+        "benchmark_official": "mean_i min(1, count_{j!=i}(GT_j == benchmark_processed_prediction)/3)",
+        "ten_annotators_example": "With3 matching annotations: naive1.0 versus leave-one-out0.9; with1 or2:1/3 versus0.3,2/3 versus0.6."
+      },
+      "complete_same_prediction_comparison": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/vizwiz/LRMAIN00625.jsonl",
+          "prediction_sha256": "223f990e5346797758bb5ca6abe270ad8161f649cb1e35b5debfdec6ab9b682a",
+          "n": 4319,
+          "EADP_published_code_vizwiz_score_percent": 59.759203519333234,
+          "benchmark_official_leave_one_out_percent": 58.28664042602452,
+          "author_code_minus_official_pp": 1.4725630933087184,
+          "leave_one_out_change_only_using_author_normalization_percent": 58.28664042602452,
+          "author_naive_minus_author_norm_leave_one_out_pp": 1.4725630933087184,
+          "author_norm_leave_one_out_minus_official_norm_leave_one_out_pp": 0.0,
+          "n_changed_per_question_scores": 1028,
+          "interpretation": "Both evaluated on identical raw answers; published-code result is auxiliary, not replacement official score."
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/vizwiz/LRMAIN0125.jsonl",
+          "prediction_sha256": "ac5bec171996f74a828d6e6d0df7ed3fa0128261e5f38b30a0b06ee2e10d0f18",
+          "n": 4319,
+          "EADP_published_code_vizwiz_score_percent": 58.98741992745237,
+          "benchmark_official_leave_one_out_percent": 57.56656633479974,
+          "author_code_minus_official_pp": 1.4208535926526336,
+          "leave_one_out_change_only_using_author_normalization_percent": 57.56656633479974,
+          "author_naive_minus_author_norm_leave_one_out_pp": 1.4208535926526336,
+          "author_norm_leave_one_out_minus_official_norm_leave_one_out_pp": 0.0,
+          "n_changed_per_question_scores": 1003,
+          "interpretation": "Both evaluated on identical raw answers; published-code result is auxiliary, not replacement official score."
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/vizwiz/LRMAIN025.jsonl",
+          "prediction_sha256": "182fc80437f06958d5650524e262e71dfbdec4e605f9f232daddf241258d74d4",
+          "n": 4319,
+          "EADP_published_code_vizwiz_score_percent": 57.85289804738757,
+          "benchmark_official_leave_one_out_percent": 56.462144014818215,
+          "author_code_minus_official_pp": 1.390754032569361,
+          "leave_one_out_change_only_using_author_normalization_percent": 56.48529752257463,
+          "author_naive_minus_author_norm_leave_one_out_pp": 1.367600524812936,
+          "author_norm_leave_one_out_minus_official_norm_leave_one_out_pp": 0.0231535077564251,
+          "n_changed_per_question_scores": 985,
+          "interpretation": "Both evaluated on identical raw answers; published-code result is auxiliary, not replacement official score."
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_vizwiz/LRMAIN00625.jsonl",
+          "prediction_sha256": "ff2a3e4bf53d4aec351d86085074cea2db05263aac33c41fb5fa1348a02d7d34",
+          "n": 4319,
+          "EADP_published_code_vizwiz_score_percent": 59.743767847495675,
+          "benchmark_official_leave_one_out_percent": 58.29590182912707,
+          "author_code_minus_official_pp": 1.4478660183686067,
+          "leave_one_out_change_only_using_author_normalization_percent": 58.29590182912707,
+          "author_naive_minus_author_norm_leave_one_out_pp": 1.4478660183686067,
+          "author_norm_leave_one_out_minus_official_norm_leave_one_out_pp": 0.0,
+          "n_changed_per_question_scores": 1047,
+          "interpretation": "Both evaluated on identical raw answers; published-code result is auxiliary, not replacement official score."
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_vizwiz/LRMAIN0125.jsonl",
+          "prediction_sha256": "9fabda78e133b8fbfe0f9c1b3319da5145004da956829036d2d59f4be10a8ac1",
+          "n": 4319,
+          "EADP_published_code_vizwiz_score_percent": 60.08335262792321,
+          "benchmark_official_leave_one_out_percent": 58.63625839314654,
+          "author_code_minus_official_pp": 1.447094234776674,
+          "leave_one_out_change_only_using_author_normalization_percent": 58.63625839314654,
+          "author_naive_minus_author_norm_leave_one_out_pp": 1.447094234776674,
+          "author_norm_leave_one_out_minus_official_norm_leave_one_out_pp": 0.0,
+          "n_changed_per_question_scores": 1044,
+          "interpretation": "Both evaluated on identical raw answers; published-code result is auxiliary, not replacement official score."
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_vizwiz/LRMAIN025.jsonl",
+          "prediction_sha256": "25c8cbfe2b6b31ff51a006beb9ab84fed2cfa0bd29ba98eb1b4b12ec50398384",
+          "n": 4319,
+          "EADP_published_code_vizwiz_score_percent": 60.7162151732655,
+          "benchmark_official_leave_one_out_percent": 59.254457050243126,
+          "author_code_minus_official_pp": 1.4617581230223755,
+          "leave_one_out_change_only_using_author_normalization_percent": 59.254457050243126,
+          "author_naive_minus_author_norm_leave_one_out_pp": 1.4617581230223755,
+          "author_norm_leave_one_out_minus_official_norm_leave_one_out_pp": 0.0,
+          "n_changed_per_question_scores": 1051,
+          "interpretation": "Both evaluated on identical raw answers; published-code result is auxiliary, not replacement official score."
+        }
+      ],
+      "paper_split_boundary": "Paper starred VizWiz numbers are validation; historical unstarred test numbers are a separate split. Printed FULL val references v15=55.6 and NeXT=60.9 are not local generated FULL results.",
+      "required_control": "CPU only: retain benchmark-official score as headline; show auxiliary released-code score when describing cross-code reproduction residual. No new GPU run is required for this metric difference."
+    },
+    {
+      "id": "PUBLIC_ALPHA_BETA_DEFAULTS",
+      "status": "released_defaults_differ_paper_argv_unverified",
+      "title": "Per-task alpha and beta defaults differ from local frozen recipe",
+      "detail": "Both families: POPE default alpha1.0 vs local.5; VizWiz validation defaultalpha0 vs local.5; other listed task defaultsalpha.5 match. Released beta1 differs from localbeta2 for scored pruning tasks. Local MMVetbeta1 matches. The VizWiz test script usesalpha.5, which must not be substituted for its validation-script default. Shell defaults and ablation table cells do not identify actual paper main-table argv.",
+      "all_task_defaults": [
+        {
+          "model": "v1_5",
+          "task": "vqav2",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_loader",
+          "official_released_max_new_tokens": 128,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_5",
+          "task": "gqa",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_loader",
+          "official_released_max_new_tokens": 128,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_5",
+          "task": "vizwiz",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_loader",
+          "official_released_max_new_tokens": 128,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_5",
+          "task": "vizwiz_val",
+          "official_released_alpha_default": 0.0,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_loader",
+          "official_released_max_new_tokens": 128,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": false,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_5",
+          "task": "sqa",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_science",
+          "official_released_max_new_tokens": 1024,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_5",
+          "task": "textvqa",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_loader",
+          "official_released_max_new_tokens": 128,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_5",
+          "task": "pope",
+          "official_released_alpha_default": 1.0,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_loader",
+          "official_released_max_new_tokens": 128,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": false,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_5",
+          "task": "mme",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_loader",
+          "official_released_max_new_tokens": 128,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_5",
+          "task": "mmbench",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_mmbench",
+          "official_released_max_new_tokens": 1024,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_5",
+          "task": "mmbench_cn",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_mmbench",
+          "official_released_max_new_tokens": 1024,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_5",
+          "task": "mmvet",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa",
+          "official_released_max_new_tokens": 1024,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 1.0,
+          "alpha_matched": true,
+          "beta_matched": true,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_6",
+          "task": "vqav2",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_loader",
+          "official_released_max_new_tokens": 128,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_6",
+          "task": "gqa",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_loader",
+          "official_released_max_new_tokens": 128,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_6",
+          "task": "vizwiz",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_loader",
+          "official_released_max_new_tokens": 128,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_6",
+          "task": "vizwiz_val",
+          "official_released_alpha_default": 0.0,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_loader",
+          "official_released_max_new_tokens": 128,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": false,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_6",
+          "task": "sqa",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_science",
+          "official_released_max_new_tokens": 1024,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_6",
+          "task": "textvqa",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_loader",
+          "official_released_max_new_tokens": 128,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_6",
+          "task": "pope",
+          "official_released_alpha_default": 1.0,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_loader",
+          "official_released_max_new_tokens": 128,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": false,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_6",
+          "task": "mme",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_loader",
+          "official_released_max_new_tokens": 128,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_6",
+          "task": "mmbench",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_mmbench",
+          "official_released_max_new_tokens": 1024,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_6",
+          "task": "mmbench_cn",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa_mmbench",
+          "official_released_max_new_tokens": 1024,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 2.0,
+          "alpha_matched": true,
+          "beta_matched": false,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        },
+        {
+          "model": "v1_6",
+          "task": "mmvet",
+          "official_released_alpha_default": 0.5,
+          "official_released_beta_default": 1.0,
+          "official_entry": "llava.eval.model_vqa",
+          "official_released_max_new_tokens": 1024,
+          "official_conv_mode": "vicuna_v1",
+          "local_current_alpha": 0.5,
+          "local_current_beta": 1.0,
+          "alpha_matched": true,
+          "beta_matched": true,
+          "paper_actual_per_task_argv": "UNPUBLISHED/UNVERIFIED",
+          "scope_note": "vizwiz_val is relevant to starred validation results; vizwiz is the separate historical test entry. FULL bypasses pruning, so alpha/beta differences do not by themselves change FULL selection."
+        }
+      ],
+      "evidence_keys": [
+        "official_scripts"
+      ],
+      "required_control": "Do not alter stream-only queues. One explicitly named public-default sensitivity control per selected task is admissible if separately authorized; single-factor comparisons are needed to attribute effects to alpha or beta. No parameter sweep or selecting the highest-scoring budget."
+    },
+    {
+      "id": "MMB_DECODER_1024",
+      "status": "excluded_as_project_error",
+      "title": "MMBench1024 matches both official EADP and upstream LLaVA native code",
+      "detail": "Official model_vqa_mmbench.py hardcodes1024, as does the local native entry; upstream LLaVA main also hardcodes1024. A generic loader128 default is irrelevant to this MMBench entry.",
+      "evidence_keys": [
+        "official_mmbench_native",
+        "local_mmbench_native"
+      ],
+      "upstream_primary_url": "https://github.com/haotian-liu/LLaVA/blob/main/llava/eval/model_vqa_mmbench.py"
+    },
+    {
+      "id": "MMB_CIRCULAR_COVERAGE",
+      "status": "excluded_current_coverage_or_parser_error",
+      "title": "All V11 rotations are generated and grouped correctly",
+      "detail": "Each of12 historical complete files contains4876 ordered unique indices and matching native saved prompts, with round_id0. Grouping1292 base IDs includes all3584 rotation rows. For all rows, the local letter parser equals VLMEvalKit no-judge can_infer and all options/GT text are consistent across provided permutations.28 groups retainD and permuteABC; that is present in official TSV and is not an omitted generated rotation. No extra --all-rounds should be added to already-expanded V11 data.",
+      "complete_arms": {
+        "EN": [
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mmben/LRMAIN00625.jsonl",
+            "sha256": "ade46887636b21f0c6afb29155a39d90b9401e135ebb289d3fe6d9c8a6748a3c",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 8,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 57.19814241486068,
+            "toolkit_no_judge_circular_acc_percent": 57.19814241486068
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mmben/LRMAIN0125.jsonl",
+            "sha256": "06c54bdbbbd2f5999e56418c0d838402dcb6a5d0609385eeee4509aa1959c7e2",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 1,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 58.591331269349844,
+            "toolkit_no_judge_circular_acc_percent": 58.591331269349844
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mmben/LRMAIN025.jsonl",
+            "sha256": "e91ca3ea3e08942795b9b8af4126a3ca6721fbbc9d7929e1138baf1b9a392463",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 60.06191950464396,
+            "toolkit_no_judge_circular_acc_percent": 60.06191950464396
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmben/LRMAIN00625.jsonl",
+            "sha256": "38c2036e2a847069c9e6f1bd62887f29861255647295cf79583c04e3f665fe04",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 60.60371517027864,
+            "toolkit_no_judge_circular_acc_percent": 60.60371517027864
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmben/LRMAIN0125.jsonl",
+            "sha256": "ebae2c18af9a445229c9ca18ce1c01bab23250e1960474df1e3a526f7e328caf",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 62.538699690402474,
+            "toolkit_no_judge_circular_acc_percent": 62.538699690402474
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmben/LRMAIN025.jsonl",
+            "sha256": "5f61197f31d60f82ee6b9eed1bcc36537f0e2021422c6a5b3fd554515a5b4f78",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 64.08668730650155,
+            "toolkit_no_judge_circular_acc_percent": 64.08668730650155
+          }
+        ],
+        "CN": [
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mmbcn/LRMAIN00625.jsonl",
+            "sha256": "c1861f2256c5a049fc691fcf15100ed5a1378f7e9c56ceb5db2d041ad5f549d4",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 47.29102167182663,
+            "toolkit_no_judge_circular_acc_percent": 47.29102167182663
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mmbcn/LRMAIN0125.jsonl",
+            "sha256": "f3435605d726f40912992c85be0ac9b748fe7da1067347fe902bb67378ff7144",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 51.1609907120743,
+            "toolkit_no_judge_circular_acc_percent": 51.1609907120743
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mmbcn/LRMAIN025.jsonl",
+            "sha256": "bacdfd5060e32c1f90fa0a30ba5da49a4b38aa6cc33617a43ccc0c7b164d8b4b",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 53.01857585139319,
+            "toolkit_no_judge_circular_acc_percent": 53.01857585139319
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN00625.jsonl",
+            "sha256": "168baa43d577b17ac500b697b935380a2e71350abd570acc5b507f48fb66a9e1",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 51.39318885448916,
+            "toolkit_no_judge_circular_acc_percent": 51.39318885448916
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN0125.jsonl",
+            "sha256": "58120544b183fc1a7441177a02a04f4a39448698177b3c2810513adab4c7e5ca",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 54.3343653250774,
+            "toolkit_no_judge_circular_acc_percent": 54.3343653250774
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN025.jsonl",
+            "sha256": "b648c9d1af4ce1c7509a2645118489511b3a057884d4f969f95c44104c7bc78b",
+            "n": 4876,
+            "n_prompt_mismatches": 0,
+            "round_id_distribution": {
+              "0": 4876
+            },
+            "n_multiple_distinct_capital_options": 0,
+            "n_regex_parse_failures": 0,
+            "n_parser_differences_vs_toolkit_no_judge": 0,
+            "parser_difference_examples": [],
+            "local_regex_circular_acc_percent": 56.26934984520124,
+            "toolkit_no_judge_circular_acc_percent": 56.26934984520124
+          }
+        ]
+      },
+      "group_sizes": {
+        "EN": {
+          "2": 83,
+          "3": 126,
+          "4": 1083
+        },
+        "CN": {
+          "2": 83,
+          "3": 126,
+          "4": 1083
+        }
+      },
+      "published_matching_server_identity": "Unverified; CPU agreement with toolkit no-judge extraction does not establish identity of a historical external GPT matching service."
+    },
+    {
+      "id": "SQA_AUTHOR_INPUT_IDENTITY",
+      "status": "author_input_provenance_unverified",
+      "title": "Shipped CQM-A is exact; author script CQM-I is unavailable",
+      "detail": "EADP released scripts name CQM-I; paper does not explicitly identify that file format. Actual author file bytes are unavailable. Current2017 image subset exactly equals shipped LLaVA eval.zip CQM-A image entries. Existing format-control results establish sensitivity to prompt formatting, not identity of author CQM-I. Current option-answer instruction, guidance removal, vicuna_v1 and decoder1024 match released science entry.",
+      "cpu_identity": {
+        "official_LLaVA_eval_zip": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/eval.zip",
+        "zip_member": "scienceqa/llava_test_CQM-A.json",
+        "zip_member_sha256": "a2dc5ea9fba561b0d0d8ecc80e688d3b0e1ff308e06c4f4f94cff86b20ec2f0a",
+        "on_disk_path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/scienceqa/llava_test_CQM-A.json",
+        "on_disk_sha256": "a2dc5ea9fba561b0d0d8ecc80e688d3b0e1ff308e06c4f4f94cff86b20ec2f0a",
+        "exact_member_bytes_match": true,
+        "n_total": 4241,
+        "n_image": 2017,
+        "current_2017_subset_exact": true
+      },
+      "evidence_keys": [
+        "official_scripts.v1_5/sqa",
+        "official_scripts.v1_6/sqa",
+        "official_science_native",
+        "local_science_wrapper"
+      ],
+      "required_control": "No further guessed reconstruction. If actual author CQM-I becomes available, first verify question/image/answer identities and run a separate frozen-format comparison. Existing CQM-A scores must be labeled shipped-LLaVA protocol."
+    },
+    {
+      "id": "POPE_8910",
+      "status": "excluded_missing_random90_project_error",
+      "title": "8910 exactly matches the official LLaVA eval archive and pinned POPE release",
+      "detail": "Official original POPE release linked by LLaVA containsrandom2910/popular3000/adversarial3000; archive question bytes match current8910 exactly. Original category order and all identity-paired labels match the retained questions. Current randomGT3000 contains extra90, which are outside this user-approved as-asked input; current identity pairing is correct. Original paper exact sample bytes are still not independently available.",
+      "cpu_identity": {
+        "official_LLaVA_eval_zip": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/eval.zip",
+        "zip_member": "pope/llava_pope_test.jsonl",
+        "zip_member_sha256": "1d3b41f0dced74b4f361c659787ef673497cfac54a6be7bde00eb405bab03c70",
+        "on_disk_path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/pope/llava_pope_test.jsonl",
+        "on_disk_sha256": "1d3b41f0dced74b4f361c659787ef673497cfac54a6be7bde00eb405bab03c70",
+        "exact_member_bytes_match": true,
+        "n_by_category": {
+          "adversarial": 3000,
+          "random": 2910,
+          "popular": 3000
+        },
+        "n": 8910
+      },
+      "original_primary_GT": {
+        "random": {
+          "primary_url": "https://raw.githubusercontent.com/AoiDragon/POPE/e3e39262c85a6a83f26cf5094022a782cb0df58d/output/coco/coco_pope_random.json",
+          "local_path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/primary_original_pope_random.jsonl",
+          "sha256": "c16b65d2df6d70bb0814c8a4375833d39cdb09928fd936d3fc546491efa37f35",
+          "n_original_gt": 2910,
+          "n_current_gt": 3000,
+          "n_asked": 2910,
+          "asked_GT_identity_coverage_original": 2910,
+          "asked_label_difference_original_vs_current": 0,
+          "asked_original_order_keys_exact": true
+        },
+        "popular": {
+          "primary_url": "https://raw.githubusercontent.com/AoiDragon/POPE/e3e39262c85a6a83f26cf5094022a782cb0df58d/output/coco/coco_pope_popular.json",
+          "local_path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/primary_original_pope_popular.jsonl",
+          "sha256": "5b16653023bf4f64d57eb0d168259de6627f5cde7538b85ebed3cc33034aa6cc",
+          "n_original_gt": 3000,
+          "n_current_gt": 3000,
+          "n_asked": 3000,
+          "asked_GT_identity_coverage_original": 3000,
+          "asked_label_difference_original_vs_current": 0,
+          "asked_original_order_keys_exact": true
+        },
+        "adversarial": {
+          "primary_url": "https://raw.githubusercontent.com/AoiDragon/POPE/e3e39262c85a6a83f26cf5094022a782cb0df58d/output/coco/coco_pope_adversarial.json",
+          "local_path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/primary_original_pope_adversarial.jsonl",
+          "sha256": "1d8f0906a9b50c05640f6f23abfac97523be2a1bed28f7eadc63b811699b2d26",
+          "n_original_gt": 3000,
+          "n_current_gt": 3000,
+          "n_asked": 3000,
+          "asked_GT_identity_coverage_original": 3000,
+          "asked_label_difference_original_vs_current": 0,
+          "asked_original_order_keys_exact": true
+        }
+      },
+      "metric": "Unweighted mean of three category F1 scores; not pooled F1 or one category accuracy.",
+      "evidence_keys": [
+        "official_POPE_scorer",
+        "local_official_live_scorer"
+      ],
+      "required_control": "No additional90-question generation or another already-completePOPE32 synchronization replay for this count issue."
+    },
+    {
+      "id": "MME_GT_METRIC",
+      "status": "already_fixed_cpu_scoring_error",
+      "title": "MME canonical2374 labels and perception score are already corrected",
+      "detail": "162 historical reconstructed GT labels differed from the official evaluator archive. Canonical scorer uses verified archive2374 keys, exactly two questions per image, official first-four-character answer parsing, and sum of category100*(accuracy+both-answers accuracy). LLaVA paper table uses perception raw points separately from cognition; it is not a percentage. These label errors need CPU rescoring, independently of currently queued stream-wait generation repairs.",
+      "cpu_question_identity": {
+        "zip_member": "MME/llava_mme.jsonl",
+        "zip_member_sha256": "9f67707cb72d2a71df955d0dce84337f2f22eafe2ed473ca3e148c187ac360c5",
+        "on_disk_sha256": "9f67707cb72d2a71df955d0dce84337f2f22eafe2ed473ca3e148c187ac360c5",
+        "exact_member_bytes_match": true,
+        "n": 2374
+      },
+      "canonical_artifact": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mme_official_gt_rescore.json",
+        "sha256": "554e1318572a6f665eb0cdc0fa0708bc8ee7e0bbe7ab507e86b2b293d7f06789"
+      },
+      "evidence_keys": [
+        "mme_canonical_scorer"
+      ],
+      "benchmark_primary_url": "https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models/tree/Evaluation",
+      "required_control": "No additional generation because of labels alone; do not replace perception with perception+cognition or divide raw points by an unrelated maximum."
+    },
+    {
+      "id": "GQA_INPUT_SCORE",
+      "status": "excluded_new_input_split_or_prompt_error",
+      "title": "GQA testdev input matches shipped primary question file and GT",
+      "detail": "All12578 input bytes match LLaVA eval.zip; all GT keys, question strings after removing the answer instruction, and image filename stems match the official testdev_balanced GT. Current complete raw scoring uses lowercase exact match. No new split or prompt defect found; beta default provenance remains a separate issue.",
+      "cpu_identity": {
+        "zip_member": "gqa/llava_gqa_testdev_balanced.jsonl",
+        "zip_member_sha256": "515aab3142889269480c71212d3b5b8118704d8da6637d767a0cb5bdf80a3d35",
+        "on_disk_sha256": "515aab3142889269480c71212d3b5b8118704d8da6637d767a0cb5bdf80a3d35",
+        "exact_member_bytes_match": true,
+        "n": 12578,
+        "official_GT_file": "/tmp/gqa12/testdev_balanced_questions.json",
+        "official_GT_sha256": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+        "n_key_mismatch": 0,
+        "n_prompt_question_mismatch": 0,
+        "n_image_filename_mismatch": 0
+      }
+    },
+    {
+      "id": "TEXTVQA_INPUT_GUIDANCE",
+      "status": "already_repaired_protocol_difference",
+      "title": "Current TextVQA official mode has repaired guidance and decoder",
+      "detail": "Official OCR5000 input bytes match LLaVA eval.zip. Earlier model_vqa kept the answer instruction in pruning guidance and used1024. Current official_textvqa mode removes that suffix while preserving the LLM prompt and sets128. Current stream controls address a separate execution issue and must not be labeled as recovering the paper2.204pp residual before full results.",
+      "cpu_identity": {
+        "zip_member": "textvqa/llava_textvqa_val_v051_ocr.jsonl",
+        "zip_member_sha256": "9f60db6fb89e369263ed676dc26b48d00d4a462e73f0930c09d23394e9dcf3a3",
+        "on_disk_sha256": "9f60db6fb89e369263ed676dc26b48d00d4a462e73f0930c09d23394e9dcf3a3",
+        "exact_member_bytes_match": true,
+        "n": 5000
+      },
+      "evidence_keys": [
+        "official_loader",
+        "local_model_vqa_wrapper"
+      ]
+    },
+    {
+      "id": "MMVET_UNSCORED",
+      "status": "excluded_unavailable_final_metric",
+      "title": "MMVet cannot establish method or paper accuracy without its official grader",
+      "detail": "Question bytes match shipped eval.zip. Local decoder1024 and MMVetalpha.5/beta1 match released entry. Official GPT grading output is unavailable; do not substitute an invented exact-match score or add unscored arms to an average.",
+      "cpu_identity": {
+        "zip_member": "mm-vet/llava-mm-vet.jsonl",
+        "zip_member_sha256": "ac90c438b58fa867f3e9ff5d1cb0c27be4dd35f167ea129ccceb246e913a65c6",
+        "on_disk_sha256": "ac90c438b58fa867f3e9ff5d1cb0c27be4dd35f167ea129ccceb246e913a65c6",
+        "exact_member_bytes_match": true,
+        "n": 218
+      },
+      "evidence_keys": [
+        "official_scripts.v1_5/mmvet",
+        "official_scripts.v1_6/mmvet"
+      ]
+    }
+  ],
+  "counts_by_status": {
+    "confirmed_project_protocol_error": 1,
+    "confirmed_protocol_difference_effect_unmeasured": 2,
+    "published_code_vs_benchmark_metric_difference": 1,
+    "released_defaults_differ_paper_argv_unverified": 1,
+    "excluded_as_project_error": 1,
+    "excluded_current_coverage_or_parser_error": 1,
+    "author_input_provenance_unverified": 1,
+    "excluded_missing_random90_project_error": 1,
+    "already_fixed_cpu_scoring_error": 1,
+    "excluded_new_input_split_or_prompt_error": 1,
+    "already_repaired_protocol_difference": 1,
+    "excluded_unavailable_final_metric": 1
+  },
+  "cpu_checks_pass": true,
+  "gpu_launches": 0,
+  "live_files_modified": 0
+}

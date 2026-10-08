@@ -1,0 +1,265 @@
+{
+  "_id": "6262c267cbebf7e1ac29e364",
+  "id": "openai/clip-vit-large-patch14-336",
+  "private": false,
+  "pipeline_tag": "zero-shot-image-classification",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "pytorch",
+    "tf",
+    "clip",
+    "zero-shot-image-classification",
+    "generated_from_keras_callback",
+    "endpoints_compatible",
+    "region:us"
+  ],
+  "downloads": 2255374,
+  "likes": 311,
+  "modelId": "openai/clip-vit-large-patch14-336",
+  "author": "openai",
+  "sha": "ce19dc912ca5cd21c8a653c79e251e808ccabcd1",
+  "lastModified": "2022-10-04T09:41:39.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "src": "https://huggingface.co/datasets/mishig/sample_images/resolve/main/cat-dog-music.png",
+      "candidate_labels": "playing music, playing sports",
+      "example_title": "Cat & Dog"
+    }
+  ],
+  "model-index": [
+    {
+      "name": "clip-vit-large-patch14-336",
+      "results": []
+    }
+  ],
+  "config": {
+    "architectures": [
+      "CLIPModel"
+    ],
+    "model_type": "clip",
+    "tokenizer_config": {
+      "unk_token": {
+        "content": "<|endoftext|>",
+        "single_word": false,
+        "lstrip": false,
+        "rstrip": false,
+        "normalized": true,
+        "__type": "AddedToken"
+      },
+      "bos_token": {
+        "content": "<|startoftext|>",
+        "single_word": false,
+        "lstrip": false,
+        "rstrip": false,
+        "normalized": true,
+        "__type": "AddedToken"
+      },
+      "eos_token": {
+        "content": "<|endoftext|>",
+        "single_word": false,
+        "lstrip": false,
+        "rstrip": false,
+        "normalized": true,
+        "__type": "AddedToken"
+      },
+      "pad_token": "<|endoftext|>"
+    }
+  },
+  "cardData": {
+    "tags": [
+      "generated_from_keras_callback"
+    ],
+    "widget": [
+      {
+        "src": "https://huggingface.co/datasets/mishig/sample_images/resolve/main/cat-dog-music.png",
+        "candidate_labels": "playing music, playing sports",
+        "example_title": "Cat & Dog"
+      }
+    ],
+    "model-index": [
+      {
+        "name": "clip-vit-large-patch14-336",
+        "results": []
+      }
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForZeroShotImageClassification",
+    "pipeline_tag": "zero-shot-image-classification",
+    "processor": "AutoProcessor"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "64f23e0770da589d2949e1c24149405f5eda3d68",
+      "size": 1217
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "119dfc21c8e97d46a9be63cc69039ea5ef40d387",
+      "size": 1045
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "e9c5a5dc325b017eda0b6e802f79283a1f68bf27",
+      "size": 4757
+    },
+    {
+      "rfilename": "merges.txt",
+      "blobId": "bbfec752c9a675946c6dce106def6f35c882dcc2",
+      "size": 524657
+    },
+    {
+      "rfilename": "preprocessor_config.json",
+      "blobId": "a4604d0a1564fa0c45a6ff087bada5066a6335ea",
+      "size": 316
+    },
+    {
+      "rfilename": "pytorch_model.bin",
+      "blobId": "d599938f87909461098a7856a49c4842c84fc214",
+      "size": 1711974081,
+      "lfs": {
+        "sha256": "c6032c2e0caae3dc2d4fba35535fa6307dbb49df59c7e182b1bc4b3329b81801",
+        "size": 1711974081,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "special_tokens_map.json",
+      "blobId": "9bfb42aa97dcd61e89f279ccaee988bccb4fabae",
+      "size": 389
+    },
+    {
+      "rfilename": "tf_model.h5",
+      "blobId": "b9b9abad1937d9d1b0aaaa53e647ad468bab050b",
+      "size": 1712454232,
+      "lfs": {
+        "sha256": "d12828ca8f0f3c92194f277b7d893da7f2fb7824d0b99dedb305eb48eb46bb7f",
+        "size": 1712454232,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "tokenizer.json",
+      "blobId": "564c0ebd5ce29c4ee4864004aee693deadd3128c",
+      "size": 2224041
+    },
+    {
+      "rfilename": "tokenizer_config.json",
+      "blobId": "24feaf785502565f990d348aafa501c254710ed8",
+      "size": 844
+    },
+    {
+      "rfilename": "vocab.json",
+      "blobId": "182766ce89b439768edadda342519f33802f5364",
+      "size": 862328
+    }
+  ],
+  "spaces": [
+    "tardellirs/model-pulse",
+    "embedl/hfviewer",
+    "nutrientdocs/document-classification-leaderboard",
+    "BlinkDL/RWKV-Gradio-1",
+    "wcy1122/MGM",
+    "NVEagle/Eagle-X5-13B-Chat",
+    "JackAILab/ConsistentID",
+    "fffiloni/Sa2VA-simple-demo",
+    "nicolas-dufour/Plonk",
+    "MBZUAI/LLaMA-3-V",
+    "wondervictor/YOLO-World-Image",
+    "multimodalart/khala",
+    "taesiri/CLIPScore",
+    "MBZUAI/Phi-3-V",
+    "khang119966/Vintern-1B-v3.5-Demo",
+    "showlab/Show-o",
+    "sohojoe/soho-clip-embeddings-explorer",
+    "amaai-lab/SonicVerse",
+    "Senqiao/VisionZip",
+    "yunusserhat/Location_Predictor",
+    "JackAILab/ConsistentID-SDXL",
+    "luis112/text-generation-webui",
+    "jiani-huang/LASER",
+    "chenjoya/videollm-online",
+    "LiuZichen/MagicQuillHelper",
+    "derektan95/search-tta-demo",
+    "sohojoe/soho-clip",
+    "acceptee/DiT4SR",
+    "howard-hou/VisualRWKV-Gradio-1",
+    "shi-labs/VisPer-LM",
+    "RaviNaik/MultiModal-Phi2",
+    "toshi456/llava-jp-1.3b-v1.1",
+    "nutrientdocs/doc-openvocab-leaderboard",
+    "W404NET/My-Chat",
+    "xsigus24/text-generation-webui",
+    "K00B404/llava-jp-1.3b-v1.1",
+    "vincentamato/ARIA",
+    "Ramnie/sae-explorer",
+    "NahFam13/webbyuu",
+    "Yiyuan/VSA",
+    "showlab/Show-o-512",
+    "svjack/Show-o",
+    "lbw18601752667/IDMR-demo",
+    "cyborgpunk/ANIME_ENGINE",
+    "JasonSmithSO/FooocusEnhanced",
+    "GrimsenClory/mfer-gguf",
+    "AbstractPhil/sd15-flow-matching-lune",
+    "AI-Joe-git/blackriver-gguf-tools",
+    "Bireswar26/GeoChat",
+    "rimamelati75/Show-o",
+    "frncscp/Patacotron",
+    "hellokitty/openai-clip-vit-large-patch14-336",
+    "guidel/CLIP",
+    "AbdullahMd12/openai-clip-vit-large-patch14",
+    "francosta/openai-clip-vit-large-patch14-336",
+    "duyduong9htv/zero-shot-classification",
+    "bczhou/clip-gpt2",
+    "EssenceSentry/openai-clip-vit-large-patch14-336",
+    "globc/LLaVA",
+    "markqiu/text-generation-webui",
+    "LRhinehart/text-generation-webui",
+    "anjutv/openai-clip-vit-large-patch14-336",
+    "Neu256/text-generation-webui",
+    "GunaKoppula/MultiModal-Phi2",
+    "Navyabhat/Capstone_Project",
+    "blaketm/text-generation-webui",
+    "mohsinmubaraksk/Llava-MoE",
+    "shapermindai/SinGPTUltimate",
+    "Pengyu-gis/next-chat-try",
+    "Verias/testing_space",
+    "Applesam4/NETO_AI",
+    "bhohbaum/text-generation-webui",
+    "Hasani/action-detection-in-images",
+    "jchen8000/text-webui-CPUBasic",
+    "marcioverde/openai-clip-vit-large-patch14-336",
+    "engajify/test_1",
+    "csmithxc/YOLO-World4",
+    "Mr-Bhaskar/test3",
+    "aaai25/Visual-Paraphrasing",
+    "javakhangnguyen/Llama2",
+    "KleinZxA/IDK2",
+    "CityMuseumBerlin/CLIP",
+    "shaktibiplab/Eagle-X5-13B-Chat",
+    "NoQuest/QP_ANmixtao",
+    "miktt55/aa",
+    "farrosalferro24/gecko",
+    "sbdie/QP_AN",
+    "Varu96/healthcare_project",
+    "dasdasdaeeeee/MagicQuill435",
+    "KVAkash/project",
+    "KVAkash/operaex1",
+    "KVAkash/operaex2",
+    "svjack/ConsistentID-SDXL",
+    "aiqcamp/Sa2VA-simple-demo",
+    "humairmunirawn/Llava",
+    "tejastake/cp-ep-336",
+    "tronskel/DeLoFi",
+    "ZihanWang314/TSTAR",
+    "Bytesculptor07/RWKV-7",
+    "acthuan/LLaVA-Med-Mic"
+  ],
+  "createdAt": "2022-04-22T14:57:43.000Z",
+  "usedStorage": 6848733678
+}

@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-08T17:19:39.415793+00:00",
+  "all_EADP_paper_baselines_reproduced": false,
+  "paper_main_coverage": {
+    "total": 120,
+    "full_scored_local": 34,
+    "by_model": {
+      "v15": {
+        "full_scored_local_cells": 15,
+        "paper_main_cells": 40
+      },
+      "next": {
+        "full_scored_local_cells": 8,
+        "paper_main_cells": 40
+      },
+      "qwen": {
+        "full_scored_local_cells": 11,
+        "paper_main_cells": 40
+      }
+    },
+    "does_not_certify_paper_protocol_identity": true
+  },
+  "new_confirmed_project_errors": [
+    {
+      "id": "MMBCN_LANG",
+      "GPU_effect_measured": false,
+      "fixed_in_current_55_groups": false
+    },
+    {
+      "id": "AZ_COMPLETION_SCOPE",
+      "GPU_effect_measured": false,
+      "isolated_CPU_adapter_ready": true,
+      "installed": false,
+      "registered": false,
+      "does_not_explain_EADP_gap": true
+    }
+  ],
+  "quantified_metric_difference": {
+    "benchmark": "VizWiz",
+    "n_complete_raw_arms": 6,
+    "questions_each": 4319,
+    "released_scorer_minus_benchmark_official_pp": {
+      "minimum": 1.390754032569361,
+      "maximum": 1.4725630933087184
+    },
+    "headline_official_score_preserved": true,
+    "paper_scorer_identity_confirmed": false
+  },
+  "full_textvqa": {
+    "next_local_percent": 60.370000000000225,
+    "next_paper_percent": 60.3,
+    "v15_local_percent": 58.22600000000014,
+    "v15_paper_percent": 58.2,
+    "inference": "Global two-percentage-point deficit not established; pruning branch residual remains unresolved."
+  },
+  "protocol_findings": [
+    {
+      "id": "MMBCN_LANG",
+      "status": "confirmed_project_protocol_error",
+      "detail": "Both official EADP model-family scripts explicitly pass --lang cn; both historical local lane scripts omit it and native default is en. All 4876 LLM prompts change under cn, while EADP guidance and saved prompt fields are unchanged. Existing stream-only controls deliberately retain en and do not fix this separate mismatch."
+    },
+    {
+      "id": "MMB_SPLIT_VERSION",
+      "status": "confirmed_protocol_difference_effect_unmeasured",
+      "detail": "Official scripts name EN20230712/CN20231003; current generation uses official V11 TSVs. EN local legacy file has4377 rows/1176 base groups versus V114876/1292. Shared base IDs do not establish question, GT, or pixel identity. Actual paper input bytes and matching-server configuration remain unavailable."
+    },
+    {
+      "id": "VIZWIZ_GENERATION",
+      "status": "confirmed_protocol_difference_effect_unmeasured",
+      "detail": "All4319 validation questions and image filenames exactly match the released conversion. LLM question text is unchanged. Local model_vqa guidance retains the single-word answer instruction; official EADP loader removes that instruction. Decoder limit is1024 locally versus128 in the released loader. The Unanswerable instruction remains in both guidance strings."
+    },
+    {
+      "id": "VIZWIZ_SCORING",
+      "status": "published_code_vs_benchmark_metric_difference",
+      "detail": "Published EADP eval_vizwiz.py uses normalized-GT min(match_count/3), while the benchmark API averages scores leaving each of10 annotator answers out. Current local official scorer follows the benchmark API and is correct. The auxiliary published-code score is computed on the same complete4319 raw answers, without editing them or replacing official scores. Paper scorer identity is unverified."
+    },
+    {
+      "id": "PUBLIC_ALPHA_BETA_DEFAULTS",
+      "status": "released_defaults_differ_paper_argv_unverified",
+      "detail": "Both families: POPE default alpha1.0 vs local.5; VizWiz validation defaultalpha0 vs local.5; other listed task defaultsalpha.5 match. Released beta1 differs from localbeta2 for scored pruning tasks. Local MMVetbeta1 matches. The VizWiz test script usesalpha.5, which must not be substituted for its validation-script default. Shell defaults and ablation table cells do not identify actual paper main-table argv."
+    },
+    {
+      "id": "MMB_DECODER_1024",
+      "status": "excluded_as_project_error",
+      "detail": "Official model_vqa_mmbench.py hardcodes1024, as does the local native entry; upstream LLaVA main also hardcodes1024. A generic loader128 default is irrelevant to this MMBench entry."
+    },
+    {
+      "id": "MMB_CIRCULAR_COVERAGE",
+      "status": "excluded_current_coverage_or_parser_error",
+      "detail": "Each of12 historical complete files contains4876 ordered unique indices and matching native saved prompts, with round_id0. Grouping1292 base IDs includes all3584 rotation rows. For all rows, the local letter parser equals VLMEvalKit no-judge can_infer and all options/GT text are consistent across provided permutations.28 groups retainD and permuteABC; that is present in official TSV and is not an omitted generated rotation. No extra --all-rounds should be added to already-expanded V11 data."
+    },
+    {
+      "id": "SQA_AUTHOR_INPUT_IDENTITY",
+      "status": "author_input_provenance_unverified",
+      "detail": "EADP released scripts name CQM-I; paper does not explicitly identify that file format. Actual author file bytes are unavailable. Current2017 image subset exactly equals shipped LLaVA eval.zip CQM-A image entries. Existing format-control results establish sensitivity to prompt formatting, not identity of author CQM-I. Current option-answer instruction, guidance removal, vicuna_v1 and decoder1024 match released science entry."
+    },
+    {
+      "id": "POPE_8910",
+      "status": "excluded_missing_random90_project_error",
+      "detail": "Official original POPE release linked by LLaVA containsrandom2910/popular3000/adversarial3000; archive question bytes match current8910 exactly. Original category order and all identity-paired labels match the retained questions. Current randomGT3000 contains extra90, which are outside this user-approved as-asked input; current identity pairing is correct. Original paper exact sample bytes are still not independently available."
+    },
+    {
+      "id": "MME_GT_METRIC",
+      "status": "already_fixed_cpu_scoring_error",
+      "detail": "162 historical reconstructed GT labels differed from the official evaluator archive. Canonical scorer uses verified archive2374 keys, exactly two questions per image, official first-four-character answer parsing, and sum of category100*(accuracy+both-answers accuracy). LLaVA paper table uses perception raw points separately from cognition; it is not a percentage. These label errors need CPU rescoring, independently of currently queued stream-wait generation repairs."
+    },
+    {
+      "id": "GQA_INPUT_SCORE",
+      "status": "excluded_new_input_split_or_prompt_error",
+      "detail": "All12578 input bytes match LLaVA eval.zip; all GT keys, question strings after removing the answer instruction, and image filename stems match the official testdev_balanced GT. Current complete raw scoring uses lowercase exact match. No new split or prompt defect found; beta default provenance remains a separate issue."
+    },
+    {
+      "id": "TEXTVQA_INPUT_GUIDANCE",
+      "status": "already_repaired_protocol_difference",
+      "detail": "Official OCR5000 input bytes match LLaVA eval.zip. Earlier model_vqa kept the answer instruction in pruning guidance and used1024. Current official_textvqa mode removes that suffix while preserving the LLM prompt and sets128. Current stream controls address a separate execution issue and must not be labeled as recovering the paper2.204pp residual before full results."
+    },
+    {
+      "id": "MMVET_UNSCORED",
+      "status": "excluded_unavailable_final_metric",
+      "detail": "Question bytes match shipped eval.zip. Local decoder1024 and MMVetalpha.5/beta1 match released entry. Official GPT grading output is unavailable; do not substitute an invented exact-match score or add unscored arms to an average."
+    }
+  ],
+  "implementation_new_EADP_residual_root_cause_proved": false,
+  "current_GPU_registration_unchanged": {
+    "publication_groups": 55,
+    "core_phase1_jobs": 12,
+    "legacy_phase2_jobs": 32,
+    "prior_full_controls": 3,
+    "new_controls_from_this_audit": 0
+  },
+  "correction_candidate_scope": "Independent per-crop adapter and CN control proposal only, not registered or started; current wait-only jobs preserve original method/input recipe.",
+  "coverage_caveats": [
+    "This is a source-and-full-count inventory, consuming already verified official scores; no new GPU or parameter search.",
+    "Complete scored coverage does not certify generation-time bank/source identity: Qwen legacy HallusionBench256 has a recorded/current compressed bank SHA mismatch, separately exposed in its evidence.",
+    "Declared official score provenance is preserved; historical process argv/environment absent is not retrospectively reconstructed as fact.",
+    "Qwen legacy and native are separate; native tables are auxiliary, not proof of paper legacy reproduction.",
+    "Original28 completed and55 publication groups registered does not mean full model/benchmark/budget coverage.",
+    "Current partial rerun source hashes are a read-only snapshot; no partial accuracy is calculated.",
+    "No full LLaVA paper Avg9 computed from missing VQAv2/MMVet; paper configuration identity remains unverified."
+  ],
+  "root_CPU_review": "root_cpu_review.json"
+}

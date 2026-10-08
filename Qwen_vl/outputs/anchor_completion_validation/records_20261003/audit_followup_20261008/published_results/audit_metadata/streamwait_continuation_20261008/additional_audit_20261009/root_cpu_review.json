@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-10-08T17:19:39.415793+00:00",
+  "gates": {
+    "coverage_218_unique": true,
+    "coverage_v15": true,
+    "coverage_next": true,
+    "coverage_qwen": true,
+    "clip_recorded_sha_matches_official_LFS": true,
+    "clip_7_small_files_official_match": true,
+    "clip_correct_revision": true,
+    "implementation_10_frozen_files": true,
+    "13_core_files_root_rechecked": true,
+    "reported_protocol_9_gates": true,
+    "12_mmb_full_prompt_parser_match": true,
+    "primary_pope_labels_identity": true,
+    "viz_6_full_same_prediction_dual_metrics": true,
+    "independently_reran_16_adapter_cpu_gates": true,
+    "existing_publisher_workers_plans_preserved": true,
+    "live_HEAD_index_staging_preserved": true
+  },
+  "all_pass": true,
+  "new_GPU_launches": 0,
+  "runtime_environment_modified": false,
+  "source_SHA_checks": {
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/publish_repair_results.py": "ae9fc06bcb69dc20c2e2987badda79a95474019fa38c1ef58f9a7eed7a477d57",
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/streamwait_repair_continuation.plan.json": "c9e3f6248d2e0e2f032663fcbb1972ed30aab74f35496c583848d9159917c850",
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_streamwait_continuation.plan.json": "d63b92f5bcee064484b08392a09504592b6a8026d007564f5c1a787f7ada6972",
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_full_streamwait.py": "80affa9c875fb25c5f78cea39a437efc81b36a9b8383a19e77166516f58cda63"
+  },
+  "live_HEAD": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
+  "live_index_sha256": "87ad06fd94733ab8885003e56ec85ff2d662b4b99f5a56b9702150b9c06a64f8",
+  "scope": "Root independently checks counts, frozen sources, provenance report identities and reruns isolated adapter CPU checker; no production model imported or CUDA initialized. Big CLIP payload SHA reuses single-read recorded identity, not a second hash."
+}
