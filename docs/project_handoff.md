@@ -1189,3 +1189,52 @@ K128，真实PID2707803/2708023完整argv、父子、start_ticks通过；03:16:3
 03:17:35独立ls-remote确认origin d99d82f1159db78e895ecc4db89b88eb8a47ec11，
 新增K64组后20/55组均远端ancestor，pending/error仍空。phase1完成2/12、
 phase2仍32项等待；剩42任务/35发布组不构成整体完成，小时timer继续。
+
+### 13.18 Oct9 05:14 独立小时巡检：phase1完成8项，23组远端确认
+
+本次完整分段读取1191行交接并核对当前Git，live分支仍
+codex/anchor-completion-validation、HEAD194562d；用户既有变动保留。原28项
+118917/118917预测、官方完整分母、TextVQA复合题键/全文prompt、SQA2017、
+POPE8910（random2910）、可用runtime及独立官方评分再次通过；1411/1411
+来源SHA匹配、61日志无异常、summary JSON/CSV28行一致且errors=[]。原监督器、
+helper、watcher和17个历史worker启动身份实际退出，31关闭工件与上轮SHA不变。
+初始NeXT Text128两臂无新增runtime的边界保留。
+
+128面板完整128/512、独立resultSHA/逐题评分及success marker通过；新增K32
+三臂各完整5000的原预测/runtime/来源/官方score/exit0与完整controller marker
+按已登记Python3.10 count-key overlay精确复核通过，没有数值容差或GPU重生成。
+phase1实际登记12任务/7组，目前8项完整评分共28068/39119预测：Text64两臂
+E55.4100000000001%/AZ56.29200000000013%；新增Text128两臂
+E57.866000000000206%/AZ57.634000000000206%，方法差−0.232pp。
+SQA32为E1361/AZ1354（各2017题，差−7题），SQA64为E1356/AZ1361
+（各2017题，差+5题）。这些点估计没有新增bootstrap，不声称显著或整体胜出。
+新增5320/5320 SHA检查通过（2026来源/工件、3294图像；3417唯一路径），四份
+计划来源32/38/57/164匹配；phase2实际32任务/29组、全attempt2仍pending。
+
+05:09:14→05:13:45，同启动身份PID2882901/2883681的SQA128两臂完整预测
+及runtime由1031→1453/2017、994→1416/2017，输出与日志mtime同步推进，
+没有加载超时或30分钟无进展。A40恰两个登记模型/reservation，无未知CUDA
+context；两CPU监督器2558610/2558609的授权overlay/原target/plan完整argv、
+父子、启动ticks与上轮一致，phase2合法waiting_for_phase1且child=[]。历史
+SIGTERM error有明确recovery登记，被当前实际运行和依赖推进证据超越。
+phase1全部10个已启动任务的显存/slot门与4次组间接续核验通过，接续各约
+0.29–0.31秒。SQA首runtime没有创建时间戳，第二槽首完整记录先行依据是冻结
+controller的has_progress硬门及记录的ready/context，不补称独立时间戳证明。
+
+publisher PID2560860 active/running、授权overlay及冻结原sourceSHA通过，
+maintenance_active=false/source_ready=true。05:10:58第二次独立ls-remote确认
+origin为5f8e8b69a3027bfe0489ef519c35da81af561159，23/55组commit全为远端
+ancestor；新增Text128、SQA32/64组已到远端，其余32组合法等待，pending_commit、
+pending_publication、error为空。24归档/806 member/827来源检查/41预测159126
+归档行/158 metadata及134静态工件通过，242提交路径allowlist无夹带用户figure
+或私有文件，live HEAD/index/暂存保留。
+
+证据保存在rerun_batch/hourly_monitor/check_20261008T211000Z/。审计器首轮
+将成功score的integrity字面句no empty/FAILED误作生成失败，首轮证据和精确
+过滤修订均保留；实际FAILED预测、Traceback、OOM、非零退出与failed state门
+继续检查，不是实验故障。仅写本机巡检证据和本段事实，没有启动/终止/重启
+实验或监督器、改冻结生成代码/数学/参数/预测、stage/commit/push或改定时器。
+05:14距12:00约6小时46分，phase1剩4项且legacy32尚未开始；历史legacy最理想
+双槽7.649小时下界还不含前序，存在明显deadline风险，继续既定授权队列。
+小时timer保持active，全部登记scope及55组远端确认前
+all_experiments_complete=false；原28的基础monitor all_complete不能停止巡检。
