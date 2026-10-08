@@ -1094,3 +1094,39 @@ publisher已完整发布K32wait pair为第18/55组，status published、error及
 128 -1.242、QwenHallB256 -1.7595（bank身份未闭合）/Doc256 -1.6644/AI2D256
 -1.1534。先完成原β1单因素公开默认控制，再依明确source/输入/actual配置证据
 决定新修正，不把默认参数当paper主表实际argv，不做追分参数搜索。
+
+
+### 13.16 Oct9 02:15 独立小时巡检：beta1推进，44项接续合法等待
+
+本次完整读取1096行交接并核对live Git，分支仍codex/anchor-completion-validation、
+HEAD194562d、indexSHA87ad06fd…；原28项118917/118917预测、5000 TextVQA复合
+题键/完整prompt、SQA2017、POPE8910及官方评分再次通过。1411/1411来源SHA
+匹配，61份日志无异常；summary JSON/CSV28行一致、errors=[]。原主监督器、
+POPE控制、初始helper及summary watcher已按完成条件退出，没有恢复需求。
+
+新增EADP_beta2/AZ_beta2各5000严格CPU评分及原预测/runtime/score/finishedSHA
+再次通过，使用已登记JSON count-key overlay且无数值容差；panel128完整128/512
+与resultSHA通过，仍不能据面板宣称全量准确率改善。新增5034/5034SHA通过
+（1740来源/工件+3294图像，3373唯一路径），四plan来源32/38/57/164均无漂移。
+
+北京时间02:10:20→02:15:05，beta1 PID2556913同启动身份
+由3420→4270/5000，runtime最后4270完整行，输出和日志mtime同步推进、无异常；
+A40仅一个登记模型/reservation，未发现未知CUDAcontext。recovery supervisor
+2556883的完整argv/startticks，以及phase1/2监督器2558610/2558609的固定
+Python3.10+overlay+原target+plan身份通过。phase1登记12任务/7组、phase2
+32任务/29组（全attempt2）仍无child，合法依赖当前beta1与phase1；历史
+interrupted error由明确恢复登记和当前状态超越，不作为新故障。
+
+publisher PID2560860 active/running、授权wrapper与原sourceSHA通过；02:11
+独立ls-remote确认origin 47b7ac956cf78331c94d4e1c9afbeefdb3eae127，18/55组提交
+均为已确认远端ancestor、37组合法pending，pending commit/publication/error空。
+19归档/483 evidence member/353来源检查/32预测126058归档行/158 metadataSHA
+及134阈值静态工件通过，232提交路径allowlist无夹带。
+
+本机证据在rerun_batch/hourly_monitor/check_20261008T180812Z/。独立checker的
+Git worktree index路径、SQA不同算式末位尾差、phase2 lambda字段位置假设已
+按真实来源修正并保留首轮证据，均非实验故障，未改原score或加数值容差。
+本次未启动/信号/重启GPU或监督器、未改冻结source/参数/预测、未stage/commit/push。
+距Oct9 12:00约9.75小时；44续跑尚未开始，legacy历史双槽7.649小时下界
+不包括phase1和前置时间，仍不能证明全scope按时完成。授权队列继续，timer
+保持active，all_experiments_complete=false，55远端组仍全部纳入停止条件。
