@@ -1,6 +1,8 @@
 {
-  "updated_utc": "2026-10-08T16:39:22.307186+00:00",
-  "new_groups": [],
+  "updated_utc": "2026-10-08T16:48:58.510204+00:00",
+  "new_groups": [
+    "next_textvqa_FULL"
+  ],
   "published_groups": {
     "v15_textvqa_K128": {
       "identity": "75830ccc2830cb6d3a72624c63344d5b0952710a335445f16805912eaaa0df28",
@@ -706,10 +708,30 @@
         }
       ],
       "published_utc": "2026-10-08T15:46:26.921259+00:00"
+    },
+    "next_textvqa_FULL": {
+      "identity": "0f63fcff5c2fb0785a88267c0b4258a8ca49ee940a13e88e25cbe05889ab31e9",
+      "scores": [
+        {
+          "accuracy": 60.370000000000225,
+          "n": 5000,
+          "metric": "official TextVQA accuracy",
+          "runtime_trace_available": true,
+          "output": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/FULL.jsonl",
+          "prediction_sha256": "acf08dce4fba4f1d26cd9f806a217714ead99b71260547119c2642475415cf1f",
+          "verified_source_sha256": {
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/conversation.py": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9"
+          }
+        }
+      ]
     }
   },
   "local_head_preserved": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
-  "parent_remote_head": "3cbe218f8119d13554440300104524916ec9d066",
+  "parent_remote_head": "183489c77dffa8b18809820226b2af3e49c59daa",
   "allowlist": [
     "Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
     "docs/project_handoff.md",
