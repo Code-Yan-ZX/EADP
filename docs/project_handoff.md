@@ -959,3 +959,71 @@ Python -u的首轮身份误报并保留原检查证据，不是实验故障。�
 10小时45分，legacy尚32项、前序尚未结束；旧日志双槽7.649小时下界不足以
 证明全scope能按时完成，截止风险仍存在，授权队列继续执行。小时timer仍
 active，本次未改定时任务、冻结生成源码、模型、参数或预测，未发外部消息。
+
+
+## 13.14 追加复现错误与全覆盖盘点（2026-10-09 01:21 北京时间）
+
+用户要求继续找项目错误，并核实是否全部EADP已复现。先检查live branch/status并
+完整阅读当时906行handoff；三个并行CPU审计只写独立
+`additional_reproduction_audit_20261009/`，未改生产算法/环境/冻结GPUworker、
+controller、plan、protocol或旧预测/score，未新启动GPU。完整汇总为REPORT.md及
+`audit_summary.json`，来源/覆盖/协议/实现各报告和CPU脚本保留。
+
+Coverage218个唯一格，按论文120个主表FULL/EADP格，完整预测+对应评分仅34：
+v15 15/40，NeXT8/40，Qwen legacy11/40；v15其中6格、NeXT8格wait重跑仍pending。
+完整评分覆盖不等于作者配置身份已证明。NeXT完整本地E仅Text/SQA三预算，其他
+MME/GQA/VizWiz/MMBEN/CN只有AZ；POPE E1287/8910、FULL1901/8910不算完成。
+v15缺Viz/MMBEN/CN E和MME/GQA低预算E/POPE64 E。Qwen论文预算512/256/128，
+不是本地256/128/64；E256十任务有评分，E512/E128及大部分FULL未齐。
+Qwen native另8完整格与legacy实际DeepStack/mRoPE状态不同，不能替代或混算。
+VQAv2不完整、MMVet218预测缺对应官方GPT评分，不生成虚假LLaVA Avg9。
+Qwen legacy HallB E256meta记录bank SHA与当前完整bank不同，resume仅首次记录
+有可能留旧meta，但生成时身份未闭合；不改score、不伪造生成来源、不预判结果错。
+
+新增确定项目协议错误：两模型MMBench-CN旧脚本漏--lang cn，native默认en，
+4876条LLM答题指令全部改变，CLIP guidance不变。现phase2 wait-only明确保留en，
+不会自动修语言参数。独立CN proposal prepared_only/registered=false/started=false，
+6个AZ臂×4876=29256题保留V11/alpha.5/beta2/lambda.25/max1024/vicuna和wait；
+不属于现55组。NeXT已注册wait+en可作单因素语言基线；v15还缺同wait+en基线，
+不能把v15新旧全部差值归因语言。这个提案尚未执行，不能称修好或已排GPU。
+
+新增协议差异：MMB发布脚本EN20230712/CN20231003 vs当前V11。EN旧4377行/
+1176组 vs4876/1292，950共有baseID有31内容/GT变化、16答案字母变化；实际paper
+题集未知。图像多数重编码/小像素差异，不称943错图。MMB12份完整raw解析与
+VLMEvalKit no-judge逐行一致、无fail，V11所有旋转已生成；28组固定D来自TSV，
+不能再加all-rounds重复题集。MMB1024确与发布/上游native同，排除伪错误。
+
+VizWiz发布scorer min(matches/3) vs官方留一公式已用6份相同4319完整预测CPU
+量化，发布分高1.391–1.473pp；NeXT AZ128官方59.254457/发布60.716215，保留
+官方主分数，附发布口径审计，不证明paper实际使用该scorer，不解释Text2.204。
+Viz旧model_vqa guidance保留回答指令且1024 vs作者loader移除/128；发布验证
+alpha0 vs本地.5，POPE发布alpha1 vs本地.5；发布各任务beta默认1 vs多数本地2。
+22官方task entry已逐项记录，默认值不能反推paper argv；beta1既有控制仍pending，
+无参数搜索、无选择最高分，所有新入口对照仅proposal未注册。
+
+新增确定AZ映射偏离：NeXT Completion预注册逐crop，实际按整图split_sizes=[5]
+flatten后允许跨crop assignment。仅AZ，不能解释EADP基线。隔离逐cropadapter
+已准备并root独立复跑16/16 CPU gates：单crop/λ0/fullkeep一致、五crop局部
+索引与数目/顺序不变、无prodimport/无CUDAinit；未安装/未登记/未测accuracy。
+RTG只用首文本段已证实（Text881/5000多段），原M>1 mapping未明确，暂不算bug。
+
+sharedCLIP336单次读1,711,974,081字节SHA等官方HF ce19dc...，7小文件身份同；
+13扩展核心入口file byte同root复核。沿用先前NeXT LLM/projector身份，不称本次
+核验v15所有LLMpayload。6环境依赖版本差异无accuracy影响证据，不改live env。
+NeXT新不剪枝Text完整60.370% vspaper60.3（rawSHA acf08dce...），v15 58.226%
+vs58.2；收窄global两点错误，剪枝执行/参数残差未解决。新运行对象alpha/beta/
+dtype/class未动态记录，source/protocol不能替代loaded对象trace。
+POPE新增primary核验：LLaVA指向旧POPE发布本就random2910/两组3000，所有8910
+asked顺序/身份/标签完全一致，不因所谓缺90补生成。GQA12578身份题目/图名和
+GT一致，MME2374和历史162GT已修分；SQA官方包CQM-A图题2017身份同但作者
+CQM-I仍未提供，不把猜造格式称作者输入。
+
+01:14实际GPU仅NeXT Text K32wait E/AZ beta2两子PID2451780/2452469生成，
+beta1pending，phase1PID2391998等待旧控制，phase2PID2430956等待phase1；原28已
+完成，现注册55组/远端17组，与120格覆盖不同。小时timer01:07触发，publisher
+active且no_op/error空。root16项集成CPU门通过，liveHEAD194562d/index87ad06fd
+及原publisherae9.../两个plan/旧workerSHA保持。新增审计将通过原publisher静态
+metadata范围复制到streamwait_continuation_20261008/additional_audit_20261009，
+保留原sourceSHA，不修改55组/44续跑/3先行control计数；独立修正候选不伪装注册。
+不能承诺本轮全部达到paper，更不能给每个方法统一加两点；完整补齐120格远超
+现队列，截止Oct9中午按已有完整核心对照交付，剩余协议修正需独立冻结全量控制。
