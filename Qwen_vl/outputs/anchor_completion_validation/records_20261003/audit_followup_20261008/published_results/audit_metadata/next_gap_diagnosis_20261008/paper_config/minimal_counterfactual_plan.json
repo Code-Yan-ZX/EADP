@@ -1,0 +1,41 @@
+{
+  "created_utc": "2026-10-08T15:11:33.933448+00:00",
+  "controls": [
+    {
+      "priority": 0,
+      "id": "complete_full_baseline",
+      "action": "Consume already scheduled NeXT official TextVQA FULL only after all5000 and official score complete; compare to paperFULL60.3. No new GPU task needed.",
+      "falsifiable_expectation": "FULL near60.3 with pruned gaps1.242/1.648/2.204 concentrates suspicion on pruning/guidance execution; FULL substantially low keeps model/input/runtime baseline difference viable. Does not mechanically attribute all residual to pruning.",
+      "status": "pending existing run"
+    },
+    {
+      "priority": 1,
+      "id": "sync_stability_gate",
+      "action": "Separate sync agent verifies released CLIP caller dependencies and isolated repeat controls at fixedbeta2 before changing algorithm settings.",
+      "falsifiable_expectation": "Different identical-input predictions or token masks under wait-only control demonstrate execution contribution. Stable control narrows this candidate. Small probes measure stability only, not full5000 accuracy.",
+      "status": "other agent audit; not executed here"
+    },
+    {
+      "priority": 1,
+      "id": "released_beta1_single_control",
+      "action": "After baseline and sync checks, run one separately recorded EADP NeXTTextK32 control using released shell defaultbeta1; keep alpha.5/q.2/nominal160/officialOCR/conv/greedy128/checkpoint fixed, same synchronization in both arms. Compare all5000 paired against controlledbeta2.",
+      "falsifiable_expectation": "Unchanged tokens/score rejects beta-default contribution; changed paired score quantifies it. A score close54.2 is consistency evidence only, not proof paper usedbeta1.",
+      "reason": "Only confirmed current-vs-released-default mathematical parameter difference. No search over beta values.",
+      "status": "PROPOSAL ONLY; no command launched, no frozen file changed"
+    },
+    {
+      "priority": 2,
+      "id": "paper_q_identity",
+      "action": "Seek actual Table2 argv or released run metadata. If still unavailable and beta/sync cannot explain, a separately specified single q.5 mechanism control may be considered; override only the entropy fraction in an isolated adapter, not just ENTROPY_KEEP_RATIO (ignored by main).",
+      "falsifiable_expectation": "Shows q sensitivity but cannot certify paper identity. Table7 evidence belongs v1.5K128, not NeXTTextK32.",
+      "status": "UNVERIFIED hypothesis; not authorized/executed by this audit"
+    },
+    {
+      "priority": 3,
+      "id": "do_not_change_confirmed_allocation",
+      "action": "Do not change to global_guided or force exact160 as reproduction fixes; paper explicitly usesimportance_based and floor formula.",
+      "falsifiable_expectation": "Existing paper/code/runtime already refute missing5x mapping and rounding-as-local-error hypotheses.",
+      "status": "excluded from first controls"
+    }
+  ]
+}

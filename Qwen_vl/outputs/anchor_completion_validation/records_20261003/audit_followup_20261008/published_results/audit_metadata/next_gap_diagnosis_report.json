@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-08T15:31:03.606439+00:00",
+  "scope": "NeXT TextVQA baseline residual diagnosis; original frozen runs preserved",
+  "verified_weights": "All 3 weight payload SHA256 match same official HF revision",
+  "panel_complete": true,
+  "panel_n": 128,
+  "generations": 512,
+  "panel_summary": {
+    "n": 128,
+    "n_generations": 512,
+    "repeated_prediction_disagreements": {
+      "as_is": 5,
+      "wait": 0
+    },
+    "repeated_count_disagreements": {
+      "as_is": 43,
+      "wait": 0
+    },
+    "panel_accuracy_percent": {
+      "as_is_1": 56.25,
+      "wait_1": 56.25,
+      "as_is_2": 56.95312499999999,
+      "wait_2": 56.25
+    },
+    "archive_mismatches": {
+      "as_is_1": 5,
+      "wait_1": 3,
+      "as_is_2": 4,
+      "wait_2": 3
+    },
+    "interpretation": "Fixed small mechanism panel; does not establish the full benchmark accuracy effect"
+  },
+  "wait_patch": "Exactly caller capture plus two wait_stream dependencies; original forward AST restored after removing 3 nodes",
+  "conclusion": "Verified missing stream dependency causes repeated-input instability in this controlled panel. The panel accuracy did not improve; it does not establish that wait-only recovers the 2.204-point paper gap. Full E/AZ controlled replay and one official-script beta1 default control are needed.",
+  "next_text_eadp_vs_paper_delta_pp": {
+    "K128_nominal640": -1.242,
+    "K64_nominal320": -1.648,
+    "K32_nominal160": -2.204
+  },
+  "files": [
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/paper_config/paper_config_audit.json",
+      "sha256": "4478ec3b926a7c190526ef134b715c5c9df46b95474ce01e53008ae3a3587658",
+      "bytes": 23429
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/paper_config/minimal_counterfactual_plan.json",
+      "sha256": "e2117e5bf79bf083febab706dd4e1bf70662fe494e27a894c978cd7ac538e25d",
+      "bytes": 2943
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/paper_config/source_sha256.json",
+      "sha256": "c1b30a33199ebea81b66d287e6c98fb21ae4b2251d72d879ceaf2e752e2c31b0",
+      "bytes": 6830
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/input_identity/REPORT.md",
+      "sha256": "e9e48b2ac28f7f38d4198cea2e1b932a7b6a0267580bd9af5ec485739b1388a3",
+      "bytes": 4814
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/input_identity/identity_report.json",
+      "sha256": "5e07234c5135de903f3ade90b30b97eded752e7c0e9f55177053314127c08ce7",
+      "bytes": 19860
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/input_identity/hf_revision_metadata.json",
+      "sha256": "6cd95ea0576694d14757010e924aaa4e55728aefbcf5f6dc89316bc38f788152",
+      "bytes": 5440
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/input_identity/audit_input_identity.py",
+      "sha256": "e178a8da164868d121352a52a447c2a3826b097f6afe129b46f1fe0ab3be1b9d",
+      "bytes": 11177
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/input_identity/weight_payload_identity.json",
+      "sha256": "901579c5c5398d7e26de0a7fd24dc30bba7e94cfa5861b6749b867f946674b2f",
+      "bytes": 2713
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_stream_panel.py",
+      "sha256": "0d3e1766d4bf9594f38c16feb587fff089622e6ddbbca420cc70a5781863e8e4",
+      "bytes": 19643
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_stream_panel_cpu_validation.json",
+      "sha256": "1a7afdea32635f8f11d7285b2c5650f86a6e3464911cde8aabd2aa38f8bee936",
+      "bytes": 5872
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/independent_review_comparison_refresh.json",
+      "sha256": "465eca6d1d7b7c64e654f9f753f492f6ce1ad30f9919314076a51adbcdcb26b2",
+      "bytes": 3916
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_stream_panel128.manifest.json",
+      "sha256": "ec96680624846e8d7f22bdce9aca81b45cf26918770e4df0ab406cb017cd4096",
+      "bytes": 84503
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_stream_panel128.protocol.json",
+      "sha256": "b3bf8dad0df410c4d1e75641b5856418eab0db6bd2cd30efa3c0b08ad9297c1e",
+      "bytes": 9064
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_stream_panel128.records.jsonl",
+      "sha256": "ea7d15be75abbbd500f6369704bbfb570edeb9c7ac4e4ce8fc1b2a24a523573b",
+      "bytes": 196862
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_stream_panel128.result.json",
+      "sha256": "52cd79ebc3736f04721bf6795602b90d84539c437037a6ea22e42547a0565bd3",
+      "bytes": 2619
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/schedule_next_gap_panel.py",
+      "sha256": "3748f5670b6d839e516863e4f72c943f5493b83ee872172f5f6906270a5956c5",
+      "bytes": 14762
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_full_streamwait.py",
+      "sha256": "80affa9c875fb25c5f78cea39a437efc81b36a9b8383a19e77166516f58cda63",
+      "bytes": 14920
+    },
+    {
+      "path": "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_full_streamwait_cpu_validation.json",
+      "sha256": "c3e3185c6527b95f3e11ef405c9b2477fd676035bdb34ccce533088fcb3e3a33",
+      "bytes": 5392
+    }
+  ]
+}

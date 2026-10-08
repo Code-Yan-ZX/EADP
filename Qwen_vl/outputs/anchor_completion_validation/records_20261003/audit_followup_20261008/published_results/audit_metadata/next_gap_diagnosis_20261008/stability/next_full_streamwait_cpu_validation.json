@@ -1,0 +1,116 @@
+{
+  "success": true,
+  "CPU_only": true,
+  "checks": {
+    "three_predefined_arms_only": true,
+    "EADP_beta2_exact_5000_questions": true,
+    "EADP_beta2_frozen_sources_match": true,
+    "EADP_beta2_restore_AST_identical": true,
+    "EADP_beta2_no_index_trace": true,
+    "EADP_beta2_launcher_sha_matches": true,
+    "AZ_beta2_exact_5000_questions": true,
+    "AZ_beta2_frozen_sources_match": true,
+    "AZ_beta2_restore_AST_identical": true,
+    "AZ_beta2_no_index_trace": true,
+    "AZ_beta2_launcher_sha_matches": true,
+    "EADP_beta1_exact_5000_questions": true,
+    "EADP_beta1_frozen_sources_match": true,
+    "EADP_beta1_restore_AST_identical": true,
+    "EADP_beta1_no_index_trace": true,
+    "EADP_beta1_launcher_sha_matches": true,
+    "fair_E_AZ_params_only_anchorzip_diff": true,
+    "beta_default_control_only_beta_diff": true,
+    "same_frozen_source_hashes": true,
+    "same_wait_only_patch_and_images": true,
+    "launcher_compiles": true,
+    "EADP_beta2_official_exact_historical_score": true,
+    "EADP_beta2_historical_trace_and_native_protocol_valid": true,
+    "AZ_beta2_official_exact_historical_score": true,
+    "AZ_beta2_historical_trace_and_native_protocol_valid": true,
+    "partial_4999_rejected": true,
+    "duplicate_composite_key_rejected": true,
+    "score_refuses_missing_generation_exit_gate": true,
+    "run_refuses_existing_predictions_before_GPU_check": true,
+    "no_new_GPU_predictions_or_runtime": true,
+    "torch_not_imported": true
+  },
+  "historical_verification": {
+    "EADP_beta2": {
+      "success": true,
+      "n": 5000,
+      "accuracy_percent": 51.99600000000005,
+      "prediction_sha256": "e20a9c09f208779890d01ea122d88e8f1739280d2dfa9771c341f41bddcce312",
+      "runtime_sha256": "a7d53f90969112d73e8a5fcf1014c8939ffaaedd34a78ac8f4b2cea4e6a3414e",
+      "actual_count_distribution": {
+        "158": 2316,
+        "157": 2257,
+        "159": 192,
+        "156": 235
+      },
+      "official_evaluator_sha256": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7",
+      "GT_sha256": "4ceb5aadc1a41719d0a3e4dfdf06838bcfee1db569a9a65ee67d31c99893081d",
+      "evaluator": "Exact frozen TextVQAAccuracyEvaluator + exact frozen prompt_processor",
+      "integrity": "All 5000 ordered composite keys, full prompts, aligned runtime/input/shape/budget, native protocol, nonempty/nonFAILED verified"
+    },
+    "AZ_beta2": {
+      "success": true,
+      "n": 5000,
+      "accuracy_percent": 53.17400000000008,
+      "prediction_sha256": "cc4604fc93de281dce841856222aae88b3cd68fed4709f14448e1c4260d84482",
+      "runtime_sha256": "5e143e60e99ac9cc03275688410402f80409b38cdb0a34e6e2637d5c672ac643",
+      "actual_count_distribution": {
+        "157": 2284,
+        "158": 2315,
+        "156": 197,
+        "159": 204
+      },
+      "official_evaluator_sha256": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7",
+      "GT_sha256": "4ceb5aadc1a41719d0a3e4dfdf06838bcfee1db569a9a65ee67d31c99893081d",
+      "evaluator": "Exact frozen TextVQAAccuracyEvaluator + exact frozen prompt_processor",
+      "integrity": "All 5000 ordered composite keys, full prompts, aligned runtime/input/shape/budget, native protocol, nonempty/nonFAILED verified"
+    }
+  },
+  "launcher_sha256": "80affa9c875fb25c5f78cea39a437efc81b36a9b8383a19e77166516f58cda63",
+  "prepared_protocols": {
+    "EADP_beta2": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.control.protocol.json",
+      "sha256": "caac3108d0c305ed0c94a88a57c5bc218ad3d3393243af5b9c33d18a49d1f210",
+      "generate_command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_full_streamwait.py",
+        "--run",
+        "--arm",
+        "EADP_beta2",
+        "--attempt",
+        "1"
+      ]
+    },
+    "AZ_beta2": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.control.protocol.json",
+      "sha256": "b0cdf4c574775de6a31ca90950468141a0449867d92eee12ed5857ac38b16c3a",
+      "generate_command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_full_streamwait.py",
+        "--run",
+        "--arm",
+        "AZ_beta2",
+        "--attempt",
+        "1"
+      ]
+    },
+    "EADP_beta1": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta1_streamwait.control.protocol.json",
+      "sha256": "6bdb49b4f544410e105c8288fdff4e6c1ea14d10e230ac785a6ad3a9c5344d4d",
+      "generate_command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_full_streamwait.py",
+        "--run",
+        "--arm",
+        "EADP_beta1",
+        "--attempt",
+        "1"
+      ]
+    }
+  },
+  "note": "Conditional plans only; no full-control GPU launch was performed; beta1 is not asserted to be the paper configuration"
+}

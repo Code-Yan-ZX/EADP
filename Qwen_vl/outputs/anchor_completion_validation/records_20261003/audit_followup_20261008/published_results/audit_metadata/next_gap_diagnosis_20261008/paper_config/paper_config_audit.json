@@ -1,0 +1,452 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-08T15:11:33.933448+00:00",
+  "scope": "Independent CPU read-only paper/released-config audit; outputs only within paper_config directory. No GPU, parameters, frozen code, queue, publisher, docs or Git publication changed.",
+  "live_branch": "codex/anchor-completion-validation",
+  "live_head": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
+  "official_commit": "e1a08801461c181871b9ff1cb0803b8e9966f083",
+  "paper_html_identity_matches_reference": true,
+  "summary_evidence_utc": "2026-10-08T15:11:07.352896+00:00",
+  "gap_rows": [
+    {
+      "budget_parameter": 32,
+      "nominal_total_budget": 160,
+      "n_complete": 5000,
+      "local_official_accuracy": 51.99600000000005,
+      "paper_reported_accuracy": 54.2,
+      "delta_local_minus_paper_percentage_points": -2.203999999999951,
+      "prediction_source_sha256": "e20a9c09f208779890d01ea122d88e8f1739280d2dfa9771c341f41bddcce312",
+      "paper_source_url": "https://arxiv.org/html/2607.02484v1#S5.T2",
+      "runtime": {
+        "n": 5000,
+        "input_tensor_shapes": {
+          "[1, 5, 3, 336, 336]": 5000
+        },
+        "actual_retained_token_histogram": {
+          "156": 235,
+          "157": 2257,
+          "158": 2316,
+          "159": 192
+        },
+        "interpretation": "Five input crops in every record; floor in paper Eq26 and released importance allocation explains retention below nominal. Not evidence of a missing-crop or CLI-total-budget error."
+      }
+    },
+    {
+      "budget_parameter": 64,
+      "nominal_total_budget": 320,
+      "n_complete": 5000,
+      "local_official_accuracy": 55.35200000000011,
+      "paper_reported_accuracy": 57.0,
+      "delta_local_minus_paper_percentage_points": -1.6479999999998896,
+      "prediction_source_sha256": "a1ca15a89567aa6c3b51857fde052100a9b6a85ebde880555e4f5c2782ee5700",
+      "paper_source_url": "https://arxiv.org/html/2607.02484v1#S5.T2",
+      "runtime": {
+        "n": 5000,
+        "input_tensor_shapes": {
+          "[1, 5, 3, 336, 336]": 5000
+        },
+        "actual_retained_token_histogram": {
+          "316": 211,
+          "317": 2275,
+          "318": 2294,
+          "319": 220
+        },
+        "interpretation": "Five input crops in every record; floor in paper Eq26 and released importance allocation explains retention below nominal. Not evidence of a missing-crop or CLI-total-budget error."
+      }
+    },
+    {
+      "budget_parameter": 128,
+      "nominal_total_budget": 640,
+      "n_complete": 5000,
+      "local_official_accuracy": 57.95800000000021,
+      "paper_reported_accuracy": 59.2,
+      "delta_local_minus_paper_percentage_points": -1.2419999999997913,
+      "prediction_source_sha256": "f967c81a2ed8c5fffc24860201f96e721a4e806c80cf1ff1029a1f648f4a1279",
+      "paper_source_url": "https://arxiv.org/html/2607.02484v1#S5.T2",
+      "runtime": {
+        "available": false,
+        "interpretation": "Initial E128 run has no new runtime trace; no per-question token claim."
+      }
+    }
+  ],
+  "current_protocol": {
+    "protocol": "official_textvqa_loader",
+    "task": "TextVQA_VAL",
+    "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+    "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl",
+    "question_file_sha256": "9f60db6fb89e369263ed676dc26b48d00d4a462e73f0930c09d23394e9dcf3a3",
+    "question_rows": 5000,
+    "num_chunks": 1,
+    "chunk_idx": 0,
+    "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/train_images",
+    "answers_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K32.jsonl",
+    "conv_mode": "vicuna_v1",
+    "score_text_transform": "remove exact single-word-or-phrase answer suffix",
+    "llm_prompt_transform": "unchanged full TextVQA prompt, including OCR and answer suffix",
+    "max_new_tokens": 128,
+    "temperature": 0.0,
+    "top_p": null,
+    "num_beams": 1,
+    "visual_token_num": 32,
+    "alpha": 0.5,
+    "beta": 2.0,
+    "anchorzip": false,
+    "git_commit": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
+    "wrapper_sha256": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534",
+    "torch_version": "2.1.2+cu118",
+    "transformers_version": "4.37.2",
+    "created_utc": "2026-10-08T12:12:48.546698+00:00",
+    "config.json_sha256": "60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60",
+    "generation_config.json_sha256": "c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6",
+    "source_sha256": {
+      "llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+      "llava/model/builder.py": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+      "llava/model/multimodal_encoder/clip_encoder.py": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+      "llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+      "llava/conversation.py": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9"
+    }
+  },
+  "core_source_identity": [
+    {
+      "relative_path": "LLaVA/llava/model/llava_arch.py",
+      "byte_identical": true,
+      "sha256": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a"
+    },
+    {
+      "relative_path": "LLaVA/llava/model/builder.py",
+      "byte_identical": true,
+      "sha256": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67"
+    },
+    {
+      "relative_path": "LLaVA/llava/model/multimodal_encoder/clip_encoder.py",
+      "byte_identical": true,
+      "sha256": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838"
+    },
+    {
+      "relative_path": "LLaVA/llava/mm_utils.py",
+      "byte_identical": true,
+      "sha256": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced"
+    },
+    {
+      "relative_path": "LLaVA/llava/conversation.py",
+      "byte_identical": true,
+      "sha256": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9"
+    },
+    {
+      "relative_path": "LLaVA/llava/eval/model_vqa_loader.py",
+      "byte_identical": true,
+      "sha256": "6c9580ed3e62231c0f30708c5f1ec2c47cf44c266c0c228ef22c1b3b0e79164a"
+    },
+    {
+      "relative_path": "LLaVA/llava/model/language_model/llava_llama.py",
+      "byte_identical": true,
+      "sha256": "ff620b6fd6d1aeccca0b211c431e5b0fa382707a457034e5d30b19e174a9f76a"
+    }
+  ],
+  "restricted_current_process_environment": [
+    {
+      "pid": 1528732,
+      "restricted_architecture_parameters": {},
+      "scope": "Current supervisor/current SQA worker only. Completed Text worker environment unavailable; inherited supervisor evidence is supportive, not proof of its imported class."
+    },
+    {
+      "pid": 2275562,
+      "restricted_architecture_parameters": {},
+      "scope": "Current supervisor/current SQA worker only. Completed Text worker environment unavailable; inherited supervisor evidence is supportive, not proof of its imported class."
+    }
+  ],
+  "configuration_conditions": [
+    {
+      "item": "Total token budget",
+      "paper": "Table2 and Table16 use nominal total160/320/640; supplementary Algorithm1 has five patches and Eq26 floor/min1 allocation.",
+      "released": "v1_6/textvqa.sh passes TOKEN to model, labels/evaluates TOKEN*5. main greed_select forms total budget=sum(per-crop TOKEN).",
+      "current": "CLI32/64/128; all E32/E64 traces have five crops. Realized156-159/316-319.",
+      "status": "matched",
+      "evidence": [
+        "https://arxiv.org/html/2607.02484v1#S5.T2",
+        "https://arxiv.org/html/2607.02484v1#S9",
+        "https://arxiv.org/html/2607.02484v1#S12.T16",
+        "LLaVA/scripts/v1_6/eval/textvqa.sh:13",
+        "LLaVA/llava/model/llava_arch.py:365"
+      ]
+    },
+    {
+      "item": "Crop allocation",
+      "paper": "Supplement9 explicitly uses importance-based by default for all NeXT experiments; Table16 independently repeats Text54.2/57.0/59.2.",
+      "released": "pruning_strategy='importance_based'; allocate using polarized importance",
+      "current": "Identical main architecture source.",
+      "status": "matched; global_guided is not a justified reproduction repair",
+      "evidence": [
+        "https://arxiv.org/html/2607.02484v1#S9",
+        "https://arxiv.org/html/2607.02484v1#S12.T16",
+        "LLaVA/llava/model/llava_arch.py:550"
+      ]
+    },
+    {
+      "item": "Fusion coefficient",
+      "paper": "mu is weight of global EOS score; Table7 mu.5 panel repeats main Text56.5, but evaluated on v1.5K128.",
+      "released": "alpha*global+(1-alpha)*local; defaultsalpha.5",
+      "current": "alpha.5",
+      "status": "definition/default matched; per-task paper argv unavailable",
+      "evidence": [
+        "https://arxiv.org/html/2607.02484v1#S4.SS2",
+        "https://arxiv.org/html/2607.02484v1#S5.T7",
+        "LLaVA/llava/model/llava_arch.py:592"
+      ]
+    },
+    {
+      "item": "Polarization beta",
+      "paper": "Eq12 beta>1; Table7 only v1.5K128 tests0,.5,2,5,10, with Text56.5 atbeta2. No unique per-task main-table beta identity.",
+      "released": "v1_6 textvqa.sh, LLaVA README and efficiency runner defaultbeta1.",
+      "current": "Frozen beta2",
+      "status": "confirmed difference from released default; causal contribution and actual paper beta UNKNOWN",
+      "evidence": [
+        "https://arxiv.org/html/2607.02484v1#S4.SS3",
+        "https://arxiv.org/html/2607.02484v1#S5.T7",
+        "LLaVA/scripts/v1_6/eval/textvqa.sh:11",
+        "README.md:84"
+      ]
+    },
+    {
+      "item": "Entropy keep fraction q",
+      "paper": "Table7 tests.3/.5/.7/.9 on v1.5K128; text says.3 highest. q.5 panel repeats main five-task scores, but this cannot pin Table2 runtime.",
+      "released": "main call hardcodesq.2, despite helper default.5; environment q only read in ablation architecture. v1_6 shell has no q argument.",
+      "current": "main architecture unchanged; q.2",
+      "status": "paper-release provenance ambiguity, not demonstrated local-vs-released mismatch; q sweep not justified",
+      "evidence": [
+        "https://arxiv.org/html/2607.02484v1#S5.T7",
+        "LLaVA/llava/model/llava_arch.py:586",
+        "LLaVA/llava/model/llava_arch_ablation.py:648"
+      ]
+    },
+    {
+      "item": "Entropy/aggregation temperature",
+      "paper": "Supplement12 explicitly sets tau=gamma=.01 default.",
+      "released": "T100 multiplier means tau=.01; negative_entropy aggregation M_temp=.01.",
+      "current": "identical",
+      "status": "matched",
+      "evidence": [
+        "https://arxiv.org/html/2607.02484v1#S12",
+        "https://arxiv.org/html/2607.02484v1#S12.T15",
+        "LLaVA/llava/model/llava_arch.py:586",
+        "LLaVA/llava/model/llava_arch.py:589"
+      ]
+    },
+    {
+      "item": "Guidance and generation",
+      "paper": "LLaVA implementation described as official/default; exact per-task argv not supplied.",
+      "released": "v1_6 vicuna_v1, greedytemperature0, beams1, top_pNone, max_new_tokens128, use_cacheTrue. CLIP guidance removes exact short-answer suffix while LLM prompt keeps full OCR and suffix.",
+      "current": {
+        "conv_mode": "vicuna_v1",
+        "temperature": 0.0,
+        "num_beams": 1,
+        "top_p": null,
+        "max_new_tokens": 128,
+        "score_text_transform": "remove exact single-word-or-phrase answer suffix",
+        "llm_prompt_transform": "unchanged full TextVQA prompt, including OCR and answer suffix"
+      },
+      "status": "current repaired wrapper settings match released loader; CPU AST comparison supports kwargs, but wrapper serial image transfer and official DataLoader differ in execution (separate sync audit)",
+      "evidence": [
+        "LLaVA/scripts/v1_6/eval/textvqa.sh:16",
+        "LLaVA/llava/eval/model_vqa_loader.py:114",
+        "LLaVA/llava/eval/model_vqa_loader.py:166",
+        "Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py:22"
+      ]
+    },
+    {
+      "item": "Spatial prior / signs",
+      "paper": "Supplement9 negative cross-modal cosine, visual similarity mapped to[0,1], Gaussian3x3sigma1reflectionpadding.",
+      "released": "same signs and spatial constants",
+      "current": "identical",
+      "status": "matched",
+      "evidence": [
+        "https://arxiv.org/html/2607.02484v1#S9",
+        "LLaVA/llava/model/llava_arch.py:186",
+        "LLaVA/llava/model/llava_arch.py:312"
+      ]
+    },
+    {
+      "item": "Paper panel consistency",
+      "paper": "Table7 aggregation(4) text selects(4), but that row Text56.3/MME1441.9 differs mainText56.5/MME1439; q.5 and beta10 different panels match some main values. Table16CN16054.5 differs main54.6 while Text agrees.",
+      "current": "No inference of a unique paper hyperparameter set from numerical coincidences.",
+      "status": "confirmed underdetermination of configuration provenance; no attribution of gap",
+      "evidence": [
+        "https://arxiv.org/html/2607.02484v1#S5.T7",
+        "https://arxiv.org/html/2607.02484v1#S12.T16"
+      ]
+    }
+  ],
+  "conclusion": "No proven residual root cause or guarantee of paper parity. Confirmed beta default discrepancy merits a single controlled reproduction-default test after runtime stability; allocation/budget/generation constants currently match release. Actual main-table q/beta execution provenance remains unknown.",
+  "minimal_controls": [
+    {
+      "priority": 0,
+      "id": "complete_full_baseline",
+      "action": "Consume already scheduled NeXT official TextVQA FULL only after all5000 and official score complete; compare to paperFULL60.3. No new GPU task needed.",
+      "falsifiable_expectation": "FULL near60.3 with pruned gaps1.242/1.648/2.204 concentrates suspicion on pruning/guidance execution; FULL substantially low keeps model/input/runtime baseline difference viable. Does not mechanically attribute all residual to pruning.",
+      "status": "pending existing run"
+    },
+    {
+      "priority": 1,
+      "id": "sync_stability_gate",
+      "action": "Separate sync agent verifies released CLIP caller dependencies and isolated repeat controls at fixedbeta2 before changing algorithm settings.",
+      "falsifiable_expectation": "Different identical-input predictions or token masks under wait-only control demonstrate execution contribution. Stable control narrows this candidate. Small probes measure stability only, not full5000 accuracy.",
+      "status": "other agent audit; not executed here"
+    },
+    {
+      "priority": 1,
+      "id": "released_beta1_single_control",
+      "action": "After baseline and sync checks, run one separately recorded EADP NeXTTextK32 control using released shell defaultbeta1; keep alpha.5/q.2/nominal160/officialOCR/conv/greedy128/checkpoint fixed, same synchronization in both arms. Compare all5000 paired against controlledbeta2.",
+      "falsifiable_expectation": "Unchanged tokens/score rejects beta-default contribution; changed paired score quantifies it. A score close54.2 is consistency evidence only, not proof paper usedbeta1.",
+      "reason": "Only confirmed current-vs-released-default mathematical parameter difference. No search over beta values.",
+      "status": "PROPOSAL ONLY; no command launched, no frozen file changed"
+    },
+    {
+      "priority": 2,
+      "id": "paper_q_identity",
+      "action": "Seek actual Table2 argv or released run metadata. If still unavailable and beta/sync cannot explain, a separately specified single q.5 mechanism control may be considered; override only the entropy fraction in an isolated adapter, not just ENTROPY_KEEP_RATIO (ignored by main).",
+      "falsifiable_expectation": "Shows q sensitivity but cannot certify paper identity. Table7 evidence belongs v1.5K128, not NeXTTextK32.",
+      "status": "UNVERIFIED hypothesis; not authorized/executed by this audit"
+    },
+    {
+      "priority": 3,
+      "id": "do_not_change_confirmed_allocation",
+      "action": "Do not change to global_guided or force exact160 as reproduction fixes; paper explicitly usesimportance_based and floor formula.",
+      "falsifiable_expectation": "Existing paper/code/runtime already refute missing5x mapping and rounding-as-local-error hypotheses.",
+      "status": "excluded from first controls"
+    }
+  ],
+  "source_registry": {
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/conversation.py": {
+      "sha256": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+      "bytes": 15418
+    },
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_loader.py": {
+      "sha256": "6c9580ed3e62231c0f30708c5f1ec2c47cf44c266c0c228ef22c1b3b0e79164a",
+      "bytes": 6823
+    },
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": {
+      "sha256": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+      "bytes": 9919
+    },
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py": {
+      "sha256": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+      "bytes": 8897
+    },
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/language_model/llava_llama.py": {
+      "sha256": "ff620b6fd6d1aeccca0b211c431e5b0fa382707a457034e5d30b19e174a9f76a",
+      "bytes": 7007
+    },
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py": {
+      "sha256": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+      "bytes": 41627
+    },
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": {
+      "sha256": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+      "bytes": 6958
+    },
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER.jsonl": {
+      "sha256": "f967c81a2ed8c5fffc24860201f96e721a4e806c80cf1ff1029a1f648f4a1279",
+      "bytes": 2316764
+    },
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K32.jsonl": {
+      "sha256": "e20a9c09f208779890d01ea122d88e8f1739280d2dfa9771c341f41bddcce312",
+      "bytes": 2311406
+    },
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K32.jsonl.protocol.json": {
+      "sha256": "6cd0339f52d2315748b68cfca618db9ed4a4fb47d11708895dc6f305e4b5bd34",
+      "bytes": 2027
+    },
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K32.jsonl.runtime.jsonl": {
+      "sha256": "a7d53f90969112d73e8a5fcf1014c8939ffaaedd34a78ac8f4b2cea4e6a3414e",
+      "bytes": 3114242
+    },
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K64.jsonl": {
+      "sha256": "a1ca15a89567aa6c3b51857fde052100a9b6a85ebde880555e4f5c2782ee5700",
+      "bytes": 2313850
+    },
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K64.jsonl.runtime.jsonl": {
+      "sha256": "768b81104bb0f215b096feea1b92b3b63d78235dac442304954061087794cb5c",
+      "bytes": 3114242
+    },
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/llava_paper_configuration_ambiguities.json": {
+      "sha256": "e48006e5ac32076ff82ddb80e3ac26d53754a77084467732f30627b70eb3838c",
+      "bytes": 1575
+    },
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/paper_reference.json": {
+      "sha256": "9ca6e89e566bf496529a1c916779b35927b34c677b8a8870afdb5fa8d5ffdec4",
+      "bytes": 69922
+    },
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_batch/lane2_next_plan.json": {
+      "sha256": "1c201529034c078a645670f7cacc48cd540bc99960ff93773beafc59fe54f973",
+      "bytes": 46416
+    },
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_batch/repaired_results_summary.json": {
+      "sha256": "afb44d8603ab088c99bcd615eb4953417a396f17ad311a82d974d2d8bbb869ad",
+      "bytes": 56432
+    },
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py": {
+      "sha256": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534",
+      "bytes": 9382
+    },
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/textvqa_runtime_launcher.py": {
+      "sha256": "1fa45b9f5c069d855e7675ac4e4ddaa61a912ddb68a2d3393ede69b7b65736dd",
+      "bytes": 3273
+    },
+    "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/EVAL.md": {
+      "sha256": "373e958810505369d291390ad53025ba3d81e0cf8ce40b550ce8bceaf8470d06",
+      "bytes": 5891
+    },
+    "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/README.md": {
+      "sha256": "f8b01239690e8b2bb8bba5f0784b7abdf8394d99acdb88f8f0b1b1c407695bff",
+      "bytes": 4860
+    },
+    "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/llava/conversation.py": {
+      "sha256": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+      "bytes": 15418
+    },
+    "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/llava/eval/model_vqa_loader.py": {
+      "sha256": "6c9580ed3e62231c0f30708c5f1ec2c47cf44c266c0c228ef22c1b3b0e79164a",
+      "bytes": 6823
+    },
+    "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/llava/mm_utils.py": {
+      "sha256": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+      "bytes": 9919
+    },
+    "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/llava/model/builder.py": {
+      "sha256": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+      "bytes": 8897
+    },
+    "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/llava/model/language_model/llava_llama.py": {
+      "sha256": "ff620b6fd6d1aeccca0b211c431e5b0fa382707a457034e5d30b19e174a9f76a",
+      "bytes": 7007
+    },
+    "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/llava/model/llava_arch.py": {
+      "sha256": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+      "bytes": 41627
+    },
+    "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/llava/model/llava_arch_ablation.py": {
+      "sha256": "6a6d850e936649aa42a45fbe710b30346e30bc19dd509246cd7be862bf4a0de8",
+      "bytes": 47569
+    },
+    "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": {
+      "sha256": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+      "bytes": 6958
+    },
+    "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/LLaVA/scripts/v1_6/eval/textvqa.sh": {
+      "sha256": "ffe4c29ffb4d1b1c37c222d1a8f8ef7712621194c2f0f97630c58a858cd36a77",
+      "bytes": 1061
+    },
+    "/media/disk2/YZX/research/audit_base_gap_20261003/eadp_official/README.md": {
+      "sha256": "7898e65506ff2310c77d236a9e3297701e2ea7dc39c7b16730d2ce15cba04966",
+      "bytes": 6594
+    },
+    "/tmp/eadp.txt": {
+      "sha256": "a0302c0c71c48b9bb9c406d473eefa511272bf7509fd9c748a72c063608251b0",
+      "bytes": 132710
+    },
+    "/tmp/eadp_2607.02484v1_audit.html": {
+      "sha256": "57c85a3e54b3fa932e9ba62c77ba0c6444a4ccbffe9784f8b8ba520a5fcc77bf",
+      "bytes": 741856
+    }
+  }
+}

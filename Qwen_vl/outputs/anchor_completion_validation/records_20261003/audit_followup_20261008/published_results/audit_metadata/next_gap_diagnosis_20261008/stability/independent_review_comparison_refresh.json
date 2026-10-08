@@ -1,0 +1,54 @@
+{
+  "reviewed_utc": "2026-10-08T15:19:29.222277+00:00",
+  "reviewer": "comparison_refresh",
+  "scope": "Independent CPU-only reading/AST/identity review; no GPU/worker edits/prepare/queue/publication",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_stream_panel.py": "0d3e1766d4bf9594f38c16feb587fff089622e6ddbbca420cc70a5781863e8e4",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_stream_panel128.protocol.json": "ad5abc52a3afb8592f8b27dbfd7045c072810f8742911e7ba42c953b4197f2a2",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_stream_panel128.manifest.json": "ec96680624846e8d7f22bdce9aca81b45cf26918770e4df0ab406cb017cd4096"
+  },
+  "findings": [
+    {
+      "status": "pass",
+      "item": "Fixed panel",
+      "detail": "128 equal-width midpoint positions19..4980;128 distinct dataset positions and full(question_id,prompt)keys;64evenABAB/64oddBABA orders. Neither GT nor predictions choose positions."
+    },
+    {
+      "status": "pass",
+      "item": "Prompt/input/math",
+      "detail": "Same official full OCR LLM prompt/conv;guidance removes exact suffix only;alpha.5beta2K32 greedy128beams1top_pNone. CPUpreprocessing reused identically betweenvariants;same blocking transfers as repairedwrapper. AZ calls same traced greed_select and retainsits installed rtg/Completionmath."
+    },
+    {
+      "status": "pass",
+      "item": "Wait-only AST",
+      "detail": "Verified using exact worker Python3.10.21 without importing torch. Three added nodes are caller capture+two waits; removal restores original AST. Production file unchanged. Defaultsystem Python AST hashes differ due Pythonversion, not sourcedrift."
+    },
+    {
+      "status": "pass",
+      "item": "Key/scorer/source",
+      "detail": "All128 GTkeys match officialprompt_processor/imageID;all128archivekeys present;fullarchive5000uniquecompositekeys. Prompt/image hashes and allprotocol sourcehashes verified;model config/generationconfig also matchbaseline."
+    },
+    {
+      "status": "limitation",
+      "item": "Index-trace observer effect",
+      "detail": "D2Hindices/quotas runs after greed_select, after originalCLIP device synchronization andexistingquota.max().item();cannotretroactivelyrepairconcat->side-stream read in this call. Additionalblocking/lifetime/allocator/LLMtimingcanchangefuturecallraceprobability. A negativeindexedpanel doesnotrefute race."
+    },
+    {
+      "status": "recommendation",
+      "item": "Primary panel",
+      "detail": "Prefer --no-index-trace in a separate fixedattempt for prediction/count stability;indexedpanel canlocate selected-maskdifferences. Keepmanifest/orderfixed andpreserveeachprotocol/records. Do notinterpret128subsetaccuracyasfull5000effect."
+    },
+    {
+      "status": "recommendation",
+      "item": "Positive panel followup",
+      "detail": "As-isrepeatdisagreements withwaitrepeatsstable, especiallysameinputkeep/predchanges, justifycontrolledwhole5000 EADP+AnchorZip wait-onlybeta2, exactofficialscoringandruntime. This testsbenchmarkeffectwithoutclaimingpaperparity. Thenonesinglebeta1EADPcontrol underidenticalwaitsettingtestsreleaseddefault; compareto controlledbeta2, no sweep."
+    },
+    {
+      "status": "recommendation",
+      "item": "Full-run observer policy",
+      "detail": "Whole5000 runs should omitgreed_select CPUindexhook;observe decodedoutput/returnedcount aftergeneration. Preserveoldas-isresults/protocols;reportonlycomplete5000andactualsourcedigests."
+    }
+  ],
+  "blocking_defects_found": [],
+  "conclusion": "Suitable as a mechanism panel with the stated observer/representativeness limits. No full-accuracy estimate or paper-parity guarantee follows from it."
+}

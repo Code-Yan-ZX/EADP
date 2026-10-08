@@ -1,0 +1,580 @@
+{
+  "cpu_only": true,
+  "source_files": {
+    "LLaVA/llava/model/llava_arch.py": {
+      "local_sha256": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+      "official_sha256": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+      "byte_identical": true
+    },
+    "LLaVA/llava/model/builder.py": {
+      "local_sha256": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+      "official_sha256": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+      "byte_identical": true
+    },
+    "LLaVA/llava/model/multimodal_encoder/clip_encoder.py": {
+      "local_sha256": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+      "official_sha256": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+      "byte_identical": true
+    },
+    "LLaVA/llava/mm_utils.py": {
+      "local_sha256": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+      "official_sha256": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+      "byte_identical": true
+    },
+    "LLaVA/llava/conversation.py": {
+      "local_sha256": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+      "official_sha256": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+      "byte_identical": true
+    },
+    "LLaVA/llava/model/language_model/llava_llama.py": {
+      "local_sha256": "ff620b6fd6d1aeccca0b211c431e5b0fa382707a457034e5d30b19e174a9f76a",
+      "official_sha256": "ff620b6fd6d1aeccca0b211c431e5b0fa382707a457034e5d30b19e174a9f76a",
+      "byte_identical": true
+    },
+    "LLaVA/llava/eval/model_vqa_loader.py": {
+      "local_sha256": "6c9580ed3e62231c0f30708c5f1ec2c47cf44c266c0c228ef22c1b3b0e79164a",
+      "official_sha256": "6c9580ed3e62231c0f30708c5f1ec2c47cf44c266c0c228ef22c1b3b0e79164a",
+      "byte_identical": true
+    }
+  },
+  "checkpoint_files": {
+    "README.md": {
+      "size": 1485,
+      "local_sha256": "724fdb297a133f319c2c5c01f8c21d96de83885ab7ad978d7308ef3f6321f826",
+      "hf_snapshot_blob_id": "6d3a34bd95ce0749a2d89f555752a354a087d13d",
+      "lfs_sha256": null,
+      "remote_lfs_verified": null,
+      "byte_identical_to_hf_snapshot": true
+    },
+    "config.json": {
+      "size": 1584,
+      "local_sha256": "60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60",
+      "hf_snapshot_blob_id": "f51a61af7122608433e4eb65bcbd7e8f9812932a",
+      "lfs_sha256": null,
+      "remote_lfs_verified": null,
+      "byte_identical_to_hf_snapshot": false
+    },
+    "generation_config.json": {
+      "size": 170,
+      "local_sha256": "c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6",
+      "hf_snapshot_blob_id": "ea3d538aeecaf1ff1eba439cb643cae3388a5316",
+      "lfs_sha256": null,
+      "remote_lfs_verified": null,
+      "byte_identical_to_hf_snapshot": true
+    },
+    "model-00001-of-00003.safetensors": {
+      "size": 4938993632,
+      "hf_snapshot_size": 4938993632,
+      "resolved_local_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/model-00001-of-00003.safetensors",
+      "resolved_hf_path": "/data/models/huggingface/hub/models--liuhaotian--llava-v1.6-vicuna-7b/blobs/f61fd54d6e47f55db4452dd5a263cb5323d1b8077cad86bf536ae0e6b46b5df5",
+      "same_inode": false,
+      "safetensors_header_equal": true,
+      "hf_snapshot_blob_id": "f61fd54d6e47f55db4452dd5a263cb5323d1b8077cad86bf536ae0e6b46b5df5",
+      "lfs_sha256": "f61fd54d6e47f55db4452dd5a263cb5323d1b8077cad86bf536ae0e6b46b5df5",
+      "remote_lfs_verified": true,
+      "full_payload_sha_verified": false,
+      "boundary": "Avoid reading 14GB concurrently with urgent GPU queues; equal size/header does not prove weight payload identity"
+    },
+    "model-00002-of-00003.safetensors": {
+      "size": 4947390880,
+      "hf_snapshot_size": 4947390880,
+      "resolved_local_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/model-00002-of-00003.safetensors",
+      "resolved_hf_path": "/data/models/huggingface/hub/models--liuhaotian--llava-v1.6-vicuna-7b/blobs/a5219e366b4da0d6df6116a2b71c6bceea0b77dfcc5fdec4fa774f0f26c39ec4",
+      "same_inode": false,
+      "safetensors_header_equal": true,
+      "hf_snapshot_blob_id": "a5219e366b4da0d6df6116a2b71c6bceea0b77dfcc5fdec4fa774f0f26c39ec4",
+      "lfs_sha256": "a5219e366b4da0d6df6116a2b71c6bceea0b77dfcc5fdec4fa774f0f26c39ec4",
+      "remote_lfs_verified": true,
+      "full_payload_sha_verified": false,
+      "boundary": "Avoid reading 14GB concurrently with urgent GPU queues; equal size/header does not prove weight payload identity"
+    },
+    "model-00003-of-00003.safetensors": {
+      "size": 4239524944,
+      "hf_snapshot_size": 4239524944,
+      "resolved_local_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/model-00003-of-00003.safetensors",
+      "resolved_hf_path": "/data/models/huggingface/hub/models--liuhaotian--llava-v1.6-vicuna-7b/blobs/52a8836fee344f7582a208e4c01d218aa53fa3a3edbfab4538f50aecd57c1646",
+      "same_inode": false,
+      "safetensors_header_equal": true,
+      "hf_snapshot_blob_id": "52a8836fee344f7582a208e4c01d218aa53fa3a3edbfab4538f50aecd57c1646",
+      "lfs_sha256": "52a8836fee344f7582a208e4c01d218aa53fa3a3edbfab4538f50aecd57c1646",
+      "remote_lfs_verified": true,
+      "full_payload_sha_verified": false,
+      "boundary": "Avoid reading 14GB concurrently with urgent GPU queues; equal size/header does not prove weight payload identity"
+    },
+    "model.safetensors.index.json": {
+      "size": 73215,
+      "local_sha256": "3aa4216f08f95215796622b2fec456eb0caa3472b9e709b046cb386b77a1efb1",
+      "hf_snapshot_blob_id": "b526abddee37a3410b3a82ab0fb967fa1f10eb9c",
+      "lfs_sha256": null,
+      "remote_lfs_verified": null,
+      "byte_identical_to_hf_snapshot": true
+    },
+    "special_tokens_map.json": {
+      "size": 438,
+      "local_sha256": "719833ff26ac897a3ec8ed946028a135de2a351470af59b4008744ab1f0ee9b7",
+      "hf_snapshot_blob_id": "14761dcf1466dc232bd41de9c21d4c617b15755e",
+      "lfs_sha256": null,
+      "remote_lfs_verified": null,
+      "byte_identical_to_hf_snapshot": true
+    },
+    "tokenizer.model": {
+      "size": 499723,
+      "local_sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347",
+      "hf_snapshot_blob_id": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347",
+      "lfs_sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347",
+      "remote_lfs_verified": true,
+      "byte_identical_to_hf_snapshot": true
+    },
+    "tokenizer_config.json": {
+      "size": 936,
+      "local_sha256": "e3d348c5c498caa305b77317e0aa4157e60f49bc1fa37e061273cc0b9a5efb52",
+      "hf_snapshot_blob_id": "93bc64ab6409c49d05971dd057a1f564b470fe53",
+      "lfs_sha256": null,
+      "remote_lfs_verified": null,
+      "byte_identical_to_hf_snapshot": true
+    },
+    "trainer_state.json": {
+      "size": 719305,
+      "local_sha256": "df4e64525a0506404c1fa488e3767586462de6a94c17a089efd880d70900f54c",
+      "hf_snapshot_blob_id": "cfcf6828b4fd6aae39f69b495ad9e3f430f54363",
+      "lfs_sha256": null,
+      "remote_lfs_verified": null,
+      "byte_identical_to_hf_snapshot": true
+    },
+    "training_args.bin": {
+      "size": 7035,
+      "local_sha256": "0c8b8519b6416cde0238e36ebb0ff98ad09214a241bf247f7656ab4e9d36a4da",
+      "hf_snapshot_blob_id": "0c8b8519b6416cde0238e36ebb0ff98ad09214a241bf247f7656ab4e9d36a4da",
+      "lfs_sha256": "0c8b8519b6416cde0238e36ebb0ff98ad09214a241bf247f7656ab4e9d36a4da",
+      "remote_lfs_verified": true,
+      "byte_identical_to_hf_snapshot": true
+    }
+  },
+  "config_semantic_differences": {
+    "model_type": {
+      "local": "llava_llama",
+      "hf_snapshot": "llava"
+    }
+  },
+  "remote_hf_api": {
+    "url": "https://huggingface.co/api/models/liuhaotian/llava-v1.6-vicuna-7b/revision/deae57a8c0ccb0da4c2661cc1891cc9d06503d11?blobs=true",
+    "sha": "deae57a8c0ccb0da4c2661cc1891cc9d06503d11",
+    "verified": true
+  },
+  "question_eval_zip_identity": {
+    "entry": "textvqa/llava_textvqa_val_v051_ocr.jsonl",
+    "sha256": "9f60db6fb89e369263ed676dc26b48d00d4a462e73f0930c09d23394e9dcf3a3",
+    "local_sha256": "9f60db6fb89e369263ed676dc26b48d00d4a462e73f0930c09d23394e9dcf3a3",
+    "byte_identical": true
+  },
+  "cpu_panel_official_loader_identity": {
+    "selection": "Reuse prior seed20261008 CLIP length-stratified panel, selected without answers or predictions",
+    "samples": [
+      {
+        "position": 261,
+        "question_id": "24c438f1db2149b5",
+        "image": "24c438f1db2149b5.jpg",
+        "image_sha256": "57f677b4be70ae088b2b00eb2baf8254762305fcf3f3115ace22afc1591f256e",
+        "size": [
+          1024,
+          768
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "c6af785970361c3d2429cddbd3292e04c4d20b237e2e090e9916f811b95707a7"
+      },
+      {
+        "position": 455,
+        "question_id": "04e03c1faa934e30",
+        "image": "04e03c1faa934e30.jpg",
+        "image_sha256": "f22274b47b23274bbbd3ecde13a0ce707554aaa80de2c2f6f731bb5009390296",
+        "size": [
+          768,
+          1024
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "10b99a4cc01d484476d4ef3bbc8e31643f36e1a18d9ad5bd7c65f5a49d4766a5"
+      },
+      {
+        "position": 951,
+        "question_id": "ef45a7b16461aa19",
+        "image": "ef45a7b16461aa19.jpg",
+        "image_sha256": "eae4a86aa8d7a54d1116233fb2467b4aabda312415f2f542c19f28fff6c6acd6",
+        "size": [
+          625,
+          1024
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "ffc26d1e0fca7c02a94dcd7b3d06c7295b411894b2944609106374029c18e992"
+      },
+      {
+        "position": 1047,
+        "question_id": "a604dd6cf38a4a12",
+        "image": "a604dd6cf38a4a12.jpg",
+        "image_sha256": "a73eb67737295eb30b8c6f4682e6484716977684062534fea3e742cba212d4d5",
+        "size": [
+          1024,
+          768
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "42c8d4453e69b1dcdefd8f6db5dc9a11c68e685496ee4d93908d925563abffbe"
+      },
+      {
+        "position": 1253,
+        "question_id": "66e3646d65bf2b9a",
+        "image": "66e3646d65bf2b9a.jpg",
+        "image_sha256": "0481e042e2cde4e5ff4d6a601929885f4861c0751fcc2f5edbd01b8de3552c7c",
+        "size": [
+          1024,
+          768
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "79cfb4d0fa29f731faa58e4dd6b5bb14f45d3da3d84b5d243778aae51534a180"
+      },
+      {
+        "position": 1303,
+        "question_id": "fcf8b0b0a66a03a6",
+        "image": "fcf8b0b0a66a03a6.jpg",
+        "image_sha256": "caec0695bdd573ac735af859ff0574d25edba26403e4287aa90cb387a9de23f1",
+        "size": [
+          675,
+          1024
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "e0ed6907b9fc9a41b1a66d881fe33c6145739d5d40c8e8460851f23abd165bd2"
+      },
+      {
+        "position": 1521,
+        "question_id": "3aa32bad16fa5724",
+        "image": "3aa32bad16fa5724.jpg",
+        "image_sha256": "372435749a2d72e432881cd79528abc07a8a373b09eacf3bd15074da718eb691",
+        "size": [
+          681,
+          1024
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "a3a5fe3b60c5eff92c4b838b99cbccd78e9e01254eded045b640ca34bc47f5fc"
+      },
+      {
+        "position": 1526,
+        "question_id": "a70c0eac40d03f13",
+        "image": "a70c0eac40d03f13.jpg",
+        "image_sha256": "1909282e22a568f89abc51a0f443d54ee868227fe9498eda0dc341eaa35c6866",
+        "size": [
+          1024,
+          648
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "d996a4062c8af04cbc0dd06d316c73af2548a6767c89e49fa3075b68f18b71a8"
+      },
+      {
+        "position": 1748,
+        "question_id": "ab9c12b4c9a65443",
+        "image": "ab9c12b4c9a65443.jpg",
+        "image_sha256": "51a2961292ea1a458e4249216bf3ef1277f5c020c0c6e3e8315693472560a994",
+        "size": [
+          768,
+          1024
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "99d37aa4b6862409182f1201c6492f5e635a19c0f2574a67e72bb26a30d12cf2"
+      },
+      {
+        "position": 1760,
+        "question_id": "8bf4242cb2938ec4",
+        "image": "8bf4242cb2938ec4.jpg",
+        "image_sha256": "5034239fd9fac0c5fc338e81198b863b092a949827244f605a80769c91cda14d",
+        "size": [
+          768,
+          1024
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "5a93eb1bd428fa158029f43e6f07c0db1be764c4318696a47f04ee27de367040"
+      },
+      {
+        "position": 2315,
+        "question_id": "b14093fe05f0f3fa",
+        "image": "b14093fe05f0f3fa.jpg",
+        "image_sha256": "86e908342aad39477364cc6e20585de4d9d921ac531105ee83a20b5b81c58700",
+        "size": [
+          1024,
+          683
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "85f6748fc2ebc112bbce910e9a15ad47c78591a8f19ec614c7724d8fa98c6766"
+      },
+      {
+        "position": 2544,
+        "question_id": "bde8c688ab2415da",
+        "image": "bde8c688ab2415da.jpg",
+        "image_sha256": "bd188ae8215fa8121e61cab185d92a30d4525c30f68769e52f8f810a407cbb88",
+        "size": [
+          732,
+          1024
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "06745ee42a664bc4e76c2bdd8600db3e4594b2e075a2d64b8b9d3bf2c39416d8"
+      },
+      {
+        "position": 3375,
+        "question_id": "08b850040f18ae78",
+        "image": "08b850040f18ae78.jpg",
+        "image_sha256": "8f57caf918c4ad167f9762883717ca6a4cb0f7c4e9c142f2d834e43dfc8088fb",
+        "size": [
+          1024,
+          1024
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "583041496d285d25e7a51ac7b03731304f651c43eb4010733efe2a79c5c32b4a"
+      },
+      {
+        "position": 4090,
+        "question_id": "d446e470f7ec0dd9",
+        "image": "d446e470f7ec0dd9.jpg",
+        "image_sha256": "d7a74b792df9a26f0ae2c0d29d18777238788f31dd0011a7099f3eb555def689",
+        "size": [
+          768,
+          1024
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "8eb81fb441f771c394ffe7048ae89bd34f8f22ae4fd15d191abca155571a5bed"
+      },
+      {
+        "position": 4346,
+        "question_id": "04ef980e5caff21f",
+        "image": "04ef980e5caff21f.jpg",
+        "image_sha256": "844de62b482b77bb9b126f49cd30bd14a9c4552568f112d70ce99230fb21ac88",
+        "size": [
+          1024,
+          683
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "4cdb0eb805eb3d8f20028c66d92cdd8fcc12c82738880948570347ceec837c3b"
+      },
+      {
+        "position": 4931,
+        "question_id": "e4f7cfae5984af81",
+        "image": "e4f7cfae5984af81.jpg",
+        "image_sha256": "dee7fc9afe380a9d481496a9c56b6b6c877a1105dbec8f4ddf75dd0e56a70a7f",
+        "size": [
+          1024,
+          768
+        ],
+        "llm_input_ids_equal": true,
+        "pixels_equal": true,
+        "pixels_shape": [
+          1,
+          5,
+          3,
+          336,
+          336
+        ],
+        "size_value_equal": true,
+        "float16_pixels_equal": true,
+        "pixels_sha256": "b3fa061f7f5fa3babf991f8ab5738b47f64fdea8e0b8e9983ec027bcc8c82a9d"
+      }
+    ],
+    "all_equal": true,
+    "execution_differences": [
+      "Official DataLoader 4 workers, custom wrapper serial PIL preprocessing",
+      "Official non_blocking=True GPU transfers, wrapper half().cuda() blocking transfers",
+      "Official image_sizes is ((w,h),), wrapper [(w,h)]; identical indexed values",
+      "Official metadata empty, wrapper protocol metadata and runtime observer; observer returns same object"
+    ]
+  },
+  "all_5000_text_identity": {
+    "n_questions": 5000,
+    "n_unique_images": 3166,
+    "guidance_suffix_removed": true,
+    "clip_segment_distribution": {
+      "1": 4119,
+      "2": 676,
+      "3": 175,
+      "4": 25,
+      "5": 4,
+      "6": 1
+    },
+    "llm_token_lengths": {
+      "minimum": 65,
+      "maximum": 480
+    },
+    "full_multimodal_length_over4096": 0,
+    "k32_nominal_multimodal_length_over4096": 0
+  },
+  "fixed_generation": {
+    "conv_mode": "vicuna_v1",
+    "temperature": 0,
+    "do_sample": false,
+    "num_beams": 1,
+    "top_p": null,
+    "max_new_tokens": 128,
+    "use_cache": true,
+    "image_tensors_dtype": "float16",
+    "model_loader_torch_dtype": "float16",
+    "model_loader_use_flash_attn": false,
+    "alpha": 0.5,
+    "beta": 2.0,
+    "AZ_install_baseline": false
+  },
+  "release_full_merge": {
+    "mm_patch_merge_config": "spatial_unpad",
+    "unconditional_effective_merge": "spatial",
+    "n_crops": 5,
+    "clip_tokens_per_crop": 576,
+    "full_visual_tokens": 2880,
+    "unpad": false,
+    "newline_tokens": false,
+    "matches_official_release": true,
+    "paper_full_vanilla_identity_unproven": true
+  },
+  "cuda_initialized": false
+}

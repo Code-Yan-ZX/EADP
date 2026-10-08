@@ -52,6 +52,10 @@ NEW = ['docs/evaluation_reproduction_audit_20261008.md',
 ALLOWLIST = TRACKED + NEW
 METADATA_ARTIFACTS = ['llava_paper_configuration_ambiguities.json','mme_dependency_impact.json',
                       'audit_provenance_manifest.json','sqa_shipped_control_analysis.json']
+CONTROL_GROUPS = {
+    'next_textvqa_K32_streamwait': ('EADP_beta2', 'AZ_beta2'),
+    'next_textvqa_K32_default_beta1': ('EADP_beta1',),
+}
 
 
 def now():
@@ -257,6 +261,174 @@ def group_definitions(jobs):
     return groups
 
 
+def diagnosis_directory():
+    return OUT/'next_gap_diagnosis_20261008'
+
+
+def load_control_worker():
+    path=diagnosis_directory()/'stability/next_text_full_streamwait.py'
+    spec=importlib.util.spec_from_file_location('publication_full_control',path)
+    loaded=importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(loaded)
+    return loaded
+
+
+def control_registration():
+    """A prepared plan is not a request to generate or wait for new results."""
+    directory=diagnosis_directory()/'stability'
+    state_path=directory/'next_text_full_streamwait.controller.state.json'
+    if not state_path.is_file():
+        return None
+    state=read(state_path)
+    if not state.get('started_utc'):
+        return None
+    datetime.datetime.fromisoformat(state['started_utc'])
+    methods=state.get('registered_methods',state.get('selected_arms',[]))
+    if not methods or len(set(methods))!=len(methods) or not set(methods)<=set(sum(CONTROL_GROUPS.values(),())):
+        raise ValueError('Invalid registered full-control methods')
+    if state.get('selected_arms',methods)!=methods:
+        raise ValueError('Control registration aliases differ')
+    if set(methods)&set(CONTROL_GROUPS['next_textvqa_K32_streamwait']) and not set(CONTROL_GROUPS['next_textvqa_K32_streamwait'])<=set(methods):
+        raise ValueError('Register both beta2 comparison arms together')
+    expected=[group for group,arms in CONTROL_GROUPS.items() if set(arms)<=set(methods)]
+    if state.get('publication_expected_groups',expected)!=expected:
+        raise ValueError('Control publication group contract differs')
+    plan_path=directory/'next_text_full_streamwait.controller.plan.json'
+    if not plan_path.is_file():
+        raise ValueError('Registered full-control plan is missing')
+    plan=read(plan_path)
+    if state.get('plan_sha256') and state['plan_sha256']!=sha(plan_path):
+        raise ValueError('Registered controller plan hash changed')
+    controller_path=diagnosis_directory()/'schedule_next_full_controls.py'
+    if plan.get('controller_sha256')!=sha(controller_path):
+        raise ValueError('Registered controller source hash changed')
+    if any(arm not in plan.get('jobs',{}) or plan['jobs'][arm].get('arm')!=arm for arm in methods):
+        raise ValueError('Registered controller plan omits an arm')
+    return dict(started_utc=state['started_utc'],registered_methods=methods,
+                expected_groups=expected,attempt=state.get('attempt',plan.get('attempt',1)),
+                plan_path=str(plan_path),plan_sha256=sha(plan_path),plan=plan,
+                controller_path=str(controller_path))
+
+
+def control_paths(registration,arm):
+    worker=load_control_worker()
+    job=registration['plan']['jobs'][arm]
+    paths=worker.paths(arm,job['attempt'])
+    # The worker owns fixed names; neither registration nor a report can redirect
+    # archive output to arbitrary user or account files.
+    directory=(diagnosis_directory()/'stability').resolve()
+    if any(Path(path).parent.resolve()!=directory for path in paths.values()):
+        raise ValueError('Full-control path outside authorized stability directory')
+    if (job['output_paths']!={name:str(path) for name,path in paths.items()}
+            or job['control_protocol']!=str(paths['control_protocol'])
+            or job['control_protocol_sha256']!=sha(paths['control_protocol'])):
+        raise ValueError('Full-control paths or frozen protocol differ from registration')
+    return worker,paths
+
+
+def control_group_ready(registration,arms):
+    return all(control_paths(registration,arm)[1]['finished'].is_file() for arm in arms)
+
+
+def validate_control(registration,arm):
+    worker,paths=control_paths(registration,arm)
+    for name in ('prediction','runtime','native_protocol','control_protocol','score','state','finished'):
+        if not paths[name].is_file():
+            raise ValueError('Missing completed full-control evidence: '+name)
+    protocol=read(paths['control_protocol']);finished=read(paths['finished']);state=read(paths['state']);stored=read(paths['score'])
+    beta=1. if arm=='EADP_beta1' else 2.
+    anchorzip=arm=='AZ_beta2'
+    expected=dict(alpha=.5,beta=beta,visual_token_num=32,temperature=0,
+                  top_p=None,num_beams=1,max_new_tokens=128,conv_mode='vicuna_v1',anchorzip=anchorzip)
+    if protocol.get('arm')!=arm or protocol.get('question_count')!=5000 or protocol.get('attempt')!=registration['plan']['jobs'][arm]['attempt'] or protocol.get('index_trace') is not False:
+        raise ValueError('Full-control arm/protocol/observation mismatch')
+    if any(protocol.get('parameters',{}).get(key)!=value for key,value in expected.items()):
+        raise ValueError('Full-control frozen parameters mismatch')
+    if protocol.get('launcher_sha256')!=sha(Path(worker.__file__)):
+        raise ValueError('Full-control worker source hash mismatch')
+    ast_validation=protocol.get('AST_validation',{})
+    if ast_validation.get('restoration_ast_identical') is not True or ast_validation.get('record_stream_added') is not False or ast_validation.get('inserted_nodes')!=[
+            'caller_stream = torch.cuda.current_stream(device=self.device)',
+            'image_stream.wait_stream(caller_stream)','text_stream.wait_stream(caller_stream)']:
+        raise ValueError('Full-control wait-only AST contract mismatch')
+    if (finished.get('success') is not True or finished.get('complete') is not True
+            or finished.get('n')!=5000 or finished.get('generation_exit_code')!=0
+            or finished.get('arm')!=arm or state.get('generation_exit_code')!=0
+            or state.get('complete') is not True or not state.get('started_utc')):
+        raise ValueError('Full-control completion/exit gate failed')
+    if finished.get('score_sha256')!=sha(paths['score']) or finished.get('prediction_sha256')!=sha(paths['prediction']):
+        raise ValueError('Full-control finished source hash mismatch')
+    verified=checked_source_maps(protocol)
+    native=read(paths['native_protocol']);verified.update(checked_source_maps(native))
+    worker.verify_images(protocol)
+    with Path(protocol['parameters']['question_file']).open() as stream:
+        questions=[json.loads(line) for line in stream]
+    exact=worker.validate_and_score(paths['prediction'],paths['runtime'],questions,protocol['parameters'])
+    if any(stored.get(key)!=value for key,value in exact.items()) or stored.get('arm')!=arm or stored.get('control_protocol_sha256')!=sha(paths['control_protocol']) or stored.get('image_manifest_sha256')!=protocol.get('image_manifest_sha256'):
+        raise ValueError('Full-control exact official score/source differs')
+    files={}
+    add_files(files,[*paths.values(),*verified,Path(worker.__file__),
+                     protocol['image_manifest'],registration['plan_path'],registration['controller_path']])
+    for path in checked_source_maps(registration['plan']):
+        add_files(files,[path])
+    score=dict(method='AnchorZip' if anchorzip else 'EADP',control_arm=arm,beta=beta,
+               accuracy=exact['accuracy_percent'],n=5000,metric='official TextVQA accuracy',
+               runtime_trace_available=True,output=str(paths['prediction']),
+               prediction_sha256=sha(paths['prediction']),verified_source_sha256=verified,
+               protocol='full_NeXT_TextVQA_K32_wait_only_control',
+               interpretation='published-script default sensitivity control; paper configuration unverified' if beta==1. else 'same wait-only repair applied to both methods')
+    return files,score
+
+
+def diagnostic_metadata():
+    """Only the coordinator's hashed, explicit complete-evidence selection."""
+    report_path=OUT/'next_gap_diagnosis_report.json'
+    if not report_path.is_file():
+        return {}
+    report=read(report_path)
+    if report.get('panel_complete') is not True:
+        return {}
+    files={};allowed_root=diagnosis_directory().resolve()
+    for entry in report.get('files',[]):
+        relative=Path(entry['path'])
+        if relative.is_absolute() or '..' in relative.parts:
+            raise ValueError('Diagnostic selection has an unsafe path')
+        source=ROOT/relative
+        if not source.resolve().is_relative_to(allowed_root) or any(token in str(relative).lower() for token in ('private','environ','agent.events','/hourly_monitor/','.state.','.lock')):
+            raise ValueError('Diagnostic selection outside allowed public evidence')
+        if source.stat().st_size>=90*1024*1024 or sha(source)!=entry['sha256'] or source.stat().st_size!=entry['bytes']:
+            raise ValueError('Diagnostic selected source hash/size mismatch')
+        add_files(files,[source])
+    result_path=diagnosis_directory()/'stability/next_text_K32_EADP_stream_panel128.result.json'
+    result=read(result_path)
+    protocol_path=Path(result['protocol']);protocol=read(protocol_path)
+    manifest_path=Path(protocol['manifest']);manifest=read(manifest_path)
+    records_path=Path(protocol['output_paths']['records'])
+    required=[result_path,protocol_path,manifest_path,records_path]
+    if any(str(path.relative_to(ROOT)) not in files for path in required):
+        raise ValueError('Diagnostic report omits complete panel evidence')
+    if (result.get('success') is not True or result.get('complete') is not True
+            or result.get('summary',{}).get('n')!=128 or result['summary'].get('n_generations')!=512
+            or protocol.get('index_trace') is not False or manifest.get('n')!=128
+            or sha(protocol_path)!=result['protocol_sha256'] or sha(manifest_path)!=result['manifest_sha256']
+            or sha(records_path)!=result['records_sha256']):
+        raise ValueError('Diagnostic panel completion/source gate failed')
+    with records_path.open() as stream:
+        records=[json.loads(line) for line in stream]
+    variants={'as_is_1','as_is_2','wait_1','wait_2'}
+    if len(records)!=128 or any(set(row.get('arms',{}))!=variants for row in records):
+        raise ValueError('Diagnostic panel has incomplete repetitions')
+    if sha(diagnosis_directory()/'stability/next_text_stream_panel.py')!=protocol['worker_sha256']:
+        raise ValueError('Completed panel worker hash changed')
+    checked_source_maps(protocol)
+    add_files(files,[report_path])
+    return files
+
+
+def publication_complete(plan,state):
+    return plan['all_experiments_complete'] and set(plan['expected_groups'])<=set(state.get('published_groups',{}))
+
+
 def bundle(group_id, files, scores):
     entries={name:dict(sha256=digest(data),bytes=len(data),archived_as='regular_file') for name,data in sorted(files.items())}
     identity=digest(json.dumps(entries,sort_keys=True).encode())
@@ -292,7 +464,15 @@ def prepare(state):
     summarizer=module('build_repair_run_summary')
     completed={row['output'] for row in summary['rows'] if row['status']=='complete'}
     candidates=[];pending=[]
-    for group_id,jobs in group_definitions(summarizer.entries()):
+    original_groups=group_definitions(summarizer.entries())
+    expected=[group_id for group_id,_ in original_groups]
+    registration=control_registration()
+    dynamic=registration['expected_groups'] if registration else []
+    previous=set(state.get('expected_groups',[]))&set(CONTROL_GROUPS)
+    if not previous<=set(dynamic):
+        raise ValueError('Previously registered diagnostic controls disappeared')
+    expected.extend(dynamic)
+    for group_id,jobs in original_groups:
         if group_id in state.get('published_groups',{}):
             continue
         if jobs is None:
@@ -306,6 +486,16 @@ def prepare(state):
             for job in jobs:
                 members,score=validate_job(job,summarizer);files.update(members);scores.append(score)
         candidates.append(bundle(group_id,files,scores))
+    for group_id in dynamic:
+        if group_id in state.get('published_groups',{}):
+            continue
+        arms=CONTROL_GROUPS[group_id]
+        if not control_group_ready(registration,arms):
+            pending.append(group_id);continue
+        files={};scores=[]
+        for arm in arms:
+            members,score=validate_control(registration,arm);files.update(members);scores.append(score)
+        candidates.append(bundle(group_id,files,scores))
     common_files={}
     for filename in ['paper_reference.json','mme_official_gt_rescore.json','sqa_input_identity.json',
                      'sqa_official_zip_identity.json','sqa_input_comparison.json','textvqa_guidance_manifest.json',
@@ -318,7 +508,8 @@ def prepare(state):
         common=bundle('common_audit',common_files,[])
     else:common=None
     return dict(prepared_utc=now(),available_groups=candidates,pending_groups=pending,
-                common_audit=common,all_experiments_complete=monitor['all_complete'],allowlist=ALLOWLIST)
+                common_audit=common,all_experiments_complete=monitor['all_complete'],allowlist=ALLOWLIST,
+                expected_groups=expected,control_registration=registration)
 
 
 def remote_head():
@@ -344,8 +535,17 @@ def readable_results(history):
            '', 'For NeXT, K128/K64/K32 denotes the per-crop budget parameter (nominal 640/320/160 for five crops). Actual retained tokens are recorded per sample in the runtime evidence.',
            '', '| Group | EADP | AnchorZip | AZ − EADP | FULL | Evidence |',
            '|---|---:|---:|---:|---:|---|']
+    control_notes=[]
     for group_id,entry in sorted(history.items()):
         scores=entry['scores'];parts=group_id.split('_');full=group_id.endswith('_FULL')
+        if group_id=='next_textvqa_K32_default_beta1':
+            if len(scores)!=1 or scores[0].get('method')!='EADP' or scores[0].get('beta')!=1.:
+                raise ValueError('Default beta1 control mislabeled')
+            control_notes.extend(['', 'EADP K32 beta1 script-default sensitivity control: '
+                          f"{scores[0]['accuracy']:.3f}% over 5000 questions, with the same stream wait. "
+                          'This is a separate EADP control; its parameters are not verified to be the paper configuration. '
+                          '[manifest]('+group_id+'/manifest.json).'])
+            continue
         e=az=None
         if full:full_value=scores[0]['accuracy']
         else:
@@ -361,6 +561,7 @@ def readable_results(history):
         values=[row[k] for k in ('EADP','AnchorZip','AZ_minus_EADP','FULL')]
         display=['' if value=='' else f'{value:.3f}' for value in values]
         lines.append('| '+group_id+' | '+' | '.join(display)+' | [manifest]('+manifest+') |')
+    lines.extend(control_notes)
     return stream.getvalue(), '\n'.join(lines)+'\n'
 
 
@@ -381,6 +582,21 @@ def metadata_snapshot(plan,state):
         source=OUT/name;data=source.read_bytes() if source.is_file() else None
         artifacts[name]=None if data is None else dict(sha256=digest(data),bytes=len(data))
         if data is not None:files[str(DEST/'audit_metadata'/name)]=data
+    for relative,data in diagnostic_metadata().items():
+        source=Path(relative)
+        if relative==str((OUT/'next_gap_diagnosis_report.json').relative_to(ROOT)):
+            name='next_gap_diagnosis_report.json'
+        else:
+            name=str(source.relative_to(OUT.relative_to(ROOT)))
+        artifacts[name]=dict(sha256=digest(data),bytes=len(data))
+        files[str(DEST/'audit_metadata'/name)]=data
+    registration=plan.get('control_registration')
+    if registration:
+        # No mutable progress/state bytes in the metadata fingerprint.
+        stable={key:registration[key] for key in ('started_utc','registered_methods','expected_groups','attempt','plan_sha256')}
+        data=json.dumps(stable,sort_keys=True,indent=2).encode()
+        files[str(DEST/'audit_metadata/full_control_registration.json')]=data
+        artifacts['full_control_registration.json']=dict(sha256=digest(data),bytes=len(data))
     table,readme=readable_results(history)
     files[str(DEST/'paired_results.csv')]=table.encode()
     files[str(DEST/'README.md')]=readme.encode()
@@ -461,7 +677,8 @@ def publish(plan,state):
         latest=worktree/DEST/'publication_manifest.json'
         atomic(latest,dict(updated_utc=now(),new_groups=groups,published_groups=history,
                           local_head_preserved=local_head,parent_remote_head=base,
-                          allowlist=ALLOWLIST,excluded_user_files=sorted(EXCLUDED)))
+                          allowlist=ALLOWLIST,excluded_user_files=sorted(EXCLUDED),
+                          expected_groups=plan.get('expected_groups',[])))
         selected.append(str(latest.relative_to(worktree)))
         command(['git','add','-f','--',*selected],cwd=worktree)
         staged=command(['git','diff','--cached','--name-only'],cwd=worktree).splitlines()
@@ -515,6 +732,7 @@ def main():
             if args.publish or args.watch:
                 state=finish_pending(state)
             plan=prepare(state);atomic(LOCAL/'prepared_plan.json',plan)
+            state['expected_groups']=plan['expected_groups']
             if args.publish or args.watch:
                 state=publish(plan,state)
             else:
@@ -523,9 +741,10 @@ def main():
             print(json.dumps(dict(status=state.get('status','prepared'),available_groups=[p['group_id'] for p in plan['available_groups']],
                                   published_groups=list(state.get('published_groups',{})),pending_groups=plan['pending_groups'],
                                   remote_head=state.get('remote_head'),all_experiments_complete=plan['all_experiments_complete'])),flush=True)
-            if len(state.get('published_groups',{}))==17 and plan['all_experiments_complete']:
+            if publication_complete(plan,state):
                 state.update(status='complete',finished_utc=now());atomic(STATE,state)
-                atomic(LOCAL/'publication.finished.json',dict(success=True,remote_head=state['remote_head'],n_groups=17,completed_utc=now()))
+                atomic(LOCAL/'publication.finished.json',dict(success=True,remote_head=state['remote_head'],
+                    n_groups=len(plan['expected_groups']),expected_groups=plan['expected_groups'],completed_utc=now()))
                 return
         except Exception as error:
             state.update(status='failed_retryable',error=str(error),updated_utc=now());atomic(STATE,state)

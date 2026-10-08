@@ -11,6 +11,7 @@ For NeXT, K128/K64/K32 denotes the per-crop budget parameter (nominal 640/320/16
 |---|---:|---:|---:|---:|---|
 | next_sqa_FULL |  |  |  | 67.675 | [manifest](next_sqa_FULL/manifest.json) |
 | next_sqa_K128 | 67.675 | 68.071 | 0.397 |  | [manifest](next_sqa_K128/manifest.json) |
+| next_sqa_K32 | 67.576 | 67.179 | -0.397 |  | [manifest](next_sqa_K32/manifest.json) |
 | next_sqa_K64 | 67.229 | 67.576 | 0.347 |  | [manifest](next_sqa_K64/manifest.json) |
 | next_textvqa_K128 | 57.958 | 57.588 | -0.370 |  | [manifest](next_textvqa_K128/manifest.json) |
 | next_textvqa_K32 | 51.996 | 53.174 | 1.178 |  | [manifest](next_textvqa_K32/manifest.json) |

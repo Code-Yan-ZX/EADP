@@ -750,6 +750,40 @@ TextFULL仍是下一项关键基线；先量化同步机制，再按证据决定
 两臂wait-only及单一官方默认beta1对照，不能将128题面板当全量准确率或
 以面板选择最好配置替换主表。
 
+### 13.12 Oct8 23:26 机制阳性与新增全量控制注册
+
+固定128个等距中点样本、同模型各as-is/wait重复两次，共512次生成完整完成，
+supervisor2305566/worker2305580正常退出、完整marker及SHA核验通过。主实验
+用no-index-trace，不在vision消费前插同步或GPU tensor读回。原代码同输入
+重复回答分歧5/128、实际保留数分歧43/128；wait-only两项均0/128。这个对照
+证实实际运行不稳定被缺失的流依赖修复；它尚未解释论文2.204点准确率差距。
+面板分数as-is1/wait1均56.25、as-is2为56.953125/wait2为56.25，没有准确率
+改善证据，不能把不稳定修复直接换算为全5000题方法增益。
+
+三份NeXT safetensors完整payload共14,125,909,456 bytes逐份SHA全部匹配
+官方HF同revision LFS SHA，读取前后stat不变，§13.11的权重未验边界已关闭。
+v15 TextFULL新完整5000精确58.226%，论文58.2；原批次27/28已完整评分，
+只有NeXT TextFULL尚在生成。原SQA NeXT K32新配对E67.575607/AZ67.178979
+差−0.396629应保留；不因新增诊断覆写任何原始成绩。
+
+23:35:45已实际启动独立全量控制supervisor2325219，源码与计划冻结，
+先等原两lane及panel全部完成退出，然后至多两GPU并发跑EADP_beta2和
+AZ_beta2（同5000题、同K32/alpha.5/greedy128、只补同一内存wait修复）。
+EADP_beta2完整官方评分成功后再接唯一EADP_beta1公开脚本默认参数控制；
+这不是确认论文用了beta1，不搜索q/beta最高分，三项不计入原28分母。
+原生runtime/wrapper由runpy原样执行，生产源码不改；独立输出/原生及控制
+protocol/actual-token trace/官方精确m4c score/完成marker保留。loader未开始
+生成时占用reservation，第二槽必须等实际NVML和首条预测/runtime，防止
+同时加载误判；启动显存门22500MiB，未知零显存进程也占slot，仅真实Ollama0
+豁免。12项controller门验证、31项fullworker和17项独立核心验证通过。
+
+实际状态为`next_gap_diagnosis_20261008/stability/
+next_text_full_streamwait.controller.state.json`，私有小时prompt已增加新控制
+与发布检查。原28完成但已注册新诊断或远端发布未完成时不能停止小时巡检。
+按组publisher扩展期间短暂停CPU服务，测试通过后恢复；新增配对和单默认
+控制分别归档，单beta1不标成AnchorZip或FULL。128及CPU身份证据SHA列表为
+`outputs/audit_followup_20261008/next_gap_diagnosis_report.json`，原17组保持。
+
 ### 13.11 Oct8 23:12 独立巡检：24项完整评分与14组发布核验
 
 本次完整读取交接并核对Git，live分支仍为`codex/anchor-completion-validation`、

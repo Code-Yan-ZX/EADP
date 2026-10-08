@@ -1,0 +1,211 @@
+{
+  "success": true,
+  "checks": {
+    "fixed_128_distinct_dataset_positions": true,
+    "balanced_order": true,
+    "all_128_composite_keys_in_full_archive": true,
+    "all_sources_and_inputs_frozen": true,
+    "worker_sha_matches_protocol": true,
+    "worker_compiles": true,
+    "removing_exact_3_nodes_restores_AST": true,
+    "no_record_stream_addition": true,
+    "slot_unknown_zero_context_rejected": true,
+    "slot_real_ollama_zero_exempt": true,
+    "slot_nonzero_ollama_not_exempt": true,
+    "slot_low_free_rejected": true,
+    "CUDA_uninitialized_before": true,
+    "forward_CPU_equivalent_tensor": true,
+    "waits_precede_vision_tensor": true,
+    "forward_CPU_equivalent_text": true,
+    "waits_precede_vision_text": true,
+    "forward_CPU_equivalent_list": true,
+    "forward_CPU_equivalent_attention": true,
+    "CUDA_uninitialized_after": true,
+    "EGATHER_K32_all_5000_take_anyres_concat": true,
+    "LRMAIN00625_all_5000_take_anyres_concat": true,
+    "EGATHER_K64_all_5000_take_anyres_concat": true,
+    "LRMAIN0125_all_5000_take_anyres_concat": true
+  },
+  "stream_fixtures": {
+    "tensor": {
+      "original": [
+        [
+          "vision_read",
+          "side1"
+        ],
+        [
+          "global_synchronize"
+        ]
+      ],
+      "wait_only": [
+        [
+          "capture",
+          "caller"
+        ],
+        [
+          "wait",
+          "side1",
+          "caller"
+        ],
+        [
+          "wait",
+          "side2",
+          "caller"
+        ],
+        [
+          "vision_read",
+          "side1"
+        ],
+        [
+          "global_synchronize"
+        ]
+      ]
+    },
+    "text": {
+      "original": [
+        [
+          "vision_read",
+          "side1"
+        ],
+        [
+          "global_synchronize"
+        ]
+      ],
+      "wait_only": [
+        [
+          "capture",
+          "caller"
+        ],
+        [
+          "wait",
+          "side1",
+          "caller"
+        ],
+        [
+          "wait",
+          "side2",
+          "caller"
+        ],
+        [
+          "vision_read",
+          "side1"
+        ],
+        [
+          "global_synchronize"
+        ]
+      ]
+    },
+    "list": {
+      "original": [
+        [
+          "vision_read",
+          "caller"
+        ]
+      ],
+      "wait_only": [
+        [
+          "vision_read",
+          "caller"
+        ]
+      ]
+    },
+    "attention": {
+      "original": [
+        [
+          "vision_read",
+          "caller"
+        ]
+      ],
+      "wait_only": [
+        [
+          "vision_read",
+          "caller"
+        ]
+      ]
+    }
+  },
+  "worker_sha256": "0d3e1766d4bf9594f38c16feb587fff089622e6ddbbca420cc70a5781863e8e4",
+  "protocol_sha256": "b68332b033ad09c854d07c5fbe0b21315297a08892d1b3d99de2a25293183dca",
+  "protocol": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_stream_panel128.protocol.json",
+  "manifest_sha256": "ec96680624846e8d7f22bdce9aca81b45cf26918770e4df0ab406cb017cd4096",
+  "frozen_runtime_trace_evidence": {
+    "EGATHER_K32": {
+      "n": 5000,
+      "shape_counts": {
+        "(1, 5, 3, 336, 336)": 5000
+      },
+      "actual_count_distribution": {
+        "158": 2316,
+        "157": 2257,
+        "159": 192,
+        "156": 235
+      },
+      "trace_sha256": "a7d53f90969112d73e8a5fcf1014c8939ffaaedd34a78ac8f4b2cea4e6a3414e"
+    },
+    "LRMAIN00625": {
+      "n": 5000,
+      "shape_counts": {
+        "(1, 5, 3, 336, 336)": 5000
+      },
+      "actual_count_distribution": {
+        "157": 2284,
+        "158": 2315,
+        "156": 197,
+        "159": 204
+      },
+      "trace_sha256": "5e143e60e99ac9cc03275688410402f80409b38cdb0a34e6e2637d5c672ac643"
+    },
+    "EGATHER_K64": {
+      "n": 5000,
+      "shape_counts": {
+        "(1, 5, 3, 336, 336)": 5000
+      },
+      "actual_count_distribution": {
+        "319": 220,
+        "317": 2275,
+        "318": 2294,
+        "316": 211
+      },
+      "trace_sha256": "768b81104bb0f215b096feea1b92b3b63d78235dac442304954061087794cb5c"
+    },
+    "LRMAIN0125": {
+      "n": 5000,
+      "shape_counts": {
+        "(1, 5, 3, 336, 336)": 5000
+      },
+      "actual_count_distribution": {
+        "317": 2342,
+        "318": 2227,
+        "319": 215,
+        "316": 216
+      },
+      "trace_sha256": "9610b6ebb3c7b07da4cb4f351bab705a90eda7ab2f3ea7e5e86cf3de15790c37"
+    }
+  },
+  "current_benchmark_same_image_full_prompt_duplicate_groups": 0,
+  "specific_static_bug": {
+    "producer_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py",
+    "producer_line": 656,
+    "producer": "torch.cat on caller CUDA stream in 5D AnyRes input branch",
+    "consumer_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py",
+    "consumer_line": 88,
+    "consumer": "vision_tower reads concat tensor on newly created image_stream without waiting for caller",
+    "trailing_global_sync_line": 114,
+    "trailing_sync_limit": "Waits for completion; cannot retroactively order the earlier producer and consumer",
+    "applies_to": [
+      "NeXT EADP",
+      "NeXT AnchorZip",
+      "NeXT Full",
+      "NeXT SQA AnyRes"
+    ],
+    "causal_status": "Static producer dependency defect established; NeXT accuracy effect requires controlled GPU experiment"
+  },
+  "budget_check": "max_T = token_quotas.max().item() synchronizes the quota scalar; retained count comes from final image feature shape. No asynchronous Python budget read found.",
+  "limits": [
+    "CPU branch equivalence does not prove GPU causal effect",
+    "Full TextVQA has no exact same image/full-prompt repeat groups, so one completed file cannot self-test determinism",
+    "Panel 128 cannot establish a 2.204pp full benchmark accuracy rescue",
+    "Post-greed trace can alter subsequent timing/allocator behavior"
+  ],
+  "generation_not_launched": true
+}

@@ -1,0 +1,56 @@
+{
+  "success": true,
+  "complete": true,
+  "finished_utc": "2026-10-08T15:26:18.598126+00:00",
+  "protocol": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_stream_panel128.protocol.json",
+  "protocol_sha256": "b3bf8dad0df410c4d1e75641b5856418eab0db6bd2cd30efa3c0b08ad9297c1e",
+  "manifest_sha256": "ec96680624846e8d7f22bdce9aca81b45cf26918770e4df0ab406cb017cd4096",
+  "records_sha256": "ea7d15be75abbbd500f6369704bbfb570edeb9c7ac4e4ce8fc1b2a24a523573b",
+  "run_metadata": {
+    "started_utc": "2026-10-08T15:22:05.083552+00:00",
+    "pid": 2305580,
+    "concurrency": {
+      "other_gpu_models": [
+        {
+          "pid": 2300809,
+          "used_memory": "21448 MiB",
+          "command": "/home/dell/miniconda3/envs/llava_pruner/bin/python /media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_science.py --model-path /media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b --question-file /media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/sqa_CQMA_image2017.json --image-folder /media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/scienceqa/test --answers-file /media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/sqa_shipped_control/next/AZ_K32.jsonl --temperature 0 --conv-mode vicuna_v1 --visual_token_num 32 --beta 2.0 --alpha 0.5 --single-pred-prompt --anchorzip "
+        }
+      ],
+      "explicit_zero_memory_ollama_exemption": [],
+      "free_memory_mib": 22801,
+      "required_free_memory_mib": 22500,
+      "observed_utc": "2026-10-08T15:21:52.272193+00:00"
+    },
+    "archive": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K32.jsonl",
+    "archive_sha256": "e20a9c09f208779890d01ea122d88e8f1739280d2dfa9771c341f41bddcce312",
+    "GT_sha256": "4ceb5aadc1a41719d0a3e4dfdf06838bcfee1db569a9a65ee67d31c99893081d",
+    "torch": "2.1.2+cu118",
+    "transformers": "4.37.2"
+  },
+  "summary": {
+    "n": 128,
+    "n_generations": 512,
+    "repeated_prediction_disagreements": {
+      "as_is": 5,
+      "wait": 0
+    },
+    "repeated_count_disagreements": {
+      "as_is": 43,
+      "wait": 0
+    },
+    "panel_accuracy_percent": {
+      "as_is_1": 56.25,
+      "wait_1": 56.25,
+      "as_is_2": 56.95312499999999,
+      "wait_2": 56.25
+    },
+    "archive_mismatches": {
+      "as_is_1": 5,
+      "wait_1": 3,
+      "as_is_2": 4,
+      "wait_2": 3
+    },
+    "interpretation": "Fixed small mechanism panel; does not establish the full benchmark accuracy effect"
+  }
+}
