@@ -668,3 +668,51 @@ publisher源码为 `publish_repair_results.py`，prepare/validate只做CPU核验
 --publish实际提交推送，--watch --interval30用于每组增量发布。来源漂移、
 完整性或未知远端更新拒绝发布；push丢回复可由pending-publication恢复，禁止
 force。相关9项CPU边界验证通过，确认成功后才记组为已发布。
+
+22:14确认按组服务 `codex-eadp-group-publisher-20261008.service` active/running，
+每30秒检查完整组，全部17组发布并且实验全部完成后自动退出。首批评分另有
+可读 `published_results/paired_results.csv` 和README。初次后台访问GitHub因
+systemd未继承交互shell既有代理而超时；仅私有0600服务环境文件继承现有连接
+配置后已恢复，环境/账户文件不入库。更新版服务实际提交/推送成功、远端确认、
+pending为空并清除旧错误。无新组且allowlist源码/审计/评分表内容无变化时，
+本地指纹直接跳过Git操作；新组或任何被允许内容变化仍触发发布，相关14项CPU
+边界验证通过。两GPU队列与评分汇总继续健康，发布服务不改变生成源码/参数。
+
+
+### 13.10 Oct8 22:13 独立巡检：20项完整评分与发布服务恢复证据
+
+本次完整读取交接并核对Git，live分支仍为`codex/anchor-completion-validation`、
+HEAD `194562d`。28新实验已完整评分 **20项/93832条预测**，2项生成中、
+6项未启动，尚未满足全部完成条件。summary JSON/CSV20行一致，实际为
+17个新Text/SQA加3个历史v15 SQA；3个新POPE另核，不能用summary行数
+替代28项计数。summary.errors与独立audit_errors均为空，完整预测SHA、
+5000 TextVQA复合题键/题面/顺序及可用runtime、2017 SQA、8910 POPE
+(random2910)分母通过。1254/1254来源SHA匹配（577唯一文件），两lane
+冻结来源22/22、21/21无漂移，47份计划相关日志无异常。两streamwait
+控制完整评分/direct exit0/wait-only来源/合法success marker再次通过；
+公平POPE差仍−0.989点。初始NeXT Text128无新增runtime的边界保留。
+
+新增完整v15 TextE32精确52.532%，AZ32仍生成，不能计算完整配对；
+NeXT Text32完整配对E51.996%/AZ53.174%，差+1.178点，未据该点估计
+宣称显著或整体稳定胜出。两新接续分别约0.055/0.057秒，前次worker已
+正常退出且评分完成。22:08:19→22:12:37，同PID2135335的v15 TextAZ32
+完整行2365→2848/5000，同PID2131159的NeXT SQA FULL为1263→1480/2017，
+输出和日志同时推进，末次mtime均不足0.75秒；完整argv、父子、cwd、
+启动ticks/启动时间与计划一致，两监督器及summary watcher正常，A40实际
+两个计划内GPU模型。完成的控制监督器正常退出，不是丢失进程。
+
+发布服务曾出现Git TLS非正常终止及github.com:443连接超时并登记
+failed_retryable；journal记录22:09:51发生stop/start，非本巡检执行，
+不能声称无需重启即恢复。随后多次发布成功，22:13:24独立ls-remote
+确认origin为`2233f33496f536aad0fa1d2a48314897ee354e24`且与state一致。
+已发布仍11完整组，后续提交为metadata refresh；281证据文件、12内嵌
+manifest、12归档blob及190已发布来源SHA通过，publisher PID2169682
+active/running。live HEAD/index字节/暂存内容均保留登记状态。本次
+独立归档审计已按发布格式区分内嵌MANIFEST与外部含archive hash的清单，
+errors=[]；旧error字段保留的是已被成功发布超越的历史网络错误。
+其余6组仍合法等待完整生成，本巡检未自行stage/commit/push。
+
+三次CPU只读快照及评分/来源/日志/进程/发布核验保存在
+`rerun_batch/hourly_monitor/check_20261008T140736Z/`。本次未启动或重启GPU，
+未修改冻结生成代码、参数或预测，未新建定时任务或发外部消息。距Oct9
+12:00截止约13小时47分，剩余队列继续执行；已有ETA不是按时完成证明。
