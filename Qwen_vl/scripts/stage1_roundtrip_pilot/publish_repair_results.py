@@ -363,6 +363,41 @@ def readable_results(history):
     return stream.getvalue(), '\n'.join(lines)+'\n'
 
 
+def metadata_snapshot(plan,state):
+    """Capture exact publish bytes before Git so concurrent edits remain visible."""
+    history=dict(state.get('published_groups',{}))
+    for package in plan['available_groups']:
+        history[package['group_id']]=dict(identity=package['identity'],scores=package['manifest']['scores'])
+    files={};sources={};artifacts={}
+    for relative in ALLOWLIST:
+        if relative in EXCLUDED:
+            raise ValueError('Excluded user file in allowlist')
+        source=ROOT/relative
+        data=source.read_bytes() if source.is_file() else None
+        sources[relative]=None if data is None else digest(data)
+        if data is not None:files[relative]=data
+    for name in METADATA_ARTIFACTS:
+        source=OUT/name;data=source.read_bytes() if source.is_file() else None
+        artifacts[name]=None if data is None else dict(sha256=digest(data),bytes=len(data))
+        if data is not None:files[str(DEST/'audit_metadata'/name)]=data
+    table,readme=readable_results(history)
+    files[str(DEST/'paired_results.csv')]=table.encode()
+    files[str(DEST/'README.md')]=readme.encode()
+    files[str(DEST/'audit_metadata/manifest.json')]=json.dumps(
+        {name:entry for name,entry in artifacts.items() if entry is not None},ensure_ascii=False,indent=2).encode()
+    memo=dict(allowlist=list(ALLOWLIST),metadata_artifacts=list(METADATA_ARTIFACTS),
+              sources=sources,artifacts=artifacts,paired_csv_sha256=digest(table.encode()),
+              readme_sha256=digest(readme.encode()))
+    return digest(json.dumps(memo,sort_keys=True).encode()),files,history
+
+
+def success(state,**updates):
+    state.pop('error',None)
+    state.update(status='published',updated_utc=now(),**updates)
+    atomic(STATE,state)
+    return state
+
+
 def finish_pending(state):
     """Recover a successful push even if the previous process lost its reply."""
     publication=state.get('pending_publication')
@@ -380,14 +415,16 @@ def finish_pending(state):
     for package in publication['groups']:
         state['published_groups'][package['group_id']]=dict(identity=package['identity'],
             commit=commit,scores=package['scores'],published_utc=now())
-    state.update(status='published',remote_head=commit,local_head=publication['local_head'],
-                 common_audit_published=True,pending_commit=None,pending_groups=[],
-                 pending_publication=None,updated_utc=now())
-    atomic(STATE,state)
-    return state
+    return success(state,remote_head=commit,local_head=publication['local_head'],
+                   common_audit_published=True,pending_commit=None,pending_groups=[],
+                   pending_publication=None,metadata_fingerprint=publication.get('metadata_fingerprint'))
 
 
 def publish(plan,state):
+    fingerprint,metadata_files,history=metadata_snapshot(plan,state)
+    if (not plan['available_groups'] and plan['common_audit'] is None
+            and not state.get('pending_commit') and state.get('metadata_fingerprint')==fingerprint):
+        return success(state,no_op=True,last_checked_utc=now(),pending_groups=plan['pending_groups'])
     if command(['git','branch','--show-current'])!=BRANCH:
         raise ValueError('Live branch is not the authorized branch')
     index=Path(command(['git','rev-parse','--git-path','index']))
@@ -408,38 +445,18 @@ def publish(plan,state):
     try:
         command(['git','worktree','add','--detach',str(worktree),base])
         selected=[]
-        for relative in ALLOWLIST:
-            if relative in EXCLUDED:
-                raise ValueError('Excluded user file in allowlist')
-            source=ROOT/relative
-            if source.is_file():
-                target=worktree/relative;target.parent.mkdir(parents=True,exist_ok=True)
-                target.write_bytes(source.read_bytes());selected.append(relative)
+        for relative,data in metadata_files.items():
+            target=worktree/relative;target.parent.mkdir(parents=True,exist_ok=True)
+            target.write_bytes(data);selected.append(relative)
         bundles=plan['available_groups']+([plan['common_audit']] if plan['common_audit'] else [])
         for package in bundles:
             destination=worktree/DEST/package['group_id'];destination.mkdir(parents=True,exist_ok=True)
             for source in [Path(package['directory'])/'manifest.json',*[Path(p) for p in package['blobs']]]:
                 target=destination/source.name;shutil.copyfile(source,target);selected.append(str(target.relative_to(worktree)))
         groups=[p['group_id'] for p in plan['available_groups']]
-        history=dict(state.get('published_groups',{}))
-        for package in plan['available_groups']:
-            history[package['group_id']]=dict(identity=package['identity'],scores=package['manifest']['scores'])
-        table,readme=readable_results(history)
-        for name,content in [('paired_results.csv',table),('README.md',readme)]:
-            target=worktree/DEST/name;target.parent.mkdir(parents=True,exist_ok=True)
-            target.write_text(content);selected.append(str(target.relative_to(worktree)))
-        for name in METADATA_ARTIFACTS:
-            source=OUT/name
-            if source.is_file():
-                target=worktree/DEST/'audit_metadata'/name;target.parent.mkdir(parents=True,exist_ok=True)
-                target.write_bytes(source.read_bytes());selected.append(str(target.relative_to(worktree)))
-        metadata_manifest={name:dict(sha256=sha(OUT/name),bytes=(OUT/name).stat().st_size)
-                           for name in METADATA_ARTIFACTS if (OUT/name).is_file()}
-        target=worktree/DEST/'audit_metadata/manifest.json';atomic(target,metadata_manifest)
-        selected.append(str(target.relative_to(worktree)))
         command(['git','add','-f','--',*selected],cwd=worktree)
         if not command(['git','diff','--cached','--name-only'],cwd=worktree):
-            return state
+            return success(state,metadata_fingerprint=fingerprint,no_op=True,last_checked_utc=now())
         latest=worktree/DEST/'publication_manifest.json'
         atomic(latest,dict(updated_utc=now(),new_groups=groups,published_groups=history,
                           local_head_preserved=local_head,parent_remote_head=base,
@@ -457,6 +474,7 @@ def publish(plan,state):
             raise ValueError('Origin branch advanced during packaging; retry with current remote HEAD')
         state.update(status='pushing',pending_commit=commit,pending_groups=groups,local_head=local_head,
                      pending_publication=dict(parent_remote_head=base,local_head=local_head,
+                         metadata_fingerprint=fingerprint,
                          groups=[dict(group_id=p['group_id'],identity=p['identity'],scores=p['manifest']['scores'])
                                  for p in plan['available_groups']]),updated_utc=now())
         atomic(STATE,state)
@@ -470,13 +488,12 @@ def publish(plan,state):
         state.setdefault('published_groups',{})
         for package in plan['available_groups']:
             state['published_groups'][package['group_id']]=dict(identity=package['identity'],commit=commit,scores=package['manifest']['scores'],published_utc=now())
-        state.update(status='published',remote_head=commit,local_head=local_head,live_index_preserved=True,
+        return success(state,remote_head=commit,local_head=local_head,live_index_preserved=True,
                      live_index_byte_sha256_before=before_index,live_index_byte_sha256_after=after_index,
                      live_index_stat_cache_refreshed=before_index!=after_index,
                      live_staging_sha256_before=before_staging,live_staging_sha256_after=after_staging,
-                     common_audit_published=True,pending_commit=None,pending_groups=[],pending_publication=None,updated_utc=now())
-        atomic(STATE,state)
-        return state
+                     common_audit_published=True,pending_commit=None,pending_groups=[],pending_publication=None,
+                     metadata_fingerprint=fingerprint,no_op=False)
     finally:
         if worktree.exists():
             command(['git','worktree','remove','--force',str(worktree)])
