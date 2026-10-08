@@ -1,0 +1,33 @@
+{
+  "verified_utc": "2026-10-08T17:53:18.282245+00:00",
+  "registered_supervisors": [
+    {
+      "path": "next_gap_diagnosis_20261008/stability/next_text_full_streamwait.controller.state.json",
+      "status": "running",
+      "supervisor_pid": 2556883,
+      "child_pids": [
+        2556913
+      ]
+    },
+    {
+      "path": "streamwait_continuation_20261008/streamwait_repair_continuation.state.json",
+      "status": "waiting_for_existing_controls",
+      "supervisor_pid": 2558610,
+      "child_pids": []
+    },
+    {
+      "path": "streamwait_continuation_20261008/legacy_streamwait_continuation.state.json",
+      "status": "waiting_for_phase1",
+      "supervisor_pid": 2558609,
+      "child_pids": []
+    }
+  ],
+  "beta1_pid": 2556913,
+  "beta1_complete_lines_at_check": 501,
+  "partial_accuracy_computed": false,
+  "hourly_prompt_updated": true,
+  "current_publisher_status": "published",
+  "current_published_group_count": 18,
+  "new_GPU_scope_added": false,
+  "original_beta2_predictions_scores_preserved": true
+}

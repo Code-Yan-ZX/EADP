@@ -1,0 +1,46 @@
+{
+  "registered_utc": "2026-10-08T17:51:00.394994+00:00",
+  "scope_preserved": true,
+  "records": [
+    {
+      "controller": "schedule_legacy_streamwait_continuation.py",
+      "old_supervisor_pid": 2430956,
+      "new_supervisor_pid": 2558609,
+      "original_started_utc": "2026-10-08T16:36:15.641448+00:00",
+      "original_plan_sha256": "d63b92f5bcee064484b08392a09504592b6a8026d007564f5c1a787f7ada6972",
+      "overlay_sha256": "2a0a0cb07e1bd9779ee60349fd1cc23b76b4d6c5be5262208595f33f87973406",
+      "new_GPU_jobs_registered": 0,
+      "command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/json_count_distribution_overlay.py",
+        "--target",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/schedule_legacy_streamwait_continuation.py",
+        "--",
+        "--run",
+        "--plan",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_streamwait_continuation.plan.json"
+      ],
+      "log": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/legacy_streamwait_continuation.recovery_supervisor.log"
+    },
+    {
+      "controller": "schedule_streamwait_repair_continuation.py",
+      "old_supervisor_pid": 2391998,
+      "new_supervisor_pid": 2558610,
+      "original_started_utc": "2026-10-08T16:13:39.395256+00:00",
+      "original_plan_sha256": "c9e3f6248d2e0e2f032663fcbb1972ed30aab74f35496c583848d9159917c850",
+      "overlay_sha256": "2a0a0cb07e1bd9779ee60349fd1cc23b76b4d6c5be5262208595f33f87973406",
+      "new_GPU_jobs_registered": 0,
+      "command": [
+        "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/json_count_distribution_overlay.py",
+        "--target",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/schedule_streamwait_repair_continuation.py",
+        "--",
+        "--run",
+        "--plan",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/streamwait_repair_continuation.plan.json"
+      ],
+      "log": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/streamwait_repair_continuation.recovery_supervisor.log"
+    }
+  ]
+}

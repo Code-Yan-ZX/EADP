@@ -1,0 +1,71 @@
+{
+  "CPU_only": true,
+  "GPU_started": false,
+  "reason": "Only actual_count_distribution JSON object keys normalized; all official numerical values compared exactly in original Python 3.10",
+  "original_controller_plan": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_full_streamwait.controller.plan.json",
+  "original_controller_plan_sha256": "84e0b69fc15555a9de8b6e31711313ca83f3efc345b26492fd2b025943a59644",
+  "original_controller_source_sha256": "48b8540168d5602bed4480cfdcf000b68b597937736cc532afb931626674c0b0",
+  "original_state_sha256": "550822184cff0ccfcf5d7cc0ef8e660311e282b629afcbc5eb3b728af9661c71",
+  "original_marker_sha256": "2264e599389a06ae430fe89b7b7b2122a543d607a4e7a3bda2ed89deee65c1a0",
+  "original_supervisor_pid": 2325219,
+  "original_started_utc": "2026-10-08T15:35:45.167557+00:00",
+  "registered_methods": [
+    "EADP_beta2",
+    "AZ_beta2",
+    "EADP_beta1"
+  ],
+  "publication_expected_groups": [
+    "next_textvqa_K32_streamwait",
+    "next_textvqa_K32_default_beta1"
+  ],
+  "completed_reused": {
+    "EADP_beta2": {
+      "success": true,
+      "n": 5000,
+      "accuracy_percent": 52.086000000000055,
+      "official_score": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.official.score.json",
+      "score_sha256": "e9d12cf2183d3c88b7d9176f0e7912bb099d59042ce25a6b29f33c7ace5a4897",
+      "prediction_sha256": "c9e2d415ccfcdc44d146162c497d79c13ffa604caa9d7bf0af6e1a8d073cfa7c",
+      "runtime_sha256": "7f1c960898acff2cb71ad35b9762f44aba872ddf1a1dd23c54f12acdbc133a34"
+    },
+    "AZ_beta2": {
+      "success": true,
+      "n": 5000,
+      "accuracy_percent": 53.26200000000008,
+      "official_score": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.official.score.json",
+      "score_sha256": "73cefe475db2f8e18ad8cb74d97418dff28599f34ea33bb9a08cfd63be77d2f1",
+      "prediction_sha256": "e7356f8517d8e7dd411855a205f705f215baf7171db76790cbf4c402f2e25d35",
+      "runtime_sha256": "314ebfda96afc8d0250595864d58bf28b2cd7f28197497eb297ae33ecbddd9ec"
+    }
+  },
+  "reused_artifact_sha256": {
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.jsonl": "c9e2d415ccfcdc44d146162c497d79c13ffa604caa9d7bf0af6e1a8d073cfa7c",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.jsonl.runtime.jsonl": "7f1c960898acff2cb71ad35b9762f44aba872ddf1a1dd23c54f12acdbc133a34",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.jsonl.protocol.json": "3f9d3169de77c0fa71f47bf0dc5fef10f965aef027ea50b04a83d8d978eaf1af",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.control.protocol.json": "caac3108d0c305ed0c94a88a57c5bc218ad3d3393243af5b9c33d18a49d1f210",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.state.json": "06697f5d87300c2ce694e23cb406618eb76cfa1b0a663ae2c2efe561cbf09d32",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.official.score.json": "e9d12cf2183d3c88b7d9176f0e7912bb099d59042ce25a6b29f33c7ace5a4897",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.finished.json": "acecae183677ae96dcfad5a9ced299294409edffa17557c4de2772a73304fc83",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.jsonl": "e7356f8517d8e7dd411855a205f705f215baf7171db76790cbf4c402f2e25d35",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.jsonl.runtime.jsonl": "314ebfda96afc8d0250595864d58bf28b2cd7f28197497eb297ae33ecbddd9ec",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.jsonl.protocol.json": "ff1891b351ed3992edf7ccc79cd40a03d3e668931e11d30947e6b911a6d78d1a",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.control.protocol.json": "b0cdf4c574775de6a31ca90950468141a0449867d92eee12ed5857ac38b16c3a",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.state.json": "e65ec61726d5bbe5b414f07c6d5f906ffafb8f06835d56e2f818fd04bd78a648",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.official.score.json": "73cefe475db2f8e18ad8cb74d97418dff28599f34ea33bb9a08cfd63be77d2f1",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.finished.json": "d9962a9aa43c765ef949f353b398aa91d9091307f741fbc2a1025152d12c1500"
+  },
+  "unchanged_generate_command": [
+    "/home/dell/miniconda3/envs/llava_pruner/bin/python",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_full_streamwait.py",
+    "--run",
+    "--arm",
+    "EADP_beta1",
+    "--attempt",
+    "1"
+  ],
+  "launcher_sha256": "ce871705c2a868a8eb888702be288b87f0405f1e84c35777cb2d4903a4a1d6ec",
+  "overlay_sha256": "2a0a0cb07e1bd9779ee60349fd1cc23b76b4d6c5be5262208595f33f87973406",
+  "recovery_scope": "Resume one already registered beta1 arm; no added experiment or changed predictions/scores",
+  "archive_manifest": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/json_gate_failure_archive.json",
+  "archive_manifest_sha256": "c3c0f5d9a225f746303075e39bb8e523b4409ee72a05adc98ed872d6c6a43916"
+}

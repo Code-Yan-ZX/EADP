@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "n": 16,
+  "checks": [
+    "real failed registration matches exact recoverable gate",
+    "live prior supervisor refused",
+    "live prior GPU child refused",
+    "registered scope changes refused",
+    "missing original start refused",
+    "nonempty prior child reservation refused",
+    "generation nonzero exit refused",
+    "different failure cause refused",
+    "already executed beta1 refused",
+    "empty GPU and original dependencies ready accepted",
+    "foreign unknown zero context refused",
+    "insufficient free memory refused",
+    "main panel incomplete refused",
+    "loading reservation retained without actual own CUDA context",
+    "only real zero-memory Ollama exception accepted",
+    "real original beta1 generation artifacts all absent"
+  ],
+  "CPU_only": true,
+  "GPU_started": false,
+  "original_state_sha256": "550822184cff0ccfcf5d7cc0ef8e660311e282b629afcbc5eb3b728af9661c71",
+  "original_controller_sha256": "48b8540168d5602bed4480cfdcf000b68b597937736cc532afb931626674c0b0",
+  "recovery_source_sha256": "ce871705c2a868a8eb888702be288b87f0405f1e84c35777cb2d4903a4a1d6ec",
+  "overlay_sha256": "2a0a0cb07e1bd9779ee60349fd1cc23b76b4d6c5be5262208595f33f87973406"
+}

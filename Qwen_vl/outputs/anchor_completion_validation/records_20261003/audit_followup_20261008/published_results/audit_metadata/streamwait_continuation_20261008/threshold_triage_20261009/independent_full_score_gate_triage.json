@@ -1,0 +1,42 @@
+{
+  "success": true,
+  "scope": "Independent CPU triage of existing complete NeXT Text K32 E2/AZ2 outputs",
+  "actual_production_python": "3.10.21 llava_pruner",
+  "confirmed_project_error": "Full-control validator returns actual_count_distribution with int keys; saved JSON reload yields string keys. Exact direct dict comparison in frozen scheduler and publisher rejects valid results.",
+  "different_fields": [
+    "actual_count_distribution"
+  ],
+  "cross_hashseed_same_complete_results": true,
+  "n_each": 5000,
+  "official_math_per_question_verified": true,
+  "accuracy_numeric_tolerance_added": false,
+  "official_score_or_prediction_modified": false,
+  "necessary_GPU_reruns_for_false_gate": 0,
+  "recovery_prepared_only": true,
+  "recovery_started_by_this_agent": false,
+  "root_owns_launch": true,
+  "results": {
+    "EADP_beta2": {
+      "official_accuracy_percent": 52.086000000000055,
+      "per_question_tenths_sha256": "996b7f2c1032db239074e2e5486cf368ad2b5f7216b507e4513d1b871ccd18b8",
+      "prediction_sha256": "c9e2d415ccfcdc44d146162c497d79c13ffa604caa9d7bf0af6e1a8d073cfa7c",
+      "runtime_sha256": "7f1c960898acff2cb71ad35b9762f44aba872ddf1a1dd23c54f12acdbc133a34"
+    },
+    "AZ_beta2": {
+      "official_accuracy_percent": 53.26200000000008,
+      "per_question_tenths_sha256": "24ec0b73e43d90058d99d769ff44a7006c5090ca1b7c88da1a7920aef01d50ba",
+      "prediction_sha256": "e7356f8517d8e7dd411855a205f705f215baf7171db76790cbf4c402f2e25d35",
+      "runtime_sha256": "314ebfda96afc8d0250595864d58bf28b2cd7f28197497eb297ae33ecbddd9ec"
+    }
+  },
+  "accuracy_interpretation": "AZ-EADP beta2 wait-only = 1.176 percentage points. Compared with prior as-is official protocol E+0.090 and AZ+0.088 points, this run does not close the 2.204-point EADP-vs-paper gap.",
+  "files": {
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/probe_full_score_gate.py": "23d99c29439d886ca79c856622f4ddc35d337317419ad2e8ba3d633e41da08c3",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/independent_seed0_py310.json": "385196e7470336fc4afc3f0ff6d20044032fef43ff1f46986093906ab8d857e5",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/independent_seed1_py310.json": "61fbf52c3e7cda88c3e7679506b288c6fbf3e67b435fc0ce15e1ad709f8d184d",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/resume_next_full_controls_after_json_gate.py": "ce871705c2a868a8eb888702be288b87f0405f1e84c35777cb2d4903a4a1d6ec",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/resume_next_full_controls_after_json_gate.plan.json": "12d2d3e6413b6bdce8000345b753718214ef26ccb197625d3a927c4a798c04d5",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/resume_next_full_controls_cpu_validation.json": "7b0a4229f91e8b63d7785efbf62ff85aa28ded4cd2afa2b4fc903679bc104146",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/resume_next_full_controls_archive_validation.json": "ee5a070778c6518bcc87080be209b2094352c32cdd925c295a31cc1cf0d85e79"
+  }
+}

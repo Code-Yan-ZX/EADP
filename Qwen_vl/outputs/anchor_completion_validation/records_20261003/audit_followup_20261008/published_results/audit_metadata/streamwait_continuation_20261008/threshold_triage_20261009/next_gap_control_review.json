@@ -1,0 +1,333 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-08T17:51:00.143696+00:00",
+  "scope": "Independent CPU review of complete NeXT TextVQA K32 wait-only E2/AZ2; new review files only",
+  "live_branch": "codex/anchor-completion-validation",
+  "live_head": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
+  "handoff": {
+    "path": "/media/disk2/YZX/research/EADP_amp/docs/project_handoff.md",
+    "full_read_lines": 1029,
+    "sha256": "474a8952e9296e3bc799071794a0f33698e246044a9c4b2c5551e71e19d6b508"
+  },
+  "GPU_started": false,
+  "original_files_modified": false,
+  "frozen_queue_modified": false,
+  "threshold_policy": {
+    "user_deficit_tolerance_percentage_points": 0.2,
+    "condition": "Same-protocol full official EADP score at least paper minus0.2 is numerically accepted; above paper is accepted; parameter identity remains a separate evidence question",
+    "no_parameter_search": true,
+    "no_partial_prefix_scoring": true
+  },
+  "paper_reference": {
+    "accuracy_percent": 54.2,
+    "budget_parameter_per_crop": 32,
+    "nominal_total_tokens": 160,
+    "actual_retention_floor": "156..159 matches official Eq26 floor/min1",
+    "source_url": "https://arxiv.org/html/2607.02484v1#S5.T2",
+    "source_path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/paper_config/paper_config_audit.json",
+    "source_sha256": "4478ec3b926a7c190526ef134b715c5c9df46b95474ce01e53008ae3a3587658"
+  },
+  "completed_controls": {
+    "EADP_beta2": {
+      "n": 5000,
+      "generation_exit_code": 0,
+      "worker_complete": true,
+      "valid_success_marker": true,
+      "official_accuracy_percent": 52.086000000000055,
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/train_images",
+        "conv_mode": "vicuna_v1",
+        "alpha": 0.5,
+        "visual_token_num": 32,
+        "temperature": 0.0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "anchorzip": false,
+        "beta": 2.0
+      },
+      "prediction_sha256": "c9e2d415ccfcdc44d146162c497d79c13ffa604caa9d7bf0af6e1a8d073cfa7c",
+      "runtime_sha256": "7f1c960898acff2cb71ad35b9762f44aba872ddf1a1dd23c54f12acdbc133a34",
+      "score_sha256": "e9d12cf2183d3c88b7d9176f0e7912bb099d59042ce25a6b29f33c7ace5a4897",
+      "source_and_input_all_matching": true,
+      "source_and_input_count": 18,
+      "source_and_input_match": {
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/conversation.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py": true,
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": true,
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K32.jsonl.protocol.json": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/LRMAIN00625.jsonl.protocol.json": true,
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/textvqa_runtime_launcher.py": true,
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_stream_panel.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/TextVQA_0.5.1_val.json": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/eval_textvqa.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/m4c_evaluator.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl": true,
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/config.json": true,
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/generation_config.json": true
+      },
+      "official_evaluator_sha256": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7",
+      "GT_sha256": "4ceb5aadc1a41719d0a3e4dfdf06838bcfee1db569a9a65ee67d31c99893081d",
+      "actual_count_distribution": {
+        "158": 2322,
+        "157": 2233,
+        "156": 225,
+        "159": 220
+      },
+      "all5000_image_tensor_shape": [
+        1,
+        5,
+        3,
+        336,
+        336
+      ],
+      "native_protocol_unchanged": true,
+      "no_partial_prefix_scored": true,
+      "AST_validation": {
+        "production_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py",
+        "production_source_sha256": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+        "original_forward_ast_sha256": "f6aef31d798826b4bb5e4198e5b87b87c9174c4ca478cd339e3d8a0c26325858",
+        "patched_forward_ast_sha256": "d7dece035ae5cf3f4b5cc535fe5b6bc8bfc3f96c30f05426f02bab4ca37fdbb7",
+        "restoration_ast_identical": true,
+        "inserted_nodes": [
+          "caller_stream = torch.cuda.current_stream(device=self.device)",
+          "image_stream.wait_stream(caller_stream)",
+          "text_stream.wait_stream(caller_stream)"
+        ],
+        "preserved": [
+          "original math",
+          "original no_grad decorator",
+          "original trailing torch.cuda.synchronize()",
+          "list and attention branches",
+          "allocation and precision settings"
+        ],
+        "record_stream_added": false,
+        "patched_forward_source": "@torch.no_grad()\ndef forward(self, images, texts=None, return_attentions=False):\n    if type(images) is list:\n        image_features = []\n        for image in images:\n            image_forward_out = self.vision_tower(image.to(device=self.device, dtype=self.dtype).unsqueeze(0), output_hidden_states=True)\n            image_feature = self.feature_select(image_forward_out).to(image.dtype)\n            image_features.append(image_feature)\n    else:\n        if return_attentions and texts is None:\n            image_forward_outs = self.vision_tower(images.to(device=self.device, dtype=self.dtype), output_hidden_states=True, output_attentions=True)\n            image_features = self.feature_select(image_forward_outs).to(images.dtype)\n            return (image_features, image_forward_outs.attentions)\n        image_stream = torch.cuda.Stream()\n        text_stream = torch.cuda.Stream()\n        caller_stream = torch.cuda.current_stream(device=self.device)\n        image_stream.wait_stream(caller_stream)\n        text_stream.wait_stream(caller_stream)\n        with torch.cuda.stream(image_stream):\n            image_forward_outs = self.vision_tower(images.to(device=self.device, dtype=self.dtype), output_hidden_states=True)\n            image_outputs = self.feature_select(image_forward_outs)\n            image_features = image_outputs.to(images.dtype)\n        if texts is not None:\n            with torch.cuda.stream(text_stream):\n                text_inputs = self.text_tokenizer(text=texts, return_tensors='pt')\n                text_segment = (text_inputs.input_ids.shape[1] - 1) // self.max_position_embeddings + 1\n                text_padding = self.max_position_embeddings * text_segment - text_inputs.input_ids.shape[1]\n                text_inputs = {k: torch.cat([v, v.new_zeros((v.shape[0], text_padding))], dim=1).reshape(-1, self.max_position_embeddings).to(device=self.device) for (k, v) in text_inputs.items()}\n                outputs = self.text_tower(**text_inputs)\n                text_embeds = outputs.text_embeds\n                text_embeds_seq = outputs.last_hidden_state\n                if hasattr(self.text_tower, 'text_projection'):\n                    text_embeds_seq = self.text_tower.text_projection(text_embeds_seq)\n        torch.cuda.synchronize()\n        if texts is not None:\n            image_embeds = self.vision_tower.vision_model.post_layernorm(image_outputs)\n            proj_dtype = self.vision_tower.visual_projection.weight.dtype\n            image_embeds = self.vision_tower.visual_projection(image_embeds.to(proj_dtype))\n            image_features = (image_features, image_embeds, text_embeds, text_embeds_seq)\n    return image_features"
+      },
+      "loaded_parameter_boundary": "Actual retained-count/geometry/prompt/budget traces verified; alpha/beta/lambda and dtype/class are recorded source/protocol values, not dynamic object snapshots"
+    },
+    "AZ_beta2": {
+      "n": 5000,
+      "generation_exit_code": 0,
+      "worker_complete": true,
+      "valid_success_marker": true,
+      "official_accuracy_percent": 53.26200000000008,
+      "parameters": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/train_images",
+        "conv_mode": "vicuna_v1",
+        "alpha": 0.5,
+        "visual_token_num": 32,
+        "temperature": 0.0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "anchorzip": true,
+        "beta": 2.0
+      },
+      "prediction_sha256": "e7356f8517d8e7dd411855a205f705f215baf7171db76790cbf4c402f2e25d35",
+      "runtime_sha256": "314ebfda96afc8d0250595864d58bf28b2cd7f28197497eb297ae33ecbddd9ec",
+      "score_sha256": "73cefe475db2f8e18ad8cb74d97418dff28599f34ea33bb9a08cfd63be77d2f1",
+      "source_and_input_all_matching": true,
+      "source_and_input_count": 18,
+      "source_and_input_match": {
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/conversation.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py": true,
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": true,
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K32.jsonl.protocol.json": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/LRMAIN00625.jsonl.protocol.json": true,
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/textvqa_runtime_launcher.py": true,
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_stream_panel.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/TextVQA_0.5.1_val.json": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/eval_textvqa.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/m4c_evaluator.py": true,
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl": true,
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/config.json": true,
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/generation_config.json": true
+      },
+      "official_evaluator_sha256": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7",
+      "GT_sha256": "4ceb5aadc1a41719d0a3e4dfdf06838bcfee1db569a9a65ee67d31c99893081d",
+      "actual_count_distribution": {
+        "157": 2348,
+        "158": 2248,
+        "159": 196,
+        "156": 208
+      },
+      "all5000_image_tensor_shape": [
+        1,
+        5,
+        3,
+        336,
+        336
+      ],
+      "native_protocol_unchanged": true,
+      "no_partial_prefix_scored": true,
+      "AST_validation": {
+        "production_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py",
+        "production_source_sha256": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+        "original_forward_ast_sha256": "f6aef31d798826b4bb5e4198e5b87b87c9174c4ca478cd339e3d8a0c26325858",
+        "patched_forward_ast_sha256": "d7dece035ae5cf3f4b5cc535fe5b6bc8bfc3f96c30f05426f02bab4ca37fdbb7",
+        "restoration_ast_identical": true,
+        "inserted_nodes": [
+          "caller_stream = torch.cuda.current_stream(device=self.device)",
+          "image_stream.wait_stream(caller_stream)",
+          "text_stream.wait_stream(caller_stream)"
+        ],
+        "preserved": [
+          "original math",
+          "original no_grad decorator",
+          "original trailing torch.cuda.synchronize()",
+          "list and attention branches",
+          "allocation and precision settings"
+        ],
+        "record_stream_added": false,
+        "patched_forward_source": "@torch.no_grad()\ndef forward(self, images, texts=None, return_attentions=False):\n    if type(images) is list:\n        image_features = []\n        for image in images:\n            image_forward_out = self.vision_tower(image.to(device=self.device, dtype=self.dtype).unsqueeze(0), output_hidden_states=True)\n            image_feature = self.feature_select(image_forward_out).to(image.dtype)\n            image_features.append(image_feature)\n    else:\n        if return_attentions and texts is None:\n            image_forward_outs = self.vision_tower(images.to(device=self.device, dtype=self.dtype), output_hidden_states=True, output_attentions=True)\n            image_features = self.feature_select(image_forward_outs).to(images.dtype)\n            return (image_features, image_forward_outs.attentions)\n        image_stream = torch.cuda.Stream()\n        text_stream = torch.cuda.Stream()\n        caller_stream = torch.cuda.current_stream(device=self.device)\n        image_stream.wait_stream(caller_stream)\n        text_stream.wait_stream(caller_stream)\n        with torch.cuda.stream(image_stream):\n            image_forward_outs = self.vision_tower(images.to(device=self.device, dtype=self.dtype), output_hidden_states=True)\n            image_outputs = self.feature_select(image_forward_outs)\n            image_features = image_outputs.to(images.dtype)\n        if texts is not None:\n            with torch.cuda.stream(text_stream):\n                text_inputs = self.text_tokenizer(text=texts, return_tensors='pt')\n                text_segment = (text_inputs.input_ids.shape[1] - 1) // self.max_position_embeddings + 1\n                text_padding = self.max_position_embeddings * text_segment - text_inputs.input_ids.shape[1]\n                text_inputs = {k: torch.cat([v, v.new_zeros((v.shape[0], text_padding))], dim=1).reshape(-1, self.max_position_embeddings).to(device=self.device) for (k, v) in text_inputs.items()}\n                outputs = self.text_tower(**text_inputs)\n                text_embeds = outputs.text_embeds\n                text_embeds_seq = outputs.last_hidden_state\n                if hasattr(self.text_tower, 'text_projection'):\n                    text_embeds_seq = self.text_tower.text_projection(text_embeds_seq)\n        torch.cuda.synchronize()\n        if texts is not None:\n            image_embeds = self.vision_tower.vision_model.post_layernorm(image_outputs)\n            proj_dtype = self.vision_tower.visual_projection.weight.dtype\n            image_embeds = self.vision_tower.visual_projection(image_embeds.to(proj_dtype))\n            image_features = (image_features, image_embeds, text_embeds, text_embeds_seq)\n    return image_features"
+      },
+      "loaded_parameter_boundary": "Actual retained-count/geometry/prompt/budget traces verified; alpha/beta/lambda and dtype/class are recorded source/protocol values, not dynamic object snapshots"
+    }
+  },
+  "threshold_result": {
+    "EADP_minus_paper_percentage_points": -2.1139999999999475,
+    "EADP_deficit_percentage_points": 2.1139999999999475,
+    "acceptable_minimum_accuracy_percent": 54.0,
+    "EADP_numerical_acceptance": false,
+    "deficit_exceeds_point2": true,
+    "AnchorZip_minus_EADP_percentage_points": 1.1760000000000232,
+    "wait_EADP_minus_original_EADP_percentage_points": 0.09000000000000341,
+    "wait_AnchorZip_minus_original_AnchorZip_percentage_points": 0.08800000000007913,
+    "original_AZ_comparison_precision": "Historical complete score53.174 is used to its recorded three decimals; no invented last-bit precision",
+    "statistical_claim": "Complete point estimates only; no new paired bootstrap or significance claim"
+  },
+  "confirmed_gate_bug": {
+    "source_controller": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/schedule_next_full_controls.py:143",
+    "source_publisher": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/publish_repair_results.py:405",
+    "source_worker": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_full_streamwait.py:164",
+    "mechanism": "Frozen validator returns Counter(int) keys; serialized JSON score reload has string keys. Exact dict comparison falsely rejects both completed controls.",
+    "exact_same_interpreter": "In actual Python3.10 gate environment accuracy and every other original return field are exactly equal; only actual_count_distribution key types differ",
+    "generation_status": "Both actual workers exited0 and wrote valid complete5000 scores and success markers; controller failed solely during independent CPU verification, beta1 skipped its dependency",
+    "historical_controller_status_snapshot": "running",
+    "historical_job_status_snapshot": {
+      "EADP_beta2": "complete",
+      "AZ_beta2": "complete",
+      "EADP_beta1": "generating"
+    },
+    "not_an_accuracy_change": true,
+    "independent_python312_boundary": "Python3.12 standalone rescoring also changes last-bit sums (~1e-13pp), but actual controller and publisher use Python3.10; this is not the incident cause and no tolerance is introduced"
+  },
+  "minimal_recovery": {
+    "overlay_path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/json_count_distribution_overlay.py",
+    "overlay_sha256": "2a0a0cb07e1bd9779ee60349fd1cc23b76b4d6c5be5262208595f33f87973406",
+    "worker_path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_full_streamwait.py",
+    "worker_SHA_pinned": "80affa9c875fb25c5f78cea39a437efc81b36a9b8383a19e77166516f58cda63",
+    "only_changed_return_field": "actual_count_distribution keys str(k)",
+    "source_and_score_and_prediction_preserved": true,
+    "unchanged": "Original full validator, all values/math, strict source/input/runtime/denominator/marker checks, original CPU entry scripts and all generation workers",
+    "tests": {
+      "gates": 27,
+      "all_pass": true,
+      "full5000_real_strict_score_checks": true,
+      "hashseeds": [
+        0,
+        731
+      ],
+      "wrong_SHA_refused": true,
+      "changed_count_refused": true,
+      "changed_denominator_refused": true,
+      "tiny_changed_accuracy_refused": true,
+      "no_tolerance": true
+    },
+    "prepared_only": true,
+    "launcher_or_resume_not_run_by_this_audit": true,
+    "supervisor_state_recovery_owned_by_root": true
+  },
+  "next_single_factor_causal_path": [
+    {
+      "priority": 0,
+      "action": "Restore CPU verification using pinned JSON-key overlay after archiving failed supervisory state; retain both complete scores/predictions.",
+      "expected": "E2/AZ2 strictly validate without regeneration; both genuine full scores remain52.086/53.262."
+    },
+    {
+      "priority": 1,
+      "action": "Complete the already preregistered unique EADP_beta1 same5000 K32 wait-only control, keeping alpha.5, input, guidance, decoding and environment fixed.",
+      "reason": "Official NeXT textvqa.sh:11 beta default1.0 differs from local2.0. Paper actual argv unknown.",
+      "falsifiable": "Unchanged output/score rejects an appreciable beta contribution; a changed score measures that one factor. Apply0.2pp rule to full score, never choose or search a best beta.",
+      "limitation": "Even numerical paper agreement would not establish that the authors used beta1, and does not transfer the increment to AZ."
+    },
+    {
+      "priority": 2,
+      "action": "If beta1 still fails0.2pp, close actual paper task argv and pruning execution identity using primary released config and noninterfering post-generation parameter traces before any new full rerun.",
+      "evidence": "Official input/prompt/maxnew and exact core implementations already match; scoring suffix fix and wait dependency are applied. q=.2 is official hardcoded call, allocation floor/min1 and5crop are verified, sharedCLIP/NeXT checkpoint hashes match.",
+      "limitation": "Do not change q/alpha/crop budgets as a score search. Dynamic alpha/beta/lambda/dtype/model-class values were not recorded in old runtime, so protocol values alone cannot claim actual loaded object identity."
+    },
+    {
+      "priority": 3,
+      "action": "Investigate remaining environment/precision differences only after a concrete divergence on fixed identical inputs is demonstrated; then freeze a separate one-factor control.",
+      "evidence": "tokenizers/safetensors/Pillow/sentencepiece versions differ; flash-attn andftfy absent; official builder default uses no externalFlash2, GenerationConfig metadata does not prove active backend.",
+      "limitation": "No causal accuracy effect established; FULL60.370 vs paper60.3 narrows global failures but cannot exclude pruning-specific effects. No env update or speculative GPU run authorized by this CPU artifact."
+    }
+  ],
+  "method_side_effect_boundaries": [
+    "Wait-only producer ordering has direct stability evidence, but full E2 accuracy gains only0.090pp from original51.996; it does not explain remaining2.114pp.",
+    "Both E2/AZ2 share the same wait-only repair and complete5000 protocol; AZ−E=+1.176pp is a same-local-method point difference, not evidence of general dominance or a paper-matched baseline.",
+    "Confirmed NeXT cross-crop Completion deviation is AZ-only; isolated per-crop adapter remains uninstalled and untested for GPU accuracy, and cannot explain EADP deficit.",
+    "AZ first-text-segment RTG behavior is documented as unresolved M>1 design; do not call it a proven bug or silently change it.",
+    "FULLnear-paper does not prove pruning, author beta, environment precision or current method math correctness."
+  ],
+  "evidence_sha256": {
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/json_count_distribution_overlay_cpu_validation.json": "7d839600b3a2849e0a0f2d9ca9ad9f57f64866c5ca1ed504462ec499027920ce",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_full_streamwait.controller.plan.json": "84e0b69fc15555a9de8b6e31711313ca83f3efc345b26492fd2b025943a59644",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_full_streamwait.controller.state.json": "dbc29c2cf588b477656e774e4f761c77391a90cde28552a29699663500a82fba",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/paper_config/paper_config_audit.json": "4478ec3b926a7c190526ef134b715c5c9df46b95474ce01e53008ae3a3587658",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/build_next_gap_control_review.py": "fd44c570ab5fc1724a0004077dc4694272f671157341c0868215f27a08ef9ad2",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.jsonl": "c9e2d415ccfcdc44d146162c497d79c13ffa604caa9d7bf0af6e1a8d073cfa7c",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.jsonl.runtime.jsonl": "7f1c960898acff2cb71ad35b9762f44aba872ddf1a1dd23c54f12acdbc133a34",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.jsonl.protocol.json": "3f9d3169de77c0fa71f47bf0dc5fef10f965aef027ea50b04a83d8d978eaf1af",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.control.protocol.json": "caac3108d0c305ed0c94a88a57c5bc218ad3d3393243af5b9c33d18a49d1f210",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.official.score.json": "e9d12cf2183d3c88b7d9176f0e7912bb099d59042ce25a6b29f33c7ace5a4897",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.state.json": "06697f5d87300c2ce694e23cb406618eb76cfa1b0a663ae2c2efe561cbf09d32",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.finished.json": "acecae183677ae96dcfad5a9ced299294409edffa17557c4de2772a73304fc83",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.log": "179ab9f40152172c7abf2f8611ed8fe807227546cbcb5251fa0995bee5de3c01",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/conversation.py": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K32.jsonl.protocol.json": "6cd0339f52d2315748b68cfca618db9ed4a4fb47d11708895dc6f305e4b5bd34",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/LRMAIN00625.jsonl.protocol.json": "de199a6365a1ba9d471a6f546b8eafbc18af973af35a574ac38db3a89daa8bff",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/textvqa_runtime_launcher.py": "1fa45b9f5c069d855e7675ac4e4ddaa61a912ddb68a2d3393ede69b7b65736dd",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_stream_panel.py": "0d3e1766d4bf9594f38c16feb587fff089622e6ddbbca420cc70a5781863e8e4",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/TextVQA_0.5.1_val.json": "4ceb5aadc1a41719d0a3e4dfdf06838bcfee1db569a9a65ee67d31c99893081d",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/eval_textvqa.py": "6c575f42a200d00ce22a528b83365374809bc324cd3fe059a611e583ed88f5de",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/m4c_evaluator.py": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl": "9f60db6fb89e369263ed676dc26b48d00d4a462e73f0930c09d23394e9dcf3a3",
+    "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/config.json": "60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60",
+    "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/generation_config.json": "c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.jsonl": "e7356f8517d8e7dd411855a205f705f215baf7171db76790cbf4c402f2e25d35",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.jsonl.runtime.jsonl": "314ebfda96afc8d0250595864d58bf28b2cd7f28197497eb297ae33ecbddd9ec",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.jsonl.protocol.json": "ff1891b351ed3992edf7ccc79cd40a03d3e668931e11d30947e6b911a6d78d1a",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.control.protocol.json": "b0cdf4c574775de6a31ca90950468141a0449867d92eee12ed5857ac38b16c3a",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.official.score.json": "73cefe475db2f8e18ad8cb74d97418dff28599f34ea33bb9a08cfd63be77d2f1",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.state.json": "e65ec61726d5bbe5b414f07c6d5f906ffafb8f06835d56e2f818fd04bd78a648",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.finished.json": "d9962a9aa43c765ef949f353b398aa91d9091307f741fbc2a1025152d12c1500",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.log": "3b76009665622be50334e95dca389e32c7d0b29b19015f3470c519620d2728f9",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/LRMAIN00625.jsonl": "cc4604fc93de281dce841856222aae88b3cd68fed4709f14448e1c4260d84482",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/json_count_distribution_overlay.py": "2a0a0cb07e1bd9779ee60349fd1cc23b76b4d6c5be5262208595f33f87973406",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/threshold_triage_20261009/validate_json_count_distribution_overlay.py": "c323d645eb9dfb7dab0d30c98f6de6f5ae5ab59dd839abe77d4c212fdf33b258"
+  }
+}
