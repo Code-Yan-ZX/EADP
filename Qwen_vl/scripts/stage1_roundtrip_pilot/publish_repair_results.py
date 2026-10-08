@@ -341,6 +341,7 @@ def readable_results(history):
            'Only complete, independently scored comparison groups appear here. ',
            'Read [paired_results.csv](paired_results.csv) for scores and each group manifest for prediction, input and source SHA256 evidence.',
            '', 'TextVQA uses all 5000 official validation questions. ScienceQA uses the 2017 image questions in the shipped CQM-A input. POPE uses the three-category mean F1 over 8910 predictions with the controlled CUDA stream wait.',
+           '', 'For NeXT, K128/K64/K32 denotes the per-crop budget parameter (nominal 640/320/160 for five crops). Actual retained tokens are recorded per sample in the runtime evidence.',
            '', '| Group | EADP | AnchorZip | AZ − EADP | FULL | Evidence |',
            '|---|---:|---:|---:|---:|---|']
     for group_id,entry in sorted(history.items()):
