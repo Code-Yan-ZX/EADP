@@ -1130,3 +1130,52 @@ Git worktree index路径、SQA不同算式末位尾差、phase2 lambda字段位�
 距Oct9 12:00约9.75小时；44续跑尚未开始，legacy历史双槽7.649小时下界
 不包括phase1和前置时间，仍不能证明全scope按时完成。授权队列继续，timer
 保持active，all_experiments_complete=false，55远端组仍全部纳入停止条件。
+
+### 13.17 Oct9 03:13 独立小时巡检：三控制完成，phase1正常接续
+
+本次完整读取1132行交接并核对live Git，分支仍codex/anchor-completion-validation、
+HEAD194562d，用户既有变动保留。原28项118917/118917预测、官方完整分母/
+TextVQA复合题键与全文prompt、SQA2017、POPE8910及可用runtime再次通过；
+1411/1411来源SHA、61份日志、summary JSON/CSV28行一致且errors=[]。原主
+监督器/helper/watcher与17个历史worker启动身份已实际退出，31份关闭工件
+与上轮SHA不变。初始NeXT Text128两臂无新增runtime的边界继续保留。
+
+新增三臂各完整5000题、runtime/图像/题面/来源/官方score/finished/exit0通过
+固定Python3.10及已登记count-key overlay精确复算：EADP_beta2为
+52.086000000000055%，AZ_beta2为53.26200000000008%，EADP_beta1为
+50.96600000000002%。同beta2方法差+1.176pp，预定义beta1−beta2为−1.120pp；
+默认beta1控制没有追回paper残差，不能称beta1已核实为论文配置或事后选臂。
+controller于北京时间02:19:20合法complete、三臂success marker通过，监督器
+2556883及所有children实际退出，phase1于02:19:28/43自动接E64/AZ64。
+panel128/512及独立result SHA/逐题复算再次通过；面板无全量准确率改善证据。
+新增5038/5038 SHA通过（1744来源/工件、3294图像），四plan来源32/38/57/164
+匹配，冻结controller/worker/plan及授权recovery/overlay来源均无漂移。
+
+03:09:28→03:13:19，同启动身份PID2609341/2609540的TextK64完整预测由
+4419→4798/5000、4370→4737/5000，输出与日志mtime持续推进、无异常；
+末次runtime分别4799/4737行，活跃文件分次读取产生一行时间差，独立前缀
+身份/题面/预算验证通过，未当作完整成绩。A40恰两个登记模型/reservation，
+无未知CUDA context。第二worker启动时首worker实际16810MiB context且已写
+首runtime，free27439MiB≥22500，首槽free44257；加载也计slot。phase1实际
+登记12任务/7组正在运行，phase2实际登记32任务/29组、全attempt2，正常
+waiting_for_phase1、child=[]。两CPU监督器2558610/2558609的完整授权overlay
+argv、来源与上轮start_ticks通过；旧SIGTERM error及旧dependency快照被
+当前运行/合法dependency_validation超越，没有再次失败证据。
+
+publisher PID2560860 active/running，维护结束/source_ready=true，授权argv/
+source SHA通过。03:10:59独立ls-remote确认origin
+bb0bbb4d911fb4d603857613b433af14d610a090；19/55组commit均为远端ancestor，
+36组合法等待，pending commit/publication/error空。新增beta1组独立发布，
+未混入paired CSV。20归档/530 member/371来源检查/33预测131058归档行/
+158 metadata SHA及234提交路径allowlist通过，live HEAD/index/暂存保持。
+历史阈值静态清单的handoff旧SHA已核对原远端字节，并证明当前仅追加02:15
+事实且与本次远端doc相同；这是允许的文档更新，不豁免冻结源码或真实push失败。
+
+证据保存于rerun_batch/hourly_monitor/check_20261008T190840Z/。仅更新本机
+巡检证据与本文事实；未启动/停止/重启任何实验或监督器、未改冻结源码/参数/
+预测、未stage/commit/push。本次快照checker按真实generate_command字段和
+已完整beta1单臂发布适配，原检查证据及来源SHA保留，均非实验恢复。
+03:13距12:00约8小时47分；phase1尚未完整一组、legacy32项仍等待，历史
+legacy最理想双槽7.649小时下界尚不含前序，全部scope按时完成仍有风险。
+授权队列和既有小时timer继续，全部已登记任务及55组远端确认前保持
+all_experiments_complete=false，基础monitor的原28 all_complete=true不构成停止条件。
