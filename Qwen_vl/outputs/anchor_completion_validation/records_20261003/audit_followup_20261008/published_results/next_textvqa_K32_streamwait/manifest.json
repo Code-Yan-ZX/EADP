@@ -1,0 +1,355 @@
+{
+  "group_id": "next_textvqa_K32_streamwait",
+  "identity": "34303b534eb040d0a9ac54e972ee2eac151da8f60a2a1255e1d8d99770338cf6",
+  "prepared_utc": "2026-10-08T17:52:17.927922+00:00",
+  "scores": [
+    {
+      "method": "EADP",
+      "control_arm": "EADP_beta2",
+      "beta": 2.0,
+      "accuracy": 52.086000000000055,
+      "n": 5000,
+      "metric": "official TextVQA accuracy",
+      "runtime_trace_available": true,
+      "output": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.jsonl",
+      "prediction_sha256": "c9e2d415ccfcdc44d146162c497d79c13ffa604caa9d7bf0af6e1a8d073cfa7c",
+      "verified_source_sha256": {
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/conversation.py": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K32.jsonl.protocol.json": "6cd0339f52d2315748b68cfca618db9ed4a4fb47d11708895dc6f305e4b5bd34",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/LRMAIN00625.jsonl.protocol.json": "de199a6365a1ba9d471a6f546b8eafbc18af973af35a574ac38db3a89daa8bff",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/textvqa_runtime_launcher.py": "1fa45b9f5c069d855e7675ac4e4ddaa61a912ddb68a2d3393ede69b7b65736dd",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_stream_panel.py": "0d3e1766d4bf9594f38c16feb587fff089622e6ddbbca420cc70a5781863e8e4",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/TextVQA_0.5.1_val.json": "4ceb5aadc1a41719d0a3e4dfdf06838bcfee1db569a9a65ee67d31c99893081d",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/eval_textvqa.py": "6c575f42a200d00ce22a528b83365374809bc324cd3fe059a611e583ed88f5de",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/m4c_evaluator.py": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl": "9f60db6fb89e369263ed676dc26b48d00d4a462e73f0930c09d23394e9dcf3a3",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/config.json": "60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/generation_config.json": "c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6"
+      },
+      "protocol": "full_NeXT_TextVQA_K32_wait_only_control",
+      "interpretation": "same wait-only repair applied to both methods"
+    },
+    {
+      "method": "AnchorZip",
+      "control_arm": "AZ_beta2",
+      "beta": 2.0,
+      "accuracy": 53.26200000000008,
+      "n": 5000,
+      "metric": "official TextVQA accuracy",
+      "runtime_trace_available": true,
+      "output": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.jsonl",
+      "prediction_sha256": "e7356f8517d8e7dd411855a205f705f215baf7171db76790cbf4c402f2e25d35",
+      "verified_source_sha256": {
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/conversation.py": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K32.jsonl.protocol.json": "6cd0339f52d2315748b68cfca618db9ed4a4fb47d11708895dc6f305e4b5bd34",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/LRMAIN00625.jsonl.protocol.json": "de199a6365a1ba9d471a6f546b8eafbc18af973af35a574ac38db3a89daa8bff",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/textvqa_runtime_launcher.py": "1fa45b9f5c069d855e7675ac4e4ddaa61a912ddb68a2d3393ede69b7b65736dd",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_stream_panel.py": "0d3e1766d4bf9594f38c16feb587fff089622e6ddbbca420cc70a5781863e8e4",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/TextVQA_0.5.1_val.json": "4ceb5aadc1a41719d0a3e4dfdf06838bcfee1db569a9a65ee67d31c99893081d",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/eval_textvqa.py": "6c575f42a200d00ce22a528b83365374809bc324cd3fe059a611e583ed88f5de",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/m4c_evaluator.py": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl": "9f60db6fb89e369263ed676dc26b48d00d4a462e73f0930c09d23394e9dcf3a3",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/config.json": "60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/generation_config.json": "c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6"
+      },
+      "protocol": "full_NeXT_TextVQA_K32_wait_only_control",
+      "interpretation": "same wait-only repair applied to both methods"
+    }
+  ],
+  "files": {
+    "LLaVA/llava/conversation.py": {
+      "sha256": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+      "bytes": 15418,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/eval/eval_science_qa.py": {
+      "sha256": "91f48f4db46297b26235e10a959f1385333a852886de846d92e4b18d69e6f6df",
+      "bytes": 4944,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/eval/eval_textvqa.py": {
+      "sha256": "6c575f42a200d00ce22a528b83365374809bc324cd3fe059a611e583ed88f5de",
+      "bytes": 3155,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/eval/m4c_evaluator.py": {
+      "sha256": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7",
+      "bytes": 10642,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/mm_utils.py": {
+      "sha256": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+      "bytes": 9919,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/builder.py": {
+      "sha256": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+      "bytes": 8897,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/llava_arch.py": {
+      "sha256": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+      "bytes": 41627,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/llava_arch_anchorzip.py": {
+      "sha256": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+      "bytes": 8123,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/multimodal_encoder/clip_encoder.py": {
+      "sha256": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+      "bytes": 6958,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/EGATHER_K32.jsonl.protocol.json": {
+      "sha256": "6cd0339f52d2315748b68cfca618db9ed4a4fb47d11708895dc6f305e4b5bd34",
+      "bytes": 2027,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/anchorzip_p3/next_textvqa_official_20261008/LRMAIN00625.jsonl.protocol.json": {
+      "sha256": "de199a6365a1ba9d471a6f546b8eafbc18af973af35a574ac38db3a89daa8bff",
+      "bytes": 2264,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/scienceqa/llava_test_CQM-A.json": {
+      "sha256": "a2dc5ea9fba561b0d0d8ecc80e688d3b0e1ff308e06c4f4f94cff86b20ec2f0a",
+      "bytes": 1932005,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/textvqa/TextVQA_0.5.1_val.json": {
+      "sha256": "4ceb5aadc1a41719d0a3e4dfdf06838bcfee1db569a9a65ee67d31c99893081d",
+      "bytes": 3116162,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl": {
+      "sha256": "9f60db6fb89e369263ed676dc26b48d00d4a462e73f0930c09d23394e9dcf3a3",
+      "bytes": 1548730,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/schedule_next_full_controls.py": {
+      "sha256": "48b8540168d5602bed4480cfdcf000b68b597937736cc532afb931626674c0b0",
+      "bytes": 15375,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/schedule_next_gap_panel.py": {
+      "sha256": "3748f5670b6d839e516863e4f72c943f5493b83ee872172f5f6906270a5956c5",
+      "bytes": 14762,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.control.protocol.json": {
+      "sha256": "b0cdf4c574775de6a31ca90950468141a0449867d92eee12ed5857ac38b16c3a",
+      "bytes": 10885,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.finished.json": {
+      "sha256": "d9962a9aa43c765ef949f353b398aa91d9091307f741fbc2a1025152d12c1500",
+      "bytes": 516,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.jsonl": {
+      "sha256": "e7356f8517d8e7dd411855a205f705f215baf7171db76790cbf4c402f2e25d35",
+      "bytes": 2309823,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.jsonl.protocol.json": {
+      "sha256": "ff1891b351ed3992edf7ccc79cd40a03d3e668931e11d30947e6b911a6d78d1a",
+      "bytes": 2293,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.jsonl.runtime.jsonl": {
+      "sha256": "314ebfda96afc8d0250595864d58bf28b2cd7f28197497eb297ae33ecbddd9ec",
+      "bytes": 3114242,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.log": {
+      "sha256": "3b76009665622be50334e95dca389e32c7d0b29b19015f3470c519620d2728f9",
+      "bytes": 925136,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.official.score.json": {
+      "sha256": "73cefe475db2f8e18ad8cb74d97418dff28599f34ea33bb9a08cfd63be77d2f1",
+      "bytes": 1180,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_AZ_beta2_streamwait.state.json": {
+      "sha256": "e65ec61726d5bbe5b414f07c6d5f906ffafb8f06835d56e2f818fd04bd78a648",
+      "bytes": 1099,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta1_streamwait.control.protocol.json": {
+      "sha256": "6bdb49b4f544410e105c8288fdff4e6c1ea14d10e230ac785a6ad3a9c5344d4d",
+      "bytes": 10889,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.control.protocol.json": {
+      "sha256": "caac3108d0c305ed0c94a88a57c5bc218ad3d3393243af5b9c33d18a49d1f210",
+      "bytes": 10889,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.finished.json": {
+      "sha256": "acecae183677ae96dcfad5a9ced299294409edffa17557c4de2772a73304fc83",
+      "bytes": 520,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.jsonl": {
+      "sha256": "c9e2d415ccfcdc44d146162c497d79c13ffa604caa9d7bf0af6e1a8d073cfa7c",
+      "bytes": 2311831,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.jsonl.protocol.json": {
+      "sha256": "3f9d3169de77c0fa71f47bf0dc5fef10f965aef027ea50b04a83d8d978eaf1af",
+      "bytes": 2058,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.jsonl.runtime.jsonl": {
+      "sha256": "7f1c960898acff2cb71ad35b9762f44aba872ddf1a1dd23c54f12acdbc133a34",
+      "bytes": 3114242,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.log": {
+      "sha256": "179ab9f40152172c7abf2f8611ed8fe807227546cbcb5251fa0995bee5de3c01",
+      "bytes": 925187,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.official.score.json": {
+      "sha256": "e9d12cf2183d3c88b7d9176f0e7912bb099d59042ce25a6b29f33c7ace5a4897",
+      "bytes": 1185,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_EADP_beta2_streamwait.state.json": {
+      "sha256": "06697f5d87300c2ce694e23cb406618eb76cfa1b0a663ae2c2efe561cbf09d32",
+      "bytes": 770,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_K32_streamwait_images.manifest.json": {
+      "sha256": "8c35ffdf2d4aeee3760ca6bfd16f0c88e8244e287cd8b4753d941cb422bfae59",
+      "bytes": 968577,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_full_streamwait.controller.plan.json": {
+      "sha256": "84e0b69fc15555a9de8b6e31711313ca83f3efc345b26492fd2b025943a59644",
+      "bytes": 16233,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_full_streamwait.py": {
+      "sha256": "80affa9c875fb25c5f78cea39a437efc81b36a9b8383a19e77166516f58cda63",
+      "bytes": 14920,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_stream_panel.py": {
+      "sha256": "0d3e1766d4bf9594f38c16feb587fff089622e6ddbbca420cc70a5781863e8e4",
+      "bytes": 19643,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stream_panel_scheduler.plan.json": {
+      "sha256": "a39116b01c44338df1e4a08bbe0c9b5d3ab645fe7de3841e403db8edd8b0a2dd",
+      "bytes": 18739,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/rerun_batch/lane1_v15_plan.json": {
+      "sha256": "6ad63c47a5c0712e2ef620fa3a0d9efcfb698b5c2f3851d513b8e0fe43006f0c",
+      "bytes": 34864,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/rerun_batch/lane2_next_plan.json": {
+      "sha256": "1c201529034c078a645670f7cacc48cd540bc99960ff93773beafc59fe54f973",
+      "bytes": 46416,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/rerun_fast/run_pope_streamwait_control.py": {
+      "sha256": "7405822da63292bf53efa5d48a7ac712c9a3804d66c0d5c403119c3e9403f956",
+      "bytes": 15322,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/rerun_fast/score_pope_replay.py": {
+      "sha256": "25d92f33066d0b34d3a252550a46e4378560872fde6b168199bb96e43c3cac58",
+      "bytes": 3805,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/sqa_CQMA_image2017.json": {
+      "sha256": "8e63cfff3268684f1df5dcc094fb0c0e3c3bc7123387f174631de7b0111f6fca",
+      "bytes": 1020706,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/sqa_image_only_base/pid_splits.json": {
+      "sha256": "4b69e2cca9714086631f3945e0d99a83c1534f2a2ec5224e523bbd8dd55a4858",
+      "bytes": 17106,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/sqa_image_only_base/problems.json": {
+      "sha256": "4d9b598da966d9736dd79e430a97da861a2216aeb7483a5092350e823ab20ce7",
+      "bytes": 31529211,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": {
+      "sha256": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639",
+      "bytes": 14972,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py": {
+      "sha256": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534",
+      "bytes": 9382,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_science.py": {
+      "sha256": "cc36820fe106140a3997609cfb741283ed0d7e1d5f22db2a7b08f91feadc5ee4",
+      "bytes": 6506,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/run_repair_queue.py": {
+      "sha256": "e562cc2d2880b37c8dae5020aa72d47ab635184fa2c552561c9f5776b249a81d",
+      "bytes": 13532,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/run_sqa_shipped_control.py": {
+      "sha256": "e157cdd78b06bdfa15a6a0c0f5dd0c1fe32a3806c644807579d3e1898130e766",
+      "bytes": 8564,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/run_textvqa_official.py": {
+      "sha256": "8d9692512dd2b047c92e85130e4af787b81f36d34525adbbb62073de50a32e3a",
+      "bytes": 4648,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/textvqa_runtime_launcher.py": {
+      "sha256": "1fa45b9f5c069d855e7675ac4e4ddaa61a912ddb68a2d3393ede69b7b65736dd",
+      "bytes": 3273,
+      "archived_as": "regular_file"
+    },
+    "external_reference/60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60/config.json": {
+      "sha256": "60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60",
+      "bytes": 1584,
+      "archived_as": "regular_file"
+    },
+    "external_reference/c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6/generation_config.json": {
+      "sha256": "c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6",
+      "bytes": 170,
+      "archived_as": "regular_file"
+    }
+  },
+  "source_symlinks_dereferenced": true,
+  "contains_weights_or_images": false,
+  "archive_sha256": "c870c0d80b964b25d7ab0c0a59fee536b1a68b428b23137dfd1e88bf94fff86b",
+  "blobs": [
+    {
+      "filename": "evidence.tar.gz",
+      "sha256": "c870c0d80b964b25d7ab0c0a59fee536b1a68b428b23137dfd1e88bf94fff86b",
+      "bytes": 10336373
+    }
+  ]
+}
