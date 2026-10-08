@@ -827,3 +827,80 @@ live HEAD/index字节/暂存状态与上轮一致，用户figure等排除文件�
 未改冻结生成代码、参数、预测、计划状态或定时任务，未发外部消息。
 整体尚未完成，23:12距Oct9 12:00截止约12小时48分；授权队列继续执行，
 已有ETA仍不是按时完成证明。
+
+### 13.13 Oct9 00:35 追加全部受影响补跑，已实际登记自动接续
+
+用户明确要求把新发现的问题也排队，生成跑错/受生产者流依赖影响的原结果
+补跑，前批约凌晨3点结束后自动接上；继续执行每小时巡检和每组完成即推送。
+这里的“受影响”指静态路径确实存在未建立调用流依赖，不能据此断言每一条
+历史预测都错误，也不能把128题稳定性修复当成追回论文2.204点的证据。
+
+接续严格按完成状态和进程退出触发，不设03:00固定开始：原28批最后NeXT
+TextVQA FULL → 已登记的3项5000题Text K32控制（E2/AZ2/E1） → 12项核心
+wait-only补跑 → 32项旧入口wait-only补跑。原监督/预测/生产源码不改；新
+worker只在内存增加调用流等待的3个AST节点，alpha0.5/beta2/lambda0.25
+及原图像、问题、提示、生成预算保持，单beta1仍仅是单独发布默认敏感性控制。
+
+共同目录为 `Qwen_vl/outputs/audit_followup_20261008/
+streamwait_continuation_20261008/`。phase1于北京时间00:13:39实际注册
+监督PID2391998，`streamwait_repair_continuation.state.json`有started与12
+registered_jobs、7publication_expected_groups；当前合法等待原3控制。12项
+共39119题：Text E/AZ64/128及FULL，SQA E/AZ32/64/128及FULL；Text K32
+已包含于前3控制，v15 blocking Text/SQA无此流依赖问题而不重复生成。worker
+SHA d2b213ab51bf6cdee1a20f92b5a8b236f64a8ea144bea0a61b82d36b2552fafd；
+controller SHA30296dc9ee8e3e139e666b1c7e79ef9783ef968588c594e3f19a7dee8eb74c0a；
+plan SHAc9e3f6248d2e0e2f032663fcbb1972ed30aab74f35496c583848d9159917c850。
+47项worker、13项调度CPU门及真实57source/12路径发布门通过。
+
+phase2也已实际注册监督PID2430956，`legacy_streamwait_continuation.state.json`
+为waiting_for_phase1、started非空、32registered_jobs/29publication_groups、
+child_pids=[]；164冻结来源校验通过。32项共224199题：v15 POPE4项、MME5项、
+GQA5项；NeXT POPE/MME/GQA/VizWiz/MMBenchEN/CN各3项AZ预算。v15 POPE32
+已经完整wait-fixed，排除重复；NeXT旧POPE不完整的FULL/E128不伪装有效完成。
+3组v15 K128 E/AZ公平配对、3组v15 FULL、23组独立单臂审计，单臂没有本地
+EADP配对，不从论文数字伪造本地基线。顺序为全部MME→POPE→MMBenchEN/CN→
+VizWiz→全部GQA，任务内部可跨单双组并行。workerSHA
+1c8bb72fc855ffc26b3273ac6dfdf327c8d2fb56eded19e7d8cf4cb4c2f31fe3；
+controllerSHA82a7ce81194bf15b0f4d898b23f14a68ef88a8756b8c81ab25e18b94bcd77f77；
+planSHAd63b92f5bcee064484b08392a09504592b6a8026d007564f5c1a787f7ada6972。
+所有32新协议统一attempt2，原完整预测及attempt1控制协议保留。
+
+phase2第一次CPU准备后、任何actual --run/GPU生成前，发现GQA的官方每题报告
+遍历set导致不同hashseed下列表顺序不同，会误拒绝完整评分。旧worker、旧
+controller、32attempt1协议、prepared计划/状态、旧test精确源码归档至
+`prepared_only_archive_20261008T163137Z/`；没有对应预测/runtime/score/finished/log。
+之后按原问题序固定GQA/VizWiz报告与精确value的求和序，仅改变报告序，不改
+每题判定或官方数学。37 CPU tests通过，GQA/VizWiz各两个真实hashseed子进程
+完整报告相同，32历史非空官方summary/每题完全相同（报告序归一）。完整EOS
+空答、MMBench字母提取失败保留完整分母按官方计错，不能据答案错误拒整臂；
+CPU门只在隔离namespace去掉严格证明的empty-only冗余拒绝条件，源scorer冻结。
+第二次14项调度门通过。具体恢复边界记于legacy_prepared_only_recovery_provenance.json。
+
+原脚本只能恢复历史recipe，历史外部env/实际进程argv未记录，不补称已知。
+NeXT VizWiz/MMBench原max_new_tokens1024保留，旧loader128保留；MMBenchCN
+旧脚本省略--lang而默认en，此次wait-only控制明确保留en，尚不能标成论文协议
+完全一致。MME按已验证官方2374 GT（162条历史标签差异已纠正）精确perception
+原始点数评分，不叫准确率百分点；MMB4876行/1292循环组；POPE8910随机2910。
+纯评分错误可以CPU重评；这些legacy生成另有流风险所以仍补跑。perf2 prevision
+计时同步阻断此次流风险，不机械重跑perf2；无关Qwen与有效blocking入口不重复。
+
+所有监督器最多2个真实模型，包括尚未建立NVML context的loading reservation。
+第二槽需第一worker实际NVML和完整prediction/runtime首行，free>=22500MiB。
+NeXT FULL必须真实独占且free>=32000MiB；v15 FULL原内存spec允许22500及并发。
+只豁免真实Ollama runner且0MiB，未知零上下文占slot。phase2启动必须phase1全12
+完整官方分数和成功marker、supervisor/children退出，原三控制也完整成功退出。
+任何worker失败保留部分产物并停自有子进程，不覆盖原结果或伪造完成marker。
+
+publisher已于00:31:37恢复active PID2423330，冻SHA
+ ae9fc06bcb69dc20c2e2987badda79a95474019fa38c1ef58f9a7eed7a477d57，57项CPU门通过。
+实际scope为原17组+诊断2组+phase1 7组+phase2 29组，共55；必须全部完整评分并
+远端确认才结束。legacy单臂写独立repaired_legacy_results.csv，旧paired CSV
+保留；MMB含base64图像的原TSV不归档图像payload，而归档4876行无图GT、原SHA
+及imagehashmanifest；MME评分zip归档2374规范GT JSON并保留原zipSHA引用。
+用户figure/driver、私有env/hourly/state/lock与模型图像不夹带，live HEAD/index
+保持194562d和原87ad06fd…字节；origin正常快进推送，绝不推upstream。
+
+私有小时prompt已纳入实际phase1/phase2与55组远端发布，原28独立完成不停止timer。
+32项旧日志累计15.297 GPU小时，理想双槽7.649小时只是下界；连同前序关键控制，
+核心暂估Oct9上午07–09点，全部legacy可能持续到Oct9下午或更晚，不能承诺12点
+全部完成。以真实进度更新ETA，优先交付论文核心对照，不承诺方法或复现必增2点。
