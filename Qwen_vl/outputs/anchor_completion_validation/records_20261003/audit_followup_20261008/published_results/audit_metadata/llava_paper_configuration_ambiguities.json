@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-08",
+  "official_commit": "e1a08801461c181871b9ff1cb0803b8e9966f083",
+  "paper_source": "https://arxiv.org/html/2607.02484v1#S5.SS6",
+  "official_repository": "https://github.com/SJTU-DeepVisionLab/EADP",
+  "source_sha256": {
+    "LLaVA/scripts/v1_5/eval/mme.sh": "cc06dfb6b1ef3c2db78a72d14feb03e07bbd00f2af212d3a1f004a0c3607c26c",
+    "LLaVA/scripts/v1_5/eval/textvqa.sh": "4e32cb2497b6cf46486a0543b4797dd9febb36bd067ce14ec7d68ca01807dc03",
+    "LLaVA/llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+    "LLaVA/llava/model/llava_arch_ablation.py": "6a6d850e936649aa42a45fbe710b30346e30bc19dd509246cd7be862bf4a0de8",
+    "README.md": "7898e65506ff2310c77d236a9e3297701e2ea7dc39c7b16730d2ce15cba04966"
+  },
+  "verified_code": {
+    "mme_and_textvqa_shell_beta_default": 1.0,
+    "main_llava_entropy_keep_ratio_call": 0.2,
+    "entropy_env_read_only_in_ablation_arch": true,
+    "local_frozen_alpha": 0.5,
+    "local_frozen_beta": 2.0
+  },
+  "paper_table7_printed_ablation_cells": {
+    "q_0.5_MME": 1439.0,
+    "beta_2.0_MME": 1412.4,
+    "beta_10.0_MME": 1439.0
+  },
+  "interpretation": "The published main-table per-task execution arguments are unavailable. Script defaults and ablation cells cannot uniquely establish their identity. This is a remaining configuration-provenance ambiguity, not proof that beta10 or q0.5 generated the main row.",
+  "action": "No parameter adjustment/sweep. Keep current frozen setup and mark paper configuration identity unverified; preserve all original predictions."
+}

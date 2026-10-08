@@ -7,6 +7,7 @@ detached worktree and a normal fast-forward push to the fixed origin branch.
 from __future__ import annotations
 
 import argparse
+import csv
 import datetime
 import fcntl
 import hashlib
@@ -47,8 +48,10 @@ NEW = ['docs/evaluation_reproduction_audit_20261008.md',
  'build_repair_run_summary.py','check_sqa_reuse.py','mme_canonical_score.py','mme_convert_canonical.py',
  'monitor_repair_hourly.py','official_score.py','run_hourly_repair_agent.py','run_repair_queue.py',
  'run_sqa_shipped_control.py','run_textvqa_official.py','textvqa_runtime_launcher.py',
- 'vizwiz_official_normalization.py','publish_repair_results.py')]]
+ 'vizwiz_official_normalization.py','publish_repair_results.py','test_publish_repair_results.py')]]
 ALLOWLIST = TRACKED + NEW
+METADATA_ARTIFACTS = ['llava_paper_configuration_ambiguities.json','mme_dependency_impact.json',
+                      'audit_provenance_manifest.json','sqa_shipped_control_analysis.json']
 
 
 def now():
@@ -325,6 +328,41 @@ def remote_head():
     return text.split()[0]
 
 
+def index_fingerprint():
+    # Stage mode/blob/path identifies user staging; index stat cache does not.
+    return digest(command(['git','ls-files','--stage','-z']).encode())
+
+
+def readable_results(history):
+    stream=io.StringIO(newline='')
+    columns=['group_id','model','task','budget','EADP','AnchorZip','AZ_minus_EADP','FULL','n','metric','manifest']
+    writer=csv.DictWriter(stream,fieldnames=columns);writer.writeheader()
+    lines=['# Published repaired-protocol results','',
+           'Only complete, independently scored comparison groups appear here. ',
+           'Read [paired_results.csv](paired_results.csv) for scores and each group manifest for prediction, input and source SHA256 evidence.',
+           '', 'TextVQA uses all 5000 official validation questions. ScienceQA uses the 2017 image questions in the shipped CQM-A input. POPE uses the three-category mean F1 over 8910 predictions with the controlled CUDA stream wait.',
+           '', '| Group | EADP | AnchorZip | AZ − EADP | FULL | Evidence |',
+           '|---|---:|---:|---:|---:|---|']
+    for group_id,entry in sorted(history.items()):
+        scores=entry['scores'];parts=group_id.split('_');full=group_id.endswith('_FULL')
+        e=az=None
+        if full:full_value=scores[0]['accuracy']
+        else:
+            full_value=None
+            if scores[0].get('method','').startswith('AnchorZip'):az,e=scores
+            else:e,az=scores
+        manifest=group_id+'/manifest.json'
+        row=dict(group_id=group_id,model=parts[0],task=parts[1],budget=parts[2],
+                 EADP='' if e is None else e['accuracy'],AnchorZip='' if az is None else az['accuracy'],
+                 AZ_minus_EADP='' if e is None else az['accuracy']-e['accuracy'],
+                 FULL='' if full_value is None else full_value,n=scores[0]['n'],metric=scores[0]['metric'],manifest=manifest)
+        writer.writerow(row)
+        values=[row[k] for k in ('EADP','AnchorZip','AZ_minus_EADP','FULL')]
+        display=['' if value=='' else f'{value:.3f}' for value in values]
+        lines.append('| '+group_id+' | '+' | '.join(display)+' | [manifest]('+manifest+') |')
+    return stream.getvalue(), '\n'.join(lines)+'\n'
+
+
 def finish_pending(state):
     """Recover a successful push even if the previous process lost its reply."""
     publication=state.get('pending_publication')
@@ -350,14 +388,13 @@ def finish_pending(state):
 
 
 def publish(plan,state):
-    if not plan['available_groups']:
-        return state
     if command(['git','branch','--show-current'])!=BRANCH:
         raise ValueError('Live branch is not the authorized branch')
     index=Path(command(['git','rev-parse','--git-path','index']))
     if not index.is_absolute():index=ROOT/index
-    before_index=sha(index);local_head=command(['git','rev-parse','HEAD']);base=remote_head()
-    expected_base=state.get('remote_head',local_head)
+    before_index=sha(index);before_staging=index_fingerprint()
+    local_head=command(['git','rev-parse','HEAD']);base=remote_head()
+    expected_base=state.get('remote_head') or local_head
     if base!=expected_base:
         raise ValueError('Origin has an unrecognized new commit; refusing to overwrite audit sources')
     for package in plan['available_groups']+([plan['common_audit']] if plan['common_audit'] else []):
@@ -384,10 +421,26 @@ def publish(plan,state):
             for source in [Path(package['directory'])/'manifest.json',*[Path(p) for p in package['blobs']]]:
                 target=destination/source.name;shutil.copyfile(source,target);selected.append(str(target.relative_to(worktree)))
         groups=[p['group_id'] for p in plan['available_groups']]
-        latest=worktree/DEST/'publication_manifest.json'
         history=dict(state.get('published_groups',{}))
         for package in plan['available_groups']:
             history[package['group_id']]=dict(identity=package['identity'],scores=package['manifest']['scores'])
+        table,readme=readable_results(history)
+        for name,content in [('paired_results.csv',table),('README.md',readme)]:
+            target=worktree/DEST/name;target.parent.mkdir(parents=True,exist_ok=True)
+            target.write_text(content);selected.append(str(target.relative_to(worktree)))
+        for name in METADATA_ARTIFACTS:
+            source=OUT/name
+            if source.is_file():
+                target=worktree/DEST/'audit_metadata'/name;target.parent.mkdir(parents=True,exist_ok=True)
+                target.write_bytes(source.read_bytes());selected.append(str(target.relative_to(worktree)))
+        metadata_manifest={name:dict(sha256=sha(OUT/name),bytes=(OUT/name).stat().st_size)
+                           for name in METADATA_ARTIFACTS if (OUT/name).is_file()}
+        target=worktree/DEST/'audit_metadata/manifest.json';atomic(target,metadata_manifest)
+        selected.append(str(target.relative_to(worktree)))
+        command(['git','add','-f','--',*selected],cwd=worktree)
+        if not command(['git','diff','--cached','--name-only'],cwd=worktree):
+            return state
+        latest=worktree/DEST/'publication_manifest.json'
         atomic(latest,dict(updated_utc=now(),new_groups=groups,published_groups=history,
                           local_head_preserved=local_head,parent_remote_head=base,
                           allowlist=ALLOWLIST,excluded_user_files=sorted(EXCLUDED)))
@@ -397,7 +450,7 @@ def publish(plan,state):
         if any(path not in selected for path in staged):
             raise ValueError('Unexpected staged path in isolated worktree')
         body=parent/'commit-message.txt'
-        body.write_text('Publish completed EADP repair groups\n\nGroups: '+', '.join(groups)+'\n\nComplete predictions, official score checks, runtime/protocol evidence and SHA256 manifests are archived per group. The live checkout index and user edits are preserved.\n')
+        body.write_text(('Publish completed EADP repair groups' if groups else 'Refresh repaired-result tools and readable scores')+'\n\nGroups: '+(', '.join(groups) or 'metadata refresh; existing groups preserved')+'\n\nComplete predictions, official score checks, runtime/protocol evidence and SHA256 manifests are archived per group. The live checkout index and user edits are preserved.\n')
         command(['git','commit','-F',str(body)],cwd=worktree)
         commit=command(['git','rev-parse','HEAD'],cwd=worktree)
         if remote_head()!=base:
@@ -411,12 +464,16 @@ def publish(plan,state):
         reached=remote_head()
         if reached!=commit:
             raise ValueError('Remote branch did not confirm published commit')
-        if sha(index)!=before_index or command(['git','rev-parse','HEAD'])!=local_head:
+        after_index=sha(index);after_staging=index_fingerprint()
+        if after_staging!=before_staging or command(['git','rev-parse','HEAD'])!=local_head:
             raise ValueError('Live HEAD/index changed unexpectedly; inspect before retry')
         state.setdefault('published_groups',{})
         for package in plan['available_groups']:
             state['published_groups'][package['group_id']]=dict(identity=package['identity'],commit=commit,scores=package['manifest']['scores'],published_utc=now())
         state.update(status='published',remote_head=commit,local_head=local_head,live_index_preserved=True,
+                     live_index_byte_sha256_before=before_index,live_index_byte_sha256_after=after_index,
+                     live_index_stat_cache_refreshed=before_index!=after_index,
+                     live_staging_sha256_before=before_staging,live_staging_sha256_after=after_staging,
                      common_audit_published=True,pending_commit=None,pending_groups=[],pending_publication=None,updated_utc=now())
         atomic(STATE,state)
         return state

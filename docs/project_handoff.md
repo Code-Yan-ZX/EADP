@@ -655,3 +655,16 @@ POPE仅完整8910公平同步配对，as-is作为审计辅证。未完成前缀�
 及llava_round2_driver.sh先前图像路径改动不夹带。禁止向upstream推送、force
 push或重置用户工作；每次需查询实际远端确认提交到达后才记成功。独立CPU
 按组发布服务与GPU队列解耦，失败保留待重试状态；小时巡检监控其健康。
+
+21:59:32首批11完整组已实际推送并独立ls-remote确认远端提交
+`95d1a6440e550b78c3a2b5bc2417c7f0359c3a6c`。发布目录为
+`records_20261003/audit_followup_20261008/published_results/`；11组+common共281
+归档member逐项SHA/size复核通过，合计约54MiB、最大blob8.77MiB，GT symlink
+已物化成普通文件。新增NeXT Text32完整配对为E51.996/AZ53.174，方法差+1.178。
+实际提交/推送在独立detached worktree进行，**live工作区HEAD仍194562d、live
+index原SHA完全保留**，未夹带用户已有变动；后续不要仅看live git log就判定
+结果未推，须核对真实origin和 `rerun_batch/group_publish/publish_state.json`。
+publisher源码为 `publish_repair_results.py`，prepare/validate只做CPU核验，
+--publish实际提交推送，--watch --interval30用于每组增量发布。来源漂移、
+完整性或未知远端更新拒绝发布；push丢回复可由pending-publication恢复，禁止
+force。相关9项CPU边界验证通过，确认成功后才记组为已发布。

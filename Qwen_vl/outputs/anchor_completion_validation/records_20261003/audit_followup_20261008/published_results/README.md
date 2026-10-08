@@ -1,0 +1,20 @@
+# Published repaired-protocol results
+
+Only complete, independently scored comparison groups appear here. 
+Read [paired_results.csv](paired_results.csv) for scores and each group manifest for prediction, input and source SHA256 evidence.
+
+TextVQA uses all 5000 official validation questions. ScienceQA uses the 2017 image questions in the shipped CQM-A input. POPE uses the three-category mean F1 over 8910 predictions with the controlled CUDA stream wait.
+
+| Group | EADP | AnchorZip | AZ − EADP | FULL | Evidence |
+|---|---:|---:|---:|---:|---|
+| next_sqa_K128 | 67.675 | 68.071 | 0.397 |  | [manifest](next_sqa_K128/manifest.json) |
+| next_textvqa_K128 | 57.958 | 57.588 | -0.370 |  | [manifest](next_textvqa_K128/manifest.json) |
+| next_textvqa_K32 | 51.996 | 53.174 | 1.178 |  | [manifest](next_textvqa_K32/manifest.json) |
+| next_textvqa_K64 | 55.352 | 56.026 | 0.674 |  | [manifest](next_textvqa_K64/manifest.json) |
+| v15_pope_K32_streamwait | 84.073 | 83.084 | -0.989 |  | [manifest](v15_pope_K32_streamwait/manifest.json) |
+| v15_sqa_FULL |  |  |  | 69.509 | [manifest](v15_sqa_FULL/manifest.json) |
+| v15_sqa_K128 | 69.559 | 69.212 | -0.347 |  | [manifest](v15_sqa_K128/manifest.json) |
+| v15_sqa_K32 | 68.765 | 69.509 | 0.744 |  | [manifest](v15_sqa_K32/manifest.json) |
+| v15_sqa_K64 | 68.815 | 69.113 | 0.297 |  | [manifest](v15_sqa_K64/manifest.json) |
+| v15_textvqa_K128 | 56.390 | 56.604 | 0.214 |  | [manifest](v15_textvqa_K128/manifest.json) |
+| v15_textvqa_K64 | 54.918 | 54.978 | 0.060 |  | [manifest](v15_textvqa_K64/manifest.json) |
