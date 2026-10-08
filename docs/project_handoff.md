@@ -717,6 +717,39 @@ errors=[]；旧error字段保留的是已被成功发布超越的历史网络错
 未修改冻结生成代码、参数或预测，未新建定时任务或发外部消息。距Oct9
 12:00截止约13小时47分，剩余队列继续执行；已有ETA不是按时完成证明。
 
+### 13.11 Oct8 23:13 用户要求继续定位NeXT TextVQA两点残差
+
+用户明确认为EADP复现低约2点可能共同影响新方法，要求继续寻找原因。这是
+新增诊断任务，原28项冻结队列继续执行；不把残差归于普通浮动，不直接给
+两方法都加分，也不为了追分挑参数或样本。NeXT TextE128/64/32完整5000题
+对论文表2及补充表16仍低1.242/1.648/2.204个百分点，原因尚未确定。
+
+独立paper/config/input审计已排除预算映射错误：补充材料§9明确用importance-
+based，Eq26要求floor/min1；CLI32/64为每crop预算，五crop实际156–159/
+316–319属于官方取整。7项核心源码与官方clone逐字相同，官方OCR题文件
+与eval.zip字节相同，固定16题的token IDs、RGB及half后五crop张量、尺寸
+均与官方CustomDataset/collate逐元素相同，全部5000题不触及4096上下文上限。
+本地模型配置仅model_type适配与HF参考不同；权重文件size/header一致但
+未读取14GB payload进行绝对哈希核验，不能称权重全部身份已证明。
+明确数学参数差异是本机beta2 vs官方NeXT脚本默认beta1；论文每任务实际
+beta/q未公开，默认差异不能直接归因为主表差距，单一默认参数对照应独立标注。
+
+找到具体CUDA依赖缺口：`llava_arch.py`的5D AnyRes分支在caller stream
+执行torch.cat（656行）后立即encode_images（657行），CLIP在新image_stream
+读取，入口没有等待caller。后置全局synchronize只等完成，不能保证先写再读。
+NeXT TextE/AZ K32/K64完整runtime均5000题经过此五crop路径；外层blocking
+传输不足以排除内层concat竞争，此前以blocking为由排除Text同步风险的判断
+需撤回。此静态缺口仍未证明能解释2.204点；准备固定128系统抽样、同模型
+as-is/wait-only各重复两遍的独立机制对照，保留所有原始预测与冻结源码。
+先安全等待v15 lane完成空闲slot，至多两个GPU模型；若主lane2转入FULL
+且显存窗口不足，仅中止自己的诊断并保留partial，原队列不受影响。
+
+CPU证据与新诊断产物在`outputs/audit_followup_20261008/
+next_gap_diagnosis_20261008/{paper_config,input_identity,stability}/`。NeXT
+TextFULL仍是下一项关键基线；先量化同步机制，再按证据决定是否需要完整
+两臂wait-only及单一官方默认beta1对照，不能将128题面板当全量准确率或
+以面板选择最好配置替换主表。
+
 ### 13.11 Oct8 23:12 独立巡检：24项完整评分与14组发布核验
 
 本次完整读取交接并核对Git，live分支仍为`codex/anchor-completion-validation`、
