@@ -1,0 +1,265 @@
+{
+  "group_id": "legacy_next_mme_AZ_K128_streamwait",
+  "identity": "8d9e651215ef04c78e9cbcfb80fcd30f61c676c37305bab024b68d8b0493f2bc",
+  "prepared_utc": "2026-10-09T00:10:45.203936+00:00",
+  "scores": [
+    {
+      "method": "AnchorZip",
+      "accuracy": 1462.0508203281313,
+      "value": 1462.0508203281313,
+      "n": 2374,
+      "metric": "MME perception acc+paired-image-acc category sum",
+      "model": "next",
+      "task": "mme",
+      "budget": 128,
+      "group_kind": "single_audit",
+      "protocol": "legacy_native_caller_stream_wait_only_beta2",
+      "guidance_language": "",
+      "output": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mme_LRMAIN025_streamwait_attempt2.jsonl",
+      "prediction_sha256": "97840902892b20095ec08998620ef4dd080f06d0f739dcbb7bfd068b6dd30d52",
+      "official_score_sha256": "847f72dcdd5cde93ae0b480c702348165f032f29daa7bb7edfd7f7a27717f16a",
+      "verified_source_sha256": {
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mme_LRMAIN025_streamwait_attempt2.jsonl": "97840902892b20095ec08998620ef4dd080f06d0f739dcbb7bfd068b6dd30d52",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mme_LRMAIN025_streamwait_attempt2.jsonl.runtime.jsonl": "15ba2a5f4a6f326ff4862eade304290261b85e9e11bdfa718beaf78075be9a6a",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mme_LRMAIN025_streamwait_attempt2.jsonl.protocol.json": "07b6630f62e010e90954b42561791478cd327bbde6eaa98f5bac370d7738cfaf",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mme_LRMAIN025_streamwait_attempt2.control.protocol.json": "95280f29d4d7908054dbf5dd733d335b04793d5611ddd992d17516adb52a8791",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mme_LRMAIN025_streamwait_attempt2.official.score.json": "847f72dcdd5cde93ae0b480c702348165f032f29daa7bb7edfd7f7a27717f16a",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mme_LRMAIN025_streamwait_attempt2.finished.json": "419fdde653834148d126f5cba55bc4919d8b9f056492aac15a70f42812d3ab2b",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_affected_inventory.json": "56088479e236ad9d9606b3ecb96f08c98e92029dea5e89a3df707657e120f6f9",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_stream_panel.py": "0d3e1766d4bf9594f38c16feb587fff089622e6ddbbca420cc70a5781863e8e4",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_fast/run_pope_streamwait_control.py": "7405822da63292bf53efa5d48a7ac712c9a3804d66c0d5c403119c3e9403f956",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py": "cf689cad1a922455f004e59ad8677863a3a3952132ce68e3bf16821bbd75fc26",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/official_score.py": "53760295975d468de59bac0877aaceb3a90e88250bd24ff673ddb1af19e2a114",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/rescore_official_20261008.py": "1626ad817776efab8d3b045dd8f3533ab4bda722157748f0302802444873543c",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/vizwiz_official_normalization.py": "a8b1fb79eaa2c581e59c9a7761734e81e6bd253246e2fe8e0b62bffbcd409f2d",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mmben_circular_score.py": "562cb0f1be7408f7d9d19a950415f557f5483956b17571d4ca328d53ae3991a2",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/builder.py": "bbb6115569dbc3407506f0370129783d60994e88c3e6924f92ba4763131235a3",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_projector/builder.py": "8abac548091005fd4fe3fbc543c15461fca0625bee34e9f45b6a10595f518bc1",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/language_model/llava_llama.py": "ff620b6fd6d1aeccca0b211c431e5b0fa382707a457034e5d30b19e174a9f76a",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/conversation.py": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/constants.py": "575e85e5c444f37d92945e37081cab71201b625e0eae48848f38047c5277b185",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/config.json": "60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/generation_config.json": "c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/llava_mme.jsonl": "9f67707cb72d2a71df955d0dce84337f2f22eafe2ed473ca3e148c187ac360c5",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mme/LRMAIN025.jsonl": "0b5e36f9664092e28963dd766e7090f60df5813d880b9ce538d54a3b28bf26b7",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/eval_tool.zip": "b8125e2a7c3418e5761c12b3cfe4f1624b3c53ba44009e75b7d3f797d3d8acee",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_streamwait_worker.py": "1c8bb72fc855ffc26b3273ac6dfdf327c8d2fb56eded19e7d8cf4cb4c2f31fe3",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_mme_identities.manifest.json": "28d7b08ff20a970689c810d3766a7e89a1627e626ac929fdabfa59e718387386",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_mme_images.manifest.json": "1ebaa84ee228209ec3c7ad9f1ec6bcb573fd6930124830662cd838df76fdb7c8"
+      },
+      "interpretation": "independent native-protocol stream-wait repair; single arms have no paired local EADP comparison"
+    }
+  ],
+  "files": {
+    "EXTERNAL_SOURCE_REFERENCES.json": {
+      "sha256": "048fcf964d4b776f26edf13899590bc78b74a97bbbe38338bd814fbd69deaee6",
+      "bytes": 304,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/constants.py": {
+      "sha256": "575e85e5c444f37d92945e37081cab71201b625e0eae48848f38047c5277b185",
+      "bytes": 348,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/conversation.py": {
+      "sha256": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+      "bytes": 15418,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/mm_utils.py": {
+      "sha256": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+      "bytes": 9919,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/builder.py": {
+      "sha256": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+      "bytes": 8897,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/language_model/llava_llama.py": {
+      "sha256": "ff620b6fd6d1aeccca0b211c431e5b0fa382707a457034e5d30b19e174a9f76a",
+      "bytes": 7007,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/llava_arch.py": {
+      "sha256": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+      "bytes": 41627,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/llava_arch_anchorzip.py": {
+      "sha256": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+      "bytes": 8123,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/multimodal_encoder/builder.py": {
+      "sha256": "bbb6115569dbc3407506f0370129783d60994e88c3e6924f92ba4763131235a3",
+      "bytes": 495,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/multimodal_encoder/clip_encoder.py": {
+      "sha256": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+      "bytes": 6958,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/multimodal_projector/builder.py": {
+      "sha256": "8abac548091005fd4fe3fbc543c15461fca0625bee34e9f45b6a10595f518bc1",
+      "bytes": 1488,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/MME/llava_mme.jsonl": {
+      "sha256": "9f67707cb72d2a71df955d0dce84337f2f22eafe2ed473ca3e148c187ac360c5",
+      "bytes": 564644,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/anchorzip_p3/next_mme/LRMAIN025.jsonl": {
+      "sha256": "0b5e36f9664092e28963dd766e7090f60df5813d880b9ce538d54a3b28bf26b7",
+      "bytes": 654534,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_stream_panel.py": {
+      "sha256": "0d3e1766d4bf9594f38c16feb587fff089622e6ddbbca420cc70a5781863e8e4",
+      "bytes": 19643,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/rerun_fast/run_pope_streamwait_control.py": {
+      "sha256": "7405822da63292bf53efa5d48a7ac712c9a3804d66c0d5c403119c3e9403f956",
+      "bytes": 15322,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_affected_inventory.json": {
+      "sha256": "56088479e236ad9d9606b3ecb96f08c98e92029dea5e89a3df707657e120f6f9",
+      "bytes": 141447,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_mme_identities.manifest.json": {
+      "sha256": "28d7b08ff20a970689c810d3766a7e89a1627e626ac929fdabfa59e718387386",
+      "bytes": 580518,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_mme_images.manifest.json": {
+      "sha256": "1ebaa84ee228209ec3c7ad9f1ec6bcb573fd6930124830662cd838df76fdb7c8",
+      "bytes": 329960,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_streamwait_continuation.plan.json": {
+      "sha256": "d63b92f5bcee064484b08392a09504592b6a8026d007564f5c1a787f7ada6972",
+      "bytes": 143473,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_streamwait_worker.py": {
+      "sha256": "1c8bb72fc855ffc26b3273ac6dfdf327c8d2fb56eded19e7d8cf4cb4c2f31fe3",
+      "bytes": 29901,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mme_LRMAIN025_streamwait_attempt2.control.protocol.json": {
+      "sha256": "95280f29d4d7908054dbf5dd733d335b04793d5611ddd992d17516adb52a8791",
+      "bytes": 18669,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mme_LRMAIN025_streamwait_attempt2.finished.json": {
+      "sha256": "419fdde653834148d126f5cba55bc4919d8b9f056492aac15a70f42812d3ab2b",
+      "bytes": 348,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mme_LRMAIN025_streamwait_attempt2.jsonl": {
+      "sha256": "97840902892b20095ec08998620ef4dd080f06d0f739dcbb7bfd068b6dd30d52",
+      "bytes": 654528,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mme_LRMAIN025_streamwait_attempt2.jsonl.protocol.json": {
+      "sha256": "07b6630f62e010e90954b42561791478cd327bbde6eaa98f5bac370d7738cfaf",
+      "bytes": 5381,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mme_LRMAIN025_streamwait_attempt2.jsonl.runtime.jsonl": {
+      "sha256": "15ba2a5f4a6f326ff4862eade304290261b85e9e11bdfa718beaf78075be9a6a",
+      "bytes": 2286864,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mme_LRMAIN025_streamwait_attempt2.official.score.json": {
+      "sha256": "847f72dcdd5cde93ae0b480c702348165f032f29daa7bb7edfd7f7a27717f16a",
+      "bytes": 1009054,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/schedule_legacy_streamwait_continuation.py": {
+      "sha256": "82a7ce81194bf15b0f4d898b23f14a68ef88a8756b8c81ab25e18b94bcd77f77",
+      "bytes": 18969,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": {
+      "sha256": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639",
+      "bytes": 14972,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py": {
+      "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5",
+      "bytes": 7229,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/mmben_circular_score.py": {
+      "sha256": "562cb0f1be7408f7d9d19a950415f557f5483956b17571d4ca328d53ae3991a2",
+      "bytes": 2220,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py": {
+      "sha256": "cf689cad1a922455f004e59ad8677863a3a3952132ce68e3bf16821bbd75fc26",
+      "bytes": 10206,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/official_score.py": {
+      "sha256": "53760295975d468de59bac0877aaceb3a90e88250bd24ff673ddb1af19e2a114",
+      "bytes": 7523,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/rescore_official_20261008.py": {
+      "sha256": "1626ad817776efab8d3b045dd8f3533ab4bda722157748f0302802444873543c",
+      "bytes": 17789,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/vizwiz_official_normalization.py": {
+      "sha256": "a8b1fb79eaa2c581e59c9a7761734e81e6bd253246e2fe8e0b62bffbcd409f2d",
+      "bytes": 5275,
+      "archived_as": "regular_file"
+    },
+    "derived_inputs/mme_canonical_ground_truth.json": {
+      "sha256": "70351ab452f9de53c2cfc6d289e8f788d2440c85f127993a53eb2b870e6c5b22",
+      "bytes": 473020,
+      "archived_as": "regular_file"
+    },
+    "external_reference/60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60/config.json": {
+      "sha256": "60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60",
+      "bytes": 1584,
+      "archived_as": "regular_file"
+    },
+    "external_reference/c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6/generation_config.json": {
+      "sha256": "c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6",
+      "bytes": 170,
+      "archived_as": "regular_file"
+    }
+  },
+  "source_symlinks_dereferenced": true,
+  "contains_weights_or_images": false,
+  "omitted_source_payloads": {
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/MME/eval_tool.zip": {
+      "archived": false,
+      "bytes": 107320,
+      "reason": "verified official MME archive; canonical GT labels archived as JSON",
+      "sha256": "b8125e2a7c3418e5761c12b3cfe4f1624b3c53ba44009e75b7d3f797d3d8acee"
+    }
+  },
+  "archive_sha256": "0b0a87cd16fdbc8a3421643369a1cde65c2c51d1d35bc6d9f110dbf256cf1ca5",
+  "blobs": [
+    {
+      "filename": "evidence.tar.gz",
+      "sha256": "0b0a87cd16fdbc8a3421643369a1cde65c2c51d1d35bc6d9f110dbf256cf1ca5",
+      "bytes": 738880
+    }
+  ]
+}
