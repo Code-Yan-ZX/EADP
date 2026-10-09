@@ -4,6 +4,7 @@ VizWiz uses two new full arms per model under predeclared public defaults alpha0
 {
   "followup_v15_vizwiz_K128_release": {
     "identity": "d4d01148332b6e176c917153e1bc53deb5fbdcb8d47c594823a34eb170c371cc",
+    "commit": "848accca72f5d003a2052bedb5cc7fb0022b2f65",
     "scores": [
       {
         "model": "v15",
@@ -27,6 +28,7 @@ VizWiz uses two new full arms per model under predeclared public defaults alpha0
         "prediction_sha256": "b9da153342f19f6813c407e6e8fa29e652084bae8e95b48c74770a096ef5ed4a",
         "protocol_sha256": "2409c5a08e071310d2454c51a2d556eca10610637e69fba60ae3508bed18a2f5"
       }
-    ]
+    ],
+    "published_utc": "2026-10-09T14:15:57.371977+00:00"
   }
 }
