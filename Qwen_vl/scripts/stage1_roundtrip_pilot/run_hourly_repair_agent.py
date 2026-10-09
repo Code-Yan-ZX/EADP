@@ -17,6 +17,22 @@ import sys
 ROOT = Path(__file__).resolve().parents[3]
 OUT = ROOT / 'Qwen_vl/outputs/audit_followup_20261008/rerun_batch/hourly_monitor'
 TIMER = 'codex-eadp-repair-monitor-20261008.timer'
+FOLLOWUP_REQUEST = OUT.parents[1] / 'post_batch_followup_20261009/request.json'
+
+
+def retain_followup_monitoring(result, request_path=FOLLOWUP_REQUEST):
+    """A finished original batch must not stop a pending user follow-up."""
+    if not result['all_experiments_complete'] or not request_path.exists():
+        return result
+    request = json.loads(request_path.read_text())
+    if request.get('status') == 'complete':
+        return result
+    result = dict(result)
+    result.update(status='needs_attention', all_experiments_complete=False,
+                  summary_zh='原批次已完成，但用户授权的三行核查和必要续跑尚未完成；巡检继续。')
+    result['findings'] = [*result['findings'],
+                          'Post-batch follow-up remains ' + str(request.get('status'))]
+    return result
 
 
 def save(path, value):
@@ -97,6 +113,8 @@ def main():
             raise ValueError('Inspection response did not match the required schema')
         if (result['status'] == 'complete') != (result['all_experiments_complete'] is True):
             raise ValueError('Completion status and experiment-completion flag disagree')
+        result = retain_followup_monitoring(result)
+        save(last_message, result)
         if result['all_experiments_complete']:
             checked = subprocess.run(
                 [sys.executable, str(Path(__file__).with_name('monitor_repair_hourly.py')), '--once'],
