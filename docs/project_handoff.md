@@ -1729,3 +1729,42 @@ status仍waiting_for_registered_batch，没有额外登记GPU臂。75臂56完整
 最新论文修改日期为Oct10、具体小时未给，Oct9中午仅旧目标；既有20–23时估计
 只含原批，尚不含后续工作。检查器自身先读未产出评分报告和误将动态state当
 静态SHA的首轮记录已保留并纠正，最终检查errors=[]，未改冻结源码/参数/原件。
+
+
+### 13.32 Oct9 12:15 独立小时巡检：legacy完成17项，41组远端确认
+
+完整分段读取交接，live分支仍codex/anchor-completion-validation、HEAD194562d；
+原28项118917题完整身份/分母/官方精确评分通过，1411来源SHA与61日志通过，
+summary JSON/CSV28行且errors=[]，原监督器/helper/watcher正常退出。128面板、
+K32三项各5000及phase1全12项39119题的严格来源/runtime/评分/成功marker和
+完成进程退出再次通过；初始NeXT Text128无新增runtime的既有边界保留。
+
+phase2当前17/32完整、91114题，1生成/14pending；较上轮新增NeXT POPE AZ128
+87.7158368975429、v15 POPE FULL85.87870689695656（各8910，random2910），
+NeXT MMB_EN AZ32/64分别60.8359133126935/62.22910216718266（各4876行、
+官方1292循环组）。完整exit0/source/runtime/score/finished均通过，单臂仍为
+审计单臂，不挪用其他预算EADP伪造配对。17645/17645文件SHA及2584/2584内嵌
+图像SHA通过，四plan来源32/38/57/164及授权overlay/原target/plan一致，30次
+continuation启动门及MME→POPE→MMB_EN优先级通过，旧SIGTERM不是新故障。
+
+12:10:37→12:12:32，同启动身份PID3618901的NeXT MMB_EN AZ128完整预测及
+runtime190→498/4876，输出与日志mtime同步增长、末次age<.22秒。A40恰一个
+登记模型/reservation，无未知CUDA context；它是EN最后一项，冻结task顺序须
+等其完整评分才转CN，所以空第二槽是合法等待。前驱AZ64完整后约0.898秒正常
+接续K128，启动时无其他context/reservation、free44257MiB。CPU监督器2558609
+授权overlay/原target/plan/startticks与上轮一致，未暂停且无新日志异常。
+12:10:36轻量探针issues/events/actions均空，小时与5分钟timer均active。
+
+publisher2560860 active/running、授权overlay/原source/启动身份通过；独立两次
+ls-remote确认origin a4efd8640e0130f3c60c33410ed83e347b82eea8，41/55组commit均
+为真实远端ancestor，14组合法等待，pending_commit/publication/error空。42归档、
+1576member、1645来源检查、32份官方score/17行legacy CSV及278提交路径allowlist
+通过；134静态证据通过，用户figure及live index/暂存保留。巡检未stage/commit/push。
+
+本机证据rerun_batch/hourly_monitor/check_20261009T041029Z/。后续GQA/VizWiz报告、
+表格及45份来源引用通过，动态state/交接旧SHA仅作历史引用；两任务注册队列仍
+pending，没有新后续GPU臂。已更新request.last_hourly_inspection，status保持
+waiting_for_registered_batch；原75臂60完整、55组41远端确认，全部原批通过后
+立即执行已授权三行审计和必要独立续跑，不提前停timer。最新论文修改日为Oct10，
+具体小时未指定，Oct9中午旧目标不再作为停机条件。本次没有进程信号/重启/新增
+GPU生成或冻结源码/参数/计划/预测/评分改动，最终errors=[]，无需故障恢复。
