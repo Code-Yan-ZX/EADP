@@ -1572,3 +1572,46 @@ generation_config均无max_time。输出未保存EOS/finish_reason，因此不�
 已证明双进程并发造成。全量E32 51.996→52.086仅+.090，剩余paper差2.114
 相当约106道满分题，现有文件没有漏答支撑该解释。未做严格GPU独占vs双进程
 对照，不排除所有并发数值/时序影响；本次只CPU读原件写派生证据，未动GPU队列。
+
+
+### 13.28 Oct9 10:16 独立小时巡检：legacy完成12项，36组远端确认
+
+完整读取起始1555行交接，并补读巡检期间root新增19行CPU漏答核查；当前
+live分支codex/anchor-completion-validation、HEAD194562d和index SHA87ad06fd…
+保持，用户既有变动/暂存保留。原28项118917题、完整题面/Text复合键、官方
+分母/精确评分、1411/1411来源、61日志与summary JSON/CSV28行通过，errors=[]；
+原监督器/helper/watcher已退出，初始NeXT Text128无新增runtime的边界保留。
+128面板128/512、K32三臂各5000、phase1全12项39119题的来源/runtime/官方
+评分/exit0/finished、成功marker和完成进程退出再次通过。扩展17471/17471
+文件SHA及2584/2584内嵌图像SHA匹配，四plan来源32/38/57/164及固定
+overlay/target/plan身份通过。
+
+phase2当前12/32完整、54632题，2生成/18pending。新增NeXT POPE AZ32
+82.79087792370159、v15 POPE AZ64 86.52213413116876，均8910完整题
+(random2910)、官方macro F1、exit0及严格source/score/finished通过；保持
+审计单臂身份，不伪造同预算EADP配对。10:10:25至10:13:53，NeXT POPE
+AZ64/128同启动身份PID3375750/3376381预测及runtime分别3626→4124、
+2296→2618/8910，输出和日志均持续增长。A40恰两个登记模型/reservation，
+GPU使用44021MiB，无未知CUDA context；监督器2558609授权overlay/target/
+plan/startticks与上轮一致、未暂停，实际recovery日志无新异常。全部26次
+continuation启动门与任务优先级门通过，旧SIGTERM error不是新故障。
+
+独立只读复核新增64题面板64样本/256生成、12源码SHA、64图像SHA、题序、
+原5000题wait基线对应答案、逐题官方分数/result SHA及exit0；诊断worker
+3371129和watchdog3353972均退出，主CPU监督器同身份已恢复。主队列在诊断
+退出约1.28秒后续跑；面板无准确率改善证据，不外推全量。
+
+publisher2560860 active/running、maintenance=false/source_ready=true；授权
+overlay/原target来源与实际argv通过。10:10与10:14:11独立ls-remote确认origin
+10fa0fc2811effb97965e0d097a8792efa4e6081，36/55组commit均为远端ancestor；
+19组合法待完成，pending_commit/publication/error为空。37归档/1390member、
+1471来源检查、57预测224809归档行、158metadata/134static及268提交路径
+allowlist通过；legacy CSV12行保留指标和单臂身份，未夹带用户figure等变动。
+
+本机证据rerun_batch/hourly_monitor/check_20261009T021008Z/。仅CPU只读
+巡检、保存快照并追加事实，未信号/重启进程、改冻结代码/参数/计划/预测/score、
+stage/commit/push或改timer。最终轻量checker一次目录层级笔误已留证修正，
+并发交接更新触发写前保护后已补读保留，均为检查器自身事件；最终审计
+errors=[]，无实验恢复。75个登记全量臂中55完整，20项仍未完成（全分母
+169567题，活跃前缀另扣）；距12:00约1小时44分，截止风险明显，继续授权
+队列。全部登记scope及55组远端确认前all_experiments_complete=false。
