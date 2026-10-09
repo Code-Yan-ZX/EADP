@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-09T12:20:06.655077+00:00",
+  "updated_utc": "2026-10-09T12:42:26.119525+00:00",
   "new_groups": [
-    "legacy_v15_gqa_FULL_streamwait"
+    "legacy_next_gqa_AZ_K128_streamwait"
   ],
   "published_groups": {
     "v15_textvqa_K128": {
@@ -3567,6 +3567,7 @@
     },
     "legacy_v15_gqa_FULL_streamwait": {
       "identity": "da32b320500971ecf5a129f6ada304f466812bfbefea73877a1fe224bcbe1b25",
+      "commit": "5e12370866d265f04e78fc3748a196ee1b4e5005",
       "scores": [
         {
           "method": "FULL",
@@ -3622,11 +3623,71 @@
           },
           "interpretation": "independent native-protocol stream-wait repair; single arms have no paired local EADP comparison"
         }
+      ],
+      "published_utc": "2026-10-09T12:20:13.036277+00:00"
+    },
+    "legacy_next_gqa_AZ_K128_streamwait": {
+      "identity": "1bce5efd2dd4ce7840fa0769e34d9b9456acfc386c514f27c7efe8e4dab302c8",
+      "scores": [
+        {
+          "method": "AnchorZip",
+          "accuracy": 62.617268246144064,
+          "value": 62.617268246144064,
+          "n": 12578,
+          "metric": "GQA exact-match accuracy (%)",
+          "model": "next",
+          "task": "gqa",
+          "budget": 128,
+          "group_kind": "single_audit",
+          "protocol": "legacy_native_caller_stream_wait_only_beta2",
+          "guidance_language": "",
+          "output": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_gqa_LRMAIN025_streamwait_attempt2.jsonl",
+          "prediction_sha256": "573959bbcfbdd08cf9b5039f9a77138e239cc998dc9122f6f6b431da1fdca87c",
+          "official_score_sha256": "11f454ed6475a5dda9b7800dd79098717b2b3b194c3f19e61bc992096e8d351a",
+          "verified_source_sha256": {
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_gqa_LRMAIN025_streamwait_attempt2.jsonl": "573959bbcfbdd08cf9b5039f9a77138e239cc998dc9122f6f6b431da1fdca87c",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_gqa_LRMAIN025_streamwait_attempt2.jsonl.runtime.jsonl": "d08ef4ddd55be15593ab31b45d837f107a37a25177ee41d30acc28ba260c6dff",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_gqa_LRMAIN025_streamwait_attempt2.jsonl.protocol.json": "5c17b3209283bf9a2589b478e17e24edb23e876aeaeae930928131a5c66496d9",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_gqa_LRMAIN025_streamwait_attempt2.control.protocol.json": "8787dce3f3a307a6ff2b83b77da21a5fcd4bc692dc05b9b8df3f6bb72d2f1e07",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_gqa_LRMAIN025_streamwait_attempt2.official.score.json": "11f454ed6475a5dda9b7800dd79098717b2b3b194c3f19e61bc992096e8d351a",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_gqa_LRMAIN025_streamwait_attempt2.finished.json": "9ab2a54a782a99af5b07157776360c7a1b1f9b8966b83a8bfca8ca72cc870069",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_affected_inventory.json": "56088479e236ad9d9606b3ecb96f08c98e92029dea5e89a3df707657e120f6f9",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_stream_panel.py": "0d3e1766d4bf9594f38c16feb587fff089622e6ddbbca420cc70a5781863e8e4",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_fast/run_pope_streamwait_control.py": "7405822da63292bf53efa5d48a7ac712c9a3804d66c0d5c403119c3e9403f956",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/gqa_score.py": "8f69e87d499e9b51fa5e8137a02b774a614c76ff0ca3085b85919636efc08619",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/official_score.py": "53760295975d468de59bac0877aaceb3a90e88250bd24ff673ddb1af19e2a114",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/rescore_official_20261008.py": "1626ad817776efab8d3b045dd8f3533ab4bda722157748f0302802444873543c",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/vizwiz_official_normalization.py": "a8b1fb79eaa2c581e59c9a7761734e81e6bd253246e2fe8e0b62bffbcd409f2d",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py": "cf689cad1a922455f004e59ad8677863a3a3952132ce68e3bf16821bbd75fc26",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mmben_circular_score.py": "562cb0f1be7408f7d9d19a950415f557f5483956b17571d4ca328d53ae3991a2",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/builder.py": "bbb6115569dbc3407506f0370129783d60994e88c3e6924f92ba4763131235a3",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_projector/builder.py": "8abac548091005fd4fe3fbc543c15461fca0625bee34e9f45b6a10595f518bc1",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/language_model/llava_llama.py": "ff620b6fd6d1aeccca0b211c431e5b0fa382707a457034e5d30b19e174a9f76a",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/conversation.py": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/constants.py": "575e85e5c444f37d92945e37081cab71201b625e0eae48848f38047c5277b185",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639",
+            "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/config.json": "60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60",
+            "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/generation_config.json": "c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl": "515aab3142889269480c71212d3b5b8118704d8da6637d767a0cb5bdf80a3d35",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_gqa/LRMAIN025.jsonl": "b5fe0cab8db1d4effbcec8fcbcab84ae8a87ce824b626bb6fe65766c1aa3c30b",
+            "/tmp/gqa12/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_streamwait_worker.py": "1c8bb72fc855ffc26b3273ac6dfdf327c8d2fb56eded19e7d8cf4cb4c2f31fe3",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_gqa_identities.manifest.json": "ea47c7b3ddcaa7b7247e692e72813433631a716f6d8a30fc52b9251f0ca8bc34",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_gqa_images.manifest.json": "07de57dd3878953e768e180ff57eb80d7ccae72606ca2219ef634fc203da79d2"
+          },
+          "interpretation": "independent native-protocol stream-wait repair; single arms have no paired local EADP comparison"
+        }
       ]
     }
   },
   "local_head_preserved": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
-  "parent_remote_head": "48907d4ba3203416adec2604a222733f1f59b66e",
+  "parent_remote_head": "5e12370866d265f04e78fc3748a196ee1b4e5005",
   "allowlist": [
     "Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
     "docs/project_handoff.md",
