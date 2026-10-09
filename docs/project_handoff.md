@@ -1829,3 +1829,43 @@ NeXT名义640/320/160 official:59.254457/58.636258/58.295902；发布算法
 并非新GPU成绩或同机EADP对照，NeXT原始文件仍为pre-wait旧预测。
 证据post_batch_followup_20261009/vizwiz_scoring_verification_20261009.json。
 未改生产源码/旧score/表格/冻结GPU队列，未启动新模型。
+
+
+### 13.35 Oct9 14:14 独立小时巡检：legacy完成21项，45组远端确认
+
+完整分段读取1831行交接并核对live Git，分支codex/anchor-completion-validation、
+HEAD194562d；用户已有变动与index保留。两次基础monitor快照与原28项118917题
+完整身份/题面复合键/官方分母/精确评分通过，1411来源SHA、61日志及summary
+JSON/CSV通过，errors=[]；原监督器/helper/watcher已退出。128面板128/512、
+K32三臂各5000与phase1全12项39119题严格来源/runtime/评分/marker和退出门通过。
+初始NeXT Text128无新增runtime的既有边界保留。
+
+phase2为21/32完整、110618题，2生成/9pending；新增NeXT MMB_CN AZ32/64/128
+各4876行、1292循环组，官方循环准确率51.78018575851393、54.411764705882355、
+55.959752321981426%。完整exit0/source/runtime/score/finished通过；它们仍是
+审计单臂，且冻结wait-only保留lang=en，不能宣称修复了CN指令或已同协议复现论文。
+17777/17777文件SHA和2584/2584内嵌图像SHA匹配，四plan来源32/38/57/164、
+授权overlay/原target/plan均通过；35次启动门及MME→POPE→MMB_EN→MMB_CN→
+VizWiz任务顺序通过。历史SIGTERM error不是新故障。
+
+14:10:57→14:12:45，同启动身份PID3780935/3781567的NeXT VizWiz AZ32/64
+完整预测/runtime分别2688→2896、2541→2741/4319，输出与日志同步增长，
+末次age<0.42秒。完整前缀题面/顺序/guidance/runtime预算门通过，无OOM/Traceback。
+A40恰两个登记模型/reservation，无未知CUDA context；CPU监督器2558609的
+授权argv/父子/startticks与上轮一致、未暂停，当前recovery日志正常。MMB_CN
+完成后已正常接续VizWiz。轻量探针issues/events/actions为空，两既有timer active。
+
+publisher2560860 active/running，授权overlay及原source/启动身份通过；
+独立两次ls-remote确认origin 348592fc2941dc80a297489c7efa938718daba2d，
+45/55组commit均为真实远端ancestor，10组合法待完成，pending_commit/publication/
+error空。46归档、1720member、1777来源检查及36份官方score/21行legacy CSV
+通过，发布allowlist和live index保留；巡检未自行stage/commit/push。
+
+本机证据rerun_batch/hourly_monitor/check_20261009T061048Z/。已读最新VizWiz发布评分核查，
+复核后续报告/表格53份来源引用，GQA/VizWiz审计结论没有被当前前缀超越；
+未把较高发布公式改为官方主分，未重复已排除假设或启动后续GPU。仅更新
+request.last_hourly_inspection及本段事实，request仍waiting_for_registered_batch。
+原75臂64完整、11未完臂完整分母113581题（活跃前缀另扣）。原批全部完成及
+55组origin确认后继续已授权三行审计/独立必要实验，all_experiments_complete=false。
+最新论文修改日期Oct10，小时未指定；旧Oct9中午不是停机条件。本次未信号/
+重启/启动GPU、改冻结源码/参数/计划/预测/评分或timer，最终审计errors=[]。
