@@ -229,7 +229,8 @@
     "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/submission_tables_20261009/paper_tables_source.html": "57c85a3e54b3fa932e9ba62c77ba0c6444a4ccbffe9784f8b8ba520a5fcc77bf",
     "/home/dell/.codex/attachments/2592c72d-5932-4eb7-b533-5bfa2c966a22/codex-clipboard-7701d166-7fca-4710-86c5-5349c98c310b.png": "3ec28417761424ecba104a98a915bc3054e5cf6df5b04c1965545af371c20f34",
     "/home/dell/.codex/attachments/dfb4bd31-d32f-4aec-a218-2d3f20b87f0a/codex-clipboard-bd00b8c7-42d3-490c-989e-00e7fe6e9fff.png": "9e6ed1ec862aac6b412033beda6257b90ed813264e7570cf858a68eba48221f9",
-    "/home/dell/.codex/attachments/27b99e9d-8955-47f1-9048-3b06403f91bb/codex-clipboard-1da31ab0-5166-47ea-b195-0b3caf5155ae.png": "a031d9577d1af3c5f37fe93850e32c61c750e12c4fbaa9f0ea0964156c890cf2"
+    "/home/dell/.codex/attachments/27b99e9d-8955-47f1-9048-3b06403f91bb/codex-clipboard-1da31ab0-5166-47ea-b195-0b3caf5155ae.png": "a031d9577d1af3c5f37fe93850e32c61c750e12c4fbaa9f0ea0964156c890cf2",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/final_table_annotation.py": "de5c33ea236e10545461186a1bcacefc6dd43e2e5869baa5b73b9b8fcc89bdd1"
   },
   "rows": [
     {
@@ -5459,6 +5460,7 @@
     "Qwen EADP HallusionBench recorded/current bank SHA remains unresolved; score is existing audited scoring result, not complete generation provenance.",
     "Other reported methods are parsed from arXiv2607.02484v1 Tables1/2/4; no new reproduction is implied.",
     "Strict exclusive-GPU vs concurrent-GPU comparison is not established by this table.",
-    "Completed VizWiz K128 followup cells use predeclared public validation defaults alpha0/beta1, both EADP and ours; not verified paper argv. Other budget cells retain their explicitly recorded original recipes."
+    "Completed VizWiz K128 followup cells use predeclared public validation defaults alpha0/beta1, both EADP and ours; not verified paper argv. Other budget cells retain their explicitly recorded original recipes.",
+    "Local VizWiz primary scores use official leave-one-annotator-out accuracy. K128 (NeXT nominal640) uses the predeclared alpha0/beta1 public-default pair, not verified paper argv; other budgets retain their recorded recipes. The released min(matches/3) formula is auxiliary only."
   ]
 }
