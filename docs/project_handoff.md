@@ -1615,3 +1615,22 @@ stage/commit/push或改timer。最终轻量checker一次目录层级笔误已留
 errors=[]，无实验恢复。75个登记全量臂中55完整，20项仍未完成（全分母
 169567题，活跃前缀另扣）；距12:00约1小时44分，截止风险明显，继续授权
 队列。全部登记scope及55组远端确认前all_experiments_complete=false。
+
+### 13.29 Oct9 10:33 投稿表格快照
+
+用户要求立即按三张截图更新表格，最新消息将投稿截止说明为明天；不据此修改
+已登记队列或旧截止配置。用户另提出上涨用新、下降用旧：未按分数择优混填，
+改为保留统一修复协议主表及独立旧图/新值对照。新表输出在
+`Qwen_vl/outputs/audit_followup_20261008/submission_tables_20261009/`，
+含latest_tables.json（逐格状态/来源与106个源SHA）、CSV、HTML、LaTeX、
+三个PNG及由表格绘图导出的PDF；ours_old_vs_new.csv/html保留上涨和下降，
+旧图数字仅一位小数，变化不当作方法增益。源LaTeX内置编译器报
+“Unable to find standard directories for platform”，未声称编译成功，未安装TeX。
+
+89行保留arXiv2607.02484v1表1/2/4全部相应reported基线，原始HTML及解析表
+本地留存。LLaVA按既定Avg7公式从reported列重算，缺MMB时本地Avg7留空；
+GQA、v15 FULL POPE与NeXT Viz/POPE64/128沿用旧值但明确†待重跑，
+不把旧值称修复完成。v15/NeXT已完整Text/SQA、MME及POPE已完成臂按
+既定新协议替换，并核预测/评分SHA、runtime、退出码/finished。
+Qwen256取p1_unified，128/64取既有STATUS完成表及HallBench更正，未新跑Qwen。
+快照phase2为12/32完整，两NeXT POPE64/128生成中；未动GPU或冻结队列。
