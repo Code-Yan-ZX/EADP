@@ -2049,3 +2049,39 @@ waiting_for_registered_batch，没有额外登记GPU臂。原75臂73完整、余
 探针issues/events/actions为空，两既有timer active。本次未信号/重启/启动GPU，
 未改冻结源码/数学/参数/计划/预测/评分或timer，最终errors=[]，
 all_experiments_complete=false，不提前结束巡检。
+
+
+### 13.41 Oct9 20:17 独立小时巡检：legacy完成30项，53组远端确认
+
+完整分段读取2051行交接并核对live Git，分支
+codex/anchor-completion-validation、HEAD194562d。先查轻量探针与真实活跃输出，
+再执行两次CPU monitor快照；原28项118917题的完整题面/复合键/官方分母/
+精确评分、1411来源SHA及61日志再次通过，summary JSON/CSV28行且errors=[]。
+原监督器/helper/watcher正常退出。128面板128/512、K32三臂各5000和phase1
+全12项39119题的来源/runtime/严格官方评分/成功marker及进程退出通过。
+初始NeXT Text128无新增runtime的证据边界保留。
+
+phase2为{'complete': 30, 'generating': 2}，完整199043题；本轮新增完整任务数
+0，详细成绩与来源保存在new_completed_results.json。
+2026-10-09T12:11:41.394509+00:00至2026-10-09T12:16:32.126287+00:00，
+next_gqa_LRMAIN025 PID42096 8077→8399/12578；v15_gqa_FULL PID103707 11306→12102/12578；完整预测/runtime与日志均增长，真实argv、父子及startticks匹配。
+A40恰两个登记模型/reservation，无未知CUDA context；CPU监督器2558609的
+授权overlay/原target/plan与上轮启动身份一致、未暂停，实际recovery日志无异常。
+历史SIGTERM error不是新故障。扩展18092文件SHA及
+2584内嵌图像SHA均匹配，四plan来源32/38/57/164与44次
+启动门、任务顺序通过。活跃前缀不作为完整成绩。
+
+publisher2560860 active/running，授权overlay/原source/启动身份通过；独立
+ls-remote确认origin a5fa1ffd7a86fd3dc50e89021e73929f463f4c40，53/55组提交均为真实
+远端ancestor，pending_commit/publication/error为空。54归档、
+2023member、2092来源检查、官方score/CSV及allowlist通过。
+用户变动和live index/暂存保留，巡检未自行stage/commit/push。
+
+本机证据rerun_batch/hourly_monitor/check_20261009T121129Z/。重读最新GQA/VizWiz审计并核对
+61份来源引用，request仍waiting_for_registered_batch，仅更新last_hourly_inspection。
+原75臂73完整、余2臂；没有新增后续GPU登记。原批全部评分/来源/marker/
+退出门及55组origin确认后，须继续已授权三行表审计与独立必要配对实验。
+最新论文修改日Oct10、具体小时未指定，仍有原批及后续工作，Oct9中午仅历史目标。
+轻量探针issues/events/actions为空，两既有timer active。本次未信号/重启/启动
+GPU、改冻结源码/参数/计划/原预测/评分或timer。最终审计errors=[]，
+all_experiments_complete=false，不提前结束巡检。
