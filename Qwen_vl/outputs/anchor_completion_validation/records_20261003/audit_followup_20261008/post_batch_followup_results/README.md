@@ -33,6 +33,7 @@ VizWiz uses two new full arms per model under predeclared public defaults alpha0
   },
   "followup_next_gqa_K128_beta2": {
     "identity": "6ecb052a48e6dc7a4f967d9f01713f287f7758c5e0d315aa37adf2f9bf780237",
+    "commit": "fec8d30ae1c1c2f09fac30266887a5f8df1dbabf",
     "scores": [
       {
         "model": "next",
@@ -55,6 +56,34 @@ VizWiz uses two new full arms per model under predeclared public defaults alpha0
         "accuracy": 62.617268246144064,
         "prediction_sha256": "573959bbcfbdd08cf9b5039f9a77138e239cc998dc9122f6f6b431da1fdca87c",
         "protocol_sha256": "8787dce3f3a307a6ff2b83b77da21a5fcd4bc692dc05b9b8df3f6bb72d2f1e07"
+      }
+    ],
+    "published_utc": "2026-10-09T15:12:45.901290+00:00"
+  },
+  "followup_next_vizwiz_K128_release": {
+    "identity": "ca5e3ecbf921d49caa86ac38ed70a154473aaeca0b2b1faed8ee71b539f30466",
+    "scores": [
+      {
+        "model": "next",
+        "task": "vizwiz",
+        "method": "EADP",
+        "budget": 128,
+        "n": 4319,
+        "metric": "VizWiz official leave-one-out accuracy (%)",
+        "accuracy": 59.21741143783283,
+        "prediction_sha256": "a9a35ec9c25fc0cb4d83ab40ea63be03d2a41b54828cc2f6fe878f3369b29a44",
+        "protocol_sha256": "4fe88c97088f7ebc3ec09e2d18b0bf93d1b6f64254d0ff60e4afbf40cc40a160"
+      },
+      {
+        "model": "next",
+        "task": "vizwiz",
+        "method": "AnchorZip",
+        "budget": 128,
+        "n": 4319,
+        "metric": "VizWiz official leave-one-out accuracy (%)",
+        "accuracy": 59.00671451724938,
+        "prediction_sha256": "70136f0457515a154978866f84f1691b7e0b1f4617d11a2d9347daac26bf9afe",
+        "protocol_sha256": "48dbbfedf54f901472bf40dd2f8f28e500d9f8cd4002c610c25b2e1b8fd8547e"
       }
     ]
   }
