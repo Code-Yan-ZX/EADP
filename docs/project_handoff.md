@@ -1328,3 +1328,51 @@ maintenance=false/source_ready=true。07:10独立ls-remote确认origin
 改冻结源码/参数/预测、stage/commit/push或改定时器。距12:00不足5小时，legacy
 32项刚开始，历史理想双槽7.649小时下界仍提示明显deadline风险，继续授权
 队列；全部实际登记任务及55组远端确认之前all_experiments_complete=false。
+
+### 13.21 Oct9 08:15 独立小时巡检：MME全8项完成，33组远端确认
+
+本次完整分段读取1330行交接并核对live Git，分支仍为
+codex/anchor-completion-validation、HEAD194562d、index SHA87ad06fd…；用户既有
+变动和暂存保留。原28项118917/118917预测再次通过完整题面/复合键/官方分母、
+CPU评分与可用runtime，1411/1411来源SHA、61日志与summary JSON/CSV28行
+通过，errors=[]；原监督器/helper/watcher及17个历史worker启动身份退出，
+31关闭工件与上轮SHA不变，初始NeXT Text128两臂无新增runtime边界保留。
+
+128面板128/512、K32三项各5000与phase1全12项39119题的严格官方score、
+来源/runtime/finished和成功marker通过；已完成监督器及children实际退出。
+新增17293/17293文件SHA（2412来源/工件、14881图像）及2584/2584内嵌图像
+SHA通过，四plan来源32/38/57/164匹配；最新phase2另168/168来源检查通过。
+
+phase2当前8/32项严格完成，共18992题，全部为MME各2374题、exit0且独立
+官方评分/finished/source门精确通过。v15 K128 EADP1431.982292917167、
+AnchorZip1445.5550220088035，MME perception raw差+13.5727290916365；
+v15 FULL1507.0586234493799，NeXT AZ128单臂1462.0508203281313。保留raw
+指标与单臂身份，不当作准确率百分点、NeXT公平配对或新增显著性结论。
+
+末MME于08:10:20.604816完整评分，1.298567秒自动接POPE；任务优先级门、
+所有已启动slot/显存门与完整前缀身份/runtime预算通过。08:11:09→08:13:40，
+POPE K128 E/AZ PID3214303/3215558同启动身份，完整预测/runtime由156/80
+推进至644/566（各8910），输出与日志mtime同步推进，末次age<0.15秒。
+A40恰两个登记模型/reservation，39331MiB、无未知CUDAcontext；第二槽启动
+时首worker真实18672MiB context且已有完整首prediction/runtime，free25577
+≥22500。phase2监督器2558609授权overlay/原target/plan/父子/startticks与
+上轮一致，旧SIGTERM error与旧supervisor日志属于已登记恢复历史；当前真实
+fd对应recovery日志且无新异常。
+
+publisher PID2560860 active/running、授权overlay及原target SHA/argv/启动身份
+通过，maintenance=false/source_ready=true。08:12:04与08:12:42独立ls-remote
+确认origin70c5cca0e113d130552d0107ce6f0c06e656b379，33/55组提交均远端
+ancestor，22组合法等待，pending_commit/publication/available/error为空。
+34归档/1269 member/1327来源检查/53预测189169归档行、158metadata/134static
+与262提交路径allowlist通过；23份新增官方score与远端字节精确一致，legacy
+8行CSV保留raw指标和配对/单臂身份，live HEAD/index/暂存保留。
+
+本机证据在rerun_batch/hourly_monitor/check_20261009T000848Z/。首轮checker
+捕获末MME退出与POPE新启动的跨时状态，以及第二worker恰在/proc遍历时启动；
+已保留原报告并以新版state、精确argv/startticks/父子、合法gate、完整score
+及持续前缀逐项核验，收尾errors=[]，不属于实验故障或恢复。独立CPU checker
+按真实generate_command字段与官方score路径修订并保留来源，冻结代码不动。
+仅保存CPU只读快照并追加本段事实，未启动/终止/重启实验或监督器、修改冻结
+源码/数学/参数/状态/预测，未stage/commit/push或改变timer。距12:00约3小时
+45分，legacy仍24项/205207待完成预测，存在明显deadline风险，继续授权队列。
+全部已登记scope与55远端组完成前保持all_experiments_complete=false。
