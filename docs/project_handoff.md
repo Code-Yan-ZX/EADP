@@ -1693,3 +1693,39 @@ loader去短答guidance后缀/max128与本地.5/2/旧guidance/max1024不同。
 后冻结独立计划，不能把不同recipe旧ours复用配新E。最终单个EADP主表行须统一
 披露reported或reproduced依据，三行审计及全部原来源保留，不逐格择低baseline
 或择高ours。本次新增仅CPU核查、监控及持久后续安排，没有新GPU生成/调参。
+
+### 13.31 Oct9 11:15 独立小时巡检：13项legacy完成，37组远端确认
+
+完整读取交接并核对live分支codex/anchor-completion-validation、HEAD194562d；
+原28项118917题完整身份/官方分母/评分、1411来源SHA、61日志与summary
+JSON/CSV再次通过，errors=[]，原监督器/helper/watcher正常退出。128面板、
+K32三项各5000题和phase1全12项39119题的来源/runtime/严格评分/成功marker
+及进程退出通过；初始NeXT Text128无新runtime的既有边界保留。
+
+phase2为13/32完整、63542题，2生成/17pending；新增NeXT POPE AZ64为
+85.89048883614093，完整8910（random2910）题、exit0及官方macro F1硬门通过，
+保持审计单臂身份。扩展17507/17507文件SHA及2584/2584内嵌图像SHA匹配，
+四plan来源32/38/57/164及授权overlay/原target/plan身份通过，27次continuation
+启动门与任务优先级通过。v15 FULL合法启动时free22863MiB，首NeXT context
+21386MiB；native首行无创建时间戳的证据边界仍保留。
+
+11:10:43→11:14:35，同启动身份PID3376381/3479469的NeXT POPE AZ128与
+v15 POPE FULL预测/runtime分别7518→7790、4359→5069/8910，日志同步增长。
+A40恰两个登记模型/reservation，无未知CUDA context；监督器2558609授权
+overlay完整argv/启动身份通过，旧SIGTERM error不当新失败。11:10:26轻量探针
+issues/events/actions均空；小时及5分钟探针timer仍active。没有实验恢复动作。
+
+publisher2560860 active/running，源码/overlay身份通过，pending_commit/
+pending_publication/error为空。11:13:34独立ls-remote确认origin
+21c15df824943efd4dbda77e309041448cc8db09，37/55组commit全为远端ancestor；
+38归档/1428member/1507来源检查及官方score/CSV验证通过。巡检未stage/commit/
+push，live用户变动与index保留。
+
+本机证据rerun_batch/hourly_monitor/check_20261009T031043Z/。复核后续GQA/
+VizWiz报告与表格36份不可变引用SHA；报告所记旧live state SHA只属历史快照，
+当前动态state另按真实PID/冻结plan严格检查。已更新request.last_hourly_inspection，
+status仍waiting_for_registered_batch，没有额外登记GPU臂。75臂56完整、55组37
+远端确认；原批结束后仍须执行已授权三行审计/必要独立实验，不提前停timer。
+最新论文修改日期为Oct10、具体小时未给，Oct9中午仅旧目标；既有20–23时估计
+只含原批，尚不含后续工作。检查器自身先读未产出评分报告和误将动态state当
+静态SHA的首轮记录已保留并纠正，最终检查errors=[]，未改冻结源码/参数/原件。
