@@ -1514,3 +1514,28 @@ CPU只读巡检、保存本机快照和追加本文事实，未启动/停止/重
 距中午12:00约2小时45分，最新实测总工期20:00–23:00仍只是估计，截止风险
 明显，继续已授权队列。全部已登记scope及55远端组完成前
 all_experiments_complete=false，小时timer保持active。
+
+### 13.26 Oct9 新用户请求：NeXT 根因排查与独立文本指导修正对照
+
+用户明确要求核对 NeXT 是否论文模型并排查修复；项目为 EADP_amp。
+新诊断详见 docs/next_reproduction_diagnosis_20261009.md，证据目录
+Qwen_vl/outputs/audit_followup_20261008/next_runtime_repair_20261009/。
+实际 CPU loader（CUDA 不可见）核对全部395视觉/投影权重与checkpoint一致，
+实际alpha=.5/beta=2/K32/SDPA；不是错误模型或微调视觉权重被覆盖。
+16题固定CPU FP32面板确认padding/特殊位实际参与局部评分：593padding+
+40special/1500所选位，10/16题至少一个crop-segment的无效位权重>.5。
+全5000题有881长文本、原1122段缺EOS；首长段CLIP legacy pool取BOS而非EOS，
+两不同prompt实测首段global embedding逐位相同。独立bounded chunk修正后
+全文本无丢token、每段有EOS、原短输入不变。不是NeXT独有代码缺陷；不能
+据CPU机制检查声称已解释2.114分残差或已恢复paper。
+
+新增可恢复adapter next_text_guidance_control.py 与4项CPU语义测试，原生产
+源码/方法数学/参数/计划/旧预测评分均未改。64题四臂GPU诊断为wait-released/
+valid-dense/bounded-chunks/both，固定K32 alpha.5 beta2 q.2，不按测试分数调参。
+它独立于既有75臂/55发布组，不将小面板成绩当全量成绩，也未更改AnchorZip。
+09:32:29仅向CPU监督器2558609发SIGSTOP保留下一个slot，两生成worker未收到
+信号、继续完成当前8910题。run_next_guidance_reserved_slot.py有独立20分钟
+SIGCONT watchdog和finally恢复；诊断出现CUDA context即恢复原监督器，原
+foreign-context门会暂阻新模型，防止第三context。精确事件及最终恢复须读
+panel64/slot_coordination.json；未改监督器/状态/plan/publisher/timer文件。
+四臂面板尚在等待空闲槽；完成后追加实际GPU结果，禁止提前宣布修复成绩。
