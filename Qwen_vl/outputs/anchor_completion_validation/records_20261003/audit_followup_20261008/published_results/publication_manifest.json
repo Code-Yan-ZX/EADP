@@ -1,6 +1,8 @@
 {
-  "updated_utc": "2026-10-09T05:22:11.087796+00:00",
-  "new_groups": [],
+  "updated_utc": "2026-10-09T05:47:32.434769+00:00",
+  "new_groups": [
+    "legacy_next_mmbcn_AZ_K128_streamwait"
+  ],
   "published_groups": {
     "v15_textvqa_K128": {
       "identity": "75830ccc2830cb6d3a72624c63344d5b0952710a335445f16805912eaaa0df28",
@@ -2961,10 +2963,67 @@
         }
       ],
       "published_utc": "2026-10-09T05:16:59.286680+00:00"
+    },
+    "legacy_next_mmbcn_AZ_K128_streamwait": {
+      "identity": "0e53dd18d0bb5aa2bff8f5ad3d7283dd0df3b7a4e4a1851850c6ba5496ef969d",
+      "scores": [
+        {
+          "method": "AnchorZip",
+          "accuracy": 55.959752321981426,
+          "value": 55.959752321981426,
+          "n": 4876,
+          "metric": "MMBench circular accuracy (%)",
+          "model": "next",
+          "task": "mmbcn",
+          "budget": 128,
+          "group_kind": "single_audit",
+          "protocol": "legacy_native_caller_stream_wait_only_beta2",
+          "guidance_language": "en",
+          "output": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mmbcn_LRMAIN025_streamwait_attempt2.jsonl",
+          "prediction_sha256": "92c338131988b0b1b8df9da726a76420ac9d2fa9a430cac48aeae5b1c27937c5",
+          "official_score_sha256": "5f840f9cfa08afdf9098f710d11a315a9ba8e582e6bee7dff2aff2654bb8c620",
+          "verified_source_sha256": {
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mmbcn_LRMAIN025_streamwait_attempt2.jsonl": "92c338131988b0b1b8df9da726a76420ac9d2fa9a430cac48aeae5b1c27937c5",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mmbcn_LRMAIN025_streamwait_attempt2.jsonl.runtime.jsonl": "85b862dff099c948ab313df961aa54816ab5c10e57b19ad21f8b44af1368f3d4",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mmbcn_LRMAIN025_streamwait_attempt2.jsonl.protocol.json": "bde42a56db5778eb8ef528f166b90373a4d90b74585731cf5fcba60a4893ee87",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mmbcn_LRMAIN025_streamwait_attempt2.control.protocol.json": "819574e8a201a9a7b1a5c930f0a086d0ecfae02f68dcdc522c2598e2f68f5bb3",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mmbcn_LRMAIN025_streamwait_attempt2.official.score.json": "5f840f9cfa08afdf9098f710d11a315a9ba8e582e6bee7dff2aff2654bb8c620",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_mmbcn_LRMAIN025_streamwait_attempt2.finished.json": "dd9ec34b3f67aff5b878e9004c0e797b5cc4b4f45153d690f6b7230dffe678b3",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_affected_inventory.json": "56088479e236ad9d9606b3ecb96f08c98e92029dea5e89a3df707657e120f6f9",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_stream_panel.py": "0d3e1766d4bf9594f38c16feb587fff089622e6ddbbca420cc70a5781863e8e4",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_fast/run_pope_streamwait_control.py": "7405822da63292bf53efa5d48a7ac712c9a3804d66c0d5c403119c3e9403f956",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/model_vqa_mmbench.py": "a5fd1379fc521b647e96cb3b983386624aa8992482e8076cea748fa8486da156",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mmben_circular_score.py": "562cb0f1be7408f7d9d19a950415f557f5483956b17571d4ca328d53ae3991a2",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/official_score.py": "53760295975d468de59bac0877aaceb3a90e88250bd24ff673ddb1af19e2a114",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/rescore_official_20261008.py": "1626ad817776efab8d3b045dd8f3533ab4bda722157748f0302802444873543c",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/vizwiz_official_normalization.py": "a8b1fb79eaa2c581e59c9a7761734e81e6bd253246e2fe8e0b62bffbcd409f2d",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py": "cf689cad1a922455f004e59ad8677863a3a3952132ce68e3bf16821bbd75fc26",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/builder.py": "bbb6115569dbc3407506f0370129783d60994e88c3e6924f92ba4763131235a3",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_projector/builder.py": "8abac548091005fd4fe3fbc543c15461fca0625bee34e9f45b6a10595f518bc1",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/language_model/llava_llama.py": "ff620b6fd6d1aeccca0b211c431e5b0fa382707a457034e5d30b19e174a9f76a",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/conversation.py": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/constants.py": "575e85e5c444f37d92945e37081cab71201b625e0eae48848f38047c5277b185",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639",
+            "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/config.json": "60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60",
+            "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/generation_config.json": "c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_CN_V11.tsv": "4de91ee6fa5220a06ed4b418f8f53b372886b218c79e5035207d1fa233ac5dd5",
+            "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_mmbcn/LRMAIN025.jsonl": "b648c9d1af4ce1c7509a2645118489511b3a057884d4f969f95c44104c7bc78b",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_streamwait_worker.py": "1c8bb72fc855ffc26b3273ac6dfdf327c8d2fb56eded19e7d8cf4cb4c2f31fe3",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_mmbcn_identities.manifest.json": "6a7b1c2c16329e52f7f3de080fd7ab7c5d1475aaa8693245f321c40b68e45339",
+            "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_mmbcn_images.manifest.json": "8c40e747793d2778527057aeb4a0a03d374dfd073676269fb389fef82faf0470"
+          },
+          "interpretation": "independent native-protocol stream-wait repair; single arms have no paired local EADP comparison"
+        }
+      ]
     }
   },
   "local_head_preserved": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
-  "parent_remote_head": "795950fd8019ed5a5be00fa411c1babf2a16dbf3",
+  "parent_remote_head": "4f9a42ec7f56a066c678fccd2d7aa2b95dec2bd0",
   "allowlist": [
     "Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
     "docs/project_handoff.md",
