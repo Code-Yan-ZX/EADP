@@ -1443,3 +1443,25 @@ EADP基线低分。Qwen HallB E256 recorded/current bank SHA不闭合是来源�
 当前补跑也不会补齐NeXT大量缺E、Qwen512/128及VQAv2/MMVet最终评分。
 本次仅读已有完整结果、写独立CPU派生清单和本文；未改冻结GPU源码/数学/
 参数/题集/协议/plan/原预测/score，未启动、停止或重跑任何实验。
+
+### 13.24 Oct9 09:04 当前POPE任务与TextVQA跨模型诊断
+
+用户问正在跑什么、为何其他模型Text接近paper而NeXT不接近。09:04:49真实
+state及/proc确认两GPU均为AZ：NeXT POPE K32 PID3292761完整1570/8910，
+v15 POPE K64 PID3293502完整1454/8910；phase2已10/32完成，2生成/20pending。
+最新v15 POPE K128配对各8910完整raw/runtime/官方score/SHA/exit0/marker通过：
+EADP87.519596（paper87.2，高.319596 F1点），AZ87.454656，方法差−.064940点。
+09:03独立ls-remote核验origin5267a4d57a7e75769c7b75f4bf245a142d1bb563，
+34/55组含新POPE pair均到真实远端，pending/error空，队列没有新故障。
+
+v15 Text FULL/E128/E64/E32对paper分别+.026/−.110/−.082/−.168，均达.2；
+Qwen legacy E256仍−.358，不能称所有其他模型都严格验收。NeXT FULL60.370
+vs60.3已达标，pruned三预算仍−1.334/−1.590/−2.114。这支持优先检查NeXT
+专有剪枝执行/配置，但没有确定根因。当前五crop importance比例配额、全crop
+归一化、floor/min1和singlecrop不同；实际156–159符合官方规则，预算映射及
+原始权重/CLIP/主要输入和scorer已核，不能把这些步骤的存在本身称bug。
+wait控制只使E32+.090，beta1完整50.966比beta2低1.120，都不能解释全部残差。
+q=.2在llava_arch.py:586硬编码且与官方源码一致，不是已发现的本地q偏差。
+现有runtime只记录几何/count/CLI预算/promptSHA，尚无实际模型对象α/β/class/
+dtype/backend快照。作者真实运行argv以及历史环境未知，是后续身份检查边界；
+没有环境准确率因果证据，未为回答启动新probe或改变已有冻结算法/生成队列。
