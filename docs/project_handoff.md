@@ -1412,3 +1412,34 @@ paper59.2/57.0/54.2为1.334/1.590/2.114pp，均仍超用户0.2门槛。beta1完�
 +0.29747149/+0.24789291/−0.34705007pp；v15 MME128方法差+13.5727290916365
 原始perception点，不能叫准确率百分点。结果方向有高有低，不能宣称整体稳定
 超过EADP。未更改冻结生成源码/协议/计划/参数/预测，未重跑或信号任何进程。
+
+### 13.23 Oct9 08:49 最新待查清单与已确认未修问题
+
+用户准备亲自检查，询问是否只有NeXT TextK32的2.114点残差。读取当前Git及
+完整交接后，依据已完整官方score更新10格证据，独立保存
+`Qwen_vl/outputs/audit_followup_20261008/user_checklist_20261009_0846/`：
+numeric_deficits.csv（15项，SHA ff5175c61123d04d7755dfe9aed445bf7b8c7d15406e14ebffefc791a683e605）、
+numeric_snapshot.json（120格及原来源/更新依据，SHA1ac8b0fc…）、
+root_checklist_verification.json与issues_and_checks.json（精确代码检查点）。
+目录0846指开始核查时间，数值快照实际08:49:10；不覆盖01:53冻结旧阈值表。
+root逐项核对15个原score SHA及未舍入差值，120格计数为18数值达标、15待查、
+1协议不可比、86缺失或未评分。NeXT SQA128最新67.823500 vs68.0，低0.176500，
+已移出>.2清单；不是仍低约0.9点。MME原始点数及/20纸表Avg等效均保留，
+后者不是准确率百分点。POPE128活跃前缀未替换任何完整score。
+
+仍待查的15项：v15 POPE32低2.626400、SQA32低0.534507、GQA128低0.372078，
+MME128/FULL分别低7.017707/6.341377原始分（/20为.350885/.317069）；
+NeXT Text32/64/128低2.114/1.590/1.334、SQA64低.371443；
+Qwen legacy256 Doc1.664422、HallB1.759538、AI2D1.153368、Chart.700、
+MMBEN.623839、Text.358。数值差距不自动证明15个实现错误。
+
+另两项已确认而未修：MMBenchCN漏--lang cn；AZ NeXT Completion预注册逐crop
+但实际五crop跨组assignment。现有55组wait-only保留原语言/方法，不修这两项；
+独立CN proposal/逐crop adapter仍未登记GPU，效应未测。后者仅AZ，不能解释
+EADP基线低分。Qwen HallB E256 recorded/current bank SHA不闭合是来源疑点，
+不是已证实分数错误；应找历史bank/生成resume日志，不替换旧meta。另有MMB
+题集版本、VizWiz公式/guidance/生成上限、任务alpha/beta默认及SQA作者CQM-I
+身份差异待查。beta1已完整50.966%，没有恢复Text残差，不能重复说仍待运行。
+当前补跑也不会补齐NeXT大量缺E、Qwen512/128及VQAv2/MMVet最终评分。
+本次仅读已有完整结果、写独立CPU派生清单和本文；未改冻结GPU源码/数学/
+参数/题集/协议/plan/原预测/score，未启动、停止或重跑任何实验。
