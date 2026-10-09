@@ -1808,3 +1808,24 @@ waiting_for_registered_batch。原75臂61完整，14未完臂全分母128209题�
 旧Oct9中午不作停机条件。检查器初次.git/index目录假设已按真实worktree
 git-path修正并留记录；不是实验故障。本次未信号/重启/启动GPU，未改冻结
 源码/数学/参数/计划/预测/评分，未stage/commit/push或改变timer，最终errors=[]。
+
+### 13.34 Oct9 用户要求核查 EADP VizWiz 特殊说明与发布评分器
+
+重新核对 arXiv v1 表1脚注、附录10.1、当前VizWiz官网和EADP pinned源码。
+星号仅表示val（官方挑战已停），不表示允许替换指标；官网要求10选9平均。
+发布LLaVA/scripts/eval_vizwiz.py第62行直接min(matches/3)，漏留一平均；
+第44–46/71行跳过缺失预测并缩小分母，另有不完整文件评分风险。不能据此
+证明paper作者实际采用此脚本；不把猜测写为论文数据错误。当前官方网页另
+说明April2026已公布test标注，挑战停服不等于test标签永远不可得，当前复现
+仍按paper星标val，不为换split追分。
+
+本次CPU再次直接运行发布main（只隔离CPU normalizer导入，不传可写日志参数），
+并以现有official scorer重算六份4319完整旧AZ预测，所有预测及GT SHA匹配
+此前审计；pinned远端scorer与本地副本字节相同。v15 K128/64/32 official:
+56.462144/57.566566/58.286640；发布算法57.852898/58.987420/59.759204。
+NeXT名义640/320/160 official:59.254457/58.636258/58.295902；发布算法
+60.716215/60.083353/59.743768。两评分差1.390754–1.472563pp，含v15K128
+已有的一题normalizer差异；各文件missing=0，不归因漏答。结果为评分审计，
+并非新GPU成绩或同机EADP对照，NeXT原始文件仍为pre-wait旧预测。
+证据post_batch_followup_20261009/vizwiz_scoring_verification_20261009.json。
+未改生产源码/旧score/表格/冻结GPU队列，未启动新模型。
