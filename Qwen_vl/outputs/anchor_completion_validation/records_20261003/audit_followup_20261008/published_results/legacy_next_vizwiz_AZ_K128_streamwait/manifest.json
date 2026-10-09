@@ -1,0 +1,258 @@
+{
+  "group_id": "legacy_next_vizwiz_AZ_K128_streamwait",
+  "identity": "0f843e49b63a69c5251ea4b798ba58ba15e590517966919492c58345b4c362c0",
+  "prepared_utc": "2026-10-09T07:00:55.233256+00:00",
+  "scores": [
+    {
+      "method": "AnchorZip",
+      "accuracy": 59.11785135448023,
+      "value": 59.11785135448023,
+      "n": 4319,
+      "metric": "VizWiz official leave-one-out accuracy (%)",
+      "model": "next",
+      "task": "vizwiz",
+      "budget": 128,
+      "group_kind": "single_audit",
+      "protocol": "legacy_native_caller_stream_wait_only_beta2",
+      "guidance_language": "",
+      "output": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_vizwiz_LRMAIN025_streamwait_attempt2.jsonl",
+      "prediction_sha256": "fc50ff3b0431ffae033ffe40d946bb8cf47a6e5e5380234c17b339a53bb029b8",
+      "official_score_sha256": "b3081e424cc29c808a487c62bcbeb32265e8067a35d43f8e51fd01e1937f89f5",
+      "verified_source_sha256": {
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_vizwiz_LRMAIN025_streamwait_attempt2.jsonl": "fc50ff3b0431ffae033ffe40d946bb8cf47a6e5e5380234c17b339a53bb029b8",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_vizwiz_LRMAIN025_streamwait_attempt2.jsonl.runtime.jsonl": "aa4d08ba880dfe3dc21e4facb3bec19a5bb87c502ea8afdf78ef519e6701de07",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_vizwiz_LRMAIN025_streamwait_attempt2.jsonl.protocol.json": "56b62b621db6f5bb95e875487f123eda74db0ec2423c285f6cb58f33377fbcd6",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_vizwiz_LRMAIN025_streamwait_attempt2.control.protocol.json": "5744a5a9c14450c65fd3d91b0e89beedb2e37a586173c1524190a9d04edf74a1",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_vizwiz_LRMAIN025_streamwait_attempt2.official.score.json": "b3081e424cc29c808a487c62bcbeb32265e8067a35d43f8e51fd01e1937f89f5",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_vizwiz_LRMAIN025_streamwait_attempt2.finished.json": "a90464cc08ee7349ae69ea33d74b155e38a99c17340b562c7cf0524bea0b315d",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_affected_inventory.json": "56088479e236ad9d9606b3ecb96f08c98e92029dea5e89a3df707657e120f6f9",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_stream_panel.py": "0d3e1766d4bf9594f38c16feb587fff089622e6ddbbca420cc70a5781863e8e4",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_fast/run_pope_streamwait_control.py": "7405822da63292bf53efa5d48a7ac712c9a3804d66c0d5c403119c3e9403f956",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/vizwiz_val_score.py": "e7f7e1134906333f680947861c8cebb2997968fd1b72f29cf443ea120fd27cf6",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/official_score.py": "53760295975d468de59bac0877aaceb3a90e88250bd24ff673ddb1af19e2a114",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/rescore_official_20261008.py": "1626ad817776efab8d3b045dd8f3533ab4bda722157748f0302802444873543c",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/vizwiz_official_normalization.py": "a8b1fb79eaa2c581e59c9a7761734e81e6bd253246e2fe8e0b62bffbcd409f2d",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py": "cf689cad1a922455f004e59ad8677863a3a3952132ce68e3bf16821bbd75fc26",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/mmben_circular_score.py": "562cb0f1be7408f7d9d19a950415f557f5483956b17571d4ca328d53ae3991a2",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch.py": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/llava_arch_anchorzip.py": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/builder.py": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/clip_encoder.py": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_encoder/builder.py": "bbb6115569dbc3407506f0370129783d60994e88c3e6924f92ba4763131235a3",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/multimodal_projector/builder.py": "8abac548091005fd4fe3fbc543c15461fca0625bee34e9f45b6a10595f518bc1",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/model/language_model/llava_llama.py": "ff620b6fd6d1aeccca0b211c431e5b0fa382707a457034e5d30b19e174a9f76a",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/conversation.py": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/constants.py": "575e85e5c444f37d92945e37081cab71201b625e0eae48848f38047c5277b185",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/config.json": "60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60",
+        "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b/generation_config.json": "c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/llava_val.jsonl": "89a42dce0ba8cc26325bdd8937dd461df4f201f376f5fdb46b33ee052dea8c0b",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/next_vizwiz/LRMAIN025.jsonl": "25c8cbfe2b6b31ff51a006beb9ab84fed2cfa0bd29ba98eb1b4b12ec50398384",
+        "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val.json": "f96a6a42da56fa067d023ec25a841df840d6c5989b1b0e7b0e6f0d269c617ab7",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_streamwait_worker.py": "1c8bb72fc855ffc26b3273ac6dfdf327c8d2fb56eded19e7d8cf4cb4c2f31fe3",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_vizwiz_identities.manifest.json": "ec7ea248791cc7d462d00e9ee5f8a2c5146daad2ba62ede7445f906d099a2eea",
+        "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_vizwiz_images.manifest.json": "1939a381a51ecded03eb25fe6c15b83dd73e3eb617a0af5d9eb332c0fc38efb3"
+      },
+      "interpretation": "independent native-protocol stream-wait repair; single arms have no paired local EADP comparison"
+    }
+  ],
+  "files": {
+    "LLaVA/llava/constants.py": {
+      "sha256": "575e85e5c444f37d92945e37081cab71201b625e0eae48848f38047c5277b185",
+      "bytes": 348,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/conversation.py": {
+      "sha256": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+      "bytes": 15418,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/mm_utils.py": {
+      "sha256": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+      "bytes": 9919,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/builder.py": {
+      "sha256": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+      "bytes": 8897,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/language_model/llava_llama.py": {
+      "sha256": "ff620b6fd6d1aeccca0b211c431e5b0fa382707a457034e5d30b19e174a9f76a",
+      "bytes": 7007,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/llava_arch.py": {
+      "sha256": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+      "bytes": 41627,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/llava_arch_anchorzip.py": {
+      "sha256": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+      "bytes": 8123,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/multimodal_encoder/builder.py": {
+      "sha256": "bbb6115569dbc3407506f0370129783d60994e88c3e6924f92ba4763131235a3",
+      "bytes": 495,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/multimodal_encoder/clip_encoder.py": {
+      "sha256": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+      "bytes": 6958,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/multimodal_projector/builder.py": {
+      "sha256": "8abac548091005fd4fe3fbc543c15461fca0625bee34e9f45b6a10595f518bc1",
+      "bytes": 1488,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/anchorzip_p3/next_vizwiz/LRMAIN025.jsonl": {
+      "sha256": "25c8cbfe2b6b31ff51a006beb9ab84fed2cfa0bd29ba98eb1b4b12ec50398384",
+      "bytes": 1354078,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/vizwiz/llava_val.jsonl": {
+      "sha256": "89a42dce0ba8cc26325bdd8937dd461df4f201f376f5fdb46b33ee052dea8c0b",
+      "bytes": 1109315,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/vizwiz/val.json": {
+      "sha256": "f96a6a42da56fa067d023ec25a841df840d6c5989b1b0e7b0e6f0d269c617ab7",
+      "bytes": 4476209,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_stream_panel.py": {
+      "sha256": "0d3e1766d4bf9594f38c16feb587fff089622e6ddbbca420cc70a5781863e8e4",
+      "bytes": 19643,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/rerun_fast/run_pope_streamwait_control.py": {
+      "sha256": "7405822da63292bf53efa5d48a7ac712c9a3804d66c0d5c403119c3e9403f956",
+      "bytes": 15322,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_affected_inventory.json": {
+      "sha256": "56088479e236ad9d9606b3ecb96f08c98e92029dea5e89a3df707657e120f6f9",
+      "bytes": 141447,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_streamwait_continuation.plan.json": {
+      "sha256": "d63b92f5bcee064484b08392a09504592b6a8026d007564f5c1a787f7ada6972",
+      "bytes": 143473,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_streamwait_worker.py": {
+      "sha256": "1c8bb72fc855ffc26b3273ac6dfdf327c8d2fb56eded19e7d8cf4cb4c2f31fe3",
+      "bytes": 29901,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_vizwiz_identities.manifest.json": {
+      "sha256": "ec7ea248791cc7d462d00e9ee5f8a2c5146daad2ba62ede7445f906d099a2eea",
+      "bytes": 1144094,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_vizwiz_images.manifest.json": {
+      "sha256": "1939a381a51ecded03eb25fe6c15b83dd73e3eb617a0af5d9eb332c0fc38efb3",
+      "bytes": 1088624,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_vizwiz_LRMAIN025_streamwait_attempt2.control.protocol.json": {
+      "sha256": "5744a5a9c14450c65fd3d91b0e89beedb2e37a586173c1524190a9d04edf74a1",
+      "bytes": 18705,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_vizwiz_LRMAIN025_streamwait_attempt2.finished.json": {
+      "sha256": "a90464cc08ee7349ae69ea33d74b155e38a99c17340b562c7cf0524bea0b315d",
+      "bytes": 351,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_vizwiz_LRMAIN025_streamwait_attempt2.jsonl": {
+      "sha256": "fc50ff3b0431ffae033ffe40d946bb8cf47a6e5e5380234c17b339a53bb029b8",
+      "bytes": 1353999,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_vizwiz_LRMAIN025_streamwait_attempt2.jsonl.protocol.json": {
+      "sha256": "56b62b621db6f5bb95e875487f123eda74db0ec2423c285f6cb58f33377fbcd6",
+      "bytes": 5380,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_vizwiz_LRMAIN025_streamwait_attempt2.jsonl.runtime.jsonl": {
+      "sha256": "aa4d08ba880dfe3dc21e4facb3bec19a5bb87c502ea8afdf78ef519e6701de07",
+      "bytes": 3998759,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_vizwiz_LRMAIN025_streamwait_attempt2.official.score.json": {
+      "sha256": "b3081e424cc29c808a487c62bcbeb32265e8067a35d43f8e51fd01e1937f89f5",
+      "bytes": 248873,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/schedule_legacy_streamwait_continuation.py": {
+      "sha256": "82a7ce81194bf15b0f4d898b23f14a68ef88a8756b8c81ab25e18b94bcd77f77",
+      "bytes": 18969,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": {
+      "sha256": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639",
+      "bytes": 14972,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py": {
+      "sha256": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534",
+      "bytes": 9382,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/mmben_circular_score.py": {
+      "sha256": "562cb0f1be7408f7d9d19a950415f557f5483956b17571d4ca328d53ae3991a2",
+      "bytes": 2220,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py": {
+      "sha256": "cf689cad1a922455f004e59ad8677863a3a3952132ce68e3bf16821bbd75fc26",
+      "bytes": 10206,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/official_score.py": {
+      "sha256": "53760295975d468de59bac0877aaceb3a90e88250bd24ff673ddb1af19e2a114",
+      "bytes": 7523,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/rescore_official_20261008.py": {
+      "sha256": "1626ad817776efab8d3b045dd8f3533ab4bda722157748f0302802444873543c",
+      "bytes": 17789,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/vizwiz_official_normalization.py": {
+      "sha256": "a8b1fb79eaa2c581e59c9a7761734e81e6bd253246e2fe8e0b62bffbcd409f2d",
+      "bytes": 5275,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/vizwiz_val_score.py": {
+      "sha256": "e7f7e1134906333f680947861c8cebb2997968fd1b72f29cf443ea120fd27cf6",
+      "bytes": 156,
+      "archived_as": "regular_file"
+    },
+    "external_reference/60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60/config.json": {
+      "sha256": "60af0a38b5b478cc59501b83840801f996f909e7ae011e0a1b9fcabb471f2d60",
+      "bytes": 1584,
+      "archived_as": "regular_file"
+    },
+    "external_reference/c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6/generation_config.json": {
+      "sha256": "c0c3e65ffae56c31cd78c33b34687bcfa8cb338e6bd1bf914525e478fa4ffff6",
+      "bytes": 170,
+      "archived_as": "regular_file"
+    }
+  },
+  "source_symlinks_dereferenced": true,
+  "contains_weights_or_images": false,
+  "archive_sha256": "3ced890f574a7e80c1cbdde9f4465711f61fd04c0d4295dbe1766320c740ce24",
+  "blobs": [
+    {
+      "filename": "evidence.tar.gz",
+      "sha256": "3ced890f574a7e80c1cbdde9f4465711f61fd04c0d4295dbe1766320c740ce24",
+      "bytes": 1338484
+    }
+  ]
+}
