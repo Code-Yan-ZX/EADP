@@ -22,9 +22,10 @@ FOLLOWUP_REQUEST = OUT.parents[1] / 'post_batch_followup_20261009/request.json'
 
 def retain_followup_monitoring(result, request_path=FOLLOWUP_REQUEST):
     """A finished original batch must not stop a pending user follow-up."""
-    if not result['all_experiments_complete'] or not request_path.exists():
+    if not result['all_experiments_complete']:
         return result
-    request = json.loads(request_path.read_text())
+    request = (json.loads(request_path.read_text()) if request_path.exists()
+               else {'status': 'missing_followup_registration'})
     if request.get('status') == 'complete':
         return result
     result = dict(result)
