@@ -1912,3 +1912,36 @@ allowlist通过；未自行stage/commit/push，live index及用户变动保留�
 工作，不能宣称按时全完。all_experiments_complete=false，不停止timer。
 本次无进程信号/重启/新GPU生成，无冻结源码/参数/计划/预测/评分改动。收尾
 脚本创建时一次引号错误在执行前纠正并留证，非实验故障，最终审计errors=[]。
+
+
+### 13.37 Oct9 16:19 独立小时巡检：legacy完成26项，49组远端确认
+
+完整读取1914行交接并检查live分支codex/anchor-completion-validation、HEAD194562d。
+先核轻量探针及实际活跃输出：issues/events/actions为空；两次基础CPU monitor与
+独立评分审计确认原28项118917题、1411来源SHA、61日志及summary JSON/CSV通过，
+errors=[]。原监督器/helper/watcher已退出；128面板、K32三控制和phase1全12项
+来源/runtime/完整官方评分/成功marker及进程退出通过。初始NeXT Text128没有新增
+runtime的既有证据边界保留。
+
+phase2快照为{'complete': 26, 'generating': 2, 'pending': 4}，完整148731题。本轮新增严格完整评分：
+v15_gqa_EGATHER 59.651772937%（12578题）；v15_gqa_LRMAIN025 59.771028780%（12578题）。E128较旧同机+0.023851169pp、较paper60.0低0.348227063pp，
+仍未达0.2数值门，但不足以证明实现错误。完整同协议AZ−E为0.119255844pp，
+净15题；未新增bootstrap，不据点估计宣称显著。新GQA证据单独保存，不选参数或择高分。
+K128 E完成后已自动接登记的v15 AZ32；截至2026-10-09T08:18:39.645449+00:00，
+v15_gqa_LRMAIN00625 PID4022776 3→1231/12578；next_gqa_LRMAIN00625 PID4027440 218→349/12578；完整预测/runtime及日志均增长，实际argv/父子/startticks匹配。
+A40恰两个模型/reservation；监督器2558609授权overlay/原target/plan与此前同身份，
+无新OOM/Traceback/FAILED或停滞。历史SIGTERM不是新故障。17882文件SHA及2584
+内嵌图像SHA全部匹配，四plan来源32/38/57/164通过；另74项接续来源/产物
+与新完整严格评分通过，40次continuation启动门及任务顺序通过。
+
+publisher2560860 active/running，授权overlay/原source/身份通过，pending_commit/
+publication/error空。独立ls-remote确认origin 6cdd2e82f1ac220fdc84beaf9d44c133f42f1463，
+49/55组commit全为真实远端ancestor；50归档、1875member、
+1952来源检查及官方score/CSV/allowlist通过，用户变动与live index保留。
+巡检未stage/commit/push、信号/重启/启动GPU、改冻结源码/参数/计划/预测/评分或timer。
+
+本机证据rerun_batch/hourly_monitor/check_20261009T081054Z/。仅更新request.last_hourly_inspection
+及本段事实，后续请求仍waiting_for_registered_batch，没有额外登记GPU臂。当前
+原75臂69完整；原批及55组确认后继续授权三行审计和必要独立续跑。
+最新论文修改日Oct10、小时未指定，Oct9中午为历史目标，不停队列或timer；
+all_experiments_complete=false，最终审计errors=[]。
