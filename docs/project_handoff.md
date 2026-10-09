@@ -2015,3 +2015,37 @@ waiting_for_registered_batch，没有额外登记GPU臂。原75臂71完整、余
 探针issues/events/actions为空，两既有timer active。本次未信号/重启/启动GPU，
 未改冻结源码/数学/参数/计划/预测/评分或timer，最终errors=[]，
 all_experiments_complete=false，不提前结束巡检。
+
+
+### 13.40 Oct9 19:14 独立小时巡检：legacy完成30项，53组远端确认
+
+完整分段读取2017行交接并核对live分支codex/anchor-completion-validation、
+HEAD194562d。先检查轻量探针及实际活跃输出；两次CPU基础快照和独立复核确认
+原28项118917题完整身份/题面复合键/官方分母/精确评分通过，1411来源SHA、
+61日志、summary JSON/CSV28行且errors=[]；原监督器/helper/watcher已退出。
+128面板128/512、K32三臂各5000和phase1全12项39119题的来源/runtime/严格评分/
+成功marker及完成进程退出再次通过。初始NeXT Text128无新增runtime的边界保留。
+
+phase2为{'complete': 30, 'generating': 2}，完整199043题。本轮新完整：
+next_gqa_LRMAIN0125 62.299252663381%（12578题）；v15_gqa_LRMAIN0125 59.031642550485%（12578题）。exit0和完整source/runtime/score/finished通过，保持审计单臂身份，
+不借用其他预算EADP或从paper伪造配对。正常接续：next_gqa_LRMAIN0125完成后1.485秒接续v15_gqa_FULL；v15_gqa_LRMAIN0125完成后1.392秒接续next_gqa_LRMAIN025，无巡检干预。2026-10-09T11:11:52.751840+00:00→2026-10-09T11:13:29.114408+00:00，
+next_gqa_LRMAIN025 PID42096 4067→4171/12578；v15_gqa_FULL PID103707 1365→1616/12578；预测/runtime及日志均增长，argv/父子/startticks匹配。
+A40恰两个登记模型/reservation，无未知CUDA context，CPU监督器2558609的授权
+overlay/原target/plan及启动身份与上轮一致、未暂停；当前恢复日志无新异常。
+历史SIGTERM不作新故障。扩展18092文件SHA与2584内嵌图像SHA
+均匹配，四plan来源32/38/57/164、44次启动门及任务顺序通过。
+
+publisher2560860 active/running，授权overlay/原source/身份通过；独立两次
+ls-remote确认origin 2b0ecf23671bb5b5a16ce01b5519ec3fd28632d6，53/55组commit均为真实
+远端ancestor，pending_commit/publication/error为空。54归档、
+2023member、2092来源检查、官方score/CSV/allowlist通过。
+用户变动和live index/暂存保留，巡检未自行stage/commit/push。
+
+本机证据rerun_batch/hourly_monitor/check_20261009T111145Z/。读取最新GQA/VizWiz报告并核对
+61份来源引用，仅更新request.last_hourly_inspection及本文事实，request仍为
+waiting_for_registered_batch，没有额外登记GPU臂。原75臂73完整、余2臂；
+原批及55组全部通过后继续授权三行审计和独立必要续跑。论文修改日为Oct10、
+具体小时未给，原批和后续仍未完成，不承诺全部完成时间；Oct9中午仅历史目标。
+探针issues/events/actions为空，两既有timer active。本次未信号/重启/启动GPU，
+未改冻结源码/数学/参数/计划/预测/评分或timer，最终errors=[]，
+all_experiments_complete=false，不提前结束巡检。
