@@ -1,6 +1,8 @@
 {
-  "updated_utc": "2026-10-09T15:10:20.552300+00:00",
-  "new_groups": [],
+  "updated_utc": "2026-10-09T15:12:15.460836+00:00",
+  "new_groups": [
+    "followup_next_gqa_K128_beta2"
+  ],
   "published_groups": {
     "followup_v15_vizwiz_K128_release": {
       "identity": "d4d01148332b6e176c917153e1bc53deb5fbdcb8d47c594823a34eb170c371cc",
@@ -30,10 +32,37 @@
         }
       ],
       "published_utc": "2026-10-09T14:15:57.371977+00:00"
+    },
+    "followup_next_gqa_K128_beta2": {
+      "identity": "6ecb052a48e6dc7a4f967d9f01713f287f7758c5e0d315aa37adf2f9bf780237",
+      "scores": [
+        {
+          "model": "next",
+          "task": "gqa",
+          "method": "EADP",
+          "budget": 128,
+          "n": 12578,
+          "metric": "GQA exact-match accuracy (%)",
+          "accuracy": 62.86373032278582,
+          "prediction_sha256": "e3b761230c4c8ddad43ec1e46bb0f30f6b15b57d9ac56b02fe11c7aab62c28df",
+          "protocol_sha256": "f36653b8ff91b8d535c87f309677c875bdf621c10b74434ac401f25d0e79da6c"
+        },
+        {
+          "model": "next",
+          "task": "gqa",
+          "method": "AnchorZip",
+          "budget": 128,
+          "n": 12578,
+          "metric": "GQA exact-match accuracy (%)",
+          "accuracy": 62.617268246144064,
+          "prediction_sha256": "573959bbcfbdd08cf9b5039f9a77138e239cc998dc9122f6f6b431da1fdca87c",
+          "protocol_sha256": "8787dce3f3a307a6ff2b83b77da21a5fcd4bc692dc05b9b8df3f6bb72d2f1e07"
+        }
+      ]
     }
   },
   "local_head_preserved": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
-  "parent_remote_head": "848accca72f5d003a2052bedb5cc7fb0022b2f65",
+  "parent_remote_head": "c83ffe56725101242803fe5a9c7e30a07e818b50",
   "allowlist": [],
   "excluded_user_files": [
     "Qwen_vl/scripts/stage1_roundtrip_pilot/llava_round2_driver.sh"

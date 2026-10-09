@@ -30,5 +30,32 @@ VizWiz uses two new full arms per model under predeclared public defaults alpha0
       }
     ],
     "published_utc": "2026-10-09T14:15:57.371977+00:00"
+  },
+  "followup_next_gqa_K128_beta2": {
+    "identity": "6ecb052a48e6dc7a4f967d9f01713f287f7758c5e0d315aa37adf2f9bf780237",
+    "scores": [
+      {
+        "model": "next",
+        "task": "gqa",
+        "method": "EADP",
+        "budget": 128,
+        "n": 12578,
+        "metric": "GQA exact-match accuracy (%)",
+        "accuracy": 62.86373032278582,
+        "prediction_sha256": "e3b761230c4c8ddad43ec1e46bb0f30f6b15b57d9ac56b02fe11c7aab62c28df",
+        "protocol_sha256": "f36653b8ff91b8d535c87f309677c875bdf621c10b74434ac401f25d0e79da6c"
+      },
+      {
+        "model": "next",
+        "task": "gqa",
+        "method": "AnchorZip",
+        "budget": 128,
+        "n": 12578,
+        "metric": "GQA exact-match accuracy (%)",
+        "accuracy": 62.617268246144064,
+        "prediction_sha256": "573959bbcfbdd08cf9b5039f9a77138e239cc998dc9122f6f6b431da1fdca87c",
+        "protocol_sha256": "8787dce3f3a307a6ff2b83b77da21a5fcd4bc692dc05b9b8df3f6bb72d2f1e07"
+      }
+    ]
   }
 }

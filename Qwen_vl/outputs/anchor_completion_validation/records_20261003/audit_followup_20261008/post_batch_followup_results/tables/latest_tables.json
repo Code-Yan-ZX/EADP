@@ -1,5 +1,5 @@
 {
-  "snapshot_beijing": "2026-10-09T22:15:23+08:00",
+  "snapshot_beijing": "2026-10-09T23:12:05+08:00",
   "selection_policy": "Use completed prescribed repaired run; never choose the higher result. Dagger explicitly retains old result pending rerun.",
   "queues": {
     "streamwait_repair_continuation": {
@@ -214,7 +214,8 @@
     "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/v15_gqa_FULL_streamwait_attempt2.official.score.json": "4289f3626504654fc2c6ccce1ce7ab849b66308ad980eb81a56191955f5d6fce",
     "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/v15_gqa_FULL_streamwait_attempt2.state.json": "1399219d130f340d777be514747b2bae95f96e2f35357655cfa2f4077bae52f8",
     "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/v15_gqa_FULL_streamwait_attempt2.finished.json": "033703a5ff16f095f7093b7ee5cec894d088c53f4290e634905ff3da5c91e632",
-    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/followup.state.json": "c06096164b00f378e6e96e7f2cbf47401a217cde5f139d993fd77c90ad64de98",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/followup.state.json": "503d756601a3690d79c4d6232bf14269c49eace9c31fa1ff59c1d7202ad7ae98",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/next_gqa_E128_streamwait.official.score.json": "86281736d04a7130caaeee24e6239f48fbf40d9a911dc2a3402badc2522b7661",
     "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_E128_streamwait.official.score.json": "33882a2a07194d583098ae678905309b0c634089b8619999f3a5ff992d41fbce",
     "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_AZ128_streamwait.official.score.json": "53c3c7ec37a5e41b17056c7992b9629b751a5f3bc6bfb1ab7723083a6984bfd5",
     "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json": "a036db6f930492fb3c8687903b8d27565c80174348eafd03af9aa3d7909d671b",
@@ -3150,6 +3151,11 @@
           "value": 67.82350024789291,
           "status": "complete",
           "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_sqa_E128_streamwait.official.score.json"
+        },
+        "GQA": {
+          "value": 62.86373032278582,
+          "status": "complete_same_recipe_followup",
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/next_gqa_E128_streamwait.official.score.json"
         },
         "MMB_EN": {
           "value": null,
