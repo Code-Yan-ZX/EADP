@@ -1,9 +1,6 @@
 {
-  "updated_utc": "2026-10-09T01:43:46.024241+00:00",
-  "new_groups": [
-    "legacy_next_pope_AZ_K32_streamwait",
-    "legacy_v15_pope_AZ_K64_streamwait"
-  ],
+  "updated_utc": "2026-10-09T01:50:08.303842+00:00",
+  "new_groups": [],
   "published_groups": {
     "v15_textvqa_K128": {
       "identity": "75830ccc2830cb6d3a72624c63344d5b0952710a335445f16805912eaaa0df28",
@@ -2362,6 +2359,7 @@
     },
     "legacy_next_pope_AZ_K32_streamwait": {
       "identity": "30b68f7db88f494803944d8e3e1e7120c393a7cba0cbe9594e9151836adf6113",
+      "commit": "383824679598c6929d79473e8e63268d2a0c623c",
       "scores": [
         {
           "method": "AnchorZip",
@@ -2418,10 +2416,12 @@
           },
           "interpretation": "independent native-protocol stream-wait repair; single arms have no paired local EADP comparison"
         }
-      ]
+      ],
+      "published_utc": "2026-10-09T01:43:55.125118+00:00"
     },
     "legacy_v15_pope_AZ_K64_streamwait": {
       "identity": "4154cb3ed8fcd6161c15ccb80149302dc643238d95f9f8be133637dd1af0a7ed",
+      "commit": "383824679598c6929d79473e8e63268d2a0c623c",
       "scores": [
         {
           "method": "AnchorZip",
@@ -2478,11 +2478,12 @@
           },
           "interpretation": "independent native-protocol stream-wait repair; single arms have no paired local EADP comparison"
         }
-      ]
+      ],
+      "published_utc": "2026-10-09T01:43:55.125162+00:00"
     }
   },
   "local_head_preserved": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
-  "parent_remote_head": "8bbe63057936dea686ede4fa3a2fc15df94b26cf",
+  "parent_remote_head": "383824679598c6929d79473e8e63268d2a0c623c",
   "allowlist": [
     "Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
     "docs/project_handoff.md",

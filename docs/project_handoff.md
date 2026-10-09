@@ -1538,4 +1538,18 @@ valid-dense/bounded-chunks/both，固定K32 alpha.5 beta2 q.2，不按测试分�
 SIGCONT watchdog和finally恢复；诊断出现CUDA context即恢复原监督器，原
 foreign-context门会暂阻新模型，防止第三context。精确事件及最终恢复须读
 panel64/slot_coordination.json；未改监督器/状态/plan/publisher/timer文件。
-四臂面板尚在等待空闲槽；完成后追加实际GPU结果，禁止提前宣布修复成绩。
+09:45:46四臂面板完整64题/256生成/exit0完成，原路径64/64预测与既有全量
+wait-only逐字一致，12来源SHA/题目顺序/result/runtime检查通过。实际GPU
+模型参数/精度/SDPA与CPU对象快照相同。原路径56.40625，valid-dense54.375
+（0胜2负），bounded-chunks56.40625（0胜0负），both55.9375（0胜1负）。
+这是小样本机制对照，不是5000题成绩；没有改善证据，不提升为正式baseline，
+两个adapter保留为显式opt-in control，不能宣布已找到2.114分主因或修复复现。
+真实五crop prepare函数12个哨兵case与独立48x48 raster oracle全通过；8个
+不同seed variable-quota greedy与独立标量facility oracle相同，未发现拼接
+mask错位。旧全量长/短文本的FULL→E32损失8.672/8.201，仅描述性差.471，
+不支持直接把全部paper残差归因长文本。作者Table2实际argv仍未知，未调参
+追paper成绩，未联系作者；公开issues查询为空。
+
+CPU监督器09:43:17已恢复、09:45:46finally再次SIGCONT，独立watchdog与GPU
+诊断worker均退出。原phase2已12/32完成，后续NeXT POPE AZ64/AZ128自动续跑
+PID3375750/3376381，恰两个GPU模型。原75臂/55发布组scope、源码与plan未改。
