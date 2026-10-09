@@ -1553,3 +1553,22 @@ mask错位。旧全量长/短文本的FULL→E32损失8.672/8.201，仅描述性
 CPU监督器09:43:17已恢复、09:45:46finally再次SIGCONT，独立watchdog与GPU
 诊断worker均退出。原phase2已12/32完成，后续NeXT POPE AZ64/AZ128自动续跑
 PID3375750/3376381，恰两个GPU模型。原75臂/55发布组scope、源码与plan未改。
+
+### 13.27 Oct9 用户并发超时漏答假设的CPU核查
+
+用户询问是否并发使部分题超时未回答。新增脚本
+Qwen_vl/scripts/stage1_roundtrip_pilot/audit_generation_completeness.py，证据
+next_runtime_repair_20261009/timeout_audit.json。20份已完成v15/NeXT TextVQA
+文件共100000条（跨重复实验，非10万独立题），每份完整有序5000复合题键，
+缺失/多余/重复/空或非字符串/失败占位均0，20对应生成日志超时/Traceback/
+CUDA OOM/error匹配均0。8个wait-only控制另核runtime5000、exit0、finished
+及score预测SHA均通过。Qwen EADP/AZ的Text/Doc/AI2D/HallB共8份xlsx28776行
+也满分母、无重复index、空答或失败标记；不称本次独立核验了所有Qwen旧日志。
+
+LLaVA题循环无按秒超时或异常吞掉跳题，128是max_new_tokens，不是秒；两份
+generation_config均无max_time。输出未保存EOS/finish_reason，因此不能据
+非空输出断言每题都自然结束或从未触及token上限。此前128题重复面板旧路径
+答案5/128变化、count43/128变化，wait后均0，是进程内CUDA依赖错误，不等于
+已证明双进程并发造成。全量E32 51.996→52.086仅+.090，剩余paper差2.114
+相当约106道满分题，现有文件没有漏答支撑该解释。未做严格GPU独占vs双进程
+对照，不排除所有并发数值/时序影响；本次只CPU读原件写派生证据，未动GPU队列。
