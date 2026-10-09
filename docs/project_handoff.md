@@ -1869,3 +1869,46 @@ request.last_hourly_inspection及本段事实，request仍waiting_for_registered
 55组origin确认后继续已授权三行审计/独立必要实验，all_experiments_complete=false。
 最新论文修改日期Oct10，小时未指定；旧Oct9中午不是停机条件。本次未信号/
 重启/启动GPU、改冻结源码/参数/计划/预测/评分或timer，最终审计errors=[]。
+
+
+### 13.36 Oct9 15:16 独立小时巡检：legacy完成24项，48组远端确认
+
+完整读取1871行交接并检查live Git，分支codex/anchor-completion-validation、
+HEAD194562d，用户变动和index保留。先核轻量探针及实际输出，再做两次CPU
+monitor快照与独立审计。原28项118917题的完整身份/题面复合键/官方分母/
+精确评分、1411来源SHA及61日志通过，summary JSON/CSV28行且errors=[]；
+两lane、POPE控制、128面板128/512、K32三臂各5000与phase1全12项39119题
+严格source/runtime/score/成功marker及完成进程退出通过。初始NeXT Text128
+没有新增runtime的既有边界保留。
+
+phase2为24/32完整、123575题，2生成/6pending；新增NeXT VizWiz各4319题，
+官方LOO：K32 58.54595971289645%；K64 58.82843250752487%；K128 59.11785135448023%。
+严格exit0/source/runtime/score/finished通过；仍为AZ审计单臂，EADP基线仍缺。
+K32/64较旧官方分分别+0.250058/+0.192174pp，K128下降0.136606pp，按既定
+wait协议全部保留，不择高或用发布公式替换官方主分；新来源/比较证据保存为
+new_vizwiz_followup_evidence.json。后续配对方案不据分数方向改变，未增加GPU臂。
+
+2026-10-09T07:12:04.776736+00:00→2026-10-09T07:13:12.132325+00:00，
+v15_gqa_EGATHER PID3902392 1990→2188/12578；v15_gqa_LRMAIN025 PID3903442 1871→2060/12578；runtime一致，输出和日志均推进，末次age<0.33秒。
+两worker实际argv/父子/startticks与登记一致，A40恰两个模型/reservation，无
+未知CUDA context、加载超时或连续停滞。监督器2558609授权overlay/原target/
+plan及启动身份与上轮一致、未暂停，当前recovery日志无新异常。全部
+38次continuation启动门及MME→POPE→MMB_EN→MMB_CN→VizWiz→GQA顺序通过，
+末VizWiz严格完成后自动接GQA；历史SIGTERM error不是新故障。扩展
+17882/17882文件SHA和2584/2584内嵌图像SHA匹配，四plan来源32/38/57/164通过。
+轻量探针issues/events/actions为空，小时及5分钟timer均active。
+
+publisher2560860 active/running，授权overlay及原source/启动身份通过；两次
+独立ls-remote确认origin 0bbcdf06629f17a7d34a05cacc045e2ff8dbc3e8，
+48/55组commit全为真实远端ancestor，7组等待；pending_commit/publication/error空。
+49归档、1831member、1882来源检查、39份官方score、24行legacy CSV及发布
+allowlist通过；未自行stage/commit/push，live index及用户变动保留。
+
+本机证据rerun_batch/hourly_monitor/check_20261009T071152Z/。复核后续GQA/VizWiz报告和
+表格61份引用SHA，更新request.last_hourly_inspection，仍waiting_for_registered_batch。
+原75臂67完整，余8臂均GQA、全分母100624题（活跃前缀另扣）；原批全评分/
+来源/marker/进程退出及55组origin确认后继续已授权三行审计和必要独立续跑。
+最新论文修改日Oct10、具体小时未给，Oct9中午仅历史目标；尚有原批及后续
+工作，不能宣称按时全完。all_experiments_complete=false，不停止timer。
+本次无进程信号/重启/新GPU生成，无冻结源码/参数/计划/预测/评分改动。收尾
+脚本创建时一次引号错误在执行前纠正并留证，非实验故障，最终审计errors=[]。
