@@ -1,0 +1,46 @@
+{
+  "updated_utc": "2026-10-09T14:15:49.283448+00:00",
+  "new_groups": [
+    "followup_v15_vizwiz_K128_release"
+  ],
+  "published_groups": {
+    "followup_v15_vizwiz_K128_release": {
+      "identity": "d4d01148332b6e176c917153e1bc53deb5fbdcb8d47c594823a34eb170c371cc",
+      "scores": [
+        {
+          "model": "v15",
+          "task": "vizwiz",
+          "method": "EADP",
+          "budget": 128,
+          "n": 4319,
+          "metric": "VizWiz official leave-one-out accuracy (%)",
+          "accuracy": 56.5200277842093,
+          "prediction_sha256": "4820cf34fe00eebe423a596291ce40afcc5ddcc18f4d930e1416f6ec0ad12857",
+          "protocol_sha256": "1e91b939f13c1705246939e26c33dc7d01d4c13741b36e05c0573be9708926b9"
+        },
+        {
+          "model": "v15",
+          "task": "vizwiz",
+          "method": "AnchorZip",
+          "budget": 128,
+          "n": 4319,
+          "metric": "VizWiz official leave-one-out accuracy (%)",
+          "accuracy": 56.513081731882366,
+          "prediction_sha256": "b9da153342f19f6813c407e6e8fa29e652084bae8e95b48c74770a096ef5ed4a",
+          "protocol_sha256": "2409c5a08e071310d2454c51a2d556eca10610637e69fba60ae3508bed18a2f5"
+        }
+      ]
+    }
+  },
+  "local_head_preserved": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
+  "parent_remote_head": "dbfe8220c04925e21aae1c4d5e7b589513ba1303",
+  "allowlist": [],
+  "excluded_user_files": [
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/llava_round2_driver.sh"
+  ],
+  "expected_groups": [
+    "followup_next_gqa_K128_beta2",
+    "followup_v15_vizwiz_K128_release",
+    "followup_next_vizwiz_K128_release"
+  ]
+}

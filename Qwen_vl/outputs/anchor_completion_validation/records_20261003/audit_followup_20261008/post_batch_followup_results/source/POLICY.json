@@ -1,0 +1,22 @@
+{
+  "id": "post_batch_followup_K128_v1",
+  "created_utc": "2026-10-09T12:51:24.437028+00:00",
+  "n_jobs": 5,
+  "n_predictions": 29854,
+  "n_groups": 3,
+  "recipes": {
+    "gqa": "Same completed NeXT AZ128 alpha.5/beta2 loader/wait/greedy128 recipe; add only missing EADP baseline.",
+    "vizwiz": "Predetermined public val defaults alpha0/beta1/loader guidance/greedy128, both methods same wait. Official LOO primary; released scorer secondary."
+  },
+  "method": "AnchorZip existing rtg/lambda.25 including existing across-crop assignment, NOT installing candidate per-crop adapter. No model math edits.",
+  "not_paper_argv": true,
+  "score_selection": "No selection by higher score; all negative results retained; no beta sweep.",
+  "audit_sources": {
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/gqa_audit.json": "2175e331b81d590bdbc2073d8b3122f58b773613d7df98380a1f5bec5bd234e6",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/vizwiz_audit.json": "88c4e9d6bfc48de1af46038d53ebc030cf673e76def07e900b8b77c9acf7bfbf",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/vizwiz_scoring_verification_20261009.json": "f8774fd248737e134e4808f8b96bc6535baa6693b89e6df7c6cc6f4efeef78fc"
+  },
+  "derivation": {
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/legacy_streamwait_worker.py": "1c8bb72fc855ffc26b3273ac6dfdf327c8d2fb56eded19e7d8cf4cb4c2f31fe3"
+  }
+}

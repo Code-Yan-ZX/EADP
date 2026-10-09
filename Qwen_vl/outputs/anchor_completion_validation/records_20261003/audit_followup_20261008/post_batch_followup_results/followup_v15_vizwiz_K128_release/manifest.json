@@ -1,0 +1,271 @@
+{
+  "group_id": "followup_v15_vizwiz_K128_release",
+  "identity": "d4d01148332b6e176c917153e1bc53deb5fbdcb8d47c594823a34eb170c371cc",
+  "prepared_utc": "2026-10-09T14:15:22.770487+00:00",
+  "scores": [
+    {
+      "model": "v15",
+      "task": "vizwiz",
+      "method": "EADP",
+      "budget": 128,
+      "n": 4319,
+      "metric": "VizWiz official leave-one-out accuracy (%)",
+      "accuracy": 56.5200277842093,
+      "prediction_sha256": "4820cf34fe00eebe423a596291ce40afcc5ddcc18f4d930e1416f6ec0ad12857",
+      "protocol_sha256": "1e91b939f13c1705246939e26c33dc7d01d4c13741b36e05c0573be9708926b9"
+    },
+    {
+      "model": "v15",
+      "task": "vizwiz",
+      "method": "AnchorZip",
+      "budget": 128,
+      "n": 4319,
+      "metric": "VizWiz official leave-one-out accuracy (%)",
+      "accuracy": 56.513081731882366,
+      "prediction_sha256": "b9da153342f19f6813c407e6e8fa29e652084bae8e95b48c74770a096ef5ed4a",
+      "protocol_sha256": "2409c5a08e071310d2454c51a2d556eca10610637e69fba60ae3508bed18a2f5"
+    }
+  ],
+  "files": {
+    "FOLLOWUP_POLICY.json": {
+      "sha256": "c715751957ab93466819965447147adcd7f942d38d2d5d83e84ead455f8f00b0",
+      "bytes": 1602,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/constants.py": {
+      "sha256": "575e85e5c444f37d92945e37081cab71201b625e0eae48848f38047c5277b185",
+      "bytes": 348,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/conversation.py": {
+      "sha256": "1853610057773ef99dacce7b73dee5a0284d428b68e9167494560e6361cb76c9",
+      "bytes": 15418,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/mm_utils.py": {
+      "sha256": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+      "bytes": 9919,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/builder.py": {
+      "sha256": "1cda9764ae0f0f705b85b90d83400910fe8cf70a5549d68cbc08266739b90f67",
+      "bytes": 8897,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/language_model/llava_llama.py": {
+      "sha256": "ff620b6fd6d1aeccca0b211c431e5b0fa382707a457034e5d30b19e174a9f76a",
+      "bytes": 7007,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/llava_arch.py": {
+      "sha256": "b5bed1a80a72d5600b6229fcf072ab3321114eb1fa3e8b0a759892a8a064b50a",
+      "bytes": 41627,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/llava_arch_anchorzip.py": {
+      "sha256": "58c6d142f6fc886754dc0eef3e31debda694a0ea25bfd23d467a7f5bd71d1847",
+      "bytes": 8123,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/multimodal_encoder/builder.py": {
+      "sha256": "bbb6115569dbc3407506f0370129783d60994e88c3e6924f92ba4763131235a3",
+      "bytes": 495,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/multimodal_encoder/clip_encoder.py": {
+      "sha256": "771280e2d407a81c5edaf63f7efa013f6302336e1a4c6dab14536694bc2e1838",
+      "bytes": 6958,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/llava/model/multimodal_projector/builder.py": {
+      "sha256": "8abac548091005fd4fe3fbc543c15461fca0625bee34e9f45b6a10595f518bc1",
+      "bytes": 1488,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/anchorzip_p3/vizwiz/LRMAIN025.jsonl": {
+      "sha256": "182fc80437f06958d5650524e262e71dfbdec4e605f9f232daddf241258d74d4",
+      "bytes": 1320315,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/vizwiz/llava_val.jsonl": {
+      "sha256": "89a42dce0ba8cc26325bdd8937dd461df4f201f376f5fdb46b33ee052dea8c0b",
+      "bytes": 1109315,
+      "archived_as": "regular_file"
+    },
+    "LLaVA/playground/data/eval/vizwiz/val.json": {
+      "sha256": "f96a6a42da56fa067d023ec25a841df840d6c5989b1b0e7b0e6f0d269c617ab7",
+      "bytes": 4476209,
+      "archived_as": "regular_file"
+    },
+    "PAIRED_STATISTICS.json": {
+      "sha256": "ce2ef9c66ded45f0ebe0817466842a52a8ee3836bc0c718fe660efd8e862b919",
+      "bytes": 988,
+      "archived_as": "regular_file"
+    },
+    "PAIR_IDENTITY.json": {
+      "sha256": "c7e349e01d526833115eb8b436b66df2a86b5e8fb7af2ef6bbd74a45c63344a6",
+      "bytes": 251,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/next_gap_diagnosis_20261008/stability/next_text_stream_panel.py": {
+      "sha256": "0d3e1766d4bf9594f38c16feb587fff089622e6ddbbca420cc70a5781863e8e4",
+      "bytes": 19643,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/POLICY.json": {
+      "sha256": "c715751957ab93466819965447147adcd7f942d38d2d5d83e84ead455f8f00b0",
+      "bytes": 1602,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/followup_worker.py": {
+      "sha256": "3a01450b20589d7bffb2a1d723922ae4779a6f857561677a5864667505f61b47",
+      "bytes": 30212,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/inventory.json": {
+      "sha256": "a183c4c0c1f2d89f43a836055949ffb36106334d60b88a8480b2a7559bd267a8",
+      "bytes": 32382,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/legacy_vizwiz_identities.manifest.json": {
+      "sha256": "ec7ea248791cc7d462d00e9ee5f8a2c5146daad2ba62ede7445f906d099a2eea",
+      "bytes": 1144094,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/legacy_vizwiz_images.manifest.json": {
+      "sha256": "1939a381a51ecded03eb25fe6c15b83dd73e3eb617a0af5d9eb332c0fc38efb3",
+      "bytes": 1088624,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_AZ128_streamwait.control.protocol.json": {
+      "sha256": "2409c5a08e071310d2454c51a2d556eca10610637e69fba60ae3508bed18a2f5",
+      "bytes": 19231,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_AZ128_streamwait.finished.json": {
+      "sha256": "366795bc7b1fe90a5f51949804cff878cfa03d69fa8bf8e3d5ac98178d954fe0",
+      "bytes": 346,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_AZ128_streamwait.jsonl": {
+      "sha256": "b9da153342f19f6813c407e6e8fa29e652084bae8e95b48c74770a096ef5ed4a",
+      "bytes": 1320386,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_AZ128_streamwait.jsonl.protocol.json": {
+      "sha256": "a1f3b712bec86ff12eb9c95001b0ca2c925b3ecc829ab24faf3214f3b8bc009b",
+      "bytes": 5486,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_AZ128_streamwait.jsonl.runtime.jsonl": {
+      "sha256": "931f2440bd3f0cbad3349c9ca6fe2d9313a2e331806866e647039599a942b964",
+      "bytes": 5156251,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_AZ128_streamwait.official.score.json": {
+      "sha256": "53c3c7ec37a5e41b17056c7992b9629b751a5f3bc6bfb1ab7723083a6984bfd5",
+      "bytes": 248661,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_E128_streamwait.control.protocol.json": {
+      "sha256": "1e91b939f13c1705246939e26c33dc7d01d4c13741b36e05c0573be9708926b9",
+      "bytes": 19155,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_E128_streamwait.finished.json": {
+      "sha256": "143550a36cd7ba808f64ebf68e97c35276a9a68e07d80ffb0663c8e3d658ce20",
+      "bytes": 345,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_E128_streamwait.jsonl": {
+      "sha256": "4820cf34fe00eebe423a596291ce40afcc5ddcc18f4d930e1416f6ec0ad12857",
+      "bytes": 1319658,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_E128_streamwait.jsonl.protocol.json": {
+      "sha256": "86d0e7c7de5d138ac00de4702317366c121d7e717f515780fbc78189badcd390",
+      "bytes": 5467,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_E128_streamwait.jsonl.runtime.jsonl": {
+      "sha256": "779d6fe84a315d60bf28bea5c1ebe9f2ea3508c0ef22c85c4cb1c36ced980530",
+      "bytes": 5151932,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_E128_streamwait.official.score.json": {
+      "sha256": "33882a2a07194d583098ae678905309b0c634089b8619999f3a5ff992d41fbce",
+      "bytes": 248593,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/outputs/audit_followup_20261008/rerun_fast/run_pope_streamwait_control.py": {
+      "sha256": "7405822da63292bf53efa5d48a7ac712c9a3804d66c0d5c403119c3e9403f956",
+      "bytes": 15322,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": {
+      "sha256": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639",
+      "bytes": 14972,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_loader.py": {
+      "sha256": "75196b9675d09e0d8477cf1fb3a4ef67b95d9e7651421c770ba0d88f08307da5",
+      "bytes": 7229,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/mmben_circular_score.py": {
+      "sha256": "562cb0f1be7408f7d9d19a950415f557f5483956b17571d4ca328d53ae3991a2",
+      "bytes": 2220,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/mme_canonical_score.py": {
+      "sha256": "cf689cad1a922455f004e59ad8677863a3a3952132ce68e3bf16821bbd75fc26",
+      "bytes": 10206,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/official_score.py": {
+      "sha256": "53760295975d468de59bac0877aaceb3a90e88250bd24ff673ddb1af19e2a114",
+      "bytes": 7523,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/rescore_official_20261008.py": {
+      "sha256": "1626ad817776efab8d3b045dd8f3533ab4bda722157748f0302802444873543c",
+      "bytes": 17789,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/vizwiz_official_normalization.py": {
+      "sha256": "a8b1fb79eaa2c581e59c9a7761734e81e6bd253246e2fe8e0b62bffbcd409f2d",
+      "bytes": 5275,
+      "archived_as": "regular_file"
+    },
+    "Qwen_vl/scripts/stage1_roundtrip_pilot/vizwiz_val_score.py": {
+      "sha256": "e7f7e1134906333f680947861c8cebb2997968fd1b72f29cf443ea120fd27cf6",
+      "bytes": 156,
+      "archived_as": "regular_file"
+    },
+    "RELEASED_SCORER_AUDIT.json": {
+      "sha256": "0d22c4fde8d26afd034a1c7a58275941556ef7b65171977cfec7b39430f75ab3",
+      "bytes": 1773,
+      "archived_as": "regular_file"
+    },
+    "external/01795c5dc99d/config.json": {
+      "sha256": "f112de882e31171a105f0d3f69d9e6e8700a40149f0944f4b507d3a41789e492",
+      "bytes": 1161,
+      "archived_as": "regular_file"
+    },
+    "external/5f5e01d7a1a3/generation_config.json": {
+      "sha256": "e453057ea6a89d902d7326b3addbe312a7a6c8faabf777a521c9f2d563f79b8d",
+      "bytes": 124,
+      "archived_as": "regular_file"
+    }
+  },
+  "source_symlinks_dereferenced": true,
+  "contains_weights_or_images": false,
+  "archive_sha256": "a8ab612f5aed1c6cfa410d8621979c7dcc7ea4438d3033e42aee290c3f704b31",
+  "blobs": [
+    {
+      "filename": "evidence.tar.gz",
+      "sha256": "a8ab612f5aed1c6cfa410d8621979c7dcc7ea4438d3033e42aee290c3f704b31",
+      "bytes": 2034313
+    }
+  ]
+}
