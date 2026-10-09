@@ -1,5 +1,5 @@
 <!doctype html><meta charset="utf-8"><title>Updated benchmark tables</title><style>body{font-family:Georgia,serif;margin:30px;color:#17202a}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{padding:5px 7px;text-align:right;border-bottom:1px solid #ddd}th:first-child,td:first-child{text-align:left}thead{border-top:2px solid;border-bottom:2px solid}.budget{background:#e7e9ec;text-align:center}.ours{font-weight:bold;background:#f0f6ff}p{font:14px/1.5 sans-serif;color:#52606d}h2{margin-top:40px}@media print{section{break-after:page}body{margin:0}table{font-size:10px}}</style>
-<p>Snapshot: 2026-10-09T23:40:08+08:00. Dagger: old complete result, repaired rerun pending; not a repaired final score. Dash: unavailable or protocol unresolved. Star: VizWiz validation. SQA uses the shipped CQM-A input (2017 image questions). POPE uses mean F1 over 2910/3000/3000 questions. LLaVA MME: perception; Qwen MME: perception + cognition. NeXT budgets are nominal. Reported rows are references, not local reproductions. Completed VizWiz K128 followup: alpha0/beta1 public defaults, not proven paper argv. Local VizWiz primary scores use official leave-one-annotator-out accuracy. K128 (NeXT nominal640) uses the predeclared alpha0/beta1 public-default pair, not verified paper argv; other budgets retain their recorded recipes. The released min(matches/3) formula is auxiliary only.</p>
+<p>Snapshot: 2026-10-10T02:06:02+08:00. Dagger: old complete result, repaired rerun pending; not a repaired final score. Dash: unavailable or protocol unresolved. Star: VizWiz validation. SQA uses the shipped CQM-A input (2017 image questions). POPE uses mean F1 over 2910/3000/3000 questions. LLaVA MME: perception; Qwen MME: perception + cognition. NeXT budgets are nominal. Reported rows are references, not local reproductions. VizWiz-val uses the EADP released evaluator, as confirmed by the authors according to the user. AnchorZip uses the complete original alpha0.5/beta2, full-text-guidance, max1024 recipe at all budgets; these are original predictions before the stream-wait rerun. K128 in NeXT denotes nominal640. The alpha0/beta1 public-default EADP/AnchorZip controls are supplementary, not same-recipe baselines for these cells. Official leave-one-out scores remain auxiliary. Paper generation argv remains unverified.</p>
 <section><h2>Table 1. LLaVA-1.5-7B -- updated results</h2><table><thead><tr><th>Method</th><th>GQA</th><th>VizWiz</th><th>SQA_IMG</th><th>TextVQA</th><th>POPE</th><th>MME</th><th>MMB_EN</th><th>MMB_CN</th><th>MMVet</th><th>Avg7</th></tr></thead><tbody>
 <tr><td class="budget" colspan="11">Full model</td></tr>
 <tr><td>FULL (reported)</td><td>61.9</td><td>55.6*</td><td>69.6</td><td>58.2</td><td>85.9</td><td>1513.4</td><td>64.7</td><td>58.1</td><td>31.3</td><td>67.7</td></tr>
@@ -16,8 +16,8 @@
 <tr><td>CDPruner</td><td>59.3</td><td>57.3*</td><td>69.0</td><td>56.0</td><td>87.3</td><td>1431.4</td><td>62.4</td><td>54.7</td><td>32.1</td><td>65.8</td></tr>
 <tr><td>HiPrune</td><td>57.3</td><td>55.4*</td><td>68.3</td><td>56.2</td><td>82.8</td><td>1364.4</td><td>62.2</td><td>56.4</td><td>31.2</td><td>64.5</td></tr>
 <tr><td>EADP (reported)</td><td>60.0</td><td>58.0*</td><td>69.0</td><td>56.5</td><td>87.2</td><td>1439.0</td><td>62.7</td><td>55.2</td><td>32.5</td><td>66.1</td></tr>
-<tr><td>EADP (reproduced)</td><td>59.7</td><td>56.5*</td><td>69.6</td><td>56.4</td><td>87.5</td><td>1432.0</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr class="ours"><td>AnchorZip (ours)</td><td>59.8</td><td>56.5*</td><td>69.2</td><td>56.6</td><td>87.5</td><td>1445.6</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>EADP (reproduced)</td><td>59.7</td><td>—</td><td>69.6</td><td>56.4</td><td>87.5</td><td>1432.0</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr class="ours"><td>AnchorZip (ours)</td><td>59.8</td><td>57.9*</td><td>69.2</td><td>56.6</td><td>87.5</td><td>1445.6</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
 <tr><td class="budget" colspan="11">Retain 64 tokens</td></tr>
 <tr><td>FastV</td><td>48.0</td><td>49.1</td><td>68.7</td><td>52.1</td><td>37.2</td><td>992.1</td><td>49.6</td><td>43.3</td><td>20.1</td><td>49.8</td></tr>
 <tr><td>PDrop</td><td>49.2</td><td>46.3</td><td>68.3</td><td>51.1</td><td>40.1</td><td>1004.4</td><td>48.3</td><td>37.8</td><td>19.7</td><td>49.3</td></tr>
@@ -31,7 +31,7 @@
 <tr><td>HiPrune</td><td>53.6</td><td>55.4*</td><td>68.9</td><td>54.2</td><td>73.0</td><td>1236.0</td><td>59.5</td><td>53.4</td><td>27.9</td><td>60.6</td></tr>
 <tr><td>EADP (reported)</td><td>59.4</td><td>59.5*</td><td>68.9</td><td>55.0</td><td>86.5</td><td>1403.6</td><td>61.9</td><td>53.1</td><td>29.4</td><td>65.0</td></tr>
 <tr><td>EADP (reproduced)</td><td>—</td><td>—</td><td>68.8</td><td>54.9</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr class="ours"><td>AnchorZip (ours)</td><td>59.0</td><td>57.6*</td><td>69.1</td><td>55.0</td><td>86.5</td><td>1401.4</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr class="ours"><td>AnchorZip (ours)</td><td>59.0</td><td>59.0*</td><td>69.1</td><td>55.0</td><td>86.5</td><td>1401.4</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
 <tr><td class="budget" colspan="11">Retain 32 tokens</td></tr>
 <tr><td>PruMerge+</td><td>51.3</td><td>53.5</td><td>68.1</td><td>48.7</td><td>68.9</td><td>1255.2</td><td>54.6</td><td>45.2</td><td>25.5</td><td>57.1</td></tr>
 <tr><td>TRIM</td><td>53.7</td><td>50.7</td><td>68.0</td><td>46.5</td><td>84.2</td><td>1259.3</td><td>57.1</td><td>39.5</td><td>22.8</td><td>58.9</td></tr>
@@ -41,7 +41,7 @@
 <tr><td>CDPruner</td><td>57.0</td><td>57.9*</td><td>69.5</td><td>52.1</td><td>87.1</td><td>1353.0</td><td>59.1</td><td>49.6</td><td>27.8</td><td>63.2</td></tr>
 <tr><td>EADP (reported)</td><td>58.2</td><td>59.3*</td><td>69.3</td><td>52.7</td><td>86.7</td><td>1347.0</td><td>59.4</td><td>50.1</td><td>30.6</td><td>63.4</td></tr>
 <tr><td>EADP (reproduced)</td><td>—</td><td>—</td><td>68.8</td><td>52.5</td><td>84.1</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr class="ours"><td>AnchorZip (ours)</td><td>57.1</td><td>58.3*</td><td>69.5</td><td>52.5</td><td>83.1</td><td>1353.0</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr class="ours"><td>AnchorZip (ours)</td><td>57.1</td><td>59.8*</td><td>69.5</td><td>52.5</td><td>83.1</td><td>1353.0</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
 </tbody></table></section>
 <section><h2>Table 2. LLaVA-NeXT-7B -- updated results</h2><table><thead><tr><th>Method</th><th>GQA</th><th>VizWiz</th><th>SQA_IMG</th><th>TextVQA</th><th>POPE</th><th>MME</th><th>MMB_EN</th><th>MMB_CN</th><th>MMVet</th><th>Avg7</th></tr></thead><tbody>
 <tr><td class="budget" colspan="11">Full model</td></tr>
@@ -59,8 +59,8 @@
 <tr><td>CDPruner</td><td>62.3</td><td>60.8*</td><td>67.9</td><td>58.4</td><td>87.1</td><td>1474.5</td><td>66.2</td><td>57.5</td><td>40.7</td><td>67.6</td></tr>
 <tr><td>HiPrune</td><td>60.7</td><td>61.2*</td><td>68.0</td><td>48.6</td><td>85.3</td><td>1475.3</td><td>67.0</td><td>58.8</td><td>38.4</td><td>66.0</td></tr>
 <tr><td>EADP (reported)</td><td>62.7</td><td>60.6*</td><td>68.0</td><td>59.2</td><td>87.4</td><td>1494.7</td><td>66.5</td><td>57.9</td><td>40.1</td><td>68.1</td></tr>
-<tr><td>EADP (reproduced)</td><td>62.9</td><td>59.2*</td><td>67.8</td><td>57.9</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr class="ours"><td>AnchorZip (ours)</td><td>62.6</td><td>59.0*</td><td>68.1</td><td>57.6</td><td>87.7</td><td>1462.1</td><td>64.3</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>EADP (reproduced)</td><td>62.9</td><td>—</td><td>67.8</td><td>57.9</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr class="ours"><td>AnchorZip (ours)</td><td>62.6</td><td>60.7*</td><td>68.1</td><td>57.6</td><td>87.7</td><td>1462.1</td><td>64.3</td><td>—</td><td>—</td><td>—</td></tr>
 <tr><td class="budget" colspan="11">Retain 320 tokens (nominal)</td></tr>
 <tr><td>FastV</td><td>52.1</td><td>51.3</td><td>66.3</td><td>52.9</td><td>59.9</td><td>1134.3</td><td>55.8</td><td>46.4</td><td>21.1</td><td>55.7</td></tr>
 <tr><td>PDrop</td><td>53.3</td><td>49.7</td><td>66.5</td><td>50.7</td><td>63.5</td><td>1180.7</td><td>56.9</td><td>48.9</td><td>23.7</td><td>57.0</td></tr>
@@ -74,7 +74,7 @@
 <tr><td>HiPrune</td><td>57.6</td><td>61.3*</td><td>67.3</td><td>56.5</td><td>78.9</td><td>1406.8</td><td>64.2</td><td>57.0</td><td>34.7</td><td>64.5</td></tr>
 <tr><td>EADP (reported)</td><td>62.2</td><td>60.4*</td><td>67.6</td><td>57.0</td><td>86.9</td><td>1491.3</td><td>64.6</td><td>55.9</td><td>39.4</td><td>67.0</td></tr>
 <tr><td>EADP (reproduced)</td><td>—</td><td>—</td><td>67.2</td><td>55.4</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr class="ours"><td>AnchorZip (ours)</td><td>62.3</td><td>58.8*</td><td>67.5</td><td>56.3</td><td>85.9</td><td>1438.3</td><td>62.2</td><td>—</td><td>—</td><td>—</td></tr>
+<tr class="ours"><td>AnchorZip (ours)</td><td>62.3</td><td>60.1*</td><td>67.5</td><td>56.3</td><td>85.9</td><td>1438.3</td><td>62.2</td><td>—</td><td>—</td><td>—</td></tr>
 <tr><td class="budget" colspan="11">Retain 160 tokens (nominal)</td></tr>
 <tr><td>PruMerge+</td><td>55.6</td><td>57.2</td><td>66.7</td><td>50.9</td><td>73.7</td><td>1298.3</td><td>58.3</td><td>49.1</td><td>27.6</td><td>59.9</td></tr>
 <tr><td>TRIM</td><td>57.1</td><td>52.9</td><td>65.7</td><td>47.4</td><td>84.4</td><td>1281.6</td><td>61.2</td><td>45.4</td><td>30.1</td><td>60.8</td></tr>
@@ -85,7 +85,7 @@
 <tr><td>HiPrune</td><td>53.7</td><td>59.5*</td><td>68.7</td><td>48.6</td><td>67.7</td><td>1200.7</td><td>59.8</td><td>50.7</td><td>29.2</td><td>58.5</td></tr>
 <tr><td>EADP (reported)</td><td>61.6</td><td>60.2*</td><td>67.4</td><td>54.2</td><td>86.0</td><td>1419.5</td><td>63.4</td><td>54.6</td><td>35.6</td><td>65.5</td></tr>
 <tr><td>EADP (reproduced)</td><td>—</td><td>—</td><td>67.5</td><td>52.1</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr class="ours"><td>AnchorZip (ours)</td><td>61.2</td><td>58.5*</td><td>67.1</td><td>53.3</td><td>82.8</td><td>1373.1</td><td>60.8</td><td>—</td><td>—</td><td>—</td></tr>
+<tr class="ours"><td>AnchorZip (ours)</td><td>61.2</td><td>59.7*</td><td>67.1</td><td>53.3</td><td>82.8</td><td>1373.1</td><td>60.8</td><td>—</td><td>—</td><td>—</td></tr>
 </tbody></table></section>
 <section><h2>Table 3. Qwen3-VL-8B -- updated results</h2><table><thead><tr><th>Method</th><th>TextVQA</th><th>ChartQA</th><th>AI2D</th><th>OCRBench</th><th>HallusionBench</th><th>MME</th><th>MMB_EN</th><th>MMB_CN</th><th>DocVQA</th><th>InfoVQA</th><th>Avg10</th></tr></thead><tbody>
 <tr><td class="budget" colspan="12">Full model</td></tr>

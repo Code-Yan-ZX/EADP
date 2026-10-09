@@ -1,40 +1,24 @@
-# 完整批次与后续三行最终审计
+# 用户指定60.72生成配置的VizWiz结果
 
-UTC 2026-10-09T15:53:17.304535+00:00。原75臂/55组及独立后续5臂/3组全部完成严格评分、来源和退出检查；58组提交已独立确认位于origin历史。
-本次补齐29854条新预测；NeXT GQA配对复用同协议完整AZ128。最终表格保留reported、reproduced和ours，所有下降如实保留。
+更新：2026-10-10T02:06:02+08:00。用户明确指定采用产生60.72的原始recipe，统一用于两个LLaVA模型全部三个预算。评分采用作者确认的EADP发布评分器。
 
-|模型|预算参数|任务|reported E|reproduced E|ours|ours−local E（pp）|
-|---|---:|---|---:|---:|---:|---:|
-|v15|128|GQA|60.000000000|59.651772937|59.771028780|+0.119255844|
-|v15|128|VizWiz|58.000000000|56.520027784|56.513081732|-0.006946052|
-|v15|64|GQA|59.400000000|缺失|59.031642550|—|
-|v15|64|VizWiz|59.500000000|缺失|57.566566335|—|
-|v15|32|GQA|58.200000000|缺失|57.123549054|—|
-|v15|32|VizWiz|59.300000000|缺失|58.286640426|—|
-|next|128|GQA|62.700000000|62.863730323|62.617268246|-0.246462077|
-|next|128|VizWiz|60.600000000|59.217411438|59.006714517|-0.210696921|
-|next|64|GQA|62.200000000|缺失|62.299252663|—|
-|next|64|VizWiz|60.400000000|缺失|58.828432508|—|
-|next|32|GQA|61.600000000|缺失|61.162346955|—|
-|next|32|VizWiz|60.200000000|缺失|58.545959713|—|
+|模型|名义预算|EADP reported|AnchorZip（指定配置）|
+|---|---:|---:|---:|
+|v15|128|58.00|57.85|
+|v15|64|59.50|58.99|
+|v15|32|59.30|59.76|
+|next|640|60.60|60.72|
+|next|320|60.40|60.08|
+|next|160|60.20|59.74|
 
-NeXT K128对应名义640。GQA每臂12578题；VizWiz每臂4319题。
+配置：alpha0.5/beta2、lambda.25、temperature0、单beam、vicuna_v1、完整文本guidance、max_new_tokens1024；使用已有4319题完整原预测（stream-wait修复前）。NeXT640/320/160对应K128/64/32，v1.5预算为128/64/32。
 
-三组新增配对的固定seed图像cluster bootstrap（2000次，seed20261009）95%CI均跨零，不支持准确率改善：
-- followup_v15_vizwiz_K128_release：AZ−E -0.006946052pp，95%CI [-0.479277611, +0.493227599]。
-- followup_next_gqa_K128_beta2：AZ−E -0.246462077pp，95%CI [-0.560074053, +0.063689260]。
-- followup_next_vizwiz_K128_release：AZ−E -0.210696921pp，95%CI [-0.592787682, +0.162132438]。
+60.72来自旧NeXT K128同一答案文件：官方LOO59.254457→EADP发布评分60.716215。全六格均重新核验题ID/题面/模型名/GT/SHA，并逐项调用未改动EADP main验证。
 
-GQA：NeXT E128为62.863730323，高于reported62.7，按用户0.2pp规则数值接受；v15 E128为59.651772937，低reported60.0约0.348227063pp。后者仍未达数值阈值，但完整题集、评分、同步和来源门通过，不能据低分断言bug或追分重跑。
+该选择整体保留原recipe结果，包含低于后续控制结果的格；没有逐格取最大值。alpha0/beta1公开默认配对和统计保存在author_confirmed_vizwiz_scores_20261010.json及本审计JSON的supplementary字段，不充当原recipe的同协议EADP基线。
 
-VizWiz：官方留一平均始终是主分。K128两方法共同使用预定义公开val默认alpha0/beta1、native loader guidance、max128、wait和AZ lambda.25；不是已核实paper argv，其他预算保留各自已注明recipe。
-- followup_v15_vizwiz_K128_release：同一完整预测按发布min(matches/3)公式仅作辅审计，E 57.883769391 / AZ 57.868333719；不替换官方主分。
-- followup_next_vizwiz_K128_release：同一完整预测按发布min(matches/3)公式仅作辅审计，E 60.677625994 / AZ 60.476962260；不替换官方主分。
-这些发布公式数值更接近paper，量化了指标差异的影响；作者实际scorer/argv未知，不能宣称已经证明论文差距根因或完成原论文配置复现。
+原recipe本机EADP VizWiz基线缺失；主表相应reproduced格置空，reported行保持论文值。其他数据集所有数值及Avg保持原值。旧预测缺 contemporaneous runtime metadata，不能把原recipe叫作完成stream-wait修复后的运行；作者确认仅覆盖评分器。
 
-同机可用点估计高/低/相同：{"v15": {"higher": 7, "lower": 4, "equal": 0}, "next": {"higher": 4, "lower": 4, "equal": 0}, "qwen": {"higher": 6, "lower": 3, "equal": 1}}。不含Avg，不等于显著性或全面paper复现；Qwen HallB来源边界保留。
+原75+后续5 GPU臂均已完成，本次没有启动GPU。未登记CN/逐crop与旧Qwen来源边界继续保留。
 
-本后续任务已完成，不再启动缺乏具体错误证据的参数实验。未登记CN/逐crop候选和论文全格缺失仍是范围外事项，未算已运行或修复。MMB-CN语言、NeXT跨crop assignment、作者配置身份及旧Qwen来源限制继续披露。
-
-最终PDF/HTML/TeX和逐格JSON/CSV已更新；PDF额外补齐公开配置及官方主指标脚注，全部数值单元格保持一致。旧表、旧审计及request在pre_final_archive目录精确保留。
-表格来源SHA、完整配对统计、远端确认及本次本机证据详见three_row_audit.json。
+逐题评分与来源：/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/selected_vizwiz_recipe_6072_20261010.json。

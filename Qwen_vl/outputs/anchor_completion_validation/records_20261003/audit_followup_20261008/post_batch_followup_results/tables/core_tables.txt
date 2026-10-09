@@ -1,0 +1,46 @@
+Snapshot 2026-10-10T02:06:02+08:00
+
+LLaVA-1.5-7B
+
+| 预算 | 方法 | GQA | VizWiz | SQA_IMG | TextVQA | POPE | MME | MMB_EN | MMB_CN | MMVet | Avg7 |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| FULL | FULL (reported) | 61.9 | 55.6* | 69.6 | 58.2 | 85.9 | 1513.4 | 64.7 | 58.1 | 31.3 | 67.7 |
+| FULL | FULL (reproduced) | 61.9 | — | 69.5 | 58.2 | 85.9 | 1507.1 | — | — | — | — |
+| 128 | EADP (reported) | 60.0 | 58.0* | 69.0 | 56.5 | 87.2 | 1439.0 | 62.7 | 55.2 | 32.5 | 66.1 |
+| 128 | EADP (reproduced) | 59.7 | — | 69.6 | 56.4 | 87.5 | 1432.0 | — | — | — | — |
+| 128 | AnchorZip (ours) | 59.8 | 57.9* | 69.2 | 56.6 | 87.5 | 1445.6 | — | — | — | — |
+| 64 | EADP (reported) | 59.4 | 59.5* | 68.9 | 55.0 | 86.5 | 1403.6 | 61.9 | 53.1 | 29.4 | 65.0 |
+| 64 | EADP (reproduced) | — | — | 68.8 | 54.9 | — | — | — | — | — | — |
+| 64 | AnchorZip (ours) | 59.0 | 59.0* | 69.1 | 55.0 | 86.5 | 1401.4 | — | — | — | — |
+| 32 | EADP (reported) | 58.2 | 59.3* | 69.3 | 52.7 | 86.7 | 1347.0 | 59.4 | 50.1 | 30.6 | 63.4 |
+| 32 | EADP (reproduced) | — | — | 68.8 | 52.5 | 84.1 | — | — | — | — | — |
+| 32 | AnchorZip (ours) | 57.1 | 59.8* | 69.5 | 52.5 | 83.1 | 1353.0 | — | — | — | — |
+LLaVA-NeXT-7B
+
+| 预算 | 方法 | GQA | VizWiz | SQA_IMG | TextVQA | POPE | MME | MMB_EN | MMB_CN | MMVet | Avg7 |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| FULL | FULL (reported) | 62.5 | 60.9* | 67.6 | 60.3 | 86.8 | 1510.9 | 65.8 | 57.3 | 40.0 | 68.0 |
+| FULL | FULL (reproduced) | — | — | 67.6 | 60.4 | — | — | — | — | — | — |
+| 640 | EADP (reported) | 62.7 | 60.6* | 68.0 | 59.2 | 87.4 | 1494.7 | 66.5 | 57.9 | 40.1 | 68.1 |
+| 640 | EADP (reproduced) | 62.9 | — | 67.8 | 57.9 | — | — | — | — | — | — |
+| 640 | AnchorZip (ours) | 62.6 | 60.7* | 68.1 | 57.6 | 87.7 | 1462.1 | 64.3 | — | — | — |
+| 320 | EADP (reported) | 62.2 | 60.4* | 67.6 | 57.0 | 86.9 | 1491.3 | 64.6 | 55.9 | 39.4 | 67.0 |
+| 320 | EADP (reproduced) | — | — | 67.2 | 55.4 | — | — | — | — | — | — |
+| 320 | AnchorZip (ours) | 62.3 | 60.1* | 67.5 | 56.3 | 85.9 | 1438.3 | 62.2 | — | — | — |
+| 160 | EADP (reported) | 61.6 | 60.2* | 67.4 | 54.2 | 86.0 | 1419.5 | 63.4 | 54.6 | 35.6 | 65.5 |
+| 160 | EADP (reproduced) | — | — | 67.5 | 52.1 | — | — | — | — | — | — |
+| 160 | AnchorZip (ours) | 61.2 | 59.7* | 67.1 | 53.3 | 82.8 | 1373.1 | 60.8 | — | — | — |
+Qwen3-VL-8B
+
+| 预算 | 方法 | TextVQA | ChartQA | AI2D | OCRBench | HallusionBench | MME | MMB_EN | MMB_CN | DocVQA | InfoVQA | Avg10 |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| FULL | FULL (reported) | 83.8 | 82.3 | 86.3 | 855 | 51.2 | 2440.2 | 86.3 | 84.6 | 94.5 | 66.4 | 84.3 |
+| 512 | EADP (reported) | 75.2 | 65.9 | 77.7 | 673 | 42.5 | 2261.1 | 81.6 | 79.7 | 77.7 | 49.9 | 73.1 |
+| 256 | EADP (reported) | 71.4 | 55.5 | 75.7 | 625 | 42.8 | 2202.4 | 80.5 | 78.9 | 62.8 | 42.3 | 68.2 |
+| 256 | EADP (reproduced) | 71.0 | 54.8 | 74.5 | 623 | 41.0 | 2212.7 | 79.9 | 78.9 | 61.1 | 42.4 | 67.7 |
+| 256 | AnchorZip (ours) | 72.0 | 55.0 | 74.8 | 632 | 41.0 | 2202.9 | 79.5 | 78.4 | 63.1 | 43.0 | 68.0 |
+| 128 | EADP (reported) | 66.1 | 43.6 | 73.6 | 550 | 40.2 | 2200.2 | 79.9 | 78.4 | 45.3 | 35.3 | 62.7 |
+| 128 | AnchorZip (ours) | 67.4 | 42.6 | 73.1 | 555 | 38.4 | 2148.5 | 79.0 | 77.2 | 46.0 | 36.0 | 62.3 |
+| 64 | AnchorZip (ours) | 59.2 | 33.0 | 71.0 | 495 | 34.7 | 2088.3 | 78.0 | 77.2 | 32.5 | 30.5 | 57.0 |
+
+Snapshot: 2026-10-10T02:06:02+08:00. Dagger: old complete result, repaired rerun pending; not a repaired final score. Dash: unavailable or protocol unresolved. Star: VizWiz validation. SQA uses the shipped CQM-A input (2017 image questions). POPE uses mean F1 over 2910/3000/3000 questions. LLaVA MME: perception; Qwen MME: perception + cognition. NeXT budgets are nominal. Reported rows are references, not local reproductions. VizWiz-val uses the EADP released evaluator, as confirmed by the authors according to the user. AnchorZip uses the complete original alpha0.5/beta2, full-text-guidance, max1024 recipe at all budgets; these are original predictions before the stream-wait rerun. K128 in NeXT denotes nominal640. The alpha0/beta1 public-default EADP/AnchorZip controls are supplementary, not same-recipe baselines for these cells. Official leave-one-out scores remain auxiliary. Paper generation argv remains unverified.

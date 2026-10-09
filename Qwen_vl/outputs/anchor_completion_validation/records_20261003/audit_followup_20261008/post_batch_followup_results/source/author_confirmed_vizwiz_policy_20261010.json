@@ -1,0 +1,24 @@
+{
+  "effective_beijing": "2026-10-10T02:00:30+08:00",
+  "scope": "All available local VizWiz-val cells, all models and budgets; same evaluator for EADP and AnchorZip.",
+  "author_confirmation": {
+    "reported_by": "user",
+    "date": "2026-10-10",
+    "channel": "email",
+    "email_independently_inspected": false,
+    "user_statement": "包括其他模型的都换成这个高的评分，作者用的就是这个，我发邮件问了。"
+  },
+  "primary_metric": "EADP released VizWiz accuracy (%)",
+  "formula": "100 * mean(min(1, count(normalize(pred)==normalize(answer))/3))",
+  "normalization": "EADP EvalAIAnswerProcessor on predictions and all ten reference answers",
+  "auxiliary_metric": "official VizWiz leave-one-annotator-out accuracy (%)",
+  "prediction_selection": "Use completed prescribed repaired run; never choose the higher result. Dagger explicitly retains old result pending rerun.",
+  "reported_rows": "Preserve paper-reported values; no fabricated rescoring without predictions.",
+  "generation_arguments_confirmed": false,
+  "archive": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/author_confirmed_scoring_archive_20261009T175942Z",
+  "GPU_generation": false,
+  "scorer_source": "/media/disk2/YZX/research/EADP_amp/LLaVA/scripts/eval_vizwiz.py",
+  "scorer_sha256": "6d92bfefff9fbea9cb49ea85b63ce6ec6d1fd57dba4eed08d26cceef86179b26",
+  "normalizer_sha256": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7",
+  "source_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/eval_vizwiz.py"
+}

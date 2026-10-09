@@ -1,6 +1,11 @@
-Post-batch predeclared K128 controls. Original 75 arms/55 groups are unchanged.
-NeXT GQA pairs a new EADP arm with the completed original AZ128 under the same beta2 recipe.
-VizWiz uses two new full arms per model under predeclared public defaults alpha0/beta1; not verified paper argv. Official leave-one-out remains primary; no score-driven selection.
+Post-batch K128 controls and author-confirmed VizWiz scorer revision.
+Original 75 arms/55 groups plus 5 followup arms/3 groups are complete; their predictions and official LOO score files remain unchanged.
+On 2026-10-10 the user reported author email confirmation of the EADP released VizWiz evaluator, then explicitly selected the original recipe yielding NeXT AnchorZip 60.72.
+The main table uses the complete original alpha0.5/beta2/full-guidance/max1024 AnchorZip prediction block for both LLaVA models and all three budgets, before stream-wait-repair generation. All six cells use the EADP normalization and mean min(matches/3,1); official LOO stays auxiliary. Historical prediction runtime metadata is empty; parameter evidence comes from the existing driver/source audit.
+Shared alpha0/beta1 public-default EADP/AnchorZip K128 controls and repaired legacy-budget scores are retained separately. Their EADP values do not fill the missing same-recipe main-table VizWiz baselines. No per-cell maximum selection is performed; cells lower than controls are also retained. Author confirmation concerns the scoring formula, not full paper generation argv.
+All non-VizWiz numerical cells and averages are unchanged. The frozen refresh_tables.py/final_table_annotation.py document the original official-primary presentation; apply_author_confirmed_vizwiz.py documents the initial scorer-only revision, superseded for main prediction selection by select_vizwiz_recipe_6072.py.
+See source/selected_vizwiz_recipe_6072_20261010.json for the current user-selected policy, full per-question scores and source hashes. source/author_confirmed_vizwiz_scores_20261010.json preserves the supplementary complete controls and recalculated paired statistics.
+
 {
   "followup_v15_vizwiz_K128_release": {
     "identity": "d4d01148332b6e176c917153e1bc53deb5fbdcb8d47c594823a34eb170c371cc",

@@ -1,6 +1,6 @@
 {
-  "snapshot_beijing": "2026-10-09T23:40:08+08:00",
-  "selection_policy": "Use completed prescribed repaired run; never choose the higher result. Dagger explicitly retains old result pending rerun.",
+  "snapshot_beijing": "2026-10-10T02:06:02+08:00",
+  "selection_policy": "Use completed prescribed repaired run; never choose the higher result. Dagger explicitly retains old result pending rerun. VizWiz override: User explicitly selected the complete original recipe yielding NeXT K128 60.72, across both models and all three budgets; no per-cell maximum selection.",
   "queues": {
     "streamwait_repair_continuation": {
       "status": "complete",
@@ -230,7 +230,18 @@
     "/home/dell/.codex/attachments/2592c72d-5932-4eb7-b533-5bfa2c966a22/codex-clipboard-7701d166-7fca-4710-86c5-5349c98c310b.png": "3ec28417761424ecba104a98a915bc3054e5cf6df5b04c1965545af371c20f34",
     "/home/dell/.codex/attachments/dfb4bd31-d32f-4aec-a218-2d3f20b87f0a/codex-clipboard-bd00b8c7-42d3-490c-989e-00e7fe6e9fff.png": "9e6ed1ec862aac6b412033beda6257b90ed813264e7570cf858a68eba48221f9",
     "/home/dell/.codex/attachments/27b99e9d-8955-47f1-9048-3b06403f91bb/codex-clipboard-1da31ab0-5166-47ea-b195-0b3caf5155ae.png": "a031d9577d1af3c5f37fe93850e32c61c750e12c4fbaa9f0ea0964156c890cf2",
-    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/final_table_annotation.py": "de5c33ea236e10545461186a1bcacefc6dd43e2e5869baa5b73b9b8fcc89bdd1"
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/final_table_annotation.py": "de5c33ea236e10545461186a1bcacefc6dd43e2e5869baa5b73b9b8fcc89bdd1",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/scripts/eval_vizwiz.py": "6d92bfefff9fbea9cb49ea85b63ce6ec6d1fd57dba4eed08d26cceef86179b26",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/eval/m4c_evaluator.py": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val.json": "f96a6a42da56fa067d023ec25a841df840d6c5989b1b0e7b0e6f0d269c617ab7",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/llava_val.jsonl": "89a42dce0ba8cc26325bdd8937dd461df4f201f376f5fdb46b33ee052dea8c0b",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/vizwiz_scoring_verification_20261009.json": "f8774fd248737e134e4808f8b96bc6535baa6693b89e6df7c6cc6f4efeef78fc",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/select_vizwiz_recipe_6072.py": "238aa72ee16de04bec7f62736a1109b45d334804a8cb70adf58516a4ab522ca3",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_a_v15.sh": "b56f1cbd80872900c81c7e3eaa4bc85fd942df3758ef113d0ca43ba8d37913ae",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_lane_b_next.sh": "2f23697d200e0dd0555a89bba37f62c7e1beda4f539d11f11a2531f77d197b99",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_eval_arm_model_vqa.py": "9b4948048e157e068b09e3b7f68ad61fcfecaaa7ce2e6208e10ed297f4151534",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/selected_vizwiz_recipe_6072_20261010.json": "62d5c24540c1aa0ec8ca9948bdaeaa457c641fdf8e0fe26695fc8e9ab69a0f76",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/author_confirmed_vizwiz_scores_20261010.json": "56b8ac367245b2962e32d0f5f7acec2003b87ec00a026d6fbabc86eb0fb620b7"
   },
   "rows": [
     {
@@ -1034,9 +1045,14 @@
           "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/v15_pope_EGATHER_streamwait_attempt2.official.score.json"
         },
         "VizWiz": {
-          "value": 56.5200277842093,
-          "status": "release_default_control",
-          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_E128_streamwait.official.score.json"
+          "value": null,
+          "status": "different_generation_recipe_control_only",
+          "source": null,
+          "supplementary_control": {
+            "value": 57.88376939106275,
+            "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/author_confirmed_vizwiz_scores_20261010.json",
+            "recipe": "alpha0/beta1, native loader, max128, wait"
+          }
         },
         "MMB_EN": {
           "value": null,
@@ -1072,9 +1088,13 @@
           "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/v15_gqa_LRMAIN025_streamwait_attempt2.official.score.json"
         },
         "VizWiz": {
-          "value": 56.513081731882366,
-          "status": "release_default_control",
-          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_AZ128_streamwait.official.score.json"
+          "value": 57.85289804738751,
+          "status": "user_selected_original_recipe",
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/selected_vizwiz_recipe_6072_20261010.json",
+          "score_record_id": "v15_K128_AnchorZip_original_recipe",
+          "metric": "EADP released VizWiz accuracy (%)",
+          "official_loo_auxiliary": 56.462144014818236,
+          "prediction_sha256": "182fc80437f06958d5650524e262e71dfbdec4e605f9f232daddf241258d74d4"
         },
         "TextVQA": {
           "value": 56.6040000000001,
@@ -1821,9 +1841,13 @@
           "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/v15_gqa_LRMAIN0125_streamwait_attempt2.official.score.json"
         },
         "VizWiz": {
-          "value": 57.56656633479974,
-          "status": "existing",
-          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/audit_20261008/rescored/vizwiz_v15_LRMAIN0125_official.json"
+          "value": 58.987419927452336,
+          "status": "user_selected_original_recipe",
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/selected_vizwiz_recipe_6072_20261010.json",
+          "score_record_id": "v15_K64_AnchorZip_original_recipe",
+          "metric": "EADP released VizWiz accuracy (%)",
+          "official_loo_auxiliary": 57.56656633479973,
+          "prediction_sha256": "ac5bec171996f74a828d6e6d0df7ed3fa0128261e5f38b30a0b06ee2e10d0f18"
         },
         "SQA_IMG": {
           "value": 69.1125433812593,
@@ -2339,9 +2363,13 @@
           "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/v15_gqa_LRMAIN00625_streamwait_attempt2.official.score.json"
         },
         "VizWiz": {
-          "value": 58.28664042602452,
-          "status": "existing",
-          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/audit_20261008/rescored/vizwiz_v15_LRMAIN00625_official.json"
+          "value": 59.759203519333184,
+          "status": "user_selected_original_recipe",
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/selected_vizwiz_recipe_6072_20261010.json",
+          "score_record_id": "v15_K32_AnchorZip_original_recipe",
+          "metric": "EADP released VizWiz accuracy (%)",
+          "official_loo_auxiliary": 58.28664042602455,
+          "prediction_sha256": "223f990e5346797758bb5ca6abe270ad8161f649cb1e35b5debfdec6ab9b682a"
         },
         "SQA_IMG": {
           "value": 69.50917203767972,
@@ -3161,9 +3189,14 @@
           "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/next_gqa_E128_streamwait.official.score.json"
         },
         "VizWiz": {
-          "value": 59.21741143783283,
-          "status": "release_default_control",
-          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/next_vizwiz_E128_streamwait.official.score.json"
+          "value": null,
+          "status": "different_generation_recipe_control_only",
+          "source": null,
+          "supplementary_control": {
+            "value": 60.67762599367137,
+            "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/author_confirmed_vizwiz_scores_20261010.json",
+            "recipe": "alpha0/beta1, native loader, max128, wait"
+          }
         },
         "MMB_EN": {
           "value": null,
@@ -3199,9 +3232,13 @@
           "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_gqa_LRMAIN025_streamwait_attempt2.official.score.json"
         },
         "VizWiz": {
-          "value": 59.00671451724938,
-          "status": "release_default_control",
-          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/next_vizwiz_AZ128_streamwait.official.score.json"
+          "value": 60.71621517326542,
+          "status": "user_selected_original_recipe",
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/selected_vizwiz_recipe_6072_20261010.json",
+          "score_record_id": "next_K128_AnchorZip_original_recipe",
+          "metric": "EADP released VizWiz accuracy (%)",
+          "official_loo_auxiliary": 59.254457050243104,
+          "prediction_sha256": "25c8cbfe2b6b31ff51a006beb9ab84fed2cfa0bd29ba98eb1b4b12ec50398384"
         },
         "POPE": {
           "value": 87.7158368975429,
@@ -3948,9 +3985,13 @@
           "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_gqa_LRMAIN0125_streamwait_attempt2.official.score.json"
         },
         "VizWiz": {
-          "value": 58.82843250752487,
-          "status": "complete",
-          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_vizwiz_LRMAIN0125_streamwait_attempt2.official.score.json"
+          "value": 60.08335262792313,
+          "status": "user_selected_original_recipe",
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/selected_vizwiz_recipe_6072_20261010.json",
+          "score_record_id": "next_K64_AnchorZip_original_recipe",
+          "metric": "EADP released VizWiz accuracy (%)",
+          "official_loo_auxiliary": 58.636258393146555,
+          "prediction_sha256": "9fabda78e133b8fbfe0f9c1b3319da5145004da956829036d2d59f4be10a8ac1"
         },
         "POPE": {
           "value": 85.89048883614093,
@@ -4520,9 +4561,13 @@
           "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_gqa_LRMAIN00625_streamwait_attempt2.official.score.json"
         },
         "VizWiz": {
-          "value": 58.54595971289645,
-          "status": "complete",
-          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_vizwiz_LRMAIN00625_streamwait_attempt2.official.score.json"
+          "value": 59.74376784749557,
+          "status": "user_selected_original_recipe",
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/selected_vizwiz_recipe_6072_20261010.json",
+          "score_record_id": "next_K32_AnchorZip_original_recipe",
+          "metric": "EADP released VizWiz accuracy (%)",
+          "official_loo_auxiliary": 58.29590182912712,
+          "prediction_sha256": "ff2a3e4bf53d4aec351d86085074cea2db05263aac33c41fb5fa1348a02d7d34"
         },
         "TextVQA": {
           "value": 53.26200000000008,
@@ -5460,7 +5505,45 @@
     "Qwen EADP HallusionBench recorded/current bank SHA remains unresolved; score is existing audited scoring result, not complete generation provenance.",
     "Other reported methods are parsed from arXiv2607.02484v1 Tables1/2/4; no new reproduction is implied.",
     "Strict exclusive-GPU vs concurrent-GPU comparison is not established by this table.",
-    "Completed VizWiz K128 followup cells use predeclared public validation defaults alpha0/beta1, both EADP and ours; not verified paper argv. Other budget cells retain their explicitly recorded original recipes.",
-    "Local VizWiz primary scores use official leave-one-annotator-out accuracy. K128 (NeXT nominal640) uses the predeclared alpha0/beta1 public-default pair, not verified paper argv; other budgets retain their recorded recipes. The released min(matches/3) formula is auxiliary only."
-  ]
+    "VizWiz-val uses the EADP released evaluator, as confirmed by the authors according to the user. AnchorZip uses the complete original alpha0.5/beta2, full-text-guidance, max1024 recipe at all budgets; these are original predictions before the stream-wait rerun. K128 in NeXT denotes nominal640. The alpha0/beta1 public-default EADP/AnchorZip controls are supplementary, not same-recipe baselines for these cells. Official leave-one-out scores remain auxiliary. Paper generation argv remains unverified."
+  ],
+  "vizwiz_scoring_policy": {
+    "effective_beijing": "2026-10-10T02:00:30+08:00",
+    "scope": "All available local VizWiz-val cells, all models and budgets; same evaluator for EADP and AnchorZip.",
+    "author_confirmation": {
+      "reported_by": "user",
+      "date": "2026-10-10",
+      "channel": "email",
+      "email_independently_inspected": false,
+      "user_statement": "包括其他模型的都换成这个高的评分，作者用的就是这个，我发邮件问了。"
+    },
+    "primary_metric": "EADP released VizWiz accuracy (%)",
+    "formula": "100 * mean(min(1, count(normalize(pred)==normalize(answer))/3))",
+    "normalization": "EADP EvalAIAnswerProcessor on predictions and all ten reference answers",
+    "auxiliary_metric": "official VizWiz leave-one-annotator-out accuracy (%)",
+    "prediction_selection": "User explicitly selected the complete original recipe yielding NeXT K128 60.72, across both models and all three budgets; no per-cell maximum selection.",
+    "reported_rows": "Preserve paper-reported values; no fabricated rescoring without predictions.",
+    "generation_arguments_confirmed": false,
+    "archive": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/author_confirmed_scoring_archive_20261009T175942Z",
+    "GPU_generation": false,
+    "scorer_source": "/media/disk2/YZX/research/EADP_amp/LLaVA/scripts/eval_vizwiz.py",
+    "scorer_sha256": "6d92bfefff9fbea9cb49ea85b63ce6ec6d1fd57dba4eed08d26cceef86179b26",
+    "normalizer_sha256": "96c4dcf88e7a94cb48b40db713b02d5da2f18e92814d82f4b8e796e21b690da7",
+    "source_url": "https://github.com/SJTU-DeepVisionLab/EADP/blob/e1a08801461c181871b9ff1cb0803b8e9966f083/LLaVA/scripts/eval_vizwiz.py",
+    "selected_recipe": {
+      "alpha": 0.5,
+      "beta": 2.0,
+      "lambda_completion": 0.25,
+      "temperature": 0.0,
+      "num_beams": 1,
+      "max_new_tokens": 1024,
+      "conv_mode": "vicuna_v1",
+      "generation_entry": "llava_eval_arm_model_vqa.py",
+      "pruning_text": "Full question text, including Unanswerable instruction and short-answer suffix",
+      "execution_variant": "Original historical predictions, before the stream-wait-repair generation",
+      "historical_runtime_limit": "Original prediction metadata is empty; generation settings are established by driver/source audit, not a contemporaneous per-question runtime trace."
+    },
+    "user_recipe_selection": "我就是问你这个60.72是怎么跑出来的，然后用这个的 适配到别的模型就行了。",
+    "supplementary_shared_public_default_scores": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/author_confirmed_vizwiz_scores_20261010.json"
+  }
 }
