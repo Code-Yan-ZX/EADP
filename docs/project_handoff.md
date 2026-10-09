@@ -1465,3 +1465,52 @@ q=.2在llava_arch.py:586硬编码且与官方源码一致，不是已发现的�
 现有runtime只记录几何/count/CLI预算/promptSHA，尚无实际模型对象α/β/class/
 dtype/backend快照。作者真实运行argv以及历史环境未知，是后续身份检查边界；
 没有环境准确率因果证据，未为回答启动新probe或改变已有冻结算法/生成队列。
+
+
+### 13.25 Oct9 09:15 独立小时巡检：legacy完成10项，34组远端确认
+
+本次完整分段读取1467行交接并核对live Git；分支仍
+codex/anchor-completion-validation、HEAD194562d、index SHA87ad06fd…，用户既有
+变动及暂存保留。原28项118917/118917题再次通过完整题面/Text复合键、官方
+分母及CPU评分；1411/1411来源SHA、61日志、summary JSON/CSV28行一致且
+errors=[]。两lane与POPE控制complete及合法marker通过，原监督/helper/watcher
+与17个历史worker启动身份实际退出，31关闭产物与上轮SHA一致。初始NeXT
+Text128两臂无新增runtime的边界保留，不把基础all_complete当全scope完成。
+
+128面板128/512/result SHA，K32三臂各5000题和phase1全12项39119题完整
+来源/runtime/严格官方score/exit0/finished/成功controller marker再次通过。
+phase2当前10/32项严格完成，共36812题，新增v15 POPE128两臂各8910
+(random2910)：EADP87.51959583686018、AnchorZip87.45465578793069，
+AZ−E为−0.06494004892948624 F1点；保留负方向，不据点估计宣称显著或整体胜出。
+17399/17399文件SHA（2518来源/工件、14881图像）及2584/2584内嵌图像SHA
+通过；四plan来源32/38/57/164和另8个固定overlay/原target/recovery plan等SHA
+一致，全部32实际attempt2范围保持，prepared-only工件不计额外scope。
+
+09:10:26→09:13:40，同启动身份PID3292761/3293502的NeXT POPE AZ32与
+v15 POPE AZ64完整预测分别2650→3265、2535→3149/8910，输出与日志mtime
+同步推进，末次age<0.31秒；最后分次读取v15 runtime/log为3150，是一行持续
+写入的时间差，独立前缀题面/身份/顺序/runtime/实际预算门通过。A40恰两个
+登记模型/reservation，41729MiB、无未知CUDA context；实际worker完整argv、
+父子/startticks及CPU监督器2558609的授权overlay/target/plan/startticks通过。
+两新单臂于各自前驱完整评分后约0.934/0.920秒自动接续，第二槽首NeXT真实
+21316MiB context、free22933>=22500；24个continuation启动门与MME→POPE
+顺序门通过。native runtime无创建时间戳，首完整行先行依据冻结has_progress
+硬门与ready/context记录，不补称独立时间戳证明。旧SIGTERM/error属于明确
+登记CPU恢复历史；当前实际fd对应recovery_supervisor.log且无新异常。
+
+publisher PID2560860 active/running，授权overlay与原target SHA、实际argv/
+启动身份通过，maintenance=false/source_ready=true。09:11:48二次独立
+ls-remote确认origin9891f7a5d6494f77a0eeb8e14146d3e5db933c7a，34/55组commit
+全为远端ancestor，21组合法等待；pending_commit/publication/error空。
+35归档/1314member/1399来源检查/55预测206989归档行、158metadata/134static
+与264提交路径allowlist通过，25新增官方score与原件/归档精确一致；legacy
+CSV10行保持raw指标及配对/单臂身份，没有夹带用户figure或私有文件。
+
+证据保存于rerun_batch/hourly_monitor/check_20261009T010915Z/。本次仅执行
+CPU只读巡检、保存本机快照和追加本文事实，未启动/停止/重启任何实验或
+监督器，未改冻结源码/数学/参数/状态/计划/预测/score，未stage/commit/push
+或改定时器。当前已登记75个全量实验臂中53完整，phase2仍2生成/20pending，
+22未完成臂共187387完整分母题尚未整体完成；活跃前缀另扣，不当作成绩。
+距中午12:00约2小时45分，最新实测总工期20:00–23:00仍只是估计，截止风险
+明显，继续已授权队列。全部已登记scope及55远端组完成前
+all_experiments_complete=false，小时timer保持active。
