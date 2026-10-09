@@ -15,6 +15,7 @@ Legacy single-method audit arms are in [repaired_legacy_results.csv](repaired_le
 |---|---:|---:|---:|---:|---|
 | legacy_v15_mme_FULL_streamwait |  |  |  | 1507.059 | [manifest](legacy_v15_mme_FULL_streamwait/manifest.json) |
 | legacy_v15_mme_K128_streamwait | 1431.982 | 1445.555 | 13.573 |  | [manifest](legacy_v15_mme_K128_streamwait/manifest.json) |
+| legacy_v15_pope_FULL_streamwait |  |  |  | 85.879 | [manifest](legacy_v15_pope_FULL_streamwait/manifest.json) |
 | legacy_v15_pope_K128_streamwait | 87.520 | 87.455 | -0.065 |  | [manifest](legacy_v15_pope_K128_streamwait/manifest.json) |
 | next_sqa_FULL |  |  |  | 67.675 | [manifest](next_sqa_FULL/manifest.json) |
 | next_sqa_FULL_streamwait |  |  |  | 67.625 | [manifest](next_sqa_FULL_streamwait/manifest.json) |
