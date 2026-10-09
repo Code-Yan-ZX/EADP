@@ -1,8 +1,6 @@
 {
-  "updated_utc": "2026-10-09T09:14:39.607274+00:00",
-  "new_groups": [
-    "legacy_v15_gqa_AZ_K32_streamwait"
-  ],
+  "updated_utc": "2026-10-09T09:18:24.589647+00:00",
+  "new_groups": [],
   "published_groups": {
     "v15_textvqa_K128": {
       "identity": "75830ccc2830cb6d3a72624c63344d5b0952710a335445f16805912eaaa0df28",
@@ -3323,6 +3321,7 @@
     },
     "legacy_v15_gqa_AZ_K32_streamwait": {
       "identity": "052e6671670252cd13ed5530c716014b58e999cd7c720798808e83c90b09c455",
+      "commit": "5189750f2834096d5549956f47a88f8100bad2c5",
       "scores": [
         {
           "method": "AnchorZip",
@@ -3378,11 +3377,12 @@
           },
           "interpretation": "independent native-protocol stream-wait repair; single arms have no paired local EADP comparison"
         }
-      ]
+      ],
+      "published_utc": "2026-10-09T09:15:47.396848+00:00"
     }
   },
   "local_head_preserved": "194562d17b802df87d7d6dd58e9e28a4d3d72753",
-  "parent_remote_head": "8a798c43912310af647d6165133e591917e09059",
+  "parent_remote_head": "5189750f2834096d5549956f47a88f8100bad2c5",
   "allowlist": [
     "Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
     "docs/project_handoff.md",
