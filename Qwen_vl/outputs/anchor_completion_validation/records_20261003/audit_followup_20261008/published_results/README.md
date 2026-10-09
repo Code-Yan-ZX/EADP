@@ -13,6 +13,7 @@ Legacy single-method audit arms are in [repaired_legacy_results.csv](repaired_le
 
 | Group | EADP | AnchorZip | AZ − EADP | FULL | Evidence |
 |---|---:|---:|---:|---:|---|
+| legacy_v15_gqa_FULL_streamwait |  |  |  | 61.910 | [manifest](legacy_v15_gqa_FULL_streamwait/manifest.json) |
 | legacy_v15_gqa_K128_streamwait | 59.652 | 59.771 | 0.119 |  | [manifest](legacy_v15_gqa_K128_streamwait/manifest.json) |
 | legacy_v15_mme_FULL_streamwait |  |  |  | 1507.059 | [manifest](legacy_v15_mme_FULL_streamwait/manifest.json) |
 | legacy_v15_mme_K128_streamwait | 1431.982 | 1445.555 | 13.573 |  | [manifest](legacy_v15_mme_K128_streamwait/manifest.json) |
