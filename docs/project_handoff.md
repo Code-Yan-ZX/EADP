@@ -1634,3 +1634,62 @@ GQA、v15 FULL POPE与NeXT Viz/POPE64/128沿用旧值但明确†待重跑，
 既定新协议替换，并核预测/评分SHA、runtime、退出码/finished。
 Qwen256取p1_unified，128/64取既有STATUS完成表及HallBench更正，未新跑Qwen。
 快照phase2为12/32完整，两NeXT POPE64/128生成中；未动GPU或冻结队列。
+
+### 13.30 Oct9 11:02 用户授权后续三行核查与加密停滞检查
+
+用户要求确保实际运行、不浪费停滞时间，并指定submission_tables_20261009/
+latest_tables.pdf仅重点核EADP reported/reproduced及ours三行；本批跑完后继续
+必要实验，明天最后修改论文。因此最新论文工作时间为Oct10，Oct9中午仅旧
+目标，不再用其阻止授权工作；新消息没有给Oct10具体小时。当前GPU批次不改序。
+
+11:00左右phase2为13/32完整、2生成/17pending；原75臂56完整，37/55组已
+发布。NeXT POPE AZ64完整后自动接v15 POPE FULL。10:51→10:59:37，仍同
+PID3376381的NeXT AZ128完整预测/runtime由6176增至6738/8910，v15 FULL
+PID3479469由841增至2311/8910；11:00补读为6820/2526。真实两路继续产出。
+10:51独立ls-remote确认origin ed2d674111da54aae6c3752c9c6af39a2d80d35e，
+37组已发布；后续1945c9bf…为metadata更新，无待提交/发布或新错误。此前
+20:00–23:00 ETA仍仅原75臂及55组，不包括新后续提案，不能把其当新全部工期。
+
+新增独立watch_repair_stalls.py及codex-eadp-stallwatch-20261009.timer/service，
+每5分钟只读phase2实际进程启动身份、文件stat/首完整记录及合法依赖，不全量
+hash或重评、不初始化CUDA、不直接信号GPU。连续10分钟输出与日志都未推进、
+加载无首记录、依赖已齐却无活跃worker、异常退出/身份不符时唤醒既有hourly
+检查；正常静默，异常/恢复/原登记批次ready才本人桌面通知。20个CPU边界门
+及unit verify通过，11:00:24真实timer首触发exit0、读耗时.0645s，issues/events/
+actions空；下一11:05:24。原hourly仍active、下一11:08:27。证据在独立
+stall_watch_20261009/。原冻结phase2 worker/controller/plan SHA及live index
+87ad06fd…保持。这个轻量探针登记现phase2，不谎报已监控尚未登记的新GPU臂。
+
+持久后续请求在post_batch_followup_20261009/request.json，status为
+waiting_for_registered_batch，不是已登记GPUplan。原75全评分/来源/marker通过、
+监督/worker退出、55组真实origin确认后，hourly按该授权立即更新三行表、
+检查必要对照并建立独立plan/source/新路径继续运行。私有inspection_prompt已
+记录最新授权及确证可逆phase2故障恢复的边界。CPU run_hourly_repair_agent.py
+加完成保护：request未complete或登记文件缺失时，即使agent误报原批complete
+也不得停timer；实际Python3.10八个边界门通过。独立复核87份活动plan/protocol
+无runner引用，publisher静态allowlist包含它；未改任何GPU冻结来源。新的实际
+GPU计划/状态也须纳入后续监控与独立按组发布，不把原55分母悄悄加大。
+
+GQA只读审计gqa_audit.json（SHA2175e331…）：8个wait GQA仍未启动，PDF†为
+旧值；v15 E12859.627922低paper60.0为.372078，ours59.802830较同机+.174909
+（22题）、较paper−.197170。12578题ID/题面/图名/GT一致，8份完整raw均无
+尾句号；官方converter rstrip('.')链差异实际影响0题/0点，不能当根因。先复用
+已登记v15 E/AZ128 wait；最少新补NeXT同recipe E128，复用其本批完整AZ128。
+不为追.4盲扫beta，shared缺陷尚未证实，不能统一给两方法补分。
+
+VizWiz审计vizwiz_audit.json（SHA88c4e9d6…）：两模型三预算共6个本地EADP格
+全空，当前只是ours对reported。论文星标val与本地4319题同split；当前官方
+2023注释ZIP中的val.json及API vqaEval.py与本地逐字节相同，排除本地GT版本
+错误。6份完整旧ours用发布min(matches/3)较官方留一平均高1.391–1.473pp；
+例如NeXT128名义640为官方59.254457/发布60.716215，paper60.6。作者paper真实
+scorer/argv未知，此差异只有在paper用了发布scorer时能解释相应缺口，不按较高
+分替换官方主列。v15仅同一题895答案超128tokens且截断仍错，NeXT最长32/17/20
+tokens，纯max_new_tokens不足解释这些旧答1–2点缺口。公开val入口alpha0/beta1、
+loader去短答guidance后缀/max128与本地.5/2/旧guidance/max1024不同。
+
+新Viz提案固定两模型configuredK128（v15名义128/NeXT640）各E+ours，共4臂
+17276题：公开val默认recipe、双方同wait、官方LOO主分/发布公式辅审计，保留
+所有负方向；不是作者真实argv已证实，也不是GPU已排或已跑。先等原批次完成
+后冻结独立计划，不能把不同recipe旧ours复用配新E。最终单个EADP主表行须统一
+披露reported或reproduced依据，三行审计及全部原来源保留，不逐格择低baseline
+或择高ours。本次新增仅CPU核查、监控及持久后续安排，没有新GPU生成/调参。
