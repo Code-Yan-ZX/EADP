@@ -1,0 +1,212 @@
+{
+  "scope": "CPU inventory of both complete repository trees, native JSONL and benchmark-named alternate formats; relevant MMB packed archives also inspected. No GPU or input edits.",
+  "roots": [
+    "/media/disk2/YZX/research/EADP",
+    "/media/disk2/YZX/research/EADP_amp"
+  ],
+  "JSONL_files_found": 439,
+  "first_record_files_inspected": 429,
+  "first_record_errors": [
+    {
+      "path": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/discovery/mosaic/stats_dispersion_256.jsonl",
+      "error": "JSONDecodeError",
+      "message": "Expecting value: line 1 column 1 (char 0)",
+      "non_target_exclusion": "Empty analysis statistics file: no prediction records."
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/discovery/mosaic/stats_random_256.jsonl",
+      "error": "JSONDecodeError",
+      "message": "Expecting value: line 1 column 1 (char 0)",
+      "non_target_exclusion": "Empty analysis statistics file: no prediction records."
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/discovery/mosaic/stats_uniform_256.jsonl",
+      "error": "JSONDecodeError",
+      "message": "Expecting value: line 1 column 1 (char 0)",
+      "non_target_exclusion": "Empty analysis statistics file: no prediction records."
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/vqav2/FULL.jsonl",
+      "error": "JSONDecodeError",
+      "message": "Expecting value: line 1 column 1 (char 0)",
+      "non_target_exclusion": "VQAv2 output with malformed later JSONL record; first record was inspected and task is outside MMB."
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/scienceqa/answers/llava-v1.5-13b_output.jsonl",
+      "error": "JSONDecodeError",
+      "message": "Expecting property name enclosed in double quotes: line 2 column 1 (char 2)",
+      "non_target_exclusion": "Pretty-printed ScienceQA 13B score object (correct/incorrect keys), not native MMB predictions."
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_batch/hourly_monitor/20261008T100657Z/agent.events.jsonl",
+      "error": "JSONDecodeError",
+      "message": "Extra data: line 1 column 5 (char 4)",
+      "non_target_exclusion": "Codex monitor event log, not model predictions."
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_batch/hourly_monitor/20261008T200747Z/agent.events.jsonl",
+      "error": "JSONDecodeError",
+      "message": "Extra data: line 1 column 5 (char 4)",
+      "non_target_exclusion": "Codex monitor event log, not model predictions."
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_batch/hourly_monitor/20261009T040847Z/agent.events.jsonl",
+      "error": "JSONDecodeError",
+      "message": "Extra data: line 1 column 5 (char 4)",
+      "non_target_exclusion": "Codex monitor event log, not model predictions."
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_batch/hourly_monitor/20261009T060909Z/agent.events.jsonl",
+      "error": "JSONDecodeError",
+      "message": "Extra data: line 1 column 5 (char 4)",
+      "non_target_exclusion": "Codex monitor event log, not model predictions."
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_batch/hourly_monitor/20261009T080921Z/agent.events.jsonl",
+      "error": "JSONDecodeError",
+      "message": "Extra data: line 1 column 5 (char 4)",
+      "non_target_exclusion": "Codex monitor event log, not model predictions."
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_batch/hourly_monitor/20261009T134707Z/agent.events.jsonl",
+      "error": "JSONDecodeError",
+      "message": "Extra data: line 1 column 5 (char 4)",
+      "non_target_exclusion": "Codex monitor event log, not model predictions."
+    }
+  ],
+  "native_MMB_files_audited": 20,
+  "relevant_archives_inspected": [
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_batch/group_publish/prepared/legacy_next_mmbcn_AZ_K32_streamwait/evidence.tar.gz",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/eval.zip",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_batch/group_publish/prepared/legacy_next_mmben_AZ_K64_streamwait/evidence.tar.gz",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_batch/group_publish/prepared/legacy_next_mmbcn_AZ_K64_streamwait/evidence.tar.gz",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_batch/group_publish/prepared/legacy_next_mmbcn_AZ_K128_streamwait/evidence.tar.gz",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_batch/group_publish/prepared/legacy_next_mmben_AZ_K32_streamwait/evidence.tar.gz",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/rerun_batch/group_publish/prepared/legacy_next_mmben_AZ_K128_streamwait/evidence.tar.gz"
+  ],
+  "packed_native_MMB_members_audited": 13,
+  "benchmark_named_alternate_paths": 88,
+  "target_model_method_budget_files": [
+    {
+      "path": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mmben/LRMAIN025.jsonl",
+      "n_rows": 4876,
+      "n_unique_row_ids": 4876,
+      "model_id_counts": {
+        "llava-v1.5-7b": 4876
+      },
+      "method": "AnchorZip",
+      "budget": 128,
+      "target_v15_EN_K128": true,
+      "exclusion_reason": null,
+      "row_ids_exact_order_V11_EN": true,
+      "same_row_id_exact_V11_EN_prompt_rows": 4876,
+      "V11_options_metadata_mismatch_rows": 0,
+      "same_row_id_exact_old_EN_prompt_rows": 3529,
+      "same_ID_old_complete_prompt_groups_allowing_GT_correction": 935,
+      "same_ID_old_only_226_complete_groups": 0,
+      "unambiguous_prompt_candidate_complete_groups_image_unverified": 956,
+      "any_prompt_candidate_complete_groups_including_ambiguous_image_unverified": 974,
+      "cross_ID_unambiguous_old_only_candidate_groups_image_unverified": [
+        420,
+        880,
+        1085,
+        1086,
+        1088,
+        1321,
+        1323,
+        1354,
+        1484,
+        1501,
+        1524,
+        1695,
+        1696,
+        1697,
+        1713,
+        1714,
+        1745,
+        1770,
+        1791,
+        1805,
+        1852
+      ],
+      "candidate_status": "Prompt coverage only; images and GT-only changes need independent image audit. Cross-ID candidates must not be scored as recovered questions without image evidence.",
+      "full_old_20230712_prediction_found": false,
+      "sha256": "e91ca3ea3e08942795b9b8af4126a3ca6721fbbc9d7929e1138baf1b9a392463"
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mmb_eadp_immediate_20261010/v15_mmben_E128_streamwait.jsonl",
+      "n_rows": 4876,
+      "n_unique_row_ids": 4876,
+      "model_id_counts": {
+        "llava-v1.5-7b": 4876
+      },
+      "method": "EADP",
+      "budget": 128,
+      "target_v15_EN_K128": true,
+      "exclusion_reason": null,
+      "row_ids_exact_order_V11_EN": true,
+      "same_row_id_exact_V11_EN_prompt_rows": 4876,
+      "V11_options_metadata_mismatch_rows": 0,
+      "same_row_id_exact_old_EN_prompt_rows": 3529,
+      "same_ID_old_complete_prompt_groups_allowing_GT_correction": 935,
+      "same_ID_old_only_226_complete_groups": 0,
+      "unambiguous_prompt_candidate_complete_groups_image_unverified": 956,
+      "any_prompt_candidate_complete_groups_including_ambiguous_image_unverified": 974,
+      "cross_ID_unambiguous_old_only_candidate_groups_image_unverified": [
+        420,
+        880,
+        1085,
+        1086,
+        1088,
+        1321,
+        1323,
+        1354,
+        1484,
+        1501,
+        1524,
+        1695,
+        1696,
+        1697,
+        1713,
+        1714,
+        1745,
+        1770,
+        1791,
+        1805,
+        1852
+      ],
+      "candidate_status": "Prompt coverage only; images and GT-only changes need independent image audit. Cross-ID candidates must not be scored as recovered questions without image evidence.",
+      "full_old_20230712_prediction_found": false,
+      "sha256": "c6a57feb6a7f7e27d0c3255cefa9ef409d82b713f6a431995b61c0f3e5d41706"
+    }
+  ],
+  "old_20230712_rows": 4377,
+  "old_20230712_groups": 1176,
+  "V11_rows": 4876,
+  "V11_groups": 1292,
+  "old_only_base_ID_groups": 226,
+  "confirmed_target_old_full_prediction_found": false,
+  "confirmed_old_only_226_same_ID_coverage_from_target_files": {
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mmben/LRMAIN025.jsonl": 0,
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mmb_eadp_immediate_20261010/v15_mmben_E128_streamwait.jsonl": 0
+  },
+  "decision": "No old-version v15-7B EN K128 EADP/AnchorZip full or partial run was found. Only two eligible V11 files exist. The old-named answer file is 13B and is excluded. Cross-ID identical-text candidates are not proof of same image and cannot fill old missing groups on prompt evidence alone.",
+  "boundaries": [
+    "63.112078346% on 919 text/options/GT-stable groups is a subset of the V11 run, not complete old-Dev accuracy.",
+    "935 same-ID groups preserve prompt and ordered options when ignoring GT; GT-only changes still require image review, rather than automatic label correction.",
+    "956 unambiguous-prompt groups and 974 groups allowing ambiguous candidates are coverage candidates only. Repeated generic prompts can identify different images.",
+    "Never reuse 13B, Qwen, NeXT, FULL or another budget; never remap a letter across changed option order.",
+    "Even compatible predictions retain V11 image encoding and original execution recipe; a reused subset is not an exact old-image full benchmark rerun."
+  ],
+  "input_sha256": {
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/mmbench_dev_20230712.tsv": "52d45f29876e56138d3d4feb169dc9a7323f6ed2ee3f439ae7e4af94192b3324",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_EN_V11.tsv": "27a54ae2e8f54502361cc5a41ed5fc35f4253af74734b5593d7b1de545eb5656",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mmb_old_version_reuse_20261010/prediction_inventory/inventory_predictions.py": "cf3ca40996a1e07ce9a02505bb42e70d9676267bc53908967c8c1a11b31a8778"
+  },
+  "method_budget_evidence": [
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_mmben_driver.sh:33",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/llava_mmben_driver.sh:41",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mmb_eadp_immediate_20261010/v15_mmben_E128_streamwait.jsonl.protocol.json"
+  ],
+  "unresolved_target_parse_errors": []
+}

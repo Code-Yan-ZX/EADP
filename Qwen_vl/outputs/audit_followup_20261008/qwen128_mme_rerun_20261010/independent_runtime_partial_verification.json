@@ -1,0 +1,67 @@
+{
+  "audit_kind": "Independent_CPU_runtime_prefix_verification",
+  "status": "partial",
+  "complete": false,
+  "created_beijing": "2026-10-10T03:54:26.912205+08:00",
+  "runtime_rows_verified": 1358,
+  "expected": 2374,
+  "runtime_read_sha256": "596182191e0fb6a264a6801e20562736fe66d50247e2f1ea63b5e6e9a94c64b5",
+  "runtime_bytes_read": 2034085,
+  "snapshot_state": {
+    "status": "generating",
+    "pid": 901364,
+    "started_beijing": "2026-10-10T03:43:05.604405+08:00",
+    "expected": 2374,
+    "completed": 1351,
+    "output_root": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/qwen128_mme_rerun_20261010/run01",
+    "updated_beijing": "2026-10-10T03:54:23.029929+08:00",
+    "generation_started": 1791575091.6042454,
+    "elapsed_generation_seconds": 571.42569231987
+  },
+  "source_sha_checks_passed": 14,
+  "source_sha_checks_expected": 14,
+  "source_sha_failures": [],
+  "loaded_runtime_matches_recipe": {
+    "model_class": true,
+    "wrapper": true,
+    "model_registry": true,
+    "dtype": true,
+    "backend": true,
+    "cfg": true,
+    "legacy": true
+  },
+  "bank": {
+    "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/qwen128_mme_rerun_20261010/run01/full/bank_full_rtg_MME.json.gz",
+    "symlink": true,
+    "resolved": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/full/bank_full_rtg_MME.json.gz",
+    "sha256": "9a9965aae9533945832e7d954eee095cb214f83759114ba8d5ee80b1dc79657c",
+    "matches_protocol": true,
+    "matches_original_shard": true,
+    "K": 128,
+    "samples": 2374
+  },
+  "trace_failures": [],
+  "unique_image_files_hashed": 679,
+  "prediction_text_differences_vs_original_prefix": [],
+  "generated_151643_count": 0,
+  "generated_151645_count": 0,
+  "capped_rows": [
+    {
+      "index": 981,
+      "gen_tokens": 2048,
+      "layer_calls": 73728,
+      "layer_calls_expected": 73764,
+      "cache_len": 2219,
+      "lk": 172,
+      "emitted_151643": 0
+    }
+  ],
+  "interpretation": [
+    "Only the observed prefix is verified; final complete scoring and full2374rowidentity remain pending.",
+    "Trace invariants.n_vis_kept=0 underlegacy because no visualmask; runtime.n_vis_kept=128 comes from actualkeepindices. This schema issue is not a zero-budget run.",
+    "At cappedrow981 final emittedtoken does not require anotherforward. layer_calls_ok/cache_ok false exactly match cap-path bookkeeping; cap kept normally.",
+    "No emitted151643 observed in verifiedprefix; unknownEOSsource difference is not currently causing additionalgeneratedtokens in theseobservedrows.",
+    "Fixed-image-size snapshot attribute null merely indicates wrapper lacksimage_size attribute; fixed_res source preprocesses1024 and trace n_vis_full=1024.",
+    "This audit reads current inputfile hashes and messages; processor GPUtensor hashes and complete historical processargv were not retained in originalrun."
+  ]
+}

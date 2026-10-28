@@ -1,0 +1,2408 @@
+{
+  "policy": "Native prompt and ordered options exact; retain predicted letters unchanged. Cross-ID prompt identity alone does not establish same image/question. Old GT defines historical evaluation convention, not corrected ground truth.",
+  "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mmb_old_version_reuse_20261010/image_mapping/cross_ID_unique_priority_pairs.json",
+  "source_sha256": "2de63f67350bf8ee2002a0742fec69cacf5ddc7773eb9bb65bb76c207029066d",
+  "n_cross_ID_prompt_candidate_groups": 21,
+  "n_cross_ID_rows": 77,
+  "n_GT_changed_groups": 20,
+  "n_GT_unchanged_groups": 1,
+  "n_GT_changed_rows": 75,
+  "n_strict_image_reusable_groups": 0,
+  "n_near_image_diagnostic_only_groups": 1,
+  "groups": [
+    {
+      "old_base_id": 1085,
+      "old_rotation_indices": [
+        1085,
+        1001085
+      ],
+      "source_v11_base_ids": [
+        1087
+      ],
+      "n_expected_rotations": 2,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1085,
+          "selected_v11_index_or_null": 1087,
+          "old_GT": "A",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            333
+          ],
+          "v11_image_size": [
+            512,
+            341
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 54.017154693603516,
+          "dHash_hamming_distance_64": 29
+        },
+        {
+          "old_index": 1001085,
+          "selected_v11_index_or_null": 1001087,
+          "old_GT": "B",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            333
+          ],
+          "v11_image_size": [
+            512,
+            341
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 54.017154693603516,
+          "dHash_hamming_distance_64": 29
+        }
+      ],
+      "n_GT_changed_rows": 2,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1086,
+      "old_rotation_indices": [
+        1086,
+        1001086
+      ],
+      "source_v11_base_ids": [
+        1087
+      ],
+      "n_expected_rotations": 2,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1086,
+          "selected_v11_index_or_null": 1087,
+          "old_GT": "A",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            341,
+            512
+          ],
+          "v11_image_size": [
+            512,
+            341
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 70.57392120361328,
+          "dHash_hamming_distance_64": 29
+        },
+        {
+          "old_index": 1001086,
+          "selected_v11_index_or_null": 1001087,
+          "old_GT": "B",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            341,
+            512
+          ],
+          "v11_image_size": [
+            512,
+            341
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 70.57392120361328,
+          "dHash_hamming_distance_64": 29
+        }
+      ],
+      "n_GT_changed_rows": 2,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1088,
+      "old_rotation_indices": [
+        1088,
+        1001088
+      ],
+      "source_v11_base_ids": [
+        1087
+      ],
+      "n_expected_rotations": 2,
+      "has_GT_changes": false,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": true,
+          "V11_GT_same_projected_rows_circular_correct": true
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": true,
+          "V11_GT_same_projected_rows_circular_correct": true
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1088,
+          "selected_v11_index_or_null": 1087,
+          "old_GT": "B",
+          "selected_V11_GT": "B",
+          "GT_changed": false,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            341
+          ],
+          "v11_image_size": [
+            512,
+            341
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 69.44234466552734,
+          "dHash_hamming_distance_64": 39
+        },
+        {
+          "old_index": 1001088,
+          "selected_v11_index_or_null": 1001087,
+          "old_GT": "A",
+          "selected_V11_GT": "A",
+          "GT_changed": false,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            341
+          ],
+          "v11_image_size": [
+            512,
+            341
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 69.44234466552734,
+          "dHash_hamming_distance_64": 39
+        }
+      ],
+      "n_GT_changed_rows": 0,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 420,
+      "old_rotation_indices": [
+        420,
+        1000420,
+        2000420
+      ],
+      "source_v11_base_ids": [
+        418
+      ],
+      "n_expected_rotations": 3,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        }
+      },
+      "rows": [
+        {
+          "old_index": 420,
+          "selected_v11_index_or_null": 418,
+          "old_GT": "B",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            341
+          ],
+          "v11_image_size": [
+            512,
+            341
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 73.27107238769531,
+          "dHash_hamming_distance_64": 39
+        },
+        {
+          "old_index": 1000420,
+          "selected_v11_index_or_null": 1000418,
+          "old_GT": "C",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            341
+          ],
+          "v11_image_size": [
+            512,
+            341
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 73.27107238769531,
+          "dHash_hamming_distance_64": 39
+        },
+        {
+          "old_index": 2000420,
+          "selected_v11_index_or_null": 2000418,
+          "old_GT": "A",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            341
+          ],
+          "v11_image_size": [
+            512,
+            341
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 73.27107238769531,
+          "dHash_hamming_distance_64": 39
+        }
+      ],
+      "n_GT_changed_rows": 3,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 880,
+      "old_rotation_indices": [
+        880,
+        1000880,
+        2000880,
+        3000880
+      ],
+      "source_v11_base_ids": [
+        879
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        }
+      },
+      "rows": [
+        {
+          "old_index": 880,
+          "selected_v11_index_or_null": 879,
+          "old_GT": "D",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            303
+          ],
+          "v11_image_size": [
+            512,
+            342
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 68.62532043457031,
+          "dHash_hamming_distance_64": 28
+        },
+        {
+          "old_index": 1000880,
+          "selected_v11_index_or_null": 1000879,
+          "old_GT": "A",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            303
+          ],
+          "v11_image_size": [
+            512,
+            342
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 68.62532043457031,
+          "dHash_hamming_distance_64": 28
+        },
+        {
+          "old_index": 2000880,
+          "selected_v11_index_or_null": 2000879,
+          "old_GT": "B",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            303
+          ],
+          "v11_image_size": [
+            512,
+            342
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 68.62532043457031,
+          "dHash_hamming_distance_64": 28
+        },
+        {
+          "old_index": 3000880,
+          "selected_v11_index_or_null": 3000879,
+          "old_GT": "C",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            303
+          ],
+          "v11_image_size": [
+            512,
+            342
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 68.62532043457031,
+          "dHash_hamming_distance_64": 28
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1321,
+      "old_rotation_indices": [
+        1321,
+        1001321,
+        2001321,
+        3001321
+      ],
+      "source_v11_base_ids": [
+        1324
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1321,
+          "selected_v11_index_or_null": 1324,
+          "old_GT": "A",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            160,
+            160
+          ],
+          "v11_image_size": [
+            160,
+            160
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 14.870922088623047,
+          "dHash_hamming_distance_64": 11
+        },
+        {
+          "old_index": 1001321,
+          "selected_v11_index_or_null": 1001324,
+          "old_GT": "B",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            160,
+            160
+          ],
+          "v11_image_size": [
+            160,
+            160
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 14.870922088623047,
+          "dHash_hamming_distance_64": 11
+        },
+        {
+          "old_index": 2001321,
+          "selected_v11_index_or_null": 2001324,
+          "old_GT": "C",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            160,
+            160
+          ],
+          "v11_image_size": [
+            160,
+            160
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 14.870922088623047,
+          "dHash_hamming_distance_64": 11
+        },
+        {
+          "old_index": 3001321,
+          "selected_v11_index_or_null": 3001324,
+          "old_GT": "D",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            160,
+            160
+          ],
+          "v11_image_size": [
+            160,
+            160
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 14.870922088623047,
+          "dHash_hamming_distance_64": 11
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1323,
+      "old_rotation_indices": [
+        1323,
+        1001323,
+        2001323,
+        3001323
+      ],
+      "source_v11_base_ids": [
+        1324
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1323,
+          "selected_v11_index_or_null": 1324,
+          "old_GT": "A",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            160,
+            160
+          ],
+          "v11_image_size": [
+            160,
+            160
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 17.54120635986328,
+          "dHash_hamming_distance_64": 14
+        },
+        {
+          "old_index": 1001323,
+          "selected_v11_index_or_null": 1001324,
+          "old_GT": "B",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            160,
+            160
+          ],
+          "v11_image_size": [
+            160,
+            160
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 17.54120635986328,
+          "dHash_hamming_distance_64": 14
+        },
+        {
+          "old_index": 2001323,
+          "selected_v11_index_or_null": 2001324,
+          "old_GT": "C",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            160,
+            160
+          ],
+          "v11_image_size": [
+            160,
+            160
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 17.54120635986328,
+          "dHash_hamming_distance_64": 14
+        },
+        {
+          "old_index": 3001323,
+          "selected_v11_index_or_null": 3001324,
+          "old_GT": "D",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            160,
+            160
+          ],
+          "v11_image_size": [
+            160,
+            160
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 17.54120635986328,
+          "dHash_hamming_distance_64": 14
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1354,
+      "old_rotation_indices": [
+        1354,
+        1001354,
+        2001354,
+        3001354
+      ],
+      "source_v11_base_ids": [
+        1334
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1354,
+          "selected_v11_index_or_null": 1334,
+          "old_GT": "B",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            512
+          ],
+          "v11_image_size": [
+            512,
+            373
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 66.49864196777344,
+          "dHash_hamming_distance_64": 29
+        },
+        {
+          "old_index": 1001354,
+          "selected_v11_index_or_null": 1001334,
+          "old_GT": "C",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            512
+          ],
+          "v11_image_size": [
+            512,
+            373
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 66.49864196777344,
+          "dHash_hamming_distance_64": 29
+        },
+        {
+          "old_index": 2001354,
+          "selected_v11_index_or_null": 2001334,
+          "old_GT": "D",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            512
+          ],
+          "v11_image_size": [
+            512,
+            373
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 66.49864196777344,
+          "dHash_hamming_distance_64": 29
+        },
+        {
+          "old_index": 3001354,
+          "selected_v11_index_or_null": 3001334,
+          "old_GT": "A",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            512
+          ],
+          "v11_image_size": [
+            512,
+            373
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 66.49864196777344,
+          "dHash_hamming_distance_64": 29
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1484,
+      "old_rotation_indices": [
+        1484,
+        1001484,
+        2001484,
+        3001484
+      ],
+      "source_v11_base_ids": [
+        1483
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1484,
+          "selected_v11_index_or_null": 1483,
+          "old_GT": "D",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            512
+          ],
+          "v11_image_size": [
+            352,
+            512
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 68.99433135986328,
+          "dHash_hamming_distance_64": 38
+        },
+        {
+          "old_index": 1001484,
+          "selected_v11_index_or_null": 1001483,
+          "old_GT": "A",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            512
+          ],
+          "v11_image_size": [
+            352,
+            512
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 68.99433135986328,
+          "dHash_hamming_distance_64": 38
+        },
+        {
+          "old_index": 2001484,
+          "selected_v11_index_or_null": 2001483,
+          "old_GT": "B",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            512
+          ],
+          "v11_image_size": [
+            352,
+            512
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 68.99433135986328,
+          "dHash_hamming_distance_64": 38
+        },
+        {
+          "old_index": 3001484,
+          "selected_v11_index_or_null": 3001483,
+          "old_GT": "C",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            512
+          ],
+          "v11_image_size": [
+            352,
+            512
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 68.99433135986328,
+          "dHash_hamming_distance_64": 38
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1501,
+      "old_rotation_indices": [
+        1501,
+        1001501,
+        2001501,
+        3001501
+      ],
+      "source_v11_base_ids": [
+        1507
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1501,
+          "selected_v11_index_or_null": 1507,
+          "old_GT": "C",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            384
+          ],
+          "v11_image_size": [
+            512,
+            342
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 66.53097534179688,
+          "dHash_hamming_distance_64": 31
+        },
+        {
+          "old_index": 1001501,
+          "selected_v11_index_or_null": 1001507,
+          "old_GT": "D",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            384
+          ],
+          "v11_image_size": [
+            512,
+            342
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 66.53097534179688,
+          "dHash_hamming_distance_64": 31
+        },
+        {
+          "old_index": 2001501,
+          "selected_v11_index_or_null": 2001507,
+          "old_GT": "A",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            384
+          ],
+          "v11_image_size": [
+            512,
+            342
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 66.53097534179688,
+          "dHash_hamming_distance_64": 31
+        },
+        {
+          "old_index": 3001501,
+          "selected_v11_index_or_null": 3001507,
+          "old_GT": "B",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            384
+          ],
+          "v11_image_size": [
+            512,
+            342
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 66.53097534179688,
+          "dHash_hamming_distance_64": 31
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1524,
+      "old_rotation_indices": [
+        1524,
+        1001524,
+        2001524,
+        3001524
+      ],
+      "source_v11_base_ids": [
+        1523
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1524,
+          "selected_v11_index_or_null": 1523,
+          "old_GT": "B",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            430
+          ],
+          "v11_image_size": [
+            512,
+            512
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 61.62887954711914,
+          "dHash_hamming_distance_64": 30
+        },
+        {
+          "old_index": 1001524,
+          "selected_v11_index_or_null": 1001523,
+          "old_GT": "C",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            430
+          ],
+          "v11_image_size": [
+            512,
+            512
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 61.62887954711914,
+          "dHash_hamming_distance_64": 30
+        },
+        {
+          "old_index": 2001524,
+          "selected_v11_index_or_null": 2001523,
+          "old_GT": "D",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            430
+          ],
+          "v11_image_size": [
+            512,
+            512
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 61.62887954711914,
+          "dHash_hamming_distance_64": 30
+        },
+        {
+          "old_index": 3001524,
+          "selected_v11_index_or_null": 3001523,
+          "old_GT": "A",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            430
+          ],
+          "v11_image_size": [
+            512,
+            512
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 61.62887954711914,
+          "dHash_hamming_distance_64": 30
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1695,
+      "old_rotation_indices": [
+        1695,
+        1001695,
+        2001695,
+        3001695
+      ],
+      "source_v11_base_ids": [
+        1693
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1695,
+          "selected_v11_index_or_null": 1693,
+          "old_GT": "C",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            511
+          ],
+          "v11_image_size": [
+            512,
+            377
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 81.34881591796875,
+          "dHash_hamming_distance_64": 36
+        },
+        {
+          "old_index": 1001695,
+          "selected_v11_index_or_null": 1001693,
+          "old_GT": "D",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            511
+          ],
+          "v11_image_size": [
+            512,
+            377
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 81.34881591796875,
+          "dHash_hamming_distance_64": 36
+        },
+        {
+          "old_index": 2001695,
+          "selected_v11_index_or_null": 2001693,
+          "old_GT": "A",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            511
+          ],
+          "v11_image_size": [
+            512,
+            377
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 81.34881591796875,
+          "dHash_hamming_distance_64": 36
+        },
+        {
+          "old_index": 3001695,
+          "selected_v11_index_or_null": 3001693,
+          "old_GT": "B",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            511
+          ],
+          "v11_image_size": [
+            512,
+            377
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 81.34881591796875,
+          "dHash_hamming_distance_64": 36
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1696,
+      "old_rotation_indices": [
+        1696,
+        1001696,
+        2001696,
+        3001696
+      ],
+      "source_v11_base_ids": [
+        1693
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1696,
+          "selected_v11_index_or_null": 1693,
+          "old_GT": "D",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            497
+          ],
+          "v11_image_size": [
+            512,
+            377
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 60.15713119506836,
+          "dHash_hamming_distance_64": 38
+        },
+        {
+          "old_index": 1001696,
+          "selected_v11_index_or_null": 1001693,
+          "old_GT": "A",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            497
+          ],
+          "v11_image_size": [
+            512,
+            377
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 60.15713119506836,
+          "dHash_hamming_distance_64": 38
+        },
+        {
+          "old_index": 2001696,
+          "selected_v11_index_or_null": 2001693,
+          "old_GT": "B",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            497
+          ],
+          "v11_image_size": [
+            512,
+            377
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 60.15713119506836,
+          "dHash_hamming_distance_64": 38
+        },
+        {
+          "old_index": 3001696,
+          "selected_v11_index_or_null": 3001693,
+          "old_GT": "C",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            497
+          ],
+          "v11_image_size": [
+            512,
+            377
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 60.15713119506836,
+          "dHash_hamming_distance_64": 38
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1697,
+      "old_rotation_indices": [
+        1697,
+        1001697,
+        2001697,
+        3001697
+      ],
+      "source_v11_base_ids": [
+        1700
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1697,
+          "selected_v11_index_or_null": 1700,
+          "old_GT": "A",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            504,
+            512
+          ],
+          "v11_image_size": [
+            512,
+            504
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 91.15451049804688,
+          "dHash_hamming_distance_64": 27
+        },
+        {
+          "old_index": 1001697,
+          "selected_v11_index_or_null": 1001700,
+          "old_GT": "B",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            504,
+            512
+          ],
+          "v11_image_size": [
+            512,
+            504
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 91.15451049804688,
+          "dHash_hamming_distance_64": 27
+        },
+        {
+          "old_index": 2001697,
+          "selected_v11_index_or_null": 2001700,
+          "old_GT": "C",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            504,
+            512
+          ],
+          "v11_image_size": [
+            512,
+            504
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 91.15451049804688,
+          "dHash_hamming_distance_64": 27
+        },
+        {
+          "old_index": 3001697,
+          "selected_v11_index_or_null": 3001700,
+          "old_GT": "D",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            504,
+            512
+          ],
+          "v11_image_size": [
+            512,
+            504
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 91.15451049804688,
+          "dHash_hamming_distance_64": 27
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1713,
+      "old_rotation_indices": [
+        1713,
+        1001713,
+        2001713,
+        3001713
+      ],
+      "source_v11_base_ids": [
+        1715
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1713,
+          "selected_v11_index_or_null": 1715,
+          "old_GT": "A",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            374
+          ],
+          "v11_image_size": [
+            512,
+            293
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 77.01358032226562,
+          "dHash_hamming_distance_64": 30
+        },
+        {
+          "old_index": 1001713,
+          "selected_v11_index_or_null": 1001715,
+          "old_GT": "B",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            374
+          ],
+          "v11_image_size": [
+            512,
+            293
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 77.01358032226562,
+          "dHash_hamming_distance_64": 30
+        },
+        {
+          "old_index": 2001713,
+          "selected_v11_index_or_null": 2001715,
+          "old_GT": "C",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            374
+          ],
+          "v11_image_size": [
+            512,
+            293
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 77.01358032226562,
+          "dHash_hamming_distance_64": 30
+        },
+        {
+          "old_index": 3001713,
+          "selected_v11_index_or_null": 3001715,
+          "old_GT": "D",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            374
+          ],
+          "v11_image_size": [
+            512,
+            293
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 77.01358032226562,
+          "dHash_hamming_distance_64": 30
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1714,
+      "old_rotation_indices": [
+        1714,
+        1001714,
+        2001714,
+        3001714
+      ],
+      "source_v11_base_ids": [
+        1715
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1714,
+          "selected_v11_index_or_null": 1715,
+          "old_GT": "B",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            387,
+            331
+          ],
+          "v11_image_size": [
+            512,
+            293
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 100.89881134033203,
+          "dHash_hamming_distance_64": 31
+        },
+        {
+          "old_index": 1001714,
+          "selected_v11_index_or_null": 1001715,
+          "old_GT": "C",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            387,
+            331
+          ],
+          "v11_image_size": [
+            512,
+            293
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 100.89881134033203,
+          "dHash_hamming_distance_64": 31
+        },
+        {
+          "old_index": 2001714,
+          "selected_v11_index_or_null": 2001715,
+          "old_GT": "D",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            387,
+            331
+          ],
+          "v11_image_size": [
+            512,
+            293
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 100.89881134033203,
+          "dHash_hamming_distance_64": 31
+        },
+        {
+          "old_index": 3001714,
+          "selected_v11_index_or_null": 3001715,
+          "old_GT": "A",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            387,
+            331
+          ],
+          "v11_image_size": [
+            512,
+            293
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 100.89881134033203,
+          "dHash_hamming_distance_64": 31
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1745,
+      "old_rotation_indices": [
+        1745,
+        1001745,
+        2001745,
+        3001745
+      ],
+      "source_v11_base_ids": [
+        1744
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1745,
+          "selected_v11_index_or_null": 1744,
+          "old_GT": "B",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            225,
+            225
+          ],
+          "v11_image_size": [
+            189,
+            267
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 113.77674102783203,
+          "dHash_hamming_distance_64": 38
+        },
+        {
+          "old_index": 1001745,
+          "selected_v11_index_or_null": 1001744,
+          "old_GT": "C",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            225,
+            225
+          ],
+          "v11_image_size": [
+            189,
+            267
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 113.77674102783203,
+          "dHash_hamming_distance_64": 38
+        },
+        {
+          "old_index": 2001745,
+          "selected_v11_index_or_null": 2001744,
+          "old_GT": "D",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            225,
+            225
+          ],
+          "v11_image_size": [
+            189,
+            267
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 113.77674102783203,
+          "dHash_hamming_distance_64": 38
+        },
+        {
+          "old_index": 3001745,
+          "selected_v11_index_or_null": 3001744,
+          "old_GT": "A",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            225,
+            225
+          ],
+          "v11_image_size": [
+            189,
+            267
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 113.77674102783203,
+          "dHash_hamming_distance_64": 38
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1770,
+      "old_rotation_indices": [
+        1770,
+        1001770,
+        2001770,
+        3001770
+      ],
+      "source_v11_base_ids": [
+        1769
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1770,
+          "selected_v11_index_or_null": 1769,
+          "old_GT": "A",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            114,
+            66
+          ],
+          "v11_image_size": [
+            111,
+            72
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 10.437295913696289,
+          "dHash_hamming_distance_64": 9
+        },
+        {
+          "old_index": 1001770,
+          "selected_v11_index_or_null": 1001769,
+          "old_GT": "B",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            114,
+            66
+          ],
+          "v11_image_size": [
+            111,
+            72
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 10.437295913696289,
+          "dHash_hamming_distance_64": 9
+        },
+        {
+          "old_index": 2001770,
+          "selected_v11_index_or_null": 2001769,
+          "old_GT": "C",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            114,
+            66
+          ],
+          "v11_image_size": [
+            111,
+            72
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 10.437295913696289,
+          "dHash_hamming_distance_64": 9
+        },
+        {
+          "old_index": 3001770,
+          "selected_v11_index_or_null": 3001769,
+          "old_GT": "D",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            114,
+            66
+          ],
+          "v11_image_size": [
+            111,
+            72
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 10.437295913696289,
+          "dHash_hamming_distance_64": 9
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1791,
+      "old_rotation_indices": [
+        1791,
+        1001791,
+        2001791,
+        3001791
+      ],
+      "source_v11_base_ids": [
+        1792
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1791,
+          "selected_v11_index_or_null": 1792,
+          "old_GT": "C",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            341
+          ],
+          "v11_image_size": [
+            512,
+            342
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 48.98442840576172,
+          "dHash_hamming_distance_64": 26
+        },
+        {
+          "old_index": 1001791,
+          "selected_v11_index_or_null": 1001792,
+          "old_GT": "D",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            341
+          ],
+          "v11_image_size": [
+            512,
+            342
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 48.98442840576172,
+          "dHash_hamming_distance_64": 26
+        },
+        {
+          "old_index": 2001791,
+          "selected_v11_index_or_null": 2001792,
+          "old_GT": "A",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            341
+          ],
+          "v11_image_size": [
+            512,
+            342
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 48.98442840576172,
+          "dHash_hamming_distance_64": 26
+        },
+        {
+          "old_index": 3001791,
+          "selected_v11_index_or_null": 3001792,
+          "old_GT": "B",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            341
+          ],
+          "v11_image_size": [
+            512,
+            342
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 48.98442840576172,
+          "dHash_hamming_distance_64": 26
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1805,
+      "old_rotation_indices": [
+        1805,
+        1001805,
+        2001805,
+        3001805
+      ],
+      "source_v11_base_ids": [
+        1808
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": true
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1805,
+          "selected_v11_index_or_null": 1808,
+          "old_GT": "A",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            192,
+            262
+          ],
+          "v11_image_size": [
+            512,
+            341
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 84.2200698852539,
+          "dHash_hamming_distance_64": 27
+        },
+        {
+          "old_index": 1001805,
+          "selected_v11_index_or_null": 1001808,
+          "old_GT": "B",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            192,
+            262
+          ],
+          "v11_image_size": [
+            512,
+            341
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 84.2200698852539,
+          "dHash_hamming_distance_64": 27
+        },
+        {
+          "old_index": 2001805,
+          "selected_v11_index_or_null": 2001808,
+          "old_GT": "C",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            192,
+            262
+          ],
+          "v11_image_size": [
+            512,
+            341
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 84.2200698852539,
+          "dHash_hamming_distance_64": 27
+        },
+        {
+          "old_index": 3001805,
+          "selected_v11_index_or_null": 3001808,
+          "old_GT": "D",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            192,
+            262
+          ],
+          "v11_image_size": [
+            512,
+            341
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": false,
+          "processed_rgb8_MAE": 84.2200698852539,
+          "dHash_hamming_distance_64": 27
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": false,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    },
+    {
+      "old_base_id": 1852,
+      "old_rotation_indices": [
+        1852,
+        1001852,
+        2001852,
+        3001852
+      ],
+      "source_v11_base_ids": [
+        1849
+      ],
+      "n_expected_rotations": 4,
+      "has_GT_changes": true,
+      "scores": {
+        "EADP": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        },
+        "AnchorZip": {
+          "old_GT_circular_correct": false,
+          "V11_GT_same_projected_rows_circular_correct": false
+        }
+      },
+      "rows": [
+        {
+          "old_index": 1852,
+          "selected_v11_index_or_null": 1849,
+          "old_GT": "C",
+          "selected_V11_GT": "D",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            275
+          ],
+          "v11_image_size": [
+            512,
+            275
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": true,
+          "processed_rgb8_MAE": 0.09505503624677658,
+          "dHash_hamming_distance_64": 0
+        },
+        {
+          "old_index": 1001852,
+          "selected_v11_index_or_null": 1001849,
+          "old_GT": "D",
+          "selected_V11_GT": "A",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            275
+          ],
+          "v11_image_size": [
+            512,
+            275
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": true,
+          "processed_rgb8_MAE": 0.09505503624677658,
+          "dHash_hamming_distance_64": 0
+        },
+        {
+          "old_index": 2001852,
+          "selected_v11_index_or_null": 2001849,
+          "old_GT": "A",
+          "selected_V11_GT": "B",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            275
+          ],
+          "v11_image_size": [
+            512,
+            275
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": true,
+          "processed_rgb8_MAE": 0.09505503624677658,
+          "dHash_hamming_distance_64": 0
+        },
+        {
+          "old_index": 3001852,
+          "selected_v11_index_or_null": 3001849,
+          "old_GT": "B",
+          "selected_V11_GT": "C",
+          "GT_changed": true,
+          "match_status": "cross_ID_unique_exact_prompt",
+          "old_image_size": [
+            512,
+            275
+          ],
+          "v11_image_size": [
+            512,
+            275
+          ],
+          "decoded_RGB_exact": false,
+          "processed_float32_exact": false,
+          "processed_float16_exact": false,
+          "strict_model_image_input_reusable": false,
+          "near_perceptual_diagnostic_only": true,
+          "processed_rgb8_MAE": 0.09505503624677658,
+          "dHash_hamming_distance_64": 0
+        }
+      ],
+      "n_GT_changed_rows": 4,
+      "all_model_input_images_exact": false,
+      "all_images_near_diagnostic_only": true,
+      "status": "prompt_only_candidate_rejected_for_strict_reuse_due_to_nonidentical_native_image_inputs"
+    }
+  ]
+}

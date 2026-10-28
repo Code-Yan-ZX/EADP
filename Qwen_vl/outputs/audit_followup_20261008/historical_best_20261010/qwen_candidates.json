@@ -1,0 +1,3100 @@
+{
+  "schema_version": 1,
+  "scope": "CPU-only historical complete RTG+Facility+Completion(.25) candidates for existing Qwen 10-task 3-budget table",
+  "latest_table_source": {
+    "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/submission_tables_20261009/latest_tables.json",
+    "sha256": "14b8ca1f4f68aa3a50223a7256d39ea03119a02006f0460ab7a42fc44d5cc0a1",
+    "role": "current_table"
+  },
+  "existing_audit_source": {
+    "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+    "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+    "role": "previous_complete_scoring_audit"
+  },
+  "selection_policy": "Per-cell maximum among eligible complete same-model same-budget same-method runs. Native and legacy execution differences remain explicit. Current rounded STATUS values are not independent score candidates; exact corrected source scores supersede their rounding.",
+  "history_scan": {
+    "roots": [
+      "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs",
+      "/media/disk2/YZX/research/EADP/Qwen_vl/outputs"
+    ],
+    "complete_candidates": 35,
+    "legacy_candidates": 30,
+    "native_candidates": 5,
+    "excluded": "DEV-100 pilot and fresh subsets; E_MAIN025/BASE/R_GATHER and all other arms; full keep-all; teacher/oracle; other benchmarks; wrong metrics; incorrect old scorer/GT variants",
+    "all_same_method_score_locations_scanned": true
+  },
+  "cells": [
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 256,
+      "task": "TextVQA",
+      "current_value": 72.012,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+      "candidates": [
+        {
+          "value": 72.012,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/TextVQA_VAL_score.json",
+          "source_sha256": "4d97825a72fe6a7ede54686e67ffb4dd512dfac3761d78820860b1de673b0585",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 256,
+            "arm": "L_R_MAIN025",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "69b3d9d8109440dd7b7a363f86c7b85e6ec495bc25a53a5bb9b4a2415eebc751",
+            "base_commit": "a330eb66f65e"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/TextVQA_VAL_score.json",
+              "sha256": "4d97825a72fe6a7ede54686e67ffb4dd512dfac3761d78820860b1de673b0585",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/TextVQA_VAL.json",
+              "sha256": "cd98329c6f737bb8c929465d20b50f9d617e5b8a33952ccee9012419f614c4f0",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 5000,
+          "metric_denominator": 5000,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": 71.042,
+          "same_eadp_sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+              "sha256": "a036db6f930492fb3c8687903b8d27565c80174348eafd03af9aa3d7909d671b",
+              "role": "same_local_EADP"
+            }
+          ],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": false
+        },
+        {
+          "value": 77.77,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/TextVQA_VAL_score.json",
+          "source_sha256": "1b27722f535a3eac1db7aa70c75932d1516c32a7938e853cf015b47ce4867f80",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 256,
+            "arm": "R_MAIN025",
+            "pipeline": "native_restored",
+            "deepstack": true,
+            "position": "3-D mRoPE",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "69b3d9d8109440dd7b7a363f86c7b85e6ec495bc25a53a5bb9b4a2415eebc751",
+            "base_commit": "ade8a8895184"
+          },
+          "caveat": [
+            "Auxiliary native engine result only; DeepStack/mRoPE restoration differs from paper legacy engine. No paper-delta computed. Native POPE uses a different dataset/evaluator chain from LLaVAas-asked COCO8910; not interchangeable. Same-native baseline missing where not independently usable.",
+            "† Native DeepStack + 3-D mRoPE result is selected only for the user-requested historical-best display. It is not a fair pair against the current legacy EADP row."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/TextVQA_VAL_score.json",
+              "sha256": "1b27722f535a3eac1db7aa70c75932d1516c32a7938e853cf015b47ce4867f80",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/TextVQA_VAL.json",
+              "sha256": "43f5fce053a25a1b05287d6b4593fda1057f6739ee07155d42d84c92fc0751e3",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "native official task metric",
+          "prediction_count": 5000,
+          "metric_denominator": 5000,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": 77.788,
+          "same_eadp_sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/acc/main/BASE/K256/TextVQA_VAL_score.json",
+              "sha256": "c0e5058766544d2e98e574dc529b076490189575a5183ee8c6921913efc61428",
+              "role": "same_native_EADP"
+            }
+          ],
+          "native_vs_legacy_change": true,
+          "precision_only_candidate": false
+        }
+      ],
+      "best_value": 77.77,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/TextVQA_VAL_score.json",
+      "best_source_sha256": "1b27722f535a3eac1db7aa70c75932d1516c32a7938e853cf015b47ce4867f80",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 256,
+        "arm": "R_MAIN025",
+        "pipeline": "native_restored",
+        "deepstack": true,
+        "position": "3-D mRoPE",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "69b3d9d8109440dd7b7a363f86c7b85e6ec495bc25a53a5bb9b4a2415eebc751",
+        "base_commit": "ade8a8895184"
+      },
+      "best_caveat": [
+        "Auxiliary native engine result only; DeepStack/mRoPE restoration differs from paper legacy engine. No paper-delta computed. Native POPE uses a different dataset/evaluator chain from LLaVAas-asked COCO8910; not interchangeable. Same-native baseline missing where not independently usable.",
+        "† Native DeepStack + 3-D mRoPE result is selected only for the user-requested historical-best display. It is not a fair pair against the current legacy EADP row."
+      ],
+      "display_marker": "†",
+      "delta_from_current": 5.757999999999996,
+      "changed_execution_protocol": true,
+      "change_kind": "higher_native_history"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 256,
+      "task": "ChartQA",
+      "current_value": 55.04,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+      "candidates": [
+        {
+          "value": 55.04,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/ChartQA_TEST_score.json",
+          "source_sha256": "e70b61c506e336c7f0e183a7752a2809875a08682d5792898d2cd28c15117dcd",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 256,
+            "arm": "L_R_MAIN025",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "0e50532f7b70a24ab3f0c4ce063c957935db1a05c806c8d5a476561bcb86de97",
+            "base_commit": "a330eb66f65e"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/ChartQA_TEST_score.json",
+              "sha256": "e70b61c506e336c7f0e183a7752a2809875a08682d5792898d2cd28c15117dcd",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/ChartQA_TEST.json",
+              "sha256": "0174ebf7783a2792dfde10aff72d4cab6d0c6943ee3834ca0b5e5714093c3c37",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 2500,
+          "metric_denominator": 2500,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": 54.800000000000004,
+          "same_eadp_sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+              "sha256": "a036db6f930492fb3c8687903b8d27565c80174348eafd03af9aa3d7909d671b",
+              "role": "same_local_EADP"
+            }
+          ],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": false
+        },
+        {
+          "value": 68.8,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/ChartQA_TEST_score.json",
+          "source_sha256": "fa07e0e9a9594092ee1f88018f1e24b6c4c7f4772e5fa5227e939db80fb3d3ee",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 256,
+            "arm": "R_MAIN025",
+            "pipeline": "native_restored",
+            "deepstack": true,
+            "position": "3-D mRoPE",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "0e50532f7b70a24ab3f0c4ce063c957935db1a05c806c8d5a476561bcb86de97",
+            "base_commit": "79d8c87a36dd"
+          },
+          "caveat": [
+            "Auxiliary native engine result only; DeepStack/mRoPE restoration differs from paper legacy engine. No paper-delta computed. Native POPE uses a different dataset/evaluator chain from LLaVAas-asked COCO8910; not interchangeable. Same-native baseline missing where not independently usable.",
+            "† Native DeepStack + 3-D mRoPE result is selected only for the user-requested historical-best display. It is not a fair pair against the current legacy EADP row."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/ChartQA_TEST_score.json",
+              "sha256": "fa07e0e9a9594092ee1f88018f1e24b6c4c7f4772e5fa5227e939db80fb3d3ee",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/ChartQA_TEST.json",
+              "sha256": "58cffa3874aa8f4677013ade9d8e614dd7aa802696245b0716ba054f02b06323",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "native official task metric",
+          "prediction_count": 2500,
+          "metric_denominator": 2500,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": 66.88,
+          "same_eadp_sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/acc/nonreg/BASE/K256/ChartQA_TEST_score.json",
+              "sha256": "fafb72a0822b7aa1598452e56a76ab1d3b7a90265fbfaf66ebb812af98af4360",
+              "role": "same_native_EADP"
+            }
+          ],
+          "native_vs_legacy_change": true,
+          "precision_only_candidate": false
+        }
+      ],
+      "best_value": 68.8,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/ChartQA_TEST_score.json",
+      "best_source_sha256": "fa07e0e9a9594092ee1f88018f1e24b6c4c7f4772e5fa5227e939db80fb3d3ee",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 256,
+        "arm": "R_MAIN025",
+        "pipeline": "native_restored",
+        "deepstack": true,
+        "position": "3-D mRoPE",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "0e50532f7b70a24ab3f0c4ce063c957935db1a05c806c8d5a476561bcb86de97",
+        "base_commit": "79d8c87a36dd"
+      },
+      "best_caveat": [
+        "Auxiliary native engine result only; DeepStack/mRoPE restoration differs from paper legacy engine. No paper-delta computed. Native POPE uses a different dataset/evaluator chain from LLaVAas-asked COCO8910; not interchangeable. Same-native baseline missing where not independently usable.",
+        "† Native DeepStack + 3-D mRoPE result is selected only for the user-requested historical-best display. It is not a fair pair against the current legacy EADP row."
+      ],
+      "display_marker": "†",
+      "delta_from_current": 13.759999999999998,
+      "changed_execution_protocol": true,
+      "change_kind": "higher_native_history"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 256,
+      "task": "AI2D",
+      "current_value": 74.77331606217616,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+      "candidates": [
+        {
+          "value": 74.77331606217616,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/AI2D_TEST_score.json",
+          "source_sha256": "1b9801edff8450a9e154691d1c85394f2030535dd2f25fd7ed9a9f7a904c2110",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 256,
+            "arm": "L_R_MAIN025",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "5e315f3243fb869721f7db36e4c2b35e9c76d47ab735ad0d998a6a1572ee959c",
+            "base_commit": "a330eb66f65e"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/AI2D_TEST_score.json",
+              "sha256": "1b9801edff8450a9e154691d1c85394f2030535dd2f25fd7ed9a9f7a904c2110",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/AI2D_TEST.json",
+              "sha256": "287579132bfbe1ccea0fbdef15d25c799cdca626d930590e8b1948c92912bf85",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 3088,
+          "metric_denominator": 3088,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": 74.54663212435233,
+          "same_eadp_sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+              "sha256": "a036db6f930492fb3c8687903b8d27565c80174348eafd03af9aa3d7909d671b",
+              "role": "same_local_EADP"
+            }
+          ],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": false
+        }
+      ],
+      "best_value": 74.77331606217616,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/AI2D_TEST_score.json",
+      "best_source_sha256": "1b9801edff8450a9e154691d1c85394f2030535dd2f25fd7ed9a9f7a904c2110",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 256,
+        "arm": "L_R_MAIN025",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "5e315f3243fb869721f7db36e4c2b35e9c76d47ab735ad0d998a6a1572ee959c",
+        "base_commit": "a330eb66f65e"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.0,
+      "changed_execution_protocol": false,
+      "change_kind": "same_complete_run"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 256,
+      "task": "HallusionBench",
+      "current_value": 41.040462427745666,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+      "candidates": [
+        {
+          "value": 41.040462427745666,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/HallusionBench_score.json",
+          "source_sha256": "0f76e0fc24edd5a861ca93637a834b026211fe50f377379ec26161edb600e6df",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 256,
+            "arm": "L_R_MAIN025",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "6b1acbe1dee9b6e7f16cfc0cceb096a84df2fc155ac90341f75a956a4ad25fce",
+            "base_commit": "a330eb66f65e"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "Uses fAcc; paper metric identity inferred from official convention, not explicitly specified by authors."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/HallusionBench_score.json",
+              "sha256": "0f76e0fc24edd5a861ca93637a834b026211fe50f377379ec26161edb600e6df",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/HallusionBench.json",
+              "sha256": "bf8a13d08fffaef70e9c1c378f6f1be9c26244fc6b95b2cbc26af1bd6068fb9d",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "Hallusion fAcc (%)",
+          "prediction_count": 951,
+          "metric_denominator": 346,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": 41.040462427745666,
+          "same_eadp_sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+              "sha256": "a036db6f930492fb3c8687903b8d27565c80174348eafd03af9aa3d7909d671b",
+              "role": "same_local_EADP"
+            }
+          ],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": false
+        }
+      ],
+      "best_value": 41.040462427745666,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/HallusionBench_score.json",
+      "best_source_sha256": "0f76e0fc24edd5a861ca93637a834b026211fe50f377379ec26161edb600e6df",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 256,
+        "arm": "L_R_MAIN025",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "6b1acbe1dee9b6e7f16cfc0cceb096a84df2fc155ac90341f75a956a4ad25fce",
+        "base_commit": "a330eb66f65e"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "Uses fAcc; paper metric identity inferred from official convention, not explicitly specified by authors."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.0,
+      "changed_execution_protocol": false,
+      "change_kind": "same_complete_run"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 256,
+      "task": "MMB_EN",
+      "current_value": 79.4891640866873,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+      "candidates": [
+        {
+          "value": 79.4891640866873,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/MMBench_DEV_EN_V11_score.json",
+          "source_sha256": "216dd3b71dbecb488accb9c0f2fbd76bd7f8d4dbcba1350625d31c69df19dbc2",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 256,
+            "arm": "L_R_MAIN025",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "63ed3380f890c76427da6b9a9f83a820ca00fd960400a5cb98654dd2ca42ffc0",
+            "base_commit": "a330eb66f65e"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "1292 official circular groups over4876 option-rotation rows; no silent dropped-question inference."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/MMBench_DEV_EN_V11_score.json",
+              "sha256": "216dd3b71dbecb488accb9c0f2fbd76bd7f8d4dbcba1350625d31c69df19dbc2",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/MMBench_DEV_EN_V11.json",
+              "sha256": "727fb133978f4087da59d549121efda63bd081dba9a729ffbcd91833db5558bf",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/MMBench_DEV_EN_V11_pred_exact_matching_result.xlsx",
+              "sha256": "047f44e7ae413f64ae6c2769b2ef550a8413aac399c12edd7b9c1865ec30617c",
+              "role": "1292_circular_groups"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 4876,
+          "metric_denominator": 1292,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": 79.87616099071208,
+          "same_eadp_sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+              "sha256": "a036db6f930492fb3c8687903b8d27565c80174348eafd03af9aa3d7909d671b",
+              "role": "same_local_EADP"
+            }
+          ],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": false
+        },
+        {
+          "value": 83.43653250773994,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/MMBench_DEV_EN_V11_score.json",
+          "source_sha256": "e45f2265b4e2d11287adfce2398347762261b1a45a23237ee18402184bd118d3",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 256,
+            "arm": "R_MAIN025",
+            "pipeline": "native_restored",
+            "deepstack": true,
+            "position": "3-D mRoPE",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "63ed3380f890c76427da6b9a9f83a820ca00fd960400a5cb98654dd2ca42ffc0",
+            "base_commit": "c6562f1b9451"
+          },
+          "caveat": [
+            "Auxiliary native engine result only; DeepStack/mRoPE restoration differs from paper legacy engine. No paper-delta computed. Native POPE uses a different dataset/evaluator chain from LLaVAas-asked COCO8910; not interchangeable. Same-native baseline missing where not independently usable.",
+            "† Native DeepStack + 3-D mRoPE result is selected only for the user-requested historical-best display. It is not a fair pair against the current legacy EADP row."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/MMBench_DEV_EN_V11_score.json",
+              "sha256": "e45f2265b4e2d11287adfce2398347762261b1a45a23237ee18402184bd118d3",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/MMBench_DEV_EN_V11.json",
+              "sha256": "ba4d15441f2f2ad472f82c6eb449ba1437127fb9d8f7bcde217aed1b2275ead5",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/MMBench_DEV_EN_V11_pred_exact_matching_result.xlsx",
+              "sha256": "a48cbec8160a0a08f1571bca7d7ad2dc0c7f78c3df337d20b38a5ae411554da7",
+              "role": "1292_circular_groups"
+            }
+          ],
+          "metric": "native official task metric",
+          "prediction_count": 4876,
+          "metric_denominator": 1292,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": 83.82352941176471,
+          "same_eadp_sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/acc/nonreg/BASE/K256/MMBench_DEV_EN_V11_score.json",
+              "sha256": "812c6b34ec50d034131d9b363e1103d1ac228ab93611a5609f31b920a784f75c",
+              "role": "same_native_EADP"
+            }
+          ],
+          "native_vs_legacy_change": true,
+          "precision_only_candidate": false
+        }
+      ],
+      "best_value": 83.43653250773994,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/MMBench_DEV_EN_V11_score.json",
+      "best_source_sha256": "e45f2265b4e2d11287adfce2398347762261b1a45a23237ee18402184bd118d3",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 256,
+        "arm": "R_MAIN025",
+        "pipeline": "native_restored",
+        "deepstack": true,
+        "position": "3-D mRoPE",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "63ed3380f890c76427da6b9a9f83a820ca00fd960400a5cb98654dd2ca42ffc0",
+        "base_commit": "c6562f1b9451"
+      },
+      "best_caveat": [
+        "Auxiliary native engine result only; DeepStack/mRoPE restoration differs from paper legacy engine. No paper-delta computed. Native POPE uses a different dataset/evaluator chain from LLaVAas-asked COCO8910; not interchangeable. Same-native baseline missing where not independently usable.",
+        "† Native DeepStack + 3-D mRoPE result is selected only for the user-requested historical-best display. It is not a fair pair against the current legacy EADP row."
+      ],
+      "display_marker": "†",
+      "delta_from_current": 3.9473684210526443,
+      "changed_execution_protocol": true,
+      "change_kind": "higher_native_history"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 256,
+      "task": "MMB_CN",
+      "current_value": 78.40557275541795,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+      "candidates": [
+        {
+          "value": 78.40557275541795,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/MMBench_DEV_CN_V11_score.json",
+          "source_sha256": "63651cf5cc8445c654425b9f88437466d0fbb253dcacaadf104dcf5de49e39d4",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 256,
+            "arm": "L_R_MAIN025",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "078cf021943bc23f4131e09e57ff1c28b9a9fac5c234bd2e4cf14cc0b6152f8e",
+            "base_commit": "a330eb66f65e"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "1292 official circular groups over4876 option-rotation rows; no silent dropped-question inference."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/MMBench_DEV_CN_V11_score.json",
+              "sha256": "63651cf5cc8445c654425b9f88437466d0fbb253dcacaadf104dcf5de49e39d4",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/MMBench_DEV_CN_V11.json",
+              "sha256": "2eceb4a6ffa6dcfec3b6850d3a8f9f0614e09ca2068f2d2e516e739e133f752d",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/MMBench_DEV_CN_V11_pred_exact_matching_result.xlsx",
+              "sha256": "b8056ec8ace8e7d4cdcdbac650c9ced83648beb01c86e61d28a9fed0fc9a357f",
+              "role": "1292_circular_groups"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 4876,
+          "metric_denominator": 1292,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": 78.86996904024768,
+          "same_eadp_sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+              "sha256": "a036db6f930492fb3c8687903b8d27565c80174348eafd03af9aa3d7909d671b",
+              "role": "same_local_EADP"
+            }
+          ],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": false
+        }
+      ],
+      "best_value": 78.40557275541795,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/MMBench_DEV_CN_V11_score.json",
+      "best_source_sha256": "63651cf5cc8445c654425b9f88437466d0fbb253dcacaadf104dcf5de49e39d4",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 256,
+        "arm": "L_R_MAIN025",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "078cf021943bc23f4131e09e57ff1c28b9a9fac5c234bd2e4cf14cc0b6152f8e",
+        "base_commit": "a330eb66f65e"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "1292 official circular groups over4876 option-rotation rows; no silent dropped-question inference."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.0,
+      "changed_execution_protocol": false,
+      "change_kind": "same_complete_run"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 256,
+      "task": "DocVQA",
+      "current_value": 63.10443271500505,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+      "candidates": [
+        {
+          "value": 63.10443271500505,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/DocVQA_VAL_score.json",
+          "source_sha256": "b151a2607cf7f98087f62a1b3a3c4de4ccf358dc78ae42fe42c887df6c16f8b9",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 256,
+            "arm": "L_R_MAIN025",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "44c377c6676400c93fc51a9eae91a15a406501654b04ea0711a1a171ac44038c",
+            "base_commit": "a330eb66f65e"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "VLMEvalKit ANLS with the already-disclosed NA normalization quirk; retain official score, do not substitute a different extractor."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/DocVQA_VAL_score.json",
+              "sha256": "b151a2607cf7f98087f62a1b3a3c4de4ccf358dc78ae42fe42c887df6c16f8b9",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/DocVQA_VAL.json",
+              "sha256": "07f10f0c73720700cef5d184486cc84e1a6953dd6581802cbe580bd759e07a24",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 5349,
+          "metric_denominator": 5349,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": 61.13557770823,
+          "same_eadp_sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+              "sha256": "a036db6f930492fb3c8687903b8d27565c80174348eafd03af9aa3d7909d671b",
+              "role": "same_local_EADP"
+            }
+          ],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": false
+        },
+        {
+          "value": 73.52458857666952,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/DocVQA_VAL_score.json",
+          "source_sha256": "1124621d775313720af7b566ded380d0e60669c8fc6579cfdbd3f8c71a2e6a89",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 256,
+            "arm": "R_MAIN025",
+            "pipeline": "native_restored",
+            "deepstack": true,
+            "position": "3-D mRoPE",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "44c377c6676400c93fc51a9eae91a15a406501654b04ea0711a1a171ac44038c",
+            "base_commit": "ade8a8895184"
+          },
+          "caveat": [
+            "Auxiliary native engine result only; DeepStack/mRoPE restoration differs from paper legacy engine. No paper-delta computed. Native POPE uses a different dataset/evaluator chain from LLaVAas-asked COCO8910; not interchangeable. Same-native baseline missing where not independently usable.",
+            "† Native DeepStack + 3-D mRoPE result is selected only for the user-requested historical-best display. It is not a fair pair against the current legacy EADP row.",
+            "VLMEvalKit ANLS with the already-disclosed NA normalization quirk; retain official score, do not substitute a different extractor."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/DocVQA_VAL_score.json",
+              "sha256": "1124621d775313720af7b566ded380d0e60669c8fc6579cfdbd3f8c71a2e6a89",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/DocVQA_VAL.json",
+              "sha256": "1d2f33d448c72b25eff5fad2cd7a204936a3dcd85db3e7a41c1d2cf423691e07",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "native official task metric",
+          "prediction_count": 5349,
+          "metric_denominator": 5349,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": 72.07389883671843,
+          "same_eadp_sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/acc/main/BASE/K256/DocVQA_VAL_score.json",
+              "sha256": "dba91652b9f750b106605b3f00093e3c3995452a66205aa5379e876f28d14272",
+              "role": "same_native_EADP"
+            }
+          ],
+          "native_vs_legacy_change": true,
+          "precision_only_candidate": false
+        }
+      ],
+      "best_value": 73.52458857666952,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/DocVQA_VAL_score.json",
+      "best_source_sha256": "1124621d775313720af7b566ded380d0e60669c8fc6579cfdbd3f8c71a2e6a89",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 256,
+        "arm": "R_MAIN025",
+        "pipeline": "native_restored",
+        "deepstack": true,
+        "position": "3-D mRoPE",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "44c377c6676400c93fc51a9eae91a15a406501654b04ea0711a1a171ac44038c",
+        "base_commit": "ade8a8895184"
+      },
+      "best_caveat": [
+        "Auxiliary native engine result only; DeepStack/mRoPE restoration differs from paper legacy engine. No paper-delta computed. Native POPE uses a different dataset/evaluator chain from LLaVAas-asked COCO8910; not interchangeable. Same-native baseline missing where not independently usable.",
+        "† Native DeepStack + 3-D mRoPE result is selected only for the user-requested historical-best display. It is not a fair pair against the current legacy EADP row.",
+        "VLMEvalKit ANLS with the already-disclosed NA normalization quirk; retain official score, do not substitute a different extractor."
+      ],
+      "display_marker": "†",
+      "delta_from_current": 10.420155861664462,
+      "changed_execution_protocol": true,
+      "change_kind": "higher_native_history"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 256,
+      "task": "InfoVQA",
+      "current_value": 43.03301351244087,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+      "candidates": [
+        {
+          "value": 43.03301351244087,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/InfoVQA_VAL_score.json",
+          "source_sha256": "6afd811288509fcbe2ffa78447de92d09b5ca40060b4cb6816ff2a569d35d237",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 256,
+            "arm": "L_R_MAIN025",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "7419f007fb681ee68f100be6beadc0d4e05f686059d99213bf347b5b874357e4",
+            "base_commit": "a330eb66f65e"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "Retain official ANLS aggregation. The older custom plain-mean extractor differs and is not an eligible historical score."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/InfoVQA_VAL_score.json",
+              "sha256": "6afd811288509fcbe2ffa78447de92d09b5ca40060b4cb6816ff2a569d35d237",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/InfoVQA_VAL.json",
+              "sha256": "40e7797b994f7b06d2750eb478c3ffe25ba0dd0f29026b0b69536df9d47cd80d",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 2801,
+          "metric_denominator": 2801,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": 42.39013063219771,
+          "same_eadp_sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+              "sha256": "a036db6f930492fb3c8687903b8d27565c80174348eafd03af9aa3d7909d671b",
+              "role": "same_local_EADP"
+            }
+          ],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": false
+        }
+      ],
+      "best_value": 43.03301351244087,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/InfoVQA_VAL_score.json",
+      "best_source_sha256": "6afd811288509fcbe2ffa78447de92d09b5ca40060b4cb6816ff2a569d35d237",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 256,
+        "arm": "L_R_MAIN025",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "7419f007fb681ee68f100be6beadc0d4e05f686059d99213bf347b5b874357e4",
+        "base_commit": "a330eb66f65e"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "Retain official ANLS aggregation. The older custom plain-mean extractor differs and is not an eligible historical score."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.0,
+      "changed_execution_protocol": false,
+      "change_kind": "same_complete_run"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 256,
+      "task": "OCRBench",
+      "current_value": 632.0,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+      "candidates": [
+        {
+          "value": 632.0,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/OCRBench_score.json",
+          "source_sha256": "12342bd30ea4bb7fbeed84fcc83a769eedcd3caa1b0a45b40f35237930d24d58",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 256,
+            "arm": "L_R_MAIN025",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "0955fa1057593f2a32931e4c03c2be191c8f27d0d6323af6b1d1c993f9cf44d2",
+            "base_commit": "a330eb66f65e"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/OCRBench_score.json",
+              "sha256": "12342bd30ea4bb7fbeed84fcc83a769eedcd3caa1b0a45b40f35237930d24d58",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/OCRBench.json",
+              "sha256": "4ab91df656d1382c18327a7191d764627d225c8bc8aebaf8affb2157665fefc4",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "OCRBench raw score",
+          "prediction_count": 1000,
+          "metric_denominator": 1000,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": 623.0,
+          "same_eadp_sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+              "sha256": "a036db6f930492fb3c8687903b8d27565c80174348eafd03af9aa3d7909d671b",
+              "role": "same_local_EADP"
+            }
+          ],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": false
+        },
+        {
+          "value": 757.0,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/OCRBench_score.json",
+          "source_sha256": "9e4aa6d8fb3d1f4e6974415dc61ee5a666de9f6e66f28e015363d63c6ae3d1a2",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 256,
+            "arm": "R_MAIN025",
+            "pipeline": "native_restored",
+            "deepstack": true,
+            "position": "3-D mRoPE",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "0955fa1057593f2a32931e4c03c2be191c8f27d0d6323af6b1d1c993f9cf44d2",
+            "base_commit": "ade8a8895184"
+          },
+          "caveat": [
+            "Auxiliary native engine result only; DeepStack/mRoPE restoration differs from paper legacy engine. No paper-delta computed. Native POPE uses a different dataset/evaluator chain from LLaVAas-asked COCO8910; not interchangeable. Same-native baseline missing where not independently usable.",
+            "† Native DeepStack + 3-D mRoPE result is selected only for the user-requested historical-best display. It is not a fair pair against the current legacy EADP row."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/OCRBench_score.json",
+              "sha256": "9e4aa6d8fb3d1f4e6974415dc61ee5a666de9f6e66f28e015363d63c6ae3d1a2",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/OCRBench.json",
+              "sha256": "19e7176790c26e847b15996e4fa9dca3e4d104685a712c9492940b37196d1c32",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "native official task metric",
+          "prediction_count": 1000,
+          "metric_denominator": 1000,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": 742.0,
+          "same_eadp_sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/acc/main/BASE/K256/OCRBench_score.json",
+              "sha256": "bd4a401b810d9c6330da6224088e579f4374682476065f76140aa16147226dfb",
+              "role": "same_native_EADP"
+            }
+          ],
+          "native_vs_legacy_change": true,
+          "precision_only_candidate": false
+        }
+      ],
+      "best_value": 757.0,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/full/acc/R_MAIN025/OCRBench_score.json",
+      "best_source_sha256": "9e4aa6d8fb3d1f4e6974415dc61ee5a666de9f6e66f28e015363d63c6ae3d1a2",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 256,
+        "arm": "R_MAIN025",
+        "pipeline": "native_restored",
+        "deepstack": true,
+        "position": "3-D mRoPE",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "0955fa1057593f2a32931e4c03c2be191c8f27d0d6323af6b1d1c993f9cf44d2",
+        "base_commit": "ade8a8895184"
+      },
+      "best_caveat": [
+        "Auxiliary native engine result only; DeepStack/mRoPE restoration differs from paper legacy engine. No paper-delta computed. Native POPE uses a different dataset/evaluator chain from LLaVAas-asked COCO8910; not interchangeable. Same-native baseline missing where not independently usable.",
+        "† Native DeepStack + 3-D mRoPE result is selected only for the user-requested historical-best display. It is not a fair pair against the current legacy EADP row."
+      ],
+      "display_marker": "†",
+      "delta_from_current": 125.0,
+      "changed_execution_protocol": true,
+      "change_kind": "higher_native_history"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 256,
+      "task": "MME",
+      "current_value": 2202.923769507803,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+      "candidates": [
+        {
+          "value": 2202.923769507803,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/MME_score.json",
+          "source_sha256": "95ab555f11c2118bc04ea877ce8f88ce84c7d9672e3662e491f45a21efeb96ac",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 256,
+            "arm": "L_R_MAIN025",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "e6a0e8ff07633b1f9f06ad0a07de9ca40dfe7cd87406bb731dd43a2cdade3673",
+            "base_commit": "a330eb66f65e"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "Qwen Table4 uses P+C/20; separate verified TSV GT path, unaffected by LLaVA162label corruption."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/MME_score.json",
+              "sha256": "95ab555f11c2118bc04ea877ce8f88ce84c7d9672e3662e491f45a21efeb96ac",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/MME.json",
+              "sha256": "8ec3843326bf72a2a9397a85cef27f79e509d9fc786f7f94ef3c3f314ae7d48a",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "MME perception+cognition",
+          "prediction_count": 2374,
+          "metric_denominator": 2374,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": 2212.6946778711485,
+          "same_eadp_sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/p1_unified_20261008.json",
+              "sha256": "a036db6f930492fb3c8687903b8d27565c80174348eafd03af9aa3d7909d671b",
+              "role": "same_local_EADP"
+            }
+          ],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": false
+        }
+      ],
+      "best_value": 2202.923769507803,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_R_MAIN025/MME_score.json",
+      "best_source_sha256": "95ab555f11c2118bc04ea877ce8f88ce84c7d9672e3662e491f45a21efeb96ac",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 256,
+        "arm": "L_R_MAIN025",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "e6a0e8ff07633b1f9f06ad0a07de9ca40dfe7cd87406bb731dd43a2cdade3673",
+        "base_commit": "a330eb66f65e"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "Qwen Table4 uses P+C/20; separate verified TSV GT path, unaffected by LLaVA162label corruption."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.0,
+      "changed_execution_protocol": false,
+      "change_kind": "same_complete_run"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 128,
+      "task": "TextVQA",
+      "current_value": 67.38,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 67.38,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/TextVQA_VAL_score.json",
+          "source_sha256": "1e81fc10c646e2517e1400d78f9ab9fb610cd91e120c854bc9edfb08ee836373",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 128,
+            "arm": "L_R_MAIN0125",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "e10a1b7c050795b4f3745e362e69795352044350d522b2f6680e595dd10e5fd0",
+            "base_commit": "9f72ac6a7bef"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/TextVQA_VAL_score.json",
+              "sha256": "1e81fc10c646e2517e1400d78f9ab9fb610cd91e120c854bc9edfb08ee836373",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/TextVQA_VAL.json",
+              "sha256": "589e12e86224563ba75cc559246f49708e675cd1be57d4056d0391e86e932cf2",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 5000,
+          "metric_denominator": 5000,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 67.38,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/TextVQA_VAL_score.json",
+      "best_source_sha256": "1e81fc10c646e2517e1400d78f9ab9fb610cd91e120c854bc9edfb08ee836373",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 128,
+        "arm": "L_R_MAIN0125",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "e10a1b7c050795b4f3745e362e69795352044350d522b2f6680e595dd10e5fd0",
+        "base_commit": "9f72ac6a7bef"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.0,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 128,
+      "task": "ChartQA",
+      "current_value": 42.64,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 42.64,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/ChartQA_TEST_score.json",
+          "source_sha256": "57baa6027d75b1e0d4a6b3fa1e6a0b13bb6d2e6fed1a0a445285276430537293",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 128,
+            "arm": "L_R_MAIN0125",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "fc8f7d67a9bfe45b97f7e67f2acdf399cda552f230fd2b3d985cb1f1775c9245",
+            "base_commit": "4d78c797dc33"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/ChartQA_TEST_score.json",
+              "sha256": "57baa6027d75b1e0d4a6b3fa1e6a0b13bb6d2e6fed1a0a445285276430537293",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/ChartQA_TEST.json",
+              "sha256": "9ac7864677a5393573c711196a15be527073a0478dbaa35bdcdc776551865d8a",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 2500,
+          "metric_denominator": 2500,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 42.64,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/ChartQA_TEST_score.json",
+      "best_source_sha256": "57baa6027d75b1e0d4a6b3fa1e6a0b13bb6d2e6fed1a0a445285276430537293",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 128,
+        "arm": "L_R_MAIN0125",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "fc8f7d67a9bfe45b97f7e67f2acdf399cda552f230fd2b3d985cb1f1775c9245",
+        "base_commit": "4d78c797dc33"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.0,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 128,
+      "task": "AI2D",
+      "current_value": 73.09,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 73.08937823834198,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/AI2D_TEST_score.json",
+          "source_sha256": "dc0c59f87dec4c3273e33c0d386881996c28f4d2ccd001c410a7f9910b257818",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 128,
+            "arm": "L_R_MAIN0125",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "1d349c4173e16fff66a18f7a2f7c5dcec6b9faa27c462728fe2a0bda172b6d68",
+            "base_commit": "4d78c797dc33"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/AI2D_TEST_score.json",
+              "sha256": "dc0c59f87dec4c3273e33c0d386881996c28f4d2ccd001c410a7f9910b257818",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/AI2D_TEST.json",
+              "sha256": "44197e4374d140e22ab2a72a3ff7628e78212fc99472939ecc1c887d120dfb24",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 3088,
+          "metric_denominator": 3088,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 73.08937823834198,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/AI2D_TEST_score.json",
+      "best_source_sha256": "dc0c59f87dec4c3273e33c0d386881996c28f4d2ccd001c410a7f9910b257818",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 128,
+        "arm": "L_R_MAIN0125",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "1d349c4173e16fff66a18f7a2f7c5dcec6b9faa27c462728fe2a0bda172b6d68",
+        "base_commit": "4d78c797dc33"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+      ],
+      "display_marker": "",
+      "delta_from_current": -0.0006217616580244112,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 128,
+      "task": "OCRBench",
+      "current_value": 555,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 555.0,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/OCRBench_score.json",
+          "source_sha256": "9850a15923d7f8e6de478d7f5314072f3954f78ef47198a82a4a27273816532a",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 128,
+            "arm": "L_R_MAIN0125",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "5b909c9b81df22ce002e61c719a8e41e4f07d6ac924a59833d7c9cd5e55b906c",
+            "base_commit": "4d78c797dc33"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/OCRBench_score.json",
+              "sha256": "9850a15923d7f8e6de478d7f5314072f3954f78ef47198a82a4a27273816532a",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/OCRBench.json",
+              "sha256": "12ec2381f4f7e132ee69cd65a21b5af33e1ce0eb6958fe93eae366c49481e4b5",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "OCRBench raw score",
+          "prediction_count": 1000,
+          "metric_denominator": 1000,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 555.0,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/OCRBench_score.json",
+      "best_source_sha256": "9850a15923d7f8e6de478d7f5314072f3954f78ef47198a82a4a27273816532a",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 128,
+        "arm": "L_R_MAIN0125",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "5b909c9b81df22ce002e61c719a8e41e4f07d6ac924a59833d7c9cd5e55b906c",
+        "base_commit": "4d78c797dc33"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.0,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 128,
+      "task": "HallusionBench",
+      "current_value": 38.44,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 38.4393063583815,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/HallusionBench_score.json",
+          "source_sha256": "c4d01aa5aebd669557cbe2877910155ddbdb0a1495665487e32a38024b5f9ff7",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 128,
+            "arm": "L_R_MAIN0125",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "06c91738e25ca54cebb9cc0684d7cf0140b88341b48b6ba9c4090584ddccdf53",
+            "base_commit": "4d78c797dc33"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "Uses fAcc; paper metric identity inferred from official convention, not explicitly specified by authors."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/HallusionBench_score.json",
+              "sha256": "c4d01aa5aebd669557cbe2877910155ddbdb0a1495665487e32a38024b5f9ff7",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/HallusionBench.json",
+              "sha256": "de6340647b5c76441ae9916737b5863ae9970f0e8903d52017a54a0cd9a5dbd2",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "Hallusion fAcc (%)",
+          "prediction_count": 951,
+          "metric_denominator": 346,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 38.4393063583815,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/HallusionBench_score.json",
+      "best_source_sha256": "c4d01aa5aebd669557cbe2877910155ddbdb0a1495665487e32a38024b5f9ff7",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 128,
+        "arm": "L_R_MAIN0125",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "06c91738e25ca54cebb9cc0684d7cf0140b88341b48b6ba9c4090584ddccdf53",
+        "base_commit": "4d78c797dc33"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "Uses fAcc; paper metric identity inferred from official convention, not explicitly specified by authors."
+      ],
+      "display_marker": "",
+      "delta_from_current": -0.000693641618497054,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 128,
+      "task": "MME",
+      "current_value": 2148.5,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 2148.4567827130854,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MME_score.json",
+          "source_sha256": "717eec9a20059abb0a96f8a3199613f0878dd060b306f1c49f3b39a30ea71af7",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 128,
+            "arm": "L_R_MAIN0125",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "9a9965aae9533945832e7d954eee095cb214f83759114ba8d5ee80b1dc79657c",
+            "base_commit": "4d78c797dc33"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "Qwen Table4 uses P+C/20; separate verified TSV GT path, unaffected by LLaVA162label corruption."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MME_score.json",
+              "sha256": "717eec9a20059abb0a96f8a3199613f0878dd060b306f1c49f3b39a30ea71af7",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MME.json",
+              "sha256": "fb35dc7838548c21c472eea4a6e4e0b0d0025524b6d801c47c9a852cd0a1dc19",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "MME perception+cognition",
+          "prediction_count": 2374,
+          "metric_denominator": 2374,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 2148.4567827130854,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MME_score.json",
+      "best_source_sha256": "717eec9a20059abb0a96f8a3199613f0878dd060b306f1c49f3b39a30ea71af7",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 128,
+        "arm": "L_R_MAIN0125",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "9a9965aae9533945832e7d954eee095cb214f83759114ba8d5ee80b1dc79657c",
+        "base_commit": "4d78c797dc33"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "Qwen Table4 uses P+C/20; separate verified TSV GT path, unaffected by LLaVA162label corruption."
+      ],
+      "display_marker": "",
+      "delta_from_current": -0.04321728691456883,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 128,
+      "task": "MMB_EN",
+      "current_value": 78.95,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 78.94736842105263,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MMBench_DEV_EN_V11_score.json",
+          "source_sha256": "0622aa93d8e6682af4d9fc3151551bf8af6fbe7e10644dd5f85b9761f2a8703c",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 128,
+            "arm": "L_R_MAIN0125",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "7f7a9a2b1010b601e8ab5982abc8a49a244565dde3965f8d30ee775843a79f8b",
+            "base_commit": "4d78c797dc33"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "1292 official circular groups over4876 option-rotation rows; no silent dropped-question inference."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MMBench_DEV_EN_V11_score.json",
+              "sha256": "0622aa93d8e6682af4d9fc3151551bf8af6fbe7e10644dd5f85b9761f2a8703c",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MMBench_DEV_EN_V11.json",
+              "sha256": "99ad38b47cdf7b18cbab8add261df3ba6ae56e7b394558b28c63a4354223d0a1",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MMBench_DEV_EN_V11_pred_exact_matching_result.xlsx",
+              "sha256": "463d3fb6b4a3f43ae6e0609356bf33d97ba255460e4bb55a8e3c7b79ab74d3a0",
+              "role": "1292_circular_groups"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 4876,
+          "metric_denominator": 1292,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 78.94736842105263,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MMBench_DEV_EN_V11_score.json",
+      "best_source_sha256": "0622aa93d8e6682af4d9fc3151551bf8af6fbe7e10644dd5f85b9761f2a8703c",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 128,
+        "arm": "L_R_MAIN0125",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "7f7a9a2b1010b601e8ab5982abc8a49a244565dde3965f8d30ee775843a79f8b",
+        "base_commit": "4d78c797dc33"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "1292 official circular groups over4876 option-rotation rows; no silent dropped-question inference."
+      ],
+      "display_marker": "",
+      "delta_from_current": -0.002631578947372759,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 128,
+      "task": "MMB_CN",
+      "current_value": 77.17,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 77.1671826625387,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MMBench_DEV_CN_V11_score.json",
+          "source_sha256": "b2eb2671bb9ac21864b238428d860af2a1f7998258fcf1f48019977500c3b717",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 128,
+            "arm": "L_R_MAIN0125",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "be8a8a5fede016048293fd7bff2088d8e9d3dddc8631d70c9a43139ec1cabd91",
+            "base_commit": "4d78c797dc33"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "1292 official circular groups over4876 option-rotation rows; no silent dropped-question inference."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MMBench_DEV_CN_V11_score.json",
+              "sha256": "b2eb2671bb9ac21864b238428d860af2a1f7998258fcf1f48019977500c3b717",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MMBench_DEV_CN_V11.json",
+              "sha256": "aa2677263e75c0a6468580e5c87260e51319cd22fa489792a630c11e05c63001",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MMBench_DEV_CN_V11_pred_exact_matching_result.xlsx",
+              "sha256": "6498934a0bb7fa43a7e73f7ff0b6dcbc9ae44a8b8bd4c6ef2ec2de0a74728ee1",
+              "role": "1292_circular_groups"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 4876,
+          "metric_denominator": 1292,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 77.1671826625387,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MMBench_DEV_CN_V11_score.json",
+      "best_source_sha256": "b2eb2671bb9ac21864b238428d860af2a1f7998258fcf1f48019977500c3b717",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 128,
+        "arm": "L_R_MAIN0125",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "be8a8a5fede016048293fd7bff2088d8e9d3dddc8631d70c9a43139ec1cabd91",
+        "base_commit": "4d78c797dc33"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "1292 official circular groups over4876 option-rotation rows; no silent dropped-question inference."
+      ],
+      "display_marker": "",
+      "delta_from_current": -0.0028173374612947555,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 128,
+      "task": "DocVQA",
+      "current_value": 45.95,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 45.951906051290834,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/DocVQA_VAL_score.json",
+          "source_sha256": "4a76fea2baf47ba2836c4027a780ed7dd4051bca16ab8c938ca1cc8fe4773509",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 128,
+            "arm": "L_R_MAIN0125",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "3be5d3ac652412847dda66272bbc57e0adcbfe29e396be749a3674d5ff381aae",
+            "base_commit": "4d78c797dc33"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "VLMEvalKit ANLS with the already-disclosed NA normalization quirk; retain official score, do not substitute a different extractor."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/DocVQA_VAL_score.json",
+              "sha256": "4a76fea2baf47ba2836c4027a780ed7dd4051bca16ab8c938ca1cc8fe4773509",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/DocVQA_VAL.json",
+              "sha256": "deb8269162f0dfd39300cb2639b4dbc9764265ba4923603380a316f8a787c5de",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 5349,
+          "metric_denominator": 5349,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 45.951906051290834,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/DocVQA_VAL_score.json",
+      "best_source_sha256": "4a76fea2baf47ba2836c4027a780ed7dd4051bca16ab8c938ca1cc8fe4773509",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 128,
+        "arm": "L_R_MAIN0125",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "3be5d3ac652412847dda66272bbc57e0adcbfe29e396be749a3674d5ff381aae",
+        "base_commit": "4d78c797dc33"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "VLMEvalKit ANLS with the already-disclosed NA normalization quirk; retain official score, do not substitute a different extractor."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.0019060512908311011,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 128,
+      "task": "InfoVQA",
+      "current_value": 36.03,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 36.02823050235956,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/InfoVQA_VAL_score.json",
+          "source_sha256": "79e162f75dd2fcea0af906707f115d347eb32fc986c7dbed434fedc3f7a253cd",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 128,
+            "arm": "L_R_MAIN0125",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "6b9ee1d46c567519ddacd56b76955084dab0b5104825d148255452f418bfd98b",
+            "base_commit": "4d78c797dc33"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "Retain official ANLS aggregation. The older custom plain-mean extractor differs and is not an eligible historical score."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/InfoVQA_VAL_score.json",
+              "sha256": "79e162f75dd2fcea0af906707f115d347eb32fc986c7dbed434fedc3f7a253cd",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/InfoVQA_VAL.json",
+              "sha256": "1caa11f4ab3d4b1ac6d34f2b01fa1dfdd2a5215ef9ab938257747c6be923a3b0",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 2801,
+          "metric_denominator": 2801,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 36.02823050235956,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/InfoVQA_VAL_score.json",
+      "best_source_sha256": "79e162f75dd2fcea0af906707f115d347eb32fc986c7dbed434fedc3f7a253cd",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 128,
+        "arm": "L_R_MAIN0125",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "6b9ee1d46c567519ddacd56b76955084dab0b5104825d148255452f418bfd98b",
+        "base_commit": "4d78c797dc33"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "Retain official ANLS aggregation. The older custom plain-mean extractor differs and is not an eligible historical score."
+      ],
+      "display_marker": "",
+      "delta_from_current": -0.0017694976404385443,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 64,
+      "task": "TextVQA",
+      "current_value": 59.15,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 59.152,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/TextVQA_VAL_score.json",
+          "source_sha256": "b4b7e7b4e1200dbf77f6e8c482d599a3d8c9e9ae2c51477f8883936d1c6c9ca1",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 64,
+            "arm": "L_R_MAIN00625",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "b6461ed4d0a2b65d0b554c57d190e72defbf42d6b9f4a323a5e61f6c94b481bf",
+            "base_commit": "c6ddede8828c"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/TextVQA_VAL_score.json",
+              "sha256": "b4b7e7b4e1200dbf77f6e8c482d599a3d8c9e9ae2c51477f8883936d1c6c9ca1",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/TextVQA_VAL.json",
+              "sha256": "cc9595e05971a2d7e5acd1745987b2adbb49aa345b8393bc7eb7e00947fd28b1",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 5000,
+          "metric_denominator": 5000,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 59.152,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/TextVQA_VAL_score.json",
+      "best_source_sha256": "b4b7e7b4e1200dbf77f6e8c482d599a3d8c9e9ae2c51477f8883936d1c6c9ca1",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 64,
+        "arm": "L_R_MAIN00625",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "b6461ed4d0a2b65d0b554c57d190e72defbf42d6b9f4a323a5e61f6c94b481bf",
+        "base_commit": "c6ddede8828c"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.0020000000000024443,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 64,
+      "task": "ChartQA",
+      "current_value": 33.04,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 33.040000000000006,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/ChartQA_TEST_score.json",
+          "source_sha256": "4d4f7893327a850350bf8a8faa1d629c04ea5db6f34ffe555a057763486a651d",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 64,
+            "arm": "L_R_MAIN00625",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "1378d6fe71cdad9a07494582000dbaaebe4982965030ba05946257dfa726a17e",
+            "base_commit": "87d0d6de0c27"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/ChartQA_TEST_score.json",
+              "sha256": "4d4f7893327a850350bf8a8faa1d629c04ea5db6f34ffe555a057763486a651d",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/ChartQA_TEST.json",
+              "sha256": "b70a3b1d2a2632b080fa2983ff37f393fd70b4e737667a2fedee82e2dcc8adb8",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 2500,
+          "metric_denominator": 2500,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 33.040000000000006,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/ChartQA_TEST_score.json",
+      "best_source_sha256": "4d4f7893327a850350bf8a8faa1d629c04ea5db6f34ffe555a057763486a651d",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 64,
+        "arm": "L_R_MAIN00625",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "1378d6fe71cdad9a07494582000dbaaebe4982965030ba05946257dfa726a17e",
+        "base_commit": "87d0d6de0c27"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+      ],
+      "display_marker": "",
+      "delta_from_current": 7.105427357601002e-15,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 64,
+      "task": "AI2D",
+      "current_value": 70.98,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 70.98445595854922,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/AI2D_TEST_score.json",
+          "source_sha256": "126a9fd8f13d4f59dac4f7c8cc62fd42103a51dee8a7b254c68729b2ccba9cb6",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 64,
+            "arm": "L_R_MAIN00625",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "3dad73d00f4433bdd1ce5447276d271bfb49182e77900d8811d24ec94361ffd3",
+            "base_commit": "109c6d5690cd"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/AI2D_TEST_score.json",
+              "sha256": "126a9fd8f13d4f59dac4f7c8cc62fd42103a51dee8a7b254c68729b2ccba9cb6",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/AI2D_TEST.json",
+              "sha256": "156ecf620f5838fd9df367ab972dab83f53dd46249157c0cad1878e42733cc58",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 3088,
+          "metric_denominator": 3088,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 70.98445595854922,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/AI2D_TEST_score.json",
+      "best_source_sha256": "126a9fd8f13d4f59dac4f7c8cc62fd42103a51dee8a7b254c68729b2ccba9cb6",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 64,
+        "arm": "L_R_MAIN00625",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "3dad73d00f4433bdd1ce5447276d271bfb49182e77900d8811d24ec94361ffd3",
+        "base_commit": "109c6d5690cd"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.004455958549215211,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 64,
+      "task": "OCRBench",
+      "current_value": 495,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 495.0,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/OCRBench_score.json",
+          "source_sha256": "bcba34098cbadadbecefc0bec5729a587f015439297d4251f4581fbf1163d5bc",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 64,
+            "arm": "L_R_MAIN00625",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "705cff7b6744bb8621eade7493682f97846bdccaa6c0323e0d81d093ec21ed58",
+            "base_commit": "109c6d5690cd"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/OCRBench_score.json",
+              "sha256": "bcba34098cbadadbecefc0bec5729a587f015439297d4251f4581fbf1163d5bc",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/OCRBench.json",
+              "sha256": "a234e49ed6f71da1d12bfc8e44d5e0513c3fffce331f8f1e1eb72a6e4e287114",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "OCRBench raw score",
+          "prediction_count": 1000,
+          "metric_denominator": 1000,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 495.0,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/OCRBench_score.json",
+      "best_source_sha256": "bcba34098cbadadbecefc0bec5729a587f015439297d4251f4581fbf1163d5bc",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 64,
+        "arm": "L_R_MAIN00625",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "705cff7b6744bb8621eade7493682f97846bdccaa6c0323e0d81d093ec21ed58",
+        "base_commit": "109c6d5690cd"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.0,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 64,
+      "task": "HallusionBench",
+      "current_value": 34.68,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 34.68208092485549,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/HallusionBench_score.json",
+          "source_sha256": "f0410e4f9b78beb5127e5c2d24e5f265c493fac51b690139432585d7d621b4c8",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 64,
+            "arm": "L_R_MAIN00625",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "9def4b346390b7b67281005ba9f5f218c2973251beb1926594bec9451f263462",
+            "base_commit": "109c6d5690cd"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "Uses fAcc; paper metric identity inferred from official convention, not explicitly specified by authors."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/HallusionBench_score.json",
+              "sha256": "f0410e4f9b78beb5127e5c2d24e5f265c493fac51b690139432585d7d621b4c8",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/HallusionBench.json",
+              "sha256": "959901216d80df292184ef68456cc42ef3c0e0a0242c202142df1bf591a4a7d3",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "Hallusion fAcc (%)",
+          "prediction_count": 951,
+          "metric_denominator": 346,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 34.68208092485549,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/HallusionBench_score.json",
+      "best_source_sha256": "f0410e4f9b78beb5127e5c2d24e5f265c493fac51b690139432585d7d621b4c8",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 64,
+        "arm": "L_R_MAIN00625",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "9def4b346390b7b67281005ba9f5f218c2973251beb1926594bec9451f263462",
+        "base_commit": "109c6d5690cd"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "Uses fAcc; paper metric identity inferred from official convention, not explicitly specified by authors."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.002080924855491162,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 64,
+      "task": "MME",
+      "current_value": 2088.3,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 2088.294117647059,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/MME_score.json",
+          "source_sha256": "e11f3a55ff65ac3ed5b31fc1f27e65571e80dfd49ddb1a6f07d049cc557d9af8",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 64,
+            "arm": "L_R_MAIN00625",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "712cbe402c6dce859a06c9358588ff533da72687b74a6c306239e90ba3be29d3",
+            "base_commit": "109c6d5690cd"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "Qwen Table4 uses P+C/20; separate verified TSV GT path, unaffected by LLaVA162label corruption."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/MME_score.json",
+              "sha256": "e11f3a55ff65ac3ed5b31fc1f27e65571e80dfd49ddb1a6f07d049cc557d9af8",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/MME.json",
+              "sha256": "672acebb6f4209c28acc1551c7225dadbf823dbd259512ec85ee5c63540f4212",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "MME perception+cognition",
+          "prediction_count": 2374,
+          "metric_denominator": 2374,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 2088.294117647059,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/MME_score.json",
+      "best_source_sha256": "e11f3a55ff65ac3ed5b31fc1f27e65571e80dfd49ddb1a6f07d049cc557d9af8",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 64,
+        "arm": "L_R_MAIN00625",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "712cbe402c6dce859a06c9358588ff533da72687b74a6c306239e90ba3be29d3",
+        "base_commit": "109c6d5690cd"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "Qwen Table4 uses P+C/20; separate verified TSV GT path, unaffected by LLaVA162label corruption."
+      ],
+      "display_marker": "",
+      "delta_from_current": -0.005882352941171121,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 64,
+      "task": "MMB_EN",
+      "current_value": 78.02,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 78.0185758513932,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/MMBench_DEV_EN_V11_score.json",
+          "source_sha256": "d620a498bff222fae7fefa64671808eb06147e9a1da39ef0117388efb484e3b8",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 64,
+            "arm": "L_R_MAIN00625",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "622eb8a63ea0ce8ba74b3f770e9cf0b5f8be59e1a0f287d9241aeab8e22c9a5b",
+            "base_commit": "109c6d5690cd"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "1292 official circular groups over4876 option-rotation rows; no silent dropped-question inference."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/MMBench_DEV_EN_V11_score.json",
+              "sha256": "d620a498bff222fae7fefa64671808eb06147e9a1da39ef0117388efb484e3b8",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/MMBench_DEV_EN_V11.json",
+              "sha256": "1cddf35728b618271bba70f10b34c0f8845c77cc94ffbfbcb423cf868c6a8cb2",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/MMBench_DEV_EN_V11_pred_exact_matching_result.xlsx",
+              "sha256": "f12a587755c029a3fa8fce68b113dddfe055287c823ddf89b15bfdbcb94705d0",
+              "role": "1292_circular_groups"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 4876,
+          "metric_denominator": 1292,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 78.0185758513932,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/MMBench_DEV_EN_V11_score.json",
+      "best_source_sha256": "d620a498bff222fae7fefa64671808eb06147e9a1da39ef0117388efb484e3b8",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 64,
+        "arm": "L_R_MAIN00625",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "622eb8a63ea0ce8ba74b3f770e9cf0b5f8be59e1a0f287d9241aeab8e22c9a5b",
+        "base_commit": "109c6d5690cd"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "1292 official circular groups over4876 option-rotation rows; no silent dropped-question inference."
+      ],
+      "display_marker": "",
+      "delta_from_current": -0.001424148606801623,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 64,
+      "task": "MMB_CN",
+      "current_value": 77.24,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 77.24458204334366,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/MMBench_DEV_CN_V11_score.json",
+          "source_sha256": "651dcbfbcad622d965ada0ad17e11b9a1b3aa46c020c80f1479d0fb65b7e4b11",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 64,
+            "arm": "L_R_MAIN00625",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "d8aedf94b803995fd44cb2a6b4b6f4eeb6860d9c6e48dbbdfed8c61ba32a2d87",
+            "base_commit": "109c6d5690cd"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "1292 official circular groups over4876 option-rotation rows; no silent dropped-question inference."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/MMBench_DEV_CN_V11_score.json",
+              "sha256": "651dcbfbcad622d965ada0ad17e11b9a1b3aa46c020c80f1479d0fb65b7e4b11",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/MMBench_DEV_CN_V11.json",
+              "sha256": "f7b233d6f5d0c58242f35a1981089899b833e770d1ffaa5c2e09ec4df67204ec",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/MMBench_DEV_CN_V11_pred_exact_matching_result.xlsx",
+              "sha256": "0058a0506e0663f77d5802cb23bc086733052be30b7abac46b68cb4f4f7af3ff",
+              "role": "1292_circular_groups"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 4876,
+          "metric_denominator": 1292,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 77.24458204334366,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/MMBench_DEV_CN_V11_score.json",
+      "best_source_sha256": "651dcbfbcad622d965ada0ad17e11b9a1b3aa46c020c80f1479d0fb65b7e4b11",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 64,
+        "arm": "L_R_MAIN00625",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "d8aedf94b803995fd44cb2a6b4b6f4eeb6860d9c6e48dbbdfed8c61ba32a2d87",
+        "base_commit": "109c6d5690cd"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "1292 official circular groups over4876 option-rotation rows; no silent dropped-question inference."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.0045820433436603025,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 64,
+      "task": "DocVQA",
+      "current_value": 32.52,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 32.5219205941095,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/DocVQA_VAL_score.json",
+          "source_sha256": "0fbecbf6b630ebc16d6402ad5708ff411bd05e00f37670b96a64539a8938e6a1",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 64,
+            "arm": "L_R_MAIN00625",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "9af1497d89bd5ef93cba253a98b0ebfc301cec2f48178428569bff6c0cad7638",
+            "base_commit": "87d0d6de0c27"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "VLMEvalKit ANLS with the already-disclosed NA normalization quirk; retain official score, do not substitute a different extractor."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/DocVQA_VAL_score.json",
+              "sha256": "0fbecbf6b630ebc16d6402ad5708ff411bd05e00f37670b96a64539a8938e6a1",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/DocVQA_VAL.json",
+              "sha256": "0942672c67da08e77d24875dfc40db6614d216e078ffbd7cb405d3f5dda1d119",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 5349,
+          "metric_denominator": 5349,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 32.5219205941095,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/DocVQA_VAL_score.json",
+      "best_source_sha256": "0fbecbf6b630ebc16d6402ad5708ff411bd05e00f37670b96a64539a8938e6a1",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 64,
+        "arm": "L_R_MAIN00625",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "9af1497d89bd5ef93cba253a98b0ebfc301cec2f48178428569bff6c0cad7638",
+        "base_commit": "87d0d6de0c27"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "VLMEvalKit ANLS with the already-disclosed NA normalization quirk; retain official score, do not substitute a different extractor."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.0019205941094995183,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    },
+    {
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B-Instruct-1024",
+      "budget": 64,
+      "task": "InfoVQA",
+      "current_value": 30.52,
+      "current_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/records_20261003/STATUS_20261003.md",
+      "candidates": [
+        {
+          "value": 30.523668993212155,
+          "source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/InfoVQA_VAL_score.json",
+          "source_sha256": "fe933d045b65785957a7e800c68964ab12f2f02a8f0917dfe31acb77cebe689b",
+          "complete": true,
+          "eligible": true,
+          "recipe": {
+            "method": "RTG + official Facility + Completion",
+            "lambda_completion": 0.25,
+            "alpha": 0.5,
+            "beta": 2.0,
+            "model": "Qwen3-VL-8B-Instruct-1024",
+            "budget": 64,
+            "arm": "L_R_MAIN00625",
+            "pipeline": "official_legacy",
+            "deepstack": false,
+            "position": "1-D",
+            "decoding": "greedy",
+            "max_new_tokens": 2048,
+            "bank_sha256": "c52510de2e8a93793d3b6976df6a3a87d6411b84f83d5387755c3aa8bf953d6e",
+            "base_commit": "109c6d5690cd"
+          },
+          "caveat": [
+            "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+            "Retain official ANLS aggregation. The older custom plain-mean extractor differs and is not an eligible historical score."
+          ],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/InfoVQA_VAL_score.json",
+              "sha256": "fe933d045b65785957a7e800c68964ab12f2f02a8f0917dfe31acb77cebe689b",
+              "role": "score"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/InfoVQA_VAL.json",
+              "sha256": "3648205911ffaddf4e529fdd5a8dd32201830db3db3da17b183654e6ffd1f513",
+              "role": "complete_prediction_shard"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/latest_method_comparison.json",
+              "sha256": "8c4518f584096ce19bb53a0a47199bcfd5b54c8f2f46f823b0810df582d5204f",
+              "role": "existing_complete_CPU_audit"
+            }
+          ],
+          "metric": "official task metric (%)",
+          "prediction_count": 2801,
+          "metric_denominator": 2801,
+          "score_validity": "Previously audited corrected official task metric; source SHA and complete shard metadata checked again in this CPU export",
+          "same_native_or_legacy_eadp_value": null,
+          "same_eadp_sources": [],
+          "native_vs_legacy_change": false,
+          "precision_only_candidate": true
+        }
+      ],
+      "best_value": 30.523668993212155,
+      "best_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k064/legacy_full/acc/L_R_MAIN00625/InfoVQA_VAL_score.json",
+      "best_source_sha256": "fe933d045b65785957a7e800c68964ab12f2f02a8f0917dfe31acb77cebe689b",
+      "best_recipe": {
+        "method": "RTG + official Facility + Completion",
+        "lambda_completion": 0.25,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "model": "Qwen3-VL-8B-Instruct-1024",
+        "budget": 64,
+        "arm": "L_R_MAIN00625",
+        "pipeline": "official_legacy",
+        "deepstack": false,
+        "position": "1-D",
+        "decoding": "greedy",
+        "max_new_tokens": 2048,
+        "bank_sha256": "c52510de2e8a93793d3b6976df6a3a87d6411b84f83d5387755c3aa8bf953d6e",
+        "base_commit": "109c6d5690cd"
+      },
+      "best_caveat": [
+        "Official legacy engine; native DeepStack/mRoPE-restored runs are separate. Paper values rounded; cross-paper deltas are descriptive, no confidence interval.",
+        "Retain official ANLS aggregation. The older custom plain-mean extractor differs and is not an eligible historical score."
+      ],
+      "display_marker": "",
+      "delta_from_current": 0.0036689932121554136,
+      "changed_execution_protocol": false,
+      "change_kind": "restore_exact_precision"
+    }
+  ],
+  "summaries": [
+    {
+      "model": "qwen",
+      "budget": 256,
+      "current_avg10": 68.02441500348633,
+      "historical_best_avg10": 72.66296743175802,
+      "derived": true,
+      "mixed_native_and_legacy": true,
+      "caveat": "Per-cell historical maximum display across complete identical-method identical-budget runs; the selected K256 row mixes native-restored and legacy execution. This derived average is not a single-run method result or a paired performance claim."
+    },
+    {
+      "model": "qwen",
+      "budget": 128,
+      "current_avg10": 62.26,
+      "historical_best_avg10": 62.256621136961954,
+      "derived": true,
+      "mixed_native_and_legacy": false,
+      "caveat": "Per-cell historical maximum display across complete identical-method identical-budget runs; the selected K256 row mixes native-restored and legacy execution. This derived average is not a single-run method result or a paired performance claim."
+    },
+    {
+      "model": "qwen",
+      "budget": 64,
+      "current_avg10": 57.01,
+      "historical_best_avg10": 57.00819902478162,
+      "derived": true,
+      "mixed_native_and_legacy": false,
+      "caveat": "Per-cell historical maximum display across complete identical-method identical-budget runs; the selected K256 row mixes native-restored and legacy execution. This derived average is not a single-run method result or a paired performance claim."
+    }
+  ],
+  "notes": [
+    "K128/K64 have one complete legacy candidate each per task. No higher same-method same-budget native complete run was found.",
+    "Qwen MME is perception + cognition/reasoning total, not LLaVA perception only. Existing verified TSV chain was unaffected by the LLaVA 162-label incident.",
+    "HallusionBench uses fAcc with 346 figure groups over 951 prediction rows; aAcc and qAcc are excluded.",
+    "MMBench V11 uses 1292 circular groups over 4876 option-rotation rows; 1292 is not missing-data evidence.",
+    "Native K256 increases selected TV/Chart/DV/OCR/MMB-EN through different model execution; no method-improvement attribution to these increases."
+  ]
+}

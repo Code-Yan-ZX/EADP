@@ -1,0 +1,45 @@
+{
+  "created_beijing": "2026-10-10T03:43:05.846502+08:00",
+  "task": "Qwen3-VL-8B AnchorZip K128 MME repeat",
+  "user_authorized": true,
+  "gpu_mode": "exclusive",
+  "gpu_at_launch": "NVIDIA A40, 44257",
+  "process_args": [
+    "Qwen_vl/outputs/audit_followup_20261008/qwen128_mme_rerun_20261010/run_rerun.py"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_amp",
+  "model": "Qwen3-VL-8B-Instruct-1024",
+  "budget": 128,
+  "recipe": {
+    "method": "RTG + official facility + Completion",
+    "lambda_completion": 0.25,
+    "alpha": 0.5,
+    "beta": 2.0,
+    "deepstack": false,
+    "position": "1d",
+    "decoding": "manual greedy",
+    "max_new_tokens": 2048,
+    "dataset": "MME",
+    "n": 2374
+  },
+  "bank_reuse": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/full/bank_full_rtg_MME.json.gz",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/qwen128_mme_rerun_20261010/run_rerun.py": "161b9e38b63e4b40616b00ae7ad8385dc63f37ca5e63eb8baab7b4bd7206b67e",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MME.json": "fb35dc7838548c21c472eea4a6e4e0b0d0025524b6d801c47c9a852cd0a1dc19",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/full/bank_full_rtg_MME.json.gz": "9a9965aae9533945832e7d954eee095cb214f83759114ba8d5ee80b1dc79657c",
+    "/media/disk2/YZX/LMUData/MME.tsv": "3b6c914445710ce582ffb51ef8c6c410783ea52e8c517b0a33dbdc26c64ed680",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/rtg_accuracy_legacy.py": "0f62a405dc768dc69315e13761f175ab2105b2482726cc4b926fbdff263e23c2",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/rtg_common.py": "f41a91a7eb05397b3ce0156afbf0090c3b0ad42f5e216959c90adb51b0a8340c",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_completion_validation/acu_common.py": "1826d9919d16239e5ea08d42be5344b5eae105e9c28f460aa9a0e7d050329a73",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_completion_validation/acu_accuracy.py": "e9a38363660a3527351487a37e7e9e9bcfb39e297d95f3b91b95fb39febdb032",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/anchor_merge_pilot/amp_common.py": "8d27709ef415c8fd47f94dce66cdc79ff1c873b13d74d7f4b77695b704b6e639",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/discovery/common.py": "b39c6b81786334b00eb4c9a9ed96654a3d105983022a88bd9d60e91b6f19024f",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/model/native_qwen3.py": "311ab5a869232dd09275601554056518d6ba665c9c557ce3ac3ee97836a22524",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py": "34556188962a1b057382269bc1f9f0cdba1a12e9cf1861acb60fa4fa0a59fe34",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/VLMEvalKit/vlmeval/dataset/image_yorn.py": "5243e527e24d90f70f3ff01cf050077cf8187926f5967d9688f1c88a029bea6d",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/VLMEvalKit/vlmeval/dataset/utils/yorn.py": "20c9fcebb52ea3d825f43ca75476c311d6b78b0cb593ae5d36fdf2fc0b526eb3"
+  },
+  "old_shard": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/legacy_full/acc/L_R_MAIN0125/MME.json",
+  "fresh_output_root": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/qwen128_mme_rerun_20261010/run01",
+  "instrumentation": "CPU identity/runtime logs after each completed generation; model math unchanged"
+}

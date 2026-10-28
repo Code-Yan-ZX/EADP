@@ -1,0 +1,107 @@
+{
+  "created_utc": "2026-10-09T19:54:25.427492+00:00",
+  "CPU_only": true,
+  "CUDA_initialized": false,
+  "torch_threads": 2,
+  "torch_interop_threads": 2,
+  "old_rows": 4377,
+  "old_groups": 1176,
+  "v11_rows": 4876,
+  "cached_distinct_image_payloads": 1841,
+  "processor": {
+    "_processor_class": null,
+    "do_resize": true,
+    "size": {
+      "shortest_edge": 336
+    },
+    "resample": 3,
+    "do_center_crop": true,
+    "crop_size": {
+      "height": 336,
+      "width": 336
+    },
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true,
+    "image_mean": [
+      0.48145466,
+      0.4578275,
+      0.40821073
+    ],
+    "image_std": [
+      0.26862954,
+      0.26130258,
+      0.27577711
+    ],
+    "do_convert_rgb": true,
+    "image_processor_type": "CLIPImageProcessor"
+  },
+  "model_config": {
+    "image_aspect_ratio": "pad",
+    "vision_tower": "openai/clip-vit-large-patch14-336"
+  },
+  "exact_rule": "Native cur_prompt identical; CPU process_images pad/CLIP336 FP16 tensors byte-identical; original image_sizes equal. GT excluded.",
+  "near_rule": "Final processed RGB8 RMSE<=3 and 64-bit dHash distance<=2. Diagnostic only, never exact reuse.",
+  "pair_statistics": {
+    "all": {
+      "n_candidate_pairs": 15792,
+      "image_sizes_exact": 6174,
+      "jpeg_payload_exact": 28,
+      "decoded_RGB_exact": 28,
+      "processed_float32_exact": 28,
+      "processed_float16_exact": 28,
+      "processed_RGB8_exact": 28,
+      "strict_image_input_reusable": 28,
+      "near_perceptual_diagnostic": 3508
+    },
+    "same_index": {
+      "n_candidate_pairs": 3529,
+      "image_sizes_exact": 3529,
+      "jpeg_payload_exact": 28,
+      "decoded_RGB_exact": 28,
+      "processed_float32_exact": 28,
+      "processed_float16_exact": 28,
+      "processed_RGB8_exact": 28,
+      "strict_image_input_reusable": 28,
+      "near_perceptual_diagnostic": 3504
+    },
+    "cross_index": {
+      "n_candidate_pairs": 12263,
+      "image_sizes_exact": 2645,
+      "jpeg_payload_exact": 0,
+      "decoded_RGB_exact": 0,
+      "processed_float32_exact": 0,
+      "processed_float16_exact": 0,
+      "processed_RGB8_exact": 0,
+      "strict_image_input_reusable": 0,
+      "near_perceptual_diagnostic": 4
+    }
+  },
+  "row_statistics": {
+    "exact_prompt_candidates": 3674,
+    "strict_image_any_candidate": 28,
+    "strict_image_unambiguous_or_same_ID": 28,
+    "strict_image_same_ID": 28,
+    "strict_image_cross_ID_unique": 0,
+    "ambiguous_after_image": 0
+  },
+  "group_statistics": {
+    "all_rows_have_exact_prompt_candidate": 974,
+    "all_rows_have_strict_image_eligible_candidate": 7,
+    "all_rows_image_verified_unambiguous": 7,
+    "all_rows_same_index_image_eligible": 7
+  },
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/mmbench_dev_20230712.tsv": "52d45f29876e56138d3d4feb169dc9a7323f6ed2ee3f439ae7e4af94192b3324",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/mmbench/MMBench_DEV_EN_V11.tsv": "27a54ae2e8f54502361cc5a41ed5fc35f4253af74734b5593d7b1de545eb5656",
+    "/media/disk2/YZX/research/EADP_amp/LLaVA/llava/mm_utils.py": "3c2bb64c816de1de3541b1d4863cabc8a0ae29f78715bd99e3c13fadfc87aced",
+    "/media/disk2/YZX/doct/FastV/llava-v1.5-7b/config.json": "f112de882e31171a105f0d3f69d9e6e8700a40149f0944f4b507d3a41789e492",
+    "/home/dell/.cache/huggingface/hub/models--openai--clip-vit-large-patch14-336/snapshots/ce19dc912ca5cd21c8a653c79e251e808ccabcd1/preprocessor_config.json": "d253881f65322dc546df59cf925a408e5538b8ecb5a1b496cdd36af9992686d4",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mmb_old_version_reuse_20261010/image_mapping/compare_image_inputs.py": "8063edade1f403b7e27c037f360e2658c5191d2b60582bac405f2926599fad48"
+  },
+  "caveats": [
+    "Image equality alone does not confirm method/generation/checkpoint/execution recipe identity.",
+    "JPEG file equality is not required; actual model FP16 input equality plus image_sizes is required.",
+    "Near-perceptual images can support approximate sensitivity analysis but do not produce exact old-version reproduced scores."
+  ]
+}

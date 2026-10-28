@@ -2085,3 +2085,253 @@ ls-remote确认origin a5fa1ffd7a86fd3dc50e89021e73929f463f4c40，53/55组提交�
 轻量探针issues/events/actions为空，两既有timer active。本次未信号/重启/启动
 GPU、改冻结源码/参数/计划/原预测/评分或timer。最终审计errors=[]，
 all_experiments_complete=false，不提前结束巡检。
+
+
+### 13.42 Oct9 21:07 独立巡检：原75臂/55组完成，按授权实际接续5臂
+
+探针20:46因registered_batch_ready唤醒本次巡检，issues=[]。完整分段读取2087行交接，live分支codex/anchor-completion-validation、HEAD194562d、index87ad06fd…保持。
+原28项118917题完整身份/复合题键/分母/精确评分、1411来源SHA与61日志、summary JSON/CSV通过，errors=[]；原监督器/helper/watcher均已退出。128面板、64面板、K32三控制与phase1全12项再次通过。phase2已32/32完整224199题，success marker合法且监督器/children退出。新增最后两项：v15 GQA FULL **61.90968357449515%**，NeXT GQA AZ128 **62.617268246144064%**，各12578完整；后者仍原审计单臂，不伪造EADP配对。扩展18159文件SHA、2584内嵌图像SHA、四plan来源32/38/57/164和44次启动门通过。
+
+独立ls-remote确认origin **dbfe8220c04925e21aae1c4d5e7b589513ba1303**，55/55组全为远端ancestor。原publisher2560860于20:42:37正常exit0、state complete，无pending/error；无需restart已正常完成的服务。原完整工件/退出/评分/发布证书：post_batch_followup_20261009/registered_followup/original_batch_certificate.json。旧巡检checker曾假定完成phase2/panel64仍需原监督存活、使用旧默认日志路径，并把prepared_plan最后待发包误作仍未发布；已按真实recovery日志、成功退出和远端组消歧，原检查及修正证据保留，非实验故障。
+
+按用户明确后续授权完成三行CPU审计，保留reported/reproduced/ours、缺格/协议caveat及负方向；新报告post_batch_followup_20261009/three_row_audit.json/md。既定修复协议更新latest_tables.json/CSV/HTML/TeX/PDF和PNG，旧表已归档。旧v15Viz显示来源按完整per_question精确归约，未改原score。数值表16项同机LLaVA配对格为11高5低；Qwen6高3低1平（HallB来源边界保留），不是显著性或paper配置身份结论。v15 GQA128 E59.651772937、AZ59.771028780，+15题/+0.119255844pp；E仍低paper0.348227063pp，不据此盲扫参数。VizWiz本机EADP仍缺，旧尾句号/题集/GT等已排除假设不重做。
+
+**新范围已实际--run登记，不再只是proposal**：北京时间21:00:50监督器PID285913执行固定Python + followup_controller.py --run，独立CPU publisher PID285914执行followup_publisher.py --watch。目录post_batch_followup_20261009/registered_followup/；followup.plan/state/finished.json与registration.json为依据。新5臂/29854预测/3组，原75/55不变：NeXT GQA E128(alpha.5/beta2)补基线并复用同配方完整AZ128；v15与NeXT VizWiz各E/AZ128配对，固定公开val默认alpha0/beta1、loader guidance、greedy128、同wait与lambda.25。它不是已确认paper argv，不安装逐crop候选、不按得分挑recipe。GQA原生入口/题面/图像/参数除方法外与复用AZ完全一致；新worker仅额外记录模型对象属性，不插pre-vision同步。
+
+冻结plan SHA **3a7dc8ffc9e6fd108624edf619dc67fb4a9ceccd2483cff92308ab0c58f21c36**，worker **3a01450b20589d7bffb2a1d723922ae4779a6f857561677a5864667505f61b47**，controller **541066b287bd6c2735429be82575d50217528a900f4dc72827ce3da15cc6407e**，publisher **0248eb2a9e7e0b2cf8754ff90226f439ac9f11434f3aa1df5719cb580702b6ca**；64来源表通过。16CPU正负门含全12578 GQA/4319 Viz官方评分exact复算、评分AST不变、配对来源、参数漂移拒绝、完整旧产物保护、加载reservation/真实context/双首记录/显存门。prepared_only_v1_archive仅准备件，未运行，不算额外任务。
+
+新首child285947于21:00:51启动，free44257；21:04:02首真实context17576MiB且prediction/runtime各已有完整首行后，free26673启动v15 Viz E child290832。21:04:37→21:06:54，NeXT GQA E完整预测/runtime **105→469/12578**，v15 Viz E由加载转**45预测/46runtime/4319**（分次读取的一行时间差）；两日志推进，实际alpha/beta分别.5/2与0/1、K128、FP16/SDPA、LlavaLlamaForCausalLM/CLIPVisionTower均记录通过。A40仅这两自有模型，显存21404/19058MiB，无未知context，无加载超时或新OOM/Traceback。
+
+新publisher复用原精确Git发布函数但使用独立状态/结果目录及三个groupID：followup_next_gqa_K128_beta2、followup_v15_vizwiz_K128_release、followup_next_vizwiz_K128_release，共享原publish.lock，不抢旧publisher锁。现waiting_for_complete_pair，0/3发布、无error/pending push；尚无新完整分数。每组严格重验后独立归档、官方主分+Viz发布公式辅审计、固定seed image-cluster配对bootstrap，再精确推origin并远端确认，保留live index与用户变动。
+
+新只读入口inspect_followup.py --output 本次目录/followup_snapshot.json，实际worker/controller/publisher身份按新state/registration/proc判断；私有hourly prompt已追加新scope，不改冻结主monitor/原worker/controller/plan。新监督器本身持续核验进度并保留10分钟加载/无进度故障门；旧5分钟轻量probe仍仅覆盖原phase2，不能冒称它已覆盖新5臂。既有两timer均active、未新增timer或更改模型。最终制表需在新配对完成后明确Viz公共默认recipe脚注，不能把现有PDF当新控制已完成。
+
+本次证据rerun_batch/hourly_monitor/check_20261009T124818Z/。request=followup_registered_running，5新臂和3新组、最终表格/审计均未完成，**all_experiments_complete=false**。最新论文修改日Oct10具体小时未知，旧Oct9中午不再是停机条件；后续尚需数小时，不承诺截止前全完。未信号/重启旧实验、未修改任何原预测/评分/冻结GPU代码或计时器，巡检未自行stage/commit/push；新发布器只在完整组后发布。
+
+
+### 13.43 Oct9 21:52 独立小时巡检：后续首臂完成，两GPU继续推进
+
+完整分段读取2109行交接，live分支codex/anchor-completion-validation、HEAD194562d，
+index SHA87ad06fd…保留。先核轻量探针和新5臂真实输出，再执行两次新只读快照与基础monitor。
+原28项118917题完整题面/复合键/官方分母及精确评分再次通过；1411来源SHA、61日志、
+summary JSON/CSV与完成退出门无异常。原完成证书25文件、52退出PID复核通过；
+128面板、K32三控制、phase1全12和phase2全32保持complete，18159份既有严格审计
+来源/工件SHA重新匹配。本轮扩展共18189项SHA核对通过；未宣称重新运行全部旧扩展评分。
+独立ls-remote确认origin dbfe8220c04925e21aae1c4d5e7b589513ba1303，原55组commit全为远端ancestor。
+原publisher inactive/dead、Result=success/exit0，无恢复需求；原summary watcher正常结束。
+
+后续5臂当前1 complete、2 generating、2 pending。新增v15 VizWiz E128完整4319题，
+官方LOO **56.5200277842093%**；完整预测/runtime/图像/来源/实际参数、score/finished和exit0
+经新worker严格CPU重验通过。该臂于21:40:08.154365完成，约0.495350秒自动接v15 AZ128。
+同协议AZ尚未完整，不给方法差或完整pair结论；固定公开默认alpha0/beta1并非已确认paper argv。
+21:48:43→21:51:11，NeXT GQA E128 PID285947 **4524→4762/12578**，v15 VizWiz AZ128
+PID351114 **1000→1312/4319**；prediction/runtime完整行及log mtime均增长，最后age<0.32秒。
+两worker argv/父子/startticks通过，加载reservation计入后A40恰两个模型；显存21404/19154MiB，
+无未知context、加载超时、OOM/Traceback/FAILED。新监督器285913与publisher285914的登记argv/
+startticks及plan/worker/controller/publisher/observer冻结SHA、64来源表通过；完整活跃runtime
+题面/图像/实际alpha/beta/K128/FP16/SDPA/生成参数与AZ lambda.25检查通过。
+
+新publisher正常waiting_for_complete_pair，0/3已发布，无error/pending commit/push；当前没有新完整组待发。
+旧轻量探针issues/events/actions为空，它仍仅覆盖原phase2；新scope由本次快照和自身监督器检查。
+本次证据rerun_batch/hourly_monitor/check_20261009T134830Z/。更新request.last_hourly_inspection；
+request仍followup_registered_running，最终三行表/审计仍待完整新配对，all_experiments_complete=false。
+最新论文修改日Oct10、小时未知，旧Oct9中午不作停机条件。两既有timer均active且未改。
+仅CPU只读检查及本机证据/交接更新；无进程信号、重启、新GPU启动、冻结代码/参数/计划/预测/评分修改，
+未自行stage/commit/push，最终errors=[]。
+
+
+### 13.44 Oct9 22:55 独立小时巡检：后续v15 Viz配对完成并远端确认
+
+完整分段读取2140行交接、检查live分支codex/anchor-completion-validation与HEAD194562d，
+先核新队列真实输出和轻量probe，再执行两次新只读snapshot及基础monitor。原28项118917题
+完整身份/复合题键/官方分母/精确评分、1411来源SHA、61日志与summary JSON/CSV通过，
+errors=[]；原监督器/helper/watcher正常退出。原75臂证书25文件、52退出PID及旧扩展18159项
+SHA重验通过；连同登记/证书本轮共18189项。128面板、K32三控制、phase1全12、phase2全32
+仍complete，原publisher正常exit0/inactive，无重启需求。初始NeXT Text128无新runtime边界保留。
+
+后续5臂现2 complete、2 generating、1 pending。v15 Viz E/AZ128各4319题严格
+预测/runtime/图像/实际参数/来源/官方score/finished/exit0与退出门通过，LOO分别
+56.5200277842093%和56.513081731882366%；差−0.006946052327pp，已发布固定seed图像
+cluster bootstrap95%CI[−0.479277610558,+0.493227598981]，不支持改善。公开默认alpha0/beta1
+不是已确认paper argv；发布公式辅审计57.883769/57.868334不替换官方主分。
+v15 AZ于22:15:00.053619完成，约0.512653秒自动接NeXT Viz E，无巡检干预。
+
+22:49:11至22:51:22，NeXT GQA E128 PID285947 prediction/runtime10398→10604/12578，
+NeXT Viz E128 PID412214为2603→2786/4319；日志同步推进，末次age均<0.48秒。
+完整argv/父子/startticks一致，A40恰两个模型/reservation，显存21404/21602MiB。
+8个DataLoader子进程只继承argv，无额外模型/未知context、加载超时或OOM/Traceback/FAILED。
+监督器285913、publisher285914身份、冻结plan/worker/controller/publisher/observer和64来源表、
+活跃runtime完整前缀参数/题面/图像均通过。
+
+独立ls-remote确认origin 848accca72f5d003a2052bedb5cc7fb0022b2f65；原55组及新增
+followup_v15_vizwiz_K128_release提交均远端ancestor，新scope为1/3发布，pending/error空。
+新归档46member、内外manifest/SHA/score及精确commit allowlist通过。publisher已自动刷新
+v15 Viz三行和latest_tables全格式，远端与本机逐字节一致，168静态表来源通过。
+表内followup.state.json SHA仅指构建时动态状态；首轮checker机械比较当前状态的误报已保留
+并分类修订，冻结来源与score门未漂移，非实验故障。收尾脚本一次语法错误在执行前纠正，
+没有修改实验。最终errors=[]。
+
+证据rerun_batch/hourly_monitor/check_20261009T144849Z/；更新request.last_hourly_inspection及本文事实。
+request仍followup_registered_running，剩3臂/2发布组及最终三行审计未完成，all_experiments_complete=false。
+最新修改日Oct10、小时未给，旧Oct9中午不作停机条件。旧probe无告警但仍只覆盖原phase2，
+新scope由自身监督器和本次快照核验；两timer active且未改。未信号/重启/启动GPU，
+未改冻结源码/参数/计划/预测/score，未自行stage/commit/push，用户变动和live index保留。
+
+
+### 13.45 Oct9 23:56 独立小时巡检收尾：原75臂与后续5臂全部完成，58组远端确认
+
+完整分段读取本轮起始2175行交接并核对live Git，分支仍
+codex/anchor-completion-validation、HEAD194562d、index SHA87ad06fd…，用户已有变动保留。
+本轮先查新followup实际状态和/proc/NVML，再执行原基础monitor与新只读snapshot。
+原28项118917题逐题身份/Text复合题键/官方分母/精确评分、1411来源SHA、61日志及
+summary JSON/CSV再次通过，errors=[]。原75臂完成证书25冻结工件、52退出PID及
+18159份旧扩展来源/工件SHA重验通过；加本轮登记/证书共18189项。
+128面板、三K32控制、phase1全12和phase2全32保持complete；原publisher正常exit0/inactive，
+summary watcher已正常退出，无恢复需求。初始NeXT Text128无新runtime的既有边界保留。
+
+独立后续5/5臂、29854条新预测已全部严格完成，全部prediction/runtime/题面/图像/
+actual alpha/beta/K128/FP16/SDPA/source/官方score/exit0/finished通过；64冻结来源无漂移。
+followup于北京时间23:39:38写合法5臂/3组success marker，supervisor285913、publisher285914
+及5个worker真实/proc均已退出；NVML无CUDA模型context，无遗留loading reservation。
+当前GPU空闲是合法全部完成，不是丢失worker。完整接续与各22500MiB/双槽启动门通过。
+新增完成NeXT GQA E128 **62.86373032278582%**，同配方复用AZ128 **62.617268246144064%**，
+12578题，AZ−E **−0.246462076642pp**，图像cluster bootstrap95%CI
+[−0.560074052542,+0.063689260075]；E高reported62.7，按0.2pp规则数值接受。
+v15 GQA E仍59.651772936873904 vs reported60.0，低0.348227063126pp，不以低分自动判bug。
+
+v15 VizWiz E/AZ各4319题官方LOO **56.5200277842093/56.513081731882366%**，
+差−0.006946052327pp，95%CI[−0.479277610558,+0.493227598981]；NeXT为
+**59.21741143783283/59.00671451724938%**，差−0.210696920583pp，
+95%CI[−0.592787682334,+0.162132438064]。三新增配对CI均跨0，不支持改善。
+公开val alpha0/beta1/native loader/max128/wait是固定双方recipe，不是已证明paper argv。
+同一预测的发布min(matches/3)辅审计：v15 E57.883769391063/AZ57.868333719225，
+NeXT E60.677625993671/AZ60.476962259782；量化公式差异但不替换官方主分，
+作者实际scorer未知，不能宣称已证明论文缺口根因。固定seed2000次图像cluster统计保留。
+
+新publisher于23:40:36完成3/3组，独立origin初验833227351c48d74bb230578e7b391df2779f2d5e，
+原55组+新3组commit全是远端ancestor。3归档/141member内外manifest、SHA、官方score、
+配对统计和commit allowlist通过，pending_commit/publication/error为空。
+本次发现three_row_audit仍为21点待运行旧版，已先精确归档旧审计/request/表格。
+最终三行审计已按全部完整配对更新，同机LLaVA点估计11高8低、Qwen6高3低1平；
+不作总体显著性或全面论文复现结论，缺格/协议限制仍保留。
+
+23:40生成的最终表格数值正确，但PDF硬编码脚注漏显Viz公开recipe/官方LOO说明。
+通过新增独立CPU final_table_annotation.py内存扩展渲染补齐PDF/PNG及HTML/TeX说明，
+JSON/CSV全部数值单元格与归档严格一致；未修改冻结build_tables.py/render_tables.py
+或任何worker/controller/plan。PDF三页及两LLaVA页脚注经文本提取和视觉复核通过。
+最终表格/审计186来源引用核对通过。身份/源码/共享锁/无pending验证后仅调用原冻结
+followup_publisher.py --once作收尾metadata发布，未启动模型、未重新生成或自行抢锁stage。
+独立远端最终确认 **3abfd25a2d553b1644f457c5cbe574e62e4f5ba7**；全部58组仍为祖先，最终审计JSON/MD、
+表格全格式与新CPU注释源码远端逐字节一致，修改路径全部限独立post_batch_followup_results，
+live HEAD/index/用户暂存保留。收尾publisher exit0并已退出。
+
+本机证据rerun_batch/hourly_monitor/check_20261009T154839Z/，
+最终证书post_batch_followup_20261009/final_completion_certificate.json；request已按实际完整门
+写status=complete、monitoring_hold=false。全部已登记80全量臂/58发布组以及请求的最终表格/
+三行审计完成，all_experiments_complete=true。未登记CN/逐crop候选、低预算缺E和Qwen旧来源
+caveat不伪装已修；当前GQA/Viz完整核验无新增具体执行/输入/评分错误支撑进一步GPU，
+不按较低分继续试参数。最新论文修改日Oct10、小时未指定；本轮已完成登记范围，
+不是证明所有120论文baseline格齐全。探针无新告警。本次无GPU信号/重启/新增生成，
+未改冻结数学/参数/原预测/原score或timer；由外层runner依据complete结果处理停止小时巡检。
+
+### 13.46 Oct10 用户邮件确认VizWiz评分器，并指定采用产生60.72的完整原recipe
+
+用户2026-10-10明确报告已发邮件询问作者、作者使用EADP发布VizWiz评分器。此新证据取代13.34/13.45当时的“作者scorer未知”和官方LOO主表建议；代理未独立读取邮件，不声称获知作者完整任务argv。统一评分方式为EvalAIAnswerProcessor同时处理预测及十份GT，再取min(matches/3,1)逐题平均；官方留一评分文件保留作辅审计，未修改原文件。
+
+本轮最初理解为保持最新预注册预测、仅切换评分器，已CPU独立重算8格，并保存author_confirmed_vizwiz_scores_20261010.json及重新计算的2000次seed20261009配对CI。用户随后明确纠正：“我就是问你这个60.72是怎么跑出来的，然后用这个的 适配到别的模型就行了。”故最终主表选择按此明确授权改变：将**两个LLaVA模型、全部三个预算的原alpha0.5/beta2 recipe完整块**统一作为VizWiz AnchorZip主结果；不是按单格分数取最大值。初始scorer-only快照及全部公开默认控制保留为辅助来源。
+
+60.72来自LLaVA/playground/data/eval/anchorzip_p3/next_vizwiz/LRMAIN025.jsonl：模型llava-v1.6-vicuna-7b、K128（名义640）、lambda.25、alpha.5/beta2、temperature0、单beam、vicuna_v1、model_vqa入口、完整guidance及max1024。**同一份完整答案**官方LOO59.254457050243→EADP发布公式60.716215173265（60.72），没有因这个数值新增GPU运行。v15三个K128/64/32同recipe原预测发布分57.852898047388/58.987419927452/59.759203519333；NeXT名义640/320/160为60.716215173265/60.083352627923/59.743767847496。六份均CPU重验完整4319 IDs、题面、模型名、GT/SHA和十份答案，并逐份直接执行冻结发布scorer.main交叉验证，缺题0。原预测metadata为空，参数依据为已有driver/source审计，不伪造当时runtime；所选为stream-wait修复前原预测，不能叫作修复后新成绩。未来同参数新执行也不承诺必然重得60.72。
+
+明确区别：alpha0/beta1/native loader/max128/wait共享控制的NeXT E/AZ60.677626/60.476962仍完整有效，但不充当所选alpha.5/beta2原recipe的同协议基线。主表两模型K128 EADP reproduced Viz格置空，公开默认E/AZ配对与CI转辅助审计；reported EADP行及其他所有数据集/Avg数值保留。选择整块时也保留低于修复控制的v15K128与NeXT低预算格，因此不是旧新逐格择高。Qwen原十任务没有VizWiz列，本次不添加虚构Qwen Viz结果。
+
+独立CPU导出源码registered_followup/select_vizwiz_recipe_6072.py；当前逐题评分、用户配置选择及源SHA为selected_vizwiz_recipe_6072_20261010.json。submission_tables_20261009/latest_tables.json/CSV/HTML/TeX/PDF、三个PNG和core_tables.txt已统一更新；精确六格摘要vizwiz_author_confirmed.csv；此前8格修复控制摘要vizwiz_prescribed_repair_controls.csv。原89行、reported数值、全部非Viz单元格/Avg逐字结构比较不变，JSON/CSV/HTML/TeX及三页PDF通过独立CPU核验；NeXT页面视觉检查通过。主表展示沿用一位小数（60.7），CSV/JSON保留精确60.716215；本文六格摘要用两位小数。three_row_audit.json/md已按用户所选recipe重写来源与可比较边界；原范围80臂/58组GPU完成事实保持，没有新增GPU任务或修改冻结worker/controller/plan/数学。
+
+旧表/旧审计精确归档registered_followup/author_confirmed_scoring_archive_20261009T175942Z/；其中shared_public_defaults_primary_snapshot.json保存本轮最初scorer-only版本。新增独立publish_author_confirmed_vizwiz.py只扩展元数据说明，复用原冻结publisher共享锁、远端门、detached worktree和精确文件集合，不碰live HEAD/index。原冻结refresh_tables.py/final_table_annotation.py仍代表历史官方主指标导出，不应单独调用来覆盖当前用户指定版本。
+
+TeX已请求在原生编辑器打开，compile_latex_document再次返回环境错误“Unable to find standard directories for platform”；源保留，TeX编译未验证。三页PDF为已核验的Matplotlib表格导出，可直接查看；没有安装TeX或插件。
+
+13.46发布收尾：独立CPU overlay已提交并推送至origin **2952c62fa9842d4f904394109a3c28d488ead7a3**。独立ls-remote及17份表格/评分/源码/审计逐字节比对通过，21条变动路径均限post_batch_followup_results；3abfd25（原58组最终发布）保持祖先。live HEAD194562d及空暂存保持，publisher state complete、error/pending_commit为空，未新增GPU运行。第一次元数据发布因辅助CSV文件名不一致在Git操作前拒绝；已更正命名再发布成功，原失败信息由成功状态清除，非实验失败。最终独立证书：post_batch_followup_20261009/author_confirmed_vizwiz_final_certificate_20261010.json。最新主表由select_vizwiz_recipe_6072.py生成，初始scorer-only导出仅为可追溯辅助版本。
+
+### 13.47 Oct10 用户停止全覆盖补跑，要求查看方法历史最高成绩
+
+用户将截止明确为**今日2026-10-10 11:00**，随后决定放弃为该截止补齐全部本机EADP基线的补跑线。本次没有注册或启动新的GPU任务；实际NVML无评测模型，既有小时与停滞timer均inactive。此前登记的80全量臂/58组完成，不能称所有论文格、所有模型任务预算已全部复现。
+
+用户明确要求“最新的表里面把我们的方法历史中最好的成绩放进去，我看一下”。据此将当前latest_tables全格式改为**历史逐格最高查看版**，同模型、同预算、同AnchorZip方法的完整正确评分候选可以来自不同生成配置和执行路径。原统一修复表与上一版60.72配方表均保留原产物；覆盖前九份格式精确归档于`Qwen_vl/outputs/audit_followup_20261008/historical_best_20261010/archive_before_historical_best_20261010T023733444580+0800/`。只有9条AnchorZip行改变，其余80条reported/FULL/EADP行逐结构不变。
+
+本轮同时纠正PDF缺格解释：v1.5的MMB-EN三预算已有完整4876行/1292循环组历史成绩，旧build_tables没有接入这些来源；v1.5 MMB并未列入Oct9新增32项wait补跑。NeXT MMB-EN/CN各三预算已在该32项中完整补跑，CN保持原lang=en，所以此前被protocol_unresolved显示为空。两个LLaVA模型CN历史完整数值现在在查看版显示并加†，英文答题指令问题仍未修复，不能把显示数值称为完成中文协议修复。全部18格ours MMB（含Qwen三预算）现都有完整来源。
+
+独立候选台账为`historical_best_20261010/{llava_candidates,qwen_candidates}.json`；选值为`selected_cells.json`，逐格变动与来源SHA/recipe/caveat为submission目录`changes.csv`。MME只取正确GT分数，POPE统一三类平均F1，VizWiz统一作者确认的EADP发布评分器，不把错误GT或错误评分历史数值当最高。Qwen K256有五格native DeepStack/3D mRoPE完整成绩高于legacy，查看版取这些历史最高并加†；其余格仍legacy，因此这一行及重算Avg10不是单次统一运行，也不能与现legacy EADP行声称公平方法增量。Avg7/Avg10均从当前选中分量重算，不独立择最高平均。历史查看版不能代替统一配置的最终评测结果。
+
+新CPU源码`historical_best_20261010/{build_selection,export_historical_best}.py`没有修改冻结worker/controller、旧预测、旧score或旧导出脚本。当前latest_tables.json/CSV/HTML/TeX/PDF、三PNG、core_tables.txt已同步；行名与页脚明确historical best/per-cell maxima，CN/native限制及复合平均有†。`verification.json`核验89行、9条ours、其余80条不变、全部选中来源SHA、派生平均、18个MMB格与PDF三页，v15/Qwen图像已视觉检查。PDF是有效的Matplotlib导出；原生TeX编译器仍报Unable to find standard directories for platform，源保留且编译未验证。本次没有Git提交推送。
+
+### 13.48 Oct10 MMB差距诊断与EADP VizWiz全部复现数据交付
+
+用户再次要求所有方法格取历史最高，CPU与独立复核确认当前9条ours、93个含派生平均的TeX格与已审计选择完全一致，没有更高完整候选遗漏。未重新修改TeX或另开文档；该次原生编译请求未返回结果后终止等待，未宣称编译成功。
+
+用户随后质疑MMB EN/CN相对论文差距。三个并行CPU审计汇总在`Qwen_vl/outputs/audit_followup_20261008/mmb_diagnosis_20261010/diagnosis_summary.json`，原始证据为llava_diagnosis.json、qwen_diagnosis.json、paper_protocol_diagnosis.json。LLaVA已确认CN漏--lang cn且新wait补跑仍lang=en；两模型使用DEV V11而发布LLaVA脚本指定EN20230712/CN20231003。EN旧4377行/1176组、新4876行/1292组；950共有baseID中31内容/GT变化、16 GT字母变化。论文明确circular但实际逐行题集/argv未闭合，版本差异与语言错误各自影响多少分还没有完整对照量化，不能自动声称能修回论文值。
+
+6份LLaVA K128旧/新预测独立核验4876行/1292组，缺失/重复/题面/选项/GT不匹配均0，4876个答案全为单个字母、提取失败0。首轮对而其他旋转错是实际一致性损失，不能改用较高row/base分数。Qwen7份完整历史预测与固定V11输入匹配、循环分数逐组重算一致；其发布配置本来使用V11，不能套用LLaVA的2023版本问题。Qwen当前K256 EN native/CN legacy的混合执行贡献EN/CN表观差距3.94737pp；统一legacy相对论文残差较小，不支持泛称所有MMB有同一评分bug。
+
+诊断期间用户追加“之前我们复现的EADP的VizWiz*数据全部给我”。两次独立全目录核查确认，真正本机EADP完整预测只有registered_followup的v15_vizwiz_E128_streamwait.jsonl与next_vizwiz_E128_streamwait.jsonl，各4319题。全部旧LRMAIN与修复低预算Viz文件都是AnchorZip，13B的8000题文件为仓库test示例，不能冒充本机7B复现。v15 E64/E32与NeXT名义320/160尚未跑，Qwen无本项目VizWiz复现。
+
+新独立CPU导出`eadp_vizwiz_all_data_20261010/export_all_data.py`原样复制两组答案、runtime/配置/日志/完成门、官方辅助score、GT与图像SHA清单，逐题重新执行冻结EADP归一化与发布公式并与原记录逐题精确比较，且执行发布scorer.main交叉验证。v15 K128发布分57.88376939106275、官方LOO56.520027784209304；NeXT CLI128/名义640为60.67762599367137、LOO59.21741143783283。两组生成alpha0/beta1/native loader/max128/wait；不是历史60.72 AnchorZip recipe的同参数EADP基线，论文argv仍未确认。
+
+交付目录`Qwen_vl/outputs/audit_followup_20261008/eadp_vizwiz_all_data_20261010/data/`含6预算汇总CSV/JSON（2完成、4not_run）、8638行逐题CSV、全部两组原始工件与4319题GT。结果包`all_eadp_vizwiz_data_20261010.zip`约2.9MB；完整图像保留原本机目录、不重复压入结果包，包内提供输入与图像SHA。导出通过source byte/SHA、分母、精确均值、完成门与ZIP CRC验证，记录export_verification.json与package_manifest.json。没有新增GPU任务、修改旧预测/score/冻结导出/当前TeX、Git提交或推送。
+
+数据包另经独立只读复核：36份包文件与25份原始来源SHA/bytes、ZIP成员与manifest均精确一致，ZIP testzip通过。8638条预测独立用冻结normalizer归一化十份GT并重算min(matches/3,1)，逐题主分/LOO与原记录及汇总均一致；两run实际method=EADP、anchorzip=false，未混入AnchorZip预测。
+
+### 13.49 Oct10 用户现场等待，授权最快一组MMB EADP全量复现
+
+用户认为英文MMB差距反常，明确授权“英文和中文哪个跑的快一点，迅速跑一个EADP的复现，我原地等着”。这是新的单组诊断授权，不能因此前停止全面补齐baseline而拒绝，也不能扩成未授权全模型预算补跑。历史v15 EN K128完整4876行实际16:03，CN21:42、NeXT约31分钟，因此选**LLaVA-1.5-7B / MMB-EN DEV V11 / K128**，初始独占预估加载+评分17–20分钟，按真实吞吐校准。
+
+独立目录`Qwen_vl/outputs/audit_followup_20261008/mmb_eadp_immediate_20261010/`，新适配器run_immediate.py仅复用冻结followup_worker的prepare/run/runtime/score/完整校验，独立inventory/POLICY/paths/job_specs，不修改旧worker、原生产代码、旧工件或现TeX。固定alpha.5/beta2、lang=en、temperature0、vicuna_v1、single-pred-prompt、beam1/max1024、128 tokens、4876已有旋转行，不开all-rounds、不安装AnchorZip。仅内存加载已验CLIP caller/image/text wait，原数学不变。
+
+2026-10-10 **03:12:41 +08**启动唯一GPU worker PID855604（exec session57452），初始NVML无其他模型，A40余44GB，通过独占22500MiB门。已产123行/约25秒，约5.06题/s；真实loaded对象float16/sdpa、alpha.5/beta2/128，runtime记录greedy、max1024及实际保留128。尚未完成，不报正式分数。待完整exit0/4876唯一ID和题面选项一致/1292组循环评分后，再做独立`mmb_diagnosis_20261010/verify_v15_mmb_run.py`验证。
+
+比较边界：当前v15 ours仍为旧pre-wait历史预测（60.0619195），新EADP采用wait修复；同题集/预算/生成配置可诊断baseline是否也偏低，但不能严称只差方法的统一执行配对。论文62.7是reported参考，DEV V11对论文实际题集/argv身份仍未闭合。single-pred-prompt仅指令，未添加截断或强制字母停止规则。旧全面baseline补跑仍取消，只有此一组在执行。
+
+13.49完成收尾：该唯一EADP任务于**2026-10-10 03:30:13 +08**完整exit0结束（03:12:41启动，包含加载与评分共17分31.61秒，生成tqdm16:43）。正式MMB-EN循环 **776/1292 = 60.06191950464396%**，row3467/4876=71.1033634126333%、base924/1292=71.51702786377709%。全文答案/题面/选项/图片/4876runtime、真实原EADP类与alpha.5/beta2/128、AZ lambda/mode全null、27来源SHA和三条wait恢复AST独立验证通过；解析失败0。原冻结完整校验--validate也通过，均值/marker/source身份闭合。
+
+结果与旧AnchorZip循环恰同776/1292（60.0619195），但不是逐题完全相同：两边各有8个独有正确循环组。两者相对论文62.7均低2.6380805pp，说明这个paper-vs-local英文落差在原EADP上同样出现，不能仅归因AnchorZip；共享输入/配置/执行差异具体根因仍待定位，不能仅凭同分声称已找到bug或方法完全等价。新run仍V11/alpha.5/beta2/wait，不冒充发布EN20230712/beta默认1的逐字复现或证明论文argv。
+
+完整交付为新目录`result_summary.json`、`result_comparison.csv`、原始`v15_mmben_E128_streamwait.jsonl`及原score；`validation.json`、`independent_score_verification.json`（冻结regex与VLMEvalKit nojudge均一致）、`independent_runtime_verification.json`（全部身份与source门通过）分别记录独立核验。GPUworker及验证进程均正常退出。没有继续第二组GPU实验、修改当前TeX/历史最高表或旧预测分数、Git提交推送。
+
+### 13.50 Oct10 Qwen AnchorZip K128 MME 核查与用户授权重跑
+
+用户质疑 Qwen3-VL-8B / AnchorZip / K128 的 MME 数据，先要求仅回答工期，再明确授权：继续横向检查其他模型/预算，查不出具体错误就立即完整重跑，用户在线等待。三个独立 CPU 核查汇总于 `Qwen_vl/outputs/audit_followup_20261008/qwen128_mme_audit_20261010/`：原 2374 题/1187 图对、官方 GT、原预测与评分缓存、K128 bank SHA/保留数量均一致，原总分 **2148.4567827130854** 可复算。K256→K128 总差 −54.4669868，其中感知 −5.1812725、推理 −49.2857143；代码推理 5 题由对变错（796/800/810/812/818）并破坏 5 图对，贡献 −37.5。LLaVA 主表只列感知、Qwen 列感知+推理，横向对照必须分列；未发现已证实的 K128 专有输入/执行错误。原981截断，`layer_calls_ok=false`源于 cap 分支比诊断公式少一次无必要 forward，不凭此归零。另发现 stock generation EOS 含151643而自定义解码仅151645，因历史无 token IDs 未证实效应；保持原规则，在重跑记录全部 token IDs。
+
+北京时间 **2026-10-10 03:43:05** 已实际启动唯一独占 A40 worker PID901364（exec session87482），新目录 `Qwen_vl/outputs/audit_followup_20261008/qwen128_mme_rerun_20261010/`。独立适配器 `run_rerun.py` 原样复用 RAL.run_gen/acu_run_one/run_score，重定向至 run01 新预测与评分缓存，完整重跑2374题，复用已验原 K128 bank，不复用原答案、不重建 bank。固定 RTG+facility+Completion λ.25/main、K128、legacy noDeepStack/1D、greedy2048；loaded_runtime 验证 Qwen3VLForConditionalGeneration、bf16/SDPA 与 torch2.10/transformers4.57.6。新增 CPU 逐题输入图像SHA、message、token IDs、实际保留数量与运行记录在生成结束后写入，不改模型数学。state/status=generating，初始工期20–25分钟；完整评分/来源回验及新旧逐题差分通过前不报正式结果。原预测、表格/TeX、生产/冻结源码保持，未提交推送；后续以该目录 state/result 和真实进程为准，不能把先前已完成80臂的状态用于判断此新请求完成。
+
+### 13.50 Oct10 新EADP结果后的MMB版本组成定位
+
+用户贴旧论文对照表截图（v15 K128 MMB-EN多方法约61.5–62.7），继续强调共同数据/管线问题。读取截图并CPU对新EADP全量答案作两版数据分解；独立源码`mmb_diagnosis_20261010/quantify_version_overlap_after_eadp.py`与结果`version_overlap_after_eadp.json`保留。发布EN20230712为4377行/1176组，本机V11为4876行/1292组；950共有baseID只作为候选配对，按完整循环题面/hint/有序选项/GT元组逐一严格比，919组题文与GT完全一致、31共有ID组内容变化，V11另新增342组，旧版另226组无现预测。
+
+固定新EADP V11答案：919严格题文/选项/GT稳定组**580/919=63.11207834602829%**；V11新增342组**179/342=52.339181286549706%**，变更31组**17/31=54.83870967741935%**；合373新增/变更组**196/373=52.54691689008043%**，加权整体776/1292仍60.0619195。整体相对稳定子集下降**3.050158841384331pp**，与paper差2.6380805pp同量级，题集组成现是很强的解释线索。root独立核对来源SHA、分组分母/正确数相加与均值通过，diagnosis_summary.json新增这条证据。
+
+必须保留边界：63.1121只是V11运行中919个文本/GT兼容组成绩，不是完整旧版复现，不能填到表里冒充修复后分数。919组中仅7组图像payload也相同，多数图片重新编码（不能直接称错图）；旧226缺组/31输入变更使直接用旧GT全量重评分无效。要归因版本并确证旧表，需要使用旧完整题集重新生成，固定其他配置；本轮只CPU分析，没有开始第二次GPU运行。
+
+另独立`shared_runtime_differences_after_eadp.json`对冻结发布e1a088核对9个核心文件字节/AST及model.generate调用一致，剔除未启用AZ分支和V11图片ID解析后eval_model恢复原发布AST；未发现新的共用图片/提示词/参数绑定/预算代码bug。实际beta2 vs发布默认1是静态差异，paper可override、实际argv未知，不能视作已测根因。截图reported方法不提供逐行输入SHA，仅同MMB列名不足证明所有论文同version/split/judge；不能以表值接近代替配置身份核验。当前TeX/表格和原预测/score未修改，未Git提交推送。
+
+### 13.51 Oct10 MMB旧版共有题与现有预测复用重评分
+
+用户要求分析相同题并利用已有答题数据算分。仅CPU，三个独立审计加root交叉验证，输出新目录`Qwen_vl/outputs/audit_followup_20261008/mmb_old_version_reuse_20261010/`。GT不是生成输入，旧919题文/选项/GT完全一致的过严key可放宽为实际native prompt（hint/question/有序A-D，完全逐字、选项不改序）：同ID3529行、935完整旧循环组。原预测字母不旋转、不重映射，按旧GT重评**EADP583/935=62.35294117647059%，AnchorZip582/935=62.24598930481283%**；同一批预测按V11 GT为586/935=62.67379679%、585/935=62.56684492%，切旧GT净降3组。旧GT并不自动更正确。还有241组/848行无同ID完整prompt匹配。
+
+跨ID纯prompt可匹配956完整组（21额外旧组；若允许歧义候选则974），但这是候选覆盖，**不是找回真实旧题**。全图像审计15792候选对中，跨ID12263对没有任何最终FP16输入精确相同；20/21跨ID完整候选组图像明显不同，泛化题同文字不代表同图。仅1852→1849四轮图近似（RMSE0.484/dHash0/同尺寸；旧west→新版north标签），仍输入不exact，归近似附录而不加入主报告。
+
+图片使用实际本机v15 config pad与同离线CLIP336 processor、生产process_images/expand2square AST，在CPU2线程同时校验decodedRGB、FP32、生成前实际FP16张量及image_sizes。严格精确仅**28行/7组**，全部同ID（827/890/938/1630/1769/1772/1953），两方法均3/7；没有JPEG不同而最终张量精确相同的额外匹配。935题的重评分因此基于V11重压缩图的已有答案，是共有题投影，不能称精确旧版生成。也不能仅补241组后将图像版本混合结果冒充旧版正式全量成绩。
+
+近似图RMSE<=3+dHash<=2的敏感性桶：927同ID完整组+上述跨ID1组，共928/1176（78.9116%），EADP582/928=62.71551724%、AnchorZip581/928=62.60775862%；原935中被启发式图阈值排除的8组像素差也不大，阈值敏感，不为追分选择该桶当主表。主要交付935完整同ID投影62.35/62.25，928附录仅敏感性分析，**任何子集分数都不填正式旧版全量表**。
+
+检索两repo439 JSONL、20份native MMB、88条替代格式路径及相关eval/evidence包，没有v15-7B EN K128旧版完整/部分预测能补缺；仅今晨EADP与旧AnchorZip两份V11 K128来源符合身份。旧版13B示例、Qwen、NeXT、其他预算不混入。root`build_reuse_result.py`对完整4377旧行逐候选prompt再核、GT独立评价；冻结regex与VLMEvalKit nojudge抽取分歧0；`old_rows_rescored.csv`、`old_groups_rescored.csv`、`comparison.csv`、`reuse_scores.json`、README与子审计来源SHA均保存。本次没有GPU新实验、编辑TeX/主表、改原预测/score、Git提交推送。另线程正在进行的Qwen K128 MME请求不受本CPU任务影响。
+
+### 13.52 Oct10 Qwen AnchorZip K128 MME 全量重跑完成且逐题精确复现
+
+13.50登记的唯一Qwen任务于**2026-10-10 03:59:41 +08**完整exit0结束，03:43:05启动，含加载与评分共**995.79秒（16分36秒）**，2374题生成约886.17秒。新目录`Qwen_vl/outputs/audit_followup_20261008/qwen128_mme_rerun_20261010/`中的`state.json`为complete/exit_code0，`result.json`记录新旧感知**1650.5996398559425**、推理**497.8571428571429**、总分**2148.4567827130854**，差0；2374份新旧原始回答逐字一致、Yes/No提取变化0、救回0/变错0，各14类别分数完全相同。不是仅重用旧预测重评分：全部2374题重新GPU生成，原bank复用，新答案及评分缓存独立写入run01。GPU worker已实际退出、锁已清理，NVML无残留模型。
+
+两个独立CPU复核分别保存`independent_verification.json`（checks=all_pass）与`independent_runtime_full_verification.json`（all_pass=true）；部分核验工件另保留。官方archive GT与现2374标签一致，1187图片SHA/逐题题面与输入消息、实际K128/λ.25/noDeepStack/1D/bf16/SDPA/greedy2048、14冻结来源SHA与bank、raw→TSV→aux→官方CSV及独立acc+配对聚合全通过。完整token IDs解码逐题与新旧回答SHA一致。新raw SHA`5517d58219ea193ce4d1e50f8f1aaa88a5e26d3aea21f8b07b858c179fcd420e`，runtime SHA`47b22375d900c9e510d949ad8cdbd49f4eca29f8e093251aa2e24c8bd7645b0b`。各独立聚合可能有约1e-12浮点加和差，不是成绩变化。
+
+K256→K128的5条代码推理变错796/800/810/812/818此次全部重现；该40题类别正确28→23、双题全对图8→3，分数110→72.5，贡献总下降54.4669868中的37.5。LLaVA两模型代码推理各预算本来约50–55；另主表LLaVA MME仅感知、Qwen为感知+推理，不能用主列直接作同口径绝对比较。横向15候选核查在`qwen128_mme_audit_20261010/cross_model_comparison.json`，Qwen其他论文方法256→128降约47–49也有类似总分量级变化，不能仅凭EADP reported下降2.2便认定本机数据出错。
+
+唯一截断仍981，2048tokens。缓存2219=lk172+2048−1、实际73728层调用=36×2048，诊断预期73764，多出最后一次forward；源码cap分支确实不再forward最后生成token。cache_ok/layer_calls_ok这两项诊断false不代表生成漏算，不修改原计分、不把该明确No答案强制归错。本次全部生成IDs无151643，故stock EOS集合差异未影响此次结果；没有更改原停止规则。
+
+结论边界：原2148.4568及掉分逐题稳定可复现，未找到具体的输入错位、预算串用、缓存污染或计分错误；不能由同bank同实现重复就宣称所有数学/剪枝实现已证明正确，也未独立重新构建bank。本机完整同配置EADP K128 MME基线仍缺，不把reported2200.2与本机2148.4568的缺口全部归因方法。仅完成用户授权的这一组重跑，没有擅自启动第二组、修改原工件/冻结源码/主表/TeX、Git提交或推送。

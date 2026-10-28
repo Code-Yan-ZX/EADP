@@ -1,0 +1,117 @@
+{
+  "verified_beijing": "2026-10-10T03:30:51+08:00",
+  "scope": "CPU-only independent complete scoring, without changing generation or original scores",
+  "question_file": "/home/dell/LMUData/MMBench_DEV_EN_V11.tsv",
+  "question_file_sha256": "27a54ae2e8f54502361cc5a41ed5fc35f4253af74734b5593d7b1de545eb5656",
+  "matching_function_source": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/VLMEvalKit/vlmeval/utils/matching_util.py",
+  "matching_function_source_sha256": "03435cedaeaf6282599816aed4ba57f26dd4858f2a37399490acca98d9f8f5f2",
+  "current_EADP": {
+    "prediction": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mmb_eadp_immediate_20261010/v15_mmben_E128_streamwait.jsonl",
+    "prediction_sha256": "c6a57feb6a7f7e27d0c3255cefa9ef409d82b713f6a431995b61c0f3e5d41706",
+    "complete": true,
+    "ordered_ids_verified": true,
+    "model_and_prompt_verified": true,
+    "regex_scores": {
+      "row": {
+        "n": 4876,
+        "correct": 3467,
+        "accuracy_percent": 71.1033634126333
+      },
+      "base": {
+        "n": 1292,
+        "correct": 924,
+        "accuracy_percent": 71.51702786377709
+      },
+      "circular": {
+        "n": 1292,
+        "correct": 776,
+        "accuracy_percent": 60.06191950464396
+      }
+    },
+    "toolkit_no_judge_scores": {
+      "row": {
+        "n": 4876,
+        "correct": 3467,
+        "accuracy_percent": 71.1033634126333
+      },
+      "base": {
+        "n": 1292,
+        "correct": 924,
+        "accuracy_percent": 71.51702786377709
+      },
+      "circular": {
+        "n": 1292,
+        "correct": 776,
+        "accuracy_percent": 60.06191950464396
+      }
+    },
+    "regex_parse_failures": [],
+    "toolkit_parse_failures": [],
+    "extractor_disagreements": [],
+    "answer_text_length_distribution": {
+      "1": 4876
+    },
+    "all_texts_single_capital_letter": true
+  },
+  "historical_ours": {
+    "prediction": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/anchorzip_p3/mmben/LRMAIN025.jsonl",
+    "prediction_sha256": "e91ca3ea3e08942795b9b8af4126a3ca6721fbbc9d7929e1138baf1b9a392463",
+    "complete": true,
+    "ordered_ids_verified": true,
+    "model_and_prompt_verified": true,
+    "regex_scores": {
+      "row": {
+        "n": 4876,
+        "correct": 3476,
+        "accuracy_percent": 71.28794093519278
+      },
+      "base": {
+        "n": 1292,
+        "correct": 933,
+        "accuracy_percent": 72.21362229102168
+      },
+      "circular": {
+        "n": 1292,
+        "correct": 776,
+        "accuracy_percent": 60.06191950464396
+      }
+    },
+    "toolkit_no_judge_scores": {
+      "row": {
+        "n": 4876,
+        "correct": 3476,
+        "accuracy_percent": 71.28794093519278
+      },
+      "base": {
+        "n": 1292,
+        "correct": 933,
+        "accuracy_percent": 72.21362229102168
+      },
+      "circular": {
+        "n": 1292,
+        "correct": 776,
+        "accuracy_percent": 60.06191950464396
+      }
+    },
+    "regex_parse_failures": [],
+    "toolkit_parse_failures": [],
+    "extractor_disagreements": [],
+    "answer_text_length_distribution": {
+      "1": 4876
+    },
+    "all_texts_single_capital_letter": true
+  },
+  "descriptive_circular_comparison": {
+    "ours_minus_current_pp": 0.0,
+    "ours_only_correct_groups": 8,
+    "EADP_only_correct_groups": 8
+  },
+  "reported_paper_EADP_v15_K128_MMB_EN": 62.7,
+  "paper_gap_pp_descriptive_only": -2.638080495356043,
+  "caveats": [
+    "Local input is V11; LLaVA public release names EN20230712 Dev. Actual paper input SHA/version is unknown.",
+    "Current EADP is stream-wait repaired; historical v15 EN ours was pre-streamwait. This comparison also has an execution-protocol difference.",
+    "single-pred-prompt requests a letter; it is not a single-letter stopping criterion. max_new_tokens remains 1024."
+  ],
+  "GPU_started": false
+}

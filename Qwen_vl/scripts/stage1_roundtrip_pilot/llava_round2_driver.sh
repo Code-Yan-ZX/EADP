@@ -32,7 +32,7 @@ run () { local task=$1 arm=$2 script=$3 qf=$4 imgf=$5 beta=${6:-2.0} extra=${7:-
     && echo "[ok] $task/$arm rc=0" || echo "[FAIL] $task/$arm"; }
 for arm in "${ARM_ORDER[@]}"; do
   run sqa $arm llava_eval_arm_science.py \
-    $EV/scienceqa/llava_test_QCM-LEPA.json $EV/scienceqa 2.0 \
+    $EV/scienceqa/llava_test_QCM-LEPA.json $EV/scienceqa/test 2.0 \
     "--single-pred-prompt --conv-mode llava_v1"
 done
 echo done

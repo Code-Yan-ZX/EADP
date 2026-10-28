@@ -1,0 +1,37 @@
+{
+  "created_beijing": "2026-10-10T03:44:51.603609+08:00",
+  "wrapper": "Qwen3VLChatFixedRes",
+  "model_class": "Qwen3VLForConditionalGeneration",
+  "model_name": "Qwen3-VL-8B-Instruct-1024",
+  "dtype": "torch.bfloat16",
+  "device": "cuda:0",
+  "attn": "sdpa",
+  "torch_version": "2.10.0+cu128",
+  "transformers_version": "4.57.6",
+  "cfg": {
+    "kind": "uniform",
+    "lam": 0.25,
+    "scope": "main",
+    "scorer": "rtg",
+    "K": 128
+  },
+  "legacy_flags": {
+    "deepstack": false,
+    "pos": "1d"
+  },
+  "generate_kwargs": {
+    "max_new_tokens": 2048,
+    "top_p": 0.001,
+    "top_k": 1,
+    "temperature": 0.01,
+    "repetition_penalty": 1.0
+  },
+  "fixed_image_size": null,
+  "model_name_or_path": "Qwen/Qwen3-VL-8B-Instruct",
+  "text_config_eos": 151645,
+  "tokenizer_eos": 151645,
+  "generation_config_eos": [
+    151645,
+    151643
+  ]
+}

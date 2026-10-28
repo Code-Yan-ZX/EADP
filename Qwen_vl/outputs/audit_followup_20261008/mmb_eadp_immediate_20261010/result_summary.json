@@ -1,0 +1,51 @@
+{
+  "model": "LLaVA-1.5-7B",
+  "task": "MMBench_EN_DEV_V11",
+  "budget": 128,
+  "n_rows": 4876,
+  "n_groups": 1292,
+  "wall_minutes": 17.52682071666667,
+  "rows": [
+    {
+      "method": "EADP (paper reported)",
+      "circular_accuracy_percent": 62.7,
+      "correct_groups": "",
+      "n_groups": "",
+      "status": "paper reference; input version and argv unverified"
+    },
+    {
+      "method": "EADP (local full run)",
+      "circular_accuracy_percent": 60.06191950464396,
+      "correct_groups": 776,
+      "n_groups": 1292,
+      "status": "complete; V11, K128, alpha0.5 beta2, wait"
+    },
+    {
+      "method": "AnchorZip (historical)",
+      "circular_accuracy_percent": 60.06191950464396,
+      "correct_groups": 776,
+      "n_groups": 1292,
+      "status": "complete historical; before stream-wait repair"
+    }
+  ],
+  "descriptive_comparison": {
+    "ours_minus_current_pp": 0.0,
+    "ours_only_correct_groups": 8,
+    "EADP_only_correct_groups": 8
+  },
+  "sources": {
+    "score": "v15_mmben_E128_streamwait.official.score.json",
+    "raw": "v15_mmben_E128_streamwait.jsonl",
+    "score_verification": "independent_score_verification.json",
+    "runtime_verification": "independent_runtime_verification.json",
+    "full_validator": "validation.json"
+  },
+  "conclusion": "The local EADP baseline has the same 2.63808pp deficit to the paper as the historical AnchorZip cell. This narrows the investigation to shared protocol/execution differences rather than attributing the paper gap solely to AnchorZip. Exact root cause and paper input/argv remain unverified.",
+  "limits": [
+    "Local input is V11; LLaVA public release names EN20230712 Dev. Actual paper input SHA/version is unknown.",
+    "Current EADP is stream-wait repaired; historical v15 EN ours was pre-streamwait. This comparison also has an execution-protocol difference.",
+    "single-pred-prompt requests a letter; it is not a single-letter stopping criterion. max_new_tokens remains 1024."
+  ],
+  "GPU_runs_started": 1,
+  "TeX_modified": false
+}

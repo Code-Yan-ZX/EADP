@@ -1,0 +1,244 @@
+{
+ "checks": "all_pass",
+ "created_beijing": "2026-10-10T04:00:28.569029+08:00",
+ "scope": "Independent CPU verification of complete same-bank Qwen K128 MME repeat",
+ "n": 2374,
+ "image_pairs": 1187,
+ "canonical_gt_archive_sha256": "b8125e2a7c3418e5761c12b3cfe4f1624b3c53ba44009e75b7d3f797d3d8acee",
+ "old_summary": {
+  "perception": 1650.5996398559423,
+  "reasoning": 497.85714285714283,
+  "total": 2148.456782713085
+ },
+ "new_summary": {
+  "perception": 1650.5996398559423,
+  "reasoning": 497.85714285714283,
+  "total": 2148.456782713085
+ },
+ "categories_old": {
+  "OCR": {
+   "n": 40,
+   "n_images": 20,
+   "correct": 37,
+   "both_correct": 17,
+   "score": 177.5
+  },
+  "artwork": {
+   "n": 400,
+   "n_images": 200,
+   "correct": 337,
+   "both_correct": 142,
+   "score": 155.25
+  },
+  "celebrity": {
+   "n": 340,
+   "n_images": 170,
+   "correct": 314,
+   "both_correct": 144,
+   "score": 177.05882352941177
+  },
+  "code_reasoning": {
+   "n": 40,
+   "n_images": 20,
+   "correct": 23,
+   "both_correct": 3,
+   "score": 72.5
+  },
+  "color": {
+   "n": 60,
+   "n_images": 30,
+   "correct": 55,
+   "both_correct": 25,
+   "score": 175.0
+  },
+  "commonsense_reasoning": {
+   "n": 140,
+   "n_images": 70,
+   "correct": 116,
+   "both_correct": 49,
+   "score": 152.85714285714283
+  },
+  "count": {
+   "n": 60,
+   "n_images": 30,
+   "correct": 50,
+   "both_correct": 21,
+   "score": 153.33333333333331
+  },
+  "existence": {
+   "n": 60,
+   "n_images": 30,
+   "correct": 59,
+   "both_correct": 29,
+   "score": 195.0
+  },
+  "landmark": {
+   "n": 400,
+   "n_images": 200,
+   "correct": 360,
+   "both_correct": 162,
+   "score": 171.0
+  },
+  "numerical_calculation": {
+   "n": 40,
+   "n_images": 20,
+   "correct": 28,
+   "both_correct": 8,
+   "score": 110.00000000000001
+  },
+  "position": {
+   "n": 60,
+   "n_images": 30,
+   "correct": 43,
+   "both_correct": 16,
+   "score": 125.0
+  },
+  "posters": {
+   "n": 294,
+   "n_images": 147,
+   "correct": 262,
+   "both_correct": 117,
+   "score": 168.7074829931973
+  },
+  "scene": {
+   "n": 400,
+   "n_images": 200,
+   "correct": 337,
+   "both_correct": 137,
+   "score": 152.75
+  },
+  "text_translation": {
+   "n": 40,
+   "n_images": 20,
+   "correct": 35,
+   "both_correct": 15,
+   "score": 162.5
+  }
+ },
+ "categories_new": {
+  "OCR": {
+   "n": 40,
+   "n_images": 20,
+   "correct": 37,
+   "both_correct": 17,
+   "score": 177.5
+  },
+  "artwork": {
+   "n": 400,
+   "n_images": 200,
+   "correct": 337,
+   "both_correct": 142,
+   "score": 155.25
+  },
+  "celebrity": {
+   "n": 340,
+   "n_images": 170,
+   "correct": 314,
+   "both_correct": 144,
+   "score": 177.05882352941177
+  },
+  "code_reasoning": {
+   "n": 40,
+   "n_images": 20,
+   "correct": 23,
+   "both_correct": 3,
+   "score": 72.5
+  },
+  "color": {
+   "n": 60,
+   "n_images": 30,
+   "correct": 55,
+   "both_correct": 25,
+   "score": 175.0
+  },
+  "commonsense_reasoning": {
+   "n": 140,
+   "n_images": 70,
+   "correct": 116,
+   "both_correct": 49,
+   "score": 152.85714285714283
+  },
+  "count": {
+   "n": 60,
+   "n_images": 30,
+   "correct": 50,
+   "both_correct": 21,
+   "score": 153.33333333333331
+  },
+  "existence": {
+   "n": 60,
+   "n_images": 30,
+   "correct": 59,
+   "both_correct": 29,
+   "score": 195.0
+  },
+  "landmark": {
+   "n": 400,
+   "n_images": 200,
+   "correct": 360,
+   "both_correct": 162,
+   "score": 171.0
+  },
+  "numerical_calculation": {
+   "n": 40,
+   "n_images": 20,
+   "correct": 28,
+   "both_correct": 8,
+   "score": 110.00000000000001
+  },
+  "position": {
+   "n": 60,
+   "n_images": 30,
+   "correct": 43,
+   "both_correct": 16,
+   "score": 125.0
+  },
+  "posters": {
+   "n": 294,
+   "n_images": 147,
+   "correct": 262,
+   "both_correct": 117,
+   "score": 168.7074829931973
+  },
+  "scene": {
+   "n": 400,
+   "n_images": 200,
+   "correct": 337,
+   "both_correct": 137,
+   "score": 152.75
+  },
+  "text_translation": {
+   "n": 40,
+   "n_images": 20,
+   "correct": 35,
+   "both_correct": 15,
+   "score": 162.5
+  }
+ },
+ "text_change_ids": [],
+ "extracted_change_ids": [],
+ "rescues": 0,
+ "breaks": 0,
+ "truncated_ids": [
+  981
+ ],
+ "layer_call_mismatch_ids": [
+  981
+ ],
+ "original_sources_preserved": true,
+ "bank_rebuilt": false,
+ "code_failure_reproduced_ids": [
+  796,
+  800,
+  810,
+  812,
+  818
+ ],
+ "new_shard_sha256": "5517d58219ea193ce4d1e50f8f1aaa88a5e26d3aea21f8b07b858c179fcd420e",
+ "runtime_sha256": "47b22375d900c9e510d949ad8cdbd49f4eca29f8e093251aa2e24c8bd7645b0b",
+ "limitations": [
+  "Same-bank repeat does not test independent bank construction.",
+  "Truncation is recorded; the frozen scoring protocol does not force capped answers to be wrong.",
+  "At the cap the decoder skips the final unnecessary forward; frozen cache/layer diagnostic flags expect it. Actual cache/call counts were checked against this exact cap behavior."
+ ]
+}

@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-10-09T19:56:26.860230+00:00",
+  "status": "pass",
+  "CPU_only": true,
+  "CUDA_initialized": false,
+  "source_SHA_all_match": true,
+  "mapping_counts_gate": {
+    "old_rows": 4377,
+    "old_groups": 1176,
+    "candidate_pairs": 15792,
+    "strict_rows": 28,
+    "strict_groups": 7
+  },
+  "artifact_sha256": {
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mmb_old_version_reuse_20261010/image_mapping/compare_image_inputs.py": "8063edade1f403b7e27c037f360e2658c5191d2b60582bac405f2926599fad48",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mmb_old_version_reuse_20261010/image_mapping/cross_ID_unique_priority_pairs.json": "2de63f67350bf8ee2002a0742fec69cacf5ddc7773eb9bb65bb76c207029066d",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mmb_old_version_reuse_20261010/image_mapping/image_pairs.csv": "caf067b74975bba5d59d6b3d4916bc87834fa19c352bdbaad7590d613b76a7c2",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mmb_old_version_reuse_20261010/image_mapping/image_pairs.json": "1e200c328e56872262dfef44601ba8c918d489e7d858cee84b20aa0b4359e4cd",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mmb_old_version_reuse_20261010/image_mapping/near_diagnostic_buckets.json": "13371da889653e188bc8d251f823f1349ff32a05f9da0cd7124fd9c9c893ddf4",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mmb_old_version_reuse_20261010/image_mapping/old_groups_image_mapping.json": "7a30f16cbd5f86543ccead811f044e9b55007dca33ca19f3be19961216ba42ad",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mmb_old_version_reuse_20261010/image_mapping/old_rows_image_mapping.json": "d87bc96412cf4ad942a6cfe6ac9f8572048d091f89466edbb7a5ac4126a2eab5",
+    "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/mmb_old_version_reuse_20261010/image_mapping/summary.json": "35037794f83b4b413818f77bb9502159fc4d2b882cd3e844e3c1958f6a49ab35"
+  },
+  "checks": [
+    "All row candidate pair IDs exactly match pair ledger.",
+    "Strict image rule independently reconstructed from prompt/FP16/image_sizes.",
+    "Counts and uniqueness rechecked.",
+    "All source/dataset/processor/code SHA reread unchanged.",
+    "Prompt mapping independently crosschecked all4377 promptSHA/candidateIDs in near_diagnostic_buckets.json."
+  ],
+  "near_note": "927 complete same-ID groups pass predeclared near threshold; overlaps strict7. Near is not exact answer reuse."
+}

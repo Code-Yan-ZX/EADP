@@ -1,0 +1,19 @@
+{
+  "method": "EADP",
+  "dataset": "MMBench_DEV_EN_V11",
+  "n": 4876,
+  "groups": 1292,
+  "model": "LLaVA-1.5-7B",
+  "budget": 128,
+  "alpha": 0.5,
+  "beta": 2.0,
+  "lang": "en",
+  "max_new_tokens": 1024,
+  "temperature": 0,
+  "single_pred_prompt": true,
+  "stream_wait": true,
+  "math_changes": false,
+  "frozen_worker": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/followup_worker.py",
+  "frozen_worker_sha256": "3a01450b20589d7bffb2a1d723922ae4779a6f857561677a5864667505f61b47",
+  "comparison_limit": "Existing v15 AnchorZip MMB-EN answers precede stream-wait repair. This EADP run diagnoses a same-dataset/budget baseline; strict paired method attribution requires both methods with the same execution repair. Paper dataset/argv remain unverified."
+}

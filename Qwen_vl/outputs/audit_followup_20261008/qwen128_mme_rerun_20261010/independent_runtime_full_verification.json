@@ -1,0 +1,137 @@
+{
+  "audit_kind": "Independent_CPU_full_runtime_verification",
+  "status": "complete",
+  "complete": true,
+  "created_beijing": "2026-10-10T04:00:52.366914+08:00",
+  "runtime_rows_verified": 2374,
+  "expected": 2374,
+  "runtime_sha256": "47b22375d900c9e510d949ad8cdbd49f4eca29f8e093251aa2e24c8bd7645b0b",
+  "fresh_shard_sha256": "5517d58219ea193ce4d1e50f8f1aaa88a5e26d3aea21f8b07b858c179fcd420e",
+  "old_shard_sha256": "fb35dc7838548c21c472eea4a6e4e0b0d0025524b6d801c47c9a852cd0a1dc19",
+  "protocol_sha256": "e46e91394fae1d5a4d8913e62350c7c06473a05fba69e1f2d20eba4d00e6c2fe",
+  "loaded_runtime_sha256": "64dbdfa5251c0ed20e235f47bf69c921a6505e8a723ddf084af8d61d030620d2",
+  "result_sha256": "82e19ee46e7f8233cbef5a5d0c0b67bee0f3dcd3c95700ca1d4fcf9ea33cd0e2",
+  "source_sha_checks_passed": 14,
+  "source_sha_checks_expected": 14,
+  "source_sha_failures": [],
+  "completion_checks": {
+    "state_status_complete": true,
+    "state_completed2374": true,
+    "state_exit0": true,
+    "result_complete": true,
+    "result_n2374": true,
+    "fresh_records2374": true,
+    "runtime2374": true,
+    "runtime_sha_matches_result": true,
+    "fresh_sha_matches_result": true,
+    "all_current_gt_columns_match": true,
+    "original_records_full": true,
+    "fresh_records_full": true
+  },
+  "loaded_runtime_matches_recipe": {
+    "model_class": true,
+    "wrapper": true,
+    "model_registry": true,
+    "dtype": true,
+    "backend": true,
+    "max_new_tokens": true,
+    "cfg": true,
+    "legacy": true
+  },
+  "loaded_runtime": {
+    "created_beijing": "2026-10-10T03:44:51.603609+08:00",
+    "wrapper": "Qwen3VLChatFixedRes",
+    "model_class": "Qwen3VLForConditionalGeneration",
+    "model_name": "Qwen3-VL-8B-Instruct-1024",
+    "dtype": "torch.bfloat16",
+    "device": "cuda:0",
+    "attn": "sdpa",
+    "torch_version": "2.10.0+cu128",
+    "transformers_version": "4.57.6",
+    "cfg": {
+      "kind": "uniform",
+      "lam": 0.25,
+      "scope": "main",
+      "scorer": "rtg",
+      "K": 128
+    },
+    "legacy_flags": {
+      "deepstack": false,
+      "pos": "1d"
+    },
+    "generate_kwargs": {
+      "max_new_tokens": 2048,
+      "top_p": 0.001,
+      "top_k": 1,
+      "temperature": 0.01,
+      "repetition_penalty": 1.0
+    },
+    "fixed_image_size": null,
+    "model_name_or_path": "Qwen/Qwen3-VL-8B-Instruct",
+    "text_config_eos": 151645,
+    "tokenizer_eos": 151645,
+    "generation_config_eos": [
+      151645,
+      151643
+    ]
+  },
+  "bank": {
+    "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/qwen128_mme_rerun_20261010/run01/full/bank_full_rtg_MME.json.gz",
+    "symlink": true,
+    "resolved": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot_k128/full/bank_full_rtg_MME.json.gz",
+    "sha256": "9a9965aae9533945832e7d954eee095cb214f83759114ba8d5ee80b1dc79657c",
+    "matches_protocol": true,
+    "matches_original_shard": true,
+    "K": 128,
+    "samples": 2374,
+    "scorer_params": {
+      "inverse_temperature": 100.0,
+      "alpha": 0.5,
+      "beta": 2.0,
+      "smoothing": "3x3 sigma=1",
+      "minmax_eps": 1e-06,
+      "shuf_seed_prefix": "20261002"
+    },
+    "alpha_beta_note": "Alpha.5/beta2 were encoded in frozen RTG bank construction; generation reuses anchors, not a new scorer pass."
+  },
+  "trace_failures": [],
+  "unique_image_files_hashed": 1187,
+  "current_gt_vs_new_pred_column_mismatches": {
+    "index": 0,
+    "category": 0,
+    "question": 0,
+    "image_path": 0,
+    "answer": 0
+  },
+  "prediction_text_difference_indices_vs_original": [],
+  "prediction_text_difference_indices_tokens_vs_fresh": [],
+  "generated_token_count": 5634,
+  "generated_151643_count": 0,
+  "generated_151645_count": 0,
+  "capped_rows": [
+    {
+      "index": 981,
+      "gen_tokens": 2048,
+      "layer_calls": 73728,
+      "layer_calls_expected": 73764,
+      "cache_len": 2219,
+      "lk": 172,
+      "emitted_151643": 0
+    }
+  ],
+  "all_pass": true,
+  "preserved_partial_artifact": {
+    "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/qwen128_mme_rerun_20261010/independent_runtime_partial_verification.json",
+    "sha256": "3717736b0a21b7e6fff1065a33c52a78d5dd10750225f5d5a87bdd2d6bce7446"
+  },
+  "interpretation": [
+    "All2374 completed generations independently decoded from recorded gen_ids match original and fresh shard text byte for byte; no text differences.",
+    "All1187 current inputimage SHA, everymessage/fullGTmetadata, bank SHA,14frozen source SHA and recorded modelparameters match the prescribed recipe.",
+    "NativeEngine EOS rules were unchanged; zero151643 emitted across the entire rerun, so the additional stockEOS difference cannot explain this rerun score.",
+    "Trace invariants.n_vis_kept=0 underlegacy because no visualmask; runtime.n_vis_kept=128 comes from actualkeepindices. This is not a zero-budget run.",
+    "Index981 alone emits2048tokens,actual73728vsdiagnostic73764layers andcache2219=172+2048−1 exactly match cap bookkeeping. Its longanswer is retained and scored normally.",
+    "This is independent generation replication using the same frozenbank; selector/bankconstruction was not independently regenerated.",
+    "Fixed-image-size snapshot null reflects missingimage_size attribute; fixed_res code and allruntime n_vis_full1024 verify intendedvisiongeometry.",
+    "The audit does not claim all14GB weightpayload identity or historical processor GPUtensor identity from these traces."
+  ]
+}
