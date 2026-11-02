@@ -1,0 +1,45 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><title>EADP V2 论文与本机复现对比</title>
+<style>body{font:15px/1.6 system-ui,sans-serif;margin:32px;color:#202020}table{border-collapse:collapse;width:100%;margin:20px 0 32px}th,td{padding:8px 12px;border-bottom:1px solid #ddd;text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}th{background:#eee}small,p{max-width:1100px}a{color:#1651a0}</style>
+<h1>EADP V2：论文与本机复现对比</h1><p>每格为：论文 → 本机（本机−论文）；—表示本轮没有可采用的本机复现值。MME、OCRBench差值为原始分数，其余为百分点。论文值按原文精度，本机与差值保留三位小数。</p>
+<h2>LLaVA-1.5-7B</h2><table><thead><tr><th>任务</th><th>128 tokens</th><th>64 tokens</th><th>32 tokens</th></tr></thead><tbody>
+<tr><td>VQAv2</td><td>76.7 → —</td><td>75.6 → —</td><td>74 → —</td></tr>
+<tr><td>GQA</td><td>60 → 59.652 (-0.348)</td><td>59.4 → —</td><td>58.2 → —</td></tr>
+<tr><td>VizWiz</td><td>58 → 57.884† (-0.116)</td><td>59.5 → —</td><td>59.3 → —</td></tr>
+<tr><td>SQA_IMG</td><td>69 → 69.559 (+0.559)</td><td>68.9 → 68.815 (-0.085)</td><td>69.3 → 68.765 (-0.535)</td></tr>
+<tr><td>TextVQA</td><td>56.5 → 56.390 (-0.110)</td><td>55 → 54.918 (-0.082)</td><td>52.7 → 52.532 (-0.168)</td></tr>
+<tr><td>POPE</td><td>87.2 → 87.520 (+0.320)</td><td>86.5 → —</td><td>86.7 → 84.074 (-2.626)</td></tr>
+<tr><td>MME</td><td>1439 → 1431.982 (-7.018)</td><td>1403.6 → —</td><td>1347 → —</td></tr>
+<tr><td>MMB_EN</td><td>62.7 → 60.062 (-2.638)</td><td>61.9 → —</td><td>59.4 → —</td></tr>
+<tr><td>MMB_CN</td><td>55.2 → —</td><td>53.1 → —</td><td>50.1 → —</td></tr>
+<tr><td>MMVet</td><td>32.5 → —</td><td>29.4 → —</td><td>30.6 → —</td></tr>
+<tr><td>Avg9</td><td>63.5 → —</td><td>62.2 → —</td><td>60.9 → —</td></tr>
+</tbody></table>
+<h2>LLaVA-NeXT-7B</h2><table><thead><tr><th>任务</th><th>640 tokens</th><th>320 tokens</th><th>160 tokens</th></tr></thead><tbody>
+<tr><td>VQAv2</td><td>80 → —</td><td>78.6 → —</td><td>77 → —</td></tr>
+<tr><td>GQA</td><td>62.7 → 62.864 (+0.164)</td><td>62.2 → —</td><td>61.6 → —</td></tr>
+<tr><td>VizWiz</td><td>60.6 → 60.678† (+0.078)</td><td>60.4 → —</td><td>60.2 → —</td></tr>
+<tr><td>SQA_IMG</td><td>68 → 67.824 (-0.176)</td><td>67.6 → 67.229 (-0.371)</td><td>67.4 → 67.476 (+0.076)</td></tr>
+<tr><td>TextVQA</td><td>59.2 → 57.866 (-1.334)</td><td>57 → 55.410 (-1.590)</td><td>54.2 → 52.086 (-2.114)</td></tr>
+<tr><td>POPE</td><td>87.4 → —</td><td>86.9 → —</td><td>86 → —</td></tr>
+<tr><td>MME</td><td>1494.7 → —</td><td>1491.3 → —</td><td>1419.5 → —</td></tr>
+<tr><td>MMB_EN</td><td>66.5 → —</td><td>64.6 → —</td><td>63.4 → —</td></tr>
+<tr><td>MMB_CN</td><td>57.9 → —</td><td>55.9 → —</td><td>54.6 → —</td></tr>
+<tr><td>MMVet</td><td>40.1 → —</td><td>39.4 → —</td><td>35.6 → —</td></tr>
+<tr><td>Avg9</td><td>66.3 → —</td><td>65.2 → —</td><td>63.4 → —</td></tr>
+</tbody></table>
+<h2>Qwen3-VL-8B</h2><table><thead><tr><th>任务</th><th>512 tokens</th><th>256 tokens</th><th>128 tokens</th></tr></thead><tbody>
+<tr><td>TextVQA</td><td>75.2 → —</td><td>71.4 → 71.042 (-0.358)</td><td>66.1 → —</td></tr>
+<tr><td>ChartQA</td><td>65.9 → —</td><td>55.5 → 54.800 (-0.700)</td><td>43.6 → —</td></tr>
+<tr><td>AI2D</td><td>77.7 → —</td><td>75.7 → 74.547 (-1.153)</td><td>73.6 → —</td></tr>
+<tr><td>OCRBench</td><td>673 → —</td><td>625 → 623.000 (-2.000)</td><td>550 → —</td></tr>
+<tr><td>HallusionBench</td><td>42.5 → —</td><td>42.8 → —</td><td>40.2 → —</td></tr>
+<tr><td>MME</td><td>2261.1 → —</td><td>2202.4 → 2212.695 (+10.295)</td><td>2200.2 → —</td></tr>
+<tr><td>MMB_EN</td><td>81.6 → —</td><td>80.5 → 79.876 (-0.624)</td><td>79.9 → —</td></tr>
+<tr><td>MMB_CN</td><td>79.7 → —</td><td>78.9 → 78.870 (-0.030)</td><td>78.4 → —</td></tr>
+<tr><td>DocVQA</td><td>77.7 → —</td><td>62.8 → 61.136 (-1.664)</td><td>45.3 → —</td></tr>
+<tr><td>InfoVQA</td><td>49.9 → —</td><td>42.3 → 42.390 (+0.090)</td><td>35.3 → —</td></tr>
+<tr><td>Avg10</td><td>73.1 → —</td><td>68.2 → —</td><td>62.7 → —</td></tr>
+</tbody></table>
+<p>† VizWiz：4319题，EADP发布评分器；本机控制参数alpha=0、beta=1、max128。NeXT预算为名义总数，640/320/160对应CLI128/64/32。SQA使用本机已审计输入；POPE为实际8910题（random2910）。MMBench EN本机使用V11，未确认与论文题集版本完全一致。Qwen本机采用legacy（DeepStack关闭、1D位置），论文完整运行参数未核实。跨论文数值差不等于严格同配置误差的归因。</p>
+<p>补充核验新增9项Qwen K256及2项真实EADP VizWiz。HallusionBench的预测/评分存在，但生成时剪枝bank身份未闭合，不纳入正式本机值。完整本机平均分保持缺失。</p>
+<p><a href="comparison.csv">完整CSV</a> · <a href="comparison.json">逐项来源与比较说明</a> · <a href="supplemental_provenance.json">本次补充核验来源</a></p></html>

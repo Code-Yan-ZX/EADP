@@ -1,0 +1,114 @@
+{
+  "status": "bounded_existing_numeric_cache_inventory",
+  "CPU_only": true,
+  "model_or_container_started": false,
+  "search_scope": [
+    "Current reproduction/20261028/qwen artifacts and numeric candidates located in original EADP/Qwen_vl/outputs/m14, outputs/discovery and fa_maps; not an exhaustive proof about every filesystem directory"
+  ],
+  "fixed_question_positions": [
+    167,
+    501,
+    835,
+    1170,
+    1504,
+    1838,
+    2173,
+    2507,
+    2841,
+    3175,
+    3510,
+    3844,
+    4178,
+    4513,
+    4847,
+    5181
+  ],
+  "small_metadata_and_producer_SHA": {
+    "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/m14/m14_capture.npz": "287db38aaaa7c53bb0db0aa0fab25df3e93a86606373c0f227dc0d5103689d2c",
+    "/media/disk2/YZX/research/EADP/Qwen_vl/scripts/m14/m14_capture.py": "a8d7fea53ebd683fabe71dd467f2a495c92993d885e788786e9f7f9391fb7d19",
+    "/media/disk2/YZX/research/EADP/Qwen_vl/scripts/m14/m14_common.py": "c3cbeada346ee131ea99113724916b797276541b7c94c0224dfc8ed86098195e",
+    "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/discovery/m3_bank_v1_meta.json": "957fff5fff83c48fac0e62750b0c1c36b985ed11c43e845ecd67e338f0d93b65",
+    "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/discovery/m3v2_text_meta.json": "5bca8b70dffbb6c66e90a5d308733213dbc23bf87b0e134aea5f9c53370db927",
+    "/media/disk2/YZX/research/EADP/Qwen_vl/scripts/discovery/m3_features.py": "912ff51c92b8dc18ca4f04bf72b86151e6a20772e89c942342bf76ba1122beb5",
+    "/media/disk2/YZX/research/EADP/Qwen_vl/scripts/discovery/m3v2_text.py": "655bfa8b3949331d73cb96baeb865bbe1b43abe90c2e594cb600392729d2e0d5"
+  },
+  "M14": {
+    "capture": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/m14/m14_capture.npz",
+    "capture_fields": [
+      "key",
+      "ds",
+      "idx",
+      "importance",
+      "meta"
+    ],
+    "importance_shape": [
+      450,
+      1024
+    ],
+    "importance_dtype": "float32",
+    "large_array_headers": {
+      "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/m14/m14_vis.u16.npy": {
+        "shape": [
+          450,
+          1024,
+          4096
+        ],
+        "dtype": "uint16",
+        "bytes": 3774873728,
+        "payload_read_or_hashed": false
+      },
+      "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/m14/m14_sim.f32.npy": {
+        "shape": [
+          450,
+          1024,
+          1024
+        ],
+        "dtype": "float32",
+        "bytes": 1887436928,
+        "payload_read_or_hashed": false
+      }
+    },
+    "Doc_rows": 150,
+    "fixed_question_position_intersection": [],
+    "key_semantics": "Producer indexes dataset.data.iloc[j]; key ds:idx stores iloc position, not canonical question ID",
+    "producer_path": "instrumented/rebound attach_pruner; not fresh native _get_pruned_image_features anchor",
+    "missing": [
+      "BF16 LLM text sequence/global mean",
+      "full global+dense cross similarity",
+      "native fresh-FA2 _get anchor"
+    ]
+  },
+  "M3": {
+    "bank_path": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/discovery/m3_bank_v1.npz",
+    "bank_visual_dtype": "FP16",
+    "base_selector": "block8, not native fresh facility anchor",
+    "text_path": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/discovery/m3v2_text.npz",
+    "text_shape": [
+      450,
+      44,
+      4096
+    ],
+    "text_dtype": "FP16",
+    "Doc_rows": 150,
+    "fixed_question_position_intersection": [],
+    "source": "Independent metadata/header audit by /root/latest_version_audit; large payload not read or SHA-hashed"
+  },
+  "fa_maps": {
+    "finding": "Some native/AnchorZip visualization npz store global/local-aggregated/importance/IDs, but lack complete dense L, raw BF16 features and visualsim; no qualified full fixed-panel native anchor located"
+  },
+  "qualification_boundaries": [
+    "Historical numeric caches exist and may be useful as separately labelled auxiliary evidence.",
+    "Zero intersection refers to sampled question iloc positions; historic dataset ordering itself was not re-established as canonical question-ID identity.",
+    "Image SHA overlap has not been closed and is not claimed zero. Shared image evidence would still need exact BF16/source/runtime qualification and matching complete question text/global/dense/native anchor.",
+    "Do not substitute old sampled questions for the predetermined16, or FP16 text for native BF16 text.",
+    "No available complete current-author-FA2 native fixed16 cache was established by this bounded search."
+  ],
+  "new_extraction_scope_if_root_authorizes": {
+    "questions": 16,
+    "recipes": 1,
+    "cases": 64,
+    "answers_generated": 0,
+    "GPU_allocated": false,
+    "automatic_full_extension": false
+  }
+}

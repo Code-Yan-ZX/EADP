@@ -1,0 +1,221 @@
+{
+  "definition": "Same-instance MMB CLIP-guidance diagnostic; separate from paper pruning rows, 12 main runs and all previous calibrations.",
+  "rows": [
+    {
+      "model": "LLaVA-1.5-7B",
+      "task": "MMB_EN",
+      "arm": "source",
+      "method": "完整提示CLIP指导（同实例重跑）",
+      "n_rows": 4377,
+      "n_groups": 1176,
+      "nominal_tokens": 128,
+      "paper_value": null,
+      "local_minus_paper": null,
+      "paper_reference_value": 62.7,
+      "diagnostic_minus_paper_reference": "-1.135374149659864",
+      "local_value": 61.564625850340136,
+      "public_exact_matching_value": 61.564625850340136,
+      "independent_local_letter_value": 61.564625850340136,
+      "correct_groups": 724,
+      "unresolved_public_groups": 0,
+      "parser_disagreements": 0,
+      "comment_boundary_activated": false,
+      "EOS_present": 4377,
+      "EOS_missing": 0,
+      "at_max_tokens": 0,
+      "unit": "percentage_points",
+      "conditions": "同实例；旧EN4377行/1176循环组；K128/α.5/β1/q.2/三wait；LLM完整hint和选项保持；仅问题同时改变指导内容与分段，非论文已确认配方",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/execution/source_predictions.jsonl",
+        "sha256": "2cd339539010ab53badc77b85e8de768285ff5a99537ab66f9ef1f55c4efc16b"
+      },
+      "runtime_observations": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/execution/source_observations.jsonl",
+        "sha256": "94a83f8125d8e369fadd907f6c3cfb136bd13288924405505295fafea56f5279"
+      }
+    },
+    {
+      "model": "LLaVA-1.5-7B",
+      "task": "MMB_EN",
+      "arm": "question_only",
+      "method": "仅问题CLIP指导（启用原注释边界）",
+      "n_rows": 4377,
+      "n_groups": 1176,
+      "nominal_tokens": 128,
+      "paper_value": null,
+      "local_minus_paper": null,
+      "paper_reference_value": 62.7,
+      "diagnostic_minus_paper_reference": "-0.54013605442177",
+      "local_value": 62.15986394557823,
+      "public_exact_matching_value": 62.15986394557823,
+      "independent_local_letter_value": 62.15986394557823,
+      "correct_groups": 731,
+      "unresolved_public_groups": 0,
+      "parser_disagreements": 0,
+      "comment_boundary_activated": true,
+      "EOS_present": 4377,
+      "EOS_missing": 0,
+      "at_max_tokens": 0,
+      "unit": "percentage_points",
+      "conditions": "同实例；旧EN4377行/1176循环组；K128/α.5/β1/q.2/三wait；LLM完整hint和选项保持；仅问题同时改变指导内容与分段，非论文已确认配方",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/execution/question_only_predictions.jsonl",
+        "sha256": "b11ef89318a639f85668b29891825c30ea467debfedeaeb21b879a1e0d63b8cf"
+      },
+      "runtime_observations": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/execution/question_only_observations.jsonl",
+        "sha256": "e495092c203d77b91e872cc66a6ced3e60da33f01cba5e79d186a357ab430798"
+      }
+    }
+  ],
+  "question_only_minus_source": 0.5952380952380949,
+  "question_only_minus_source_decimal_from_scores": "0.595238095238094",
+  "improved_groups": 15,
+  "declined_groups": 8,
+  "unchanged_groups": 1153,
+  "changes": {
+    "response_changed": 95,
+    "output_ids_changed": 95,
+    "final_mask_changed": 4372,
+    "visual_input_changed": 4372
+  },
+  "group_mask_summary": {
+    "source": {
+      "constant": 35,
+      "varied": 1141
+    },
+    "question_only": {
+      "constant": 1176,
+      "varied": 0
+    }
+  },
+  "same_model_instance": true,
+  "author_comment_active_in_release": false,
+  "paper_argv_confirmed": false,
+  "part_of_eadp_pruning_ledger": false,
+  "full_denominators_preserved": true,
+  "external_official_server_evaluated": false,
+  "high_dimensional_arrays_saved_for_nonanchors": false,
+  "score_container_start_ticks_recorded": false,
+  "score_container_full_PID_identity_reconstructable": false,
+  "paper_reference": {
+    "value": 62.7,
+    "model": "LLaVA-1.5-7B",
+    "task": "MMB_EN",
+    "nominal_tokens": 128,
+    "paper_evidence_id": "paper:T1:128:EADP:MMB_EN:as_reported",
+    "reference_index": {
+      "path": "/media/disk2/YZX/research/EADP_v2/docs/versions/v2/eadp_comparison_20261028/comparison.json",
+      "sha256": "fe9e3ba86ae5b353699d2b17427df392b11a2ff26ff8a2be9cc3956bd0f5a01d"
+    },
+    "source": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/submission_tables_20261009/paper_table_1.json",
+      "sha256": "0de5b65ffb02a260dbf88e338f5dd378e62098ebf59873ff4deeffc07ea2aae2"
+    }
+  },
+  "plan": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/plan.json",
+    "sha256": "09404c6685b0e148f3ea6373b3a79fd3842997ef14f5be2891d16d5a8784ea99"
+  },
+  "result_note": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/RESULT.md",
+    "sha256": "870bd58c208db8d4f3586ce5042f9e8863e12b4453257148e9fab8e26e73d3e2"
+  },
+  "score_report": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/execution/score_terminal.json",
+    "sha256": "0732cbe7e443032908433ddc76e58bfc249bb8497b394a4c7472c228d0536ba0"
+  },
+  "generation_exit_proof": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/root_exit_proof.json",
+    "sha256": "bb06a4dd0eaa5d45d23f9185b78a5e0e1b04e716396ca5b3382d430bc28beadd"
+  },
+  "score_exit_proof": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/root_score_exit_proof.json",
+    "sha256": "43cded6664202dc265c4c59ac36fa7c6b8be3df4ac5e6d0ca13aa03d317a6ea8"
+  },
+  "generation_verification": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/execution/generation_verification.json",
+    "sha256": "467a64d9489475a84eb5c213a52aa751522f4e4355a5d3fa648533c620daf3ca"
+  },
+  "generation_state": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/execution/state.json",
+    "sha256": "17b1068db687c9541076ced4ac3728ac1cff5a99513ecd9238bed656a7b9764d"
+  },
+  "generation_release": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/execution/native_release.json",
+    "sha256": "838a00d6c5cf8f7e193cf3c5a45662a8a0ca03a1feff6cd7b1d9327327596e85"
+  },
+  "generation_runtime": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/execution/runtime.json",
+    "sha256": "1763120b854fb6bc3cea221c2167fec442afb441ee72bf33cfba1b87a19f8c32"
+  },
+  "generation_allocation": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/root_gpu_allocation.json",
+    "sha256": "69e82dae7f6f94806d7017ff8eac0a64bf4cc2bef827514eade049449062c79d"
+  },
+  "input_manifest": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/inputs/manifest.json",
+    "sha256": "4b2257d2e6078019a7105e940b11413ebfdbfca993599119c10761611072447b"
+  },
+  "sanitized_TSV": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/inputs/panel.tsv",
+    "sha256": "9a3d1804ea68c9810ff4d3afd88de3449d7dfe5715c8d1509b66c816440a4062"
+  },
+  "anchor_gate": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full_run02/execution/anchor_gate.json",
+    "sha256": "e7c87e7b81656301ae8676976bfa2c4a32b0bd2e25ec4c2fff1a0d6ff4c986a3"
+  },
+  "score_helpers": [
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/utils/matching_util.py",
+      "sha256": "03435cedaeaf6282599816aed4ba57f26dd4858f2a37399490acca98d9f8f5f2",
+      "functions": [
+        "can_infer_option",
+        "can_infer_text",
+        "can_infer"
+      ],
+      "ast_sha256": "099a9f5b3e5c8045686e40d34b61f91162675e692f396e368c6c4923db887fc5"
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py",
+      "sha256": "460b75c5fee06aa10f4037b2694e74708978820ed9291933b703fca39d7b156a",
+      "functions": [
+        "build_choices",
+        "prefetch_answer",
+        "prefetch_circular_group"
+      ],
+      "ast_sha256": "165a95920b7be570da917ce155d897bd4c30af24af59676fdafd9c86b9a9f80e"
+    }
+  ],
+  "previous_failed_attempt": {
+    "plan": {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full/plan.json",
+      "sha256": "523434132597cf923e6428094ddd8056ebe748797c58633fe9bdaa207abf6865"
+    },
+    "exit_proof": {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full/root_failure_exit_proof.json",
+      "sha256": "57f651458b794352e0c36f3f0772b321cb7c7d12c3c76092e5b7fedea11163b1"
+    },
+    "state": {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full/execution/state.json",
+      "sha256": "10601f8af795a921ba1bed8e07ecadfe767ff2034c4cb933636301c84e669292"
+    },
+    "worker_log": {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/question_only_guidance_full/execution/worker.log",
+      "sha256": "b2b0100b5bcee1d7a6c82933994c8fb24546cc1ff304f9e420d4bdba5d0b59d0"
+    },
+    "scored": false
+  },
+  "builder": {
+    "path": "/media/disk2/YZX/research/EADP_v2/docs/versions/v2/eadp_comparison_20261028/build_mmb_guidance_diagnostic.py",
+    "sha256": "d3320d23eb79b74051bec50a4e1b558a402082b34c048ec9af6996340d848922"
+  },
+  "limits": [
+    "仅问题使用作者未启用的注释边界；去除选项、部分行的hint并改变分段，不能分离这些因素、认证论文argv或替换原复现主行。",
+    "分数来自作者仓库公开exact-matching辅助函数加本地循环计分，并另列本地独立字母解析；未运行外部官方服务器或judge。",
+    "固定60行120次真实数组已锚定，非锚高维张量仅存运行时摘要，无法事后独立重建；观测开销不能作效率测量。",
+    "准备期物理读取含GT源TSV字节但仅解析输入列；生成/验收只读净化输入，完整终验和根退出门后才读取GT评分。",
+    "首轮尺寸元组/列表检查失败及原始输出已保留，run02仅修该检查；失败不能冒充完整运行。",
+    "评分根PTY实际exit0及容器ID/不运行已记录，但短时评分容器PID的start_ticks缺失，不能重建完整PID身份。"
+  ]
+}

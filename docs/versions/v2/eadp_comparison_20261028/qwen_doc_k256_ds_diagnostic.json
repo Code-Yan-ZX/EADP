@@ -1,0 +1,197 @@
+{
+  "definition": "Same-instance K256 DeepStack implementation diagnostic; separate from paper pruning rows, all main ledgers and FULL calibrations.",
+  "rows": [
+    {
+      "model": "Qwen3-VL-8B",
+      "task": "DocVQA",
+      "arm": "ds_off",
+      "method": "公开 K256 路径：DS-off（本次重跑）",
+      "n": 5349,
+      "nominal_tokens": 256,
+      "paper_value": null,
+      "local_minus_paper": null,
+      "paper_reference_value": 62.8,
+      "diagnostic_minus_paper_reference": "-1.633957751670724",
+      "official_value": 61.166042248329354,
+      "independent_value": 61.166042248329276,
+      "local_value": 61.166042248329276,
+      "author_implementation_modified": false,
+      "native_NA_conversions": 7,
+      "EOS_present": 5345,
+      "EOS_missing": 4,
+      "at_max_tokens": 4,
+      "unit": "percentage_points",
+      "conditions": "同实例配对；FA2/BF16；5349题；同一实际256空间选择；首次prefill联合开关DS与visual mask；legacy位置策略保持；on修改公开实现，非paper配方",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/execution/ds_off.predictions.jsonl",
+        "sha256": "4037d3bdd8a897fc23aea5f9030b3d2f90fc4dabc74d188a41d9215ab92baeb7"
+      },
+      "runtime_observations": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/execution/ds_off.observations.jsonl",
+        "sha256": "06d5c8273d9a23e8fbec71f282d280e083c5cb68519892dcad9283d1e21e4bb6"
+      },
+      "ordered_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/execution/ds_off.ordered.predictions.jsonl",
+        "sha256": "f32824c308c9c8165b3a1221fbc63ff675e0ab7da9830bdd8f012c5b513191f1"
+      },
+      "ordered_observations": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/execution/ds_off.ordered.observations.jsonl",
+        "sha256": "dd84230b85fa6877e8bea1eab3cd9a3bfe71914fd0589ed5ce6e95632ec03774"
+      },
+      "pointwise_scores": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/score/ds_off.per_question.jsonl",
+        "sha256": "a4ca7f72f60b1638a5a1db36e1bc104ca0aee768aef3263b620e91fb5d8d7066"
+      },
+      "native_score_input": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/score/ds_off.xlsx",
+        "sha256": "bba1431fcb85125a2e5950125b2be6ffaea68a8b4cd45ed2da29afb582ea57aa"
+      },
+      "native_score_detail": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/score/ds_off_results.xlsx",
+        "sha256": "97527111a29f4728a4627a3bdd59f8e80ec7fd7a869777e5442ef1fb4d5100f5"
+      }
+    },
+    {
+      "model": "Qwen3-VL-8B",
+      "task": "DocVQA",
+      "arm": "ds_on",
+      "method": "修改实现 K256：DS-on",
+      "n": 5349,
+      "nominal_tokens": 256,
+      "paper_value": null,
+      "local_minus_paper": null,
+      "paper_reference_value": 62.8,
+      "diagnostic_minus_paper_reference": "5.10310561305022",
+      "official_value": 67.90310561305029,
+      "independent_value": 67.90310561305022,
+      "local_value": 67.90310561305022,
+      "author_implementation_modified": true,
+      "native_NA_conversions": 6,
+      "EOS_present": 5345,
+      "EOS_missing": 4,
+      "at_max_tokens": 4,
+      "unit": "percentage_points",
+      "conditions": "同实例配对；FA2/BF16；5349题；同一实际256空间选择；首次prefill联合开关DS与visual mask；legacy位置策略保持；on修改公开实现，非paper配方",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/execution/ds_on.predictions.jsonl",
+        "sha256": "d23a207c09704c0ab661dc74e3d88ccb8f18a8bf81cd3b19527cd9525710ad63"
+      },
+      "runtime_observations": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/execution/ds_on.observations.jsonl",
+        "sha256": "53e14b2502977cfff4c092180707e75b8a992bf4adc5cccd8ef829d1728194ae"
+      },
+      "ordered_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/execution/ds_on.ordered.predictions.jsonl",
+        "sha256": "bad8533a45231dcf02ee144a2126a1ecccf8e78273159f78195178d42326c899"
+      },
+      "ordered_observations": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/execution/ds_on.ordered.observations.jsonl",
+        "sha256": "1d78cd7c21ce6f98a7e03878c23ab70a924297fcc26e95310c088f8f03f7fde7"
+      },
+      "pointwise_scores": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/score/ds_on.per_question.jsonl",
+        "sha256": "09d1ca2e5f51714a04772d906001feffb8c9580310bc5146e3bc119f1323f8b9"
+      },
+      "native_score_input": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/score/ds_on.xlsx",
+        "sha256": "e6da4c030a149532ef160f2b08418ea182497fe459b801686bac21eadb43af64"
+      },
+      "native_score_detail": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/score/ds_on_results.xlsx",
+        "sha256": "0829a96c5ddf9f80fb10c6ef44905f46d420f6255c75bdd0504ab62193af858f"
+      }
+    }
+  ],
+  "ds_on_minus_off": 6.737063364720939,
+  "ds_on_minus_off_decimal_from_scores": "6.737063364720944",
+  "delta_precision_note": "Primary delta is the original score_report value; Decimal subtraction of printed scalar representations differs only at the floating-point tail.",
+  "changed_answers": 2446,
+  "changed_output_ids": 2447,
+  "improved": 1129,
+  "declined": 480,
+  "unchanged": 3740,
+  "same_model_instance": true,
+  "legacy_position_policy": true,
+  "high_dimensional_arrays_saved_for_nonanchors": false,
+  "paper_argv_confirmed": false,
+  "part_of_eadp_pruning_ledger": false,
+  "full_denominators_preserved": true,
+  "paper_reference": {
+    "value": 62.8,
+    "model": "Qwen3-VL-8B",
+    "task": "DocVQA",
+    "nominal_tokens": 256,
+    "paper_evidence_id": "paper:T4:256:EADP:DocVQA:as_reported",
+    "reference_index": {
+      "path": "/media/disk2/YZX/research/EADP_v2/docs/versions/v2/eadp_comparison_20261028/comparison.json",
+      "sha256": "fe9e3ba86ae5b353699d2b17427df392b11a2ff26ff8a2be9cc3956bd0f5a01d"
+    },
+    "source": {
+      "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/submission_tables_20261009/paper_table_4.json",
+      "sha256": "1c4711be81b37abe6df31d6e96e989022937e0c894a91900b5b9abe6107821b2"
+    }
+  },
+  "plan": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/plan.json",
+    "sha256": "22f380977f660f1d6fdb7d0b0937ef6ff93cb2667f733874b321817b17f516d5"
+  },
+  "result_note": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/RESULT.md",
+    "sha256": "cc80da73be11d3d5eebd093213726cd61d8cc1b3681dfd4278c030f6aeaca7e1"
+  },
+  "score_report": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/score/score_report.json",
+    "sha256": "263d6438d2fc6ed4982e98cbb66ec527209b12ec3b12c82fea75aba2bd9ca981"
+  },
+  "generation_exit_proof": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/root_terminal_process_proof.json",
+    "sha256": "7908f769268b6987bb78666d6b3e9ef780ed0bb6ea2ebca66a32271220f5b79f"
+  },
+  "score_exit_proof": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/root_score_exit_proof.json",
+    "sha256": "cabc28a998306b4ed9f16e2cd5760c7ff9c2ad3c7b1e0f029e94931467700098"
+  },
+  "generation_verification": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/execution/independent_verification.json",
+    "sha256": "b8657133c11535fb73d68f6aaaa5c7c90c027eb00fe38f2046bb6fa0642efae9"
+  },
+  "generation_release": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/execution/release.json",
+    "sha256": "95d214071c03b1dbf3dfec276146e3b1518fa9612a55f25b7bb3b27a86a1edba"
+  },
+  "generation_runtime": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/execution/runtime.json",
+    "sha256": "9d9e21fe7983d7c79a12b2a2fa6ab9d963f22236fcc27d03d5dd626035052529"
+  },
+  "generation_state": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/state.json",
+    "sha256": "f06c15bcdc5a2adf0096a88bce14942b1d0d24a94975977106adcbbe8fd9d64c"
+  },
+  "generation_launch": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/root_launch_process_snapshot.json",
+    "sha256": "8c0c515d15cb8535c25384f095e0138881a12d1f2f1000964eb93b9bea484aa6"
+  },
+  "generation_allocation": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/root_gpu_allocation.json",
+    "sha256": "78ca1037694cdda2ac66ddcc6315f307bf31a9210b923b18535fb8c02d4a6012"
+  },
+  "score_launch": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/root_score_launch_snapshot.json",
+    "sha256": "68589ae2f1a4bb2f0e1486aa4b445ef887fd8185c19d8ff5f3b5691e7cafbff8"
+  },
+  "paired_rows": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_k256_ds_pair/score/paired_rows.jsonl",
+    "sha256": "2beb90e66e4af861f1a3693a7ef1c821e76afc619e5bf7df3fbff5e3b36a6954"
+  },
+  "builder": {
+    "path": "/media/disk2/YZX/research/EADP_v2/docs/versions/v2/eadp_comparison_20261028/build_qwen_doc_k256_ds_diagnostic.py",
+    "sha256": "063d11c7cc91cf04f03258c215ba63479424e15a5e36568a05dc492125b29578"
+  },
+  "limits": [
+    "DS-on修改作者公开实现；高于论文62.8仅为数值距离，不能认证论文实际配方、覆盖原复现主行或当作新剪枝方法。",
+    "保持legacy位置策略，没有同时恢复原生mRoPE；仅在首次prefill联合开关DS及对应visual mask，后续KV和输出可自然变化。",
+    "两臂同实例逐题各重跑实际选择；固定16的32份真实数组已锚定，其余5333对高维张量只保存运行时摘要，无法事后独立重建。",
+    "旧完整K256未保存逐题内部状态；不能由本次off与旧值相同推断所有旧内部量相同。",
+    "两臂各4条无EOS并达到2048上限，NA转换分别7/6，全部5349分母保留；观测开销不能当效率测量。"
+  ]
+}

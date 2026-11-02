@@ -1,0 +1,56 @@
+{
+  "scope": "CPU/container guard namespace correction only; no GPU execution authorized by this preparation",
+  "run01_plan_sha256": "7701cfd2e78fb72f6a83855887dff611601c3cab00b01be6df6ff3ef0e21c835",
+  "unchanged_math_helpers": {
+    "run01_sha256": "9f82bd4dd57880947455cb58d4c885a08c0b7f7e42e77bdb6b08259d73125399",
+    "run02_sha256": "9f82bd4dd57880947455cb58d4c885a08c0b7f7e42e77bdb6b08259d73125399",
+    "byte_identical": true
+  },
+  "unchanged_CPU_formula_acceptance_script": {
+    "run01_sha256": "a8cf423797f99d6fae7412753e03db840660e810dfbd759d1fdd7ca71b9eacb7",
+    "run02_sha256": "a8cf423797f99d6fae7412753e03db840660e810dfbd759d1fdd7ca71b9eacb7",
+    "byte_identical": true
+  },
+  "all_native_loading_feature_capture_and_formula_selection_prefix_AST_equal": true,
+  "native_prefix_AST_sha256": "2c795d65f46207e577f93b3d5d81bd72fa9c47d91ee7d73abe7a45db51581168",
+  "source_pruner_and_wrapper_unmodified": true,
+  "changes": {
+    "formula_helpers.py": {
+      "run01_sha256": "9f82bd4dd57880947455cb58d4c885a08c0b7f7e42e77bdb6b08259d73125399",
+      "run02_sha256": "9f82bd4dd57880947455cb58d4c885a08c0b7f7e42e77bdb6b08259d73125399",
+      "byte_identical": true
+    },
+    "diagnose.py": {
+      "run01_sha256": "908d301a4e54106b188fe1062a472e54754276b35107251217b5c4a0ffc32e75",
+      "run02_sha256": "283061a38ca893945b0f748d2469c908884f08d8ca86e2feb6b753ee93eb4902",
+      "byte_identical": false
+    },
+    "run_panel.py": {
+      "run01_sha256": "fffbb516306f43a4160a0a6f6240aae0df6dd44fb2839e18ffdb5e387fcd1d0c",
+      "run02_sha256": "aeee2a27c4394fc683245dce6fe2629f2fa1d9948ab66bb68edbdd46a9c65645",
+      "byte_identical": false
+    },
+    "prepare_plan.py": {
+      "run01_sha256": "d8c72ca779cf661d51d96403073ede6a2e81ebeac489205cd8cc191e2628dd6f",
+      "run02_sha256": "5c5dd0c916328a05feb01c0a882224c5171ec33a214ea5f09ea2c7e8691eb51d",
+      "byte_identical": false
+    },
+    "cpu_acceptance.py": {
+      "run01_sha256": "a8cf423797f99d6fae7412753e03db840660e810dfbd759d1fdd7ca71b9eacb7",
+      "run02_sha256": "a8cf423797f99d6fae7412753e03db840660e810dfbd759d1fdd7ca71b9eacb7",
+      "byte_identical": true
+    },
+    "README.md": {
+      "run01_sha256": "3de272f0446ebaf26bd373dc5ab826a4659cec68614352a61d4805f6ea4d3f21",
+      "run02_sha256": "75bda803715494f2c850d639b97f97abb1edf0e5a4580373abfda9dd9b006842",
+      "byte_identical": false
+    }
+  },
+  "new_guard_files": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/namespace_guards.py": "02a6be2c0aeda20ef510207a30c96a95c86e533c78860e1a13dbdf818918da03",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/cpu_preflight.py": "05fbf8e705a5bacdcb0f17dd8f333ca6e3fc26b91548281fef54db6c3be71457",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/preflight.py": "123872d3fd990128564ebc0b125a9b50539fc5a8bc48170627f328feca457401"
+  },
+  "unified_diff_sha256": "b21aad10431606590af28e67da2180665c8f04484219082d00eb6dad4b0bcfe8",
+  "numerical_diff": "None: only terminal model-stat check uses the explicit container namespace. Native execution body through every source/identity/Eq6/Eq10 outcome is AST-identical."
+}

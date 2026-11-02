@@ -1,0 +1,3 @@
+﻿model,task,arm,method,n,nominal_tokens,paper_reference_value,official_value,local_value,diagnostic_minus_paper_reference,author_implementation_modified,native_NA_conversions,EOS_present,EOS_missing,at_max_tokens,conditions
+Qwen3-VL-8B,DocVQA,ds_off,公开 K256 路径：DS-off（本次重跑）,5349,256,62.8,61.166042248329354,61.166042248329276,-1.633957751670724,False,7,5345,4,4,同实例配对；FA2/BF16；5349题；同一实际256空间选择；首次prefill联合开关DS与visual mask；legacy位置策略保持；on修改公开实现，非paper配方
+Qwen3-VL-8B,DocVQA,ds_on,修改实现 K256：DS-on,5349,256,62.8,67.90310561305029,67.90310561305022,5.10310561305022,True,6,5345,4,4,同实例配对；FA2/BF16；5349题；同一实际256空间选择；首次prefill联合开关DS与visual mask；legacy位置策略保持；on修改公开实现，非paper配方

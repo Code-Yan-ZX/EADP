@@ -1,0 +1,74 @@
+[2026-11-02 21:19:23] ERROR - misc.py: load_env - 215: Did not detect the .env file at /media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/.env, failed to load. 
+You are attempting to use Flash Attention 2 without specifying a torch dtype. This might lead to unexpected behaviour
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:25<01:17, 25.88s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:53<00:54, 27.11s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [01:18<00:26, 26.03s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:35<00:00, 22.36s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:35<00:00, 23.83s/it]
+/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py:610: UserWarning: Specified kernel cache directory could not be created! This disables kernel caching. Specified directory is /tmp/eadp_cache/torch/kernels. This warning will appear only once per process. (Triggered internally at /pytorch/aten/src/ATen/native/cuda/jit_utils.cpp:1487.)
+  total_tokens = int(torch.prod(grid_thw, dim=1).sum().item())
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+warmup natural off
+warmup natural on
+natural 0 off 0.507 4
+natural 0 on 0.503 4
+natural 1 on 0.617 6
+natural 1 off 0.426 2
+natural 2 off 0.7 8
+natural 2 on 0.722 8
+natural 3 on 0.58 5
+natural 3 off 1.002 14
+natural 4 off 0.581 5
+natural 4 on 0.587 5
+natural 5 on 0.728 8
+natural 5 off 0.583 5
+natural 6 off 0.49 3
+natural 6 on 0.598 5
+natural 7 on 1.172 18
+natural 7 off 1.711 28
+natural 8 off 0.459 2
+natural 8 on 0.5 3
+natural 9 on 0.508 4
+natural 9 off 0.46 3
+natural 10 off 0.546 4
+natural 10 on 0.586 5
+natural 11 on 0.837 10
+natural 11 off 0.763 9
+natural 12 off 0.543 4
+natural 12 on 0.636 6
+natural 13 on 0.929 12
+natural 13 off 0.918 12
+natural 14 off 0.624 6
+natural 14 on 0.625 6
+natural 15 on 0.592 5
+natural 15 off 0.589 5
+warmup fixed32 off
+warmup fixed32 on
+fixed32 0 off 1.875 32
+fixed32 0 on 1.83 32
+fixed32 1 on 1.898 32
+fixed32 1 off 1.876 32
+fixed32 2 off 1.939 32
+fixed32 2 on 1.911 32
+fixed32 3 on 1.878 32
+fixed32 3 off 1.859 32
+fixed32 4 off 1.864 32
+fixed32 4 on 1.871 32
+fixed32 5 on 1.871 32
+fixed32 5 off 1.887 32
+fixed32 6 off 1.861 32
+fixed32 6 on 1.869 32
+fixed32 7 on 1.832 32
+fixed32 7 off 1.811 32
+fixed32 8 off 1.877 32
+fixed32 8 on 1.892 32
+fixed32 9 on 1.896 32
+fixed32 9 off 1.834 32
+fixed32 10 off 1.861 32
+fixed32 10 on 1.863 32
+fixed32 11 on 1.857 32
+fixed32 11 off 1.891 32
+fixed32 12 off 1.941 32
+fixed32 12 on 1.942 32
+fixed32 13 on 1.891 32
+fixed32 13 off 1.858 32
+fixed32 14 off 1.87 32
+fixed32 14 on 1.866 32
+fixed32 15 on 1.872 32
+fixed32 15 off 1.87 32

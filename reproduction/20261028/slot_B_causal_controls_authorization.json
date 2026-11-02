@@ -1,0 +1,32 @@
+{
+  "authorized_utc": "2026-10-28T11:14:16.525014+00:00",
+  "authorized_by": "/root",
+  "authorization_basis": "User active goal authorizes fresh author-source/dataset verification and full GPU reruns. Root completed CPU and independent peer review of these fixed causal controls.",
+  "kind": "Subsequent execution authorization after initially prepared-only phase; original frozen generation plans remain unchanged.",
+  "slot_A": "Reserved for existing public Qwen DocVQA then AI2D sequence in frozen container; no takeover.",
+  "slot_B_order": [
+    "Existing NeXT full5000 K128 alpha.5 beta1 threewait",
+    "POPE full8910 K32 alpha.5 beta1 threewait",
+    "MMB oldEN full4377 K128 alpha.5 beta2 threewait"
+  ],
+  "max_models_including_loading": 2,
+  "predecessor_requirements": [
+    "Complete ordered raw benchmark predictions",
+    "Author and independent full-denominator score consistency",
+    "Frozen source/input/weight/image guards",
+    "Actual original worker exit and GPU capacity"
+  ],
+  "all_outcomes_preserved": true,
+  "score_direction_used_as_gate": false,
+  "automatic_retry": false,
+  "reviewed_frozen_files": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/supervise_alpha_after_next.py": "5f4d3953beb75321daf8a90bb7322bbff1c1e8163b51f41b9c5333ff8d4a9bfc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/verify_next_predecessor.py": "bc00c7d7f4c93f2f8c6be670c453656d65c538a2ef1f8ef360c9301723e41623",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/run03_single_alpha05_beta1_wait_k32/supervisor_preparation.json": "12a1e68e218dbdd6904d4f3c7d6de29aa7f2d8ab8393a4fc058f989477b4858e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/run03_single_alpha05_beta1_wait_k32/run_plan.json": "bf40e511c27cf920dbd287d61126c405346f97fc37728cff3254af608aef5a70",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/beta2_control/supervise_after_pope_alpha.py": "da3c25a2fa63229d905fa1ca261d84605b7208c8282516668156adef34acae3b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/beta2_control/protocol.json": "f4a2eff7485313e8ee1bec7553c4897b60abb48ccd4beb34e165e20a09e49f40"
+  },
+  "peer_review": "latest_version_audit confirmed both supervisors and corrected terminal-state boundary before arming",
+  "goal_complete": false
+}

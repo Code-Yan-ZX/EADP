@@ -1,0 +1,43 @@
+{
+  "success": true,
+  "n": 5349,
+  "scores": {
+    "ds_off": {
+      "official": 61.166042248329354,
+      "independent": 61.166042248329276,
+      "all_pointwise_equal": true,
+      "NA_conversions": 7,
+      "per_question_sha256": "a4ca7f72f60b1638a5a1db36e1bc104ca0aee768aef3263b620e91fb5d8d7066",
+      "native_detail_sha256": "97527111a29f4728a4627a3bdd59f8e80ec7fd7a869777e5442ef1fb4d5100f5",
+      "native_input_sha256": "bba1431fcb85125a2e5950125b2be6ffaea68a8b4cd45ed2da29afb582ea57aa"
+    },
+    "ds_on": {
+      "official": 67.90310561305029,
+      "independent": 67.90310561305022,
+      "all_pointwise_equal": true,
+      "NA_conversions": 6,
+      "per_question_sha256": "09d1ca2e5f51714a04772d906001feffb8c9580310bc5146e3bc119f1323f8b9",
+      "native_detail_sha256": "0829a96c5ddf9f80fb10c6ef44905f46d420f6255c75bdd0504ab62193af858f",
+      "native_input_sha256": "e6da4c030a149532ef160f2b08418ea182497fe459b801686bac21eadb43af64"
+    }
+  },
+  "ds_on_minus_off": 6.737063364720939,
+  "changed_answers": 2446,
+  "improved": 1129,
+  "declined": 480,
+  "paired_rows_sha256": "2beb90e66e4af861f1a3693a7ef1c821e76afc619e5bf7df3fbff5e3b36a6954",
+  "all_generation_and_root_exit_before_first_score": true,
+  "full_denominators_preserved": true,
+  "CPU_only": true,
+  "model_loaded": false,
+  "CUDA_initialized": false,
+  "plan_sha256": "22f380977f660f1d6fdb7d0b0937ef6ff93cb2667f733874b321817b17f516d5",
+  "limits": [
+    "Same legacy-position paired implementation diagnosis, not the paper score or a new pruning method.",
+    "Old full K256 internal states were not saved; 16 previous exact paired arrays are the historical internal anchor.",
+    "For other 5333 pairs, actual high-dimensional arrays are hashed but not saved; independent verification cannot reconstruct those tensor values.",
+    "The old input preparation had previously read canonical data to construct the answer-free manifest; this task does not read GT or score files.",
+    "Changing DS can naturally change KV and generated suffix; compare continuation only for common generated prefixes.",
+    "Runtime and disk cost are instrumentation-dependent and not a model performance benchmark."
+  ]
+}

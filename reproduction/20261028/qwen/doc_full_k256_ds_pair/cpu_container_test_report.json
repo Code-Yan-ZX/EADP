@@ -1,0 +1,250 @@
+{
+  "status": "passed",
+  "plan_sha256": "22f380977f660f1d6fdb7d0b0937ef6ff93cb2667f733874b321817b17f516d5",
+  "source_sha256": {
+    "common.py": "8a99ddfae4fabe059fb4860b16aa492140002faa431d5a8d118e108b6216e33c",
+    "contracts.py": "839d03cf712630650acc9e8822584e5e9ebc8bc4d3a0432de9e4b0be68112ca8",
+    "intervention.py": "935365b3db9dac4e29cd425769c6e2eac2b3107d75ec25e7b2cdf03f934a2f95",
+    "selection_observer.py": "d6fe3f4906f31b2f76267e6d6a208d90ce770f2327c9eff0203e0228073ad8b8",
+    "worker_draft.py": "3aed9174c79136af12b2a66b7013be410442e66e6c89e00c8007eb2e62746d87",
+    "worker.py": "8acd4e477f80dfc671855c1b0022973458892cff57660c3af8f22b8148b1f4c3",
+    "controller.py": "d64cb210ce05b89ca12d24ff792480d5783187b4b4240d2229df0e5f129f4b91",
+    "prepare_plan.py": "1ef389210aad95dd713a0977ffc119f211587c17593ce206b62ad35a7149a74f",
+    "cpu_tests.py": "2cbd1d106fb53ac5b36bc53ebec689cb2a2dc145979c9f01233b7ea8f0669276",
+    "cpu_worker_hook_test.py": "d5a777d40b954adb755f77af5155fecda3eb0cf929d9262fcc437927dee6642d",
+    "cpu_reorder_test.py": "05399ac140656d72d2b547d2c5ea1df5cd935f4ec77aee6cd69836c9929c46e7",
+    "cpu_score_gate_test.py": "a3ce4f0cfba44fbf4f54c5517917ac66914f65d79f4b7fc1429e7162bbdc75f3",
+    "cpu_worker_archive_test.py": "9e5ede151052982dcb1333fdf54f847d10561cb0f6d3762f7aa12d88a865908f",
+    "reorder.py": "d8b76abdd2014793164bf8858b1d6eea0b5f171d45ebff405196a37573e4077f",
+    "cpu_container_entry.py": "4620f739bb683088bf1d05cf291c50ebd806c0f63b04571e3788420b99a43750",
+    "run_cpu_container_tests.py": "cbbde5ea1cbf36679d5a3997c1e1d3a014421dc2185bcc70501b7fd4c08cbbc6",
+    "cpu_preflight.py": "fa971c052ec4f046e2a48420e1a6e98f2024c66476e319e6e81927fe8203e98f",
+    "cpu_container_check.py": "1d36231c2f8b689432bbdae70456fa7677aec74397134f3dbd04f12d2c6a9334",
+    "score_terminal.py": "a6f96f5de464206b52e041d71392c465b8eb9f1bb1cfde0817652fde585794c3",
+    "verify_generation.py": "6c46e9c22ac97d8bd3c640034dec36dbfc473dfa8aeabb8e3185597fd5c5868f",
+    "test_verify_generation.py": "39df272b963e2cf5c33a79dad100bb8cad7d5637c9de8e4628adb320b2961962",
+    "README.md": "80c966bd7757c153349ba09266b51d157c9a0a0f01713cabcfcc559b0101b9cc"
+  },
+  "old_plan_sha256": "d752c876367803c5728ffa84a819fd63b4c129cfd0e2eb78931f7d94dae5d4ad",
+  "GPU_requested": false,
+  "create_exit": 0,
+  "create_stdout": "d770982e763ffbdbd7bf9ebf04677489a7afc4b806e8215d4029678272ac0b3c\n",
+  "create_stderr": "",
+  "container_id": "d770982e763ffbdbd7bf9ebf04677489a7afc4b806e8215d4029678272ac0b3c",
+  "mount_proof": {
+    "all_requested_bind_sources_and_readonly_flags_verified": true,
+    "GPU_devices_requested": false,
+    "actual_devices": [],
+    "bind_records": [
+      {
+        "requested": {
+          "source": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct",
+          "destination": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct",
+          "readonly": true
+        },
+        "actual": {
+          "Type": "bind",
+          "Source": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct",
+          "Destination": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        "source_resolves_identically": true
+      },
+      {
+        "requested": {
+          "source": "/home/dell/miniconda3",
+          "destination": "/home/dell/miniconda3",
+          "readonly": true
+        },
+        "actual": {
+          "Type": "bind",
+          "Source": "/home/dell/miniconda3",
+          "Destination": "/home/dell/miniconda3",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        "source_resolves_identically": true
+      },
+      {
+        "requested": {
+          "source": "/media/disk2/YZX/LMUData",
+          "destination": "/media/disk2/YZX/LMUData",
+          "readonly": true
+        },
+        "actual": {
+          "Type": "bind",
+          "Source": "/media/disk2/YZX/LMUData",
+          "Destination": "/media/disk2/YZX/LMUData",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        "source_resolves_identically": true
+      },
+      {
+        "requested": {
+          "source": "/media/disk2/YZX/research/EADP_v2",
+          "destination": "/media/disk2/YZX/research/EADP_v2",
+          "readonly": false
+        },
+        "actual": {
+          "Type": "bind",
+          "Source": "/media/disk2/YZX/research/EADP_v2",
+          "Destination": "/media/disk2/YZX/research/EADP_v2",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        },
+        "source_resolves_identically": true
+      },
+      {
+        "requested": {
+          "source": "/usr/bin/nvidia-smi",
+          "destination": "/usr/bin/nvidia-smi",
+          "readonly": true
+        },
+        "actual": {
+          "Type": "bind",
+          "Source": "/usr/bin/nvidia-smi",
+          "Destination": "/usr/bin/nvidia-smi",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        "source_resolves_identically": true
+      },
+      {
+        "requested": {
+          "source": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+          "destination": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+          "readonly": true
+        },
+        "actual": {
+          "Type": "bind",
+          "Source": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+          "Destination": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        "source_resolves_identically": true
+      },
+      {
+        "requested": {
+          "source": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+          "destination": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+          "readonly": true
+        },
+        "actual": {
+          "Type": "bind",
+          "Source": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+          "Destination": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        "source_resolves_identically": true
+      },
+      {
+        "requested": {
+          "source": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+          "destination": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+          "readonly": true
+        },
+        "actual": {
+          "Type": "bind",
+          "Source": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+          "Destination": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        "source_resolves_identically": true
+      },
+      {
+        "requested": {
+          "source": "/usr/bin/nvidia-smi",
+          "destination": "/usr/local/nvidia/bin/nvidia-smi",
+          "readonly": true
+        },
+        "actual": {
+          "Type": "bind",
+          "Source": "/usr/bin/nvidia-smi",
+          "Destination": "/usr/local/nvidia/bin/nvidia-smi",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        "source_resolves_identically": true
+      },
+      {
+        "requested": {
+          "source": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+          "destination": "/usr/local/nvidia/lib64/libcuda.so.1",
+          "readonly": true
+        },
+        "actual": {
+          "Type": "bind",
+          "Source": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+          "Destination": "/usr/local/nvidia/lib64/libcuda.so.1",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        "source_resolves_identically": true
+      },
+      {
+        "requested": {
+          "source": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+          "destination": "/usr/local/nvidia/lib64/libnvidia-ml.so.1",
+          "readonly": true
+        },
+        "actual": {
+          "Type": "bind",
+          "Source": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+          "Destination": "/usr/local/nvidia/lib64/libnvidia-ml.so.1",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        "source_resolves_identically": true
+      },
+      {
+        "requested": {
+          "source": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+          "destination": "/usr/local/nvidia/lib64/libnvidia-ptxjitcompiler.so.1",
+          "readonly": true
+        },
+        "actual": {
+          "Type": "bind",
+          "Source": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+          "Destination": "/usr/local/nvidia/lib64/libnvidia-ptxjitcompiler.so.1",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        "source_resolves_identically": true
+      }
+    ]
+  },
+  "actual_exit": 0,
+  "stdout": "{\"plan_sha256\": \"22f380977f660f1d6fdb7d0b0937ef6ff93cb2667f733874b321817b17f516d5\", \"success\": true, \"tests\": 25, \"hook_tests\": 14, \"verifier_tests\": 11, \"torch_version\": \"2.8.0+cu128\", \"GPU_devices_present\": false, \"CUDA_initialized\": false, \"model_loaded\": false}\n",
+  "stderr": "test_duplicate_missing_and_wrong_id_fail (cpu_reorder_test.Tests) ... ok\ntest_restores_order_without_changing_rows (cpu_reorder_test.Tests) ... ok\ntest_missing_root_proof_fails_without_gt_access (cpu_score_gate_test.Tests) ... ok\ntest_invalid_mask_and_ids_rejected (cpu_tests.Tests) ... ok\ntest_observer_error_does_not_change_original_result (cpu_tests.Tests) ... ok\ntest_prefill_and_rope_perturbations_rejected (cpu_tests.Tests) ... ok\ntest_selection_and_nonvisual_perturbations_rejected (cpu_tests.Tests) ... ok\ntest_selection_observer_returns_original_object_and_restores (cpu_tests.Tests) ... ok\ntest_signed_zero_bytes_rejected_despite_equal_values (cpu_tests.Tests) ... ok\ntest_success_changes_only_two_fields_and_spatial_rows (cpu_tests.Tests) ... ok\ntest_real_worker_capture_and_fixed16_independent_anchor (cpu_worker_archive_test.Tests) ... ok\ntest_failed_hook_installation_cleans_up_and_preserves_failure (cpu_worker_hook_test.Tests) ... ok\ntest_paired_hooks_and_native_response (cpu_worker_hook_test.Tests) ... ok\ntest_selection_difference_saves_native_response_before_failure (cpu_worker_hook_test.Tests) ... ok\ntest_continuation_difference_reported_only_on_same_prefix (test_verify_generation.Tests) ... ok\ntest_continuation_missing_and_present_ds_rejected (test_verify_generation.Tests) ... ok\ntest_eos_and_limit (test_verify_generation.Tests) ... ok\ntest_greedy_order_invalid_or_spatial_not_sorted_rejected (test_verify_generation.Tests) ... ok\ntest_invalid_output_and_failure_rejected (test_verify_generation.Tests) ... ok\ntest_ordered_is_exact_permutation_preserving_payload_and_ids (test_verify_generation.Tests) ... ok\ntest_pair_source_and_positions_must_agree (test_verify_generation.Tests) ... ok\ntest_real_saved_fixed16_archive_anchor_and_tamper (test_verify_generation.Tests) ... ok\ntest_reconstruction_and_pruner_summary_must_match (test_verify_generation.Tests) ... ok\ntest_valid_both_and_pair (test_verify_generation.Tests) ... ok\ntest_wrong_mask_and_all_three_selected_layers_rejected (test_verify_generation.Tests) ... ok\n\n----------------------------------------------------------------------\nRan 25 tests in 24.220s\n\nOK\n",
+  "terminal_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-10-30T13:01:24.452648674Z",
+    "FinishedAt": "2026-10-30T13:01:55.360288355Z"
+  },
+  "remove_exit": 0
+}

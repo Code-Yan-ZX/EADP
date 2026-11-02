@@ -1,0 +1,89 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><title>EADP V2 论文与本机复现对比</title>
+<style>body{font:15px/1.6 system-ui,sans-serif;margin:32px;color:#202020}table{border-collapse:collapse;width:100%;margin:20px 0 32px}th,td{padding:8px 12px;border-bottom:1px solid #ddd;text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}th{background:#eee}small,p{max-width:1100px}a{color:#1651a0}</style>
+<h1>EADP V2：论文与本机复现对比</h1><p>当前快照：2026-10-31T00:44:18+08:00。以下保留29组历史合格配对，末尾单列12次新完整运行。原始comparison保持不变。</p><p>每格为：论文 → 本机（本机−论文）；—表示本轮没有可采用的本机复现值。MME、OCRBench差值为原始分数，其余为百分点。论文值按原文精度，本机与差值保留三位小数。</p>
+<h2>LLaVA-1.5-7B</h2><table><thead><tr><th>任务</th><th>128 tokens</th><th>64 tokens</th><th>32 tokens</th></tr></thead><tbody>
+<tr><td>VQAv2</td><td>76.7 → —</td><td>75.6 → —</td><td>74 → —</td></tr>
+<tr><td>GQA</td><td>60 → 59.652 (-0.348)</td><td>59.4 → —</td><td>58.2 → —</td></tr>
+<tr><td>VizWiz</td><td>58 → 57.884† (-0.116)</td><td>59.5 → —</td><td>59.3 → —</td></tr>
+<tr><td>SQA_IMG</td><td>69 → 69.559 (+0.559)</td><td>68.9 → 68.815 (-0.085)</td><td>69.3 → 68.765 (-0.535)</td></tr>
+<tr><td>TextVQA</td><td>56.5 → 56.390 (-0.110)</td><td>55 → 54.918 (-0.082)</td><td>52.7 → 52.532 (-0.168)</td></tr>
+<tr><td>POPE</td><td>87.2 → 87.520 (+0.320)</td><td>86.5 → —</td><td>86.7 → 84.074 (-2.626)</td></tr>
+<tr><td>MME</td><td>1439 → 1431.982 (-7.018)</td><td>1403.6 → —</td><td>1347 → —</td></tr>
+<tr><td>MMB_EN</td><td>62.7 → 60.062 (-2.638)</td><td>61.9 → —</td><td>59.4 → —</td></tr>
+<tr><td>MMB_CN</td><td>55.2 → —</td><td>53.1 → —</td><td>50.1 → —</td></tr>
+<tr><td>MMVet</td><td>32.5 → —</td><td>29.4 → —</td><td>30.6 → —</td></tr>
+<tr><td>Avg9</td><td>63.5 → —</td><td>62.2 → —</td><td>60.9 → —</td></tr>
+</tbody></table>
+<h2>LLaVA-NeXT-7B</h2><table><thead><tr><th>任务</th><th>640 tokens</th><th>320 tokens</th><th>160 tokens</th></tr></thead><tbody>
+<tr><td>VQAv2</td><td>80 → —</td><td>78.6 → —</td><td>77 → —</td></tr>
+<tr><td>GQA</td><td>62.7 → 62.864 (+0.164)</td><td>62.2 → —</td><td>61.6 → —</td></tr>
+<tr><td>VizWiz</td><td>60.6 → 60.678† (+0.078)</td><td>60.4 → —</td><td>60.2 → —</td></tr>
+<tr><td>SQA_IMG</td><td>68 → 67.824 (-0.176)</td><td>67.6 → 67.229 (-0.371)</td><td>67.4 → 67.476 (+0.076)</td></tr>
+<tr><td>TextVQA</td><td>59.2 → 57.866 (-1.334)</td><td>57 → 55.410 (-1.590)</td><td>54.2 → 52.086 (-2.114)</td></tr>
+<tr><td>POPE</td><td>87.4 → —</td><td>86.9 → —</td><td>86 → —</td></tr>
+<tr><td>MME</td><td>1494.7 → —</td><td>1491.3 → —</td><td>1419.5 → —</td></tr>
+<tr><td>MMB_EN</td><td>66.5 → —</td><td>64.6 → —</td><td>63.4 → —</td></tr>
+<tr><td>MMB_CN</td><td>57.9 → —</td><td>55.9 → —</td><td>54.6 → —</td></tr>
+<tr><td>MMVet</td><td>40.1 → —</td><td>39.4 → —</td><td>35.6 → —</td></tr>
+<tr><td>Avg9</td><td>66.3 → —</td><td>65.2 → —</td><td>63.4 → —</td></tr>
+</tbody></table>
+<h2>Qwen3-VL-8B</h2><table><thead><tr><th>任务</th><th>512 tokens</th><th>256 tokens</th><th>128 tokens</th></tr></thead><tbody>
+<tr><td>TextVQA</td><td>75.2 → —</td><td>71.4 → 71.042 (-0.358)</td><td>66.1 → —</td></tr>
+<tr><td>ChartQA</td><td>65.9 → —</td><td>55.5 → 54.800 (-0.700)</td><td>43.6 → —</td></tr>
+<tr><td>AI2D</td><td>77.7 → —</td><td>75.7 → 74.547 (-1.153)</td><td>73.6 → —</td></tr>
+<tr><td>OCRBench</td><td>673 → —</td><td>625 → 623.000 (-2.000)</td><td>550 → —</td></tr>
+<tr><td>HallusionBench</td><td>42.5 → —</td><td>42.8 → —</td><td>40.2 → —</td></tr>
+<tr><td>MME</td><td>2261.1 → —</td><td>2202.4 → 2212.695 (+10.295)</td><td>2200.2 → —</td></tr>
+<tr><td>MMB_EN</td><td>81.6 → —</td><td>80.5 → 79.876 (-0.624)</td><td>79.9 → —</td></tr>
+<tr><td>MMB_CN</td><td>79.7 → —</td><td>78.9 → 78.870 (-0.030)</td><td>78.4 → —</td></tr>
+<tr><td>DocVQA</td><td>77.7 → —</td><td>62.8 → 61.136 (-1.664)</td><td>45.3 → —</td></tr>
+<tr><td>InfoVQA</td><td>49.9 → —</td><td>42.3 → 42.390 (+0.090)</td><td>35.3 → —</td></tr>
+<tr><td>Avg10</td><td>73.1 → —</td><td>68.2 → —</td><td>62.7 → —</td></tr>
+</tbody></table>
+<p>† VizWiz：4319题，EADP发布评分器；本机控制参数alpha=0、beta=1、max128。NeXT预算为名义总数，640/320/160对应CLI128/64/32。SQA使用本机已审计输入；POPE为实际8910题（random2910）。MMBench EN本机使用V11，未确认与论文题集版本完全一致。Qwen本机采用legacy（DeepStack关闭、1D位置），论文完整运行参数未核实。跨论文数值差不等于严格同配置误差的归因。</p>
+<p>补充核验新增9项Qwen K256及2项真实EADP VizWiz。HallusionBench的预测/评分存在，但生成时剪枝bank身份未闭合，不纳入正式本机值。完整本机平均分保持缺失。</p>
+<p><a href="comparison.csv">完整CSV</a> · <a href="comparison.json">逐项来源与比较说明</a> · <a href="supplemental_provenance.json">本次补充核验来源</a></p><h2>新完成并通过完整终端核验的重跑</h2><table><thead><tr><th>模型／任务／条件</th><th>名义tokens</th><th>论文</th><th>本机</th><th>差值</th><th>题数</th></tr></thead><tbody>
+<tr><td>LLaVA-1.5-7B／MMB_EN／α0.5／β1；原公开代码</td><td>128</td><td>62.7</td><td>61.565</td><td>-1.135</td><td>4377</td></tr>
+<tr><td>LLaVA-1.5-7B／MMB_EN／α0.5／β1；补三处CUDA同步</td><td>128</td><td>62.7</td><td>61.565</td><td>-1.135</td><td>4377</td></tr>
+<tr><td>LLaVA-1.5-7B／POPE／α1／β1；原公开代码</td><td>32</td><td>86.7</td><td>77.394</td><td>-9.306</td><td>8910</td></tr>
+<tr><td>LLaVA-1.5-7B／POPE／α1／β1；补三处CUDA同步</td><td>32</td><td>86.7</td><td>82.220</td><td>-4.480</td><td>8910</td></tr>
+<tr><td>LLaVA-NeXT-7B／TextVQA／α0.5／β1；补三处CUDA同步</td><td>640</td><td>59.2</td><td>56.944</td><td>-2.256</td><td>5000</td></tr>
+<tr><td>LLaVA-1.5-7B／POPE／α0.5／β1；补三处CUDA同步</td><td>32</td><td>86.7</td><td>82.706</td><td>-3.994</td><td>8910</td></tr>
+<tr><td>LLaVA-1.5-7B／MMB_EN／α0.5／β2；补三处CUDA同步</td><td>128</td><td>62.7</td><td>61.395</td><td>-1.305</td><td>4377</td></tr>
+<tr><td>Qwen3-VL-8B／DocVQA／α0.5／β2；flash_attention_2</td><td>256</td><td>62.8</td><td>61.166</td><td>-1.634</td><td>5349</td></tr>
+<tr><td>Qwen3-VL-8B／AI2D／α0.5／β2；flash_attention_2；作者API失败后精确匹配回退，论文judge尚未复现</td><td>256</td><td>75.7</td><td>74.352</td><td>-1.348</td><td>3088</td></tr>
+<tr><td>LLaVA-NeXT-7B／TextVQA／α0.5／β1；补三处CUDA同步</td><td>320</td><td>57</td><td>54.900</td><td>-2.100</td><td>5000</td></tr>
+<tr><td>LLaVA-NeXT-7B／TextVQA／α0.5／β1；补三处CUDA同步；仅问句CLIP指导假设；LLM完整OCR不变；paper argv未确认</td><td>320</td><td>57</td><td>54.958</td><td>-2.042</td><td>5000</td></tr>
+<tr><td>LLaVA-1.5-7B／POPE／α1／β2；补三处CUDA同步；固定β单点对照；paper argv未确认</td><td>32</td><td>86.7</td><td>84.279</td><td>-2.421</td><td>8910</td></tr>
+</tbody></table><p>MMB新三次运行均为旧EN4377行/1176循环组，与历史V11分母不同；公开匹配helper已复核，外部服务器judge未执行。POPE原代码重复输入冲突231/2334，补同步后的两次为0/2334；所有运行均保留。作者主表完整argv尚未闭合。</p>
+<p>Qwen新完整运行采用作者公开FA2配方，DocVQA5349题、AI2D3088题；全部进程实际退出及整段终端核验通过。AI2D为原生API检查连接失败后源码精确匹配回退，与独立can_infer逐题一致；不声称论文API judge已复现。历史Doc生成时的确切包版本/backend未闭合，当前旧环境的安装状态不能替代当时记录。</p>
+<h2>FULL基线对照</h2><p>单列用于排查基础路径与剪枝损失，不替代EADP剪枝结果；历史基线的运行条件见备注。</p><table><thead><tr><th>模型／任务</th><th>论文FULL</th><th>本机FULL</th><th>差值</th><th>条件</th></tr></thead><tbody>
+<tr><td>v15／POPE</td><td>85.9</td><td>85.879</td><td>-0.021</td><td>历史完整基线重新评分；两份完整回答相同</td></tr>
+<tr><td>v15／MMB_EN</td><td>64.7</td><td>64.371</td><td>-0.329</td><td>本轮完整新生成；旧EN4377/1176组；每题实际576 tokens；公开exact circular</td></tr>
+<tr><td>next／TextVQA</td><td>60.3</td><td>60.370</td><td>+0.070</td><td>历史完整基线重新评分；每题实际2880 tokens；一位小数为60.4</td></tr>
+<tr><td>qwen／DocVQA</td><td>94.5</td><td>94.484</td><td>-0.016</td><td>历史注册FULL路径；当时版本/backend及逐题tokens未记录，不是新FA2同环境对照</td></tr>
+<tr><td>qwen／DocVQA／原生多模态 FULL</td><td>94.5</td><td>94.482</td><td>-0.018</td><td>同模型、同FA2/BF16、原生多模态生成；5349题；逐题1024个视觉输入</td></tr>
+<tr><td>qwen／DocVQA／EADP K1024 全token路径（诊断）</td><td>94.5</td><td>87.825</td><td>-6.675</td><td>同模型、同FA2/BF16；显式未注册EADP K1024、无裁剪；inputs_embeds生成；5349题</td></tr>
+</tbody></table><p><a href="full_path_calibrations.csv">原FULL基线CSV</a> · <a href="full_path_calibrations.json">原FULL来源与条件JSON</a></p>
+<p>Qwen DocVQA两条新完整路径为同模型、同FA2环境下的5349题配对校准：EADP K1024全token路径减原生多模态FULL为 -6.656 个百分点，1189题原回答不同。K1024是显式构造、作者未注册的诊断配置；两条路径同时存在多处差异，不能单独归因DeepStack或mRoPE，也不确认论文主表参数。旧Qwen FULL基线仍独立保留。</p>
+<p><a href="qwen_doc_full_two_routes_calibration.json">Qwen双FULL路径数据与来源</a></p>
+<h3>Qwen DocVQA：同路径 DeepStack 开关诊断</h3><p>各5349题、全部1024视觉tokens；仅首次prefill联合开关DeepStack与对应visual mask。下列差值为开关减同路径已完成基线，不是论文差值，也不加入12次剪枝主运行。</p><table><thead><tr><th>路径／开关</th><th>原基线ANLS</th><th>开关后ANLS</th><th>变化（点）</th><th>回答变化</th><th>条件</th></tr></thead><tbody>
+<tr><td>原生 FULL：关闭 DeepStack</td><td>94.481578</td><td>92.385504</td><td>-2.096074</td><td>666／5349</td><td>同路径跨运行对照；FA2/BF16；5349题；全部1024视觉tokens；仅首次prefill开关DeepStack与对应visual mask；固定16锚，非论文K256配方</td></tr>
+<tr><td>EADP K1024 全token：开启 DeepStack</td><td>87.825406</td><td>91.310071</td><td>+3.484665</td><td>1155／5349</td><td>同路径跨运行对照；FA2/BF16；5349题；全部1024视觉tokens；仅首次prefill开关DeepStack与对应visual mask；固定16锚，非论文K256配方</td></tr>
+</tbody></table><p>旧全量基线未保存全部逐题内部张量与数值标志，只有固定16端点和变体跨运行锚定；这是有条件的同路径跨运行对照。新全量高维张量只留运行时摘要，不能事后独立重建；干预可自然改变后续KV与生成。两条API仍有其他区别，不能用这两个差值完整分摊总路径差，也不能外推K256或确认论文原配方。</p>
+<p><a href="qwen_doc_full_ds_toggles_calibration.csv">DeepStack诊断CSV</a> · <a href="qwen_doc_full_ds_toggles_calibration.json">DeepStack诊断数据、退出证明及来源SHA</a></p>
+<h2>Qwen DocVQA K256：同实例实现诊断</h2><p>各5349题、同一模型实例、同一实际256空间选择；仅首次prefill联合开关DeepStack与对应visual mask，legacy位置策略保持。此表独立于论文剪枝行、12次主运行和FULL校准；DS-on修改作者公开实现，不能称论文实际复现或新的剪枝方法。</p><table><thead><tr><th>路径／实现</th><th>论文数值参考</th><th>诊断ANLS</th><th>相对参考（仅数值）</th><th>题数</th><th>条件</th></tr></thead><tbody>
+<tr><td>公开 K256 路径：DS-off（本次重跑）</td><td>62.8</td><td>61.166042</td><td>-1.633958</td><td>5349</td><td>同实例配对；FA2/BF16；5349题；同一实际256空间选择；首次prefill联合开关DS与visual mask；legacy位置策略保持；on修改公开实现，非paper配方</td></tr>
+<tr><td>修改实现 K256：DS-on</td><td>62.8</td><td>67.903106</td><td>+5.103106</td><td>5349</td><td>同实例配对；FA2/BF16；5349题；同一实际256空间选择；首次prefill联合开关DS与visual mask；legacy位置策略保持；on修改公开实现，非paper配方</td></tr>
+</tbody></table><p>本次同实例DS-on减DS-off：+6.737063 个百分点；2446／5349题原回答改变，逐题ANLS提高1129、降低480、不变3740。原公开K256复现61.166042与论文62.8的主行保持；DS-on高于论文只表示数值距离，不确认paper argv。</p>
+<p>没有同时恢复原生mRoPE，后续KV与生成可随干预自然变化；不把分歧后的状态当同条件。固定16题的32份真实数组已锚定，其余5333对高维张量仅保存运行时摘要，不能事后独立重建。旧全量内部状态未逐题保存；本次off分数相同不证明所有旧内部量相同。两臂各4条无EOS且达到2048上限、NA转换分别7／6，均保留全部5349分母；观测开销不作为效率结果。</p>
+<p><a href="qwen_doc_k256_ds_diagnostic.csv">K256实现诊断CSV</a> · <a href="qwen_doc_k256_ds_diagnostic.json">K256实现诊断数据、评分与退出来源SHA</a></p>
+<h2>MMB K128：同实例CLIP指导内容诊断</h2><p>各4377行、1176完整循环组；同一LLaVA-1.5-7B、K128／α.5／β1／q.2、三次wait，完整LLM提示保持。仅问题臂启用作者公开源码未启用的注释边界，去除选项、部分行的hint并改变分段，不是单一长度控制或已确认的论文原配方；此表不覆盖论文主行、12次主运行或已有校准。</p><table><thead><tr><th>指导内容</th><th>论文数值参考</th><th>公开exact＋本地循环组</th><th>独立字母＋循环组</th><th>相对参考（仅数值）</th><th>正确组</th></tr></thead><tbody>
+<tr><td>完整提示CLIP指导（同实例重跑）</td><td>62.7</td><td>61.564626</td><td>61.564626</td><td>-1.135374</td><td>724／1176</td></tr>
+<tr><td>仅问题CLIP指导（启用原注释边界）</td><td>62.7</td><td>62.159864</td><td>62.159864</td><td>-0.540136</td><td>731／1176</td></tr>
+</tbody></table><p>仅问题减完整指导：+0.595238 个百分点；15组改善、8组退步，净增加7组。95／4377回答及输出IDs改变，4372行最终mask及视觉输入改变；source有1141／1176组mask随轮换变化，仅问题臂全部1176组内mask恒定。8754输出均含EOS、未到1024上限，全部分母保留。</p>
+<p>上述公开exact为作者仓库辅助函数加本地循环计分；未运行外部官方服务器或judge，不能声称等同论文实际评分服务。固定60行的120次真实数组已锚定，非锚高维仅保存运行时摘要，无法事后独立重建。准备期读取过含GT原TSV字节但只解析输入列，生成和验收使用净化输入，完整终验及根退出后才读取GT评分。</p>
+<p>首轮尺寸元组／JSON列表检查失败及真实输出保留；run02仅修该检查。评分根PTY实际exit0和容器ID／不运行可证，但短时评分容器PID的start_ticks未记录，不能重建完整PID身份。此诊断不能确认论文argv，也不替代原公开路径结果。</p>
+<p><a href="mmb_guidance_diagnostic.csv">MMB指导诊断CSV</a> · <a href="mmb_guidance_diagnostic.json">MMB指导诊断来源、失败记录与退出证明SHA</a></p>
+<p>台账尚待完整核验：0项；核验失败：0项。该快照不宣称整体复现成功，运行状态需重新检查真实进程。</p>
+<p><a href="current_comparison.csv">当前完整CSV</a> · <a href="current_comparison.json">当前来源与状态JSON</a></p></html>

@@ -30,3 +30,9 @@ env/
 .DS_Store
 *.swp
 _upstream/
+
+# Isolated upstream checkouts, runtime overlays, and downloaded binary inputs.
+/_reproduction/
+/reproduction/**/inputs/*.zip
+/reproduction/**/inputs/*.tsv
+/reproduction/**/inputs/*.part

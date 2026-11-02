@@ -1,0 +1,5 @@
+﻿model,task,method,n,nominal_tokens,paper_value,local_value,local_minus_paper,unit,generation,same_one_decimal,conditions
+v15,POPE,FULL,8910,576,85.9,85.87870689695657,-0.02129310304343,percentage_points,historical_rechecked,True,历史完整基线重新评分；两份完整回答相同
+v15,MMB_EN,FULL,4377,576,64.7,64.37074829931973,-0.32925170068027,percentage_points,new_complete_generation,False,本轮完整新生成；旧EN4377/1176组；每题实际576 tokens；公开exact circular
+next,TextVQA,FULL,5000,2880,60.3,60.37,0.07,percentage_points,historical_rechecked,False,历史完整基线重新评分；每题实际2880 tokens；一位小数为60.4
+qwen,DocVQA,FULL,5349,1024,94.5,94.48396316710652,-0.01603683289348,percentage_points,historical_registered_full_route_rechecked,True,历史注册FULL路径；当时版本/backend及逐题tokens未记录，不是新FA2同环境对照

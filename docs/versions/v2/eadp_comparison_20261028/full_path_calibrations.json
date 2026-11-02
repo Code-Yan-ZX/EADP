@@ -1,0 +1,122 @@
+{
+  "created_utc": "2026-10-28T13:59:44.339884+00:00",
+  "definition": "FULL-path calibration only; kept outside the 99 paper pruning cells and 9 new EADP runs. No maximum selection or missing-task average.",
+  "sources": [
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/docs/versions/v2/evidence.json",
+      "sha256": "8f41a119427a78b360a244949c9f8a0e44dd6fe0e6f615390cccd3b3615b2013"
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/docs/versions/v2/eadp_comparison_20261028/build_full_path_calibrations.py",
+      "sha256": "d1aaacb3fc1edebbc89fe60247fd93c4023eac84eaff7af41714cbf922ec8190"
+    }
+  ],
+  "rows": [
+    {
+      "model": "v15",
+      "task": "POPE",
+      "method": "FULL",
+      "n": 8910,
+      "nominal_tokens": 576,
+      "paper_value": 85.9,
+      "local_value": 85.87870689695657,
+      "local_minus_paper": "-0.02129310304343",
+      "unit": "percentage_points",
+      "generation": "historical_rechecked",
+      "same_one_decimal": true,
+      "conditions": "历史完整基线重新评分；两份完整回答相同",
+      "report": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/baseline_full_rescore/baseline_full_summary.json",
+        "sha256": "5dea93323de5309e0a2599dd29fe453f5ea176af2e377c0baf34c3ffd703709e"
+      },
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/v15_pope_FULL_streamwait_attempt2.jsonl",
+        "sha256": "2802bbe11f765c30a6b0f7c9d1b481beadaf0baa2556f13511d9ddd7d058ca96"
+      },
+      "additional_evidence": [],
+      "paper_evidence_id": "paper:T1:0:FULL:POPE:as_reported"
+    },
+    {
+      "model": "v15",
+      "task": "MMB_EN",
+      "method": "FULL",
+      "n": 4377,
+      "nominal_tokens": 576,
+      "paper_value": 64.7,
+      "local_value": 64.37074829931973,
+      "local_minus_paper": "-0.32925170068027",
+      "unit": "percentage_points",
+      "generation": "new_complete_generation",
+      "same_one_decimal": false,
+      "conditions": "本轮完整新生成；旧EN4377/1176组；每题实际576 tokens；公开exact circular",
+      "report": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/full_token_baseline_control/independent_verification.json",
+        "sha256": "b4227aaec954a0b9aeaa640b334518d85b32fe4d2785f5a30f2ed9080a2d2252"
+      },
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/full_token_baseline_control/v15_FULL_oldEN_streamwait.jsonl",
+        "sha256": "f1e6551e554b05f41fd02d0700248f7d55caa7dfcadc9dde15accc1d6eb749b7"
+      },
+      "additional_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/full_token_baseline_control/root_terminal_process_proof.json",
+          "sha256": "d6de5ea7ecce86c90676dbea6962aacfcc146360c9d7d025dca1600d2ae4c869"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/full_token_baseline_control/peer_terminal_review.json",
+          "sha256": "0c4464d958d717da687a830429f1952271cf39e624b3c87a27204ab603291685"
+        }
+      ],
+      "paper_evidence_id": "paper:T1:0:FULL:MMB_EN:as_reported"
+    },
+    {
+      "model": "next",
+      "task": "TextVQA",
+      "method": "FULL",
+      "n": 5000,
+      "nominal_tokens": 2880,
+      "paper_value": 60.3,
+      "local_value": 60.37,
+      "local_minus_paper": "0.07",
+      "unit": "percentage_points",
+      "generation": "historical_rechecked",
+      "same_one_decimal": false,
+      "conditions": "历史完整基线重新评分；每题实际2880 tokens；一位小数为60.4",
+      "report": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_token_baseline_recheck/baseline_recheck.json",
+        "sha256": "1433989686cc10cc2c6029a4b355f06a6a0f8fc6851cb2017f74e8dedef2ae29"
+      },
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/streamwait_continuation_20261008/next_text_FULL_streamwait.jsonl",
+        "sha256": "58109ce963376c51d150da2437036e12651abaa5d0d746a2e75560520afcba4d"
+      },
+      "additional_evidence": [],
+      "paper_evidence_id": "paper:T2:0:FULL:TextVQA:as_reported"
+    },
+    {
+      "model": "qwen",
+      "task": "DocVQA",
+      "method": "FULL",
+      "n": 5349,
+      "nominal_tokens": 1024,
+      "paper_value": 94.5,
+      "local_value": 94.48396316710652,
+      "local_minus_paper": "-0.01603683289348",
+      "unit": "percentage_points",
+      "generation": "historical_registered_full_route_rechecked",
+      "same_one_decimal": true,
+      "conditions": "历史注册FULL路径；当时版本/backend及逐题tokens未记录，不是新FA2同环境对照",
+      "report": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/full_doc_baseline_recheck/baseline_recheck.json",
+        "sha256": "29275be39dc9215b0264f3e02d61ee82089ace6100de0d2470e67debe00f3c18"
+      },
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/mosaic/Qwen3-VL-8B-Instruct-1024/T20260929_G1e8effd7/Qwen3-VL-8B-Instruct-1024_DocVQA_VAL.xlsx",
+        "sha256": "5a7d0915c2e2a0d80e231e109410f8af2fac238f275f2dfbdca80fa0b37de58b"
+      },
+      "additional_evidence": [],
+      "paper_evidence_id": "paper:T4:0:FULL:DocVQA:as_reported"
+    }
+  ],
+  "goal_complete": false
+}

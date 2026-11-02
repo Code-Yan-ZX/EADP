@@ -1,0 +1,58 @@
+{
+  "root_owned_exec_handle": 86476,
+  "root_owned_exec_actual_exit_code": 0,
+  "root_pty_exit_evidence": "Caller attests actual root-owned PTY completion; script cannot observe session itself.",
+  "all_original_processes_exited": true,
+  "container_not_running": true,
+  "container_id": "9cded2b4b77447bd2986b887db3e3e43cd5a5942fb77193b0b0d157cfed38d90",
+  "plan_sha256": "22f380977f660f1d6fdb7d0b0937ef6ff93cb2667f733874b321817b17f516d5",
+  "controller_state_sha256": "f06c15bcdc5a2adf0096a88bce14942b1d0d24a94975977106adcbbe8fd9d64c",
+  "launch_snapshot_sha256": "8c0c515d15cb8535c25384f095e0138881a12d1f2f1000964eb93b9bea484aa6",
+  "allocation_sha256": "78ca1037694cdda2ac66ddcc6315f307bf31a9210b923b18535fb8c02d4a6012",
+  "release_sha256": "95d214071c03b1dbf3dfec276146e3b1518fa9612a55f25b7bb3b27a86a1edba",
+  "independent_verification_sha256": "b8657133c11535fb73d68f6aaaa5c7c90c027eb00fe38f2046bb6fa0642efae9",
+  "process_checks": [
+    {
+      "role": "controller",
+      "original": {
+        "pid": 2404504,
+        "start_ticks": 1349689506,
+        "session_id": 2404504,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "original_exited": true,
+      "current_identity": null
+    },
+    {
+      "role": "docker_client",
+      "original": {
+        "pid": 2404526,
+        "start_ticks": 1349689787,
+        "session_id": 2404504,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "original_exited": true,
+      "current_identity": null
+    },
+    {
+      "role": "host_init",
+      "original": {
+        "pid": 2404590,
+        "start_ticks": 1349689796,
+        "session_id": 2404590,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "original_exited": true,
+      "current_identity": null
+    }
+  ],
+  "docker_inspection": {
+    "inspect_exit_code": 1,
+    "container_absent": true,
+    "running": false
+  },
+  "gpu_pids_after": [
+    2614483
+  ],
+  "created_utc": "2026-10-30T15:33:28.383841+00:00"
+}

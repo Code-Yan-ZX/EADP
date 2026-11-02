@@ -1,0 +1,217 @@
+{
+  "n": 64,
+  "modes": {
+    "natural": {
+      "n_pairs": 16,
+      "seconds": {
+        "off": {
+          "mean": 0.6813844775315374,
+          "median": 0.5817314591258764,
+          "min": 0.4264998361468315,
+          "max": 1.7111255265772343
+        },
+        "on": {
+          "mean": 0.6700674239546061,
+          "median": 0.6074332753196359,
+          "min": 0.500048641115427,
+          "max": 1.1718391347676516
+        },
+        "on_minus_off_paired": {
+          "mean": -0.011317053576931357,
+          "median": 0.030904360115528107,
+          "min": -0.5392863918095827,
+          "max": 0.19039446488022804
+        },
+        "relative_mean_percent": -1.6608910167619118
+      },
+      "prefill_gpu_ms": {
+        "off": {
+          "mean": 78.87799119949341,
+          "median": 78.59507369995117,
+          "min": 78.03279876708984,
+          "max": 81.20626831054688
+        },
+        "on": {
+          "mean": 80.4612922668457,
+          "median": 80.35943984985352,
+          "min": 79.72937774658203,
+          "max": 81.86962890625
+        },
+        "on_minus_off_paired": {
+          "mean": 1.583301067352295,
+          "median": 1.7099380493164062,
+          "min": -0.254974365234375,
+          "max": 2.5966720581054688
+        },
+        "relative_mean_percent": 2.0072786379002894
+      },
+      "peak_allocated_MiB": {
+        "off": {
+          "mean": 16932.291015625,
+          "median": 16932.27783203125,
+          "min": 16932.25830078125,
+          "max": 16932.38330078125
+        },
+        "on": {
+          "mean": 16932.291015625,
+          "median": 16932.27783203125,
+          "min": 16932.25830078125,
+          "max": 16932.38330078125
+        },
+        "on_minus_off_paired": {
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "relative_mean_percent": 0.0
+      },
+      "output_tokens": {
+        "off": {
+          "mean": 7.125,
+          "median": 5.0,
+          "min": 2.0,
+          "max": 28.0
+        },
+        "on": {
+          "mean": 6.875,
+          "median": 5.5,
+          "min": 3.0,
+          "max": 18.0
+        },
+        "on_minus_off_paired": {
+          "mean": -0.25,
+          "median": 0.5,
+          "min": -10.0,
+          "max": 4.0
+        },
+        "relative_mean_percent": -3.508771929824561
+      },
+      "output_length_changed_pairs": 10,
+      "no_eos": {
+        "off": 0,
+        "on": 0
+      },
+      "hit_2048": {
+        "off": 0,
+        "on": 0
+      },
+      "last_token_eos": {
+        "off": 16,
+        "on": 16
+      },
+      "response_changed_pairs": 11
+    },
+    "fixed32": {
+      "n_pairs": 16,
+      "seconds": {
+        "off": {
+          "mean": 1.8733638274716213,
+          "median": 1.8699463196098804,
+          "min": 1.8114053681492805,
+          "max": 1.9408423863351345
+        },
+        "on": {
+          "mean": 1.8773968778550625,
+          "median": 1.8717219782993197,
+          "min": 1.8304229117929935,
+          "max": 1.9423231147229671
+        },
+        "on_minus_off_paired": {
+          "mean": 0.00403305038344115,
+          "median": 0.004494957625865936,
+          "min": -0.044642481952905655,
+          "max": 0.061562806367874146
+        },
+        "relative_mean_percent": 0.21528388262328502
+      },
+      "prefill_gpu_ms": {
+        "off": {
+          "mean": 78.89040756225586,
+          "median": 78.73587417602539,
+          "min": 78.2027816772461,
+          "max": 80.22630310058594
+        },
+        "on": {
+          "mean": 80.47394037246704,
+          "median": 80.41267395019531,
+          "min": 79.82284545898438,
+          "max": 81.7734375
+        },
+        "on_minus_off_paired": {
+          "mean": 1.5835328102111816,
+          "median": 1.7135391235351562,
+          "min": 0.2823333740234375,
+          "max": 2.0642547607421875
+        },
+        "relative_mean_percent": 2.007256470264207
+      },
+      "peak_allocated_MiB": {
+        "off": {
+          "mean": 16932.291015625,
+          "median": 16932.27783203125,
+          "min": 16932.25830078125,
+          "max": 16932.38330078125
+        },
+        "on": {
+          "mean": 16932.291015625,
+          "median": 16932.27783203125,
+          "min": 16932.25830078125,
+          "max": 16932.38330078125
+        },
+        "on_minus_off_paired": {
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "relative_mean_percent": 0.0
+      },
+      "output_tokens": {
+        "off": {
+          "mean": 32.0,
+          "median": 32.0,
+          "min": 32.0,
+          "max": 32.0
+        },
+        "on": {
+          "mean": 32.0,
+          "median": 32.0,
+          "min": 32.0,
+          "max": 32.0
+        },
+        "on_minus_off_paired": {
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "relative_mean_percent": 0.0
+      },
+      "output_length_changed_pairs": 0,
+      "no_eos": {
+        "off": 16,
+        "on": 16
+      },
+      "hit_2048": {
+        "off": 0,
+        "on": 0
+      },
+      "last_token_eos": {
+        "off": 0,
+        "on": 0
+      },
+      "response_changed_pairs": 16
+    }
+  },
+  "natural_token_ids_equal_prior": 32,
+  "all_selected_ids_equal_prior": 64,
+  "limitations": [
+    "one measured call per arm per sample, 16 fixed DocVQA questions",
+    "same single model, paired and alternate order; not all tasks or devices",
+    "natural output length differs; fixed32 changes generation termination",
+    "peak is PyTorch allocated, not nvidia-smi total or all external CUDA allocations",
+    "prefill GPU event includes on-side gather and injection plus first language-model forward",
+    "wall includes image reading, preprocessing, visual encoder, pruning, generation, token decode and lightweight instrumentation; excludes model load and scoring"
+  ]
+}

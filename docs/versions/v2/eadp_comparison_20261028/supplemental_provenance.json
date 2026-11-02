@@ -1,0 +1,881 @@
+{
+  "schema_version": 1,
+  "scope": "Read-only supplemental trace audit for EADP reproduction-vs-paper comparison; original V2 evidence.json unchanged.",
+  "source_registry": {
+    "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/additional_reproduction_audit_20261009/coverage_inventory.json",
+    "sha256": "0a8eddb16bff98487ee7cecde1341d1ba702f15209cbd5ba3688164e231c9013"
+  },
+  "records": [
+    {
+      "id": "supplement:qwen:256:EADP:TextVQA",
+      "origin": "local_experiment",
+      "method": "EADP",
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B",
+      "budget_cli": 256,
+      "budget_nominal": 256,
+      "task": "TextVQA",
+      "value": 71.04200000000034,
+      "metric": "official VQA accuracy (%)",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/archive_recovery/20261003_r2/old_predictions/old_TextVQA_VAL.xlsx",
+        "sha256": "8bddf88560bef34a4afc6da2cd5373e5cdb203531429c2eaf50ee8a2ce2f18ce",
+        "count": 5000,
+        "format": ".xlsx"
+      },
+      "score_source": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/archive_recovery/20261003_r2/old_rescored.json",
+        "sha256": "7db04a1222f9f984f453c8cdeb85ef458d396821c2753843e1417aeb1915ab58",
+        "value_field": "TextVQA_VAL.headline"
+      },
+      "run_source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/audit_base_gap_20261003/archive_recovery/20261003_r2/archive_manifest.json",
+          "sha256": "4572fef646118d381a3e45d0460e97b3738cbc608c01736481d79b553c3fa978"
+        },
+        {
+          "path": "/media/disk2/YZX/research/audit_base_gap_20261003/archive_recovery/20261003_r2/provenance_old_run.md",
+          "sha256": "442d1ca746a92005bfe7b0fbf34b75491637747e5512af585264ee64eec3f2fb"
+        },
+        {
+          "path": "/media/disk2/YZX/research/audit_base_gap_20261003/archive_recovery/20261003_r2/rescore_old_predictions.py",
+          "sha256": "35ac11c6c6342f72d7c7f7f7c78fcaebb47a5423f770fc5d61cac9354fc3db83"
+        }
+      ],
+      "protocol": {
+        "K": 256,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "resolution": 1024,
+        "deepstack": false,
+        "position": "1d"
+      },
+      "protocol_caveat": [
+        "Legacy = DeepStack off / 1d positions; native restored results cannot replace this cell.",
+        "Paper authors actual complete runtime argv unverified; local full results do not establish all paper configurations reproduced."
+      ],
+      "paper_value": 71.4,
+      "local_minus_paper": -0.35799999999966303,
+      "verification": "Raw/score recorded SHA and full count verified; exact stored score agrees with unified summary. No new benchmark scoring/GPU.",
+      "status": "verified_supplement"
+    },
+    {
+      "id": "supplement:qwen:256:EADP:ChartQA",
+      "origin": "local_experiment",
+      "method": "EADP",
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B",
+      "budget_cli": 256,
+      "budget_nominal": 256,
+      "task": "ChartQA",
+      "value": 54.800000000000004,
+      "metric": "official relaxed accuracy (%)",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/ChartQA_TEST.json",
+        "sha256": "919fbe3b8850e00393d967229c716669c236e0d209ca8814f813a7c8d357b3f7",
+        "count": 2500,
+        "format": ".json"
+      },
+      "score_source": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/ChartQA_TEST_score.json",
+        "sha256": "b742500460c4c01826c1ffb4c77f5eb4de2d59a44432028cfefb0323adbeac9c",
+        "value_field": "official.Overall"
+      },
+      "run_source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/ChartQA_TEST_pred.tsv",
+          "sha256": "6b56a7ed48958437acf3ccae0faaa9fb1110c8c621a2b7f9dd4cb58188667805"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_p1_driver.sh",
+          "sha256": "b8c2a2a57c0f37584f98b244534a0614719d181ca6c1a31bd345a6aa46a885d3"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_p1_analyze.py",
+          "sha256": "ae95cd340b4cd89937d5872cf1f4e83dd3b0e8cb001aded04bdd376b5af6bf92"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/p1_p4_recheck.py",
+          "sha256": "48b3462ba5e4aba1cd15acb7dde4f7bff04597c5860abe6888b52adefecf53bf"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_legacy.py",
+          "sha256": "9f584a0161d1f724150cefc34949a74cfe89d556bfb8345740b9e1cfae6a8c14"
+        }
+      ],
+      "protocol": {
+        "arm": "L_E_GATHER",
+        "pipeline": "official_legacy",
+        "panel": "full",
+        "ds": "ChartQA_TEST",
+        "K": 256,
+        "legacy": {
+          "deepstack": false,
+          "pos": "1d"
+        },
+        "bank_sha256": "e1656918d5406bc9009d20538d7f532aedbfac67dd20432385b15101fd4738cd",
+        "bank_reused_from": "anchor_completion_validation/bank_full",
+        "cfg": {
+          "kind": "base",
+          "lam": 0.0,
+          "selector": "b1",
+          "K": 256
+        },
+        "base_commit": "02741a1931df",
+        "max_new_tokens": 2048
+      },
+      "protocol_caveat": [
+        "Legacy = DeepStack off / 1d positions; native restored results cannot replace this cell.",
+        "Paper authors actual complete runtime argv unverified; local full results do not establish all paper configurations reproduced."
+      ],
+      "paper_value": 55.5,
+      "local_minus_paper": -0.6999999999999957,
+      "verification": "Raw/score recorded SHA and full count verified; exact stored score agrees with unified summary. No new benchmark scoring/GPU.",
+      "selection_bank": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/bank_full_ChartQA_TEST.json.gz",
+        "current_sha256": "e1656918d5406bc9009d20538d7f532aedbfac67dd20432385b15101fd4738cd",
+        "recorded_generation_sha256": "e1656918d5406bc9009d20538d7f532aedbfac67dd20432385b15101fd4738cd",
+        "matches": true
+      },
+      "status": "verified_supplement"
+    },
+    {
+      "id": "supplement:qwen:256:EADP:AI2D",
+      "origin": "local_experiment",
+      "method": "EADP",
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B",
+      "budget_cli": 256,
+      "budget_nominal": 256,
+      "task": "AI2D",
+      "value": 74.54663212435233,
+      "metric": "official exact-match accuracy (%)",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/AI2D_TEST.json",
+        "sha256": "2cf0084ac077fcf3ca4ef2f1320e7f988a2b3ad091431642d40d5421285eb1f3",
+        "count": 3088,
+        "format": ".json"
+      },
+      "score_source": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/AI2D_TEST_score.json",
+        "sha256": "c771daaa260120e5bbc0ef7a65ebab92d4c09dfd103b8b6ddb69533f7b466469",
+        "value_field": "official.Overall"
+      },
+      "run_source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/AI2D_TEST_pred.tsv",
+          "sha256": "3c70f72548bd6d5c118d26e9ed294b4e6d100fbd11930281aeb495fc9cd10efd"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_p1_driver.sh",
+          "sha256": "b8c2a2a57c0f37584f98b244534a0614719d181ca6c1a31bd345a6aa46a885d3"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_p1_analyze.py",
+          "sha256": "ae95cd340b4cd89937d5872cf1f4e83dd3b0e8cb001aded04bdd376b5af6bf92"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/p1_p4_recheck.py",
+          "sha256": "48b3462ba5e4aba1cd15acb7dde4f7bff04597c5860abe6888b52adefecf53bf"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_legacy.py",
+          "sha256": "9f584a0161d1f724150cefc34949a74cfe89d556bfb8345740b9e1cfae6a8c14"
+        }
+      ],
+      "protocol": {
+        "arm": "L_E_GATHER",
+        "pipeline": "official_legacy",
+        "panel": "full",
+        "ds": "AI2D_TEST",
+        "K": 256,
+        "legacy": {
+          "deepstack": false,
+          "pos": "1d"
+        },
+        "bank_sha256": "5b406a801fe0cc7b97c33124b67c54a87c27bae08d4e0e67146b6217eae3bb70",
+        "bank_reused_from": "anchor_completion_validation/bank_full",
+        "cfg": {
+          "kind": "base",
+          "lam": 0.0,
+          "selector": "b1",
+          "K": 256
+        },
+        "base_commit": "02741a1931df",
+        "max_new_tokens": 2048
+      },
+      "protocol_caveat": [
+        "Legacy = DeepStack off / 1d positions; native restored results cannot replace this cell.",
+        "Paper authors actual complete runtime argv unverified; local full results do not establish all paper configurations reproduced."
+      ],
+      "paper_value": 75.7,
+      "local_minus_paper": -1.1533678756476746,
+      "verification": "Raw/score recorded SHA and full count verified; exact stored score agrees with unified summary. No new benchmark scoring/GPU.",
+      "selection_bank": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/bank_full_AI2D_TEST.json.gz",
+        "current_sha256": "5b406a801fe0cc7b97c33124b67c54a87c27bae08d4e0e67146b6217eae3bb70",
+        "recorded_generation_sha256": "5b406a801fe0cc7b97c33124b67c54a87c27bae08d4e0e67146b6217eae3bb70",
+        "matches": true
+      },
+      "status": "verified_supplement"
+    },
+    {
+      "id": "supplement:qwen:256:EADP:OCRBench",
+      "origin": "local_experiment",
+      "method": "EADP",
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B",
+      "budget_cli": 256,
+      "budget_nominal": 256,
+      "task": "OCRBench",
+      "value": 623,
+      "metric": "OCRBench raw score (maximum1000)",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/archive_recovery/20261003_r2/old_predictions/old_OCRBench.xlsx",
+        "sha256": "032eef5991270ed68664684e8438de4acb0938de67676de8d81c84045faf415f",
+        "count": 1000,
+        "format": ".xlsx"
+      },
+      "score_source": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/archive_recovery/20261003_r2/old_rescored.json",
+        "sha256": "7db04a1222f9f984f453c8cdeb85ef458d396821c2753843e1417aeb1915ab58",
+        "value_field": "OCRBench.Final Score"
+      },
+      "run_source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/audit_base_gap_20261003/archive_recovery/20261003_r2/archive_manifest.json",
+          "sha256": "4572fef646118d381a3e45d0460e97b3738cbc608c01736481d79b553c3fa978"
+        },
+        {
+          "path": "/media/disk2/YZX/research/audit_base_gap_20261003/archive_recovery/20261003_r2/provenance_old_run.md",
+          "sha256": "442d1ca746a92005bfe7b0fbf34b75491637747e5512af585264ee64eec3f2fb"
+        },
+        {
+          "path": "/media/disk2/YZX/research/audit_base_gap_20261003/archive_recovery/20261003_r2/rescore_old_predictions.py",
+          "sha256": "35ac11c6c6342f72d7c7f7f7c78fcaebb47a5423f770fc5d61cac9354fc3db83"
+        }
+      ],
+      "protocol": {
+        "K": 256,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "resolution": 1024,
+        "deepstack": false,
+        "position": "1d"
+      },
+      "protocol_caveat": [
+        "Legacy = DeepStack off / 1d positions; native restored results cannot replace this cell.",
+        "Paper authors actual complete runtime argv unverified; local full results do not establish all paper configurations reproduced."
+      ],
+      "paper_value": 625.0,
+      "local_minus_paper": -2.0,
+      "verification": "Raw/score recorded SHA and full count verified; exact stored score agrees with unified summary. No new benchmark scoring/GPU.",
+      "status": "verified_supplement"
+    },
+    {
+      "id": "supplement:qwen:256:EADP:MME",
+      "origin": "local_experiment",
+      "method": "EADP",
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B",
+      "budget_cli": 256,
+      "budget_nominal": 256,
+      "task": "MME",
+      "value": 2212.694677871148,
+      "metric": "MME perception+cognition total raw points",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/MME.json",
+        "sha256": "688d640a4b629b479313e2637c0010ceb369c6758d7316df6b3469e44d36ee12",
+        "count": 2374,
+        "format": ".json"
+      },
+      "score_source": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/MME_score.json",
+        "sha256": "6c693b47013f90b75dba9d3af2ba260d8bfa88d743b746a1ed40c8f7532b5e45",
+        "value_field": "official.perception[0]+official.reasoning[0]"
+      },
+      "run_source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/MME_pred.tsv",
+          "sha256": "e4424dc0d942a7b91ca7e30d9479c80f1f75c27109c3c35743f9631c8f24590e"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_p1_driver.sh",
+          "sha256": "b8c2a2a57c0f37584f98b244534a0614719d181ca6c1a31bd345a6aa46a885d3"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_p1_analyze.py",
+          "sha256": "ae95cd340b4cd89937d5872cf1f4e83dd3b0e8cb001aded04bdd376b5af6bf92"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/p1_p4_recheck.py",
+          "sha256": "48b3462ba5e4aba1cd15acb7dde4f7bff04597c5860abe6888b52adefecf53bf"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_legacy.py",
+          "sha256": "9f584a0161d1f724150cefc34949a74cfe89d556bfb8345740b9e1cfae6a8c14"
+        }
+      ],
+      "protocol": {
+        "arm": "L_E_GATHER",
+        "pipeline": "official_legacy",
+        "panel": "full",
+        "ds": "MME",
+        "K": 256,
+        "legacy": {
+          "deepstack": false,
+          "pos": "1d"
+        },
+        "bank_sha256": "caa832f89019efdceda01d1242e5964c2cd4509ad928322e03dcfb2848d8aae5",
+        "bank_reused_from": "anchor_completion_validation/bank_full",
+        "cfg": {
+          "kind": "base",
+          "lam": 0.0,
+          "selector": "b1",
+          "K": 256
+        },
+        "base_commit": "02741a1931df",
+        "max_new_tokens": 2048
+      },
+      "protocol_caveat": [
+        "Legacy = DeepStack off / 1d positions; native restored results cannot replace this cell.",
+        "Paper authors actual complete runtime argv unverified; local full results do not establish all paper configurations reproduced."
+      ],
+      "paper_value": 2202.4,
+      "local_minus_paper": 10.294677871147996,
+      "verification": "Raw/score recorded SHA and full count verified; exact stored score agrees with unified summary. No new benchmark scoring/GPU.",
+      "selection_bank": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/bank_full_MME.json.gz",
+        "current_sha256": "caa832f89019efdceda01d1242e5964c2cd4509ad928322e03dcfb2848d8aae5",
+        "recorded_generation_sha256": "caa832f89019efdceda01d1242e5964c2cd4509ad928322e03dcfb2848d8aae5",
+        "matches": true
+      },
+      "status": "verified_supplement"
+    },
+    {
+      "id": "supplement:qwen:256:EADP:MMB_EN",
+      "origin": "local_experiment",
+      "method": "EADP",
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B",
+      "budget_cli": 256,
+      "budget_nominal": 256,
+      "task": "MMB_EN",
+      "value": 79.87616099071208,
+      "metric": "MMBench circular accuracy (%)",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/MMBench_DEV_EN_V11.json",
+        "sha256": "2fd32efc4f474c8bd61504beb536a2388d60ec8c1c7b1f49aed102412830404a",
+        "count": 4876,
+        "format": ".json"
+      },
+      "score_source": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/MMBench_DEV_EN_V11_score.json",
+        "sha256": "3701c2fb9d1c4c60a1d836e5720adf1590ed9a35310821ba56ba203ee4a94bdc",
+        "value_field": "official.Overall"
+      },
+      "run_source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/MMBench_DEV_EN_V11_pred.tsv",
+          "sha256": "d4b850c1799bd0abc06166cba8bb22e010ced8b9db3dc1b43672ceae18649b5c"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_p1_driver.sh",
+          "sha256": "b8c2a2a57c0f37584f98b244534a0614719d181ca6c1a31bd345a6aa46a885d3"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_p1_analyze.py",
+          "sha256": "ae95cd340b4cd89937d5872cf1f4e83dd3b0e8cb001aded04bdd376b5af6bf92"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/p1_p4_recheck.py",
+          "sha256": "48b3462ba5e4aba1cd15acb7dde4f7bff04597c5860abe6888b52adefecf53bf"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_legacy.py",
+          "sha256": "9f584a0161d1f724150cefc34949a74cfe89d556bfb8345740b9e1cfae6a8c14"
+        }
+      ],
+      "protocol": {
+        "arm": "L_E_GATHER",
+        "pipeline": "official_legacy",
+        "panel": "full",
+        "ds": "MMBench_DEV_EN_V11",
+        "K": 256,
+        "legacy": {
+          "deepstack": false,
+          "pos": "1d"
+        },
+        "bank_sha256": "405901ba6000b3acae1d4f00f57b6a570913ecfcc818259822310ac4e322ebe1",
+        "bank_reused_from": "anchor_completion_validation/bank_full",
+        "cfg": {
+          "kind": "base",
+          "lam": 0.0,
+          "selector": "b1",
+          "K": 256
+        },
+        "base_commit": "02741a1931df",
+        "max_new_tokens": 2048
+      },
+      "protocol_caveat": [
+        "Legacy = DeepStack off / 1d positions; native restored results cannot replace this cell.",
+        "Paper authors actual complete runtime argv unverified; local full results do not establish all paper configurations reproduced."
+      ],
+      "paper_value": 80.5,
+      "local_minus_paper": -0.62383900928792,
+      "verification": "Raw/score recorded SHA and full count verified; exact stored score agrees with unified summary. No new benchmark scoring/GPU.",
+      "selection_bank": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/bank_full_MMBench_DEV_EN_V11.json.gz",
+        "current_sha256": "405901ba6000b3acae1d4f00f57b6a570913ecfcc818259822310ac4e322ebe1",
+        "recorded_generation_sha256": "405901ba6000b3acae1d4f00f57b6a570913ecfcc818259822310ac4e322ebe1",
+        "matches": true
+      },
+      "status": "verified_supplement"
+    },
+    {
+      "id": "supplement:qwen:256:EADP:MMB_CN",
+      "origin": "local_experiment",
+      "method": "EADP",
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B",
+      "budget_cli": 256,
+      "budget_nominal": 256,
+      "task": "MMB_CN",
+      "value": 78.86996904024768,
+      "metric": "MMBench circular accuracy (%)",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/MMBench_DEV_CN_V11.json",
+        "sha256": "7ce4f8b8916352d557cda15d736c697c12842ed2bbe8436e5d8517e91a3be23b",
+        "count": 4876,
+        "format": ".json"
+      },
+      "score_source": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/MMBench_DEV_CN_V11_score.json",
+        "sha256": "93a1d30202f9bedf3313627652804d901537948ec2a6c8cc044d86176b38cc46",
+        "value_field": "official.Overall"
+      },
+      "run_source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/MMBench_DEV_CN_V11_pred.tsv",
+          "sha256": "f84b2e8e3adba1fa23dba4a164a719818f8ace5a5303839e0de1599c346f217c"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_p1_driver.sh",
+          "sha256": "b8c2a2a57c0f37584f98b244534a0614719d181ca6c1a31bd345a6aa46a885d3"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_p1_analyze.py",
+          "sha256": "ae95cd340b4cd89937d5872cf1f4e83dd3b0e8cb001aded04bdd376b5af6bf92"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/p1_p4_recheck.py",
+          "sha256": "48b3462ba5e4aba1cd15acb7dde4f7bff04597c5860abe6888b52adefecf53bf"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_legacy.py",
+          "sha256": "9f584a0161d1f724150cefc34949a74cfe89d556bfb8345740b9e1cfae6a8c14"
+        }
+      ],
+      "protocol": {
+        "arm": "L_E_GATHER",
+        "pipeline": "official_legacy",
+        "panel": "full",
+        "ds": "MMBench_DEV_CN_V11",
+        "K": 256,
+        "legacy": {
+          "deepstack": false,
+          "pos": "1d"
+        },
+        "bank_sha256": "ba323521532d11626bd054303a3f364e10b937b10c40b4065d574721bf393d70",
+        "bank_reused_from": "anchor_completion_validation/bank_full",
+        "cfg": {
+          "kind": "base",
+          "lam": 0.0,
+          "selector": "b1",
+          "K": 256
+        },
+        "base_commit": "02741a1931df",
+        "max_new_tokens": 2048
+      },
+      "protocol_caveat": [
+        "Legacy = DeepStack off / 1d positions; native restored results cannot replace this cell.",
+        "Paper authors actual complete runtime argv unverified; local full results do not establish all paper configurations reproduced."
+      ],
+      "paper_value": 78.9,
+      "local_minus_paper": -0.030030959752323838,
+      "verification": "Raw/score recorded SHA and full count verified; exact stored score agrees with unified summary. No new benchmark scoring/GPU.",
+      "selection_bank": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/bank_full_MMBench_DEV_CN_V11.json.gz",
+        "current_sha256": "ba323521532d11626bd054303a3f364e10b937b10c40b4065d574721bf393d70",
+        "recorded_generation_sha256": "ba323521532d11626bd054303a3f364e10b937b10c40b4065d574721bf393d70",
+        "matches": true
+      },
+      "status": "verified_supplement"
+    },
+    {
+      "id": "supplement:qwen:256:EADP:DocVQA",
+      "origin": "local_experiment",
+      "method": "EADP",
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B",
+      "budget_cli": 256,
+      "budget_nominal": 256,
+      "task": "DocVQA",
+      "value": 61.135577708229846,
+      "metric": "official ANLS (%)",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/archive_recovery/20261003_r2/old_predictions/old_DocVQA_VAL.xlsx",
+        "sha256": "3066a258532725f6181b3f5c4a1d84ee230e7ebe7bb00dcf44b18c99ad3c823c",
+        "count": 5349,
+        "format": ".xlsx"
+      },
+      "score_source": {
+        "path": "/media/disk2/YZX/research/audit_base_gap_20261003/archive_recovery/20261003_r2/old_rescored.json",
+        "sha256": "7db04a1222f9f984f453c8cdeb85ef458d396821c2753843e1417aeb1915ab58",
+        "value_field": "DocVQA_VAL.headline"
+      },
+      "run_source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/audit_base_gap_20261003/archive_recovery/20261003_r2/archive_manifest.json",
+          "sha256": "4572fef646118d381a3e45d0460e97b3738cbc608c01736481d79b553c3fa978"
+        },
+        {
+          "path": "/media/disk2/YZX/research/audit_base_gap_20261003/archive_recovery/20261003_r2/provenance_old_run.md",
+          "sha256": "442d1ca746a92005bfe7b0fbf34b75491637747e5512af585264ee64eec3f2fb"
+        },
+        {
+          "path": "/media/disk2/YZX/research/audit_base_gap_20261003/archive_recovery/20261003_r2/rescore_old_predictions.py",
+          "sha256": "35ac11c6c6342f72d7c7f7f7c78fcaebb47a5423f770fc5d61cac9354fc3db83"
+        }
+      ],
+      "protocol": {
+        "K": 256,
+        "alpha": 0.5,
+        "beta": 2.0,
+        "resolution": 1024,
+        "deepstack": false,
+        "position": "1d"
+      },
+      "protocol_caveat": [
+        "Legacy = DeepStack off / 1d positions; native restored results cannot replace this cell.",
+        "Paper authors actual complete runtime argv unverified; local full results do not establish all paper configurations reproduced."
+      ],
+      "paper_value": 62.8,
+      "local_minus_paper": -1.6644222917701512,
+      "verification": "Raw/score recorded SHA and full count verified; exact stored score agrees with unified summary. No new benchmark scoring/GPU.",
+      "status": "verified_supplement"
+    },
+    {
+      "id": "supplement:qwen:256:EADP:InfoVQA",
+      "origin": "local_experiment",
+      "method": "EADP",
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B",
+      "budget_cli": 256,
+      "budget_nominal": 256,
+      "task": "InfoVQA",
+      "value": 42.39013063219771,
+      "metric": "official ANLS (%)",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/InfoVQA_VAL.json",
+        "sha256": "d46853fd8ac7d147de1419f11f75538e47f7adb0733be6b192f9282fe68585f6",
+        "count": 2801,
+        "format": ".json"
+      },
+      "score_source": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/InfoVQA_VAL_score.json",
+        "sha256": "3017c10cc8e5adfe813531e5d93798073d47aeffebfac49eec91eb7b4fae045b",
+        "value_field": "official.Overall"
+      },
+      "run_source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/InfoVQA_VAL_pred.tsv",
+          "sha256": "ae361ef45e9366051777ad104e21f6ae7ebc5a5010aa3e64936b4e8b1f293db6"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_p1_driver.sh",
+          "sha256": "b8c2a2a57c0f37584f98b244534a0614719d181ca6c1a31bd345a6aa46a885d3"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_p1_analyze.py",
+          "sha256": "ae95cd340b4cd89937d5872cf1f4e83dd3b0e8cb001aded04bdd376b5af6bf92"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/p1_p4_recheck.py",
+          "sha256": "48b3462ba5e4aba1cd15acb7dde4f7bff04597c5860abe6888b52adefecf53bf"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_legacy.py",
+          "sha256": "9f584a0161d1f724150cefc34949a74cfe89d556bfb8345740b9e1cfae6a8c14"
+        }
+      ],
+      "protocol": {
+        "arm": "L_E_GATHER",
+        "pipeline": "official_legacy",
+        "panel": "full",
+        "ds": "InfoVQA_VAL",
+        "K": 256,
+        "legacy": {
+          "deepstack": false,
+          "pos": "1d"
+        },
+        "bank_sha256": "0b6b8c91adf2b4db0367c6a858c65429dba08718fe8ac426182ac7437310c164",
+        "bank_reused_from": "anchor_completion_validation/bank_full",
+        "cfg": {
+          "kind": "base",
+          "lam": 0.0,
+          "selector": "b1",
+          "K": 256
+        },
+        "base_commit": "02741a1931df",
+        "max_new_tokens": 2048
+      },
+      "protocol_caveat": [
+        "Legacy = DeepStack off / 1d positions; native restored results cannot replace this cell.",
+        "Paper authors actual complete runtime argv unverified; local full results do not establish all paper configurations reproduced."
+      ],
+      "paper_value": 42.3,
+      "local_minus_paper": 0.09013063219771311,
+      "verification": "Raw/score recorded SHA and full count verified; exact stored score agrees with unified summary. No new benchmark scoring/GPU.",
+      "selection_bank": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/bank_full_InfoVQA_VAL.json.gz",
+        "current_sha256": "0b6b8c91adf2b4db0367c6a858c65429dba08718fe8ac426182ac7437310c164",
+        "recorded_generation_sha256": "0b6b8c91adf2b4db0367c6a858c65429dba08718fe8ac426182ac7437310c164",
+        "matches": true
+      },
+      "status": "verified_supplement"
+    },
+    {
+      "id": "supplement:v15:128:EADP:VizWiz",
+      "origin": "local_experiment",
+      "method": "EADP",
+      "model": "v15",
+      "model_name": "LLaVA-1.5-7B",
+      "budget_cli": 128,
+      "budget_nominal": 128,
+      "task": "VizWiz",
+      "value": 57.88376939106275,
+      "metric": "EADP released VizWiz accuracy (%); normalized min(matches/3,1)",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_E128_streamwait.jsonl",
+        "sha256": "4820cf34fe00eebe423a596291ce40afcc5ddcc18f4d930e1416f6ec0ad12857",
+        "count": 4319,
+        "format": ".jsonl"
+      },
+      "score_source": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/author_confirmed_vizwiz_scores_20261010.json",
+        "sha256": "56b8ac367245b2962e32d0f5f7acec2003b87ec00a026d6fbabc86eb0fb620b7",
+        "row_id": "v15_K128_EADP",
+        "value_field": "rows[].value"
+      },
+      "official_loo_auxiliary": 56.520027784209304,
+      "original_official_score_source": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_E128_streamwait.official.score.json",
+        "sha256": "33882a2a07194d583098ae678905309b0c634089b8619999f3a5ff992d41fbce"
+      },
+      "control_protocol": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_E128_streamwait.control.protocol.json",
+        "sha256": "1e91b939f13c1705246939e26c33dc7d01d4c13741b36e05c0573be9708926b9"
+      },
+      "runtime": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_E128_streamwait.jsonl.runtime.jsonl",
+        "sha256": "779d6fe84a315d60bf28bea5c1ebe9f2ea3508c0ef22c85c4cb1c36ced980530",
+        "count": 4319
+      },
+      "finished_source": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/v15_vizwiz_E128_streamwait.finished.json",
+        "sha256": "143550a36cd7ba808f64ebf68e97c35276a9a68e07d80ffb0663c8e3d658ce20"
+      },
+      "protocol": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.5-7b",
+        "alpha": 0.0,
+        "beta": 1.0,
+        "visual_token_num": 128,
+        "anchorzip": false,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/llava_val.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val",
+        "model_base": null
+      },
+      "protocol_caveat": [
+        "Fixed public-default alpha0/beta1/native loader/max128/wait recipe; not established as exact paper generation argv.",
+        "True EADP: anchorzip=false and all runtime AnchorZip lambda/mode are null."
+      ],
+      "paper_value": 58.0,
+      "local_minus_paper": -0.11623060893725068,
+      "status": "verified_supplement",
+      "verification": "Complete unique4319 IDs, raw/score/protocol SHA, runtime4319 identity/settings, finished success+exit0 and stored per-question mean verified. No new GPU/scoring."
+    },
+    {
+      "id": "supplement:next:128:EADP:VizWiz",
+      "origin": "local_experiment",
+      "method": "EADP",
+      "model": "next",
+      "model_name": "LLaVA-NeXT-7B",
+      "budget_cli": 128,
+      "budget_nominal": 640,
+      "task": "VizWiz",
+      "value": 60.67762599367137,
+      "metric": "EADP released VizWiz accuracy (%); normalized min(matches/3,1)",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/next_vizwiz_E128_streamwait.jsonl",
+        "sha256": "a9a35ec9c25fc0cb4d83ab40ea63be03d2a41b54828cc2f6fe878f3369b29a44",
+        "count": 4319,
+        "format": ".jsonl"
+      },
+      "score_source": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/author_confirmed_vizwiz_scores_20261010.json",
+        "sha256": "56b8ac367245b2962e32d0f5f7acec2003b87ec00a026d6fbabc86eb0fb620b7",
+        "row_id": "next_K128_EADP",
+        "value_field": "rows[].value"
+      },
+      "official_loo_auxiliary": 59.21741143783283,
+      "original_official_score_source": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/next_vizwiz_E128_streamwait.official.score.json",
+        "sha256": "0e3b8d3f274d1bccae54c5b4a158eb7506af1feda06445ad7619928cb663b25a"
+      },
+      "control_protocol": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/next_vizwiz_E128_streamwait.control.protocol.json",
+        "sha256": "4fe88c97088f7ebc3ec09e2d18b0bf93d1b6f64254d0ff60e4afbf40cc40a160"
+      },
+      "runtime": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/next_vizwiz_E128_streamwait.jsonl.runtime.jsonl",
+        "sha256": "b751d022d6528488acab33349be2982ea85d0d9532937c44489a65307d716770",
+        "count": 4319
+      },
+      "finished_source": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/audit_followup_20261008/post_batch_followup_20261009/registered_followup/next_vizwiz_E128_streamwait.finished.json",
+        "sha256": "c9f19546f657851f3b0dd96bb73a1725305892d9ff4698dd165c77898df69d94"
+      },
+      "protocol": {
+        "model_path": "/media/disk2/YZX/doct/FastV/llava-v1.6-vicuna-7b",
+        "alpha": 0.0,
+        "beta": 1.0,
+        "visual_token_num": 128,
+        "anchorzip": false,
+        "temperature": 0.0,
+        "conv_mode": "vicuna_v1",
+        "num_chunks": 1,
+        "chunk_idx": 0,
+        "top_p": null,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "question_file": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/llava_val.jsonl",
+        "image_folder": "/media/disk2/YZX/research/EADP_amp/LLaVA/playground/data/eval/vizwiz/val",
+        "model_base": null
+      },
+      "protocol_caveat": [
+        "Fixed public-default alpha0/beta1/native loader/max128/wait recipe; not established as exact paper generation argv.",
+        "True EADP: anchorzip=false and all runtime AnchorZip lambda/mode are null.",
+        "NeXT CLI128 is nominal640; actual crop-dependent count is recorded per question."
+      ],
+      "paper_value": 60.6,
+      "local_minus_paper": 0.07762599367136858,
+      "status": "verified_supplement",
+      "verification": "Complete unique4319 IDs, raw/score/protocol SHA, runtime4319 identity/settings, finished success+exit0 and stored per-question mean verified. No new GPU/scoring."
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "supplement:qwen:256:EADP:HallusionBench",
+      "origin": "local_experiment",
+      "method": "EADP",
+      "model": "qwen",
+      "model_name": "Qwen3-VL-8B",
+      "budget_cli": 256,
+      "budget_nominal": 256,
+      "task": "HallusionBench",
+      "value": 41.040462427745666,
+      "metric": "HallusionBench fAcc (%)",
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/HallusionBench.json",
+        "sha256": "2601848ffca999302d93442d2f3f375b526582cd400ef687e13cd2d63e90190b",
+        "count": 951,
+        "format": ".json"
+      },
+      "score_source": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/HallusionBench_score.json",
+        "sha256": "98462fcb5ff8232af79d52a3c3682e4356a0462318fa82d459bc1f0921c949b1",
+        "value_field": "official.fAcc[0]"
+      },
+      "run_source_evidence": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/stage1_roundtrip_pilot/legacy_full/acc/L_E_GATHER/HallusionBench_pred.tsv",
+          "sha256": "228479b9c6a774656faa37df538e7f69556739a7eaab9e803013fc264b9b36df"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_p1_driver.sh",
+          "sha256": "b8c2a2a57c0f37584f98b244534a0614719d181ca6c1a31bd345a6aa46a885d3"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_p1_analyze.py",
+          "sha256": "ae95cd340b4cd89937d5872cf1f4e83dd3b0e8cb001aded04bdd376b5af6bf92"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/p1_p4_recheck.py",
+          "sha256": "48b3462ba5e4aba1cd15acb7dde4f7bff04597c5860abe6888b52adefecf53bf"
+        },
+        {
+          "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/scripts/stage1_roundtrip_pilot/egather_legacy.py",
+          "sha256": "9f584a0161d1f724150cefc34949a74cfe89d556bfb8345740b9e1cfae6a8c14"
+        }
+      ],
+      "protocol": {
+        "arm": "L_E_GATHER",
+        "pipeline": "official_legacy",
+        "panel": "full",
+        "ds": "HallusionBench",
+        "K": 256,
+        "legacy": {
+          "deepstack": false,
+          "pos": "1d"
+        },
+        "bank_sha256": "a7c2cc9fab07590c5ecb9646b2b89cd6142f3c7e244aaee4c50ee0a01de7766a",
+        "bank_reused_from": "anchor_completion_validation/bank_full",
+        "cfg": {
+          "kind": "base",
+          "lam": 0.0,
+          "selector": "b1",
+          "K": 256
+        },
+        "base_commit": "b16d3d007305",
+        "max_new_tokens": 2048
+      },
+      "protocol_caveat": [
+        "Complete raw and official score exist, but recorded compressed selection-bank SHA differs from current bank; generation-time bank identity is not closed. Resume writes meta only when absent. A gzip-byte mismatch alone does not prove changed token indices or an incorrect score.",
+        "Legacy = DeepStack off / 1d positions; native restored results cannot replace this cell.",
+        "Paper authors actual complete runtime argv unverified; local full results do not establish all paper configurations reproduced."
+      ],
+      "paper_value": 42.8,
+      "local_minus_paper": -1.759537572254331,
+      "verification": "Raw/score recorded SHA and full count verified; exact stored score agrees with unified summary. No new benchmark scoring/GPU.",
+      "selection_bank": {
+        "path": "/media/disk2/YZX/research/EADP_amp/Qwen_vl/outputs/anchor_completion_validation/bank_full_HallusionBench.json.gz",
+        "current_sha256": "ccf1b8908a5291ed7c1dbc445e4c909c43f3e5e92888f1339780e9c74e57025d",
+        "recorded_generation_sha256": "a7c2cc9fab07590c5ecb9646b2b89cd6142f3c7e244aaee4c50ee0a01de7766a",
+        "matches": false
+      },
+      "status": "unresolved_generation_bank_identity"
+    }
+  ],
+  "verification_summary": {
+    "accepted_supplemental_records": 11,
+    "unresolved_records": 1,
+    "recorded_sha_comparisons": 70,
+    "unique_paths_in_recorded_sha_comparisons": 38,
+    "mismatches": [],
+    "GPU_work": false,
+    "fresh_benchmark_rescoring": false
+  },
+  "limits": [
+    "Source provenance qualification does not prove paper generation protocol identity.",
+    "Qwen HallusionBench raw score is numerically reproduced but selection-bank generation identity remains unresolved; not accepted as supplemental baseline.",
+    "This audit reads existing exact scores; no raw benchmark evaluator has been rerun."
+  ]
+}

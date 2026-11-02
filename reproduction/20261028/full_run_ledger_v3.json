@@ -1,0 +1,1125 @@
+{
+  "definition": "Every complete run is retained. No max selection, prefix accuracy, missing-component mean, or overwrite of the original V2 comparison.",
+  "paper_source": {
+    "path": "/media/disk2/YZX/research/EADP_v2/docs/versions/v2/eadp_comparison_20261028/comparison.json",
+    "sha256": "fe9e3ba86ae5b353699d2b17427df392b11a2ff26ff8a2be9cc3956bd0f5a01d"
+  },
+  "full_runs": [
+    {
+      "run_id": "MMB_source_as_is",
+      "model": "LLaVA-1.5-7B",
+      "task": "MMB_EN",
+      "token_budget": 128,
+      "alpha": 0.5,
+      "beta": 1.0,
+      "three_wait_nodes": false,
+      "n": 4377,
+      "n_circular_groups": 1176,
+      "value": 61.564625850340136,
+      "paper": 62.7,
+      "local_minus_paper": "-1.135374149659864",
+      "unit": "percentage_points",
+      "metric": "exact-letter circular accuracy",
+      "source_recipe_identity": "Released source recipe; paper complete argv remains unverified",
+      "predictions": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/v15_EADP_K128_oldEN_beta1_alpha05.jsonl",
+      "prediction_sha256": "8c000ca3648c86ec468f21f37f73087e46d4b0d2eded35b50978187984f18d76",
+      "verification": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/independent_verification.json",
+      "verification_sha256": "89700b4c01fb92f5ab363a53d9c915586458ca17ee6c622d9cf818eeb0ef3102",
+      "stability_boundary": "External official-server matching was not performed"
+    },
+    {
+      "run_id": "MMB_three_wait_only",
+      "model": "LLaVA-1.5-7B",
+      "task": "MMB_EN",
+      "token_budget": 128,
+      "alpha": 0.5,
+      "beta": 1.0,
+      "three_wait_nodes": true,
+      "n": 4377,
+      "n_circular_groups": 1176,
+      "value": 61.564625850340136,
+      "paper": 62.7,
+      "local_minus_paper": "-1.135374149659864",
+      "unit": "percentage_points",
+      "metric": "exact-letter circular accuracy",
+      "source_recipe_identity": "Released source recipe; paper complete argv remains unverified",
+      "predictions": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/streamwait_control/v15_EADP_K128_oldEN_beta1_alpha05_streamwait.jsonl",
+      "prediction_sha256": "6d9a38f9117b354a937eb0288cb287de4e573fa31bcda24dcb612ec5fc423754",
+      "verification": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/streamwait_control/independent_verification.json",
+      "verification_sha256": "074f1ef2403a5c07182032e4d244b56b28fa28b064bc83a0ce0d74424a97027f",
+      "stability_boundary": "External official-server matching was not performed"
+    },
+    {
+      "run_id": "POPE_run01_source_as_is_k32",
+      "model": "LLaVA-1.5-7B",
+      "task": "POPE",
+      "token_budget": 32,
+      "alpha": 1.0,
+      "beta": 1.0,
+      "three_wait_nodes": false,
+      "n": 8910,
+      "n_circular_groups": null,
+      "value": 77.39368634608871,
+      "paper": 86.7,
+      "local_minus_paper": "-9.30631365391129",
+      "unit": "percentage_points",
+      "metric": "three-category macro F1",
+      "source_recipe_identity": "Released source recipe; paper complete argv remains unverified",
+      "predictions": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/run01_source_as_is_k32/predictions.jsonl",
+      "prediction_sha256": "2d0a829dcd20d6bccc4b77324e2f578087a363f6b28387caafc35c47235ac0da",
+      "verification": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/run01_source_as_is_k32/full_result_summary.json",
+      "verification_sha256": "fa27701778ce85c03a7b239c215e021de002af368af4823aac37332e46fbaeeb",
+      "stability_boundary": "231/2334 repeated-input conflicts"
+    },
+    {
+      "run_id": "POPE_run02_source_wait_only_k32",
+      "model": "LLaVA-1.5-7B",
+      "task": "POPE",
+      "token_budget": 32,
+      "alpha": 1.0,
+      "beta": 1.0,
+      "three_wait_nodes": true,
+      "n": 8910,
+      "n_circular_groups": null,
+      "value": 82.22023699908897,
+      "paper": 86.7,
+      "local_minus_paper": "-4.47976300091103",
+      "unit": "percentage_points",
+      "metric": "three-category macro F1",
+      "source_recipe_identity": "Released source recipe; paper complete argv remains unverified",
+      "predictions": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/run02_source_wait_only_k32/predictions.jsonl",
+      "prediction_sha256": "d23f3c0c7abe3233ec22ee38c8816f3b0ec047a5d0d665a69c5d90982e351233",
+      "verification": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/run02_source_wait_only_k32/full_result_summary.json",
+      "verification_sha256": "15f84c054ab366216cc5cfc2271fd3a423d6c698366883b22a828699daa9b82f",
+      "stability_boundary": "0/2334 repeated-input conflicts"
+    },
+    {
+      "run_id": "NeXT_public_default_K128_alpha05_beta1_wait",
+      "model": "LLaVA-NeXT-7B",
+      "task": "TextVQA",
+      "token_budget": 640,
+      "budget_cli": 128,
+      "alpha": 0.5,
+      "beta": 1.0,
+      "three_wait_nodes": true,
+      "n": 5000,
+      "n_circular_groups": null,
+      "value": 56.94400000000016,
+      "paper": 59.2,
+      "local_minus_paper": "-2.25599999999984",
+      "unit": "percentage_points",
+      "metric": "official TextVQA accuracy",
+      "source_recipe_identity": "Registered single-setting full run; paper complete argv remains unverified",
+      "predictions": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_default_K128_alpha05_beta1_wait/answers.jsonl",
+      "prediction_sha256": "5a3da1c410a6a044809f7cf0892762d9c59f90ec660dc1ccfd992678ddfe94c2",
+      "verification": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/run03_single_alpha05_beta1_wait_k32/predecessor_verification.json",
+      "verification_sha256": "319ca8bdb15187ab135668f281d09efcd0868232616b896f2f2a984c7d1c083e",
+      "author_value": 56.94400000000016,
+      "independent_value": 56.944000000000166,
+      "author_minus_independent": "-6E-15",
+      "author_independent_metric_agreement": true,
+      "complete_provenance": {
+        "plan": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_default_K128.plan.json",
+          "sha256": "7de9048ad555683ca95d1bba27193c30c641b2decd5ae2d4626a359b11e9462d"
+        },
+        "author_score": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_default_K128_alpha05_beta1_wait/official.score.json",
+          "sha256": "db2af2ac4519ee1f763f01d905ea829165c085dc464aed34b76030d944cfe526"
+        },
+        "release": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_default_K128_alpha05_beta1_wait/release.json",
+          "sha256": "6275d9814713853da1cff1be604c9a3eb97c9b16a4b19f0b9cd52b72db26d6f0"
+        },
+        "third_party_audit": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/run03_single_alpha05_beta1_wait_k32/predecessor_verification.json",
+          "sha256": "319ca8bdb15187ab135668f281d09efcd0868232616b896f2f2a984c7d1c083e"
+        },
+        "source_hashes_rechecked": 12,
+        "worker_exit": {
+          "pid": 2399640,
+          "start_ticks": 1331554245,
+          "original_worker_exited": true,
+          "current_start_ticks_if_PID_reused": null,
+          "gpu_PID_absent": true
+        }
+      },
+      "stability_boundary": "Full5000 checked; no repeated-input conflict audit is claimed"
+    },
+    {
+      "run_id": "POPE_run03_single_alpha05_beta1_wait_k32",
+      "model": "LLaVA-1.5-7B",
+      "task": "POPE",
+      "token_budget": 32,
+      "budget_cli": 32,
+      "alpha": 0.5,
+      "beta": 1.0,
+      "three_wait_nodes": true,
+      "n": 8910,
+      "n_circular_groups": null,
+      "value": 82.7060125212074,
+      "paper": 86.7,
+      "local_minus_paper": "-3.9939874787926",
+      "unit": "percentage_points",
+      "metric": "three-category macro F1",
+      "source_recipe_identity": "Registered single-setting full run; paper complete argv remains unverified",
+      "predictions": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/run03_single_alpha05_beta1_wait_k32/predictions.jsonl",
+      "prediction_sha256": "4e9d1e307fec4d5052c6808047544e7cef015b9756cd850f96a4b299b879b879",
+      "verification": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/run03_single_alpha05_beta1_wait_k32/full_result_summary.json",
+      "verification_sha256": "77438eefdb2eb2b415949a545ce3f23d565a73674da8dc67567180fa14ae542e",
+      "author_value": 82.7060125212074,
+      "independent_value": 82.7060125212074,
+      "author_minus_independent": "0E-13",
+      "author_independent_metric_agreement": true,
+      "complete_provenance": {
+        "plan": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/run03_single_alpha05_beta1_wait_k32/run_plan.json",
+          "sha256": "bf40e511c27cf920dbd287d61126c405346f97fc37728cff3254af608aef5a70"
+        },
+        "release": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/run03_single_alpha05_beta1_wait_k32/completion_and_release_proof.json",
+          "sha256": "2e73466cb7a66311232dcd2f6c056846c9b0e4ff9a887bb6ca73937a4a6d9b35"
+        },
+        "third_party_audit": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/run03_single_alpha05_beta1_wait_k32/supervisor_prediction_verification/full_prediction_verification.json",
+          "sha256": "ce166ce79471173da0481cc6feba84656aa6bb3a6dbd7fa5a025c20a63fce727"
+        },
+        "worker_exit": {
+          "pid": 2475198,
+          "start_ticks": 1331864351,
+          "original_worker_exited": true,
+          "current_start_ticks_if_PID_reused": null,
+          "gpu_PID_absent": true
+        }
+      },
+      "stability_boundary": "0/2334 repeated-input conflicts"
+    },
+    {
+      "run_id": "MMB_single_beta2_alpha05_streamwait",
+      "model": "LLaVA-1.5-7B",
+      "task": "MMB_EN",
+      "token_budget": 128,
+      "budget_cli": 128,
+      "alpha": 0.5,
+      "beta": 2.0,
+      "three_wait_nodes": true,
+      "n": 4377,
+      "n_circular_groups": 1176,
+      "value": 61.394557823129254,
+      "paper": 62.7,
+      "local_minus_paper": "-1.305442176870746",
+      "unit": "percentage_points",
+      "metric": "exact-letter circular accuracy; public exact_matching rechecked",
+      "source_recipe_identity": "Registered single-setting full run; paper complete argv remains unverified",
+      "predictions": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/beta2_control/v15_EADP_K128_oldEN_beta2_alpha05_streamwait.jsonl",
+      "prediction_sha256": "9215d7a9c266e8157c66c11607cf5ef47eb6f5bf018113d9b591b3534c15fcff",
+      "verification": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/beta2_control/independent_verification.json",
+      "verification_sha256": "a1de5769d8932f1dc0ec8d9735b312898432604a95d670c7a173f60f83b8251e",
+      "author_value": 61.394557823129254,
+      "independent_value": 61.394557823129254,
+      "author_minus_independent": "0E-15",
+      "author_independent_metric_agreement": true,
+      "complete_provenance": {
+        "plan": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/beta2_control/protocol.json",
+          "sha256": "f4a2eff7485313e8ee1bec7553c4897b60abb48ccd4beb34e165e20a09e49f40"
+        },
+        "author_public_exact_matching": {
+          "value_percent": 61.394557823129254,
+          "n_rows": 4377,
+          "n_groups": 1176,
+          "unresolved_groups": 0,
+          "parser_changed_rows": [],
+          "sources": [
+            {
+              "path": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/utils/matching_util.py",
+              "sha256": "03435cedaeaf6282599816aed4ba57f26dd4858f2a37399490acca98d9f8f5f2",
+              "functions": [
+                "can_infer_option",
+                "can_infer_text",
+                "can_infer"
+              ],
+              "function_AST_sha256": "099a9f5b3e5c8045686e40d34b61f91162675e692f396e368c6c4923db887fc5"
+            },
+            {
+              "path": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py",
+              "sha256": "460b75c5fee06aa10f4037b2694e74708978820ed9291933b703fca39d7b156a",
+              "functions": [
+                "build_choices",
+                "prefetch_answer",
+                "prefetch_circular_group"
+              ],
+              "function_AST_sha256": "165a95920b7be570da917ce155d897bd4c30af24af59676fdafd9c86b9a9f80e"
+            }
+          ],
+          "external_server_evaluation": false
+        },
+        "waiter": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/beta2_control/after_pope_alpha.state.json",
+          "sha256": "640cb35ffad9345a267e7213f7c1a6a82b75ee979e6e1f896018ccddd48510c7"
+        },
+        "local_score": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/beta2_control/local_circular_score.json",
+          "sha256": "0c157b31903656d95b710cedf5509ea61a6d5ca63bcbd92b080010654ca7e9a7"
+        },
+        "worker_exit": {
+          "pid": 2514846,
+          "start_ticks": 1332028440,
+          "original_worker_exited": true,
+          "current_start_ticks_if_PID_reused": null,
+          "gpu_PID_absent": true
+        }
+      },
+      "stability_boundary": "Repeated-input conflicts not audited for this arm; no zero-conflict value is assumed"
+    },
+    {
+      "run_id": "Qwen_author_FA2_DocVQA_VAL",
+      "model": "Qwen3-VL-8B",
+      "task": "DocVQA",
+      "token_budget": 256,
+      "budget_cli": 256,
+      "alpha": 0.5,
+      "beta": 2.0,
+      "three_wait_nodes": false,
+      "three_wait_nodes_applicable": false,
+      "attention_backend": "flash_attention_2",
+      "n": 5349,
+      "n_circular_groups": null,
+      "value": 61.166042248329276,
+      "paper": 62.8,
+      "local_minus_paper": "-1.633957751670724",
+      "unit": "percentage_points",
+      "metric": "Released ANLS with native pandas NA conversion (%)",
+      "source_recipe_identity": "Full public author FA2 recipe with isolated missing-import helper; paper complete argv remains unverified",
+      "predictions": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/eadp/Qwen3-VL-8B-EADP-256-a0.5-b2.0/T20261028_Ge1a08801/Qwen3-VL-8B-EADP-256-a0.5-b2.0_DocVQA_VAL.xlsx",
+      "prediction_sha256": "c0dbd4755e44683128b809eb59750aec513df05ad153ae749a6943eb970646fd",
+      "verification": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/public_fa2_full_run02.verification.json",
+      "verification_sha256": "ba44cd776ec6c4e4b6b16a5cb236854689ff7a6c5f36c354471febbdf0cfbe15",
+      "author_value": 61.166042248329276,
+      "independent_value": 61.166042248329276,
+      "author_value_provenance": "Unchanged author metric helpers executed on all saved raw rows by the CPU auditor; native score artifacts are reported separately",
+      "author_minus_independent": "0E-15",
+      "author_independent_metric_agreement": true,
+      "native_author_score_artifacts": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/eadp/Qwen3-VL-8B-EADP-256-a0.5-b2.0/T20261028_Ge1a08801/Qwen3-VL-8B-EADP-256-a0.5-b2.0_DocVQA_VAL_acc.csv",
+          "sha256": "ce2e69b28f0b37408d0d9b2cd33da4cd90e4743fe9f90cdf8441e74e45b1e179",
+          "raw_value": 61.166042248329354,
+          "value_percent": 61.166042248329354
+        }
+      ],
+      "native_author_value": 61.166042248329354,
+      "native_author_score_status": "artifact_verified",
+      "native_public_launcher_exit_code": 0,
+      "native_public_launcher_exited_successfully": true,
+      "native_author_score_artifacts_complete_for_sequence": true,
+      "API_judge_used_by_CPU_audit": false,
+      "API_judge_reproduction_claimed": false,
+      "prediction_validity": {
+        "coverage_complete": true,
+        "n": 5349,
+        "generation_valid": true,
+        "empty_count": 0,
+        "planned_no_empty_gate_passed": true,
+        "empty_prediction_count": 0,
+        "failure_placeholder_count": 0,
+        "generation_without_failure_placeholders": true,
+        "empty_policy": "Keep every row and full denominator; count empty strings without rejecting successful model calls."
+      },
+      "original_planned_no_empty_gate_passed": true,
+      "empty_answer_policy": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/empty_answer_policy.json",
+        "sha256": "fe0bad1314831c344aac49617e6da0e338e9a4a6da5254a3de5a0cdea46764f0"
+      },
+      "auxiliary_empty_answers_zero_score_percent": 61.166042248329276,
+      "native_na_prediction_conversions": 7,
+      "complete_provenance": {
+        "plan": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02_plan.json",
+          "sha256": "d1afef9e1f470d432105cb8669e25f54b9906d85b54f7685689a84b539feb467"
+        },
+        "terminal_audit": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/public_fa2_full_run02.terminal_audit.report.json",
+          "sha256": "57d75bc40e833544ceaf1b94214b559d850fd062e74b10c55717b02d2ae3863b"
+        },
+        "per_question": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/public_fa2_full_run02_DocVQA_VAL.per_question.jsonl",
+          "sha256": "02b6f9be7cd866634bad291a0e0875e3918b4bf60a6fa02c31009c0944139d11"
+        },
+        "actual_process_exits": [
+          {
+            "pid": 2364766,
+            "start_ticks": 1331402021,
+            "original_worker_exited": true,
+            "current_start_ticks_if_PID_reused": null,
+            "gpu_PID_absent": true
+          },
+          {
+            "pid": 2364783,
+            "start_ticks": 1331402039,
+            "original_worker_exited": true,
+            "current_start_ticks_if_PID_reused": null,
+            "gpu_PID_absent": true
+          },
+          {
+            "pid": 2364864,
+            "start_ticks": 1331402049,
+            "original_worker_exited": true,
+            "current_start_ticks_if_PID_reused": null,
+            "gpu_PID_absent": true
+          },
+          {
+            "pid": 2364896,
+            "start_ticks": 1331402066,
+            "original_worker_exited": true,
+            "current_start_ticks_if_PID_reused": null,
+            "gpu_PID_absent": true
+          },
+          {
+            "pid": 2531101,
+            "start_ticks": 1332101727,
+            "original_worker_exited": true,
+            "current_start_ticks_if_PID_reused": null,
+            "gpu_PID_absent": true
+          }
+        ],
+        "native_error_lines": [
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 1,
+            "text": "[2026-10-28 20:11:53] ERROR - misc.py: load_env - 215: Did not detect the .env file at /media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/.env, failed to load. "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 2,
+            "text": "[2026-10-28 20:12:07] ERROR - misc.py: load_env - 215: Did not detect the .env file at /media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/.env, failed to load. "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6196,
+            "text": "[2026-10-28 20:37:51] ERROR - misc.py: load_env - 215: Did not detect the .env file at /media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/.env, failed to load. "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6197,
+            "text": "[2026-10-28 20:37:51] INFO - ChatAPI - gpt.py: __init__ - 156: Using API Base: https://api.openai.com/v1/chat/completions; API Key: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6198,
+            "text": "[2026-10-28 20:37:51] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 0: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6199,
+            "text": "[2026-10-28 20:37:51] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6200,
+            "text": "[2026-10-28 20:37:51] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 1: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6201,
+            "text": "[2026-10-28 20:37:51] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6202,
+            "text": "[2026-10-28 20:37:53] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 2: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6203,
+            "text": "[2026-10-28 20:37:53] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6204,
+            "text": "[2026-10-28 20:37:54] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 0: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6205,
+            "text": "[2026-10-28 20:37:54] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6206,
+            "text": "[2026-10-28 20:37:55] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 1: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6207,
+            "text": "[2026-10-28 20:37:55] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6208,
+            "text": "[2026-10-28 20:37:55] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 2: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6209,
+            "text": "[2026-10-28 20:37:55] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6210,
+            "text": "[2026-10-28 20:37:56] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 0: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6211,
+            "text": "[2026-10-28 20:37:56] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6212,
+            "text": "[2026-10-28 20:37:57] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 1: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6213,
+            "text": "[2026-10-28 20:37:57] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6214,
+            "text": "[2026-10-28 20:37:58] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 2: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6215,
+            "text": "[2026-10-28 20:37:58] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6216,
+            "text": "[2026-10-28 20:37:59] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 0: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6217,
+            "text": "[2026-10-28 20:37:59] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6218,
+            "text": "[2026-10-28 20:38:01] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 1: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6219,
+            "text": "[2026-10-28 20:38:01] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6220,
+            "text": "[2026-10-28 20:38:02] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 2: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6221,
+            "text": "[2026-10-28 20:38:02] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6222,
+            "text": "[2026-10-28 20:38:04] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 0: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6223,
+            "text": "[2026-10-28 20:38:04] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6224,
+            "text": "[2026-10-28 20:38:05] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 1: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6225,
+            "text": "[2026-10-28 20:38:05] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6226,
+            "text": "[2026-10-28 20:38:05] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 2: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6227,
+            "text": "[2026-10-28 20:38:05] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6228,
+            "text": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/dataset/image_mcq.py:272: UserWarning: OPENAI API is not working properly, will use exact matching for evaluation"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6229,
+            "text": "  warnings.warn('OPENAI API is not working properly, will use exact matching for evaluation')"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6231,
+            "text": "To debug the OpenAI API, you can try the following scripts in python:"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6239,
+            "text": "You cam see the specific error if the API call fails."
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_DocVQA_VAL.log",
+            "line_number": 1,
+            "text": "[2026-10-28 18:15:14] ERROR - misc.py: load_env - 215: Did not detect the .env file at /media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/.env, failed to load. "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_DocVQA_VAL.log",
+            "line_number": 2,
+            "text": "[2026-10-28 18:15:20] ERROR - misc.py: load_env - 215: Did not detect the .env file at /media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/.env, failed to load. "
+          }
+        ],
+        "native_logs": [
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/launcher.log",
+            "sha256": "c968cc6f8a8a73d631abd7ac4d34f5cd24ad946885c51bc07ab128f92605f259",
+            "bytes": 1096
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "sha256": "9d364203d6de6bea151a66a4fafe2346bc0f088e66db0218d3856c1a7e1f6278",
+            "bytes": 398944
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_DocVQA_VAL.log",
+            "sha256": "0c79305297be0c1363788d6005a9cadf80c09e62e8b723a544ca614faa4116e0",
+            "bytes": 745693
+          }
+        ]
+      },
+      "stability_boundary": "Both tasks fully audited only after the whole native sequence exited; native API/scoring failures and the original No-empty gate are retained separately. No repeated-input conflict audit or paper/API-judge reproduction success is claimed.",
+      "auxiliary_literal_prediction_ANLS_percent": 61.166042248329276
+    },
+    {
+      "run_id": "Qwen_author_FA2_AI2D_TEST",
+      "model": "Qwen3-VL-8B",
+      "task": "AI2D",
+      "token_budget": 256,
+      "budget_cli": 256,
+      "alpha": 0.5,
+      "beta": 2.0,
+      "three_wait_nodes": false,
+      "three_wait_nodes_applicable": false,
+      "attention_backend": "flash_attention_2",
+      "n": 3088,
+      "n_circular_groups": null,
+      "value": 74.35233160621762,
+      "paper": 75.7,
+      "local_minus_paper": "-1.34766839378238",
+      "unit": "percentage_points",
+      "metric": "Released deterministic exact-matching can_infer accuracy (%); CPU, no API judge",
+      "source_recipe_identity": "Full public author FA2 recipe with isolated missing-import helper; paper complete argv remains unverified",
+      "predictions": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/eadp/Qwen3-VL-8B-EADP-256-a0.5-b2.0/T20261028_Ge1a08801/Qwen3-VL-8B-EADP-256-a0.5-b2.0_AI2D_TEST.xlsx",
+      "prediction_sha256": "9a6ff81267fee2dafced35b37b4b71d30bda17dcb5f1a3e6da040e567d78f6d1",
+      "verification": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/public_fa2_full_run02.verification.json",
+      "verification_sha256": "ba44cd776ec6c4e4b6b16a5cb236854689ff7a6c5f36c354471febbdf0cfbe15",
+      "author_value": 74.35233160621762,
+      "independent_value": 74.35233160621762,
+      "author_value_provenance": "Unchanged author metric helpers executed on all saved raw rows by the CPU auditor; native score artifacts are reported separately",
+      "author_minus_independent": "0E-14",
+      "author_independent_metric_agreement": true,
+      "native_author_score_artifacts": [
+        {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/eadp/Qwen3-VL-8B-EADP-256-a0.5-b2.0/T20261028_Ge1a08801/Qwen3-VL-8B-EADP-256-a0.5-b2.0_AI2D_TEST_acc.csv",
+          "sha256": "91d939d7c3625af829355a69e8d440af6fbd42fdf4bcb2f6bb94c2a82a642b9e",
+          "raw_value": 0.7435233160621761,
+          "value_percent": 74.35233160621762
+        }
+      ],
+      "native_author_value": 74.35233160621762,
+      "native_author_score_status": "artifact_verified",
+      "native_public_launcher_exit_code": 0,
+      "native_public_launcher_exited_successfully": true,
+      "native_author_score_artifacts_complete_for_sequence": true,
+      "API_judge_used_by_CPU_audit": false,
+      "API_judge_reproduction_claimed": false,
+      "prediction_validity": {
+        "coverage_complete": true,
+        "n": 3088,
+        "generation_valid": true,
+        "empty_count": 0,
+        "planned_no_empty_gate_passed": true,
+        "empty_prediction_count": 0,
+        "failure_placeholder_count": 0,
+        "generation_without_failure_placeholders": true,
+        "empty_policy": "Keep every row and full denominator; count empty strings without rejecting successful model calls."
+      },
+      "original_planned_no_empty_gate_passed": true,
+      "empty_answer_policy": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/empty_answer_policy.json",
+        "sha256": "fe0bad1314831c344aac49617e6da0e338e9a4a6da5254a3de5a0cdea46764f0"
+      },
+      "auxiliary_empty_answers_zero_score_percent": 74.35233160621762,
+      "native_na_prediction_conversions": 0,
+      "complete_provenance": {
+        "plan": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02_plan.json",
+          "sha256": "d1afef9e1f470d432105cb8669e25f54b9906d85b54f7685689a84b539feb467"
+        },
+        "terminal_audit": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/public_fa2_full_run02.terminal_audit.report.json",
+          "sha256": "57d75bc40e833544ceaf1b94214b559d850fd062e74b10c55717b02d2ae3863b"
+        },
+        "per_question": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/public_fa2_full_run02_AI2D_TEST.per_question.jsonl",
+          "sha256": "b645448f8c1bbc0070602b224206dbef9e497dadbce54822bc023a82d0f34bd8"
+        },
+        "actual_process_exits": [
+          {
+            "pid": 2364766,
+            "start_ticks": 1331402021,
+            "original_worker_exited": true,
+            "current_start_ticks_if_PID_reused": null,
+            "gpu_PID_absent": true
+          },
+          {
+            "pid": 2364783,
+            "start_ticks": 1331402039,
+            "original_worker_exited": true,
+            "current_start_ticks_if_PID_reused": null,
+            "gpu_PID_absent": true
+          },
+          {
+            "pid": 2364864,
+            "start_ticks": 1331402049,
+            "original_worker_exited": true,
+            "current_start_ticks_if_PID_reused": null,
+            "gpu_PID_absent": true
+          },
+          {
+            "pid": 2364896,
+            "start_ticks": 1331402066,
+            "original_worker_exited": true,
+            "current_start_ticks_if_PID_reused": null,
+            "gpu_PID_absent": true
+          },
+          {
+            "pid": 2531101,
+            "start_ticks": 1332101727,
+            "original_worker_exited": true,
+            "current_start_ticks_if_PID_reused": null,
+            "gpu_PID_absent": true
+          }
+        ],
+        "native_error_lines": [
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 1,
+            "text": "[2026-10-28 20:11:53] ERROR - misc.py: load_env - 215: Did not detect the .env file at /media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/.env, failed to load. "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 2,
+            "text": "[2026-10-28 20:12:07] ERROR - misc.py: load_env - 215: Did not detect the .env file at /media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/.env, failed to load. "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6196,
+            "text": "[2026-10-28 20:37:51] ERROR - misc.py: load_env - 215: Did not detect the .env file at /media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/.env, failed to load. "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6197,
+            "text": "[2026-10-28 20:37:51] INFO - ChatAPI - gpt.py: __init__ - 156: Using API Base: https://api.openai.com/v1/chat/completions; API Key: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6198,
+            "text": "[2026-10-28 20:37:51] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 0: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6199,
+            "text": "[2026-10-28 20:37:51] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6200,
+            "text": "[2026-10-28 20:37:51] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 1: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6201,
+            "text": "[2026-10-28 20:37:51] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6202,
+            "text": "[2026-10-28 20:37:53] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 2: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6203,
+            "text": "[2026-10-28 20:37:53] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6204,
+            "text": "[2026-10-28 20:37:54] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 0: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6205,
+            "text": "[2026-10-28 20:37:54] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6206,
+            "text": "[2026-10-28 20:37:55] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 1: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6207,
+            "text": "[2026-10-28 20:37:55] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6208,
+            "text": "[2026-10-28 20:37:55] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 2: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6209,
+            "text": "[2026-10-28 20:37:55] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6210,
+            "text": "[2026-10-28 20:37:56] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 0: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6211,
+            "text": "[2026-10-28 20:37:56] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6212,
+            "text": "[2026-10-28 20:37:57] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 1: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6213,
+            "text": "[2026-10-28 20:37:57] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6214,
+            "text": "[2026-10-28 20:37:58] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 2: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6215,
+            "text": "[2026-10-28 20:37:58] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6216,
+            "text": "[2026-10-28 20:37:59] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 0: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6217,
+            "text": "[2026-10-28 20:37:59] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6218,
+            "text": "[2026-10-28 20:38:01] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 1: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6219,
+            "text": "[2026-10-28 20:38:01] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6220,
+            "text": "[2026-10-28 20:38:02] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 2: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6221,
+            "text": "[2026-10-28 20:38:02] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6222,
+            "text": "[2026-10-28 20:38:04] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 0: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6223,
+            "text": "[2026-10-28 20:38:04] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6224,
+            "text": "[2026-10-28 20:38:05] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 1: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6225,
+            "text": "[2026-10-28 20:38:05] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6226,
+            "text": "[2026-10-28 20:38:05] ERROR - ChatAPI - base.py: generate - 264: An error occured during try 2: "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6227,
+            "text": "[2026-10-28 20:38:05] ERROR - ChatAPI - base.py: generate - 265: <class 'requests.exceptions.ConnectionError'>: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.openai.com', port=443): Failed to resolve 'api.openai.com' ([Errno -3] Temporary failure in name resolution)\"))"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6228,
+            "text": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/dataset/image_mcq.py:272: UserWarning: OPENAI API is not working properly, will use exact matching for evaluation"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6229,
+            "text": "  warnings.warn('OPENAI API is not working properly, will use exact matching for evaluation')"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6231,
+            "text": "To debug the OpenAI API, you can try the following scripts in python:"
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "line_number": 6239,
+            "text": "You cam see the specific error if the API call fails."
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_DocVQA_VAL.log",
+            "line_number": 1,
+            "text": "[2026-10-28 18:15:14] ERROR - misc.py: load_env - 215: Did not detect the .env file at /media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/.env, failed to load. "
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_DocVQA_VAL.log",
+            "line_number": 2,
+            "text": "[2026-10-28 18:15:20] ERROR - misc.py: load_env - 215: Did not detect the .env file at /media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/.env, failed to load. "
+          }
+        ],
+        "native_logs": [
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/launcher.log",
+            "sha256": "c968cc6f8a8a73d631abd7ac4d34f5cd24ad946885c51bc07ab128f92605f259",
+            "bytes": 1096
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_AI2D_TEST.log",
+            "sha256": "9d364203d6de6bea151a66a4fafe2346bc0f088e66db0218d3856c1a7e1f6278",
+            "bytes": 398944
+          },
+          {
+            "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02/outputs/logs/eadp_qwen3-8b_t256_a0.5_b2.0_DocVQA_VAL.log",
+            "sha256": "0c79305297be0c1363788d6005a9cadf80c09e62e8b723a544ca614faa4116e0",
+            "bytes": 745693
+          }
+        ]
+      },
+      "stability_boundary": "Both tasks fully audited only after the whole native sequence exited; native API/scoring failures and the original No-empty gate are retained separately. No repeated-input conflict audit or paper/API-judge reproduction success is claimed."
+    },
+    {
+      "run_id": "NeXT_public_default_K64_alpha05_beta1_wait",
+      "model": "LLaVA-NeXT-7B",
+      "task": "TextVQA",
+      "token_budget": 320,
+      "budget_cli": 64,
+      "alpha": 0.5,
+      "beta": 1.0,
+      "three_wait_nodes": true,
+      "n": 5000,
+      "n_circular_groups": null,
+      "value": 54.9,
+      "paper": 57.0,
+      "local_minus_paper": "-2.1",
+      "unit": "percentage_points",
+      "metric": "official TextVQA accuracy",
+      "author_value": 54.90000000000014,
+      "independent_value": 54.9,
+      "author_minus_independent": "1.4E-13",
+      "author_independent_metric_agreement": true,
+      "source_recipe_identity": "Public-default coverage; paper complete argv remains unverified",
+      "predictions": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_default_K64_public/execution/answers.jsonl",
+      "prediction_sha256": "27ac3f1a2665b29262db2903961bff1f0fb4c29c206594b83d55dfe078de937c",
+      "verification": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_default_K64_public/execution/independent_verification.json",
+      "verification_sha256": "da9bc500921add4500a7d52063431b3df558e3d27a603c7016a60cf462762ede",
+      "actual_retained_histogram": {
+        "316": 211,
+        "317": 2291,
+        "318": 2274,
+        "319": 224
+      },
+      "complete_provenance": {
+        "plan": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_default_K64_public/plan.json",
+          "sha256": "9ef9b4c69727d7baf324c5e3b3d93fd8c7d23a899d466f35e8c2389f05405d0d"
+        },
+        "allocation_note": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_default_K64_public/root_allocation_note.json",
+          "sha256": "77602cb7ef1ffba87aee01bebbd2dbe54c5e02dcf7f3b890f81200a07c5fe204"
+        },
+        "author_score": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_default_K64_public/execution/official.score.json",
+          "sha256": "d468686b40e71891a012a3518a446d025cb4bb42a48fe46fdef62daa523ce31f"
+        },
+        "release": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_default_K64_public/execution/release.json",
+          "sha256": "691f628e78d3b732a308cbef789c1bb61a652aee626f4cbcc71422e9d4721371"
+        },
+        "root_actual_process_exit": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_default_K64_public/root_terminal_process_proof.json",
+          "sha256": "100454d855cd853632a389693312cff5de9702fd5124a512a292e3ef3b16eae4"
+        },
+        "actual_masks_and_quotas": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_default_K64_public/execution/input_budget_observations.jsonl",
+          "sha256": "575bcc80c8bddc79ac52c71bc0b73e9231eeca61f0ee9528e991e35914f52acb"
+        }
+      },
+      "stability_boundary": "Full5000 input/output tokens, actual crop masks/valid prefixes and independent pointwise scores verified. No repeated-input conflict audit or paper-recipe identity is claimed."
+    },
+    {
+      "run_id": "NeXT_full_K64_question_only_public_comment",
+      "model": "LLaVA-NeXT-7B",
+      "task": "TextVQA",
+      "token_budget": 320,
+      "budget_cli": 64,
+      "alpha": 0.5,
+      "beta": 1.0,
+      "three_wait_nodes": true,
+      "n": 5000,
+      "n_circular_groups": null,
+      "value": 54.958,
+      "paper": 57.0,
+      "local_minus_paper": "-2.042",
+      "unit": "percentage_points",
+      "metric": "official TextVQA accuracy",
+      "author_value": 54.95800000000012,
+      "independent_value": 54.958,
+      "author_minus_independent": "1.2E-13",
+      "author_independent_metric_agreement": true,
+      "input_hypothesis_only": true,
+      "guidance": "question_only_before_Reference_OCR",
+      "paper_argv_confirmed": false,
+      "source_recipe_identity": "Inactive public-source comment supports this question-only CLIP guidance hypothesis; paper argv remains unconfirmed. Complete LLM OCR input unchanged.",
+      "predictions": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_K64_question_only_public_comment/execution/answers.jsonl",
+      "prediction_sha256": "0166ddd7fbdc3f6a15e579538236dcefaee3a892b9447397ef6d6297eca142c5",
+      "verification": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_K64_question_only_public_comment/execution/independent_verification.json",
+      "verification_sha256": "1f66d83e5e213db974d297d2bb402dc7283130dd17bbb3ad1583d81124af05ed",
+      "actual_retained_histogram": {
+        "316": 225,
+        "317": 2244,
+        "318": 2308,
+        "319": 223
+      },
+      "complete_provenance": {
+        "plan": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_K64_question_only_public_comment/plan.json",
+          "sha256": "3a1bfff5c78c47d7a0676f471eadcbff89aa3b98e9407132ffeaece3dbdce7e2"
+        },
+        "allocation_note": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_K64_question_only_public_comment/root_gpu_allocation.json",
+          "sha256": "bdd8872140761e1bc42d7e2fda233a122461914aee2d6373837c3808561f7ebc"
+        },
+        "launch_snapshot": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_K64_question_only_public_comment/root_launch_process_snapshot.json",
+          "sha256": "a88dfe5cdb733d8573dc3d414c5fa6e0a15cf3c9e871bfdecfb39ef976b72603"
+        },
+        "controller_state": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_K64_question_only_public_comment/controller_state.json",
+          "sha256": "4fd9827b9339abedeffb20698fc7f12ba523ffa856a3c0e7319dd966e6fab444"
+        },
+        "author_score": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_K64_question_only_public_comment/execution/official.score.json",
+          "sha256": "42930c2ce1ab7c109f1a0623ac8216cdde608eed447baec192546713ffb7b0fc"
+        },
+        "release": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_K64_question_only_public_comment/execution/release.json",
+          "sha256": "86497d5be61e30412b5087bb5ad7923e3b0061c4531dd17c8eb6d2f10e05de9f"
+        },
+        "root_actual_process_exit": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_K64_question_only_public_comment/root_terminal_process_proof.json",
+          "sha256": "a0e9c852029c96099021328d69d1cf8ab2f62120ef6b50268344c0b150c46925"
+        },
+        "actual_guidance": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_K64_question_only_public_comment/execution/guidance_observations.jsonl",
+          "sha256": "829c1d65dc060d7864086ee07fff1e8c0fcd2c47978a4bb83ce14cc8037296a0"
+        },
+        "actual_masks_and_quotas": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_K64_question_only_public_comment/execution/input_budget_observations.jsonl",
+          "sha256": "fe99ada1d7a9801342705b16bd8d4d86319fe161c4e04ea3e1a1fa774e48fab0"
+        },
+        "independent_pointwise_scores": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/full_K64_question_only_public_comment/execution/independent_per_question_scores.jsonl",
+          "sha256": "706b0e94ed2e8026fdca423167f6b726ee550b925e792eb287bb2a4d7b294fc8"
+        }
+      },
+      "stability_boundary": "All5000 complete actual guidance/LLM IDs/quota-mask prefixes/output decoding and author/independent pointwise score gates passed. This tests an input hypothesis, not paper recipe identity or proof of reproduction."
+    }
+  ],
+  "pending_full_runs": [],
+  "verification_failed_full_runs": [],
+  "paired_MMB": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/streamwait_control/paired_full_comparison.json",
+    "sha256": "c9dad4d7af1eaf25b804f42b9a72aed1df41b0e02c50bcf95879017d3c26a85f"
+  },
+  "MMB_released_exact_matching_recheck": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/mmbench/public_mcq_metric_check.json",
+    "sha256": "93ea16e523a404e3a73c9e9db5c42494ea36f6d7f37707ce37447746004bf1a2",
+    "all4377_parser_results_identical_in_both_runs": true,
+    "external_server_evaluation": false
+  },
+  "NeXT_fixed64_diagnostic": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/next_textvqa/panel64_author_wait/result.json",
+    "sha256": "7b54d9cab95475ce124ac3e4ca5cf33bf3e08d93b8fc95fdd6b39738c81b9ab7",
+    "answers_changed": 0,
+    "retained_counts_changed": 0,
+    "full_benchmark": false,
+    "paper_score_not_compared": true
+  },
+  "POPE_full_token_baseline_recheck": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/pope/baseline_full_rescore/baseline_full_summary.json",
+    "sha256": "5dea93323de5309e0a2599dd29fe453f5ea176af2e377c0baf34c3ffd703709e",
+    "f1_percent": 85.87870689695657,
+    "paper_rounding_match": true
+  },
+  "preserved_failed_public_launch": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full/state.json",
+    "sha256": "0b991183dbca67c5ecda0354f61db1dcc25052c0efa5ebce58939a8154c25874",
+    "reason": "Author repository omits result_transfer module; failed before model generation"
+  },
+  "remaining": [
+    "Remaining paper gaps and causal interpretation of retained complete runs",
+    "Published main-table complete argv identity remains unverified"
+  ],
+  "ledger_builder": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/build_full_run_ledger_v3.py",
+    "sha256": "166d3ee00a5ad910d75771377048d52bb2e7cef15209c0600f2bce2fd63d8ec7"
+  },
+  "goal_complete": false,
+  "ledger_version": 3,
+  "parent_ledger": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/full_run_ledger_v2.json",
+    "sha256": "5b19d5a62d4b05dff0c430063766649023f4f123633814352f5da9f574d9ac50"
+  }
+}

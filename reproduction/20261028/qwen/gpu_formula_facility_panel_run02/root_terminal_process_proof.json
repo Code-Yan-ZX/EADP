@@ -1,0 +1,47 @@
+{
+  "checked_utc": "2026-10-28T14:12:43.890497+00:00",
+  "root_owned_exec_handle": 5027,
+  "root_owned_exec_actual_exit_code": 0,
+  "controller": {
+    "pid": 2701769,
+    "start_ticks": 1332811192,
+    "session_id": 2701768,
+    "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+  },
+  "docker_client": {
+    "pid": 2701777,
+    "start_ticks": 1332811253,
+    "session_id": 2701768,
+    "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+  },
+  "native_container": {
+    "container_id": "92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8",
+    "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "host_init": {
+      "pid": 2701838,
+      "start_ticks": 1332811264,
+      "session_id": 2701838,
+      "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+    },
+    "host_cgroup": "13:freezer:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n12:memory:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n11:hugetlb:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n10:devices:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n9:rdma:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n8:net_cls,net_prio:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n7:cpu,cpuacct:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n6:perf_event:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n5:blkio:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n4:cpuset:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n3:misc:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n2:pids:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n1:name=systemd:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n0::/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n",
+    "original_host_argv": [
+      "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/diagnose.py",
+      "--execute",
+      "--allocation-note",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/root_allocation_note.json"
+    ],
+    "recorded_utc": "2026-10-28T14:10:04.846202+00:00"
+  },
+  "all_original_proc_paths_absent": true,
+  "container_absent": true,
+  "docker_inspect_exit_code": 1,
+  "GPU_snapshot": "",
+  "run_plan_sha256": "d752c876367803c5728ffa84a819fd63b4c129cfd0e2eb78931f7d94dae5d4ad",
+  "allocation_note_sha256": "d02442866a7ca42c4a873d79765e619e4a263cbd7b24353c95b13f13863e5e76",
+  "summary_sha256": "16ba37b86cf044a8dd4c4491492e93d8e08833466235d8972d1d40537f26d0a6",
+  "state_sha256": "2873e478f1e4193435b403b9ab2c381978f8168ef90ecc9ab0c509a5ae13be46",
+  "measured_cases": 64,
+  "n_questions": 16,
+  "independent_terminal_audit_status_at_this_snapshot": "pending"
+}

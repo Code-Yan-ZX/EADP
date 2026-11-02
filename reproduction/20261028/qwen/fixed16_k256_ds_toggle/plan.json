@@ -1,0 +1,931 @@
+{
+  "run_id": "Qwen_fixed16_K256_native_selection_prefill_DS_toggle",
+  "status": "CPU_prepared_not_started",
+  "panel": [
+    {
+      "position": 167,
+      "index": "49399",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/xkbv0228_p2.jpg",
+      "image_sha256": "daedd01bf181c9cadf8128db49906f07e584480042d0bbdba0efdf5055f3043f",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/xkbv0228_p2.jpg"
+        },
+        {
+          "type": "text",
+          "value": "Which government is responsible for sponsoring the Congress ?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "b8382c7cd0a28c5dfcaccfc57b98fcd29c13f8f9e871e58945e836fa93e0d58a",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1056
+          ],
+          "sha256": "bd6fac2715a3536971cc7578392e4a9a5629d8c0d23851d2f92b793637a5f270"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1056
+          ],
+          "sha256": "d54357375410b5abe8557d1b9c892a94aee9f52a58ca407c2d0aaa1d3abc51d0"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "a5c616f74cb04f3bee2264c22758d60081ff74e657451bb4a2fb589de8c89f3a"
+        }
+      },
+      "question_sha256": "b3cee0abe0aba9413d1585eb62ff84e062e7eaea3b92d19cfea33ec6dea182f9"
+    },
+    {
+      "position": 501,
+      "index": "41800",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/qjgn0226_p193.jpg",
+      "image_sha256": "2bf444397f1d52bf48d8cd2fe17aed5037c919b2f1f1a7bb39b2ca438630f321",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/qjgn0226_p193.jpg"
+        },
+        {
+          "type": "text",
+          "value": "what is the royalty product name ?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "c5ae5a093b5a8b0c58f5c8f93bb445e8444bec5af22ca993902eaea6dc11ac82",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1054
+          ],
+          "sha256": "ffa69dd065333f7e1633ee94621e78d8361312d1671a5da610b587e6cc762250"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1054
+          ],
+          "sha256": "c8cf9cb8062305542f0d789af6b58683ed4984b25cbb074c79e3e674e0fd3743"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "71cb14fb2feae24a0206753995c3833b4342ffcd74e03fddaed3d663d0003cc4"
+        }
+      },
+      "question_sha256": "5b3f8eef89fabd9bf8df31cba26dbd0e452b0d01013a464019f268f45571d7e2"
+    },
+    {
+      "position": 835,
+      "index": "42297",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/fkxn0226_p13.jpg",
+      "image_sha256": "e1c57635bd76c632086461bbe3a5d7cbfa4a0f23344e3d07b5a4a90a58fba91c",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/fkxn0226_p13.jpg"
+        },
+        {
+          "type": "text",
+          "value": "what is the sales in 2006?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "b0e17cafb28d649fb38edd2261ee0ca814f62839ee9eaac8c5209fdc11249f2b",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1058
+          ],
+          "sha256": "4f1694fa089c75b88af81540ade3c4a6b026e50d943ea50208f72eefdf61bc32"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1058
+          ],
+          "sha256": "45bc42dcb4cfed72c6ad614943f2f00d46bf5f444c566e0ede966bdbe7e61e22"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "5346e80ec245e6ec7910144cb12fe8fdefd125d03196206627553c31d7a07237"
+        }
+      },
+      "question_sha256": "bc174ceca793669c45a8093b7a3c637ea880168c0acef1e21dfc7df91568b056"
+    },
+    {
+      "position": 1170,
+      "index": "51073",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/xqjf0226_p6.jpg",
+      "image_sha256": "d454592b92478b50c68b4b9069a509821003c280f4ef014053da43c535470462",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/xqjf0226_p6.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What is the strategic Intent?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "d1d630f0f733bf549b539ab76bdb3e5fcadc4b219ae249a056ca8f802b3d33a6",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1053
+          ],
+          "sha256": "437c86e13fb220ba619d31b85b04843910e7288b882eae6cd7ba09954ad7ac5e"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1053
+          ],
+          "sha256": "c19b16f7e89803f576dc8585c854c97bb479aa5c5a07e5909a698aa2271a599d"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "6b9865ca6baa2c193211e4ee5356eea60b087f0b32c91dbbe934fc53f39172cc"
+        }
+      },
+      "question_sha256": "13b0abb21b6e1a6989f754eb148d040ce425b1c049736d4725fa9789eb8d3f1e"
+    },
+    {
+      "position": 1504,
+      "index": "59664",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/hnnp0227_p50.jpg",
+      "image_sha256": "49d00b633a248f9949b44f476dbace2d8cdac8d17a0742c2c6c5b619f22f8354",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/hnnp0227_p50.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What is written within the logo?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "99c3d63762d3f0938f64e1d56a6761a88d105e557c81820958b248e100d17008",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1054
+          ],
+          "sha256": "ffa69dd065333f7e1633ee94621e78d8361312d1671a5da610b587e6cc762250"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1054
+          ],
+          "sha256": "e9587c96438521781bd8b776fdb1a3790a60fbd9bc8206103f338f3f23081bb5"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "3477b21dc8c87bf844a6445ad076dc09bbb71944995aa05fb6fb9a5b5b2f52a9"
+        }
+      },
+      "question_sha256": "b26f1c388e18d5714fa236665afbfa005ae8ad691333412f781f5873fe4db2c9"
+    },
+    {
+      "position": 1838,
+      "index": "47763",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/kshm0227_p6.jpg",
+      "image_sha256": "0b748ef342b2e291360028dbf88960297ca2fa6d48d89df85de73d5095587736",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/kshm0227_p6.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What was the amount allowable for meals and miscellaneous ?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "6eb88332d0a83439c71aa8541126944b681db66095f79dd875472ada8bed95d7",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1057
+          ],
+          "sha256": "8c3ebd069aae5b038decc179b7483b7be60057f05bd4040be6cd5dc1d4485ea0"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1057
+          ],
+          "sha256": "e2c758e2bf0d16a919c4dc4ddcd85d0ee5ea35f4bd1268e9398ab237c7ccbac2"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "c44882892435415ccc641f8d034642ed62765fe155c38c86c0e03740cff22571"
+        }
+      },
+      "question_sha256": "4a288c44cbb8f845e79f3facf49a104ff8f4c28841105d6f60abfdb9e6a71e41"
+    },
+    {
+      "position": 2173,
+      "index": "60785",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/rlvd0227_p1.jpg",
+      "image_sha256": "758b2e6e9a9f2fccaa61447ab7e1573ead301ebff5f6830de4494fbfb9121be7",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/rlvd0227_p1.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What did Samuel Lepkovsky write?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "bed20b4d6c67b8ac37f5a08fca29a84bec309336dffc4f4f1c736403224acda6",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1056
+          ],
+          "sha256": "bd6fac2715a3536971cc7578392e4a9a5629d8c0d23851d2f92b793637a5f270"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1056
+          ],
+          "sha256": "5eb66c0ce4bebe5a85413d884745700452620e721066cf04f3ac3f01800c19bd"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "3f4f06dd21a18f192d98bb0f5578e105813dcdf4e8f233824e77c5e28f3c3c8c"
+        }
+      },
+      "question_sha256": "94268d15684b68822f0336699abc1b19987c1be237509055877272feb0e14a73"
+    },
+    {
+      "position": 2507,
+      "index": "45016",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/nsnl0226_p0.jpg",
+      "image_sha256": "7da2f82c0b158e04c8ce97a0d741004118bf445606c1b3509e0b53cde73f0a3e",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/nsnl0226_p0.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What is the heading of the page?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "805f84004f13d18896a497696a1bde13bf70796fdb4298c87b1e97cdb2455000",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "e94dbb0aa866dc99db822878b00957c34dc7a060ab31bb2ee919e51a17930e55"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "883bc1bd1ceb7758d634995b1df808b3d6c0c60bdaf87b6e2ea1dd28414ba9ca"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "77c0aa5af52923a8e6ad5f131d200a98d2065db23e4c60a4fec965352efdb334"
+        }
+      },
+      "question_sha256": "716cb3f3ea7fec059ccc30ad03869c310508bf903044427e55526e972a8e7b27"
+    },
+    {
+      "position": 2841,
+      "index": "61972",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/zpyp0227_p3.jpg",
+      "image_sha256": "dddff47adf6fd3c11da79458ce8537320cfc747c5d396ff340ea018839d7bea7",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/zpyp0227_p3.jpg"
+        },
+        {
+          "type": "text",
+          "value": "Who is at the Lowest hierarchical level?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "4b402eb2f3712524c87ca931dd2e402ad5945c12eef5709ebaeff57bf9c5f546",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "e94dbb0aa866dc99db822878b00957c34dc7a060ab31bb2ee919e51a17930e55"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "fe29ae6694c722bd87e06ba4c00f294fa2c1c0f9980f586b1dd5f37009aecf0d"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "7a087610b3999a3b425409d0570d9718f508e617997629929832cf27473da49d"
+        }
+      },
+      "question_sha256": "6064bf26d381ad0a50cf837dabd3c029563853dd323932037f658462cdbf69d6"
+    },
+    {
+      "position": 3175,
+      "index": "62506",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/fybg0227_p3.jpg",
+      "image_sha256": "1620e93df3ce596b16c93edc3b1fcdc0ec04b56d83c8b577c7eff8f61f9996c9",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/fybg0227_p3.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What does the symbol * indicate?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "b6a470120541982763dadf3c691649259e8c03cb5f187f3487516cee809fe19f",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1054
+          ],
+          "sha256": "ffa69dd065333f7e1633ee94621e78d8361312d1671a5da610b587e6cc762250"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1054
+          ],
+          "sha256": "6fe40211913420d164dd99a23d2a42bf995cbefee9ee94525891bb2eaf998f07"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "a7139dd8205799d2c5aa54ab2fb1e333efd0617b49df61924647588ae15e6c11"
+        }
+      },
+      "question_sha256": "cca23d97a6edaabdf14a5da2a7d4c9513094a3c34c60b874c2b29f3c435bb70a"
+    },
+    {
+      "position": 3510,
+      "index": "5646",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/qzlj0226_p0.jpg",
+      "image_sha256": "784fe23ec37d68ce7d1397e2e743091a0ca3f7a9308b9e89ad1308e374fb721d",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/qzlj0226_p0.jpg"
+        },
+        {
+          "type": "text",
+          "value": "what is the name of sponsorship program?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "587772ae5100b5966488c01c8b74b460d842456cd73d0286e34a1561218b0dff",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "e94dbb0aa866dc99db822878b00957c34dc7a060ab31bb2ee919e51a17930e55"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "6f4d48a89a44284c5c727418685b43a968a486a7ee6bd29eacfea00a80b52a30"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "742f5f182a88d77fd084fe06411fb54359a0fb0763949ee5f6a84eeeb47509bb"
+        }
+      },
+      "question_sha256": "01e3d1b69dc39a41eb69ca701b5307b27d9e798b3e452346f81c717fb195bd6a"
+    },
+    {
+      "position": 3844,
+      "index": "55237",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/hsgj0223_p95.jpg",
+      "image_sha256": "9b723562ae0aa2502c0846551494cc714c03a930f0534276e4aa0817cdb55d1a",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/hsgj0223_p95.jpg"
+        },
+        {
+          "type": "text",
+          "value": "During previous year, how much is the ‘Managerial remuneration to directors towards Perquisities’?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "82810121a69c58da25c7d0386cecd21546ab1fa77516ec0da88a433ee2488f0e",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1069
+          ],
+          "sha256": "3bea96d01ed5340339635044e4ad35416562fd856001ba41e523a42314a1f636"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1069
+          ],
+          "sha256": "893f9c6e76ecdcfc391e32e9250729e7253f5ad61a47d2f884e2857f5ac614a4"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "36e44271561f64d928c196e38c3edbe0b990773ea833bc10ab7c1d76c68d60e2"
+        }
+      },
+      "question_sha256": "59b38fda8f3df30ad78538d4797aa13e99be34634e4ad5d4fc6f8d8162adb01b"
+    },
+    {
+      "position": 4178,
+      "index": "25726",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/jzhd0227_p16.jpg",
+      "image_sha256": "c505613f4189e361da344e09f30cef291eae65b285b82b6f053ed4a0a8964d24",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/jzhd0227_p16.jpg"
+        },
+        {
+          "type": "text",
+          "value": "who is the sponsor for the given program ?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "3c08c1d5bdc1b5d9cd1ff41c98703c25b56f294cecfef0921743ee82681b44a9",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1056
+          ],
+          "sha256": "bd6fac2715a3536971cc7578392e4a9a5629d8c0d23851d2f92b793637a5f270"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1056
+          ],
+          "sha256": "b21b8ced761890896e25f61e855001d975a9e736b00af1428f0c166d367e3ccd"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "54e7d006ce907738f4c123c65e6ed7c8eae1124b5464b61152363f2075f6037f"
+        }
+      },
+      "question_sha256": "1501e76cf9329ac1437921913773e4bcacd4a47c6d448fc58c1ddc233d59ff88"
+    },
+    {
+      "position": 4513,
+      "index": "15230",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/ysgj0223_p80.jpg",
+      "image_sha256": "e2f4134a906f36b5b97bd92e4472837406841398b965311f83e33d02bb490a14",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/ysgj0223_p80.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What is the number of weighted average Equity Shares outstanding for basic & diluted earnings per share in the current year?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "d9c1da9eaeda375bfb0781db1b3e19bd8647e6375f2278173d0898fae2da09be",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1069
+          ],
+          "sha256": "3bea96d01ed5340339635044e4ad35416562fd856001ba41e523a42314a1f636"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1069
+          ],
+          "sha256": "5b68138678bce51dcc3890496f9a1d7fd3dc541a8891bd8dfeb53fa93ab9f939"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "88a1ef3cdb8bd9c58d9b241426287f1160dc455ff35e7d86941d75e3b3431262"
+        }
+      },
+      "question_sha256": "028d85a10d14dcd6a2c00f997f44dc3825911615de49c718a94bb2bc1b1ecc26"
+    },
+    {
+      "position": 4847,
+      "index": "6963",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/khcw0004_p0.jpg",
+      "image_sha256": "7a1ae9767186ab2b0ad0322fbb2ed302a92c2b922c132561f4af9974f584d11e",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/khcw0004_p0.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What is the name of the college on the letter head?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "636ce21aa6f8cfaf317a823ce77d26a367088937269d4f0afe10590b6569a74b",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1059
+          ],
+          "sha256": "fdd98ee5a062b3c4ed164176880829041002ef31814b04f8c86f831025a5c7d7"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1059
+          ],
+          "sha256": "eff38111e6b14d9f695d10099f74cbeff02a7210c1e43d0d08247a05b64e1bfa"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "46ec901e841b915d73d0cc36ed63d6c3509d6997a07fcb206fcd63303021a766"
+        }
+      },
+      "question_sha256": "3198b3cb37bd33121299873b200b78d73e4ae99d083f7a2ff86e225f8bba03e6"
+    },
+    {
+      "position": 5181,
+      "index": "57159",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/znbx0223_p14.jpg",
+      "image_sha256": "6bc0c67f537f25e772746ba56b74cbaeba75fc087481e31a1077c4f83a0883fd",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/znbx0223_p14.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What is written within the rectangular box?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "f16183e384f2569b7039568a48d6e6a53db012793b1836758cc01e1a92723c05",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "e94dbb0aa866dc99db822878b00957c34dc7a060ab31bb2ee919e51a17930e55"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "3cc162bb30315073d2e91ebaea8943ea4c66e40c32072832079d410590070fd9"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "8b7a3f74f84b79e18edbbe372d9539fd5cfff902ee717d8d602eac9079cfcd40"
+        }
+      },
+      "question_sha256": "d9cfd6e7ae7a1730eb4b5c18cdd73e7438070b6b5d22ab5dd30a2e63d4bd7d11"
+    }
+  ],
+  "model_instances": 1,
+  "expected_generations": 32,
+  "native_anchor_count": 16,
+  "endpoint_first": true,
+  "files": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/README.md": "85aa6d080a912dceb33286dd5642094452efd2a57bdcd528af447e2edcb4479b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/common.py": "911710c662e4f36458dcb461660490281824e5e81cff1f747a425f39076f14cf",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/contracts.py": "839d03cf712630650acc9e8822584e5e9ebc8bc4d3a0432de9e4b0be68112ca8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/intervention.py": "935365b3db9dac4e29cd425769c6e2eac2b3107d75ec25e7b2cdf03f934a2f95",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/selection_observer.py": "d6fe3f4906f31b2f76267e6d6a208d90ce770f2327c9eff0203e0228073ad8b8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/historical_anchor.py": "37fc26745145120b0dd03bbadbdcc8e9d24b71e610faf19712e09a36c22621f6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/worker_draft.py": "3aed9174c79136af12b2a66b7013be410442e66e6c89e00c8007eb2e62746d87",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/worker.py": "c34fc21964c92c45f38be3ddcc258ef0ae0d012a40189b5510a9b1482922e227",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/prepare_plan.py": "544cf912d145972724538515379a65ca4789d0e5648f00b5c23630b284e537f8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/controller.py": "ec9a0f2f252784f08d2ee04e2e4b5c6a5eb7a104c2a6140258245a7f6177d49f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/cpu_feasibility.py": "5f462edf2754c99b66d06737853a67f4de142dbc0be4cc973d24d8218d17e2ee",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/cpu_tests.py": "2cbd1d106fb53ac5b36bc53ebec689cb2a2dc145979c9f01233b7ea8f0669276",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/cpu_worker_hook_test.py": "d5a777d40b954adb755f77af5155fecda3eb0cf929d9262fcc437927dee6642d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/cpu_old_anchor_test.py": "87ec8fb6c8aea45b9ee05c9486e3eedfdaa7a5553ec4bcaccbebb6954d98327c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/cpu_container_entry.py": "cbb3c69a6113c8b5fcf490ff568a5bcf0704e595532f40b7f431a03960353435",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/run_cpu_container_tests.py": "fd37358184100f4e664a6dceee4a61f319cf5f765f7ac8d3f4f93d6809908c17",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/cpu_preflight.py": "734d07d94de21e90d18f478d455baabb413a190029298af8b41bac805e6494d3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/cpu_container_check.py": "1d36231c2f8b689432bbdae70456fa7677aec74397134f3dbd04f12d2c6a9334",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/verify_terminal.py": "16d060a555d417ef1367b268bceb361dc40894d381be094aae342f39157503f9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_k256_ds_toggle/test_verify_terminal.py": "3305c14156369b7802d43e645b6a4fe764a4e15cef640ad4d2c3baf84f815124",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_plan.json": "d752c876367803c5728ffa84a819fd63b4c129cfd0e2eb78931f7d94dae5d4ad",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/root_terminal_process_proof.json": "03516e429818c7dc39a1db27e396b921ff8462ce4628dc64f7add23b4f6794ea",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/summary.json": "16ba37b86cf044a8dd4c4491492e93d8e08833466235d8972d1d40537f26d0a6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/per_question.jsonl": "9429b7ae99b3ca41bafafb1cc9f16e69460331be5dadc4160db59a60ce3fbaab",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/independent_verification.json": "3b9a0a0d582d972bfeccb4f765cd2754f2512c7ea43c1c5a985b419f2db61c46",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/plan.json": "255e5a7dc9d97de0c597e8220d2cd7e1c1babe54aa1f1b26d90f413d30c91e76",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/root_terminal_process_proof.json": "fac478dc842c870ae9f2f360441d5880146b425984c2f07d82a1e04087a851ee",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/independent_verification.json": "115e4828cae49329f7dc7f83e7f7d5d882bd20c7b38b036191fcade73622209a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/public_fa2_full_run02.terminal_audit.report.json": "57d75bc40e833544ceaf1b94214b559d850fd062e74b10c55717b02d2ae3863b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/public_fa2_full_run02_DocVQA_VAL.per_question.jsonl": "02b6f9be7cd866634bad291a0e0875e3918b4bf60a6fa02c31009c0944139d11",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_00.npz": "7f8f7ebd829d9fc4b18aced5b53d0f081b279ee6e1cc85f2ab9972de9b414ee4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/00_eadp1024.json": "17e822513ae5a5c0f739b39315e41f476ce6867e8629d9676d3d5d25ebb56af0",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/00_eadp1024.npz": "b0814ce53400f9bbb8ca43882023e06767bbceccc9f23d845f0bb647f0de3e8b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_01.npz": "8fc740bdcd36a4c86968891843eb406856d0fd882d045a9f28b98da6d6b9aabc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/01_eadp1024.json": "704f5459ba981463b5ce1ba48e229c95be5bf64c613919fafe2e69d7bb6a1e36",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/01_eadp1024.npz": "d601a44f22e8cff8f95d23bd1cea0bfbe08bca24be62e5937f2e2bcbae958a47",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_02.npz": "ae0142b015588583d7ac4ba28ed36e48e5a9f750e175317b09a6b5ac0ec8c73c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/02_eadp1024.json": "2be4bc75c3a4c07fbf2f45e36634d945df6a1844209e383e0ea2b8d690815e35",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/02_eadp1024.npz": "9b03bb289980b65ee695fd4f6cd246bbe1f78f0d6bd25a9163a922d04a1b6588",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_03.npz": "d16d1bac46049ba3f30ac9ea32407aaa9cd592eaabe247a14ddb28f5cbe2b9c9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/03_eadp1024.json": "6d6cd3e1324dad36f5e37269933657be179a1003f1f89aaa32b5c5e816c3c3a9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/03_eadp1024.npz": "ac4c8a54b9a02bafbb35409ff855d453e79de0774252794353539b99a07da6c1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_04.npz": "31e5ad9fa3e8a57745a35bd0db8d2b8f3a293e617817f36003eb46324d3216f6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/04_eadp1024.json": "5eeb224c6ba38ad9beee65524dde74dc6d51b1556ccbfeba42b31a92bdf2b549",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/04_eadp1024.npz": "39ecccd8c46258de32d9ddc5a6d566f5b9016ea28c44f82c041ad234955a655c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_05.npz": "25f99b80c78320a985786be86c376ef57dee5f55df4fd10e1dccadfca78d7782",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/05_eadp1024.json": "59ee1c5e14ffcc54d22b3e01d9279d1499c4dec831fff148625b6ba1eea1cddc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/05_eadp1024.npz": "d8ae8e7a80db108ae78643bdcc0bfdcfff3b9ccfadb6ad261bde2090fc3aa656",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_06.npz": "e92e7d49e121ef443b87c6a984a3169dfe7197fbdbe4f42c6c276fbbc0936db8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/06_eadp1024.json": "d788e2dbf733b83ac4c5c4f71e7ff54485f1d3233a8f0d2f6c7ea0847574514c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/06_eadp1024.npz": "2d284677c7c4972e1630aaabbff5a72ab5b8a35e46dcbbb4cf99a9d01e3eccbc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_07.npz": "80880176f4e79ea39daffbac009c986da95171ef73a4f05385acc5b4bc1afe0d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/07_eadp1024.json": "4641c5385838388fbbb4d39228d74e1aeecebfeb728d802ada39de13358fb365",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/07_eadp1024.npz": "465c57f5853a29a4529c7f34983e5b7df899da44b0c5eadbadf8be37d2fe266d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_08.npz": "8ced96e40ae2d2fa4d7d1d8a302541807585c92df96ad5962f7232cfde96ff38",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/08_eadp1024.json": "5921aa91ae7fd733146e372bd343f780db655e4dde24ea2209ac67000a1553e0",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/08_eadp1024.npz": "3d9d1a0041b60c1dbffe0e1f5da20cfff43536e0bb43be10fef3d718a8d4dc9d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_09.npz": "e7ac1fd8e3840d4bfa364f767590fcb1fc1a0e07a6e91be9de46b3c0f438c780",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/09_eadp1024.json": "b0f41dd66b9ea03d99d67e01326442b71f9f5a1150bf0c1ccbade80bbc486194",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/09_eadp1024.npz": "7f8dc5d5825226639214e69e6ea6444c5eebf21ab912f7475fb2360d5b8048da",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_10.npz": "f7e9e6369ad48c48aa99ae511b8ee7db4f4ce13690cc846dbd3a967840b70ed3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/10_eadp1024.json": "e5e376fc961a9d97049fe70c384e47393bd6d913007c92df95b943cbd3f84f7a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/10_eadp1024.npz": "4507b280a0713865040af1d127e87e0a48cd26489689aafff04feed051a0973b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_11.npz": "8a65af245e368816a9f0b3b28eaef4f182e42c68db3b19109ee85e586f0bc380",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/11_eadp1024.json": "d3399d14f7f53fc0776cc33deb74516e6ae4887f8c0337ec059d2ec651604361",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/11_eadp1024.npz": "7b33fe38ccbc6f3b5f296c54a54138f5ed5a39c53bfe08fd5be95eecd9c22599",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_12.npz": "7462708a2f5f42ee158686e88faba3bdca7cb748dead9004498748d8736650ec",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/12_eadp1024.json": "6583fb466bca307e638225c9cc1963a281f8a682d1f450fb119421f8cfae5411",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/12_eadp1024.npz": "62486b7fdd2a81f7e2187b596257f0224f2917e5a4512bf9a2bcb579e9b99c29",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_13.npz": "669fdde167bf4ccc0acd1786dbd3b0ad08a8b45147a7934a845fe4e5a31adf70",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/13_eadp1024.json": "ce0a7c28215aa32820bb4f826fa89a7b51f665c0ae1ab42d933ce0b42db9a727",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/13_eadp1024.npz": "fcccebdb195a4fa38bc5c7ceec778152a28a49a0abeea8347e6045dfbc10ba1f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_14.npz": "7205da354f208748e2cb7769a754fd12f426b920199b1fa43e541d0b817f8a65",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/14_eadp1024.json": "9cd1ac52d3def827b0dfdb13cc4dbce5b7ac6de26413bce66e5557796b18ff43",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/14_eadp1024.npz": "64b7759d6f26b2227e8450be2b8dd0d9c8825eae36d1e6cc65ecb7502db51237",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_15.npz": "8e08eb28a16a17988eaf07bbbfb41d4d47ac58eabcd03efd2d3de6c3969ac603",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/15_eadp1024.json": "2bb09f03a9a48f075ea5779887e20f0d20753e1029324c54a8a5a608b7ebcfc2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/fixed16_ds_factorial/execution/15_eadp1024.npz": "48131be9392ae137c50936d0ec94d14196d9cdb723e02468ece02adb66b5f087"
+  },
+  "policy": "All sixteen native K256 original responses, actual author selection and old cache/history anchors must pass before any DS-on call; pairs use one model and separately recompute, then bytewise compare actual selection and input tensors. Actual responses are saved before observation gates. No automatic queue/retry.",
+  "limits": [
+    "Unregistered DeepStack injection changes the published implementation; this diagnostic is not the reported paper score or a new pruning method.",
+    "Historical K256 generation saved response text but not output token IDs or prefill state.",
+    "Old fixed16 visual arrays are used only as sixteen source anchors, not as a new K256 DeepStack experiment.",
+    "No ground truth or scoring in this experiment; the previous completed historical prediction audit contains old score fields which are unused.",
+    "Same prefix continuation comparison cannot attribute post-divergence differences to a single cause.",
+    "Full outputs and high-dimensional tensors are retained; instrumentation affects timing."
+  ]
+}

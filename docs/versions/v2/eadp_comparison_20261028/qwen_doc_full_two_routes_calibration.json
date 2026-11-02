@@ -1,0 +1,76 @@
+{
+  "definition": "Same-model, same FA2/BF16, 5349-example full-route calibration; outside pruning table and full-run ledger.",
+  "rows": [
+    {
+      "model": "qwen",
+      "task": "DocVQA",
+      "method": "原生多模态 FULL",
+      "n": 5349,
+      "nominal_tokens": 1024,
+      "paper_value": 94.5,
+      "local_value": 94.48157801098883,
+      "local_minus_paper": "-0.01842198901117",
+      "unit": "percentage_points",
+      "conditions": "同模型、同FA2/BF16、原生多模态生成；5349题；逐题1024个视觉输入",
+      "report": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_two_routes/score/score_report.json",
+        "sha256": "0b7843b902bc0fd50b05abc75791796373da5b3f4330387af5697ff18d0d37e0"
+      },
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_two_routes/execution/plain.predictions.jsonl",
+        "sha256": "6405b889baf26cfabe82e334c8b9780cee344abab86eb0dff3f9cdd56bd393d8"
+      },
+      "arm": "plain",
+      "official_value": 94.48157801098883,
+      "independent_value": 94.48157801098883
+    },
+    {
+      "model": "qwen",
+      "task": "DocVQA",
+      "method": "EADP K1024 全token路径（诊断）",
+      "n": 5349,
+      "nominal_tokens": 1024,
+      "paper_value": 94.5,
+      "local_value": 87.82540594271218,
+      "local_minus_paper": "-6.67459405728782",
+      "unit": "percentage_points",
+      "conditions": "同模型、同FA2/BF16；显式未注册EADP K1024、无裁剪；inputs_embeds生成；5349题",
+      "report": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_two_routes/score/score_report.json",
+        "sha256": "0b7843b902bc0fd50b05abc75791796373da5b3f4330387af5697ff18d0d37e0"
+      },
+      "raw_prediction": {
+        "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_two_routes/execution/eadp1024.predictions.jsonl",
+        "sha256": "8b8430e4e56cbfa744f47e12ee46f9777b60b2d2751442a1e88fc4644eab921e"
+      },
+      "arm": "eadp1024",
+      "official_value": 87.82540594271227,
+      "independent_value": 87.82540594271218
+    }
+  ],
+  "eadp1024_minus_plain_percentage_points": "-6.65617206827665",
+  "changed_answers": 1189,
+  "score_report": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_two_routes/score/score_report.json",
+    "sha256": "0b7843b902bc0fd50b05abc75791796373da5b3f4330387af5697ff18d0d37e0"
+  },
+  "generation_exit_proof": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_two_routes/root_terminal_process_proof.json",
+    "sha256": "c6f7a6ab10f27e2d085ec1a7e80cbd5a31da620be65209cf5146e95e50851571"
+  },
+  "score_exit_proof": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_two_routes/score_terminal_process_proof.json",
+    "sha256": "1b26e648136fe0862d5a0d84c28efc07b4126d0f7bc9416d6f47a3b6de4f8bbc"
+  },
+  "generation_verification": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/doc_full_two_routes/execution/generation_verification.json",
+    "sha256": "c99edd08f8edc776fd4562a14c97ae51c88ae15816508cea716ba690aed659e5"
+  },
+  "limits": [
+    "K1024 is an explicit, unregistered diagnostic, not a confirmed author main-table configuration.",
+    "Comparison changes the complete generation path; it cannot isolate DeepStack or mRoPE as the cause.",
+    "The historical FULL calibration remains separately recorded."
+  ],
+  "paper_argv_confirmed": false,
+  "part_of_eadp_pruning_ledger": false
+}

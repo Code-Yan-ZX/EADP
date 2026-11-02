@@ -1,0 +1,92 @@
+[2026-11-02 22:33:54] ERROR - misc.py: load_env - 215: Did not detect the .env file at /media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/.env, failed to load. 
+{
+  "n": 5349,
+  "seconds": {
+    "mean": 0.7050747552621608,
+    "p50": 0.5861110724508762,
+    "p90": 0.8561523631215096,
+    "p95": 0.9581752981990576,
+    "p99": 1.198225875496864,
+    "min": 0.38684952817857265,
+    "max": 98.82906648889184
+  },
+  "prefill_gpu_ms": {
+    "mean": 80.66517766388048,
+    "p50": 80.45568084716797,
+    "p90": 81.3510971069336,
+    "p95": 81.96142578125,
+    "p99": 83.70884613037109,
+    "min": 79.6948471069336,
+    "max": 104.2603530883789
+  },
+  "peak_allocated_MiB": {
+    "mean": 16932.426516912477,
+    "p50": 16932.28955078125,
+    "p90": 16932.34423828125,
+    "p95": 16932.37548828125,
+    "p99": 16932.43017578125,
+    "min": 16932.24267578125,
+    "max": 17104.96142578125
+  },
+  "peak_reserved_MiB": {
+    "mean": 17210.896990091605,
+    "p50": 17232.0,
+    "p90": 17232.0,
+    "p95": 17232.0,
+    "p99": 17232.0,
+    "min": 17008.0,
+    "max": 17232.0
+  },
+  "output_tokens": {
+    "mean": 7.361936810618808,
+    "p50": 5.0,
+    "p90": 10.0,
+    "p95": 12.0,
+    "p99": 17.519999999999527,
+    "min": 2.0,
+    "max": 2048.0
+  },
+  "total_measured_seconds": 3771.444865897298,
+  "total_output_tokens": 39379,
+  "questions_per_s": 1.4182893268220618,
+  "output_tokens_per_s": 10.441356403239105,
+  "eos_present": 5345,
+  "no_eos": 4,
+  "max_tokens_without_eos": 4,
+  "prior_response_matches": 5349,
+  "prior_output_id_matches": 5349,
+  "prior_selection_matches": 5349,
+  "limitations": [
+    "Natural output lengths vary and affect elapsed time.",
+    "Wall time includes image read, processor, visual tower, selector, generation, decode and light hooks; excludes model loading and validation.",
+    "First language model CUDA event includes DeepStack injection; excludes visual tower and selection.",
+    "Peak memory is whole-inference PyTorch allocated/reserved including the model; excludes allocations outside PyTorch.",
+    "Single DeepStack-on arm: cannot infer a fair on/off cost difference from old instrumented full runs."
+  ],
+  "scores": {
+    "official": 67.90310561305029,
+    "independent": 67.90310561305022,
+    "full_denominator": 5349,
+    "native_NA_conversions": 6,
+    "prior_score_improved": 0,
+    "prior_score_declined": 0,
+    "prior_score_unchanged": 5349,
+    "per_question_sha256": "d2d7113f6cbcf84bb58bee1ae82951d712b6e33b0dea3a01dcc0fa99c4f7eabb",
+    "native_input_sha256": "00e967b11ddb4913981c5fb6ca793ee8ad8a68677231e044a969c63e1293ea76",
+    "native_detail_sha256": "00bf0946830ae76da3e1d9923bed8900d86128dc80f1345cc30fc8fc5703e834",
+    "all_pointwise_equal": true
+  },
+  "evidence": {
+    "root_exit_proof_sha256": "1fa26bafb386ddd1e2797d3347bb7e859aa78a4d14606abb736bcb27b61debf3",
+    "complete_sha256": "5ac14d6a3e152c656a308232ad1f6d75f98bc5ef3c3c3e03b36a9d45cdb82e33",
+    "process_exit_sha256": "8f5600cbbf48bc74e3893d9153bd9925b34f398a1a6d05dc26e6168cc503246c",
+    "observations_sha256": "fcc2cd08eb4e5f4c06efdd7a6b6a91c9bb4731a515e3b07efcc38e9fa7c2d26d",
+    "inputs": {
+      "code_sha256": "28e85589fcafb92f6cdd80a102e867d41da4ea7eb39ddf0fea570beec193740e",
+      "manifest_sha256": "040b38432056311153ee70c3833258f66cfd4cc62b296fb3ceccf2b0de477539",
+      "old_plan_sha256": "d752c876367803c5728ffa84a819fd63b4c129cfd0e2eb78931f7d94dae5d4ad",
+      "prior_prediction_sha256": "bad8533a45231dcf02ee144a2126a1ecccf8e78273159f78195178d42326c899",
+      "prior_observation_sha256": "1d78cd7c21ce6f98a7e03878c23ab70a924297fcc26e95310c088f8f03f7fde7"
+    }
+  }
+}

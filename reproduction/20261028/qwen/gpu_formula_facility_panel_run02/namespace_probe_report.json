@@ -1,0 +1,134 @@
+{
+  "status": "CPU_namespace_probe_passed",
+  "source_guards": {
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/config.py": "1af82d5cf4c11e1f9eefe9480d7cb78e2f18eae9d3852e3e05c9f0116587b08b",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/model/pruner.py": "bf809614c207142b8a4fc945f29a8828688c88a2896ebd349d55c4a0b1a917e6",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model.py": "4d27418413ee72aa5fe422d7bb97103d1c097411e6c20945e2f11dcf607fb475",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py": "34556188962a1b057382269bc1f9f0cdba1a12e9cf1861acb60fa4fa0a59fe34",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/prompt.py": "98949c9bb67820750fc72496bcb4eb9acfe30b0d6fc8917ecdccb9f91e6cd281",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/inference.py": "de6a24104b00d60d900000d53c17fa66be9fdf438401c1f9278618df2e8afd2a",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/dataset/image_base.py": "9ca69d09e0d2a053fd65908c2d2b1247bad1a5c9a88dd151808554c5fad8ccd6",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/scripts/run_eadp.sh": "d5368f5ac7f72b0ba3f25f92500845e36b9f6b2a24ad35a32cd36a8be68115e8",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/scripts/env.sh": "25fb10ba57671b5b772144a251bfd0c44beed1f4e3fcbeeac319cc9c0d3aae52",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/run.py": "1990c8d4d663be171a712f55c00922aef1b197331dfe9bdc0201f6f39720e688",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/container_runtime.py": "7af58cb6477c968dc211169a6709f8ea9cd0f8d590caf4a72f97c1de1bb5f910",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/source_probe.py": "f215f12d00c1e3dc00d1c5a6e8e942402a7d97fb78d34726fc53cc45c1e2f38f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/run_public.py": "7f9880cac7382154f63fb722a76d3da1fc3e00ac89f13dfbad173add5099c623",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/run_packaged.py": "ff55e2c433fbe86a291ea1b99c74e900ac1ab03b46e49a4ca6ddf0cc1f4cb6f6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/import_overlay/sitecustomize.py": "d902093b48410c280b32e083cb72f5f3bd178abf7b482e68bec0003b677cadac",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/import_overlay/result_transfer.py": "d6225256ec0afa2ac9857b139df2f910b23b693749d2f2eb58cf7e696b9b6974",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/import_overlay/provenance.json": "2a16eb9ac9baa366dd5eb7872c5297c7c2dfe5dbbfdc72dd9c3974fe7a4cc649",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/tokenizer_config.json": "c2da771801886ad9ae98181793ffd3dfb7f1af30f6f7c6a4e15d7dbba52e2399",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/video_preprocessor_config.json": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/preprocessor_config.json": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/generation_config.json": "8469742d1fce0de951c8909b26a2c0c0d8490837ce476efb114da9e0cefc4d44",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/config.json": "5cd452860dc1e9c29dd71cc3cef7f39b338b7a40793f7a260655c2d3568f3661",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model.safetensors.index.json": "520b2e05079402e9468a8701d03d1154d14b2599593afb6effa7fb60c1bff070",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/chat_template.json": "5c72a170d2a4a1a3bc5adad2e689ae28138a9700e5b8c96c0266331e86c0acce",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/tokenizer.json": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py": "dd63ed3b124232735b3dca1bfa28f9d6b0d3f7182afcb75dde8f3e724b2b22da",
+    "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05": "9e5dc72d6a9fda5d6a89e0cadbe5af832a006e4469d418ab21bb16b9c6a0017f",
+    "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05": "9ec08a9bc379bdcbd0bae105556b75d6ee89be1566032c4f0b82d25f89aa6431",
+    "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05": "109657e953cef78b4ab0070083962e33b82442731f94c49cb81b57a6eaa9c0a3",
+    "/usr/bin/nvidia-smi": "d3916c1ded83f3a1bc1106b2921c05845a90ddb258f7379214df3d81801b03c4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel/formula_helpers.py": "9f82bd4dd57880947455cb58d4c885a08c0b7f7e42e77bdb6b08259d73125399",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel/diagnose.py": "908d301a4e54106b188fe1062a472e54754276b35107251217b5c4a0ffc32e75",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel/run_panel.py": "fffbb516306f43a4160a0a6f6240aae0df6dd44fb2839e18ffdb5e387fcd1d0c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel/prepare_plan.py": "d8c72ca779cf661d51d96403073ede6a2e81ebeac489205cd8cc191e2628dd6f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel/cpu_acceptance.py": "a8cf423797f99d6fae7412753e03db840660e810dfbd759d1fdd7ca71b9eacb7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel/README.md": "3de272f0446ebaf26bd373dc5ab826a4659cec68614352a61d4805f6ea4d3f21",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02_plan.json": "d1afef9e1f470d432105cb8669e25f54b9906d85b54f7685689a84b539feb467",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/source_probe_plan.json": "35ce85b0c18eb8e23670bdd6b7143985421ff50166f3c3717a9dffe681bba74e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/dataset_cache_audit.json": "266124eed212ce0969926446932c1d2c4fa4e6e15d73c031c3add958f6758c88",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/qwen_weight_identity.json": "7bfe695c2dbb0aa4e625183f0344d26bcbdc3add24658a068302c2744dc07ec8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/qwen_processor_tokenizer_identity.json": "a5c5621c5a6a85794a8948b10bcb283a707bf74ca99968c1c02ff127be5f5a7b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/terminal_audit_preparation.json": "2a52c673886038022f28ed62d6a8f5a45da82aa9edd41ba6f91375aaf1f9d2b6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/processor_input_identity/fullDoc_comparison.json": "38e88c560860828dbbf9ed5645fb7561186b1dc1f7cd03f3bad807035c34d03d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/processor_input_identity/author_qwen_fullDoc/report.json": "d4b6413d9702d5b20b22dc0416a58941bfa9efc09ae6ffffa4c6a94ea70a8522",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/processor_input_identity/author_qwen_fullDoc/per_question.jsonl": "51c52ca77f8869623db64515795dd7ce1b22133c730d206f86a513d5b41207bd",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel/cache_inventory.json": "83f56979fdd910346dc416bf2337d1917712614b1f67b6bfdb23764496fdc94d"
+  },
+  "model_stats": {
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00001-of-00004.safetensors": {
+      "actual": {
+        "resolved": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/d5d0aef0eb170fc7453a296c43c0849a56f510555d3588e4fd662bb35490aefa",
+        "bytes": 4902275944,
+        "device": 2065,
+        "inode": 68682060,
+        "mtime_ns": 1766122873997458552,
+        "ctime_ns": 1766132886669770948
+      },
+      "host_expected": {
+        "resolved": "/data/models/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/d5d0aef0eb170fc7453a296c43c0849a56f510555d3588e4fd662bb35490aefa",
+        "bytes": 4902275944,
+        "device": 2065,
+        "inode": 68682060,
+        "mtime_ns": 1766122873997458552,
+        "ctime_ns": 1766132886669770948
+      },
+      "only_resolved_path_differs": true
+    },
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00002-of-00004.safetensors": {
+      "actual": {
+        "resolved": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/8be88fb5501e4d5719a6d4cc212e6a13480330e74f3e8c77daa1a68f199106b5",
+        "bytes": 4915962496,
+        "device": 2065,
+        "inode": 68682061,
+        "mtime_ns": 1766122889153369070,
+        "ctime_ns": 1766132901889718733
+      },
+      "host_expected": {
+        "resolved": "/data/models/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/8be88fb5501e4d5719a6d4cc212e6a13480330e74f3e8c77daa1a68f199106b5",
+        "bytes": 4915962496,
+        "device": 2065,
+        "inode": 68682061,
+        "mtime_ns": 1766122889153369070,
+        "ctime_ns": 1766132901889718733
+      },
+      "only_resolved_path_differs": true
+    },
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00003-of-00004.safetensors": {
+      "actual": {
+        "resolved": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/83de00eafe6e0d57ccd009dbcf71c9974d74df2f016c27afb7e95aafd16b2192",
+        "bytes": 4999831048,
+        "device": 2065,
+        "inode": 68682062,
+        "mtime_ns": 1766122889477367168,
+        "ctime_ns": 1766132915557671854
+      },
+      "host_expected": {
+        "resolved": "/data/models/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/83de00eafe6e0d57ccd009dbcf71c9974d74df2f016c27afb7e95aafd16b2192",
+        "bytes": 4999831048,
+        "device": 2065,
+        "inode": 68682062,
+        "mtime_ns": 1766122889477367168,
+        "ctime_ns": 1766132915557671854
+      },
+      "only_resolved_path_differs": true
+    },
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00004-of-00004.safetensors": {
+      "actual": {
+        "resolved": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/0a88b98e9f96270973f567e6a2c103ede6ccdf915ca3075e21c755604d0377a5",
+        "bytes": 2716270024,
+        "device": 2065,
+        "inode": 68682063,
+        "mtime_ns": 1766122804961880310,
+        "ctime_ns": 1766132929133625302
+      },
+      "host_expected": {
+        "resolved": "/data/models/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/0a88b98e9f96270973f567e6a2c103ede6ccdf915ca3075e21c755604d0377a5",
+        "bytes": 2716270024,
+        "device": 2065,
+        "inode": 68682063,
+        "mtime_ns": 1766122804961880310,
+        "ctime_ns": 1766132929133625302
+      },
+      "only_resolved_path_differs": true
+    }
+  },
+  "CUDA_VISIBLE_DEVICES": "",
+  "nvidia_device_exists": false,
+  "torch_imported": false,
+  "model_loaded": false
+}

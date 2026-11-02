@@ -1,0 +1,678 @@
+{
+  "checked_utc": "2026-10-30T12:36:47.907706+00:00",
+  "GPU_snapshot": "",
+  "AI2D_logged_completed_iterations": 3088,
+  "AI2D_expected": 3088,
+  "AI2D_prefix_scored": false,
+  "processes": [
+    {
+      "pid": 2364766,
+      "proc_exists": false
+    },
+    {
+      "pid": 2364783,
+      "proc_exists": false
+    },
+    {
+      "pid": 2364864,
+      "proc_exists": false
+    },
+    {
+      "pid": 2364896,
+      "proc_exists": false
+    },
+    {
+      "pid": 2531101,
+      "proc_exists": false
+    },
+    {
+      "pid": 2471493,
+      "proc_exists": false
+    },
+    {
+      "pid": 2514846,
+      "proc_exists": false
+    },
+    {
+      "pid": 2514842,
+      "proc_exists": false
+    },
+    {
+      "pid": 2449729,
+      "proc_exists": false
+    },
+    {
+      "pid": 2559819,
+      "proc_exists": false
+    },
+    {
+      "pid": 2701769,
+      "proc_exists": false
+    },
+    {
+      "pid": 2701777,
+      "proc_exists": false
+    },
+    {
+      "pid": 2701838,
+      "proc_exists": false
+    },
+    {
+      "pid": 2734202,
+      "proc_exists": false
+    },
+    {
+      "pid": 2734206,
+      "proc_exists": false
+    },
+    {
+      "pid": 2774786,
+      "proc_exists": false
+    },
+    {
+      "pid": 2774847,
+      "proc_exists": false
+    }
+  ],
+  "completed_CPU_processor_audits": [
+    {
+      "path": "reproduction/20261028/qwen/processor_input_identity/current_qwen3vl_clean_fullDoc",
+      "pid": 2586906,
+      "start_ticks": 1332325407,
+      "agent_exec_handle": 10763,
+      "state": "complete",
+      "rows": 5349,
+      "target_rows": 5349,
+      "unique_images": 1286,
+      "proc_exists": false
+    },
+    {
+      "path": "reproduction/20261028/qwen/processor_input_identity/author_qwen_fullDoc",
+      "pid": 2587361,
+      "start_ticks": 1332326881,
+      "agent_exec_handle": 74641,
+      "state": "complete",
+      "rows": 5349,
+      "target_rows": 5349,
+      "unique_images": 1286,
+      "proc_exists": false
+    }
+  ],
+  "CPU_full_input_comparison": {
+    "path": "reproduction/20261028/qwen/processor_input_identity/fullDoc_comparison.json",
+    "sha256": "38e88c560860828dbbf9ed5645fb7561186b1dc1f7cd03f3bad807035c34d03d",
+    "complete": true,
+    "different_images": 0,
+    "different_prompts": 0
+  },
+  "completed_GPU_diagnostics": [
+    {
+      "pid": 2633433,
+      "start_ticks": 1332520592,
+      "session_id": 2633432,
+      "started_utc": "2026-10-28T13:21:37.330937+00:00",
+      "plan_sha256": "6ea965865b8211d37c213352b57ff5dc5302d3950f918a0be518fa1bd5b418b7",
+      "allocation_note_sha256": "b793534121e35550a50822664437410dbc2830f09b79834ddf261fe6881dadfc",
+      "actual_process_state": "exited",
+      "root_exec_handle": 34131,
+      "scope": "fixed16 AnyRes facility, no generation/GT",
+      "root_exec_exit_code": 0
+    },
+    {
+      "run_id": "Qwen Doc fixed16 run02",
+      "controller": {
+        "pid": 2701769,
+        "start_ticks": 1332811192,
+        "session_id": 2701768,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "docker_client": {
+        "pid": 2701777,
+        "start_ticks": 1332811253,
+        "session_id": 2701768,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "container_identity": {
+        "container_id": "92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8",
+        "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+        "host_init": {
+          "pid": 2701838,
+          "start_ticks": 1332811264,
+          "session_id": 2701838,
+          "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+        },
+        "host_cgroup": "13:freezer:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n12:memory:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n11:hugetlb:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n10:devices:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n9:rdma:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n8:net_cls,net_prio:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n7:cpu,cpuacct:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n6:perf_event:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n5:blkio:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n4:cpuset:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n3:misc:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n2:pids:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n1:name=systemd:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n0::/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n",
+        "original_host_argv": [
+          "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+          "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/diagnose.py",
+          "--execute",
+          "--allocation-note",
+          "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/root_allocation_note.json"
+        ],
+        "recorded_utc": "2026-10-28T14:10:04.846202+00:00"
+      },
+      "root_exec_handle": 5027,
+      "state": "complete",
+      "prefix_scored": false,
+      "root_exec_exit_code": 0,
+      "n_questions": 16,
+      "measured_cases": 64,
+      "independent_verification_sha256": "3b9a0a0d582d972bfeccb4f765cd2754f2512c7ea43c1c5a985b419f2db61c46",
+      "root_terminal_proof_sha256": "03516e429818c7dc39a1db27e396b921ff8462ce4628dc64f7add23b4f6794ea"
+    },
+    {
+      "run_id": "NeXT_known3632_cached_source_vs_Eq6",
+      "status": "complete",
+      "controller": {
+        "pid": 2774786,
+        "start_ticks": 1333118631
+      },
+      "started_utc": "2026-10-28T15:01:18.434115+00:00",
+      "prerequisite": {
+        "controller_state_sha256": "40982684f53bae124573d1afd540a09ef9360c87d3409727edbf77f4176f22dd",
+        "release_sha256": "691f628e78d3b732a308cbef789c1bb61a652aee626f4cbcc71422e9d4721371",
+        "independent_verification_sha256": "da9bc500921add4500a7d52063431b3df558e3d27a603c7016a60cf462762ede",
+        "root_terminal_process_proof_sha256": "100454d855cd853632a389693312cff5de9702fd5124a512a292e3ef3b16eae4",
+        "actual_controller_and_native_exited": true,
+        "root_owned_exec_actual_exit_code": 0
+      },
+      "native_worker": {
+        "pid": 2774847,
+        "start_ticks": 1333118719
+      },
+      "root_exec_handle": 89061,
+      "root_launch_snapshot_sha256": "87ef4a2b07c48cd75103ec6af96fcc238e01175161cc3f36edde0a4753a1b172",
+      "GT_or_accuracy_used": false,
+      "benchmark_result": false,
+      "root_exec_exit_code": 0,
+      "n_generations": 2,
+      "output_token_ids_identical": true,
+      "texts_identical": true,
+      "returned_token_lengths": [
+        129,
+        129
+      ],
+      "EOS2_present": [
+        false,
+        false
+      ],
+      "independent_verification_sha256": "637a1adf82a3757dbe8b14f6e927dc5c5d4b4a608facf0ebce14cbe638f8ef7a",
+      "root_terminal_proof_sha256": "77dca7df064b943cd61b309943800827c9dd1622362e7a2c126a69968c86a068",
+      "independent_peer_terminal_review_sha256": "a5fe64f95e337624bb48c1f8115f5ac1293c38d1905689aaeb88046b2fe5a1f6"
+    },
+    {
+      "path": "reproduction/20261028/qwen/eq7_aggregation_denominator_gpu_cache",
+      "status": "complete",
+      "root_exec_handle": 27423,
+      "root_exec_actual_exit_code": 0,
+      "root_proof_sha256": "5e4af0e00f4f906bf0f8ae7895762a6ca5aab22b68fb545e602e76c26a212db1",
+      "controller": {
+        "pid": 2832239,
+        "start_ticks": 1333367682,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "native_worker": {
+        "pid": 2832246,
+        "start_ticks": 1333367725,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "benchmark_result": false,
+      "goal_complete": false
+    },
+    {
+      "path": "reproduction/20261028/next_textvqa/question_only_guidance_panel",
+      "status": "complete",
+      "root_exec_handle": 76915,
+      "root_exec_actual_exit_code": 0,
+      "root_proof_sha256": "272ae626ed2bc36b03ea69d38bb21c9f11a6cb9a82df4b0f87f297693a23e356",
+      "controller": {
+        "pid": 2837356,
+        "start_ticks": 1333382280
+      },
+      "native_worker": {
+        "pid": 2837368,
+        "start_ticks": 1333382361
+      },
+      "benchmark_result": false,
+      "goal_complete": false
+    },
+    {
+      "path": "reproduction/20261028/pope/q03_fixed_cache_mechanism",
+      "run_id": "POPE_fixed16_q02_to_q03_cache_only_alpha05_beta1_K32",
+      "status": "complete",
+      "root_exec_handle": 76513,
+      "root_exec_actual_exit_code": 0,
+      "controller": {
+        "pid": 2913858,
+        "start_ticks": 1333710845,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "worker": {
+        "pid": 2913862,
+        "start_ticks": 1333710874,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "n_questions": 16,
+      "measured_questions": 16,
+      "unmeasured_questions": 0,
+      "ordered_ids_changed": 0,
+      "final_spatial_sets_changed": 0,
+      "derived_final_FP16_sequences_changed": 0,
+      "root_terminal_proof_sha256": "6803dea9866edcf463449372834e44db00467ee45d06145521fc83c7b1e6e52d",
+      "independent_verification_sha256": "3c092c8a26fd71cd75d49fb1ffd3728c3e456968216f6f1361efc4f817ba6a07",
+      "benchmark_result": false,
+      "goal_complete": false,
+      "independent_peer_terminal_review_sha256": "0acf481de241cea9765d50bcd06edeb82a07eaeb45ceb1abc18279ec80c26456"
+    },
+    {
+      "path": "reproduction/20261028/pope/alpha1_beta2_native_panel",
+      "run_id": "POPE_fixed16_native_alpha1_beta1_vs_beta2_K32",
+      "status": "complete",
+      "root_owned_exec_handle": 98439,
+      "root_owned_exec_actual_exit_code": 0,
+      "controller": {
+        "pid": 2949970,
+        "start_ticks": 1333861741,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "native_worker": {
+        "pid": 2949974,
+        "start_ticks": 1333861772,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "n_generations": 32,
+      "source_anchors_verified": 16,
+      "variant_inputs_verified": 16,
+      "final_masks_changed": 16,
+      "actual_visual_FP16_changed": 16,
+      "output_token_IDs_changed": 1,
+      "raw_text_changed": 1,
+      "root_terminal_proof_sha256": "2c5c74592cdd58e44c754f994936033ce6315d56f10cb5c4c8f3766eb9d8a1f9",
+      "independent_verification_sha256": "2342e6b9cae6cb19f2056ace0f24fe618ea1254f93413a78f5f51c93c114069f",
+      "benchmark_result": false,
+      "GT_or_accuracy_used": false,
+      "paper_argv_confirmed": false,
+      "independent_peer_terminal_review_sha256": "0a7356219219b4d126cfc92f0e79cc4c1902a5b6f5b8658d4a643415253a487b"
+    },
+    {
+      "path": "reproduction/20261028/qwen/full1024_two_path_panel",
+      "status": "complete",
+      "root_exec_handle": 69304,
+      "controller": {
+        "pid": 1841880,
+        "start_ticks": 1347285362,
+        "session_id": 1841880,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "docker_client": {
+        "pid": 1841884,
+        "start_ticks": 1347285421,
+        "session_id": 1841880,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "container_identity": {
+        "container_id": "5be91c89cd0fba7195f780b3d518cd9dc63cb88dbf7fa0d4ec68db56decc88f8",
+        "host_init": {
+          "pid": 1841951,
+          "start_ticks": 1347285434,
+          "session_id": 1841951,
+          "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+        },
+        "host_cgroup": "13:freezer:/docker/5be91c89cd0fba7195f780b3d518cd9dc63cb88dbf7fa0d4ec68db56decc88f8\n12:memory:/docker/5be91c89cd0fba7195f780b3d518cd9dc63cb88dbf7fa0d4ec68db56decc88f8\n11:hugetlb:/docker/5be91c89cd0fba7195f780b3d518cd9dc63cb88dbf7fa0d4ec68db56decc88f8\n10:devices:/docker/5be91c89cd0fba7195f780b3d518cd9dc63cb88dbf7fa0d4ec68db56decc88f8\n9:rdma:/docker/5be91c89cd0fba7195f780b3d518cd9dc63cb88dbf7fa0d4ec68db56decc88f8\n8:net_cls,net_prio:/docker/5be91c89cd0fba7195f780b3d518cd9dc63cb88dbf7fa0d4ec68db56decc88f8\n7:cpu,cpuacct:/docker/5be91c89cd0fba7195f780b3d518cd9dc63cb88dbf7fa0d4ec68db56decc88f8\n6:perf_event:/docker/5be91c89cd0fba7195f780b3d518cd9dc63cb88dbf7fa0d4ec68db56decc88f8\n5:blkio:/docker/5be91c89cd0fba7195f780b3d518cd9dc63cb88dbf7fa0d4ec68db56decc88f8\n4:cpuset:/docker/5be91c89cd0fba7195f780b3d518cd9dc63cb88dbf7fa0d4ec68db56decc88f8\n3:misc:/docker/5be91c89cd0fba7195f780b3d518cd9dc63cb88dbf7fa0d4ec68db56decc88f8\n2:pids:/docker/5be91c89cd0fba7195f780b3d518cd9dc63cb88dbf7fa0d4ec68db56decc88f8\n1:name=systemd:/docker/5be91c89cd0fba7195f780b3d518cd9dc63cb88dbf7fa0d4ec68db56decc88f8\n0::/docker/5be91c89cd0fba7195f780b3d518cd9dc63cb88dbf7fa0d4ec68db56decc88f8\n"
+      },
+      "plan_sha256": "5fbf6c3c4355d55a26fe2f2ff8395a47bb6d39e14ed35046214f6a0459060e0c",
+      "allocation_sha256": "54b08f53e612112d893b60a214d4336f610e417540ffaa066356a1e8aa842e3b",
+      "benchmark_result": false,
+      "root_exec_actual_exit_code": 0,
+      "root_terminal_proof_sha256": "400669950aa064a2ce2f6de80c21af9cd0bc5451e75a867a002b9ab1a1632a25",
+      "independent_verification_sha256": "83b2e2fabbf8c946ab3ccbde0dc65294bc72d760c1b6f2acaf655f9f790501e7",
+      "n_questions": 16,
+      "n_native_generations": 32
+    },
+    {
+      "path": "reproduction/20261028/qwen/fixed16_ds_factorial",
+      "status": "complete",
+      "root_exec_handle": 71385,
+      "controller": {
+        "pid": 2081967,
+        "start_ticks": 1348317746,
+        "session_id": 2081967,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "docker_client": {
+        "pid": 2081974,
+        "start_ticks": 1348317999,
+        "session_id": 2081967,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "container_identity": {
+        "container_id": "4fc62e6d4c6fbe07e5373631f50e2679b70fce2114cf7ae5e2eb1a786a214ee0",
+        "host_init": {
+          "pid": 2082035,
+          "start_ticks": 1348318009,
+          "session_id": 2082035,
+          "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+        },
+        "host_cgroup": "13:freezer:/docker/4fc62e6d4c6fbe07e5373631f50e2679b70fce2114cf7ae5e2eb1a786a214ee0\n12:memory:/docker/4fc62e6d4c6fbe07e5373631f50e2679b70fce2114cf7ae5e2eb1a786a214ee0\n11:hugetlb:/docker/4fc62e6d4c6fbe07e5373631f50e2679b70fce2114cf7ae5e2eb1a786a214ee0\n10:devices:/docker/4fc62e6d4c6fbe07e5373631f50e2679b70fce2114cf7ae5e2eb1a786a214ee0\n9:rdma:/docker/4fc62e6d4c6fbe07e5373631f50e2679b70fce2114cf7ae5e2eb1a786a214ee0\n8:net_cls,net_prio:/docker/4fc62e6d4c6fbe07e5373631f50e2679b70fce2114cf7ae5e2eb1a786a214ee0\n7:cpu,cpuacct:/docker/4fc62e6d4c6fbe07e5373631f50e2679b70fce2114cf7ae5e2eb1a786a214ee0\n6:perf_event:/docker/4fc62e6d4c6fbe07e5373631f50e2679b70fce2114cf7ae5e2eb1a786a214ee0\n5:blkio:/docker/4fc62e6d4c6fbe07e5373631f50e2679b70fce2114cf7ae5e2eb1a786a214ee0\n4:cpuset:/docker/4fc62e6d4c6fbe07e5373631f50e2679b70fce2114cf7ae5e2eb1a786a214ee0\n3:misc:/docker/4fc62e6d4c6fbe07e5373631f50e2679b70fce2114cf7ae5e2eb1a786a214ee0\n2:pids:/docker/4fc62e6d4c6fbe07e5373631f50e2679b70fce2114cf7ae5e2eb1a786a214ee0\n1:name=systemd:/docker/4fc62e6d4c6fbe07e5373631f50e2679b70fce2114cf7ae5e2eb1a786a214ee0\n0::/docker/4fc62e6d4c6fbe07e5373631f50e2679b70fce2114cf7ae5e2eb1a786a214ee0\n"
+      },
+      "plan_sha256": "255e5a7dc9d97de0c597e8220d2cd7e1c1babe54aa1f1b26d90f413d30c91e76",
+      "allocation_sha256": "732d2293318d6924016fe889be696f5f80d07c7153230f909db020c0943b9f14",
+      "root_launch_snapshot_sha256": "3d7086be4dc195b166764e364cdac0613075b45db2504922de4882e31b0207b2",
+      "benchmark_result": false,
+      "root_exec_actual_exit_code": 0,
+      "root_terminal_proof_sha256": "fac478dc842c870ae9f2f360441d5880146b425984c2f07d82a1e04087a851ee",
+      "independent_verification_sha256": "115e4828cae49329f7dc7f83e7f7d5d882bd20c7b38b036191fcade73622209a",
+      "n_questions": 16,
+      "n_native_generations": 64
+    }
+  ],
+  "NeXT_diagnostic_terminal_audit": {
+    "success": true,
+    "sha256": "2f612bb931fb9874068533b89b6baaf91c2254d09bdbea538520690ec3696907"
+  },
+  "completed_GPU_full_baselines": [
+    {
+      "method": "FULL",
+      "task": "MMB_EN",
+      "native_process": {
+        "pid": 2645294,
+        "start_ticks": 1332572280,
+        "session_id": 2645283,
+        "process_group": 2645283,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "controller_process": {
+        "pid": 2645284,
+        "start_ticks": 1332572209,
+        "session_id": 2645283,
+        "process_group": 2645283,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "root_exec_handle": 31413,
+      "state": "complete",
+      "rows": 4377,
+      "target_rows": 4377,
+      "prefix_scored": false,
+      "root_exec_exit_code": 0,
+      "value": 64.37074829931973
+    }
+  ],
+  "failed_GPU_diagnostic_launches": [
+    {
+      "run": "Qwen Doc fixed16 run01",
+      "root_exec_handle": 67790,
+      "actual_exit_code": 1,
+      "n_questions_measured": 0,
+      "model_loaded": false,
+      "container_absent": true,
+      "root_process_proof": "qwen/gpu_formula_facility_panel/root_failed_terminal_process_proof.json"
+    },
+    {
+      "run": "POPE full8910 alpha1 beta2 first launch",
+      "path": "reproduction/20261028/pope/full_alpha1_beta2_single_control",
+      "root_owned_exec_handle": 48822,
+      "actual_exit_code": 1,
+      "n_predictions": 0,
+      "model_loaded": false,
+      "controller": {
+        "pid": 2972267,
+        "start_ticks": 1333959385,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "native_worker": {
+        "pid": 2972278,
+        "start_ticks": 1333959402,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "root_process_proof_sha256": "780c3f08b17e9728f7f334830f891834b7654351c622b8c2b4b698d75576f986",
+      "failure_scope": "eval_model marshal identity check before model loading; no generation or scoring"
+    }
+  ],
+  "prepared_GPU_work": [],
+  "completed_EADP_full_runs": [
+    {
+      "run_id": "NeXT_public_default_K64_alpha05_beta1_wait",
+      "status": "complete",
+      "controller": {
+        "pid": 2734202,
+        "start_ticks": 1332948026
+      },
+      "started_utc": "2026-10-28T14:32:51.755997+00:00",
+      "plan_sha256": "9ef9b4c69727d7baf324c5e3b3d93fd8c7d23a899d466f35e8c2389f05405d0d",
+      "automatic_retry": false,
+      "native_worker": {
+        "pid": 2734206,
+        "start_ticks": 1332948051
+      },
+      "root_exec_handle": 63618,
+      "root_launch_snapshot_sha256": "19866d1e0641af61e443b1dcfd80b895f38e8ba4d0f29020ef7fadfbb58fff74",
+      "prefix_scored": false,
+      "root_exec_exit_code": 0,
+      "value": 54.9,
+      "rows": 5000,
+      "independent_verification_sha256": "da9bc500921add4500a7d52063431b3df558e3d27a603c7016a60cf462762ede",
+      "root_terminal_proof_sha256": "100454d855cd853632a389693312cff5de9702fd5124a512a292e3ef3b16eae4"
+    },
+    {
+      "path": "reproduction/20261028/next_textvqa/full_K64_question_only_public_comment",
+      "run_id": "NeXT_full_K64_question_only_public_comment",
+      "status": "complete",
+      "root_exec_handle": 60045,
+      "root_exec_actual_exit_code": 0,
+      "controller": {
+        "pid": 2861700,
+        "start_ticks": 1333486787,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "native_worker": {
+        "pid": 2861704,
+        "start_ticks": 1333486819,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "value": 54.958,
+      "rows": 5000,
+      "root_terminal_proof_sha256": "a0e9c852029c96099021328d69d1cf8ab2f62120ef6b50268344c0b150c46925",
+      "independent_verification_sha256": "1f66d83e5e213db974d297d2bb402dc7283130dd17bbb3ad1583d81124af05ed",
+      "input_hypothesis_only": true,
+      "paper_argv_confirmed": false,
+      "prefix_scored": false
+    },
+    {
+      "path": "reproduction/20261028/pope/full_alpha1_beta2_single_control_run02",
+      "run_id": "POPE_full8910_alpha1_beta2_K32_single_beta_control_run02",
+      "status": "complete",
+      "root_exec_handle": 23602,
+      "controller": {
+        "pid": 1790922,
+        "start_ticks": 1347080289,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "native_worker": {
+        "pid": 1790926,
+        "start_ticks": 1347080307,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "plan_sha256": "4704a777360b042b4d1e63dd9be4458f50d37a0234bfe09d4169e675e268ea5b",
+      "allocation_note_sha256": "a9f6d6d3f87dc86dbf530388f110fa72c2529381b1543fb910f75ebab946cf0f",
+      "root_launch_snapshot_sha256": "2284f1a80bb97a1bbe5d96e0555c4c04f9680abe28514b5de10b257c0e7262d1",
+      "expected_rows": 8910,
+      "prefix_scored": false,
+      "paper_argv_confirmed": false,
+      "configuration_hypothesis_only": true,
+      "root_exec_actual_exit_code": 0,
+      "rows": 8910,
+      "value": 84.27888410506665,
+      "root_terminal_proof_sha256": "bb41d5a3c87a417ac7c316659a8d914ac477e47565e94d6b53fb1d861a2695da",
+      "independent_verification_sha256": "98b499f25acc86fb91c6c670962446e890c8480c9afc91b31a8adb3a9deef342"
+    },
+    {
+      "path": "reproduction/20261028/qwen/doc_full_two_routes",
+      "status": "complete_scored",
+      "root_exec_handle": 16759,
+      "controller": {
+        "pid": 1868790,
+        "start_ticks": 1347400567,
+        "session_id": 1868790,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "docker_client": {
+        "pid": 1868815,
+        "start_ticks": 1347400665,
+        "session_id": 1868790,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "container_identity": {
+        "container_id": "1fd1a9c47fab42e5149744ea323b68660f893aba52596bf782104b2db9b42723",
+        "host_init": {
+          "pid": 1868875,
+          "start_ticks": 1347400677,
+          "session_id": 1868875,
+          "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+        },
+        "host_cgroup": "13:freezer:/docker/1fd1a9c47fab42e5149744ea323b68660f893aba52596bf782104b2db9b42723\n12:memory:/docker/1fd1a9c47fab42e5149744ea323b68660f893aba52596bf782104b2db9b42723\n11:hugetlb:/docker/1fd1a9c47fab42e5149744ea323b68660f893aba52596bf782104b2db9b42723\n10:devices:/docker/1fd1a9c47fab42e5149744ea323b68660f893aba52596bf782104b2db9b42723\n9:rdma:/docker/1fd1a9c47fab42e5149744ea323b68660f893aba52596bf782104b2db9b42723\n8:net_cls,net_prio:/docker/1fd1a9c47fab42e5149744ea323b68660f893aba52596bf782104b2db9b42723\n7:cpu,cpuacct:/docker/1fd1a9c47fab42e5149744ea323b68660f893aba52596bf782104b2db9b42723\n6:perf_event:/docker/1fd1a9c47fab42e5149744ea323b68660f893aba52596bf782104b2db9b42723\n5:blkio:/docker/1fd1a9c47fab42e5149744ea323b68660f893aba52596bf782104b2db9b42723\n4:cpuset:/docker/1fd1a9c47fab42e5149744ea323b68660f893aba52596bf782104b2db9b42723\n3:misc:/docker/1fd1a9c47fab42e5149744ea323b68660f893aba52596bf782104b2db9b42723\n2:pids:/docker/1fd1a9c47fab42e5149744ea323b68660f893aba52596bf782104b2db9b42723\n1:name=systemd:/docker/1fd1a9c47fab42e5149744ea323b68660f893aba52596bf782104b2db9b42723\n0::/docker/1fd1a9c47fab42e5149744ea323b68660f893aba52596bf782104b2db9b42723\n"
+      },
+      "plan_sha256": "5e810f360b2b5169f7f010b8be9b436211e9c07b1f3d3ea3f2ce10cc33585bd0",
+      "allocation_sha256": "af60d1fa30b766614d1c5f356095fd0c0c195531df8353c682be05b6c4b67aee",
+      "root_launch_snapshot_sha256": "467b880f80bcccb16888fd1eaf45bf99dcf108bd638e7efd305d2f4b48ce1f5c",
+      "expected_questions": 5349,
+      "expected_generations": 10698,
+      "benchmark_main_table": false,
+      "paper_argv_confirmed": false,
+      "last_observed_prediction_counts": {
+        "plain": 5016,
+        "eadp1024": 5015
+      },
+      "root_exec_actual_exit_code": 0,
+      "root_terminal_proof_sha256": "c6f7a6ab10f27e2d085ec1a7e80cbd5a31da620be65209cf5146e95e50851571",
+      "score_root_exec_handle": 22774,
+      "score_root_exec_actual_exit_code": 0,
+      "score_terminal_proof_sha256": "1b26e648136fe0862d5a0d84c28efc07b4126d0f7bc9416d6f47a3b6de4f8bbc",
+      "score_report_sha256": "0b7843b902bc0fd50b05abc75791796373da5b3f4330387af5697ff18d0d37e0",
+      "plain_ANLS": 94.48157801098883,
+      "eadp1024_ANLS": 87.82540594271218
+    },
+    {
+      "path": "reproduction/20261028/qwen/doc_full_ds_toggles",
+      "status": "complete_scored",
+      "root_exec_handle": 16152,
+      "controller": {
+        "pid": 2139616,
+        "start_ticks": 1348555672,
+        "session_id": 2139616,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "docker_client": {
+        "pid": 2139898,
+        "start_ticks": 1348556411,
+        "session_id": 2139616,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "container_identity": {
+        "container_id": "d724ec999d3b2d9927d7c3472182ed100a96d70efe656bc89f52c9284406c82c",
+        "host_init": {
+          "pid": 2139964,
+          "start_ticks": 1348556421,
+          "session_id": 2139964,
+          "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+        },
+        "host_cgroup": "13:freezer:/docker/d724ec999d3b2d9927d7c3472182ed100a96d70efe656bc89f52c9284406c82c\n12:memory:/docker/d724ec999d3b2d9927d7c3472182ed100a96d70efe656bc89f52c9284406c82c\n11:hugetlb:/docker/d724ec999d3b2d9927d7c3472182ed100a96d70efe656bc89f52c9284406c82c\n10:devices:/docker/d724ec999d3b2d9927d7c3472182ed100a96d70efe656bc89f52c9284406c82c\n9:rdma:/docker/d724ec999d3b2d9927d7c3472182ed100a96d70efe656bc89f52c9284406c82c\n8:net_cls,net_prio:/docker/d724ec999d3b2d9927d7c3472182ed100a96d70efe656bc89f52c9284406c82c\n7:cpu,cpuacct:/docker/d724ec999d3b2d9927d7c3472182ed100a96d70efe656bc89f52c9284406c82c\n6:perf_event:/docker/d724ec999d3b2d9927d7c3472182ed100a96d70efe656bc89f52c9284406c82c\n5:blkio:/docker/d724ec999d3b2d9927d7c3472182ed100a96d70efe656bc89f52c9284406c82c\n4:cpuset:/docker/d724ec999d3b2d9927d7c3472182ed100a96d70efe656bc89f52c9284406c82c\n3:misc:/docker/d724ec999d3b2d9927d7c3472182ed100a96d70efe656bc89f52c9284406c82c\n2:pids:/docker/d724ec999d3b2d9927d7c3472182ed100a96d70efe656bc89f52c9284406c82c\n1:name=systemd:/docker/d724ec999d3b2d9927d7c3472182ed100a96d70efe656bc89f52c9284406c82c\n0::/docker/d724ec999d3b2d9927d7c3472182ed100a96d70efe656bc89f52c9284406c82c\n"
+      },
+      "plan_sha256": "1eeeaa1f4a2cdbf12cdd1d6a17af4a7931ad221ba85021ec919596502323c482",
+      "allocation_sha256": "fcb1a78e54c23d441afd3c5a3326668ebd64ab5424f6c6f201516f33e0d6447e",
+      "root_launch_snapshot_sha256": "60c7ea2367759bfed84b878f0e319489d9028e1a530c2198b4f4b7efac4eaead",
+      "expected_questions": 5349,
+      "expected_generations": 10698,
+      "benchmark_main_table": false,
+      "paper_argv_confirmed": false,
+      "last_observed_prediction_counts": {
+        "plain_ds_off": 5012,
+        "eadp1024_ds_on": 5012
+      },
+      "root_exec_actual_exit_code": 0,
+      "root_terminal_proof_sha256": "e1d5d1003e96aca181797018da09bdadbe9714e9ef35aabfec55217624e50724",
+      "score_root_exec_handle": 11840,
+      "score_root_exec_actual_exit_code": 0,
+      "score_terminal_proof_sha256": "ed8f8ae84380c92f88a7083c219d74bec8cd2b15257a3c09c0311c8898377d42",
+      "score_report_sha256": "f0a4d86377d946bbb44620bb6bbb6553af001e10e7f01d2905d50f25c54a4b44",
+      "plain_ds_off_ANLS": 92.38550436788039,
+      "eadp1024_ds_on_ANLS": 91.31007054391111
+    }
+  ],
+  "active_full_runs": [],
+  "current_ledger": {
+    "path": "reproduction/20261028/full_run_ledger_v4.json",
+    "sha256": "e90aebfce9d1723002f5275c031e9fb283388d1fc4e89c80767df571606fdaf2",
+    "complete": 12,
+    "pending": 0,
+    "verification_failed": 0,
+    "goal_complete": false
+  },
+  "active_GPU_diagnostics": [],
+  "objective_status": "Not achieved; seven pruning targets remain unreproduced. Qwen full5349 same-path DeepStack toggles completed/scored; not paper pruning rows.",
+  "active_full_run": null,
+  "current_actual_full_run_counts": {
+    "complete": 12,
+    "pending": 0,
+    "failed_verification": 0,
+    "goal_complete": false,
+    "scope": "12 accepted completed runs; prior failed startup retained with zero predictions."
+  },
+  "goal_complete": false,
+  "CPU_preparations": [],
+  "active_k256_fixed16": {
+    "status": "complete_root_exit_observed",
+    "root_pty_session": 56009,
+    "root_pty_exit_code": 0,
+    "root_exit_proof": "reproduction/20261028/qwen/fixed16_k256_ds_toggle/root_exit_proof.json",
+    "result": "reproduction/20261028/qwen/fixed16_k256_ds_toggle/RESULT.md",
+    "benchmark_main_table": false,
+    "GT_or_scoring": false,
+    "recorded_utc": "2026-10-30T12:50:16.664081+00:00"
+  },
+  "active_k256_full_pair": {
+    "status": "generation_verification_score_and_peer_review_complete",
+    "root_pty_session": 86476,
+    "root_pty_exit_code": 0,
+    "scoring_root_pty_session": 20783,
+    "scoring_root_pty_exit_code": 0,
+    "root_exit_proof": "reproduction/20261028/qwen/doc_full_k256_ds_pair/root_terminal_process_proof.json",
+    "root_score_exit_proof": "reproduction/20261028/qwen/doc_full_k256_ds_pair/root_score_exit_proof.json",
+    "result": "reproduction/20261028/qwen/doc_full_k256_ds_pair/RESULT.md",
+    "paper_main_result": false,
+    "recorded_utc": "2026-10-30T15:35:53.368627+00:00"
+  },
+  "active_mmbench_question_only_panel": {
+    "status": "complete_root_exit_and_peer_review_passed",
+    "root_pty_session": 68264,
+    "root_pty_exit_code": 0,
+    "root_exit_proof": "reproduction/20261028/mmbench/question_only_guidance_panel/root_exit_proof.json",
+    "result": "reproduction/20261028/mmbench/question_only_guidance_panel/RESULT.md",
+    "paper_main_result": false,
+    "GT_or_scoring": false,
+    "recorded_utc": "2026-10-30T15:38:06.097768+00:00"
+  },
+  "active_mmbench_full_guidance": {
+    "status": "failed_root_exit1_gpu_released",
+    "root_pty_session": 16635,
+    "state": "reproduction/20261028/mmbench/question_only_guidance_full/execution/state.json",
+    "plan": "reproduction/20261028/mmbench/question_only_guidance_full/plan.json",
+    "root_allocation": "reproduction/20261028/mmbench/question_only_guidance_full/root_gpu_allocation.json",
+    "paper_main_result": false,
+    "GT_or_scoring": false,
+    "recorded_utc": "2026-10-30T15:54:48.177845+00:00",
+    "root_pty_exit_code": 1,
+    "failure_proof": "reproduction/20261028/mmbench/question_only_guidance_full/root_failure_exit_proof.json"
+  },
+  "active_mmbench_full_guidance_run02": {
+    "status": "generation_verification_score_and_peer_review_complete",
+    "root_pty_session": 86075,
+    "root_pty_exit_code": 0,
+    "score_pty_session": 57729,
+    "score_pty_exit_code": 0,
+    "root_exit_proof": "reproduction/20261028/mmbench/question_only_guidance_full_run02/root_exit_proof.json",
+    "root_score_exit_proof": "reproduction/20261028/mmbench/question_only_guidance_full_run02/root_score_exit_proof.json",
+    "result": "reproduction/20261028/mmbench/question_only_guidance_full_run02/RESULT.md",
+    "paper_main_result": false,
+    "recorded_utc": "2026-10-30T16:34:56.340979+00:00"
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "all_requested_bind_sources_and_readonly_flags_verified": true,
+  "GPU_devices_requested": true,
+  "actual_devices": [
+    {
+      "PathOnHost": "/dev/nvidia0",
+      "PathInContainer": "/dev/nvidia0",
+      "CgroupPermissions": "rwm"
+    },
+    {
+      "PathOnHost": "/dev/nvidiactl",
+      "PathInContainer": "/dev/nvidiactl",
+      "CgroupPermissions": "rwm"
+    },
+    {
+      "PathOnHost": "/dev/nvidia-uvm",
+      "PathInContainer": "/dev/nvidia-uvm",
+      "CgroupPermissions": "rwm"
+    },
+    {
+      "PathOnHost": "/dev/nvidia-uvm-tools",
+      "PathInContainer": "/dev/nvidia-uvm-tools",
+      "CgroupPermissions": "rwm"
+    }
+  ],
+  "bind_records": [
+    {
+      "requested": {
+        "source": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct",
+        "destination": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct",
+        "readonly": true
+      },
+      "actual": {
+        "Type": "bind",
+        "Source": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct",
+        "Destination": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      "source_resolves_identically": true
+    },
+    {
+      "requested": {
+        "source": "/home/dell/miniconda3",
+        "destination": "/home/dell/miniconda3",
+        "readonly": true
+      },
+      "actual": {
+        "Type": "bind",
+        "Source": "/home/dell/miniconda3",
+        "Destination": "/home/dell/miniconda3",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      "source_resolves_identically": true
+    },
+    {
+      "requested": {
+        "source": "/media/disk2/YZX/LMUData",
+        "destination": "/media/disk2/YZX/LMUData",
+        "readonly": true
+      },
+      "actual": {
+        "Type": "bind",
+        "Source": "/media/disk2/YZX/LMUData",
+        "Destination": "/media/disk2/YZX/LMUData",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      "source_resolves_identically": true
+    },
+    {
+      "requested": {
+        "source": "/media/disk2/YZX/research/EADP_v2",
+        "destination": "/media/disk2/YZX/research/EADP_v2",
+        "readonly": false
+      },
+      "actual": {
+        "Type": "bind",
+        "Source": "/media/disk2/YZX/research/EADP_v2",
+        "Destination": "/media/disk2/YZX/research/EADP_v2",
+        "Mode": "",
+        "RW": true,
+        "Propagation": "rprivate"
+      },
+      "source_resolves_identically": true
+    },
+    {
+      "requested": {
+        "source": "/usr/bin/nvidia-smi",
+        "destination": "/usr/bin/nvidia-smi",
+        "readonly": true
+      },
+      "actual": {
+        "Type": "bind",
+        "Source": "/usr/bin/nvidia-smi",
+        "Destination": "/usr/bin/nvidia-smi",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      "source_resolves_identically": true
+    },
+    {
+      "requested": {
+        "source": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+        "destination": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+        "readonly": true
+      },
+      "actual": {
+        "Type": "bind",
+        "Source": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+        "Destination": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      "source_resolves_identically": true
+    },
+    {
+      "requested": {
+        "source": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+        "destination": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+        "readonly": true
+      },
+      "actual": {
+        "Type": "bind",
+        "Source": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+        "Destination": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      "source_resolves_identically": true
+    },
+    {
+      "requested": {
+        "source": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+        "destination": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+        "readonly": true
+      },
+      "actual": {
+        "Type": "bind",
+        "Source": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+        "Destination": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      "source_resolves_identically": true
+    },
+    {
+      "requested": {
+        "source": "/usr/bin/nvidia-smi",
+        "destination": "/usr/local/nvidia/bin/nvidia-smi",
+        "readonly": true
+      },
+      "actual": {
+        "Type": "bind",
+        "Source": "/usr/bin/nvidia-smi",
+        "Destination": "/usr/local/nvidia/bin/nvidia-smi",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      "source_resolves_identically": true
+    },
+    {
+      "requested": {
+        "source": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+        "destination": "/usr/local/nvidia/lib64/libcuda.so.1",
+        "readonly": true
+      },
+      "actual": {
+        "Type": "bind",
+        "Source": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+        "Destination": "/usr/local/nvidia/lib64/libcuda.so.1",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      "source_resolves_identically": true
+    },
+    {
+      "requested": {
+        "source": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+        "destination": "/usr/local/nvidia/lib64/libnvidia-ml.so.1",
+        "readonly": true
+      },
+      "actual": {
+        "Type": "bind",
+        "Source": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+        "Destination": "/usr/local/nvidia/lib64/libnvidia-ml.so.1",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      "source_resolves_identically": true
+    },
+    {
+      "requested": {
+        "source": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+        "destination": "/usr/local/nvidia/lib64/libnvidia-ptxjitcompiler.so.1",
+        "readonly": true
+      },
+      "actual": {
+        "Type": "bind",
+        "Source": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+        "Destination": "/usr/local/nvidia/lib64/libnvidia-ptxjitcompiler.so.1",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      "source_resolves_identically": true
+    }
+  ],
+  "container_id": "92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8",
+  "run_plan_sha256": "d752c876367803c5728ffa84a819fd63b4c129cfd0e2eb78931f7d94dae5d4ad",
+  "host_init": {
+    "pid": 2701838,
+    "start_ticks": 1332811264,
+    "session_id": 2701838,
+    "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+  }
+}

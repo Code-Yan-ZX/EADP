@@ -1,0 +1,115 @@
+[2026-11-02 21:29:22] ERROR - misc.py: load_env - 215: Did not detect the .env file at /media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/.env, failed to load. 
+You are attempting to use Flash Attention 2 without specifying a torch dtype. This might lead to unexpected behaviour
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:55, 18.61s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:44<00:45, 22.62s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:50<00:15, 15.14s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:51<00:00,  9.71s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:51<00:00, 12.91s/it]
+/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py:610: UserWarning: Specified kernel cache directory could not be created! This disables kernel caching. Specified directory is /tmp/eadp_cache/torch/kernels. This warning will appear only once per process. (Triggered internally at /pytorch/aten/src/ATen/native/cuda/jit_utils.cpp:1487.)
+  total_tokens = int(torch.prod(grid_thw, dim=1).sum().item())
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+warmup complete; resuming at 0
+first 16 selection and output checks passed
+completed 50 / 5349
+completed 100 / 5349
+completed 150 / 5349
+completed 200 / 5349
+completed 250 / 5349
+completed 300 / 5349
+completed 350 / 5349
+completed 400 / 5349
+completed 450 / 5349
+completed 500 / 5349
+completed 550 / 5349
+completed 600 / 5349
+completed 650 / 5349
+completed 700 / 5349
+completed 750 / 5349
+completed 800 / 5349
+completed 850 / 5349
+completed 900 / 5349
+completed 950 / 5349
+completed 1000 / 5349
+completed 1050 / 5349
+completed 1100 / 5349
+completed 1150 / 5349
+completed 1200 / 5349
+completed 1250 / 5349
+completed 1300 / 5349
+completed 1350 / 5349
+completed 1400 / 5349
+completed 1450 / 5349
+completed 1500 / 5349
+completed 1550 / 5349
+completed 1600 / 5349
+completed 1650 / 5349
+completed 1700 / 5349
+completed 1750 / 5349
+completed 1800 / 5349
+completed 1850 / 5349
+completed 1900 / 5349
+completed 1950 / 5349
+completed 2000 / 5349
+completed 2050 / 5349
+completed 2100 / 5349
+completed 2150 / 5349
+completed 2200 / 5349
+completed 2250 / 5349
+completed 2300 / 5349
+completed 2350 / 5349
+completed 2400 / 5349
+completed 2450 / 5349
+completed 2500 / 5349
+completed 2550 / 5349
+completed 2600 / 5349
+completed 2650 / 5349
+completed 2700 / 5349
+completed 2750 / 5349
+completed 2800 / 5349
+completed 2850 / 5349
+completed 2900 / 5349
+completed 2950 / 5349
+completed 3000 / 5349
+completed 3050 / 5349
+completed 3100 / 5349
+completed 3150 / 5349
+completed 3200 / 5349
+completed 3250 / 5349
+completed 3300 / 5349
+completed 3350 / 5349
+completed 3400 / 5349
+completed 3450 / 5349
+completed 3500 / 5349
+completed 3550 / 5349
+completed 3600 / 5349
+completed 3650 / 5349
+completed 3700 / 5349
+completed 3750 / 5349
+completed 3800 / 5349
+completed 3850 / 5349
+completed 3900 / 5349
+completed 3950 / 5349
+completed 4000 / 5349
+completed 4050 / 5349
+completed 4100 / 5349
+completed 4150 / 5349
+completed 4200 / 5349
+completed 4250 / 5349
+completed 4300 / 5349
+completed 4350 / 5349
+completed 4400 / 5349
+completed 4450 / 5349
+completed 4500 / 5349
+completed 4550 / 5349
+completed 4600 / 5349
+completed 4650 / 5349
+completed 4700 / 5349
+completed 4750 / 5349
+completed 4800 / 5349
+completed 4850 / 5349
+completed 4900 / 5349
+completed 4950 / 5349
+completed 5000 / 5349
+completed 5050 / 5349
+completed 5100 / 5349
+completed 5150 / 5349
+completed 5200 / 5349
+completed 5250 / 5349
+completed 5300 / 5349
+complete 5349

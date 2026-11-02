@@ -1,0 +1,590 @@
+{
+  "success": true,
+  "checked_utc": "2026-10-28T14:13:49.966865+00:00",
+  "n_questions": 16,
+  "unique_images": 16,
+  "planned_case_slots": 64,
+  "measured_cases": 64,
+  "unmeasured_cases": 0,
+  "finite_arrays_checked": 464,
+  "exact_native_source_anchors": 16,
+  "exact_identity_controls": 16,
+  "embedding_rows_exact": 16,
+  "embedding_reference": {
+    "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00001-of-00004.safetensors",
+    "tensor": "model.language_model.embed_tokens.weight",
+    "dtype": "BF16",
+    "shape": [
+      151936,
+      4096
+    ],
+    "full_payload_loaded_or_rehashed": false
+  },
+  "numerical_consistency": [
+    {
+      "position": 167,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.00020807439630682323,
+      "cross_cosine_CPU_FP32_max_abs_delta": 6.705522537231445e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 4.76837158203125e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    },
+    {
+      "position": 501,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.00023498535156249445,
+      "cross_cosine_CPU_FP32_max_abs_delta": 5.960464477539063e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 4.76837158203125e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    },
+    {
+      "position": 835,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.00032806396484375,
+      "cross_cosine_CPU_FP32_max_abs_delta": 6.705522537231445e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 4.172325134277344e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    },
+    {
+      "position": 1170,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.00021643387643914547,
+      "cross_cosine_CPU_FP32_max_abs_delta": 6.705522537231445e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 4.76837158203125e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    },
+    {
+      "position": 1504,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.00023956298828124722,
+      "cross_cosine_CPU_FP32_max_abs_delta": 5.21540641784668e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 4.76837158203125e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    },
+    {
+      "position": 1838,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.00021229619565217572,
+      "cross_cosine_CPU_FP32_max_abs_delta": 6.146728992462158e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 4.76837158203125e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    },
+    {
+      "position": 2173,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.0002264543013139192,
+      "cross_cosine_CPU_FP32_max_abs_delta": 5.960464477539063e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 4.172325134277344e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    },
+    {
+      "position": 2507,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.0004490443638392738,
+      "cross_cosine_CPU_FP32_max_abs_delta": 7.82310962677002e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 5.960464477539062e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    },
+    {
+      "position": 2841,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.0001860119047619041,
+      "cross_cosine_CPU_FP32_max_abs_delta": 5.587935447692871e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 4.76837158203125e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    },
+    {
+      "position": 3175,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.00023803710937500555,
+      "cross_cosine_CPU_FP32_max_abs_delta": 5.960464477539063e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 4.76837158203125e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    },
+    {
+      "position": 3510,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.000237691970098583,
+      "cross_cosine_CPU_FP32_max_abs_delta": 6.705522537231445e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 4.172325134277344e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    },
+    {
+      "position": 3844,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.00012381417410714524,
+      "cross_cosine_CPU_FP32_max_abs_delta": 6.332993507385254e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 4.76837158203125e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    },
+    {
+      "position": 4178,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.00023165616122158839,
+      "cross_cosine_CPU_FP32_max_abs_delta": 5.960464477539063e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 4.172325134277344e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    },
+    {
+      "position": 4513,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.00024065290178570953,
+      "cross_cosine_CPU_FP32_max_abs_delta": 7.078051567077637e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 4.76837158203125e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    },
+    {
+      "position": 4847,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.00023742675781249223,
+      "cross_cosine_CPU_FP32_max_abs_delta": 7.450580596923828e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 4.76837158203125e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    },
+    {
+      "position": 5181,
+      "LLM_mean_FP64_RNE_bits_equal": true,
+      "LLM_mean_FP32_reduction_BF16_rounding_interval_passed": true,
+      "LLM_mean_max_abs_delta_from_FP64": 0.0001947312127976164,
+      "cross_cosine_CPU_FP32_max_abs_delta": 5.960464477539063e-08,
+      "cross_tolerance": 2e-05,
+      "visual_cosine_CPU_BF16_round_reference_max_abs_delta": 5.364418029785156e-07,
+      "visual_tolerance": 0.012,
+      "visual_close_at_2e_6": true,
+      "boundary": "Independent CPU reference only; native GPU exact equalities remain separate worker gates. No CPU-selected IDs substitute for saved GPU IDs."
+    }
+  ],
+  "Eq6_checks": [
+    {
+      "position": 167,
+      "L": 22,
+      "source_members": 4,
+      "threshold_members": 5,
+      "added_positions": [
+        16
+      ],
+      "stored_ties": 0,
+      "CPU_FP64_threshold_delta": 5.745759272812734e-07,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    },
+    {
+      "position": 501,
+      "L": 20,
+      "source_members": 4,
+      "threshold_members": 4,
+      "added_positions": [],
+      "stored_ties": 0,
+      "CPU_FP64_threshold_delta": 9.076230966797993e-08,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    },
+    {
+      "position": 835,
+      "L": 24,
+      "source_members": 4,
+      "threshold_members": 5,
+      "added_positions": [
+        3
+      ],
+      "stored_ties": 0,
+      "CPU_FP64_threshold_delta": 1.961881865852888e-07,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    },
+    {
+      "position": 1170,
+      "L": 19,
+      "source_members": 3,
+      "threshold_members": 4,
+      "added_positions": [
+        1
+      ],
+      "stored_ties": 0,
+      "CPU_FP64_threshold_delta": 2.1318384391122436e-07,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    },
+    {
+      "position": 1504,
+      "L": 20,
+      "source_members": 4,
+      "threshold_members": 4,
+      "added_positions": [],
+      "stored_ties": 0,
+      "CPU_FP64_threshold_delta": 1.2727470011242303e-07,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    },
+    {
+      "position": 1838,
+      "L": 23,
+      "source_members": 4,
+      "threshold_members": 5,
+      "added_positions": [
+        2
+      ],
+      "stored_ties": 0,
+      "CPU_FP64_threshold_delta": 1.6274809677696567e-07,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    },
+    {
+      "position": 2173,
+      "L": 22,
+      "source_members": 4,
+      "threshold_members": 5,
+      "added_positions": [
+        16
+      ],
+      "stored_ties": 0,
+      "CPU_FP64_threshold_delta": 2.502034863738345e-07,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    },
+    {
+      "position": 2507,
+      "L": 21,
+      "source_members": 4,
+      "threshold_members": 5,
+      "added_positions": [
+        9
+      ],
+      "stored_ties": 1,
+      "CPU_FP64_threshold_delta": 2.912143903799347e-07,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    },
+    {
+      "position": 2841,
+      "L": 21,
+      "source_members": 4,
+      "threshold_members": 5,
+      "added_positions": [
+        1
+      ],
+      "stored_ties": 1,
+      "CPU_FP64_threshold_delta": 8.277506147180702e-08,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    },
+    {
+      "position": 3175,
+      "L": 20,
+      "source_members": 4,
+      "threshold_members": 4,
+      "added_positions": [],
+      "stored_ties": 0,
+      "CPU_FP64_threshold_delta": 4.2028772195834563e-07,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    },
+    {
+      "position": 3510,
+      "L": 21,
+      "source_members": 4,
+      "threshold_members": 5,
+      "added_positions": [
+        15
+      ],
+      "stored_ties": 1,
+      "CPU_FP64_threshold_delta": 1.8542277668842644e-07,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    },
+    {
+      "position": 3844,
+      "L": 35,
+      "source_members": 7,
+      "threshold_members": 7,
+      "added_positions": [],
+      "stored_ties": 0,
+      "CPU_FP64_threshold_delta": 3.143399576188699e-07,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    },
+    {
+      "position": 4178,
+      "L": 22,
+      "source_members": 4,
+      "threshold_members": 5,
+      "added_positions": [
+        3
+      ],
+      "stored_ties": 0,
+      "CPU_FP64_threshold_delta": 1.4396234160329868e-07,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    },
+    {
+      "position": 4513,
+      "L": 35,
+      "source_members": 7,
+      "threshold_members": 7,
+      "added_positions": [],
+      "stored_ties": 0,
+      "CPU_FP64_threshold_delta": 1.3678495669466884e-07,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    },
+    {
+      "position": 4847,
+      "L": 25,
+      "source_members": 5,
+      "threshold_members": 5,
+      "added_positions": [],
+      "stored_ties": 0,
+      "CPU_FP64_threshold_delta": 3.4451993435880013e-07,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    },
+    {
+      "position": 5181,
+      "L": 21,
+      "source_members": 4,
+      "threshold_members": 5,
+      "added_positions": [
+        18
+      ],
+      "stored_ties": 1,
+      "CPU_FP64_threshold_delta": 1.1462941325035558e-06,
+      "CPU_entropy_tolerance": 3e-05,
+      "exact_GPU_tie_rule": "Frozen source helper <= threshold; no CPU reclassification at FP32 tie boundaries"
+    }
+  ],
+  "Eq10_AST_denominators_unchanged": true,
+  "aggregate": [
+    {
+      "variant": "source",
+      "measured": 16,
+      "importance_changed": 0,
+      "ordered_ids_changed": 0,
+      "final_spatial_ids_changed": 0
+    },
+    {
+      "variant": "source_members_order_identity",
+      "measured": 16,
+      "importance_changed": 0,
+      "ordered_ids_changed": 0,
+      "final_spatial_ids_changed": 0
+    },
+    {
+      "variant": "eq6_quantile_membership_only",
+      "measured": 16,
+      "importance_changed": 0,
+      "ordered_ids_changed": 0,
+      "final_spatial_ids_changed": 0
+    },
+    {
+      "variant": "eq10_numerator_only",
+      "measured": 16,
+      "importance_changed": 16,
+      "ordered_ids_changed": 0,
+      "final_spatial_ids_changed": 0
+    }
+  ],
+  "selection_changes": [],
+  "source_guard_counts": {
+    "source_sha256": 31,
+    "implementation_sha256": 9,
+    "reference_sha256": 15
+  },
+  "model_stat_guards_checked": 4,
+  "image_SHA_checks": 16,
+  "npz_artifacts": [
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_00.npz",
+      "sha256": "7f8f7ebd829d9fc4b18aced5b53d0f081b279ee6e1cc85f2ab9972de9b414ee4",
+      "bytes": 12588736
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_01.npz",
+      "sha256": "8fc740bdcd36a4c86968891843eb406856d0fd882d045a9f28b98da6d6b9aabc",
+      "bytes": 12600542
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_02.npz",
+      "sha256": "ae0142b015588583d7ac4ba28ed36e48e5a9f750e175317b09a6b5ac0ec8c73c",
+      "bytes": 12633150
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_03.npz",
+      "sha256": "d16d1bac46049ba3f30ac9ea32407aaa9cd592eaabe247a14ddb28f5cbe2b9c9",
+      "bytes": 12530482
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_04.npz",
+      "sha256": "31e5ad9fa3e8a57745a35bd0db8d2b8f3a293e617817f36003eb46324d3216f6",
+      "bytes": 12587662
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_05.npz",
+      "sha256": "25f99b80c78320a985786be86c376ef57dee5f55df4fd10e1dccadfca78d7782",
+      "bytes": 12646100
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_06.npz",
+      "sha256": "e92e7d49e121ef443b87c6a984a3169dfe7197fbdbe4f42c6c276fbbc0936db8",
+      "bytes": 12636022
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_07.npz",
+      "sha256": "80880176f4e79ea39daffbac009c986da95171ef73a4f05385acc5b4bc1afe0d",
+      "bytes": 12606386
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_08.npz",
+      "sha256": "8ced96e40ae2d2fa4d7d1d8a302541807585c92df96ad5962f7232cfde96ff38",
+      "bytes": 12601664
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_09.npz",
+      "sha256": "e7ac1fd8e3840d4bfa364f767590fcb1fc1a0e07a6e91be9de46b3c0f438c780",
+      "bytes": 12608464
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_10.npz",
+      "sha256": "f7e9e6369ad48c48aa99ae511b8ee7db4f4ce13690cc846dbd3a967840b70ed3",
+      "bytes": 12632825
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_11.npz",
+      "sha256": "8a65af245e368816a9f0b3b28eaef4f182e42c68db3b19109ee85e586f0bc380",
+      "bytes": 12793511
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_12.npz",
+      "sha256": "7462708a2f5f42ee158686e88faba3bdca7cb748dead9004498748d8736650ec",
+      "bytes": 12633148
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_13.npz",
+      "sha256": "669fdde167bf4ccc0acd1786dbd3b0ad08a8b45147a7934a845fe4e5a31adf70",
+      "bytes": 12767318
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_14.npz",
+      "sha256": "7205da354f208748e2cb7769a754fd12f426b920199b1fa43e541d0b817f8a65",
+      "bytes": 12627101
+    },
+    {
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/question_15.npz",
+      "sha256": "8e08eb28a16a17988eaf07bbbfb41d4d47ac58eabcd03efd2d3de6c3969ac603",
+      "bytes": 12632144
+    }
+  ],
+  "actual_exit": {
+    "container": {
+      "container_id": "92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8",
+      "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+      "host_init": {
+        "pid": 2701838,
+        "start_ticks": 1332811264,
+        "session_id": 2701838,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      },
+      "host_cgroup": "13:freezer:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n12:memory:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n11:hugetlb:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n10:devices:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n9:rdma:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n8:net_cls,net_prio:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n7:cpu,cpuacct:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n6:perf_event:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n5:blkio:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n4:cpuset:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n3:misc:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n2:pids:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n1:name=systemd:/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n0::/docker/92466abf4d218029d0806ded3861e9cbda40665fe8806a4e1795e15ec209b8a8\n",
+      "original_host_argv": [
+        "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/diagnose.py",
+        "--execute",
+        "--allocation-note",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/root_allocation_note.json"
+      ],
+      "recorded_utc": "2026-10-28T14:10:04.846202+00:00"
+    },
+    "controller": {
+      "pid": 2701769,
+      "start_ticks": 1332811192,
+      "session_id": 2701768,
+      "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+    },
+    "docker_client": {
+      "pid": 2701777,
+      "start_ticks": 1332811253,
+      "session_id": 2701768,
+      "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+    },
+    "original_processes_exited": true,
+    "GPU_pids": ""
+  },
+  "artifacts_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_plan.json": "d752c876367803c5728ffa84a819fd63b4c129cfd0e2eb78931f7d94dae5d4ad",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/root_allocation_note.json": "d02442866a7ca42c4a873d79765e619e4a263cbd7b24353c95b13f13863e5e76",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/root_terminal_process_proof.json": "03516e429818c7dc39a1db27e396b921ff8462ce4628dc64f7add23b4f6794ea",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/state.json": "2873e478f1e4193435b403b9ab2c381978f8168ef90ecc9ab0c509a5ae13be46",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/identity.json": "7dbc7646e1d680b726f2150f728f9bfea169c6a098549a2cf705c0e0eedd48f6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/runtime.json": "e95d58b37b79e0506e8217905a760c2c3c18da593b02a5c25ecef5a4e4854cef",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/summary.json": "16ba37b86cf044a8dd4c4491492e93d8e08833466235d8972d1d40537f26d0a6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/execution/per_question.jsonl": "9429b7ae99b3ca41bafafb1cc9f16e69460331be5dadc4160db59a60ce3fbaab",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel/independent_verify.py": "5c7dafcb0cae7d5deb475bfa6fb4f6eee613b54321e206d201d7efd23f43f9f8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/namespace_probe_report.json": "dfc560bffa863a8adafa1844dfb83607853383f760515d2b90f363e4f85861c6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/container_mount_proof.json": "0f5ee809b5d311ea81a02ae5f1636adff1f743cddf432f38e0106c74deb1f475"
+  },
+  "GPU_started": false,
+  "container_started": false,
+  "model_loaded": false,
+  "GT_or_answers_read": false,
+  "benchmark_scores_computed": false,
+  "claim_boundary": "Exact artifact/embedding/selection/trace checks plus explicitly bounded CPU formula references. The native GPU worker enforced separate bit-exact source+identity anchors. Fixed16 cannot establish full benchmark accuracy, unpublished paper argv or a validated repair."
+}
