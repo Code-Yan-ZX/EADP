@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "exit": {
+    "returncode": 0,
+    "timed_out": false,
+    "interrupted": null,
+    "container_stopped_verified": true,
+    "client_exited_while_container_running": false,
+    "container_identity": {
+      "container_id": "36fbcef45ba0f18b41089bed0f2703ceddc404ef6e5f7d5c383b174141b4ec13",
+      "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+      "host_init": {
+        "pid": 444012,
+        "start_ticks": 1395771663,
+        "session_id": 444012,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      }
+    },
+    "errors": [],
+    "container_exit_code": 0,
+    "controller": {
+      "pid": 443939,
+      "start_ticks": 1395771635,
+      "session_id": 443939,
+      "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+    },
+    "name": "eadp-selected-preflight-001",
+    "finished_unix": 1793826247.8859136,
+    "gpu_pids_after": []
+  },
+  "container_id": "36fbcef45ba0f18b41089bed0f2703ceddc404ef6e5f7d5c383b174141b4ec13",
+  "container_running": false,
+  "container_pid": 0,
+  "container_exit_code": 0,
+  "launch_sha256": "fa99854bd479ab2c747970525fa04731a01b2e5efa9248d2787af145fd9446da",
+  "log_sha256": "528ea73d5453bf991a532e6534e97b98d9f9e56aa32a7d2a36b064c2bdd11ab5",
+  "exit_sha256": "7de99b54c6e818b03a4ff8be271b5147d2838bd4c48b466c55889f57f113b09a",
+  "receipt_sha256": "e8e57cb9c4d490ddab39099af3e3750b82fa744c0c94ea31a16a58e8dedde427",
+  "cpu_proof_sha256": "1d5576bff581fb50fe8f6a90dff64a417e9a59ed163c0bc6097677e8a0dee6ca",
+  "preflight_sha256": "e88b1d47db6a5c86968f7c9fbb05b2f96af6464c27cecb7e16dae8e0b7957c89",
+  "result": {
+    "status": "passed",
+    "cuda_initialized": false,
+    "model_loaded": false,
+    "GT_opened": false,
+    "predictions_opened": false,
+    "anchors_verified": 3,
+    "weights_sha256_verified": 4,
+    "versions": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "transformers": "4.57.1",
+      "flash-attn": "2.8.3",
+      "accelerate": "1.12.0",
+      "qwen-vl-utils": "0.0.14",
+      "Pillow": "12.0.0",
+      "tokenizers": "0.22.2",
+      "numpy": "2.2.6",
+      "safetensors": "0.7.0",
+      "timm": "1.0.24"
+    },
+    "source_count_verified": 102,
+    "source_manifest_sha256": "35a96762be5a8209705754ca44a1e8bfa0450a537f20973892c3443bdfae796b",
+    "classes": {
+      "CDPruner": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/model/cdpruner.py",
+      "DivPruner": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/model/divpruner.py",
+      "Qwen3VLChatCDPruner": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py",
+      "Qwen3VLChatDivPruner": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py"
+    }
+  },
+  "actual_mount_count_verified": 13,
+  "started_unix": 1793826207.781422,
+  "finished_unix": 1793826247.916369,
+  "scope": "no GPU, model load, GT or predictions; no GPU authorization"
+}

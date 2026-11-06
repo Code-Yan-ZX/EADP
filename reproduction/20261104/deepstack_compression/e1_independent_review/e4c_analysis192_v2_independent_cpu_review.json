@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "192 image exploratory pure statistics and bounded-window CPU design only",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_analysis192_v2/metrics.py": "75ad63b8aa1cf129848d12192d9cdcad0bdc27cbcce030b023a339e58037310e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_analysis192_v2/test_metrics.py": "3ad743ac6555177dbfee814a4e55f829aa9e7f654bdc0f0a48867a471f9473d1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/test_e4c_analysis192_v2_independent.py": "a22a21a07141be19b7a1bd35d7e777b11394a43e76c7c09a84f5be78bfdf55e9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_analysis192_independent/window_detail.py": "46ee3805e63400c257be1d37c58b052b47ff9bb526908abce32944236ac0398e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_analysis192_independent/test_window_detail.py": "1ca84ccae9c95ff71b4a40dece06efd6725f5fcde99dcd06dccfa10c1087bc54",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_analysis192_independent/GATE_AND_WINDOWS_DESIGN.md": "cf8066a4eaaf699eec132f82ec511b856311ad519a03e3a045a68a3c2f5d299d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_expansion192/ANALYSIS_PLAN.md": "7fccee46b5c1c23e8cbbe7333345a6bf34ccdf28d5d6f6d01f1aff9e4199d3ac",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_expansion192/analysis_plan_freeze001.json": "86f7ce4798be28f686d6822c89622b7f8f9585d2d1e4bee0a69010f5e7517a64",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/freeze_e4c_analysis192_v2_cpu_review.py": "e22737ae8d4c6e41ec3dae16d58025e2d0dd76e7965dc1b3b5b511cdbb5b3d39"
+  },
+  "statistics_cpu": {
+    "started_sha256": "7bf1ca9b550bbd6de236953b24dca7c5a5cf4dac8f67a83a9a91e28359857308",
+    "terminal_sha256": "172854e2337bb7d55556f75abd9342f662d11154893170be030240eca207e783",
+    "test_log_sha256": "af00fe7d893176ef8a93dcc76351389c7398a7871a68c612974d476f96adac65"
+  },
+  "windows_cpu": {
+    "started_sha256": "1cf7a17198c023d532466d9715e00df248381f124cf8df06d127cc78479f1c6a",
+    "terminal_sha256": "2e5793d9b94d5ea89989ff4e8a25fd4c2aa36c67a6f8fc21428528cffa5addb4",
+    "test_log_sha256": "69eb400489d13e60d882f9f6b3081903fd3a533b7b2c1034b16546b2aeb260dd"
+  },
+  "GT_opened": false,
+  "target_predictions_opened": false,
+  "GPU_authorized": false,
+  "errors": [],
+  "limits": [
+    "Only synthetic tests; no full runtime, formal proof, independently verified result or actual environment observer exists.",
+    "Future independently audited source gates and completed no-GT formal and independent acceptance mandatory before target journal reading.",
+    "All 7920 samples retained; unobserved activity and logger/manual fsync remain unknown."
+  ]
+}

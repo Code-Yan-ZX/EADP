@@ -1,0 +1,38 @@
+{
+  "created_utc": "2026-11-04T16:41:41.729452+00:00",
+  "command": [
+    "python",
+    "-u",
+    "e1/full_launch.py",
+    "--run-id",
+    "e1full001",
+    "--output-id",
+    "e1full001",
+    "--e0-proof",
+    "e0_identity/anchor16_verification.json",
+    "--manifest-dir",
+    "data_manifest",
+    "--inputs",
+    "e1/input_preparation_002/inputs.jsonl",
+    "--input-proof",
+    "e1/input_preparation_002/independent_verification.json",
+    "--timeout",
+    "7200"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression",
+  "timeout_seconds": 7500.0,
+  "stale_seconds": 1800.0,
+  "progress_paths": [
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001/generated_arms.jsonl"
+  ],
+  "snapshot_seconds": 3600,
+  "poll_seconds": 15,
+  "grace_seconds": 90.0,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/monitore1full001",
+    "/media/disk2"
+  ],
+  "worker_pid": 44846,
+  "process_group": 44846
+}

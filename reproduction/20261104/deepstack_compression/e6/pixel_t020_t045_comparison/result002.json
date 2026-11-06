@@ -1,0 +1,52 @@
+{
+  "status": "completed",
+  "plan_sha256": "26d1c8e1df6d9803bf74492a4be5725b42b32b23744c6819e5127d65f358834a",
+  "script_sha256": "25c200394b4ec812f93c29bede907e893e6acf3e56e430e9ad632da61c33876b",
+  "t020_score_sha256": "8abe54a933492ad9776bdc0972e59360d2594be4cb7dfa233ab7c30ec75905d1",
+  "t045_score_sha256": "f4d29d7ea35b13f9dc0fcb954b389f3e9f6517c98419149ed238ebe6ac7e6afb",
+  "t020_review_sha256": "3da8ef561c7b24f178ca6703f1cb58897c1f58f0ef83f11b721b87f16c8f0bca",
+  "t045_review_sha256": "2e472c7b863bd9729a3b075b9b31df9a94a3e9214d0e174c96fa37810eba88cd",
+  "results": {
+    "DocVQA_VAL": {
+      "questions": 128,
+      "mean_difference_pp": 12.338814661335041,
+      "image_cluster_percentile_95_ci_pp": [
+        6.561004913055694,
+        18.262941839071257
+      ],
+      "improved": 22,
+      "declined": 4,
+      "unchanged": 102
+    },
+    "TextVQA_VAL": {
+      "questions": 128,
+      "mean_difference_pp": 15.156249999999998,
+      "image_cluster_percentile_95_ci_pp": [
+        8.515625,
+        21.953125
+      ],
+      "improved": 24,
+      "declined": 4,
+      "unchanged": 100
+    },
+    "AI2D_TEST": {
+      "questions": 128,
+      "mean_difference_pp": -0.78125,
+      "image_cluster_percentile_95_ci_pp": [
+        -3.90625,
+        2.34375
+      ],
+      "improved": 2,
+      "declined": 3,
+      "unchanged": 123
+    }
+  },
+  "limitations": [
+    "threshold selection and reference comparison follow previous DEV results",
+    "dynamic token counts and real compute differ",
+    "no significance adjustment or latency claim",
+    "Second analysis script revised after initial failure and after reading the complete t020 scored records."
+  ],
+  "GT_opened": false,
+  "score_files_containing_predictions_opened": true
+}

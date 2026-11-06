@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "images": 3,
+  "GT_opened": false,
+  "model_loaded": false,
+  "cuda_initialized": false,
+  "GPU_authorized": false,
+  "errors": [],
+  "worker_sha256": "6660a8e9a80feb855d4ff669b8438540b846e614736b64f512ddb355eda9cf1f",
+  "reviewer_sha256": "0e7265ebc0eaee7bb92c8eccae9c4dc276e2286c46b38798ed18d7db58a3d9c5",
+  "plan_sha256": "0e83d59f87e75245a90d17925c034d1c3830f0672d06aa063b3242b26385e21c",
+  "launch_sha256": "13c0d6b0ad5a10732c9944bf8551abde2b7cbf356d16109efce370ff98a0ac46",
+  "identity_sha256": "e393100d9780034b2876e53297d29aad85bb505b850aafe4162429db48351a5d",
+  "exit_sha256": "e0a5cfdae742a800e6d0070b18582b998c66befee60db67e5e659e6550250760",
+  "started_sha256": "cc11dcb08a262536d8d4ac3bf62fa90a173bfc98fca4f4883ad2b58202d19b13",
+  "terminal_sha256": "3dca21f8512ddba3d13918ed6bdbbbdcd2ec937565e201bf6e5ffa1876f6960f",
+  "processor_probe_sha256": "eaf1de73eb191be0861a28834865ea55d03d785e4f6dee35eb4d1847de5136aa",
+  "container_id": "b674cf9d2f06171ffa714f09acad60feadb5f5faeee1e4ead911c678b27046c0",
+  "bind_mounts": 12,
+  "limitations": [
+    "raw processor tensors not archived; original/low prompt equality is online evidence",
+    "independently recomputed 3-axis position fingerprints from recorded shape and start",
+    "weight hashes checked by worker online; reviewer checked four endpoint stats, not payload",
+    "existing DEV mixed journal opened for input identity; no GPU model, DS or generation tested"
+  ]
+}

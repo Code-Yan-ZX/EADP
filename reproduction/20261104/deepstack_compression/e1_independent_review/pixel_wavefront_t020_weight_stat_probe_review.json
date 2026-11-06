@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "supplemental no-GPU bind-mount stat mapping only",
+  "GT_opened": false,
+  "GPU_used": false,
+  "model_loaded": false,
+  "weights_verified": 4,
+  "probe_plan_sha256": "5ae474b30352e96a329ed468f9ec2207c26ea84876dc1fb1272f6a9205fa0d18",
+  "worker_sha256": "6e9d14119441fa010089138b80aab4211929126465b13057e937c5309cad2b01",
+  "launch_sha256": "726ff293307c692b3220c1b595d79d4a65319e8cd6ebfdc5eb940746d06970ed",
+  "exit_sha256": "f8fcc81853c54a082a4ba4562b984678df829336198d3ccae6a1bcd4acd408cc",
+  "started_sha256": "17b5aea6a93fdb53ab98a1df2095136c19e3252489ecf78cfb2328c830ad7c89",
+  "terminal_sha256": "d4efd6b37698bf5e59da9bef0e87a2c2596f857fda0ccb63979c2b966874f06b",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_weight_stat_probe/worker.py": "e0dfe832187cdd3af5f57e2ad41b4331826477793c0a849101ced98c1eb392fb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_weight_stat_probe/launch.py": "32847939f8428a94d446838092ce7c2060147f3fb429f00a4b70302a75e3fcea",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_final_v4/gpu_gate.py": "21b2dde7c1c1a7877e26d9be6d466a6ad6c9519ad85e7d7413646ba0486c2412"
+  },
+  "reviewer_sha256": "7a363458f4193bf8ac7e9cb5594645ddc3cea5f963edec75a134395d6df1491b",
+  "container_id": "d54629143d9fb4d98bd5fb97f9640853be4d48dbef5412dc37a71e96a21887f0",
+  "reference_container_id": "047a9c15ab78e6c01acf0f99eb2b823391a0bfc7951313acdccc8a330846ff3d",
+  "limitations": [
+    "Compares current host and container observed stat identity; does not hash payload again or exclude a transient change.",
+    "Container inspector environment and mounts compared as unordered full records; no model, CUDA or GPU initialized."
+  ],
+  "errors": []
+}

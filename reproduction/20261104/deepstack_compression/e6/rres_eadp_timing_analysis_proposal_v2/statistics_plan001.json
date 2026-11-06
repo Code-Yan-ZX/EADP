@@ -1,0 +1,50 @@
+{
+  "status": "frozen",
+  "scope": "statistics and normalized-window CPU candidate; not GPU or result-read admission",
+  "images": 32,
+  "processes": 12,
+  "warmups": 60,
+  "measured": 320,
+  "bootstrap_draws": 10000,
+  "seed": 20261106,
+  "bootstrap_rng": "numpy.random.default_rng",
+  "percentiles": [
+    2.5,
+    97.5
+  ],
+  "percentile_method": "linear",
+  "numpy_version": "1.26.4",
+  "python_version": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:12:24) [GCC 11.2.0]",
+  "budget_end_unix": 1794065414,
+  "GT_opened": false,
+  "timing_results_opened": false,
+  "GPU_used": false,
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_analysis_proposal_v2/PLAN.md": "bc3dd464e24daf0c9e7184c9814069969bf76c05e2a115f487516c87ca4bc325",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_analysis_proposal_v2/metrics.py": "dde28733b173ac447f4c12bc59c3d7e90c8f433b099956b7fdd271760812d6e7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_analysis_proposal_v2/windows.py": "1033097641177ab1ba0ac09199f8697809ff89faa0c282c677e34729af71eab4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_analysis_proposal_v2/test_metrics.py": "23e9a7d6b0fd3c1105dbe2364e445eb33281c74e51eeb77899d2805d4c23b8a9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_analysis_proposal_v2/test_windows.py": "eb921ce03f62790986fc4043ab3aacd9c952489a63ae0faa3149e989966bff8a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_analysis_proposal_v2/freeze_statistics.py": "20eefc995e56b419956727c5187cd1e7dca0fd48e4cb7a53aafae880078b7e91",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_pilot_v4/schedule001.json": "72c97e5af1acbfd9ab9d57e9a29a75cd81a17f12704b4f134eb0216c3d980b06",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_pilot_v4/schedule.py": "dfdbc1a139270317677e144d2e66d6ffd4eed3ff671de80ff9896a768ac12203",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/initial_plan.json": "2a11cfcc2dc9404eac218f1f727e39508a687a73e0343101ae564be3e99c30e6"
+  },
+  "tests": [
+    {
+      "pattern": "test_metrics.py",
+      "tests": 6,
+      "result": "passed"
+    },
+    {
+      "pattern": "test_windows.py",
+      "tests": 6,
+      "result": "passed"
+    }
+  ],
+  "limitations": [
+    "Result/proof/observer schemas and executable read gate are pending integration and separate freeze/review.",
+    "Unknown interference windows remain unknown and all samples are retained."
+  ],
+  "errors": []
+}

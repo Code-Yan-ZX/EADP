@@ -1,0 +1,74 @@
+{
+  "created_utc": "2026-11-04T17:07:48.523238+00:00",
+  "score_sources": {
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/dataset/utils/vqa_eval.py": "f63c9fd539a4a2750cfb4d17ca654e9871b58358bbb943549a71c947839de3ae",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/smp/misc.py": "e65a0e0a23305ab3bd16c6d1885e8f97b08b7a8fb3c4bf90691e5432a67f7ddf",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/utils/matching_util.py": "03435cedaeaf6282599816aed4ba57f26dd4858f2a37399490acca98d9f8f5f2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/metrics.py": "7e79c70937fe9eb1ecea9e3ea3c70ed9ba781a9cadc26fd5baa530d0f7bfbc10",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/paired_stats.py": "56e83840cb1ae399a992af7f7f408c8fbe9634aac880ab5472ffa1b8fa7fa4d5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/score.py": "6470bd9949e7430a3b95eb78c30b9fc3473436447034bf199227ace8ff080891"
+  },
+  "source_snapshots": {
+    "test_analysis.py": "9f045d288eb55de3e580a6392b8c148050f5bb596ac5ce1674447d0215bf607f",
+    "paired_stats.py": "56e83840cb1ae399a992af7f7f408c8fbe9634aac880ab5472ffa1b8fa7fa4d5",
+    "score.py": "6470bd9949e7430a3b95eb78c30b9fc3473436447034bf199227ace8ff080891",
+    "metrics.py": "7e79c70937fe9eb1ecea9e3ea3c70ed9ba781a9cadc26fd5baa530d0f7bfbc10",
+    "completion.py": "a94c45fee0ebc4680c8cd7d8bc2d44b93e8576a6fa1d517842945dc21b9f74cd"
+  },
+  "reference_tsv": {
+    "AI2D_TEST": {
+      "path": "/media/disk2/YZX/LMUData/AI2D_TEST.tsv",
+      "sha256": "3b16aa83c6809149df6978c7d5a6ee830b75f0010a60b26d33c004c47d575c4a"
+    },
+    "DocVQA_VAL": {
+      "path": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+      "sha256": "05fea8a88593b192cd23415797771c94603832377d3b4b2dec4f0a6fb87a4d25"
+    },
+    "TextVQA_VAL": {
+      "path": "/media/disk2/YZX/LMUData/TextVQA_VAL.tsv",
+      "sha256": "f9bd2e1518185f678a60b9a31fea5655f7533704fa7d7c9b3775bf0ca2a6b8d0"
+    }
+  },
+  "reference_identity_note": "score.py checked each complete TSV against these SHA256 values both before and after extracting only DEV qids; other row answers were not decoded or parsed",
+  "weight_identity_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/qwen_weight_identity.json",
+  "weight_identity_sha256": "7bfe695c2dbb0aa4e625183f0344d26bcbdc3add24658a068302c2744dc07ec8",
+  "weights": [
+    {
+      "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00001-of-00004.safetensors",
+      "bytes": 4902275944,
+      "sha256": "d5d0aef0eb170fc7453a296c43c0849a56f510555d3588e4fd662bb35490aefa",
+      "expected_lfs_sha256": "d5d0aef0eb170fc7453a296c43c0849a56f510555d3588e4fd662bb35490aefa",
+      "matches": true
+    },
+    {
+      "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00002-of-00004.safetensors",
+      "bytes": 4915962496,
+      "sha256": "8be88fb5501e4d5719a6d4cc212e6a13480330e74f3e8c77daa1a68f199106b5",
+      "expected_lfs_sha256": "8be88fb5501e4d5719a6d4cc212e6a13480330e74f3e8c77daa1a68f199106b5",
+      "matches": true
+    },
+    {
+      "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00003-of-00004.safetensors",
+      "bytes": 4999831048,
+      "sha256": "83de00eafe6e0d57ccd009dbcf71c9974d74df2f016c27afb7e95aafd16b2192",
+      "expected_lfs_sha256": "83de00eafe6e0d57ccd009dbcf71c9974d74df2f016c27afb7e95aafd16b2192",
+      "matches": true
+    },
+    {
+      "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00004-of-00004.safetensors",
+      "bytes": 2716270024,
+      "sha256": "0a88b98e9f96270973f567e6a2c103ede6ccdf915ca3075e21c755604d0377a5",
+      "expected_lfs_sha256": "0a88b98e9f96270973f567e6a2c103ede6ccdf915ca3075e21c755604d0377a5",
+      "matches": true
+    }
+  ],
+  "weight_identity_note": "full_runner recomputed all 4 payload SHA before inference, and guarded file stat before/after inference; identity lists expected and measured hashes",
+  "run_frozen_sha256": "80ebf8879ff89d9f706e05e6f5cac18bc438c9baf90aa2cd2cb2d32325317c28",
+  "run_exit_sha256": "b6d1578c8b10143786b6d364de72524bca2c28793e26e3a5a5d058d294c0cd2f",
+  "run_terminal_sha256": "65ce759aa1aaae8ccefa43549f82a38e60177116c2141029f0a27b9617680f73",
+  "score_terminal_sha256": "dbc24310e64f3c1bf03366b895fd0b363025fa82f29c8ce987e223231fa8f17f",
+  "scores_sha256": "e4a00f58e7c606ba33c94d11b580832c7f871eeb4075e47ac9c4f589bf260a1f",
+  "analysis_sha256": "4de6bfa52e36ad9f0d915d75ee64e4525a32db145e145b1710c75d9749d3b435",
+  "acceptance_sha256": "95981ce2400d7467ba93d3177275a0860a656fc8558080c243040663e40a52fb",
+  "scope": "DEV 384 only; no non-DEV answers parsed, no external judge"
+}

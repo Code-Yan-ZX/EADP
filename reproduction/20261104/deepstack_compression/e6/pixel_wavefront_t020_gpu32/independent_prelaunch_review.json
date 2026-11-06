@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "48a964ee96035a48184e0838014720dc13eb2340eccc92f8eb2a34fafa023a8b",
+  "reviewer_sha256": "432859b3bacca4d17e84ea40e48d77e8b50b7a30fd930a2bab14a537c14d6177",
+  "preflight_sha256": "4d56f8a93afdb55666e2b28fdefc3652ca6876a404de0cd90c65c60779e2e336",
+  "preflight_started_sha256": "9118b87adfbae0d471ec9452c3f1cccb6b657dc0cbf4f8babe9647128dea49e2",
+  "preflight_terminal_sha256": "ee58ae6529c57dea1574e88cd7c07a2c9a500b0de83620caf6dac56fc794f28e",
+  "preflight_exit_sha256": "9838b799889c0bfdf5073eccd7058a3bc02c8f2a351a6d35a7cef23a4c95abc8",
+  "cpu_started_sha256": "bed8e8c6d31c3569b1cdfc6892d5335a7373ad27047a00af6411272d597dbdc4",
+  "cpu_terminal_sha256": "a2ce072abe1237ddf8f6e6552d9dada837e11902c4c20d4481b8e3972e05d48a",
+  "cpu_stderr_sha256": "4891f8defeee8004319f911d246d5d949cdf6760e63c3a1ef7962a99275901df",
+  "GT_opened": false,
+  "errors": [],
+  "limitations": [
+    "same 32 post-hoc DEV processor captures, not independent new sample",
+    "one synchronized host-wall measurement per arm and image; records both raw monotonic endpoints",
+    "component-only, no GPU/model identity or end-to-end performance claim",
+    "CPU author selector dispatch at positive threshold is anchored; full model and other inputs not established"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "pre-run formal verifier source review only",
+  "GT_opened": false,
+  "predictions_opened": false,
+  "scoring_performed": false,
+  "GPU_authorized": false,
+  "plan_sha256": "81bb0fe0491d71aff1283eadb127405f9585f9b2386193608dd860b020981ca5",
+  "plan_started_sha256": "601ad7482adacec7195cb1d1c1634f9715e6a7055acf478d295d785a8ab5d6f0",
+  "plan_terminal_sha256": "5c7bbd39cf9a6fb3456d1847b538c00049257896c19e3053ddb53fc0cfb58c55",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_smoke_accept/verify.py": "c0ced1d37b7f884a55a255288e03e9f373df7c251181ae5015a5176bb745731d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_smoke_accept/contract.py": "9d7e629b5ed5649e9235897f6360a2a8f1582722cf54b9eff64e86f960ab291d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_smoke_accept/inventory_contract.py": "9741c86b7f5e02b9b75b07b16ac8a049b5150606555c79030fa6b04b235a08c4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_smoke_accept/test_verify.py": "b0dd05578ebcc9881cb7324de77391013afe955455593ddecbb5902c51b3058b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_smoke_accept/test_contract.py": "5e6a42178fb1e3b914688cbe21264ff5ba67d481aa63652f2577a855cc0716c1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_smoke_accept/test_inventory_contract.py": "53e08422d41a0e44045752d27ee1a2ca8c1d59bc2e88852d0eb30c5dd44218d2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_smoke_accept/freeze.py": "1ec53c33ab7ea8ca32aa3d88050deb2e661ebdd02803a3823dcb36f697f65464"
+  },
+  "reviewer_sha256": "91737c2c29a0a57fcc63b5378b17653117fe66370bc663c2ad03f7959b02447e",
+  "errors": [],
+  "limitations": [
+    "No run output has been read or validated.",
+    "GPU run and resulting independent review require separate supervision.",
+    "Full KV tensors and separate author greedy IDs are not archived; only runtime fingerprints and online checks."
+  ]
+}

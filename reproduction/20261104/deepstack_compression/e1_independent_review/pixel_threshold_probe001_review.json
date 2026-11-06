@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "images": 1,
+  "thresholds": [
+    {
+      "threshold": 0.0,
+      "selected_count": 667
+    },
+    {
+      "threshold": 0.05,
+      "selected_count": 649
+    },
+    {
+      "threshold": 0.1,
+      "selected_count": 626
+    },
+    {
+      "threshold": 0.2,
+      "selected_count": 598
+    },
+    {
+      "threshold": 0.4,
+      "selected_count": 573
+    },
+    {
+      "threshold": 0.8,
+      "selected_count": 1
+    }
+  ],
+  "plan_sha256": "8b8617a85f377e791fa8166903e58d869373f3407c0a82449fc06d57e65a80d2",
+  "journal_sha256": "5967d16cc4dd80f3d9dc4f92f83d5aac92ef7852eddd813921e6056c70164782",
+  "result_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_threshold_probe/probe001/threshold_00.json": "122d8a68b8e98538f0dfd0597b7ec2acd74f916410328793345679da0bf1a78c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_threshold_probe/probe001/threshold_01.json": "307bb4fae4604c30bc8ffede12f5ea7dcd7f6c91bbe7837a1711aacb31a89324",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_threshold_probe/probe001/threshold_02.json": "8fbaf9238c8d160713c5bbfbe6ace962c8b5303eaa49b7d452e7a1c94e573734",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_threshold_probe/probe001/threshold_03.json": "b1b58ddad57b1a41220f7fe7c9731cd75d2e0c09e2ee892545011ff552089c83",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_threshold_probe/probe001/threshold_04.json": "cf8cf62c97ec6563ad63a8146897232fc4dbaac191413334667e700be181f040",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_threshold_probe/probe001/threshold_05.json": "36f9ea36cf4fd81c46169eb21332454aaa611ca9f9e14e1e210cb0c5b24f961a"
+  },
+  "run_started_sha256": "bf4e55849c11b77fbed2e1b687edd240ce50eb383fba9b9ad43a9adcb85bfdf0",
+  "run_terminal_sha256": "df676ffea5045b256b5d2f93ad5e8b8daa512863d9b7f9a43e2211cddb5a248b",
+  "reviewer_sha256": "525d54025e55e1c0bdaa4e254f6ae4ea6324a5ff88b5471825138c947406cb03",
+  "GT_opened": false,
+  "predictions_opened": false,
+  "gpu_used": false,
+  "limitations": [
+    "independent rerun uses the same author implementation on CPU",
+    "one chosen image; no claim of monotonicity, GPU parity, accuracy, or latency"
+  ],
+  "errors": []
+}

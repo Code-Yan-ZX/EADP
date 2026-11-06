@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "scope": "CPU proposal contract and deterministic synthetic reconstruction only; no actual utility, teacher, natural generation, model identity, costs or final inference approval",
+  "source_sha256": "3834985597cf38982c3197719c86a9128cd34a9cb16d90122bccddde553d8642",
+  "test_source_sha256": "535c97fa4b587cb3a1f1b96786bce438008b5df6ad0b8e5cc911878e2aef52a2",
+  "sample_sha256": "6f742f53afcda311cd3753db7ed9c3f4d466c20dcc5a3779e67d78fc0f06b869",
+  "started_sha256": "ac1da33b7b7a3169239bbcbafec9f0cd7b0d8c5c7b95cf4ef2b5fb92deaba802",
+  "terminal_sha256": "ede21fcdfc29931a71e646c1ef3ab61f4fd82c41406030fccd3840ab569b4d5e",
+  "reviewer_sha256": "185411dcb8cd686fd9d3adbe5336651765501603961956e7d37a071aba09909d",
+  "n_sample": 128,
+  "duplicate_qids_across_samples": [],
+  "checks": [
+    "four percentile ranks with ties",
+    "64 rejected pool each",
+    "random pool seed serialization",
+    "last r removal",
+    "two r x three sources x eight deterministic candidates",
+    "256 unique sorted replacements",
+    "equal candidate counts"
+  ],
+  "limits": [
+    "seed byte encoding fixed here before teacher use",
+    "sample frozen after E4 DEV score disclosure",
+    "real runner must save Python version, proposals and source hashes",
+    "candidate count reduction and retry exhaustion not forced in independent synthetic run",
+    "teacher canonical answer, inputs, synchronized main/DS/P3, loss and budgets need separate implementation and validation"
+  ],
+  "GT_opened": false,
+  "predictions_opened": false,
+  "utc": "2026-11-04T19:08:35.542636+00:00"
+}

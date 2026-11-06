@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "before": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_gpu_plan/cpu_check.py": "0dcb4665bf39f0fe3ec96ad1ccded7c3dfc4d56ccf58daf8783a6f500638bdde",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_gpu_plan/freeze.py": "d88aed5b4c7f236951942077ece1f646036adc5efce5ea9c9f92f33516d3e631"
+  },
+  "after": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_gpu_plan/cpu_check.py": "0dcb4665bf39f0fe3ec96ad1ccded7c3dfc4d56ccf58daf8783a6f500638bdde",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_gpu_plan/freeze.py": "d88aed5b4c7f236951942077ece1f646036adc5efce5ea9c9f92f33516d3e631"
+  },
+  "cases": [
+    {
+      "script": "verify.py",
+      "returncode": 1,
+      "rejected_missing_plan": true
+    },
+    {
+      "script": "snapshot.py",
+      "returncode": 1,
+      "rejected_missing_plan": true
+    },
+    {
+      "script": "launch.py",
+      "returncode": 1,
+      "rejected_missing_plan": true
+    }
+  ],
+  "GT_opened": false,
+  "predictions_opened": false,
+  "GPU_used": false
+}

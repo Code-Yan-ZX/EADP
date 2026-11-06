@@ -1,0 +1,24 @@
+{
+  "approval": {
+    "synthetic": true,
+    "GPU_authorized": false
+  },
+  "controller": {
+    "pid": 3336503,
+    "synthetic": true
+  },
+  "command": [
+    "docker",
+    "run",
+    "--gpus",
+    "all",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/host_smoke001/gpu_worker.py",
+    "--arm",
+    "rres",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/host_smoke001/run001/rres/observations"
+  ],
+  "name": "eadp-rres-identity3-rres-3336503",
+  "arm": "rres",
+  "gpu_pids_before": []
+}

@@ -1,0 +1,58 @@
+{
+  "status": "completed",
+  "plan_sha256": "2f87dcdf522ed8e75661c70c579cc533bdd3b7e88c5a895729d79f35013eabde",
+  "source_sha256": "fcf66bed80a17b2096c47a16e51b38475d02b8db0679058936a1e65eacec6c6b",
+  "tasks": {
+    "DocVQA_VAL": {
+      "questions": 128,
+      "oracle_mean_pct": 86.25665285802278,
+      "fixed_k256_mean_pct": 67.84538557047036,
+      "oracle_minus_fixed_pp": 18.411267287552427,
+      "selected_counts": {
+        "128": 62,
+        "256": 35,
+        "512": 31
+      },
+      "total_visual_tokens": 32768,
+      "mean_visual_tokens": 256,
+      "questions_with_different_k": 93
+    },
+    "TextVQA_VAL": {
+      "questions": 128,
+      "oracle_mean_pct": 85.078125,
+      "fixed_k256_mean_pct": 80.78125,
+      "oracle_minus_fixed_pp": 4.296875,
+      "selected_counts": {
+        "128": 115,
+        "256": 8,
+        "512": 5
+      },
+      "total_visual_tokens": 19328,
+      "mean_visual_tokens": 151,
+      "questions_with_different_k": 120
+    },
+    "AI2D_TEST": {
+      "questions": 128,
+      "oracle_mean_pct": 85.15625,
+      "fixed_k256_mean_pct": 82.03125,
+      "oracle_minus_fixed_pp": 3.125,
+      "selected_counts": {
+        "128": 117,
+        "256": 11,
+        "512": 0
+      },
+      "total_visual_tokens": 17792,
+      "mean_visual_tokens": 139,
+      "questions_with_different_k": 117
+    }
+  },
+  "GT_opened": false,
+  "new_predictions_opened": false,
+  "limitations": [
+    "Explicit answer-informed upper bound among these three existing outputs on these observed DEV questions, not a deployable policy or generalization guarantee",
+    "Per-task resource constraint and task-specific selection assume information not available at inference",
+    "Visual token K is not measured TTFT, FLOPs, GPU memory or equal compute",
+    "No uncertainty interval or statistical significance for the same-data optimized diagnostic",
+    "No new GT, no CONFIRM or FINAL access"
+  ]
+}

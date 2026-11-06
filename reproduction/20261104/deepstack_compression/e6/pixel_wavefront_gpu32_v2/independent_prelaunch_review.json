@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "5076996d0c2067eb8d39ad66ccab24fa2657ba90105de64b8c4cde84151395be",
+  "reviewer_sha256": "b96a9df8a71fc76def69ed71cc9e23df1d2d2bf9d4e328cecb48daa4dff63587",
+  "preflight_sha256": "6608293d5e03eac7b01116a0f862affa5908019857df19e819a95b4725a48acb",
+  "preflight_started_sha256": "a6d69a9c0fccdf14da3f162b8fe6bd7eb35a0e753a5434e86c6592225cfca1d6",
+  "preflight_terminal_sha256": "545f714170fee3f07afca58af6c75a6a6aede16a10a0b45c0e221cda81689d5c",
+  "preflight_exit_sha256": "057bbeda70157066a6ae1f04c1ded81203e903f4e27b36a52eb1cb5697929fe7",
+  "cpu_started_sha256": "34bb25147209e23a083a19dc67db00d2759c9aa6713d64a895dc3ec31a2cb0ce",
+  "cpu_terminal_sha256": "12facd56b43e30951e5156230950682d8736125559c578d0fd760016f587c82e",
+  "cpu_stderr_sha256": "3e0527cdca77ec11434557c1ab0163b62e464d6c6b2a7852673d214584ba6b91",
+  "GT_opened": false,
+  "errors": [],
+  "limitations": [
+    "32 existing DEV images were selected after observing four-image GPU pilot; no independent fresh-sample claim.",
+    "Only CPU preflight performed; GPU not yet run and must be scheduled by root.",
+    "One unpaired synchronized component timing per arm per image; no end-to-end model conclusion.",
+    "Prior four-image pilot is included in these 32 images; do not double-count it."
+  ]
+}

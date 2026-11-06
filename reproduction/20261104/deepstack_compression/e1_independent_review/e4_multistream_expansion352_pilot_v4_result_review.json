@@ -1,0 +1,107 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "images": 9,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "predictions_opened": true,
+  "formal_sha256": "680a9bcfe3e702688c5ad2eb80f6e0c0dd098824b37af2fa46ebb34f5ac76255",
+  "formal_started_sha256": "85af3ba4e4af9cd83f23e7da0f3ae960ce8a47744e3845077e254c4fb39f363b",
+  "formal_terminal_sha256": "e45f7f2ed0dcccfafc0d5ba2701a61bac44e3837dd49860301fbae437391b4c3",
+  "run_started_sha256": "5e0f5a7dddcabf2d242b06d1c73d4df690957ebe6a3165ffa0a55818b754ec8a",
+  "run_terminal_sha256": "95d1151af2246c51e793217563b6aa604ee7998bb58d14aaff6f69beb2e137c4",
+  "source_manifest_sha256": "e251bcf476d5dcf49171bca11350c322aff2a1f285091449b1490f7268b2906f",
+  "reviewer_sha256": "d01fef6f246d41ca2b4956f4c69a362bc90db00e244244c6a543b0c04cc6fdbe",
+  "journal_sha256": "5a81058dc73aae6292caba523eff0f6a1fbed20f307d5731fcc254fd03304493",
+  "actual_gpu_container": {
+    "container_id": "6d9dd3b36d8aa8e25b884d36d0d87ad1873989473964c9fd1478c35f4742b2c9",
+    "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "mounts": 12,
+    "devices": [
+      "/dev/nvidia0",
+      "/dev/nvidiactl",
+      "/dev/nvidia-uvm",
+      "/dev/nvidia-uvm-tools"
+    ]
+  },
+  "rows": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "43283",
+      "record_sha256": "42b297d98df77607802f7f6c284803a0992baca391f9212e9fb9f372f95089c0",
+      "norms_sha256": "8f5bdf6c26b3c6812b37ee6ef3953eb1ee8bb944c2024cab7898dcc9d47c796a",
+      "feature_checks": 8,
+      "identity_checks": 11
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "62944",
+      "record_sha256": "d62ce9b76d947216bd2a1d2d9adc2c1683fa77fa1a0e61a57f8bc50540271dbf",
+      "norms_sha256": "a48509212e391596b95e42a58d0bfc66052f18f1196153b71c57154b1aad4a1c",
+      "feature_checks": 8,
+      "identity_checks": 11
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "319",
+      "record_sha256": "a2732f4f57ad8bc32be67e26e13b5b28ec297bf35d02a9758850c716fcc23660",
+      "norms_sha256": "73e7615375e673755e266559a7be8531f39aeded7d56582d86d4c861209b5d6f",
+      "feature_checks": 8,
+      "identity_checks": 11
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "35801",
+      "record_sha256": "160d0a2b7e3004ba741831af7bacc385626db3c718bff832bf8d70fa5e8a2ebc",
+      "norms_sha256": "b3f71b775aaad6060213197136d929e68b1d90c22b1902f593ffecde6e027358",
+      "feature_checks": 8,
+      "identity_checks": 11
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38572",
+      "record_sha256": "e94c800cf9731c5100f43d0c040209557de2619f2eb53d1e1cb10f6b9427037e",
+      "norms_sha256": "91957b6531295db47c65cd29a99b95349ac6671ef5efc8ac233ca74fd979dcd8",
+      "feature_checks": 8,
+      "identity_checks": 11
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "34888",
+      "record_sha256": "a98af6e8873bbbe4bcc7d4bff7720d2920f128291aabfbaaa6a33ef5fa2c40b1",
+      "norms_sha256": "84d48a08a6ce52063ee6c32afa1a91c131c2a95ad224657029704f0233e55920",
+      "feature_checks": 8,
+      "identity_checks": 11
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "449001",
+      "record_sha256": "560eec5d14f1bb746ea6085e079a0bdaa6106d8b688c6de9947f5ca4b2cdbeec",
+      "norms_sha256": "00ed4472d2cdbf9f0edbdc850fab95fdb1a7e1d0238a9303ccbd2333d085a430",
+      "feature_checks": 8,
+      "identity_checks": 11
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "118801",
+      "record_sha256": "c9303f6b3cb3624e214b0a401a70aa95ef12571e077d7ce7b44bd3d56a87af59",
+      "norms_sha256": "d37a157b54b95ef0964e1a24bb9dfc15e83304f1207d5c9223cd959f45a9df44",
+      "feature_checks": 8,
+      "identity_checks": 11
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "265901",
+      "record_sha256": "19711d6bfcc91614509593c5cda7da0376b1ba8f37fd0b81c60d485e10aeb61c",
+      "norms_sha256": "d4328695b463057130bb5500ddc0ae6482a2b440751c950a4cb3a3e36d2b3e45",
+      "feature_checks": 8,
+      "identity_checks": 11
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Nine diagnostic captures and their elapsed phases are not TTFT or a representative performance benchmark.",
+    "Full visual tensors were not archived: saved norm vectors support offline feature recomputation while tensor association and identity are runtime capture evidence.",
+    "Accepted E1/E4 DEV mixed records were parsed for identity only; no ground truth or scoring."
+  ]
+}

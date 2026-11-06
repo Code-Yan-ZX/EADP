@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "questions": 384,
+  "tasks": {
+    "DocVQA_VAL": {
+      "assigned_score_sum": "110.4085156582691557",
+      "fixed_k256_score_sum": "86.8420935302020500",
+      "used_tokens": 32768,
+      "selected_counts": {
+        "128": 62,
+        "256": 35,
+        "512": 31
+      },
+      "milp_double_optimum": 110.40851565826915,
+      "milp_gap": 1.287115819869069e-16,
+      "milp_dual_bound": 110.40851565826917,
+      "absolute_difference_vs_assignment": 0.0
+    },
+    "TextVQA_VAL": {
+      "assigned_score_sum": "108.8999999999999990",
+      "fixed_k256_score_sum": "103.3999999999999990",
+      "used_tokens": 19328,
+      "selected_counts": {
+        "128": 115,
+        "256": 8,
+        "512": 5
+      },
+      "milp_double_optimum": 108.9,
+      "milp_gap": 0.0,
+      "milp_dual_bound": 108.89999999999999,
+      "absolute_difference_vs_assignment": 0.0
+    },
+    "AI2D_TEST": {
+      "assigned_score_sum": "109.0",
+      "fixed_k256_score_sum": "105.0",
+      "used_tokens": 17792,
+      "selected_counts": {
+        "128": 117,
+        "256": 11,
+        "512": 0
+      },
+      "milp_double_optimum": 109.0,
+      "milp_gap": 0.0,
+      "milp_dual_bound": 109.0,
+      "absolute_difference_vs_assignment": 0.0
+    }
+  },
+  "analysis_sha256": "bda08c80693d59d9afde812f7c72ebd3c045fc2b779d5d042001482d73da6881",
+  "assignments_sha256": "21d2da157ce2a383116fe273250d6115a3a83c2bd3cac8bf044998ff611ba390",
+  "score_sha256": "fcf66bed80a17b2096c47a16e51b38475d02b8db0679058936a1e65eacec6c6b",
+  "plan_sha256": "2f87dcdf522ed8e75661c70c579cc533bdd3b7e88c5a895729d79f35013eabde",
+  "analysis_started_sha256": "48d1fefcd94d7060b0b8aceaba2280603d5b95b2179857c7384ee8464a826087",
+  "analysis_terminal_sha256": "7719b79be694563f7ae1ce39208f6a1dd431c091dd01689c301d21964e6330ab",
+  "reviewer_sha256": "0d26e466f9330df4dd0c1c11f50cb9d517415e5aade4ebfb582b98b413ebdb61",
+  "solver": "scipy.optimize.milp HiGHS",
+  "scipy_version": "1.15.3",
+  "GT_opened": false,
+  "new_predictions_opened": false,
+  "limitations": [
+    "MILP is double-precision numerical optimization; assignment objective agrees within 1e-8, not a proof of exact decimal tie-breaking.",
+    "Answer-informed in-sample upper bound on these DEV scores among three precomputed arms, not a deployable policy or generalization result.",
+    "Per-task sum of visual K does not measure TTFT, FLOPs, memory or guarantee equal compute."
+  ],
+  "errors": []
+}

@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "static and synthetic review of document overlap v2 only; real data remains gated by complete audit and independent audit; not a training approval",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_train_data/document_overlap_analysis_v2.py": "d60e35bba2f306adcc27aa814624c932cad6544cdd3f297e2f47d7c924dbd8df",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/document_overlap_review001/original.py": "f97d449b6f98e114bb519dfb3bd7491c0c3794e03a9773c0f9f7a2ccfbf56686",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/document_overlap_review001/test_original.py": "06423a79ae44ddd9d3cea263493e3a29955cdce1d1f46121ff8b8d9ead3c03a5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/document_overlap_review001/independent_recalc.py": "072d69bad1372d167b89caeffb17ae52279457bc069055a80ab8d2c9f43bc697",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/document_overlap_review001/test_independent_recalc.py": "bf59a962f2f3a680895b4414f18237dd1a6a1f11cf6c1f4d5bfc1651e1bae629",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/document_overlap_review001/test_v2_independent.py": "55113bca45aa06d2336e5d0dfdbf98923df46efde4dfe514e4ef1f7b8646de0a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/document_overlap_review001/review_v2_preflight002.py": "da834d3daa7896016a79b0f2f89c5500e640b3ae09492ddb23279738ea8b56ec"
+  },
+  "synthetic_monitors": {
+    "monitor": {
+      "started.json": "311aee4363248ac3aa61516742f5fb8d79ba8c28139a0ac87a9edcfd084743ab",
+      "terminal.json": "e4fbcabcab73b040b0129b10fc7449da45b3fa639fa0e5cf79c1d2e2b4bc03be",
+      "stderr.log": "095951a293c0954ee7e943d6eb67677a87da565402426661b5456d568b3c3e98"
+    },
+    "monitor_recalc_cpu003": {
+      "started.json": "efd8bf16eadeaeb46b527dab3a4726b921934b31e1ca23e65bd6fb8d280674dd",
+      "terminal.json": "aa89c54148c43cfd60fdbddc5fe98803e0c5a67ff274f5a08fc42202b6e12783",
+      "stderr.log": "4083f5d878fa440e586e85864dc163b6888e29dbc2aa07bfc8c17773765c0a0a"
+    },
+    "monitor_v2_cpu002": {
+      "started.json": "254eef980e07ca4344ac4be1b8750e2847dbc11ff8e5e1a6397f9bccb0e45780",
+      "terminal.json": "a5e7cb02b6f9c7da1c2a24e3702408bf411e39f838e4910e1f31ab47621a731b",
+      "stderr.log": "f34db33ca6a75dd8a00f88fa6d998d28fdb1cf54bfb355f6b231f1c2b5751017"
+    }
+  },
+  "GT_opened": false,
+  "predictions_opened": false,
+  "training_performed": false
+}

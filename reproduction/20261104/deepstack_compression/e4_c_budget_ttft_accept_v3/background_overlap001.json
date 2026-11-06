@@ -1,0 +1,542 @@
+{
+  "status": "passed",
+  "jobs": 48,
+  "watcher_windows": [
+    {
+      "query_window": [
+        13990029232284093,
+        13990029267327738
+      ],
+      "query_and_first_fsync_window": [
+        13990029232284093,
+        13990029269571073
+      ],
+      "query_returncode": 0,
+      "query_error": null
+    },
+    {
+      "query_window": [
+        13990089523384868,
+        13990089556598710
+      ],
+      "query_and_first_fsync_window": [
+        13990089523384868,
+        13990089558652453
+      ],
+      "query_returncode": 0,
+      "query_error": null
+    },
+    {
+      "query_window": [
+        13990149801371650,
+        13990149832630866
+      ],
+      "query_and_first_fsync_window": [
+        13990149801371650,
+        13990149834900683
+      ],
+      "query_returncode": 0,
+      "query_error": null
+    }
+  ],
+  "annotations": [
+    {
+      "order": 0,
+      "phase": "warmup",
+      "task": "AI2D_TEST",
+      "budget": 128,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 1,
+      "phase": "warmup",
+      "task": "AI2D_TEST",
+      "budget": 1024,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 2,
+      "phase": "warmup",
+      "task": "AI2D_TEST",
+      "budget": 512,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 3,
+      "phase": "warmup",
+      "task": "AI2D_TEST",
+      "budget": 256,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 4,
+      "phase": "warmup",
+      "task": "TextVQA_VAL",
+      "budget": 128,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 5,
+      "phase": "warmup",
+      "task": "TextVQA_VAL",
+      "budget": 256,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 6,
+      "phase": "warmup",
+      "task": "TextVQA_VAL",
+      "budget": 512,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 7,
+      "phase": "warmup",
+      "task": "TextVQA_VAL",
+      "budget": 1024,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 8,
+      "phase": "warmup",
+      "task": "DocVQA_VAL",
+      "budget": 512,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 9,
+      "phase": "warmup",
+      "task": "DocVQA_VAL",
+      "budget": 1024,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 10,
+      "phase": "warmup",
+      "task": "DocVQA_VAL",
+      "budget": 256,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 11,
+      "phase": "warmup",
+      "task": "DocVQA_VAL",
+      "budget": 128,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 12,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 1024,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 13,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 256,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 14,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 128,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 15,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 512,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 16,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 512,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 17,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 256,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 18,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 1024,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 19,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 128,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 20,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 256,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 21,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 512,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 22,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 128,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 23,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 1024,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 24,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 1024,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 25,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 256,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 26,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 128,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 27,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 512,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 28,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 128,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 29,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 256,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 30,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 1024,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 31,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 512,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 32,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 1024,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 33,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 256,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 34,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 512,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 35,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 128,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 36,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 512,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 37,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 1024,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 38,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 256,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 39,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 128,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 40,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 1024,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 41,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 128,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 42,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 512,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 43,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 256,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 44,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 512,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 45,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 1024,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 46,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 128,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    },
+    {
+      "order": 47,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 256,
+      "ttft_ps_query_overlap": [],
+      "ttft_ps_first_fsync_overlap": [],
+      "full_job_ps_first_fsync_overlap": [],
+      "second_fsync_overlap": "unknown"
+    }
+  ],
+  "GT_opened": false,
+  "scoring_performed": false,
+  "formal_sha256": "99814e87ec389d2ade1134cfe8d6bf291132ced4aa3d8141e124893611ae3000",
+  "formal_started_sha256": "1535d9841c941d23e5ebc66d8886d773e007758791a4db577dd50a5f41c9fc9e",
+  "formal_terminal_sha256": "e2f8d0626e5f43f68bb7bcede30d1001b92a9f8a32683667e57b752a92cfef56",
+  "journal_sha256": "3b1d38b42b51a2f48dc719d60e927463ccb36880e3b24c6122210981bdb73b32",
+  "watcher_source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_environment/watch.py": "b41467d9744159ed40f03e10e8c680c1e7b0785a4a262bd7b5f661de8c87d410",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_environment/process_samples001.jsonl": "bde422a686d6992e7f8d6a598531623d00727023793c9142f9aa1d52faab4628",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_environment/after001.json": "f918069764a375b074b0f776525dfb2508d0eaafcf82927f30ede55201657281",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_environment/stop001": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_environment/monitor_watch001/started.json": "23c7bcacb25eb5ea276b9ae832251f55b032be53abcd0072e87f1f8a8ec76bf8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_environment/monitor_watch001/terminal.json": "58614744d15d00bd68273de3e5954ac78250cf7cf028d2d5e0e96cf6b77d36e9"
+  },
+  "limits": "Intervals cover ps query and first fsync only; second log write/fsync and residual/background activity are not bounded. No samples excluded; ps CPU is process-lifetime percentage.",
+  "source_sha256": "cf97193ee7aa40c5d267bdb18e7422aa6273e1f0b7dd400b30d3d6010f8a4c9c",
+  "plan_sha256": "b0b4fb188c30a9d83368917ea2afaef06e0aae8cc630e14adf6c2588de696517",
+  "errors": []
+}

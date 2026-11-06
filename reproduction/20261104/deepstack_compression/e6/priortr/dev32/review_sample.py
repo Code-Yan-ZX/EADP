@@ -1,0 +1,18 @@
+"""Independently rebuild PriorTR diagnostic selection without reading labels or predictions."""
+import collections,hashlib,json,pathlib
+D=pathlib.Path(__file__).resolve().parent;B=D.parents[2];sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest();read=lambda p:json.loads(pathlib.Path(p).read_text());lines=lambda p:[json.loads(x) for x in pathlib.Path(p).read_text().splitlines() if x]
+p=D/'sample_001.json';v=read(p);e1path=B/'e1/e1full001_completion.json';e=read(e1path);files=e['files'];assert v['E1_proof_sha256']==sha(e1path) and e['status']=='passed' and e['GT_opened'] is False and e['scoring_performed'] is False
+for k,out in [('inputs','input_sha256'),('panel','panel_sha256')]:assert sha(files[k]['path'])==files[k]['sha256']==v[out]
+assert v['freeze_source_sha256']==sha(D/'freeze_sample.py') and v['selection_after_e4_dev_scores'] is True and v['GT_opened'] is False and v['prediction_opened'] is False and v['scoring_performed'] is False
+s=read(D/'monitor_freeze001/started.json');t=read(D/'monitor_freeze001/terminal.json');assert t['reason']=='completed' and t['worker_returncode']==0 and not t['remaining_process_group'] and s['worker_pid']==t['worker_pid'] and any(pathlib.Path(x).name=='freeze_sample.py' for x in s['command'])
+rows=lines(files['inputs']['path']);panel=lines(files['panel']['path']);dev={(x['task'],str(x['qid'])):x for x in panel if x['split']=='DEV'};assert len(rows)==len(dev)==384
+for x in rows:
+ assert x['group_id']==dev[(x['task'],str(x['qid']))]['group_id'] and not any(k in x for k in ('answer','answers','ground_truth','prediction'))
+counts={'DocVQA_VAL':11,'TextVQA_VAL':11,'AI2D_TEST':10};rank=lambda x:hashlib.sha256(('20261105|priortr-dev32|'+x['task']+'|'+str(x['qid'])+'|'+x['group_id']).encode()).hexdigest();selected=[]
+for task,n in counts.items():selected.extend(sorted((x for x in rows if x['task']==task),key=lambda x:(rank(x),str(x['qid'])))[:n])
+keys=('task','qid','group_id','image_path','image_sha256','message','message_sha256');assert v['sample']==[{k:r[k] for k in keys} for r in selected]
+assert len({x['group_id'] for x in selected})==32 and collections.Counter(x['task'] for x in selected)==counts and v['physical_generations']==96 and v['arms']==['stock_native','author_default','priortr_k256']
+for row in selected:
+ assert sha(row['image_path'])==row['image_sha256'] and hashlib.sha256(json.dumps(row['message'],ensure_ascii=False,sort_keys=True).encode()).hexdigest()==row['message_sha256']
+old={x['group_id'] for x in lines(B/'data_manifest/anchor_exclusion/anchor_groups.jsonl')};previous=read(B/'e6/priortr/preparation/smoke_single_plan002.json')['selected'];overlap=[{'task':r['task'],'qid':r['qid']} for r in selected if r['group_id'] in old or r['group_id']==previous['group_id']]
+out=D/'sample_001_independent_review.json';assert not out.exists();out.write_text(json.dumps({'status':'passed','independent_review':True,'sample_sha256':sha(p),'reviewer_sha256':sha(__file__),'freeze_source_sha256':sha(D/'freeze_sample.py'),'freeze_started_sha256':sha(D/'monitor_freeze001/started.json'),'freeze_terminal_sha256':sha(D/'monitor_freeze001/terminal.json'),'input_sha256':files['inputs']['sha256'],'panel_sha256':files['panel']['sha256'],'questions_verified':32,'counts':counts,'prior_exposure_overlap':overlap,'GT_opened':False,'predictions_opened':False,'scoring_performed':False,'limits':['sample and its hash ranking frozen after E4 DEV scores; no prospective pre-score selection claim','three arms and 96 generations are a diagnostic budget, not a full method comparison','PriorTR uses SDPA and a distinct environment; no direct timing parity claim','actual GPU execution remains unapproved']},indent=2)+'\n');print('passed',sha(out),'overlap',overlap)

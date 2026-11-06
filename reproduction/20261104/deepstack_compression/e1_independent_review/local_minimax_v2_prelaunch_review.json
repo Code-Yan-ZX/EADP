@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "real_tensors_deserialized": false,
+  "GT_opened": false,
+  "errors": [],
+  "plan_sha256": "be370cd63c7407ad27bd4e9bbe06790831518d8102131e8e10ad11877f016a97",
+  "inventory_sha256": "34b4caa39da42829e5684494f567287d307578b6995b12fe17bc93024e8e2f84",
+  "cpu_proof_sha256": "7e70ccfbf8da4d595c870ce729b83cd89390a09d8323c3f1a103e4b3651fe970",
+  "reviewer_sha256": "ab4f14ee6a6ea69108a7dce44da3a9b0405b82fa9ef4543e3fcaa9679eaaebeb",
+  "cpu_test_stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.148s\n\nOK\n",
+  "limitations": [
+    "Reused earlier supervised archive byte hashes without re-reading 2.83GB or deserializing real tensors.",
+    "Posthoc feature-only diagnostic; no quality, timing, causal or novelty claim.",
+    "Actual tensor execution requires separate resource scheduling and complete result review."
+  ]
+}

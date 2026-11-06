@@ -1,0 +1,23 @@
+import unittest
+from types import SimpleNamespace
+import torch
+from worker import selected_indices,validate_record
+class Tests(unittest.TestCase):
+ def test_launcher_imports_real_worker_functions(self):
+  import launch,worker
+  self.assertIs(launch.preflight,worker.preflight);self.assertIs(launch.save,worker.write)
+ def sample(self):
+  n=3;seq=1028;initial=seq-1024+n;d=[[-10]]
+  trace=[{'rope_delta':d,'model_rope_delta':d,'layers':[{'key':[1,8,initial+i,128],'value':[1,8,initial+i,128]} for _ in range(36)],'position_ids':None if i==0 else [[[7+i]]]*3,'cache_position':list(range(initial)) if i==0 else [seq+i-1]} for i in range(2)]
+  return {'selected_count':n,'selected_indices':[0,1,2],'sequence_length':seq,'visual_rows':n,'ds_rows':[n]*3,'prefill_ds_rows':[n]*3,'prefill_visual_count':n,'prefill_main_match':True,'prefill_text_match':True,'prefill_positions_match':True,'prefill_ds_match':[True]*3,'status':'completed','generated_count':2,'ends_eos':True,'hook_cleanup_valid':True,'original_rope_delta':d,'original_max_position':7,'trace':trace}
+ def test_success_and_eos(self):
+  x=self.sample();self.assertTrue(all(validate_record(x).values()));x['ends_eos']=False;self.assertFalse(validate_record(x)['natural_complete'])
+ def test_actual_group_validation(self):
+  self.assertEqual(selected_indices([torch.tensor([0,1,2,3,8,9,10,11])]),[0,2])
+  for x in ([torch.tensor([0,1,2])],[torch.tensor([0,1,2,7])],[torch.tensor([8,9,10,11,0,1,2,3])]):
+   with self.assertRaises(ValueError):selected_indices(x)
+ def test_reject_ds_cache_and_trace_tampering(self):
+  x=self.sample();x['prefill_ds_match'][2]=False;x['trace'][1]['layers'][3]['key'][-2]=1;x['hook_cleanup_valid']=False;c=validate_record(x);self.assertFalse(c['same_main_text_positions']);self.assertFalse(c['positions_and_kv']);self.assertFalse(c['hooks_removed'])
+ def test_reject_incomplete_calls(self):
+  x=self.sample();x['trace'].pop();self.assertFalse(validate_record(x)['calls_match_tokens'])
+if __name__=='__main__':unittest.main(verbosity=2)

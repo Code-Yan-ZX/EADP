@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-11-04T16:16:05.885203+00:00",
+  "command": [
+    "python",
+    "reproduction/20261104/deepstack_compression/e1_independent_review/review.py",
+    "--run",
+    "reproduction/20261104/deepstack_compression/e1/legacy004",
+    "--proof",
+    "reproduction/20261104/deepstack_compression/e1/legacy004_verification.json",
+    "--inputs",
+    "reproduction/20261104/deepstack_compression/e1/input_preparation_002/inputs.jsonl",
+    "--verifier-terminal",
+    "reproduction/20261104/deepstack_compression/e1/monitorverifylegacy004/terminal.json",
+    "--n",
+    "16",
+    "--out",
+    "reproduction/20261104/deepstack_compression/e1_independent_review/legacy004_review.json"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2",
+  "timeout_seconds": 1200.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 60.0,
+  "poll_seconds": 10.0,
+  "grace_seconds": 20,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_legacy004",
+    "/media/disk2/YZX/research/EADP_v2"
+  ]
+}

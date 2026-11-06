@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "timing_results_opened": false,
+  "GT_opened": false,
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis_v4/test_analysis.py": "af422f13d99720058b74fdd75133b2cf90d381c195f7ae8809dceb60484a4670",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis_v4/analysis.py": "05b95327eaf079bdc2288ae4aab83acde187d90f16c1c38cb028d9cfc9edc556",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis_v4/freeze.py": "ad0d1a38a0b23b2e794cf817d8fab3d5f92a7eba3853afbcd27902060d308f8a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis_v4/analysis_entry.py": "d1c6c451d39b210bd84235ee1e7fdde8e1385279253df21bfa1d8ccbd9803f09",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis_v4/gate.py": "79507ec120d21db7129defc85ed1a83c0e9533d297dfa22b1103fd1f802727ab",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis_v4/cpu_check.py": "491923e599e177a6844a71c275060364d9426408b5021b163be53aed2f50b0b7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis_v4/test_gate.py": "e2ff3bbfdce8749a21763ca9353e0d109b9f815dec30c5815f68bde7c10f0b9f"
+  },
+  "plan_sha256": "fe43a4a28cd62e785c146698af9e59aa4d42bacd29cd2b35f7da1dcadd058587",
+  "cpu_sha256": "7b22ae941acfa327751703bbc6990b971a4d1aae6437ea70043c8cd7e9011fbe",
+  "cpu_started_sha256": "ec3bf9d2d4161a44be027c2d89d4d7553eb2a71ce1f78f87b441bd84fd4671ad",
+  "cpu_terminal_sha256": "c204e1412c1b44549e0d98f562ddba58b063e1f9920742237b5971bb0b60f203",
+  "gpu_plan_sha256": "196f4b82fc9a0e533189a108fd0ea585cf06ceeadc0a5a6398e9a091a396f16d",
+  "formal_plan_sha256": "7b966368d0f86b13af72db7be01fe3a1efbad8b0a42f74bbdc11175755bfec38",
+  "reviewer_sha256": "a898e23ecf5f3e18c0dd51f3f37692a7b7b2e8a8eef6d9f1626160a18f2bea36",
+  "errors": [],
+  "limitations": [
+    "Three posthoc anchors; same-repeat pairs are sequential independent processes.",
+    "No population inference; unobserved background remains unknown."
+  ]
+}

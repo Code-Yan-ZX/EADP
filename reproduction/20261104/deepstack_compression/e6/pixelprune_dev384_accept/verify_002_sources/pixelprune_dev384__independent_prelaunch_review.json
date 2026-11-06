@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "8a52b138edc2d446a03fff80caadcb0c6c0927702ea74623ef49d359f308e0ec",
+  "preflight_sha256": "157b3ab19b026b1afee0ccd79a07da1b6ebe401496afbba7d22910f6ee46c3b0",
+  "preflight_started_sha256": "a0221a8ccc96b3f6f0b65e72dcfb129ab28fe9ff1fd2335d10e9313588c60f1d",
+  "preflight_terminal_sha256": "24669b3bf089c657acfff53a853db780fc6ee3edd123c1eecf59ad7b901c109f",
+  "preflight_exit_sha256": "f7073353bc13d6d5e1a4fdfa6a1bb4d345121b96d264f4cad23b6f90d2716ea7",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_pixel_dev384_prelaunch.py",
+  "reviewer_sha256": "f56d13831d3ac57b0dc281aec8c21cf51132f8213c1812d1d082af8bba00ef14",
+  "review_started_sha256": "bf2d2b2154cac1454c8790889ca77e4b5ca9314e9a115bbf96a1943f7b617e4f",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_dev384_prelaunch/terminal.json",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "gpu_authorized": "subject to root scheduling",
+  "cpu_tests": 9,
+  "scope": "384 frozen DEV natural generations; patch before loading; no GT scoring or timing",
+  "limitations": [
+    "threshold zero gives dynamic visual budgets, not equal K",
+    "high-dimensional logits, DS and KV are not archived; online comparison only",
+    "CPU preflight checks actual processor on three images, all 384 to be checked at runtime",
+    "accepted E1 mixed prediction journal parsed for identity only",
+    "no GPU result yet"
+  ],
+  "errors": []
+}

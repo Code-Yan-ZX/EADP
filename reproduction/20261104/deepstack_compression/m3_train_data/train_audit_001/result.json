@@ -1,0 +1,50 @@
+{
+  "status": "provisional_completed",
+  "scope": "all pinned third-party TRAIN shards; no question or answer values extracted; source files contain these columns",
+  "counts": {
+    "rows": 39463,
+    "train_unique_images": 10189,
+    "all_unique_images": 15841,
+    "eval_images": 5652,
+    "eval_connected_components": 5245,
+    "eligible_groups": 9482,
+    "fit_groups": 7585,
+    "validation_groups": 1897,
+    "rows_by_split": {
+      "validation": 7668,
+      "fit": 30692,
+      "excluded_eval": 1103
+    },
+    "near_edges": 1434
+  },
+  "read_columns": [
+    "image",
+    "question_id",
+    "data_split",
+    "other_metadata"
+  ],
+  "inputs": {
+    "protocol_sha256": "b7714f0dab1f80bcea31f025d0615cab646e134c657ea188e2ad2f8f9409bdd9",
+    "receipt_sha256": "56dfc5c3a96c4a20f4a5f83484cb582fda2dcca6f8fe7fc8901ffbd4633442c4",
+    "core_sha256": "a0efb97b2312ecc2ae7c3f86c6d092f454b7bd45056fea247083c9aacfda8d1a",
+    "worker_sha256": "2552f4a6deb435b7d4188b9383482b7867a40f1d0c62323393e7ae1bc0c6f3ac",
+    "execution_config_sha256": "d35cd26e546c225b43079a6f0703192876cb270ea53b56bbe920cdb131dd0323",
+    "supervisor_sha256": "dddd62696ca10f2624654feec9831c83d308ddf8eb982c645ad3c5eac827ff17"
+  },
+  "outputs": {
+    "rows.jsonl": "992aff987a8f50d0f21bedcd6a53f4a626253c6ce31f45f74b219398be880e27",
+    "images.jsonl": "0bbcaf36843ef2f58859dec89123d6bf8ac17607541fe8f9ea0a69f36dccf8fb",
+    "groups.jsonl": "7e9ddc691f6c0a17c784dfbeae38790203157b8f744614b5941e908c71eccf6a"
+  },
+  "answer_or_question_values_extracted": false,
+  "predictions_opened": false,
+  "training_performed": false,
+  "limitations": [
+    "pHash threshold may miss re-renders or semantic duplicates; no mathematical guarantee of complete decontamination",
+    "No reference answer, question text, prediction, model or GPU is needed by this audit",
+    "A training plan, teacher budget, train labels and student validation must be fixed separately; no training is authorized by this audit alone",
+    "Third-party repackage equivalence to the official release remains unverified.",
+    "Different pages of the same document are not automatically grouped.",
+    "This provisional audit must pass independent review before any training use."
+  ]
+}

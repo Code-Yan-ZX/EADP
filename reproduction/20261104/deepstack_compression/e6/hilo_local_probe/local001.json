@@ -1,0 +1,66 @@
+{
+  "variant": "local",
+  "module": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/hilo_prune/models/qwen3_vl/modeling_hilo_qwen3_vl.py",
+  "torch": "2.10.0+cu128",
+  "transformers": "4.57.6",
+  "scope": "random tiny CPU model, not author fixed environment or full Qwen3 inference",
+  "cases": [
+    {
+      "selection": false,
+      "use_cache": false,
+      "status": "passed",
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "sha256": "0fa888a57428a5cfb9f1efd2d553eb13485802e7f2f91c55de6bd52c45d52e64"
+    },
+    {
+      "selection": true,
+      "use_cache": false,
+      "status": "passed",
+      "shape": [
+        1,
+        5,
+        32
+      ],
+      "sha256": "2e5292c21a70908e914dd0c1aaa7a73b4b31ceeeec64803c1bd5a0717154f9ae"
+    },
+    {
+      "selection": true,
+      "use_cache": true,
+      "status": "passed",
+      "shape": [
+        1,
+        5,
+        32
+      ],
+      "sha256": "2e5292c21a70908e914dd0c1aaa7a73b4b31ceeeec64803c1bd5a0717154f9ae",
+      "prefill_layer_lengths": [
+        8,
+        8,
+        8,
+        5
+      ],
+      "decode": {
+        "status": "passed",
+        "shape": [
+          1,
+          1,
+          32
+        ],
+        "layer_lengths": [
+          9,
+          9,
+          9,
+          6
+        ]
+      }
+    }
+  ],
+  "GT_opened": false,
+  "model_weights_loaded": false,
+  "gpu_used": false,
+  "cuda_initialized": false
+}

@@ -1,0 +1,778 @@
+{
+  "status": "passed",
+  "sources": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/container_runtime.py": {
+      "sha256": "7af58cb6477c968dc211169a6709f8ea9cd0f8d590caf4a72f97c1de1bb5f910",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0000"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/diagnose.py": {
+      "sha256": "283061a38ca893945b0f748d2469c908884f08d8ca86e2feb6b753ee93eb4902",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0001"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_panel.py": {
+      "sha256": "aeee2a27c4394fc683245dce6fe2629f2fa1d9948ab66bb68edbdd46a9c65645",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0002"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_plan.json": {
+      "sha256": "d752c876367803c5728ffa84a819fd63b4c129cfd0e2eb78931f7d94dae5d4ad",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0003"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/qwen_weight_identity.json": {
+      "sha256": "7bfe695c2dbb0aa4e625183f0344d26bcbdc3add24658a068302c2744dc07ec8",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0004"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4_multistream_expansion343_analysis_prelaunch_review.json": {
+      "sha256": "52ae5ffbde44cf8a2e800981034053b19af08979d4146b9d2752b8d30212728c",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0005"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4_multistream_expansion343_preflight001_result_review.json": {
+      "sha256": "ac54585c41792d648b12e4e90bdcd382fb8d4335ce8cd9f8d8d6b365bd89e6ea",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0006"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4_multistream_expansion352_pilot_v4_result_review.json": {
+      "sha256": "831a57dc4b73765c1950ea1deb1795c8f05573bbc1323e113b2b0ac47cbf242d",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0007"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4_multistream_expansion343_analysis_prelaunch/started.json": {
+      "sha256": "88ca314b4000874504a1ce883c08bd94e2fdb7e99aaddb0b65aeb02efdc922b2",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0008"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4_multistream_expansion343_analysis_prelaunch/terminal.json": {
+      "sha256": "67a2037bfad8004564e330f43c66637a1d237f30fddcbda1dee8572ed995d28f",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0009"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4_multistream_expansion343_preflight001_result/started.json": {
+      "sha256": "fc8119c72fdb560a12cf8c6697d255f51cb347a2ce187afd4cd80e3610420b90",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0010"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4_multistream_expansion343_preflight001_result/terminal.json": {
+      "sha256": "8b18d79610bf6bb23c6058c2c4b86972270df32f3da35ff780fdd942304377fb",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0011"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4_multistream_expansion352_pilot_v4_result/started.json": {
+      "sha256": "4c0088afc8e80d831ea74b4824d875004b4114251d494cdbce303c4f30877d2d",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0012"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4_multistream_expansion352_pilot_v4_result/terminal.json": {
+      "sha256": "7981de3641e092fe681b192331002f5826764beca6e86a35bfcca24818619c05",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0013"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_e4_multistream_expansion343_analysis_prelaunch.py": {
+      "sha256": "b5d5687b0fdb19dae16bc075cee406a6513c1259c3c5037871e06da96dd07cfb",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0014"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_e4_multistream_expansion343_preflight001_result.py": {
+      "sha256": "9be1dcfeec8099179c2c9330dd165dc8351fbeb44226c40e4154d9a6389e7695",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0015"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_e4_multistream_expansion352_pilot_v4_result.py": {
+      "sha256": "d01fef6f246d41ca2b4956f4c69a362bc90db00e244244c6a543b0c04cc6fdbe",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0016"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_e4panel.py": {
+      "sha256": "2e7a8591740479dda288f2aee02a23292267bce0d61b0d957d91eca25bb0d3f5",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0017"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/skip_deepstack.py": {
+      "sha256": "1732cf751dbb56d225c5bbf2fb6cd1e00cfa595d1a16368ca0137f2799994412",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0018"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/budget_plan.json": {
+      "sha256": "267d4d9ebb323526b1a1727629c54d7bf0f4a3e61a71af9030bc865c11ecee4a",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0019"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/contract.py": {
+      "sha256": "027798e7ae8ddebcef7be5444a230c8f0c2d5bee47f5a5e65357431696666ab9",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0020"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/cpu_check.py": {
+      "sha256": "dcbe1a1168ee4e920064e8acfa03ec0d622a55ed13ad32041507e819bbd46461",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0021"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/e1_reference_gate.py": {
+      "sha256": "498e2c810471a94c2702135dfa996215d48e19bb4c20cc54d344c8cb63141b98",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0022"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/identity_gate.py": {
+      "sha256": "dd1d306dc7bf259427812c1ad3c4c92fc2d289bfa8a13ec3d882b597f41ef2b0",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0023"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/import_probe.py": {
+      "sha256": "249a9b60881e87a3d434d447d3b4aac6324f655e8ec5e1acfcd861e3f14a73a7",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0024"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/input_preflight.py": {
+      "sha256": "756846a58128101f554a036d370298a4f4400a1a1a34d5fe8412f257b0838edc",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0025"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/interference.py": {
+      "sha256": "76f4c708bce1689571786442bc1767130a7cabf85c57123349217ce01f64a89d",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0026"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_admission.py": {
+      "sha256": "b2342b8ceafbfc6e9b0e3bdace149b81f44e362757ad919d7084a8485ba15af5",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0027"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_gate.py": {
+      "sha256": "bffdc8030bfcc3eece6cd0ea095e275d7655849ad22a9dbb72b586c713152e28",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0028"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_launch.py": {
+      "sha256": "f39cf224d647cc56e586e67359e2948bd019c2199cfae15bf8f972652dafdbeb",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0029"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_verify.py": {
+      "sha256": "6de86fd33357de0f1fcb5632447c30386da2067a948160bc4c3e1d86d432797f",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0030"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_worker.py": {
+      "sha256": "06dda012569d2cceab1953c8608392c02f765a6e45f5f89d513eccf6f17e9343",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0031"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/light_adapter.py": {
+      "sha256": "e98d3230785247f190a0eb8313e7ea464f94f1edb9ebf36766559be8e9e58b2a",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0032"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/memory_probe.py": {
+      "sha256": "41b2d77d73371c6ea387e528345b048a1ff8449eac4487da0423d180bc489d2e",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0033"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/preflight_import.py": {
+      "sha256": "6d787cf99b3823f6776f340f09bbf85a60d85510a50730d504b8e03cfcc72cc7",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0034"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/preflight_worker.py": {
+      "sha256": "52e74188b6bbf7eb83d53f2fb5cc8f92f7abe90f141f83c4baf2b0443d0ab4d9",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0035"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/real_worker.py": {
+      "sha256": "92cd963bc14c389d6d720b4812618425f94c5dcdc0821daaf0e115b63b4e5196",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0036"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/runner.py": {
+      "sha256": "8de5b0112e10a3e08509276413e971934e23d07d9acbb8ce03bcb27a09be1408",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0037"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/schedule.py": {
+      "sha256": "557d0d17d27a847e32fa6ba68d7c69b6da3c47f401021b722dd992dd718a30d7",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0038"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/stage_runner.py": {
+      "sha256": "989d357bd7fbed552bcf347188ab6790de622f46bfcaab8358cb1f2b11b176f2",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0039"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/test_latency.py": {
+      "sha256": "b4a381b07b685af20a8e9cae88501deaa7806cf293a43cbb19a15aaa86df17d5",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0040"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/test_lifecycle.py": {
+      "sha256": "9a25275f4328f1b06e58d24021cf82b042ba1d6e810910c9ecae65e4567d5fa0",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0041"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timer.py": {
+      "sha256": "80354cf31ce68ef697fe72aa62c0cf0cdf95d408bf2f5f67818c213ed8f35cf4",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0042"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timing_launch.py": {
+      "sha256": "25b5386e5377f90ca6609076e0352898c9cb392a8908209755703aef8e2b5c41",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0043"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timing_supervise.py": {
+      "sha256": "27e3db3242836f1534c06f6fe087390d6547a7c23b01c22d01f02c413c948d06",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0044"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/verify_core.py": {
+      "sha256": "e00a126eed3a3adad1557fcc8ef9f139069198ec9d5d5f8691961a8a9cded55c",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0045"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_full/budget_plan.json": {
+      "sha256": "d885968c60e6aca5e5416642efc1034f81e5a18c1ecb4e1b844e3d98f1ee8987",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0046"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_full/pilot_gate.py": {
+      "sha256": "75b0eb5f9d1420834d23eb8b99a50c02a94d2693b05bcb45c8c2fd13feb4b473",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0047"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench/budget_plan.json": {
+      "sha256": "8168e63a254311f40b8b1fd98fd709cd6ace653af8f2dabc36095ffcc13ad7ad",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0048"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench/capture.py": {
+      "sha256": "ff163573348200378cf494789e75c56b1c27578dcc824b751302971deed8da06",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0049"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench/schedule001.json": {
+      "sha256": "9847833ca9a0a98f7318dc34299156c5452e07e5d5698a552427a5a647ad9149",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0050"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_full/budget_plan.json": {
+      "sha256": "d82a86a1edb76dccd802836b97760ff50e299a5a02935a2493dacea15e13f100",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0051"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_full/cpu_validation.py": {
+      "sha256": "669e325e29b3abf5fe17d388e9cbc15c5559f64624ab26b07c378ebb8892445c",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0052"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_full/full_admission.py": {
+      "sha256": "220e9ebdab7eab417520cdec4a5184a70687fb7b2173b2e9928a9628c35de3dd",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0053"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_full/full_contract.py": {
+      "sha256": "e573ee01622840ca792a6e2c5b09339721e6dc11d11d0e02bc14499afca28f93",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0054"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_full/full_launch.py": {
+      "sha256": "8c3551f0bba563ab42aecc9dfd19725287bd76fea71d77f80e72c6d6a7bd1a8d",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0055"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_full/full_verify.py": {
+      "sha256": "0ab88a602886507775963f7a52fe0a8c2b1e61705d4e107c3cfc9478c7d66582",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0056"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_full/full_worker.py": {
+      "sha256": "0ed9d22a9e3842c26f2909da7dd34958fccf32f349ff3f962211de6b83b255fc",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0057"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_full/test_events.py": {
+      "sha256": "010fe58faa08394aff413f5b153a9d3ad2a7f0cc121e04e4f4bc8d6962e0b7ea",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0058"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_full/test_full_contract.py": {
+      "sha256": "10c39bce06e30c6a21105c695776f5a3cd28d9308b11a2d556a34b70b32afed8",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0059"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_full/test_full_integration.py": {
+      "sha256": "c42e280ac5da8e855a84a74599188132126cac6ffdb0ae3f11aca036c32ffda9",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0060"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/capture_guard.py": {
+      "sha256": "d9f9c2cb8b8a31bd94296f7756d2b13d865d2449f0bd0b4bbaa9f348568b6ec0",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0061"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/contracts.py": {
+      "sha256": "4e0750144ade067dc671dc33e298427954d9189162e0d0a6be9e288ce2a8c750",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0062"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/cpu_validation.py": {
+      "sha256": "f01a855eb6bb94392f18bcc371ae21ec813027c1f2d62b34ee57d78591a22a50",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0063"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/fingerprint.py": {
+      "sha256": "3bea32d22ccd0a2c23b269ef7fdb0cf6a1afb98aa18773fbbf3bc5f5ad6b11bb",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0064"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/identity_contract.py": {
+      "sha256": "28cc5014a804257a7ee8387da48099a30cdb68a10b232caa39e5bc7f234c5378",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0065"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/pilot_admission.py": {
+      "sha256": "05f35a6095bf4d93fd0790ec772a47176e3e0b2be9eca241a5ff4403a694dbdb",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0066"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/pilot_launch.py": {
+      "sha256": "facd583f06ce2ff51403db6ec05d4078e90e3008448368327dad41bb47ec0cdc",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0067"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/pilot_verify.py": {
+      "sha256": "b4095b78ecfa036d96efa7bf9a867c8290e54060f366274fdef16f9755a60863",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0068"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/pilot_worker.py": {
+      "sha256": "5f74915818cdf42ac6862ace8b843b4442dc6c1ed8bbef220c571550a34a15ec",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0069"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/reference_contract.py": {
+      "sha256": "66514db9ef397872135dc14eac54dc43c39085a7c1c249f03a3a33daa4442326",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0070"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/stage_core.py": {
+      "sha256": "e5baa0ca643f23658beacc2f6bc76f680c27e7536ef668d7d0f5518e9aec18a2",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0071"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/test_capture_guard.py": {
+      "sha256": "0d80dc98910e28bcd04d6c4cea6c50b86fbf6bcf85484d7ff189ee08fc46e2ad",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0072"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/test_contracts.py": {
+      "sha256": "4e64a76514f109eda00298324771cf42deb194d17d11b82ddfe74120cd9243ee",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0073"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/test_fingerprint.py": {
+      "sha256": "0da14d70a5c9920f20c842ac1d5b516006c45d27c50b9c90a1b80616b93dbfa3",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0074"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/test_identity.py": {
+      "sha256": "240269cf51491b127e618404a3601783f475b5a1b59aec23d32a77db5549075f",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0075"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/test_reference.py": {
+      "sha256": "d11df8fdc1c3d466bb9984e8769195229b7270147e9c77b7c2103defaa873c4a",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0076"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/test_stage_core.py": {
+      "sha256": "454ad420d6b07ca19d7b559d2696e83e9ee4a6cb003a24d0eaece185de3d6171",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0077"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/test_worker_acceptance.py": {
+      "sha256": "f1c5059b230a03c298f693a68331c04b01bfe45c480ea481cd9e7057a1d4a7fd",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0078"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_budget_diagnostic_v2/PLAN.md": {
+      "sha256": "91664f669b95b851142416cc31ff92a1f3261b2d270a9b89bfd8b594000fcc50",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0079"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343/PLAN.md": {
+      "sha256": "272c735e177ae86e3dd19086641c2f3e3685b293dff3dae3edf4ecb75e7b168f",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0080"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343/freeze_plan.py": {
+      "sha256": "d604d39bdcb64b44f7b1394b1fedd83ca08b0d3b30193edca68f945640824d87",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0081"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343/monitor_freeze_plan001/started.json": {
+      "sha256": "fd59a4ebd48988b096c264c1cde50667a9cef8ac40c7f9c82dec1c28a6cf9696",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0082"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343/monitor_freeze_plan001/terminal.json": {
+      "sha256": "e0a64d8ffff27e023a5b953bbf2bc0c8a11b6b2a5968d8e8e078b04d6788ab76",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0083"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343/plan_freeze001.json": {
+      "sha256": "4e66063511724ba685c777cab9cffe0245a321cdac15fb1501e817d07b69edc7",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0084"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_analysis/code_plan002.json": {
+      "sha256": "6389b1cf0772e4d01c9fecd367ab665e5db94bb644ba6c6ae5b181b5d3902f60",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0085"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_analysis/cpu_proof002.json": {
+      "sha256": "0ef2b58f7c869859c0197e86e3fc27c4b56c62bdce8e921063c7287f1378a7fd",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0086"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_analysis/plan_freeze002.json": {
+      "sha256": "2ac218bc13282678f816e43519e6b0025765649b1ce9a55160708d7c51c030da",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0087"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/admission.py": {
+      "sha256": "ec745703df0789820f7ca64bcaa89f6b37eaae1df21768c5a5c7077746b2e765",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0088"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/cohort.py": {
+      "sha256": "581e1d613a5cc926463e1fc3253f796890f41d8d9679e04ee60b7817762b0c03",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0089"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/cpu_check.py": {
+      "sha256": "c294971b57c80f3336cb0433f6aac908586786b67888cf5432aa1a8990faf2b2",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0090"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/cpu_check002.json": {
+      "sha256": "3271ef9afd34ab466c4b6dc002b58f1b0af8c4b29d31e5fc552745e83fa8db0b",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0091"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/execution_plan001.json": {
+      "sha256": "3893395a7affbed992b78c3e9566f8f11496d72a6a9405b818f12e850cb30371",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0092"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/formal_plan001.json": {
+      "sha256": "867c97950cf0e1612bac348a0b476f85eada9a9f938dc132b04280749dbaee4b",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0093"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/full_reference.py": {
+      "sha256": "34405772c9a4e6faf40bcac3599f3de2f3b21f75dcd14b6d8b67e8e09c88fbcf",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0094"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/launch.py": {
+      "sha256": "d7804fd9dfa96d364207312719b726537e44de573a8c9b88d64520c5c09b286b",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0095"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/monitor_preflight001/started.json": {
+      "sha256": "2f586ad00d04c4ab24c6f33279838b18ab92874c1f42ac129f68eb910057efb3",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0096"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/monitor_preflight001/terminal.json": {
+      "sha256": "22f8d94f47c994fa48b035e7f7e62ccb566f9926708aa4dfb4eeb8cd333e2d08",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0097"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/pilot_engine.py": {
+      "sha256": "dd75c0ef596569f0c5ff614ed1148c2aa1d22582e8c76317ad338da81c84d2ba",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0098"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/preflight001/container_identity.json": {
+      "sha256": "bacbfa9f358c93bcbb61d887543fcb12eda0ad61738da47693b5877e7c8ac9a2",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0099"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/preflight001/exit.json": {
+      "sha256": "bff50daa722961064cb07fd3ced9cea90303353839e9a3355ba0b8f91c243298",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0100"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/preflight001/launch.json": {
+      "sha256": "6ec8d486cd4e1f2073567c08b10051d8ef4c2d174aefdfad369c8fe0e5e0be52",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0101"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/preflight001/worker_preflight.json": {
+      "sha256": "d564268820bf26df442cc6267fe7213ab80e677dc9ae8695cef1aa6743cca438",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0102"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/processor_preflight.py": {
+      "sha256": "1a7bcff8e122b5fc1b9b20d4da6e04c02fc86d70e9f9cf6837fa14ae36fbd544",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0103"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/test_cohort_reference.py": {
+      "sha256": "b72450336c835a2330f9ce3ad35a7e8f33bb05daba3c2d17de0cd7fb1de76eda",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0104"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/test_engine.py": {
+      "sha256": "14c552c18f1dde31d77264222fe0cf1ab4a76f3760cdf8cfde99f7d6cd754840",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0105"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/test_locks.py": {
+      "sha256": "0cc98b052d1b3aba206be4057f003597da0e56c5fa94fc9dd39f1c3324681db5",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0106"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_gpu/worker.py": {
+      "sha256": "e1645843c86b1f637ee0e2190fceb8d9af9897ee7f38e6e6afbef06d8a55ed09",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0107"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/cpu_check.py": {
+      "sha256": "3a988c980b79c187dfac8191577da178f6218fd10119a88d356276cc9cb9d2ae",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0108"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/formal_plan001.json": {
+      "sha256": "1e55bf002af04f812329c6867fb58021a9933e9dec4b5fce32dee080710517cc",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0109"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/gpu_gate.py": {
+      "sha256": "3b076731b71aeba5ae80e4cf02a34ee9849bd4508b6cae845fb62c61a0e59d96",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0110"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/launch.py": {
+      "sha256": "c35366a7315c33c3af37dc3636b49e4c0b3c39e509d8fc4b6256aa503f1591e6",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0111"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/monitor_host_smoke003/started.json": {
+      "sha256": "508bd67bb07d1991a7fcaa5ce5b9052da9806909c67e312fd479377360630c81",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0112"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/monitor_host_smoke003/stdout.log": {
+      "sha256": "070db898e2db846e75533d1449c8d50ba39cc4ad30b99768f1de7cf6fe7d741d",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0113"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/monitor_host_smoke003/terminal.json": {
+      "sha256": "95ec713d47d682a057a981e8224759ffb8e7fec2810ab5ca86413ee1d8dd0343",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0114"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/snapshot.py": {
+      "sha256": "7552f6761662493a3ac4124f082e948ab50cf65bdd70d3a807dd58637c64594a",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0115"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/test_container.py": {
+      "sha256": "91173e0c25c71db109984ad3edc4b910beb554abee0d8c2b1d5451523797703c",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0116"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/test_locks.py": {
+      "sha256": "d125ff7034135a704640cb6e701a5c61c85b224c4501dc8a6c7533ba97d76585",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0117"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/test_verify_contract.py": {
+      "sha256": "97c7a6a84cc86f6bc4177187be3735f7f3ff1c03c91f2fe78381bb9dc9de7ae4",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0118"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/verify.py": {
+      "sha256": "c2db25880257d193203d24a20d4547af5ec6496dd5870c20308549220b95d6a6",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0119"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/verify_contract.py": {
+      "sha256": "58b85346d7a2f040ae386c16c92912f7a83f37185116a0ad9dd6e78516ac4456",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0120"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/PLAN.md": {
+      "sha256": "31b808c0577406b6be49935fedf370905227541070187261cc34f978273a2764",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0121"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/admission.py": {
+      "sha256": "483095eee79d9ad74312e5b70fb3cf6ec3c3f3525e97351c886721927f7e35e3",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0122"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/contract_freeze001.json": {
+      "sha256": "073a8a0cc857e8608c8306b843b1a7b050405916f2d64cc7f4d4fcd41533bddc",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0123"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/cpu_check.py": {
+      "sha256": "02271ad2f79ae4e13b2840dd6d5762e4c75d84508ea9901979f4d5d1ee28ff24",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0124"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/cpu_check001.json": {
+      "sha256": "2226ba6b9b58d64d338533b68f8303527daf5b4351238a9d3f559f100bdcf97f",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0125"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/freeze_contract.py": {
+      "sha256": "cf24a90bb3b243cc90f1df98fc5dd39d94d1bd02ad922d4ce147ef40f477794d",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0126"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/freeze_plan.py": {
+      "sha256": "6635d634e8a24d68de2f3fa23676e687c98ad74a9630a2f078e5f6bc62de69f5",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0127"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/norm_contract.py": {
+      "sha256": "532c224643ff41a7645b14b4e8953b8cabf9377dbf6b4eea655e9f4bdb610462",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0128"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/pilot_contract.py": {
+      "sha256": "fad44a8061fa83adb47f275a7df0cf7723025a9c720b732a341b170d5898cf61",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0129"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/pilot_cpu.py": {
+      "sha256": "6c445a649a69a0a4672a4de815c66ae41cc1d4ba2f2930d3d2acece8f83736e3",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0130"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/pilot_cpu001.json": {
+      "sha256": "b3f7a42856ed21c8e70bb21c2989cd7fe27d07acfb0437517024fec7b541a147",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0131"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/pilot_engine.py": {
+      "sha256": "35619e1269699b7c064bfac89523bf0e8220bf462de1455338db8bb7a00906d6",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0132"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/pilot_worker.py": {
+      "sha256": "7277c16d97b49594436e276aa2683dd2630e19eb87487bdd863aa16d1039873e",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0133"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/plan_freeze001.json": {
+      "sha256": "caad5cb02ad42fa7e0297636edadaa02ae9fec976c58936cafe9bf9f99e224c6",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0134"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/preflight_launch.py": {
+      "sha256": "4a9bbd3c3b7edcd759a08f9e6b3a929ee2372c72cfc94bad45d4d863178b6868",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0135"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/select_metadata.py": {
+      "sha256": "2c72e10179cbd8ca7d52ebecdd7e087b938192469c1c4e200e645159d5eb566f",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0136"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/selection.py": {
+      "sha256": "32e8202774a1aa6184b6c736c820aa8f60b386e6787ead0278bc3eb99c0af070",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0137"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/selection001.json": {
+      "sha256": "88a23d8dfb9a750a72c2e0f9f15778b09870d85c6af824e30cebd808454eb836",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0138"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/test_locks.py": {
+      "sha256": "a778d676175f1baddb7211af0adedec9dd9c6fd0a54af8180f3294ff91000e34",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0139"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/test_norm_contract.py": {
+      "sha256": "6eb32c744dbb7144c7b08a36840e44d0ddff0efead798383c0f833db7a072e17",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0140"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/test_pilot_contract.py": {
+      "sha256": "b387d3ab4cdfb1852786d0093723b10be01058ac35e5975fe752fb50508623ee",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0141"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/test_pilot_engine.py": {
+      "sha256": "ab9f46579cfb0a7e51b75962b4c80eda06eb33bca1b7f2181fa44f1629ccd0e1",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0142"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/test_selection.py": {
+      "sha256": "bd5a0b16384fc798696184e2ccb0344181005be228b7313c0249e8e235957581",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0143"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/admission.py": {
+      "sha256": "6ab5a522548a0b6bcf6fe7a67c2e3971c83e736a92a37ee0b8ab42b412fd8b5f",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0144"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/cpu_check.py": {
+      "sha256": "442bdd381b1f8bbed48aca28b0c94ecf07a00b2c3e1b4dfe45caafe3a5ef4fa7",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0145"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/cpu_check002.json": {
+      "sha256": "0cc2e7be5e692c6b4ea85a1e96e9f881b7f05c37a27958173e1a17afd25a90e8",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0146"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/execution_plan001.json": {
+      "sha256": "cd0bb4ede69391c466b67056288a487e7e7c8bc9299e0845e868aa8a7559574a",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0147"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/formal_plan001.json": {
+      "sha256": "a39f560602d31b27131baa108f91ca72227e57e5312024fe6caa69815c684fd1",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0148"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/freeze_schema_fixture.py": {
+      "sha256": "0aa8a620cb3f22dee8ad26ba7e7e5e21be46c499570a84db00a80f5990e88086",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0149"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/full_reference.py": {
+      "sha256": "3330973b569d400b690388fcdb8e5c71b111dbeab80249a554434f8bdfcfea8f",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0150"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/launch.py": {
+      "sha256": "c2106174c2c4ed5fa170ef66e9048f7f65bda5fcba39a18c77ad942477979c92",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0151"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/monitor_freeze_schema001/started.json": {
+      "sha256": "e1871ec0018e3919683f8434b81bac2a2a51d0e18123ceacf76dc6f77530fcd0",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0152"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/monitor_freeze_schema001/terminal.json": {
+      "sha256": "ebec011dd0b781deae885f430db05a0f85c3fb27926c182f4c9af27c3c41fc5e",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0153"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/pilot_engine.py": {
+      "sha256": "7f473c9b360a46d1293ed2392faeaaf0a87d260c575f16449281cf686d04725e",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0154"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/processor_preflight.py": {
+      "sha256": "946d7c8883058baaff13d861386be4bfbd4b24f5dc8e7d86e9504acc8298d1c5",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0155"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/schema_fixture001.json": {
+      "sha256": "9fd8f53a9ad85b18a546d68150093031f8ccfd775db1932442c7171354441519",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0156"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/snapshot.py": {
+      "sha256": "2bb34a2f80f4d012798398cad24053725bd04f39292aa7771f32c2fd7ef9fd2c",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0157"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/test_full_reference.py": {
+      "sha256": "6ba2e2e10f8a814c9255ec7532a92d8296aa7be0657d2ce29f049d2658d6ed49",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0158"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/test_locks.py": {
+      "sha256": "3f9de8763acb1a6f8e7beeecb449764f910f6784746acf43cac49417db04aaf4",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0159"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/test_pilot_engine_v4.py": {
+      "sha256": "94aba71711a5bcabd7d643a614eadceb8b5469acc23b7299c058c5ae1ce9644f",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0160"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/test_processor_preflight.py": {
+      "sha256": "be8aa249c3e52b0a6d9c4760e21cb2a00536a0fe895bc55b9f2a5ec1a9f20e85",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0161"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/verify.py": {
+      "sha256": "9f5ac8efdab2e66666fb08723342b4d854dc06e2f8002567a2523cd4ff8ece66",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0162"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_gpu_v4/worker.py": {
+      "sha256": "7aad831a6c590832471549215e24298725de4b438fa61df9d328398c4a489cdc",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0163"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352_launch_v4/verification001.json": {
+      "sha256": "680a9bcfe3e702688c5ad2eb80f6e0c0dd098824b37af2fa46ebb34f5ac76255",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0164"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_panel_v2/panel_verify.py": {
+      "sha256": "7bdc4e42da84f82994280a43c464958cc670d7c087d1ec119ab0e597d1f0fa47",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0165"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/fused_selector/kernel.py": {
+      "sha256": "a56a9d95312119b618dd784d538e6cdcc1ffd7057618d2fc739a563960e236fe",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0166"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_selector/graph.py": {
+      "sha256": "8c873423862dfaf49d3785ac400597c40be969e786752038cc58b73576332ae7",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0167"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/admission.py": {
+      "sha256": "479a9676e51d2b5661b4a0effb6d0e58dae259d22187884ad0562ec053c1a28b",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0168"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/budget_plan.json": {
+      "sha256": "f9c254400e3e55d82b5b097dbea653b8fc469b97ed8308b6645ca36e2e474e60",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0169"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/cache_contract.py": {
+      "sha256": "803419bf5e03f52c7dc108ed3eece93e490cfd25197fb220a2e76459ebea9571",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0170"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/case_contract.py": {
+      "sha256": "68c3fd04b3c4d284fbc8febfc3f8d17a1cffeebe4906b1888f009089516e620d",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0171"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/cpu_validation.py": {
+      "sha256": "f2beb7e3990232ca1808f893cc5d137254fae6bb44ae7aa1a1585abff8e2781f",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0172"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/freeze_manifest.py": {
+      "sha256": "bf7acce4d5dd3099a5e7b532ce44fab3a89329bcd15a7e1536c0cb23dedb22f9",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0173"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/gates.py": {
+      "sha256": "652ac527047805d5d8f9043b7e22d314186556a695f919606580ca8e9cf8e21d",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0174"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/input_contract.py": {
+      "sha256": "fbb9f56e865b5db7823cafcc1acd0e4f27b5285ca153e3039798025693d4f6b0",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0175"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/launch.py": {
+      "sha256": "38eb1c1b6d3bd26f9f9d66d0d642066a864fed05338470dd8753a959ed926379",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0176"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/panel_reference.py": {
+      "sha256": "e901b2916a875a29b93191affecc5b4891ad18ac23a6c35a61393f81ba88c73b",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0177"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/sample_manifest_001.json": {
+      "sha256": "83171eb8298602706f9a1bad2e523cef0a833092b7b7c4673bef8bc984d92bf8",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0178"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/test_cache.py": {
+      "sha256": "23ea417bc94246466771d4b6cb60b87e2601677b5806e4b96453c23c9b93e4c9",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0179"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/test_gates.py": {
+      "sha256": "4a5fdea7e87420bd87e8a04dfcc2cf1cf0fad43a5cfbd567c98a53c3b0dab47c",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0180"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/test_import_paths.py": {
+      "sha256": "c008ce78572a9b1b70e1d75c391050fa083268eb7d1d712708cba8901fb09727",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0181"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/test_input_contract.py": {
+      "sha256": "2906e7c70614534f067dca9f164cd1d3e3e10f574b825f42dd7385ef1f040996",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0182"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/test_inventory.py": {
+      "sha256": "6a0fd0380461cf3f21ebec63d7a506bc31613d34911ec5e85a63a7d7e6c38bf9",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0183"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/test_manifest.py": {
+      "sha256": "f274ae8205322fa5722d69fb3653f1d9e83eec835169167de66a8001b37ef6b3",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0184"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/test_trials.py": {
+      "sha256": "96c6538b15b7356324e390525c460969b73ac575e9d60a6b28cd0295d5f8af61",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0185"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/test_worker_e2e.py": {
+      "sha256": "8b70f54c473e6c2c9c62ce464131dccd22b2f9c82fc187701701f0712a1c4122",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0186"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/trials.py": {
+      "sha256": "692146ca3892a2e1f792178f8ae122cf0b9768d2f5a9ff65fbc01d5e59265a61",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0187"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/verify.py": {
+      "sha256": "6a38aa210ddd4bccba80f1bf481f53ce9555d2b8ceb58aa3974f3035db2bea75",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0188"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_real32/worker.py": {
+      "sha256": "b058e97637fb4c50485f67ff3b8e7411306016cf2c35cb56843ba7faa53006d6",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0189"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/initial_plan.json": {
+      "sha256": "2a11cfcc2dc9404eac218f1f727e39508a687a73e0343101ae564be3e99c30e6",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0190"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py": {
+      "sha256": "dddd62696ca10f2624654feec9831c83d308ddf8eb982c645ad3c5eac827ff17",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion343_launch/run001_sources/0191"
+    }
+  },
+  "gpu_review_sha256": "dd6c8516ceaead895eb04036eda860044c812840e0c64e0465751751f7d0086c",
+  "guard_review_sha256": "6434828101d58c12def3ceedb5c3e5969a3ce969d9ffa1a55295aad1db5a1479",
+  "run_terminal_sha256": "55fabf5ed4100a96180c8c5f8ac771e7fd7464230d3afa3f7a17a59a18e7b844",
+  "GT_opened": false,
+  "scoring_performed": false
+}

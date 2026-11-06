@@ -1,0 +1,163 @@
+{
+  "processor_verified": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "20741",
+      "processor": {
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1052
+          ],
+          "sha256": "a2e1a08490253e0cc219e8c16d84d70e75c192efbd5cd563b97af9bbc9578624"
+        },
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1052
+          ],
+          "sha256": "e50f2b94dc0dacc16b8d596038a056129e5a36f837522eb3001801607a072036"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "c13c4328b8b54988199387e5c0b236f998fe240cb925b6bca5588f3f89810253"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        }
+      }
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38108",
+      "processor": {
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1053
+          ],
+          "sha256": "8d8ffe85fecab13ed5df401c50c8a5df82c1a1fc7f3057cea359afb4e42c62a1"
+        },
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1053
+          ],
+          "sha256": "437c86e13fb220ba619d31b85b04843910e7288b882eae6cd7ba09954ad7ac5e"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "7a6c7545b2ba467ef70306bb7f59b782b4418af5ff8420ef288b77640111d5f4"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        }
+      }
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "392501",
+      "processor": {
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1096
+          ],
+          "sha256": "671fc1d23b93d615944dd666172079f3fbcf609cc721911446cc6128624d48fe"
+        },
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1096
+          ],
+          "sha256": "a130ba81933f77482b3b1996810e2721d1d5e5bd508a824d0242837826360dc9"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "76eba128441cf7965eb1b155c2e6738c8caa122ddd48f29f55699b7f880c3b31"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        }
+      }
+    }
+  ],
+  "status": "passed",
+  "source_plan_sha256": "8a52b138edc2d446a03fff80caadcb0c6c0927702ea74623ef49d359f308e0ec",
+  "cuda_initialized": false,
+  "model_loaded": false,
+  "GT_opened": false,
+  "predictions_opened": true,
+  "prediction_scope": "accepted E1 DEV mixed journal parsed for processor/input identity only",
+  "weight_sha256_verified": 4,
+  "weight_stats": [
+    {
+      "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00001-of-00004.safetensors",
+      "size": 4902275944,
+      "mtime_ns": 1766122873997458552,
+      "ctime_ns": 1766132886669770948,
+      "inode": 68682060,
+      "device": 2065
+    },
+    {
+      "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00002-of-00004.safetensors",
+      "size": 4915962496,
+      "mtime_ns": 1766122889153369070,
+      "ctime_ns": 1766132901889718733,
+      "inode": 68682061,
+      "device": 2065
+    },
+    {
+      "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00003-of-00004.safetensors",
+      "size": 4999831048,
+      "mtime_ns": 1766122889477367168,
+      "ctime_ns": 1766132915557671854,
+      "inode": 68682062,
+      "device": 2065
+    },
+    {
+      "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00004-of-00004.safetensors",
+      "size": 2716270024,
+      "mtime_ns": 1766122804961880310,
+      "ctime_ns": 1766132929133625302,
+      "inode": 68682063,
+      "device": 2065
+    }
+  ],
+  "patch_before_model": true,
+  "torch": "2.8.0+cu128",
+  "transformers": "4.57.1"
+}

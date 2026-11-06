@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "preflight_only": true,
+  "GPU_authorized": false,
+  "images": 384,
+  "GT_opened": false,
+  "existing_DEV_predictions_opened": true,
+  "model_loaded": false,
+  "cuda_initialized": false,
+  "scoring_performed": false,
+  "plan_sha256": "185cf4b67e9151094309d79958d57af7255f86ef3bb29290f824531737827283",
+  "worker_preflight_sha256": "ea5ef0b77dfbde826f7e498ec63b7bec51008452c3d59f185aa987853337331b",
+  "processor_probe_sha256": "8c2720caa1ceff6efe9430446d7d7d097574944c152e49f397c89b58d2b8512a",
+  "processor_progress_sha256": "1e23a51cc72358eaa714763ea75e443ed9b0cc9e40bb167c28785b2a40e8f85f",
+  "launch_sha256": "f2e70c13fe18e912414263be87d91b332af60497ebfde62fb5f50eae42036668",
+  "identity_sha256": "2ad11491d07ad12ccce468598704650ed2e6098159cb45f0af539bb7f2ce068d",
+  "exit_sha256": "25f5cd34328aad6239ae9b3d91808fa78dd20f21315fad0e51b887b4b9845bd0",
+  "started_sha256": "e794ee2a3c32c92b4884a0a6cc989abda096cab72153c333f69ba190321aca03",
+  "terminal_sha256": "f4ea9048d246960c75a8cf1b9d387dff20ebf7f037592ab97adb548d5ec487cb",
+  "reviewer_sha256": "29d9fb65111b92a2b8b19b7168d641b96c313930341735bed9091f7943abfb26",
+  "prior_review_sha256": "0daa881887f15465b6f4a77778dbe3d0133db4500ec97d5e50bad5b6c74c64cf",
+  "recomputed_processor_images": 384,
+  "recomputed_mrope_images": 384,
+  "weight_payload_rehashed_by_review": false,
+  "scope": "independent host CPU rerun of all 384 processor tensors and mRoPE; no GPU authority",
+  "limitations": [
+    "independently re-ran processors and mRoPE on CPU, not a model/GPU generation",
+    "four weight payload hashes were produced by the preflight; independent review checked reports and current stat, not payload again",
+    "accepted E1 DEV mixed predictions were parsed only for input identity"
+  ],
+  "errors": []
+}

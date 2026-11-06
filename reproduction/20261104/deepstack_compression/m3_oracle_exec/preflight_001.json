@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "returncode": 0,
+  "timeout": false,
+  "container_id": "e66d46747cbcf3407512d243a990837b4847d8a5f51d1f114c0d7c8811cbfd11",
+  "container_running": false,
+  "container_pid": 0,
+  "container_exit_code": 0,
+  "launch_sha256": "056069786dc71b2aa915aea33c781afb9b98bbeae1086c2867389c27151a2fb4",
+  "stdout_sha256": "47f24d697cc7719a86382f146bac3861ef815f2fa1fc537380ad4863e9678e85",
+  "stderr_sha256": "63307020e9ac9935f51061c40bd667558fc0513ed0ef7ab734292d116b46bcba",
+  "cpu_proof_sha256": "1ac2cd9de4b152d5c0d248a0f8d2fe2a83e9ad2655fc753ad30c3e32d766ea56",
+  "preflight_sha256": "7c79ea8644871d724f3a8e7d0bbd7abc8168a22dff3031a8cb3d35cfb61886d3",
+  "result": {
+    "status": "passed",
+    "cuda_initialized": false,
+    "model_loaded": false,
+    "GT_opened": false,
+    "predictions_opened": false,
+    "tokenizer_length": 151669,
+    "author_wrapper": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py",
+    "versions": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "transformers": "4.57.1",
+      "flash-attn": "2.8.3",
+      "accelerate": "1.12.0",
+      "qwen-vl-utils": "0.0.14",
+      "Pillow": "12.0.0",
+      "tokenizers": "0.22.2",
+      "numpy": "2.2.6",
+      "safetensors": "0.7.0",
+      "timm": "1.0.24"
+    }
+  },
+  "started_unix": 1793821850.7467756,
+  "finished_unix": 1793821863.805083,
+  "scope": "no GPU, no model loading, no ground truth or predictions; not approval for real execution"
+}

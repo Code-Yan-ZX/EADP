@@ -1,0 +1,26 @@
+{
+  "status": "frozen_before_t010_generation",
+  "created": "2026-11-05T14:38:01.902104+08:00",
+  "scope": "posthoc 384 DEV paired t=.1 minus t=.2; no CONFIRM/FINAL",
+  "prior_t020_scores_sha256": "8abe54a933492ad9776bdc0972e59360d2594be4cb7dfa233ab7c30ec75905d1",
+  "new_score_required": "t010 full formal and independent scoring reviews",
+  "tasks": [
+    "DocVQA_VAL",
+    "TextVQA_VAL",
+    "AI2D_TEST"
+  ],
+  "contrast": "t010_minus_t020",
+  "bootstrap": {
+    "unit": "image group",
+    "group_order": "ascending group_id",
+    "replicates": 10000,
+    "seed": 20261104,
+    "confidence": 0.95,
+    "multiplicity_adjustment": "none"
+  },
+  "limitations": [
+    "threshold and comparison selected after earlier DEV results; exploratory",
+    "dynamic token counts and real compute differ",
+    "no multiplicity adjustment or latency conclusion"
+  ]
+}

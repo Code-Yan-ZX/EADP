@@ -1,0 +1,89 @@
+{
+  "stage": "skip_drop_identity",
+  "anchors": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "message_sha256": "3d2636338b6f3c75bdc977a06f98d10c1b739cf73826caa471fd9aa1d0c3bb71",
+      "image_sha256": "0eba9d3a112a7c067a528a4f4888fa960646f526d2701accf85962a95f92970b"
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "message_sha256": "c9d65da2d598e7bcab6b2aa4ce302e78d1920c1fa950356e5e97e6c9d5c24252",
+      "image_sha256": "c876e0657fe696d35fc6449d2b064c0cac5522e51a4957b0e378ea0fba0e9daf"
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "message_sha256": "a46263f3e82975b9c718fd3c40efd15da530e2c813e561119df2605b0f4f55f1",
+      "image_sha256": "ccc7c3664e5f71b23731d1a828726da4026e87a44203dde91ebb178f43e4b00e"
+    }
+  ],
+  "forced_anchor_index": 0,
+  "modes": [
+    "C-DROP",
+    "C-SKIP"
+  ],
+  "natural_pairs": 3,
+  "forced_pairs": 1,
+  "e1_acceptance_sha256": "95981ce2400d7467ba93d3177275a0860a656fc8558080c243040663e40a52fb",
+  "smoke_proof_sha256": "3f744b871df35e481f59c875149de67d3d26a1516724ca881abe9491c6b6780a",
+  "plan_sha256": "d752c876367803c5728ffa84a819fd63b4c129cfd0e2eb78931f7d94dae5d4ad",
+  "weights_identity_sha256": "7bfe695c2dbb0aa4e625183f0344d26bcbdc3add24658a068302c2744dc07ec8",
+  "weight_stats_before": {
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00001-of-00004.safetensors": [
+      2065,
+      68682060,
+      4902275944,
+      1766122873997458552,
+      1766132886669770948
+    ],
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00002-of-00004.safetensors": [
+      2065,
+      68682061,
+      4915962496,
+      1766122889153369070,
+      1766132901889718733
+    ],
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00003-of-00004.safetensors": [
+      2065,
+      68682062,
+      4999831048,
+      1766122889477367168,
+      1766132915557671854
+    ],
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00004-of-00004.safetensors": [
+      2065,
+      68682063,
+      2716270024,
+      1766122804961880310,
+      1766132929133625302
+    ]
+  },
+  "code_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_b_identity/b_worker.py": "a28307055127ca7e89408b2db8f5a9617235785f2bf54e56f9e421aefe675efa",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_b_identity/b_launch.py": "e61132dc575892ca673da22f6412bf23bbe9e6215b3803157d98308b93a39a6e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_b_identity/b_verify.py": "24e4e2677023cdd664db0e6f6f67100b38515ba4fc11b5ca5209afe6b09779af",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_b_identity/b_gate.py": "b3a0355f0443f3e5b193239ed2f5d43e43fa5c70eacfb03ecc7fba2f34f782f2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_b_identity/b_imports.py": "e70f72253043cfcc7a9ad393c5ec16b85a564f4afb4e095aacf16fdabba1f494",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_b_identity/budget_plan.json": "e3fd74d8f1d775bac245e0fadc5ec3788f04eddec8062266a6c90294b543e521",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_b_identity/arm.py": "88c2d2977c5b11ef54e4678a34b3f772804b770e8efab71d35664b5c59ad8981",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_b_identity/off_capture.py": "beaa902b437597ae5148e972ceee9741abde3b601f7b76f0af4bfaa8d89ad51a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_b_identity/pair_contract.py": "f9feec34be479e24d08d2970f727d5869386828bf68a2b8dba0a2b6243291fae",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_b_identity/verify_records.py": "7a2198c7c3fa1560a895f9154f92a6a95df922a1a1d3063b54c152f08ce75e63",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/off_adapter.py": "2147d9e136530d65760bf0e5f7cfac84094f2802f07b5d1e77aca7c367de8d9c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/skip_deepstack.py": "1732cf751dbb56d225c5bbf2fb6cd1e00cfa595d1a16368ca0137f2799994412",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/identity_records.py": "70e671d05be1c9dd1dcee4e492feca65880b0c72b2b381c40dd741e07bf58401",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/decode_observer.py": "9c68bdeaab6c5e68cbb789a9952a37ac99bb02a1af42f0315acf4b3e25d18b0e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_native/native_capture.py": "e16cdbcf5471a4fc71de0e7660f15974b625c46f117a010a5f163a343c71cde6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_native/native_contract.py": "ce4905b94a517df6fb6479f08a7895bce56af3b358bb3ffb205c8362979008d6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_native/native_gate.py": "3f9facb188a94b5dbc2189842edeb35a532cb86dd93e459dcf6458229af103c1"
+  },
+  "gt_read": false,
+  "scoring": false,
+  "timing_claims": false
+}

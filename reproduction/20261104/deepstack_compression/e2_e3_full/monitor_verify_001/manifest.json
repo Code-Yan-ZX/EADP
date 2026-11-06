@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-11-04T20:36:16.299327+00:00",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "e2_e3_full/panel_verify.py",
+    "--e1-acceptance",
+    "e1/e1full001_completion.json",
+    "--e1-started",
+    "e1/monitorverifye1full001/started.json",
+    "--e1-terminal",
+    "e1/monitorverifye1full001/terminal.json",
+    "--run",
+    "e2_e3_full/run_001",
+    "--run-started",
+    "e2_e3_full/monitor_001/started.json",
+    "--run-terminal",
+    "e2_e3_full/monitor_001/terminal.json",
+    "--out",
+    "e2_e3_full/run_001_verification.json"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression",
+  "timeout_seconds": 3600.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 3600.0,
+  "poll_seconds": 15.0,
+  "grace_seconds": 30.0,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_full/monitor_verify_001"
+  ]
+}

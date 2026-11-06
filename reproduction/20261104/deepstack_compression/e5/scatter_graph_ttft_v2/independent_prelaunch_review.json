@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "4f0b135f0af34d0d256d1c2e8e3f71c572604451aa286dece965acf50ea2efaa",
+  "preflight_sha256": "4a60b20b98388633925ef618f973acc2cc697359372878fd4faa39caa4dc9b73",
+  "preflight_started_sha256": "383bdb6558881d99b66b193d8e1c27c02b78991844ba012664a41204049b7d0c",
+  "preflight_terminal_sha256": "54ea4a41819814c8bf2d9410b9d5ccd094ea49c90ae7231a0ba5cd757776353f",
+  "preflight_exit_sha256": "ea7c00a97529ed4dc4b9864e06dd34f5919721e846bef4820933eb19b738727f",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_scatter_graph_ttft_v2_prelaunch.py",
+  "reviewer_sha256": "ec54cf1a11f024622b6d104b72914f99ccb99f97b6f718300571ffe73d3e0849",
+  "review_started_sha256": "47040d14d1e8d612c8e5fd4aad69ed25792a70180b5297f2953e521250b76f8c",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_scatter_graph_ttft_v2_prelaunch002/terminal.json",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "component_review_sha256": "f94c3f94bb7d5d2d277afa09b1e1675b0eb7a8b3b02c03b4dbf3ee76d3ee211b",
+  "scope": "three-anchor scatter graph full-model TTFT prelaunch; GPU only by root scheduler",
+  "limitations": [
+    "no GPU capture or correctness established in preflight",
+    "three anchors; equal-output claim requires all paired ordered IDs, quota and token outputs to match",
+    "graph setup excluded; only first-token timing is interpretable; no whole-device peak",
+    "existing DEV mixed journal parsed for input identity; no GT or new prediction"
+  ],
+  "errors": []
+}

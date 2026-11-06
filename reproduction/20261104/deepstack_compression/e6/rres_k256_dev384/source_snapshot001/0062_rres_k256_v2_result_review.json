@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "images": 3,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "timing_claims": false,
+  "errors": [],
+  "formal_sha256": "eb29713fd0268665160974c515ac5fcd3aa3d440bde86328b096055aaacf4eae",
+  "formal_started_sha256": "8e1b64a90ba975159f3448fced73e14ac731b057bcc787a5c517ae990ae065ca",
+  "formal_terminal_sha256": "47c3cac0fb77758c6e5d7f06b09b7a0442abce69340293a90338f4070886aeaf",
+  "run_started_sha256": "47d3fa0af254d9e1d245c44f5e24e7f602a0c18d4b8263cc49e742f5979f9a41",
+  "run_terminal_sha256": "6b45d7de5e9ea566af832abf6c1d237f84ad3ea04842a66d9ffdad1742e0af66",
+  "snapshot_manifest_sha256": "54944a2b13bdc15270594c6ec74c17ed5ff156d1e81c23963a58f17e59940e4e",
+  "reviewer_sha256": "d3019abeb7888ecccc6d39b75455a313655cf4c0bd9239c954c9a58e0968a752",
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/DocVQA_VAL_16539.json": "5618ecbad0fad1d8afd65ff762daf24db1ef4a56fd3954c9d91be7276e78381f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/DocVQA_VAL_16539_generated.json": "ef99b850dc75cc5836e3f857b552abd696fe3c331887cc3617c44fc77d7dc074",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/TextVQA_VAL_39421.json": "4a9efa9ab16be01ee073b43094d7ac059d7e543d745ec5488f13ce6d733794c7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/TextVQA_VAL_39421_generated.json": "3bb5b80fbf5035914609a3cbfc5b60ef17f84025c048be05a3e2e42ec2c2c950",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/AI2D_TEST_368100.json": "65a9d60839553a45ef54c1ba4654ba474274118cb1f1afe65792e87ee122d14a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/AI2D_TEST_368100_generated.json": "11589684aea9c58fe9fb8da6dee9884513a36582b24daae36b1ae504af1c217d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/progress.jsonl": "cc69c9d5ffe22b282b440e7f89b7bea2ce5a3809c7bee5cbd294473ed74f6a85",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/worker_complete.json": "cd51bf4fa8ed9f0ecefa720c19b6d4c00e4830da7c128a95d19ef6eb1edb3510",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/launch.json": "c9ac56bf7a1913d4b9e784ab6bd9527d186871de7f052542562b12c6918c9086",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/exit.json": "cc99f70ab813e6134e4c185a139849165782c1168ed0610cbe2d736b063a1757"
+  },
+  "docker_log_sha256": "c12d3d3804acedb0e22d0dc07d05a3b96a727d254749826b8dd46adf1310d269",
+  "results": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "visual_tokens": 256,
+      "generated_count": 13,
+      "eos": true,
+      "truncated": false
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "visual_tokens": 256,
+      "generated_count": 2,
+      "eos": true,
+      "truncated": false
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "visual_tokens": 256,
+      "generated_count": 2,
+      "eos": true,
+      "truncated": false
+    }
+  ],
+  "container_id": "be6f12489133533e35dad6560c099638ae8319ec955e52535d0c42b63e0ee5e5",
+  "limitations": [
+    "three DEV anchors, no quality or equal-compute conclusion",
+    "visual/three DS/KV raw tensors not archived; online equality, fingerprints and KV lengths only",
+    "hook and finite-logit checks rely on runtime observation",
+    "Docker log reports unwritable kernel cache, FlashAttention dtype notice, and sampling parameters ignored under greedy decoding; runtime checked bf16 and flash_attention_2; no timing claim"
+  ]
+}

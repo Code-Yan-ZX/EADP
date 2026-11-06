@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "author_commit": "571bdc6c4c6b3c92a94fe2a92e3aaf42b989cc96",
+  "python": "3.10.20 | packaged by conda-forge | (main, Mar  5 2026, 16:42:22) [GCC 14.3.0]",
+  "interpreter": "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+  "torch": "2.8.0+cu128",
+  "cuda_visible_devices": "",
+  "tests": 5,
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/stacktok_571bdc6/stacktok/core/selector.py": "329e3a80cef25ec09f159954a4dd30e7ec7a7dbfe03f394e15727a6e8f3e42cc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/stacktok_571bdc6/tests/test_selector.py": "118719d05bbf7cdf28af86c0f11173b4a43cf684ef1e7401b67937e8b6d89661"
+  },
+  "reviewer_sha256": "a5d334d1a1b641ac01e5ae3bb25573f46dc559e5cab0bd93736e7169252968bf",
+  "limitations": [
+    "Original test file and selector.py executed unchanged; synthetic stacktok.core module bypassed package/runtime imports because loguru is missing.",
+    "Five toy CPU tests do not test Qwen3 integration, GPU behavior, numerical identity, performance, or actual text encoding."
+  ],
+  "GT_opened": false,
+  "predictions_opened": false,
+  "gpu_used": false
+}

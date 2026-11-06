@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "author_commit": "571bdc6c4c6b3c92a94fe2a92e3aaf42b989cc96",
+  "python": "3.10.20 | packaged by conda-forge | (main, Mar  5 2026, 16:42:22) [GCC 14.3.0]",
+  "interpreter": "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+  "source_sha256_before": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/stacktok_audit/prototype/plan001.json": "804638bd1e8c471e31c3ccd4fb89667fb2b29e409327bfc17d4eb0dcd094065a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/stacktok_audit/prototype/local_adapter.py": "dd8b52a37c36b903d8336021bc9d6ba43961c240afa0815e7fd3ded8136beafb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/stacktok_audit/prototype/test_local_adapter.py": "a6b1f8ed5aa411848f93cc06fabfdd09992d5ebde59490d479970cb7093686b8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/stacktok_audit/prototype/runtime_capture.py": "1a8571e4eadaf0e8ead8c81a1b6dc8f7b09dffa5123e560801133a855dbb6e96",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/stacktok_audit/prototype/test_runtime_capture.py": "9d03cca083670f9cc81ee14f1c36bb0cee72617cc79762a2056e42bedcc109d4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/stacktok_audit/prototype/cpu_validation.py": "4205cd3e46000047ebe2ac3fa9b49db171f0ae1e7b6efa4ba0a7a9d3c2066306",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/stacktok_571bdc6/stacktok/core/selector.py": "329e3a80cef25ec09f159954a4dd30e7ec7a7dbfe03f394e15727a6e8f3e42cc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/stacktok_571bdc6/tests/test_selector.py": "118719d05bbf7cdf28af86c0f11173b4a43cf684ef1e7401b67937e8b6d89661",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_native/native_001/frozen.json": "c8e67db1517142dc71e5f34595f348a3a4d6956418bfffb804a01ea1b40a7c8c"
+  },
+  "source_sha256_after": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/stacktok_audit/prototype/plan001.json": "804638bd1e8c471e31c3ccd4fb89667fb2b29e409327bfc17d4eb0dcd094065a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/stacktok_audit/prototype/local_adapter.py": "dd8b52a37c36b903d8336021bc9d6ba43961c240afa0815e7fd3ded8136beafb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/stacktok_audit/prototype/test_local_adapter.py": "a6b1f8ed5aa411848f93cc06fabfdd09992d5ebde59490d479970cb7093686b8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/stacktok_audit/prototype/runtime_capture.py": "1a8571e4eadaf0e8ead8c81a1b6dc8f7b09dffa5123e560801133a855dbb6e96",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/stacktok_audit/prototype/test_runtime_capture.py": "9d03cca083670f9cc81ee14f1c36bb0cee72617cc79762a2056e42bedcc109d4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/stacktok_audit/prototype/cpu_validation.py": "4205cd3e46000047ebe2ac3fa9b49db171f0ae1e7b6efa4ba0a7a9d3c2066306",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/stacktok_571bdc6/stacktok/core/selector.py": "329e3a80cef25ec09f159954a4dd30e7ec7a7dbfe03f394e15727a6e8f3e42cc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/stacktok_571bdc6/tests/test_selector.py": "118719d05bbf7cdf28af86c0f11173b4a43cf684ef1e7401b67937e8b6d89661",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_native/native_001/frozen.json": "c8e67db1517142dc71e5f34595f348a3a4d6956418bfffb804a01ea1b40a7c8c"
+  },
+  "stderr_sha256": "88701be8d5cb9ba97539841a2bd0dea3afda426a7da37df77a269ae962bcfdd5",
+  "GPU_used": false,
+  "model_loaded": false,
+  "GT_opened": false,
+  "predictions_opened": false,
+  "limitations": [
+    "Original selector is loaded directly without package runtime because loguru is absent.",
+    "Qwen3 model hook, processor, natural output and real cache semantics remain unimplemented/unverified.",
+    "Compact vs original nominal cache-position branches are hypotheses requiring real fixed-prefix GPU identity gates."
+  ]
+}

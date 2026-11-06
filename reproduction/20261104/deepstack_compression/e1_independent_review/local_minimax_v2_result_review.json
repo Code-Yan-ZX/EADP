@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "images": 32,
+  "GT_opened": false,
+  "GPU_used": false,
+  "model_executed": false,
+  "existing_archive_deserialized": true,
+  "errors": [],
+  "plan_sha256": "be370cd63c7407ad27bd4e9bbe06790831518d8102131e8e10ad11877f016a97",
+  "result_sha256": "2a6d1b77c21949b2951d1a9c1aabebb8968ee2d106e5692ea30aa5e76bc2ea16",
+  "rows_sha256": "7520a1cf5acf3e2175fc2b54590201fd99416a2eb9a08820f851f1eb865c4d55",
+  "run_started_sha256": "0ba2a79d7d37ece2f65aca3c141306d4bb072eb9701685e329ca6e439933a692",
+  "run_terminal_sha256": "840a1ef7221dafe9a81434973df51c791fa5454dd387f95ec7467768a4d8f9c0",
+  "prelaunch_sha256": "ca66128da9a35937f7b4822163d5c6969e40d0ebb144601aad0dfb4443e56e61",
+  "reviewer_sha256": "1c287bbae7755f00c27b4ec6f98d49f063629d1a8741b00dcb7ac7aaebec5e6f",
+  "limitations": [
+    "32 posthoc cached features; no causal, quality, timing, novelty or equal-compute claim.",
+    "Only per-block geometric proxy; it does not establish model output behavior.",
+    "Full input archives deserialized; only four streams/grid/selected IDs used."
+  ]
+}

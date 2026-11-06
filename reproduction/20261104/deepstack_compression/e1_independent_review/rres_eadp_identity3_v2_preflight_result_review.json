@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "preflight_only": true,
+  "GPU_authorized": false,
+  "GT_opened": false,
+  "existing_predictions_opened": true,
+  "model_loaded": false,
+  "cuda_initialized": false,
+  "errors": [],
+  "plan_sha256": "9b54b4cb1d9a3756bb466f56f7a6b58e6db6b85b364af0bbfa682fd71d1266fe",
+  "worker_sha256": "db9211ee91a23fa575a3496f138d8dd6eaad9131cf3e8d4ebd23d0a15272980c",
+  "launch_sha256": "6ae10375dbebb5f25658f273cd0fde6fcafacbecae1f0e14fe7c685af1c6228b",
+  "identity_sha256": "fcea065941476be530bc4a997b5f867e106a024a4921fd58b3dc3fa4152d6fd8",
+  "exit_sha256": "5acdbc8bdedbcde118fd5c19b824fcbca0f60ffa81fbe250c38e92a9aba55061",
+  "started_sha256": "a7efaac42f966d2de7cdcf3c66f2a40e240eca53128a86d2d44dd31f84b530d9",
+  "terminal_sha256": "8ff8042b3f4f07c539469174876d161a88937f77ab912f2e9c47f499491a769d",
+  "prelaunch_review_sha256": "4cb93a616c461c372268b904a4d91e31434bf96636c720b10a115aff8bb636ef",
+  "reviewer_sha256": "6f35ef5b76fd713c9b072b7001aed10a94b2d2f1eafc24a0768a66b11d77cd89",
+  "limitations": [
+    "No-device imports and accepted references only, not real model execution or GPU admission.",
+    "v2 no-device failure and v3 runner collision retained as prior evidence.",
+    "Timing controller, observer, actual model identity, formal result and analysis remain separate work."
+  ]
+}

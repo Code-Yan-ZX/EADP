@@ -1,0 +1,24 @@
+{
+  "scope": "posthoc low-positive-threshold K calibration and wavefront CPU ordered-identity diagnostic on same 32 processor captures",
+  "thresholds": [
+    0.1,
+    0.2,
+    0.3
+  ],
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_low_threshold_cpu/check.py": "ae62a9618572cb8821155511d22851476ea3840511cdf3a88c201c55508af379",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_cpu/candidate.py": "a5b656f1e594693292af3443baa807c4d2064423c76a7953623e17a8cbfa6226",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_threshold32/plan001.json": "2a59428d4ffbeda7a4908ea8146c6fcad77907f7abb88f661c5b2a9da5179eb9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/pred_2d.py": "666a3b82daffbfe97fd26b7fa9530178b906e113b340bf7b4cc96b0932273848",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/base.py": "7b86b9133383673123c4fe87a644ddcac82283bbeaef35cf7791414e9536938e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_vl_hf.py": "173ed25b49ac48bb922e534f951b7c9b15027e6821db3d698953072d14b230c2"
+  },
+  "GT_opened": false,
+  "predictions_opened": false,
+  "gpu_authorized": false,
+  "limitations": [
+    "posthoc existing DEV captures; does not determine accuracy or GPU speed",
+    "author dispatch verified for each positive threshold; no assumption that K is monotone",
+    "any subsequent threshold choice and quality evaluation exploratory"
+  ]
+}

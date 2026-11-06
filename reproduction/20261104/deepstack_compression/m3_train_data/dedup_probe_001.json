@@ -1,0 +1,35 @@
+{
+  "status": "completed",
+  "scope": "first pinned third-party TRAIN shard, image-only feasibility; no question text, answers or predictions parsed",
+  "counts": {
+    "rows": 1201,
+    "rows_byte_match": 0,
+    "rows_rgb_match": 0,
+    "rows_phash_le4": 0,
+    "rows_semantic_match": 37,
+    "unique_byte_match": 0,
+    "unique_rgb_match": 0,
+    "unique_phash_le4": 0,
+    "unique_semantic_match": 10,
+    "unique_images": 321
+  },
+  "eval_unique_byte_images": 5652,
+  "eval_doc_question_rows": 5349,
+  "eval_doc_paths_unparsed": 0,
+  "train_shard_sha256": "832ea672f4e6b9d893ebae033a05d85f8c9b029ad28fe16ad93da4ca7614bd6d",
+  "train_receipt_sha256": "8acdc272878a1b20c49dff771b6a0d46e33fe183b9234e3ab03ca28206904760",
+  "eval_image_manifest_sha256": "3628cc16e2bee91ee7f6de6d97e0a26cd18e7626f131c287e1e4adfa72bf284a",
+  "eval_full_manifest_sha256": "bfc1541bda41382afb2e80478af2be291a7f8d05f6f5c694863b693aad5dec60",
+  "digest_implementation_sha256": "dde392a3a331231ac9eb25ed459792573dd5afa1f409bac098562cf20938f55e",
+  "pillow": "11.2.1",
+  "scipy": "1.15.2",
+  "GT_opened": false,
+  "predictions_opened": false,
+  "training_performed": false,
+  "limits": [
+    "Single first shard is not a representative or admissible TRAIN split.",
+    "The per-image matches do not implement cross-TRAIN transitive grouping.",
+    "The third-party repack provenance remains unverified against the original access-controlled release.",
+    "A perceptual hash can miss semantically related pages; document grouping and near-duplicate audit remain necessary."
+  ]
+}

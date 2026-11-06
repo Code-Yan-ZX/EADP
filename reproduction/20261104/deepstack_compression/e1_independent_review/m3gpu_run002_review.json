@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "one DEV image, three fixed synthetic tokens; gradient feasibility only",
+  "formal_proof_sha256": "2333e950e38b3b36fa1c2117863adb6f366a1cc8e96c50230eb9cc3fd9ae1301",
+  "formal_started_sha256": "5feb08118ac376c86add8d3a18385b452c3da519f914db666d8927c5b7939f60",
+  "formal_terminal_sha256": "d3c49374c464387b391262f9235746b883c01e4fedf204094cec197f123db93f",
+  "source_manifest_sha256": "9cf1af2f9f00708c698e703a3e0d5b1e84fb4446d7ff5d6cf5e95b5973faa2e1",
+  "reviewer_sha256": "59bbf13dd1c383a2b146c3a6892b3a82a0cca8543ed1ea575f28b7d1997a5263",
+  "arrays_sha256": "f02d13e5b2fcececb208e883dfa0a5dee2b0a506d9282be257628cc9cb68d7b1",
+  "gradient_streams": [
+    {
+      "nonzero": 4192383,
+      "utility_min": 4.345409706729697e-06,
+      "utility_max": 0.0024921060539782047
+    },
+    {
+      "nonzero": 4192969,
+      "utility_min": 1.0729836503742263e-06,
+      "utility_max": 0.0024551202077418566
+    },
+    {
+      "nonzero": 4193020,
+      "utility_min": 9.510278005109285e-07,
+      "utility_max": 0.0037390755023807287
+    },
+    {
+      "nonzero": 4192403,
+      "utility_min": 1.0759745237010065e-06,
+      "utility_max": 0.0026225773617625237
+    }
+  ],
+  "native_first_logits_max_abs": 0.0,
+  "teacher_first_logits_max_abs": 0.125,
+  "frozen_tolerance": 0.125,
+  "teacher_at_tolerance_boundary": true,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "generation_performed": false,
+  "limitations": [
+    "synthetic target, no oracle accuracy or deployment claim",
+    "teacher logits maximum difference equals the frozen threshold; no stronger equality is claimed",
+    "KV contents were not independently reconstructed"
+  ]
+}

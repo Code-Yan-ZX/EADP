@@ -1,0 +1,29 @@
+{
+  "timestamp_utc": "2026-11-04T18:10:54.958383+00:00",
+  "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:12:24) [GCC 11.2.0]",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+  "command": [
+    "/home/dell/miniconda3/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "reproduction/20261104/deepstack_compression/e2_e3_contract",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_all_e2_patterns_keep_original_slot_and_dtype (test_interventions.Interventions.test_all_e2_patterns_keep_original_slot_and_dtype) ... ok\ntest_mean_is_selected_row_mean_per_slot (test_interventions.Interventions.test_mean_is_selected_row_mean_per_slot) ... ok\ntest_off_and_match_preserve_three_slot_order (test_interventions.Interventions.test_off_and_match_preserve_three_slot_order) ... ok\ntest_perm_fixed_sha_seed_and_common_nonfixed_row_mapping (test_interventions.Interventions.test_perm_fixed_sha_seed_and_common_nonfixed_row_mapping) ... ok\ntest_reject_invalid_geometry_bits_and_hash (test_interventions.Interventions.test_reject_invalid_geometry_bits_and_hash) ... ok\ntest_all_slot_patterns_and_observed_injection (test_model_adapter.ModelAdapterTests.test_all_slot_patterns_and_observed_injection) ... ok\ntest_invalid_arm (test_model_adapter.ModelAdapterTests.test_invalid_arm) ... ok\ntest_perm_mean_and_corrupted_actual_stream (test_model_adapter.ModelAdapterTests.test_perm_mean_and_corrupted_actual_stream) ... ok\ntest_registered_hooks_with_fake_model (test_model_adapter.ModelAdapterTests.test_registered_hooks_with_fake_model) ... ok\ntest_transitive_dependency_import_poison_fails_closed (test_model_adapter.ModelAdapterTests.test_transitive_dependency_import_poison_fails_closed) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.082s\n\nOK\n",
+  "sha256": {
+    "reproduction/20261104/deepstack_compression/e2_e3_contract/model_adapter.py": "456234ba074bb5e069af8a33e3cfc79e702fa1a0bb2b97309a11736b7f148664",
+    "reproduction/20261104/deepstack_compression/e2_e3_contract/interventions.py": "feea1a16176feab1d2461cc7f32f9c1c63cc2911d7a8c02bcbb495643407242c",
+    "reproduction/20261104/deepstack_compression/e2_e3_contract/test_model_adapter.py": "0d30893a12401f0b310462adcce7a88cb032ea87a5555cc2be8a8021ef1a687d",
+    "reproduction/20261104/deepstack_compression/e2_e3_contract/test_interventions.py": "168347120f8e1747d4c14614cbe807dcd7c4217784171855c2782053a05e4333",
+    "reproduction/20261104/deepstack_compression/e4/budget_adapter.py": "48c597ec575369f029182c96fcd790e1710ba444adbf3daafd2d8520c41c2f2f",
+    "reproduction/20261104/deepstack_compression/e4/off_adapter.py": "2147d9e136530d65760bf0e5f7cfac84094f2802f07b5d1e77aca7c367de8d9c",
+    "reproduction/20261104/deepstack_compression/e4/skip_deepstack.py": "1732cf751dbb56d225c5bbf2fb6cd1e00cfa595d1a16368ca0137f2799994412"
+  },
+  "scope": "CPU fake-model hook integration; no real Qwen model or GPU run"
+}

@@ -1,0 +1,546 @@
+{
+  "status": "passed",
+  "scope": "formal evidence audit; independent review required before interpretation",
+  "component_gate": {
+    "status": "passed",
+    "scope": "32x3 identity gate only; GPU still needs root scheduling",
+    "formal_sha256": "c7b095a15c4d17db396b20b93c17796ab9341a42167f4ecd545df4fba8a9afb9",
+    "review_sha256": "f94c3f94bb7d5d2d277afa09b1e1675b0eb7a8b3b02c03b4dbf3ee76d3ee211b",
+    "archive_cases": 96
+  },
+  "anchors": 3,
+  "jobs": 36,
+  "comparisons": 18,
+  "unequal_comparisons": 0,
+  "per_anchor": {
+    "DocVQA_VAL:63709": {
+      "original": {
+        "n": 5,
+        "median_ms": 396.428717,
+        "min_ms": 393.203822,
+        "max_ms": 424.527658,
+        "raw_ms": [
+          424.527658,
+          396.428717,
+          398.093127,
+          396.202241,
+          393.203822
+        ]
+      },
+      "graph": {
+        "n": 5,
+        "median_ms": 381.631917,
+        "min_ms": 373.970831,
+        "max_ms": 382.744825,
+        "raw_ms": [
+          382.744825,
+          382.26885,
+          381.631917,
+          374.65721,
+          373.970831
+        ]
+      },
+      "relative_change_pct": -3.7325247555161423
+    },
+    "TextVQA_VAL:39033": {
+      "original": {
+        "n": 5,
+        "median_ms": 349.930609,
+        "min_ms": 348.423292,
+        "max_ms": 369.053463,
+        "raw_ms": [
+          349.930609,
+          349.716857,
+          365.77778,
+          348.423292,
+          369.053463
+        ]
+      },
+      "graph": {
+        "n": 5,
+        "median_ms": 329.041968,
+        "min_ms": 327.309222,
+        "max_ms": 346.707824,
+        "raw_ms": [
+          327.309222,
+          334.486003,
+          346.707824,
+          327.675655,
+          329.041968
+        ]
+      },
+      "relative_change_pct": -5.969366629485107
+    },
+    "AI2D_TEST:11001": {
+      "original": {
+        "n": 5,
+        "median_ms": 357.418096,
+        "min_ms": 352.218127,
+        "max_ms": 359.111312,
+        "raw_ms": [
+          357.418096,
+          358.652132,
+          359.111312,
+          357.106488,
+          352.218127
+        ]
+      },
+      "graph": {
+        "n": 5,
+        "median_ms": 333.030339,
+        "min_ms": 328.65767,
+        "max_ms": 350.716537,
+        "raw_ms": [
+          333.030339,
+          328.65767,
+          333.32274,
+          333.004937,
+          350.716537
+        ]
+      },
+      "relative_change_pct": -6.82331344521514
+    }
+  },
+  "aggregate_only_if_all_pairs_equal": {
+    "original_median_of_anchor_medians_ms": 357.418096,
+    "graph_median_of_anchor_medians_ms": 333.030339,
+    "relative_change_of_medians_pct": -6.82331344521514
+  },
+  "graph_setup": {
+    "capture_wall_ms": 329.584339633584,
+    "allocated_before": 17538516992,
+    "allocated_after": 17542718976,
+    "allocated_delta": 4201984,
+    "reserved_before": 17576230912,
+    "reserved_after": 17580425216,
+    "reserved_delta": 4194304
+  },
+  "all_times": [
+    {
+      "job": {
+        "phase": "warmup",
+        "repeat": 0,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 1745.786529
+    },
+    {
+      "job": {
+        "phase": "warmup",
+        "repeat": 0,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 362.007257
+    },
+    {
+      "job": {
+        "phase": "warmup",
+        "repeat": 0,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 353.805739
+    },
+    {
+      "job": {
+        "phase": "warmup",
+        "repeat": 0,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 373.270018
+    },
+    {
+      "job": {
+        "phase": "warmup",
+        "repeat": 0,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 386.321075
+    },
+    {
+      "job": {
+        "phase": "warmup",
+        "repeat": 0,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 399.777218
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 0,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 382.744825
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 0,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 424.527658
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 0,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 357.418096
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 0,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 333.030339
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 0,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 349.930609
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 0,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 327.309222
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 1,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 334.486003
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 1,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 349.716857
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 1,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 358.652132
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 1,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 328.65767
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 1,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 396.428717
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 1,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 382.26885
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 2,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 359.111312
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 2,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 333.32274
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 2,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 381.631917
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 2,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 398.093127
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 2,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 365.77778
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 2,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 346.707824
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 3,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 348.423292
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 3,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 327.675655
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 3,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 374.65721
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 3,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 396.202241
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 3,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 357.106488
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 3,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 333.004937
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 4,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 352.218127
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 4,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 350.716537
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 4,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 369.053463
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 4,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 329.041968
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 4,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 373.970831
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 4,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 393.203822
+    }
+  ],
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/plan001.json": "4f0b135f0af34d0d256d1c2e8e3f71c572604451aa286dece965acf50ea2efaa",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/independent_prelaunch_review.json": "ae5a7e87758016113f6342c8c5dfbf1e01340517c1d4677f1b5bc7a2c79bfb01",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/run_smoke001/launch.json": "b6578c08f6551709ce9ea12c0a81fc0c3ad5fec29888f1e3e5a59808e8544836",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/run_smoke001/exit.json": "5dcf67f075936ba259fa219dd71542f634b532ec9c5eccaa6d57868e80038add",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/monitor_smoke001/started.json": "14402d2c613c842a77838d506f974c7190d5a735585e1f32fc8c56c1e6f7f8eb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/monitor_smoke001/terminal.json": "a3608ab2698f240340e1c2957bd0a7e1a584628d00c2b83a5e76b00ab286a3a7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/preflight001.json": "4a60b20b98388633925ef618f973acc2cc697359372878fd4faa39caa4dc9b73",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/background_before001.json": "9c8c8d1fead2b15a53ea4667b1ab09b2ba791a7d79f803f74d63c9db2cbdeead",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/run_smoke001/observations/worker_complete.json": "fb13c721b3e8991b2a125cf0b99a2d32ac574fd1b215fb410ab25484d1d91b7a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/run_smoke001/observations/graph_setup.json": "dcfc6f43612c99c5c43aa49aebd3098ce78b2ff9d4bbb3a7c6cc67d8e601e43a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/run_smoke001/observations/progress.jsonl": "688a7f1035e6fef8049cd86227beb5a548d6a2a4e992778f8bd93fe9955d3e46",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/run_smoke001/observations/records.jsonl": "618b13d7dd4df460096fb284ba56c8622263309a5003db0f181ffc2344985d62",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/run_smoke001/observations/generated.jsonl": "d283d520dfc0dfa95c7c90c8f886943882dcd228a69b1f1b3f1e81b1163ae95e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/run_smoke001/observations/generated_raw.jsonl": "0843f208d0eb9d91a29206495d5635480fe8951e515e32fc9001d70528c3d06f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/run_smoke001/observations/comparisons.jsonl": "cddb5a8f22fd6eced4615f3bd0c7dee4bdfb302fdb4a397c72860b512280e567"
+  },
+  "verifier_sha256": "5e52d5ecf129fd8b0a7cdd8662842b897f7e1b81b1b7c687926a36e0f6d053a2",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": [
+    "Three DEV anchors, five warm-cache measured repetitions, fixed32; exploratory and not original full M1 criterion.",
+    "First-token boundary is from before image read to selected first token; graph capture/setup excluded and reported separately; no production or full-generation performance claim.",
+    "Graph replays author operations with one mask-scatter substitution; equality is limited to observed selections, quotas and outputs.",
+    "Allocator deltas are PyTorch process allocated/reserved, not device-wide peak; other background processes and temperature may affect timing.",
+    "First-token criterion and P3/DS adapter are instrumentation; end-of-generation timestamps include raw output fsync and are not used as performance.",
+    "Worker finally restores monkey patches and container exited; no independent per-job post-cleanup hook inventory was archived.",
+    "Selected-ID and output equality do not independently reconstruct every prefill or DeepStack tensor."
+  ],
+  "errors": []
+}

@@ -1,0 +1,15 @@
+{
+  "stage": "pre-GPU analysis plan, exploratory TTFT only",
+  "pilot_plan_sha256": "a82ae6e88a8f4a6d74d12cfc3b5e9ae459bb9a081415bd2d83fcd4e83e635d73",
+  "runtime_plan_sha256": "26762b5b30ed28509309e31cf47ef1bbcddef5f8cacf8fddf85c74bb1e32766a",
+  "prerequisite": "formal post-run acceptance and independent post-run review with supervisor completed/0, evidence hashes checked before decoding timing results",
+  "cohort": "three known DEV images, 4 budgets; 12 warmups and 36 measured, 3 repeats per image-budget; no new labels",
+  "endpoint": "(first_token_selected_ns - t0_before_image_read_ns)/1e6; completion timestamp contains raw journal fsync and is not clean end-to-end latency",
+  "report": "keep 36 raw measured jobs plus 12 warmups; per image and budget report n=3 and median/min/max; within same image and replicate report TTFT ratio K128,K512,K1024 / K256 and median paired ratio per image. No cross-image confidence intervals or population-speed conclusions from n=3 known anchors.",
+  "retention": "retain all samples including health overlaps or unusual durations; show every direct supervisor health overlap and list all windows; external background and residual health overhead are not measured and cannot be assigned per sample",
+  "comparison": "K1024 is keep-all with zero greedy, not K1024 greedy; adapter hooks have overhead for every budget; prior Pixel/EADP pilot not paired or merged",
+  "memory": "no process or device peak memory claims; separate isolated NVML measurement required",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "created_before_GPU": true
+}

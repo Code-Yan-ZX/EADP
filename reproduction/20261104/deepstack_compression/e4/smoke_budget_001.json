@@ -1,0 +1,15 @@
+{
+  "purpose": "E4-A DEV smoke identity and per-budget decode validation; no GT or scoring",
+  "natural_questions": 32,
+  "natural_generations": 256,
+  "fixed_prefix_generations": 8,
+  "fixed_decode_steps_per_arm": 32,
+  "inner_hard_timeout_seconds": 5400,
+  "external_hard_timeout_seconds": 5520,
+  "monitor_snapshot_seconds": 3600,
+  "monitor_poll_seconds": 15,
+  "stale_kill_enabled": false,
+  "estimated_full_array_disk_gib": "10-15 approximately; measure actual smoke before full-panel decision",
+  "prior_reference": "E1 full 1536-arm supervisor elapsed 1305.29 s, not an E4 speed estimate",
+  "full_panel_authorized_by_this_file": false
+}

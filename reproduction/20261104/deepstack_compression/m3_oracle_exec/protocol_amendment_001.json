@@ -1,0 +1,16 @@
+{
+  "stage": "prospective_pre_reference_amendment",
+  "created_unix": 1793822198.760174,
+  "original_protocol_sha256": "013c861930cb5b9f52e1a72fd57a667b9c287763cd04e494a8b4dc04aa27247e",
+  "source_request_sha256": "099aed3797416782e1c0a444a39fac07c7e4050b75bfcb7fe640575da541cd0b",
+  "e1_completion_sha256": "95981ce2400d7467ba93d3177275a0860a656fc8558080c243040663e40a52fb",
+  "change": "Reuse accepted same-question E1 P3-D1 baseline, after exact input, processor, model, recipe, selection, P3 and DS identity checks; generate each of six source/r winners independently.",
+  "reason": "User attachment section 13 requires baseline reuse and at most six new generations per example; protocol_001 had specified an additional baseline generation.",
+  "max_new_generations_per_question": 6,
+  "max_new_generations_full_sample": 768,
+  "baseline_identity_unverified": "fail closed; no baseline reuse until actual per-question identity is independently verified",
+  "GT_opened": false,
+  "predictions_opened": false,
+  "gpu_used": false,
+  "original_protocol_preserved": true
+}

@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "single DEV PriorTR CPU source/environment and retained no-GPU preflight audit; GPU results remain untested",
+  "cpu_proof_sha256": "cb5e85333292b3ae415809d440f9ee69f6f0890656766cf57b2c57b2e90f7359",
+  "cpu_terminal_sha256": "a51e41f5007e218322397b1d2c727e68f0cb2321b78e48ede6202b1a66ace6b7",
+  "source_sha256": {
+    "admission.py": "33c4b72aa80044e5303e35689d83ed451676deb0c16721503b3099642934048b",
+    "preprocess.py": "7c29472627883e127b6a7679a67418a9d1843c2f1b625360c17fcb58f5e60b67",
+    "trace.py": "4cc397b19b1c32e4bb24b404d21e2f5c0234c782a067216f1646b63eee0f8e25",
+    "smoke_worker.py": "9766319982e3cdbddddfdc76a934bdc1ce6b0db7050d785642750bc5cbcb884c",
+    "smoke_launch.py": "1240802c292caa8a479a21ebfa5609a267895c2c4a0d0c6a2905c31a7e5eb23f",
+    "smoke_verify.py": "32a4223a0ea58caceea1d74c4cfbc4b30040ab6144e0fbf07af1685635ed0035",
+    "test_trace.py": "06736d7bdf256ba4313335d626b60fa9812dfa50d02f167a4028f920b860fd73",
+    "test_env_contract.py": "77aa87c4723c269f65ca2609d6d43ce5df63ce7e7e057a3af27bf41436576c61",
+    "test_launch.py": "3643ede26793f873450b8ff476d2447fed2ed8430eac5ea8d28dcfaa02297b66",
+    "env_contract.py": "e5165ab9e3322d5d8e60ec39e0fcbc44e47c6394f458a5cc27873fd6e2564b07",
+    "cpu_validation.py": "548d584fbc767c4d44aee0981a0657b219642e12ca228b3590566ac6aaa7ae8a"
+  },
+  "plan_sha256": "8aec21febebd95d4d9a14ca0e03ca71d7c507f25f05c884b1ade14b4da0e1a5a",
+  "processor_sha256": "6972f12b69b28dc73e728704b6b9a7e390ba935249a2e2d34cde560744386774",
+  "env_fingerprint_sha256": "f90ff9fff9e654ccc3605cf0f116912cdd159b6d9ef698ef32a3e17f4f4030ef",
+  "environment_provenance_sha256": "16a3284ef487d39e80663193ded50e37d5e202a148d386ddbf4f761b189e534c",
+  "reviewer_sha256": "4147971c39471198f098093ee7e16870ac59fa817d0e2ed2f6931c7055074034",
+  "prior_review_sha256": "f9756c4300e7d003aed13bc6824d283323a1b7e16f2cfc4fd2fc8b060014d723",
+  "actual_container_id": "263a1a417599668ec31b0e748add74ae3fbf116e966a406e47ae3a9026101ce6",
+  "actual_container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-04T19:02:41.040006269Z",
+    "FinishedAt": "2026-11-04T19:04:24.481711544Z"
+  },
+  "checks": [
+    "CPU005-to-007 source changes and five tests independently rerun",
+    "preflight003 launch, initial/final identity, controller, stdout and supervisor",
+    "live docker inspect image, entrypoint, arguments, stopped/exit0 and no GPU devices",
+    "runtime inventory fingerprint tied to prior independent full rehash",
+    "same frozen single DEV sample, 7 diagnostic cases and stock/patched-disabled distinct"
+  ],
+  "limitations": [
+    "No model loaded or GPU inference in preflight",
+    "SDPA / torch and transformers differ from E1 FA2; no speed equivalence claim",
+    "KV content identity not established by CPU gate"
+  ],
+  "GT_opened": false,
+  "scoring_performed": false,
+  "review_unix": 1793819388.0097356,
+  "container_preflight_launch_sha256": "44ffb0529d33c845dfcf83cdcccbbe6dca2d86c4adb999b2e6135daaf7f6838a",
+  "container_preflight_identity_sha256": "e01c2fbc6d94c88fd227ab8c9f2d7df1a488ab2a2e2290b33acb160a2b0b0af8",
+  "container_preflight_exit_sha256": "69f30ca8d6675d7176361d88f29dc6c236d4e0185b7e0e0aacd130b78ae09aef",
+  "container_preflight_stdout_sha256": "d532269f1cfde7b1d340e5e65482620269736ec793a832fc02a238d605102938",
+  "container_preflight_started_sha256": "0ab384d06b9d2a0ac8e51e5042f0ddffa56a15859fa6c1d231bc30e690ca15d0",
+  "container_preflight_terminal_sha256": "c7ad7d67930bdcbb4585409dbda3b359c00dafc7534da309d2e86b409e19a940",
+  "container_preflight_script_sha256": "0bc01057fc31a774b72f8b07031102a588802cdde58596040f1c5a3d4445c255",
+  "container_preflight_host_sha256": "1a18a84b5cce129a634e518340c4070d39abf8ee06a1f744fe3d9ed93b598fcb"
+}

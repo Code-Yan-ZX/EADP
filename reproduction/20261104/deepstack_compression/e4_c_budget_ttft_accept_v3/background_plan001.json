@@ -1,0 +1,22 @@
+{
+  "scope": "post-run exact ps query/first fsync overlap annotation only, no TTFT values",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_accept_v3/background_overlap.py": "cf97193ee7aa40c5d267bdb18e7422aa6273e1f0b7dd400b30d3d6010f8a4c9c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_accept_v3/test_background_overlap.py": "27ebef9b3063e6c9cd1bd4b116c194b792db0aa52adc97e252cf6125fedf08d2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_accept_v3/verification001.json": "99814e87ec389d2ade1134cfe8d6bf291132ced4aa3d8141e124893611ae3000",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_accept_v3/monitor_verify001/started.json": "1535d9841c941d23e5ebc66d8886d773e007758791a4db577dd50a5f41c9fc9e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_accept_v3/monitor_verify001/terminal.json": "e2f8d0626e5f43f68bb7bcede30d1001b92a9f8a32683667e57b752a92cfef56",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_environment/watch.py": "b41467d9744159ed40f03e10e8c680c1e7b0785a4a262bd7b5f661de8c87d410",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_environment/process_samples001.jsonl": "bde422a686d6992e7f8d6a598531623d00727023793c9142f9aa1d52faab4628",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_environment/after001.json": "f918069764a375b074b0f776525dfb2508d0eaafcf82927f30ede55201657281",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_environment/stop001": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_environment/monitor_watch001/started.json": "23c7bcacb25eb5ea276b9ae832251f55b032be53abcd0072e87f1f8a8ec76bf8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_environment/monitor_watch001/terminal.json": "58614744d15d00bd68273de3e5954ac78250cf7cf028d2d5e0e96cf6b77d36e9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/pilot_plan001.json": "a82ae6e88a8f4a6d74d12cfc3b5e9ae459bb9a081415bd2d83fcd4e83e635d73",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001/launch.json": "bbe332671572de0a283ac8ffb9b8d2fecdd9c1eebc7f4dea9adff79006c82488",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py": "dddd62696ca10f2624654feec9831c83d308ddf8eb982c645ad3c5eac827ff17"
+  },
+  "cpu_started_sha256": "5903675b5ebb02ec163c81075f7adf1284dd1be78e1aeda504b664d4e7d97c07",
+  "cpu_terminal_sha256": "07b62c1e01944b8db3dc98765d88636ebcab2ed1c4df71e5392a96b94d8db949",
+  "limitations": "Second watcher log write/fsync and residual background not bounded; no samples dropped. Frozen after run without examining actual timing values."
+}

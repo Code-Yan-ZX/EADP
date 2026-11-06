@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "fake sampler, no GPU measurement",
+  "container_id": "74b0e687945af0c544a9513b6e402aabed135ec5d793f515fe29c9c4777df601",
+  "samples_verified": 14,
+  "fabricated_sample_bytes": 1048576,
+  "files_sha256": {
+    "launch.json": "fe1d22781c530f49e79845108fd58b0f682ff99c2cf5446d4bdce6ffe5ceadfc",
+    "exit.json": "cc95c00b314c9a507baacd34c8506b9852c73dfd0a64a38ecded08460d7502c1",
+    "expected.json": "bb5a5ad658262c390fdb20b58a87eac61d768c3319506bc959d40b1a8e1fd27d",
+    "worker_ready.json": "80df45eb89c9192febcedee1570b51519b78cdc73595339961e6a575691dafa5",
+    "release.json": "747b57f49588981f40a2fb316967094b13854dfa636eb655247a6fff721dbb7c",
+    "stopped.json": "4486292c4a602e8b5130f29d32c07a6e719b44be2c429230eab1776b1e42186d",
+    "stopped_inspect.json": "e8688b1fbed24ddc505f19a737c0edf0dc0745a39bb1ff47f5723757784c2d47",
+    "samples.jsonl": "9607761122898d4a76062d209b99da0e7513fb2a1a4bb202ee95b3b8ef3c197e"
+  },
+  "started_sha256": "de215666600509d954653a2534aed93253cca5d96910263aa16f6b0c93cd7f0f",
+  "terminal_sha256": "16fb3f5e156cfa48af4f3e3e290318131ee62a2b876cfb14597ce9b17e6e667f",
+  "sampler_started_sha256": "07f9d42f2e2d31c3dffb884f0855bc8295f3ae374a4af898d04795216642f0fd",
+  "sampler_terminal_sha256": "c2896b501ec28659a24c25f2a46c04f40be2d817a69c95d2ee1da5de3eadfb1b",
+  "reviewer_sha256": "90d1cbaef91eefcf683a3efa7df82f0f86128cd7968c89f0d31ac1692a40dabf",
+  "gpu_authorized": false,
+  "GT_opened": false,
+  "errors": [],
+  "limitations": [
+    "The 1 MiB value is fabricated, not NVML or actual GPU memory.",
+    "This rehearsal does not authorize GPU sampling."
+  ]
+}

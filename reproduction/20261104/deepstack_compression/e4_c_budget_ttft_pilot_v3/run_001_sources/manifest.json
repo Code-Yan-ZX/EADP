@@ -1,0 +1,1118 @@
+{
+  "status": "passed",
+  "scope": "post-run endpoint source snapshot; transient changes cannot be excluded",
+  "runtime_plan_sha256": "26762b5b30ed28509309e31cf47ef1bbcddef5f8cacf8fddf85c74bb1e32766a",
+  "snapshot_script_sha256": "a6a100fa14dc15eb66fa1d698f35b433735a4e6d44465bc80e92113a2e835eea",
+  "sources": {
+    "/home/dell/miniconda3/envs/qwen3vl_serving/lib/python3.10/site-packages/torch/utils/_contextlib.py": {
+      "source": "/home/dell/miniconda3/envs/qwen3vl_serving/lib/python3.10/site-packages/torch/utils/_contextlib.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/4dc7b9e29d0b550b474f1f02896432914499f531d84f07d59f5d980aeeac8540.py",
+      "sha256": "5ec1105b927f77ed484a2479ee0f7785bc0011880c44fc67ad0d38231844eda1",
+      "bytes": 6026
+    },
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/f2393f67633e37c2276a3837c2a606be805296bfdbedb94a38fa78fffe99ed17.py",
+      "sha256": "34556188962a1b057382269bc1f9f0cdba1a12e9cf1861acb60fa4fa0a59fe34",
+      "bytes": 24924
+    },
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/model/pruner.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/model/pruner.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/0004c20607a773764ec941772d0014d28ff744297658df9a11dcaa66f7ec7494.py",
+      "sha256": "bf809614c207142b8a4fc945f29a8828688c88a2896ebd349d55c4a0b1a917e6",
+      "bytes": 11228
+    },
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/generation/configuration_utils.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/generation/configuration_utils.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/d6d912c4be9567f013bf5d78f3818de96a742efac27e7e9682cb705652c016fc.py",
+      "sha256": "d83f2281f939402be1633a29f3c760e29f5d2f284258d8ed99693b873744074b",
+      "bytes": 76547
+    },
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/generation/logits_process.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/generation/logits_process.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/f4697df2b3c97bd99022ed7e4908bcbe3b136307aaa2ed475da6ef5f02ee3a14.py",
+      "sha256": "6481506629ff6f021157e893fc64c4e7b5b06a72072771809d679387cb54a4b1",
+      "bytes": 152357
+    },
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/generation/stopping_criteria.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/generation/stopping_criteria.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/42eb926b7f73bdcaafe9bc376ddf096b88eeff9935f477755f581e112bbb2f04.py",
+      "sha256": "495628e4c877f667fbbd9ed4cc83b680de9eac2abc97ec3903f6e9219af3ecd2",
+      "bytes": 28930
+    },
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/generation/utils.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/generation/utils.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/0af4b8824a66b22bff38bcba88a926b59db921b21704061371a366f46eea700b.py",
+      "sha256": "a20024b1e82ed5361a524d238d2197be5407abc91297dd9888c57e8284d63fef",
+      "bytes": 210102
+    },
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/configuration_qwen3_vl.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/configuration_qwen3_vl.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/1a6632789a256dda792e5816ee0353cc1e63969e93e76b5d3fcda6d0fe9a431e.py",
+      "sha256": "177fd0a4dc1b08307c08ca72cf26b8d7dc028ab6ab5975bf650fc14ab8132a83",
+      "bytes": 14827
+    },
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/7790e940982907cd43f12f7657d1758942d2e1232918fa3af5782c21da63100c.py",
+      "sha256": "dd63ed3b124232735b3dca1bfa28f9d6b0d3f7182afcb75dde8f3e724b2b22da",
+      "bytes": 70877
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/container_runtime.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/container_runtime.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/ca111756b2bd5bfc863e19ad19b70e3c137ba68b4351629ec48a0829ed0137fe.py",
+      "sha256": "7af58cb6477c968dc211169a6709f8ea9cd0f8d590caf4a72f97c1de1bb5f910",
+      "bytes": 3963
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/diagnose.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/diagnose.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/75414a7647e9b5435f413ac7b0312066eaf4c1787630184d552ac60e080bf62f.py",
+      "sha256": "283061a38ca893945b0f748d2469c908884f08d8ca86e2feb6b753ee93eb4902",
+      "bytes": 19921
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_panel.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_panel.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/a5d8d1429cbf915235ef1ebefbd277b26f63f66d86f417ad1a90cafda3b81db4.py",
+      "sha256": "aeee2a27c4394fc683245dce6fe2629f2fa1d9948ab66bb68edbdd46a9c65645",
+      "bytes": 9314
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_plan.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_plan.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/c796ada179882a4dd000e2885bb42fa951c130a04c3db1c8c422660cd6ac6c7c.json",
+      "sha256": "d752c876367803c5728ffa84a819fd63b4c129cfd0e2eb78931f7d94dae5d4ad",
+      "bytes": 55643
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/qwen_weight_identity.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/qwen_weight_identity.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/0c7acd19102b9186e4f9227b8d46a255f6d076ba82bb38c5f3c3cc5e1f2489f0.json",
+      "sha256": "7bfe695c2dbb0aa4e625183f0344d26bcbdc3add24658a068302c2744dc07ec8",
+      "bytes": 2206
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001/raw_predictions.jsonl": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001/raw_predictions.jsonl",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/24dac32ac42c43d796dc691ce5f978e12517d9049c34b2d631c1c87d59db6df0.jsonl",
+      "sha256": "be49921c44f10f532d5d480f81478d87bb070bb040bb943db6db6dbf2b9f56d9",
+      "bytes": 27532676
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_completion.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_completion.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/c80aea70107ac5b5d57eb1e5704b7d36251cffee754dd80bc46a012b43c303dd.json",
+      "sha256": "95981ce2400d7467ba93d3177275a0860a656fc8558080c243040663e40a52fb",
+      "bytes": 6146
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/input_preparation_002/inputs.jsonl": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/input_preparation_002/inputs.jsonl",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/ecc85c291c9807de0ec0649db8faa32ac6277fb69e7b21f44996b428ec3907b4.jsonl",
+      "sha256": "f3fef75929f88fa21b96458337030c47f2b7afaa596f540879afddd72847f59d",
+      "bytes": 239195
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/monitorverifye1full001/started.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/monitorverifye1full001/started.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/489baef86040a91a10cae223384d9c6efe8b1eb70a8a2f6537e5140c3ba5ca13.json",
+      "sha256": "a030d80a913b1dadc918a31f1bcf3572cb09032db5854dd76bb5aa75df8cc2c2",
+      "bytes": 1091
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/monitorverifye1full001/terminal.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/monitorverifye1full001/terminal.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/aa76fa631268cf3ccd8439f7c6fe223697c87037aa09934f2576068fc7b41389.json",
+      "sha256": "9d7175ad4c87dd92755a109718e9cc223de3f6b3977c9a4fcf4d0d971cb69d93",
+      "bytes": 195
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e1full001_review.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e1full001_review.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/1cabd61cf466fc613a021e9ad0e947055a52a4634d56463ab6ae04250070327a.json",
+      "sha256": "59be360409326074b22a2e8d99fa302740fc2f6f0162e6acc335f1be32ad59be",
+      "bytes": 14825
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4c_budget_identity001_review.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4c_budget_identity001_review.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/48c3f7bbea87e8e3dbee1e9230e981d619c1e5a4c37f9fea6ec54af1942a0696.json",
+      "sha256": "9c08ee878e6b4c413415a741685093bbc63e07e58089edb97cf08cc279f5f604",
+      "bytes": 9078
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4c_budget_pilot_v2_preflight_review.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4c_budget_pilot_v2_preflight_review.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/925cf54fe17e68e9b47cf1932f1069ec729cfd48a9bab04f8d6e703c9bbe05ee.json",
+      "sha256": "814a0e734de72efd567562cb97cf411aadfb89e0259d4d81820be19644a23d22",
+      "bytes": 25230
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4panel003_review.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4panel003_review.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/d67bc298d48e2c959005da0aadaa6ad65166bff7e80107113ac322dabe8710ce.json",
+      "sha256": "aaa8b713caefa815ff8eca5b71d7d1bbd1bd5e3858466854119f63027ea44349",
+      "bytes": 917
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e1full001/started.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e1full001/started.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/c6495517b6eade5d6febb61243cf8f383027e3a87c04ae6dc35a44d89fb0fc7b.json",
+      "sha256": "928176b9583308ca48d4154e69ea04356b55cba5acfb7ffb36027443620d9941",
+      "bytes": 709
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e1full001/terminal.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e1full001/terminal.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/3cd697740796b678a93690c51e6c2306b13b5c3e55af64d62c30d08a8dcaefac.json",
+      "sha256": "6bf39a1dc8a29d6b3b64459ffc98c389168c49c465081a0236801f44b8bbcf3d",
+      "bytes": 196
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4c_budget_identity001/started.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4c_budget_identity001/started.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/3ccacc568a8825d6f2574b1514c4fbc339bb5ff6a45bf0ee04cd1c3aa4f439b5.json",
+      "sha256": "addc0073b0d0bd1ef0987524192a3d1a41a7c75a8d55456a6d8ccf7d4756edba",
+      "bytes": 841
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4c_budget_identity001/terminal.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4c_budget_identity001/terminal.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/a73462792dae2f00d3f611a50d631a5f544f7d868e2d565fb07ca7aeea097cfe.json",
+      "sha256": "c35dd67835ba677d6602e8b76650b97f6179643e1f2c3dcc78949bce681297ce",
+      "bytes": 198
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4c_budget_pilot_v2_preflight/started.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4c_budget_pilot_v2_preflight/started.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/7dbd2445fd4f83779128ebb4595bb7a23713956dd23aac04d2487e99e3e1c2bf.json",
+      "sha256": "9810c3c2dfc0d071c36d848ffc7aef8014672488442a08c4e2e9cfbddf16f952",
+      "bytes": 861
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4c_budget_pilot_v2_preflight/terminal.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4c_budget_pilot_v2_preflight/terminal.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/282faca7b2b13bb0b08529d43aebb9d8771ae34674d5bc9acf97b9135831c3da.json",
+      "sha256": "716551ab25bbe5d0a574f592a6f56933f716d2bd2160b4314aa9c24fa3a6eba4",
+      "bytes": 197
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4panel003/started.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4panel003/started.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/8ebef5d84149bc093aeedf04e1f4871df8c785fdf7a2c35f0a5d6c358b2d541e.json",
+      "sha256": "b8a83b0dad342261405e4508c4c57557ad95b65f1cbb7a5af7644ab91b2fa13c",
+      "bytes": 1133
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4panel003/terminal.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4panel003/terminal.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/8285034352ee9349563ab7179a7d391bae917b72503584c4d898448bc51373cc.json",
+      "sha256": "70099f0d87828244fdc2bd3021f6ea880708e75728150645cd645cc5ec2412a8",
+      "bytes": 197
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_dev384_result/started.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_dev384_result/started.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/191386c6995801aa45368c32715e903e56da774d91f1d8e588dff9bba12525d4.json",
+      "sha256": "0d68b0eca9119a0d8ffb7d4af34f1000f64ba510dc4b60666444a09b82b63e8d",
+      "bytes": 849
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_dev384_result/terminal.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_dev384_result/terminal.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/53bc0ed60b764867bb7c96e56147ba6c36219c3bf75d06b0ff17aaa29e267763.json",
+      "sha256": "e022c283484330e97940629f98cc849c1eeaf1aac6de6b61d7d847f1df8b3275",
+      "bytes": 197
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_t045_dev384_result/started.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_t045_dev384_result/started.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/6e3a1136a4cfe73ab0bd1a1b7c0b43a7b80506552d6250586785a3a729b12202.json",
+      "sha256": "c572d372792159afd8e3088940240a482797dd8c307b799cdbffd398aaeb7c37",
+      "bytes": 870
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_t045_dev384_result/terminal.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_t045_dev384_result/terminal.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/7be2361e341091b20264276349112993b005dc884fb1e414a06b54c148ff24f1.json",
+      "sha256": "73ef94423feac959add7f59757f1ddef14cff0ea442d6c1be1839be79044c847",
+      "bytes": 198
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/pixel_dev384_result_review.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/pixel_dev384_result_review.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/a2052db96394755d8fb6677036612427768819b569d0257b0ce8128fe41bbb0b.json",
+      "sha256": "74bb252af44eacc1b8a04116a692abbe9b744eb27f83a7b4b3436d9cd3454aa5",
+      "bytes": 176071
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/pixel_t045_dev384_result_review.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/pixel_t045_dev384_result_review.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/959d4998c1d00ff137683b5ff63a95e56a11c7179f769c8cefcd1256c703cf47.json",
+      "sha256": "b63fecdbab7ee667781a37a50676d05b445335e256689b73243d64ad49137b3c",
+      "bytes": 179950
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_e4c_budget_identity001.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_e4c_budget_identity001.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/e29170b510ff927cddd9eb7df9f0abda1c38fe5bec27b8fac8057eb15310f7b2.py",
+      "sha256": "01ac95be42a2bd31b6dd30bec00174a6eb2b4d36bd5041fa963a5ace368bd900",
+      "bytes": 12076
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_e4c_budget_pilot_v2_preflight.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_e4c_budget_pilot_v2_preflight.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/5a2ac43dcf205554a5bc3a78905e1bc5cab8d0e7ca39fca1393eba73f2cde751.py",
+      "sha256": "a8eebeefd1df809cc92ccb9c8edaf98ba97ee47d9ac662f8e7d53be9237331e2",
+      "bytes": 4955
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_e4panel.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_e4panel.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/bb1c9d928683ae7cba038a92d078452dcb56b4c10b48e5917f313a19b70bb750.py",
+      "sha256": "2e7a8591740479dda288f2aee02a23292267bce0d61b0d957d91eca25bb0d3f5",
+      "bytes": 13549
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_full.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_full.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/0ac0c0e59d51060267407ef97a520e5c468ef4441e475136f20c4137fa42da82.py",
+      "sha256": "cde3b56d0c17236152d0458214bca337fdde6fcce20665d8b8c6e54481217c4a",
+      "bytes": 10860
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_pixel_dev384_result.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_pixel_dev384_result.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/b9fb95a76589bc92c7e817506f85eeca0d15c1f619b2423803fb5ca423d68e84.py",
+      "sha256": "4cad2dfc4f5fffdfa97b91fdc55ede05f27598e5828517b5119224650925d221",
+      "bytes": 7662
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_pixel_t045_dev384_result.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_pixel_t045_dev384_result.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/4c93f78f7254320b8fa1f3b28a8c68f2ce34cb7b3e976f5c5a58f8949a0ff56c.py",
+      "sha256": "e0f14e9a4a20d7e1002c7c44795b1230e1a5d9bb92c2a2b2a2369f00acb92255",
+      "bytes": 8132
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/budget_adapter.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/budget_adapter.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/f9ce01f6cca7d83dfb7b681997eb76738b90f1824c6e02995371386fbb909598.py",
+      "sha256": "48c597ec575369f029182c96fcd790e1710ba444adbf3daafd2d8520c41c2f2f",
+      "bytes": 6133
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/budget_runner.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/budget_runner.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/f47c0ff6579b377a5914a94278ae4d73f292a2c348eb2237d48b0a350656ed03.py",
+      "sha256": "ed3bfceff8ea15177fd1eecea7329f11b3e407222f4071ea9e69641c0200fcb2",
+      "bytes": 7705
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/decode_observer.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/decode_observer.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/cc15d52016b23b70b36093ea05a0a76d3004393843979648614bbedf67c397d7.py",
+      "sha256": "9c68bdeaab6c5e68cbb789a9952a37ac99bb02a1af42f0315acf4b3e25d18b0e",
+      "bytes": 2132
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/identity_records.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/identity_records.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/2a5bb08ebbadfff125043e996882674c73da0a27b9209c8ea7e2b7a23acc0d8b.py",
+      "sha256": "70e671d05be1c9dd1dcee4e492feca65880b0c72b2b381c40dd741e07bf58401",
+      "bytes": 4035
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/off_adapter.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/off_adapter.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/f12164092b2289e22f872b1453d6fb7dac94cbadabeed4b5b85d3d02609a34bb.py",
+      "sha256": "2147d9e136530d65760bf0e5f7cfac84094f2802f07b5d1e77aca7c367de8d9c",
+      "bytes": 7851
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/skip_deepstack.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/skip_deepstack.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/03297b61d23b0f067c1bc1953f5b9205434f6256176de96872aca53f6d40ab20.py",
+      "sha256": "1732cf751dbb56d225c5bbf2fb6cd1e00cfa595d1a16368ca0137f2799994412",
+      "bytes": 4758
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/monitor_snapshot001/started.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/monitor_snapshot001/started.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/55c455e576700cf02cd2e0aacd01abfac44e05a768e304cc3f3d885349592bfa.json",
+      "sha256": "a95a6aaa30f6debd1f27e5ab6183f286b254d1387970885bab7f10b1c870d008",
+      "bytes": 650
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/monitor_snapshot001/terminal.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/monitor_snapshot001/terminal.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/a4b3143542ba2ba7c827af9af2f72b3001bf6454df14c2a662dc9f2c4200e401.json",
+      "sha256": "1b874c0e73adcf5cebbb91641be768955d6b2e3c10c69451eabd2c7cf044f9ed",
+      "bytes": 197
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/monitor_verify002/started.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/monitor_verify002/started.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/6ea1aa4b6c734bc831a6729bb7b4296651ccfd196e54f045b5c32ebdc3f3836c.json",
+      "sha256": "a1c406bcaae7ac5c3c1764bc5ddaaa8927ffa4765d059e6ab904c7b98ff29b97",
+      "bytes": 733
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/monitor_verify002/terminal.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/monitor_verify002/terminal.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/15e3f917a6ea423c845609db279f920c24fc2b707942dd08bdc89ab226fd7f25.json",
+      "sha256": "f070b70e30f2929a36a8bc1b5c43d64ae7285c174183446fb7274d787a25c436",
+      "bytes": 198
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/snapshot.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/snapshot.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/50c61a26ac39c5bc01b13939d47f559164ebf7fa1714c873dfd73dd53a2ea4b1.py",
+      "sha256": "14f4ac2e3186844cb91ef30b78c3270cad50197469b3101ccc232ca67cf7f89f",
+      "bytes": 2438
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/verification002.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/verification002.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/726d7f32c73f3df7cc2a4a9de9f379f1125c5ef2cc90dc8c48e0a9aea6d661c8.json",
+      "sha256": "fd7ffe0b73a1d3e766b0a9df46cb4de3fffb9d2f34180c4bf00ca03e160b86c9",
+      "bytes": 9135
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/verification_plan003.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/verification_plan003.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/d9dc7447660588aa08f69d39345ca637777ceff28cb4e6f7f72d3911770b6c70.json",
+      "sha256": "98123f121a73f9e7c9423dea2a6d3ba5c15303d34266f1d55fed9c564b3e597f",
+      "bytes": 2553
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/verify.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/verify.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/326e9c6e63d7737353f5369bace1c49a81834c8fdd2a62abc7befd78d648773f.py",
+      "sha256": "0943f45cfbbced3d13ff549d322393eb0562d3ce5378636b993ac6e4c5a8cf92",
+      "bytes": 7956
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/cpu_check.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/cpu_check.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/989902116c8c76df3bab7cd11192b999c9ac471fe2221a7cf8ea2ad8a02c37fe.py",
+      "sha256": "486013bc9e1db1f3d38d4b73bf5a5d33104c930c1104e0947be4d57448815bfe",
+      "bytes": 396
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/execution_plan001.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/execution_plan001.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/aeb7e8d91f2e89bc74a78ab920713a6201d30c2426839735c38213f7feb803b9.json",
+      "sha256": "e4e46e54cf176764c485742b53b878d429d18bb7236cd86c85955691db539df7",
+      "bytes": 29544
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/gate.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/gate.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/7d20243be0dfdc5411da60c9583182b0a8b0e7d5fe2ed684f95228d8cde2da12.py",
+      "sha256": "ddec9d0de490b23af80ed71772fd61117d317c9769fb6737ffec6bee8fdea104",
+      "bytes": 5466
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/launch.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/launch.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/9674df7ff959add3f044e5563bb7fb436f075b6719015f940830500765e54841.py",
+      "sha256": "ef7545f7e679675b983ae4c2635e975a66197fa2aeb00b3559793615c9386342",
+      "bytes": 3818
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/monitor_run001/started.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/monitor_run001/started.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/3ae7b285a1c0af0fe7f9971fc74a33c3ab0c609e50a581f3669244821dc29276.json",
+      "sha256": "9c1de818fb553d5dac5a1d71873cb2ae8f47ae22b96a0d98f0bd7d134ce984a1",
+      "bytes": 820
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/monitor_run001/terminal.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/monitor_run001/terminal.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/2860c49a529c497736eeeb2494623ef1d0aafb5921e635506c8e6bffac174e2e.json",
+      "sha256": "98f988db763c6fb48d0134f36c0aabcf084dbbda49ad3d90137d0cd4d849ae9b",
+      "bytes": 198
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/run_001/diagnostic/journal.jsonl": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/run_001/diagnostic/journal.jsonl",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/90db21dd69a6c963e97219d5032892b2f5144317149145586b421c07810d2cc6.jsonl",
+      "sha256": "70b549c610107d418daa657eec213d53716fa16d8118201f879517ad11cccf06",
+      "bytes": 4449768
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/run_001/exit.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/run_001/exit.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/83e4636862f57eae8bec4394e4c5cc1a14a35771525b627e438265fbe690d164.json",
+      "sha256": "6319878efc81b57e94b5540f19628073aeaf4400fa831a96c6c0cdbd61372256",
+      "bytes": 3755
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/run_001/launch.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/run_001/launch.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/211c9ac8885b38f0097d95cfde05ddd0e8adba7d56b365d9c54ccfb19b9f763b.json",
+      "sha256": "831706e14562b954cf2d8c2bbe038f6f00104153d2a1c0f57e1bbeae406496f8",
+      "bytes": 33223
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/run_001/worker_complete.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/run_001/worker_complete.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/8241004619ac270fa423cb9eeea5fb1e5dbadedeb2d9880751863900493e6aa8.json",
+      "sha256": "7f88628cff346de56a2e870eadacd51934eaa1ebc79f944771345de9368eb263",
+      "bytes": 397
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/run_001_sources/manifest.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/run_001_sources/manifest.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/c032e45fd1f85e383bddbe84a1945966d63feb3105662fcd785b6a1cccfe96a9.json",
+      "sha256": "f88974509419a349ad76522d29bac5d33f69cc98c02beb19f6ed3e92af0578b1",
+      "bytes": 84989
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/test_execution.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/test_execution.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/79e00d87e5732d221fa7674cd8c0eed5a6796adb453f8d32bc36617e5a1fabfb.py",
+      "sha256": "874503f24900618cbe23e657a1f037d7ccfa80d90e7dba5587f81a8839106d2e",
+      "bytes": 3713
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/worker.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/worker.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/faf5cb242a255a665504937d87832755af6f2733476eb6ac81eaeab393a51625.py",
+      "sha256": "3e1705243a25618e9cc5931ea3e3e85bb468c2f584004c84948bd616193c3418",
+      "bytes": 6615
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/REVIEW_SCOPE.md": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/REVIEW_SCOPE.md",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/49c87a11ad8654733dcf19d63eb0f5783d4b563542707be0dc5116e6441e47f3.md",
+      "sha256": "c22b986aa68b2d3ffb634d4eecf03ec2e5082c786df914515a9e543e30de07b3",
+      "bytes": 2878
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/adapter.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/adapter.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/26b4717890450f6c32bffd1e854c13e9a95490b30081bdd09124a938b4898efd.py",
+      "sha256": "9ad1e377a8c390b9f8d224ec423e0cd0317b4c391eaf9e2c4ebfbfc864170c53",
+      "bytes": 3345
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/budget_arm.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/budget_arm.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/90c4beafe66ba80f88a79f775f9a3e4b4a1c3689924165d099badb42f689ed21.py",
+      "sha256": "7601f673ae1d5ca6cce0b3ad3b1821da3ef615fee9c2fc481d40e6760656a2e1",
+      "bytes": 7160
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/budget_capture.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/budget_capture.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/b9eb7a41e0332bfdda49c16df21f67c1bf8830ad2cd0bbb3f501e56ad7eb00d3.py",
+      "sha256": "f421dab24b27d8badeab074380070b25fd29f629b938b559a3b90fa6d8ed76ba",
+      "bytes": 3481
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/budget_compare.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/budget_compare.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/fc96cb8ba8f63b7e8349b48a171c994b73d9c0ca707bc5252fb4ee7fddccc374.py",
+      "sha256": "bc1a21b5e88a584089cb230fa664f21bda2bbbbf12eb64f96857c9eb58a97489",
+      "bytes": 5947
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/diagnostic_core.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/diagnostic_core.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/9b17363c57a9834710e81d1afb6cf8c7ad1febc179ea71fe28d555011aa876e9.py",
+      "sha256": "540aa0bfc07f52f85dc776c3b728fd1359e1c77403c5bdeedd20341f297cdfaf",
+      "bytes": 2740
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/monitor_preflight001/started.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/monitor_preflight001/started.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/0896a3ccdf26feabe15032c6806cf4126e5aae640dcc2a148092d5c3c87d8390.json",
+      "sha256": "2d15fbebbd041120ed105d849991cb92915f7df58fae508923189fd918c3dbc0",
+      "bytes": 662
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/monitor_preflight001/terminal.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/monitor_preflight001/terminal.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/700a125c04b963b10634bc4950ab5f1922d57e07bfa1107c8fbc50f2dd0152d4.json",
+      "sha256": "806c614645a31b17bdae19c747940f83805128f2ecb7a79434418720d4a2f8de",
+      "bytes": 198
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/preflight.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/preflight.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/1fd159405743544cde678887a91850bbfdba4dce8e814acbdf1f6c5555516fb1.py",
+      "sha256": "9505628ef815779af8e957883493bae162166d41aa976500759c18918c91cd40",
+      "bytes": 5255
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/preflight001.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/preflight001.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/4acc2106b958a5a1f08840b82865b14a3f93efb70287a24c86bdaf4072ea698d.json",
+      "sha256": "0727c5f6a7d058ab60dfaf8d632f9c14a698c545bf5b7d4d48d1f46f3f8674f4",
+      "bytes": 2628
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/preflight_launch.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/preflight_launch.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/397a98f9a361bce9d03c3b7bec10ff36bcaf66b7cc678087407e60b0a9f5c7f9.py",
+      "sha256": "52bb585d71c07f62919184d303a2675c7c6048125e25d7becdff9f0e2b406422",
+      "bytes": 2572
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/preflight_plan001.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/preflight_plan001.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/b1e91eed115c6fd46a5c1027d9a693af0f2c3e6bde8e9592cab7cc17a26c7f7e.json",
+      "sha256": "8815b32b0dab83922a64f8fcb67ba357dddffc341cb77424441cef3537205632",
+      "bytes": 24810
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/reference.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/reference.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/a3e39e00f188261efd9990b3c8769588b50df91ec16f387fd64d05b07b318e92.py",
+      "sha256": "7060af120a0285a8ea639babe3790c39472c67a5c60196ae9313d76aa09cc322",
+      "bytes": 4610
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/test_adapter.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/test_adapter.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/e3fb6247ac90b43642c629773a58fd16a4f8a65d8e5123ec9f02f424b831b9f0.py",
+      "sha256": "f61507ea71c21e373e771ee3cc397978b0ef97974adbac6e833cb4c493a527db",
+      "bytes": 3162
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/test_compare.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/test_compare.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/8c3bd1c2247f11ed037ff20428d5dbb580fa2dd00d31ebfbdb0d3de0cb74ff26.py",
+      "sha256": "79da476689e163e4b8c2d18567f3bab594dedba18bb987240aca8ae73f77df46",
+      "bytes": 4700
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/test_core.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/test_core.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/aff9191c0a24ab1c2c65259bca94b33822a337aafedf88943921ef1cb02e9ce4.py",
+      "sha256": "61b329b0f0b8f9cd117050a5c79083aecfc0d204bc73046335848c0bbc09ba8c",
+      "bytes": 1721
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/test_preflight.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/test_preflight.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/79c606aa85b81f360e5eb863742f61ca7cfd6f742b9e272792924b858019caf9.py",
+      "sha256": "ada47c020102f0384c663494d3d2f021f76b93a1fbc0fd8b7833c1b1f02fe0cd",
+      "bytes": 934
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/test_worker_candidate.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/test_worker_candidate.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/5d5dedcfada912e63ac3118730e52cf1cf264841f2cb5a5f8c945dcba2e4d3b0.py",
+      "sha256": "ef38d15172ec8aa1f492d00b743cb9998b06aff90e495f97114d4d3022e80c80",
+      "bytes": 6123
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/worker_candidate.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/worker_candidate.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/d9537606079823a817d86af01f1119c2fd0ebc48b609ca2fde83c307390ba561.py",
+      "sha256": "f4bdc318d56e24f3a67046bb9c35bbd83292650311ef04d1d4f6cf7eb1775bf0",
+      "bytes": 5544
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_runtime/gate.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_runtime/gate.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/d48ed36f51608d86406d70a84e0c02b19b6193ae72900706c5343a094ce77dbf.py",
+      "sha256": "1d509da976f986b902dcf0f8b7ca161c34d04fb4cb445ffff5d484f4b1c1783b",
+      "bytes": 2697
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/DESIGN.md": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/DESIGN.md",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/90c339725754c1b47c61308e9593e249db381c1218e8e3f29e9a571bf84c40ac.md",
+      "sha256": "a0fb04617f00dbcb40a7736a5223e9723f45d882e788995b099bd173a152add8",
+      "bytes": 2101
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/admission.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/admission.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/e9114f24f64020a2a597f951e7ea230bfcc17b9de351e0fa3c6e7e74db8a02db.py",
+      "sha256": "6e3f35fe533b64bd66fa44c4cfd2c22e6d9911e97cc730acbe6b67f2ca5fb8af",
+      "bytes": 3237
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/contract.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/contract.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/2998a480725eee77acc6e08327cce8d69dde7443002db53a9fa5728b315455bd.py",
+      "sha256": "adbe00a396015baf7fd12ca2c0e88a0db01dc1956fc6d728d15c5c4043d64232",
+      "bytes": 1158
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/generation_identity.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/generation_identity.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/8dbc2af590ec03eb370b9579a59fee8bedc43b1afd40318f0dd2d0862f304e72.py",
+      "sha256": "6e1a50340bf9a01de6d73603b3e123881cc195099bb6de48471b42995ba08518",
+      "bytes": 1621
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/identity_gate.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/identity_gate.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/663d1d30e7661c8413cf714862aeebbe689d4b775ab8d10ffcf4245d808ef924.py",
+      "sha256": "690ab54edca0490d0c6aad7f1443992171f033942de49802b737160dfe0f53f8",
+      "bytes": 4726
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/launch.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/launch.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/ab08b1f2c3447b68f410135dfd25a7df289f194f5baf5637e3f6573568100d2c.py",
+      "sha256": "e45dbe346f6402484818cc573b7ae55883816ce7d9cd934ade1a57e2bc02b828",
+      "bytes": 4620
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/pilot_plan001.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/pilot_plan001.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/5ce88584ab3412f3ed1bb268b5b36564d93bf516c3ee4ee15d85a59ffde36f3e.json",
+      "sha256": "a82ae6e88a8f4a6d74d12cfc3b5e9ae459bb9a081415bd2d83fcd4e83e635d73",
+      "bytes": 13346
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/runner.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/runner.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/0be9faf40ed01e582a6253dd49bc52852cf4ecf587d4827d7cd6f294ddcc816b.py",
+      "sha256": "fb3572a0122adf46749401950b91234566cfccf3af801edfee103a3363a1b1c8",
+      "bytes": 4014
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/test_contract.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/test_contract.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/af0269e5ef2bf9f2a15cd0f861587bdf80fa6c06766c786a7f483281f724cfa9.py",
+      "sha256": "5ad6af488e5d2cdc65e749979b24863fa36562dceb2fcee1ba453ac49cc49d6e",
+      "bytes": 1184
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/test_generation_identity.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/test_generation_identity.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/5a1a0a5bffa740e7dafb00a79fb0de0d6623a6b7f333633c398086e13e269df7.py",
+      "sha256": "2b7f83cb69fac45a347b029d3359c9ba37127929f6c5557c1955423ba28df1b5",
+      "bytes": 1744
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/test_identity_gate.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/test_identity_gate.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/5940810a6b3a568965bdff5608d7909ba0e3205ad7b5c59eda0e0de5bafd5f2e.py",
+      "sha256": "ea50ceab3e39d773ec96e647dba519b439ca31d6b860e111b81738f554480684",
+      "bytes": 882
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/test_prelaunch.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/test_prelaunch.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/3191859ea7d35ac3d432e5c5f353c634ac55d20229a1c112b64f7722430d8431.py",
+      "sha256": "f129afc311325620217d6fb18fdf436fa59c9c21c533f6350d40895e3b49e2ba",
+      "bytes": 3224
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/test_runner.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/test_runner.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/51d0d35dcd6e528dba567ff0a39647f625f83488bcf33df709d49fc6ef322564.py",
+      "sha256": "881fbf4a30f9d38af574a48f0df480b1eb487fe226b0b0b7250482ece1eb74f0",
+      "bytes": 4503
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/test_worker_candidate.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/test_worker_candidate.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/13d7c33eb2d900561ce94ca6ba8d5d476e7cb4fd1bd48cec9639f305f036d838.py",
+      "sha256": "c46992e7c6d154be74a65710b78cfe2d359d6f4da3f27988a2710729cb564e0c",
+      "bytes": 1110
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/worker.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/worker.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/624e78a330506efe8533c6b53b4b518403385939c57806fc3b3497b4278d0271.py",
+      "sha256": "adbe31c47c73b4b0883bd791a7227593414f27fabbbdba7a5607fa8afd65f582",
+      "bytes": 7667
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/worker_candidate.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/worker_candidate.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/12402255268516774cbc610751dedb16e8f0f8004e8031c67000d40573313640.py",
+      "sha256": "ae3186c73bcea01fab5528e1d17082e5c3e841f1e14e71debfc7663115097463",
+      "bytes": 1455
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/contract.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/contract.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/c9f91a4d12c5281e65200b967420b1492750a347814746ef0deca3216374612c.py",
+      "sha256": "027798e7ae8ddebcef7be5444a230c8f0c2d5bee47f5a5e65357431696666ab9",
+      "bytes": 6816
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/e1_reference_gate.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/e1_reference_gate.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/525a0c9cb200233fba3775c5208d0ea179e8eff6d1fc2ea7a666225fb111b136.py",
+      "sha256": "498e2c810471a94c2702135dfa996215d48e19bb4c20cc54d344c8cb63141b98",
+      "bytes": 957
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/identity_gate.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/identity_gate.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/a9ea99703bfe09a14f85076d3f52b7b361bc353628c52f59637affc6d267a28c.py",
+      "sha256": "dd1d306dc7bf259427812c1ad3c4c92fc2d289bfa8a13ec3d882b597f41ef2b0",
+      "bytes": 3658
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/input_preflight.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/input_preflight.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/9f2686e7bfdaa5c508ee161c0b2b3f0c7d4cb9a5d0f8152df1af8b2feddac326.py",
+      "sha256": "756846a58128101f554a036d370298a4f4400a1a1a34d5fe8412f257b0838edc",
+      "bytes": 4071
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/interference.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/interference.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/02922f823fff38d6c38679eea6c4a89a5af58be9eb1064e709e00134641ab0ed.py",
+      "sha256": "76f4c708bce1689571786442bc1767130a7cabf85c57123349217ce01f64a89d",
+      "bytes": 3886
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/light_adapter.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/light_adapter.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/2c88f5f9ccd8b77d27ff62dec361ec9bdbd20af43559f52e07aa2d3a623d11a0.py",
+      "sha256": "e98d3230785247f190a0eb8313e7ea464f94f1edb9ebf36766559be8e9e58b2a",
+      "bytes": 3207
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/real_worker.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/real_worker.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/1e1fe6baba3a913959be48f9f95e87e171b6031f125f89c0782b9eb5141934fb.py",
+      "sha256": "92cd963bc14c389d6d720b4812618425f94c5dcdc0821daaf0e115b63b4e5196",
+      "bytes": 7247
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/runner.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/runner.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/fbb636f8fc90602921d3d99c8441f8a1ba25d4d0fda4aa51ce91f34dff557e7b.py",
+      "sha256": "8de5b0112e10a3e08509276413e971934e23d07d9acbb8ce03bcb27a09be1408",
+      "bytes": 8204
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timer.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timer.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/ae9a5430300b2d0478441d460b0eae2b916cfbe183f031a17c869fd79ff33e0f.py",
+      "sha256": "80354cf31ce68ef697fe72aa62c0cf0cdf95d408bf2f5f67818c213ed8f35cf4",
+      "bytes": 1633
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timing_launch.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timing_launch.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/c909a33fc0262bba5ee9a213e8c2055f2c07aad945798512a5dcd7badef7e688.py",
+      "sha256": "25b5386e5377f90ca6609076e0352898c9cb392a8908209755703aef8e2b5c41",
+      "bytes": 9435
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timing_supervise.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timing_supervise.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/0e9854f00c0a507848ff28f03743e80bed3481aa219682a34f57b8bb570d87a0.py",
+      "sha256": "27e3db3242836f1534c06f6fe087390d6547a7c23b01c22d01f02c413c948d06",
+      "bytes": 1090
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_panel_v2/monitor_verify_panel003/started.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_panel_v2/monitor_verify_panel003/started.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/5a93d75e86e2b287a0c1a2ffebfa3fc0357d779b7b803f8aca3be28f19e79d75.json",
+      "sha256": "7e53c66f5ae0f19e3f8845d1301a42eb9e1abde9c9e17fc1fe93ac5e7ead1c14",
+      "bytes": 2357
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_panel_v2/monitor_verify_panel003/terminal.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_panel_v2/monitor_verify_panel003/terminal.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/79835749d45ae8ae101517a5e1aea1da9426d6188fd7e47e5523eec06a77a0e7.json",
+      "sha256": "8589c59670891aa316049ff9e97e6e5b7c5b78260cc3f8160e820ee7d43afe4c",
+      "bytes": 197
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_panel_v2/panel_003/records.jsonl": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_panel_v2/panel_003/records.jsonl",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/f40349a49aabe7f1959c569dbb57c0a4cd5ef138409233e392aadfad07b71c97.jsonl",
+      "sha256": "3cb6217b7a4c20c10667b397c2eb47e1e569df862abbbc0cd98dff6eb18ec868",
+      "bytes": 96371220
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_panel_v2/panel_003_verification.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_panel_v2/panel_003_verification.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/acf1295061bf5d5b7ad727a672021bad23b6d00ae317395a4713533c84174388.json",
+      "sha256": "3b451dde64379a0d0b3d68e2d00322d6eec443e3fa7cf36348cc3325042db90b",
+      "bytes": 3101
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/plan001.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/plan001.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/efebfd2cec8bf0d13d8cc78c99eede4fcc0492dc22f59a5c1ac6e69eb324b934.json",
+      "sha256": "25bdcb12864b173d57cf39cf4ec3ebc3c96b6b9726442489299be6190b07cc72",
+      "bytes": 14403
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/__init__.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/__init__.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/4072d4ff7942a85901bb979bcba4c9a93fbfad2d84dd96deaf4e67f47a558dd9.py",
+      "sha256": "f29e57664c32853e3988659d4d20bad10e9a0d278e8feede9a2839f21968b5cd",
+      "bytes": 2466
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/core.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/core.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/8397d53e559af7d8a738670e57bf150ce2da0042ed11894fc411a269aeb16021.py",
+      "sha256": "b401bb956b03c29586397e38a40dfdee7ac1a02339af5c874d9968185f7f41b6",
+      "bytes": 3555
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/dedup.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/dedup.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/bb2ffb671b86bfc9701c8f812779572bae61cc723b4bf031bf227958008a706a.py",
+      "sha256": "4eb68ba5afb4c33634988bea71f12ffe886483559e5b9b3c0225d3d8ee9289e8",
+      "bytes": 11254
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/__init__.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/__init__.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/e6d1beca4cc71439effd1d2956480c99dc010e9a3f98a09fcbd9c2179ba81ede.py",
+      "sha256": "4358539b9c40ac47aa6e24b5e2d46a598b6c1aa72457e13c7f5f94d061f445bc",
+      "bytes": 3478
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/base.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/base.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/c003a576d18bd5f0c5be3ea154f2096a1628e8f8610079b3cd679b4105da6ddc.py",
+      "sha256": "7b86b9133383673123c4fe87a644ddcac82283bbeaef35cf7791414e9536938e",
+      "bytes": 3179
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/conncomp.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/conncomp.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/f23e0460088fa5ceca79c2c2b35995a177e4934b14404a75d71b7227d47a0d83.py",
+      "sha256": "b7ca7c17a0807484c23f295cbc34b8b58fda10eed103cb8c462fdafffe8863c6",
+      "bytes": 9864
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/pred_2d.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/pred_2d.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/7ee91f0540fbe71477e68ef5578702a635b503494ee165bf4ccefff639bde3bd.py",
+      "sha256": "666a3b82daffbfe97fd26b7fa9530178b906e113b340bf7b4cc96b0932273848",
+      "bytes": 7934
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/random_select.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/random_select.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/b04d2a150ea4067c6d951740ce6c33a9d65c2465ad09cc946f3bbbe539385624.py",
+      "sha256": "41400f96a987c0f0a32a5648f70a22d0e7747f0444b12c690822a5544c1685de",
+      "bytes": 2293
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/raster.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/raster.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/b1412faf2324a9285ea5764e8f8680ed735bd325a64e8a2f789b8256578ae1e4.py",
+      "sha256": "a31286550984e4aec4cc0e165e35474e3d9f4d49aee5300cf15af9b895674fab",
+      "bytes": 1476
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/serpentine.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/serpentine.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/9ffa90f95e8ecfb57566473da288d1317900ce185ca876d384fd99745fbf3c7f.py",
+      "sha256": "d9360276eb718c02808095007ba7923a57b343bd5ef94c1c8be3e2c7898307c5",
+      "bytes": 3018
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/__init__.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/__init__.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/d70fd867a029251f930f54eb472ac0aca3736e48e37c5557908e32c1f2219584.py",
+      "sha256": "627b5ffe8f41e574ae5a91df83efb27f05cd6f44cf862543f51127be7b74fbbe",
+      "bytes": 1251
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_5_hf.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_5_hf.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/8c5c56794cf37e6d738d3b79108a8eb05d4cb1be00b3fe64e3bf5bbc74fb99bc.py",
+      "sha256": "55f0fbcd79e0f9606adf88c6312b1ec72c277ffcf99b2b025e8d65092066856d",
+      "bytes": 29203
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_5_vllm.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_5_vllm.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/1c8f808cdf83207fa170e4cce8bc75144c90cb8072fea450f70cdcd4c5475a72.py",
+      "sha256": "96365263e42d060acdd3c775f83bc3e8233f9c3041081e3e868a02f352ee7bcf",
+      "bytes": 3944
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_vl_hf.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_vl_hf.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/b80a634471388be631ddefeec7e1bd1997a3f99f8b320cb6067974af337fe2b3.py",
+      "sha256": "173ed25b49ac48bb922e534f951b7c9b15027e6821db3d698953072d14b230c2",
+      "bytes": 34805
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_vl_vllm.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_vl_vllm.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/a5a0d625fcb1e088c1c0d972f2fab649005626e7bfe8f860b5f027260796f759.py",
+      "sha256": "17727ea3d6040272ef7a0389730461aa8cf28f6efa37a3e8a1579c6828b204c2",
+      "bytes": 20403
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/vllm_bootstrap.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/vllm_bootstrap.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/2c6a76b1c1e684a4a93335ed5f1a589e0e32ded3ddb80ec2999167a7de3af546.py",
+      "sha256": "0b4814de32a8ef3220c98e9c5230baa0930f9af68b32175d8e85ac7a1589661e",
+      "bytes": 1029
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/DESIGN.md": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/DESIGN.md",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/2a8893e49f663e3e9d8b276adfb75d423353e463f44d33df6440630ebc8d147e.md",
+      "sha256": "8d07a73daf9cbfb75cb48f956608992538e21079413771efe4351914438fc917",
+      "bytes": 3951
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/admission.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/admission.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/7a855df65906f56728f3003cad3d1bf4f018e514639144899fed9dfaa6c7a357.py",
+      "sha256": "509c635840c0a2d9384c751644bc028197664de285d58cfc3d895d68d28f4482",
+      "bytes": 6641
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/bootstrap.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/bootstrap.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/64381b8f45634c09830ba7ead6203fac73c6ecbccf40d76ce2f60fda21bf403b.py",
+      "sha256": "ab81e2f48f995403afc21ab6ab4875c8b4ae4e9bcca72be063ab8fc42a53fdbc",
+      "bytes": 1653
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/controller_candidate.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/controller_candidate.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/81bd466f5df014be9fcd1c13211855baef639da4b05be14e326ae4751e85c027.py",
+      "sha256": "539ff04ad0447dfdf2ade7156a34179b3dce27572fbf7db8ddd9d99f6fb3f496",
+      "bytes": 2224
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/cpu_check.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/cpu_check.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/7aea3bba6a60e61ae3aa7be2c7318ac937c0ac1ca227c082727461a3f321a869.py",
+      "sha256": "3fd85726ea5e4526addd807c89f4a9ae98a20d9da212d21b45b7abaedbc66f14",
+      "bytes": 1433
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/freeze_plan.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/freeze_plan.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/3b89a46deb0723e6e4adda436c48d5695d284744c29788c23802db3229d3ca1e.py",
+      "sha256": "cc15b3b7ffbae3f69bf1d94c047cc5515bc2d9a4882977d37c13acd157132cb5",
+      "bytes": 4017
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/gpu_bounded.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/gpu_bounded.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/119f9aeaab6d187141998184b1ecee2c7efb6864dc9108d4e3e9669a25479710.py",
+      "sha256": "9cf3fb226f6b58e1bdc5d91d621f42b3cc7853b4121d296c71727c514b397bbd",
+      "bytes": 8462
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/gpu_launch.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/gpu_launch.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/823a49dc77971021d0930f27ee9feeb72746131b2ef092e445bde01179c2ea99.py",
+      "sha256": "a0ac144f0d9c0902781e77756ccd75c7db0f0bfc32d3ed4a2704f81057e32f9a",
+      "bytes": 8180
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/gpu_worker_candidate.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/gpu_worker_candidate.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/5bed09105bfa336a3fef1aa304e10dbd055dc6ac8f1fb43354f9d36bea4b66dd.py",
+      "sha256": "1ff138862814bd61a49025a6c4afc323e385bb9eb0bcfaae33077c8c92c4c0d5",
+      "bytes": 8821
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/handshake_launch.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/handshake_launch.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/95c9cae9132c171402b23beade63841c7d0854a06552e1d72e344feae0d40ab4.py",
+      "sha256": "6b787fc1ce2286093c1cdcf1c038b44ec4a58096e8831c51a39db311dc8cddf4",
+      "bytes": 2458
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/observer.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/observer.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/5e858549e586aa337cc35dda106fd0fda664b64af3832e1445088a8709d5cc7e.py",
+      "sha256": "917365f5f8326cbfe633ba8b904b838fed301f0e0701fb4fda078d9de5d596a5",
+      "bytes": 1371
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/pilot_contract.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/pilot_contract.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/4de034605035eab18b6088543cb12a8accf045c95f3f732b8325009589ed61dc.py",
+      "sha256": "dfe19628f051a61855502a5c1a7cd6cf089864b278f05be458fa899eba77d364",
+      "bytes": 2365
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/preflight.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/preflight.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/dbec6d947243f761b6cfe9ddd3ac000f52431094d4c3424f2f9b9d482637f054.py",
+      "sha256": "9b1557c772c5f932f13ed5819a1706bc9891819287dfcbe548ebcd11d0ebeb88",
+      "bytes": 7008
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/preflight_launch.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/preflight_launch.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/e9c7949ce979121aed836a055b13dd415f92277fb37913990fcdf496ce87d062.py",
+      "sha256": "e4c1351626d3fbc592f25e52ee60e1a10caf4fe0c67a5284b6bcdea6c650d891",
+      "bytes": 2609
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/reference_candidate.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/reference_candidate.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/d4d8d6fd466323f654fb02ff5be7b7c611cca065cdf7b2651aca3c4c8ff029bf.py",
+      "sha256": "8d5265bc0a3747bf4cff6d977ad7e6632b7a182a3bd37b99c8a7ea174d31c0c0",
+      "bytes": 6678
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/test_admission.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/test_admission.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/1c5aa411b56cb36b121b54d46ab2a399fa50e7b1484f1fd67fd250932753e159.py",
+      "sha256": "a295cf3f434bfe69ba7f26e7159171d927b43b14e82246601766fcbbc570dc5c",
+      "bytes": 4549
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/test_bootstrap.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/test_bootstrap.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/a8201f24cae882b080e428b373cd21cbe36a0ef593232058304b1e868fb664eb.py",
+      "sha256": "9ca007ba598a6c1d67ca1d131e8c8604e04e095a4f5d7e2cb2003ce7aad3755a",
+      "bytes": 1396
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/test_contract.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/test_contract.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/be7a6a90089b09c3f3aaa57bebb81447f88e925c89829ab24d606ab7d52a5916.py",
+      "sha256": "660948c41ccf0f696fd38c8127230f1bfce733c8a7daeca75503efe3704b3f1f",
+      "bytes": 2324
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/test_controller_candidate.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/test_controller_candidate.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/0b9664ea052653d300d72caeeb1a22af159f0f31cfa77dc2495927afd439de54.py",
+      "sha256": "0ea1613b97cfa3e695bbd771a976c6b675bd974934b7ba33d026459108c0beb9",
+      "bytes": 1382
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/test_gpu_launch.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/test_gpu_launch.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/a639854763387b7d70805c5dd601442aab74c38c7036c04da09ecd947a15d437.py",
+      "sha256": "d0c7cdfdacd9d2622e3c2a3be11e6c1531359d79a8c4456f6786d1e2e88c340b",
+      "bytes": 5313
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/test_references.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/test_references.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/771182fe37ee0954af1e405445538f6f499f2a8ad2cea7eed7ba1a09627fe860.py",
+      "sha256": "f76ee3daa780f2e54e6d8207d93fc3c12013a17a418975dda41de5d1d9efdff2",
+      "bytes": 3169
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/test_worker.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/test_worker.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/90a8bb394e91013852e0ce65e598ba0ed03f554ddbc5600f9477933d27208a2a.py",
+      "sha256": "b39efc249b924aa9b649b2b4c87a1e0db2fc83ff4f91be324baddfd548408738",
+      "bytes": 6080
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/worker.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v4/worker.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/4f83358d7bad29797cb56531d9de2226eeb7824615ff3c0671eab166783660eb.py",
+      "sha256": "3a72bfd65be03700a49711e3b08c95ecb8148bf6b8b69f2b747a4c805c7baa5b",
+      "bytes": 9051
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/plan001.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/plan001.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/910ae229321a1acb5c0e8fb1e431f858ee377621fb381bdd84691ec8e2c7505d.json",
+      "sha256": "8a52b138edc2d446a03fff80caadcb0c6c0927702ea74623ef49d359f308e0ec",
+      "bytes": 517463
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/run_smoke001/observations/AI2D_TEST_11001.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/run_smoke001/observations/AI2D_TEST_11001.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/1bb016298b2967fb7f05a531e372988aa75d7ac83f84cac606213bcfc0066e0e.json",
+      "sha256": "02e7f726e55ec702b73a762a80eff801c77be9ce955a686c73c82e00d1f0ebd2",
+      "bytes": 39444
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/run_smoke001/observations/AI2D_TEST_11001_generated.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/run_smoke001/observations/AI2D_TEST_11001_generated.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/02745fdbb1987192a02bbb1d5d83d84a5e44557b6cd3ad20ab2b1762c07a69ac.json",
+      "sha256": "794d6690d07072b29b91d4c1be9a30fb28a3493c3447b921c5fccfb8a858e6c5",
+      "bytes": 12895
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/run_smoke001/observations/DocVQA_VAL_63709.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/run_smoke001/observations/DocVQA_VAL_63709.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/578d767b4e1c0172e6bd19e9f0ada11d45bd75b84d5115a0454ad34f0c9e25b0.json",
+      "sha256": "8aa37dc4eaf8f0680b322f824b4cb279d0a38fe1e7eaed725ec590257b51d805",
+      "bytes": 104071
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/run_smoke001/observations/DocVQA_VAL_63709_generated.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/run_smoke001/observations/DocVQA_VAL_63709_generated.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/e698f073d95b29e116c0ae1a58e6d8d6e378ada47a02dd7f0917d4fb396e103a.json",
+      "sha256": "b401841a3181e32d3ad69d358aa7860e61c94832a59650c50f24b224f4ae9899",
+      "bytes": 12809
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/run_smoke001/observations/TextVQA_VAL_39033.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/run_smoke001/observations/TextVQA_VAL_39033.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/2fa872c6f672010b1c41a28287173822fc4224caa3c38db7d24b2871f20e08dc.json",
+      "sha256": "73069be374854df05fe9d25c9a46d30bd608226d711d38afe85eb4151586bc01",
+      "bytes": 72319
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/run_smoke001/observations/TextVQA_VAL_39033_generated.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/run_smoke001/observations/TextVQA_VAL_39033_generated.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/0d7e4e85278db991f883aac771b662e40f21003443f24a91b76c8061fbf069fd.json",
+      "sha256": "74627cb9ebc1e8705bbb6a8d81a41a9833a4b0bc7193a5c636b6b6e4ea36f9be",
+      "bytes": 12726
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/worker.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384/worker.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/8f41b11050e2bdee98a375cc20e8b4afdcf76956a14c2539c60e104a8a725d6f.py",
+      "sha256": "114e3017df6e424b8ab6d4353b74d8c434624d46ce668a863d3fe6e1ea850f05",
+      "bytes": 15709
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384_accept/monitor_verify001/started.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384_accept/monitor_verify001/started.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/71cdf1bad5a78f1bad8da69ebc6316094aac1bd2ec435883fd00821b7c4cd72d.json",
+      "sha256": "5284216b7f673ea230fc4f0109de5015be9e82a8d0126bf03d1a6a7d360230aa",
+      "bytes": 803
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384_accept/monitor_verify001/terminal.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384_accept/monitor_verify001/terminal.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/dfd3caf22752830476a4be86c5d29971aa0dad2ecac55fbe185cb445df956d22.json",
+      "sha256": "879e1a64dd1aa49b34c73b1b4822ed922a3a8e9168e61713812601758e2dd514",
+      "bytes": 197
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384_accept/verification001.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384_accept/verification001.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/8b65a6a97e3a99da9050af18b4ad179fbaf1e2b0b15f25038b7cb68520923c32.json",
+      "sha256": "8f84e387bf818777e3fcc1336c6edbc53c116de8347699b9f78d7103f1da6ba0",
+      "bytes": 255205
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_accept/monitor_verify001/started.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_accept/monitor_verify001/started.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/2a7bfaa4965bf16523b09e488f82af6b07814a20b720fac16a401dfc8bc41bc3.json",
+      "sha256": "f2d2be603294d4c991483f449cffa8e6f6bf5294c1bc13672bb051cfb8f5ac0f",
+      "bytes": 799
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_accept/monitor_verify001/terminal.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_accept/monitor_verify001/terminal.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/e3696bee0ff3aac84dfe82cd0bd565e20643112276042994509e4689cac2b8cd.json",
+      "sha256": "7ba1f781460b753756c8865be83971a3a5656a32062164663c14b9824d648d8e",
+      "bytes": 198
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_accept/verification001.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_accept/verification001.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/b8fb3465aa2c7bf51d981094b5091ec1a630d4feaa31a4c47008dc94ddf2343e.json",
+      "sha256": "7ceabd77f62fb85aca71525ccd60b2b8715bac088e93286ac073ca6f3c3c1333",
+      "bytes": 262056
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/plan001.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/plan001.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/465b7643e12112faa8ff8d085ce98b53f909fb6efabdfb676694cda888e0b7d7.json",
+      "sha256": "c68742ed65f69d9598e3943f04872763fce0ce62ae7a5db178891e260debb1b0",
+      "bytes": 520532
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/run_smoke001/observations/AI2D_TEST_11001.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/run_smoke001/observations/AI2D_TEST_11001.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/b144979da6059dd7639dd4844f55fa8e9e36e5e8c64fa4818be4c5c6eb44e82b.json",
+      "sha256": "31bffcf75adb9b3e7da114b7a4c9ce59691566f6030763a69a456863d39669cc",
+      "bytes": 37612
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/run_smoke001/observations/AI2D_TEST_11001_generated.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/run_smoke001/observations/AI2D_TEST_11001_generated.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/95ff2aeda707f52dcfb933d1aebe1769fd5e05255ffccf10743c61ce5a8fec2d.json",
+      "sha256": "794d6690d07072b29b91d4c1be9a30fb28a3493c3447b921c5fccfb8a858e6c5",
+      "bytes": 12895
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/run_smoke001/observations/DocVQA_VAL_63709.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/run_smoke001/observations/DocVQA_VAL_63709.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/ad571de106211ce8e09bd1285669a66801c605b8a9eff88725494e845fa0f281.json",
+      "sha256": "87044d904ed556e32b80e8b2869f69eb3dbadbd202ee6146044ac0f852412020",
+      "bytes": 37371
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/run_smoke001/observations/DocVQA_VAL_63709_generated.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/run_smoke001/observations/DocVQA_VAL_63709_generated.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/671b8ec3210af10b1ba21e9e974c2fbb476eae1fe2b34b9ca5feb0a7dd27d126.json",
+      "sha256": "1e0182b5a7e22e59b51231d919bd0153f04fb95372b087402e4f4affe4c34c30",
+      "bytes": 12787
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/run_smoke001/observations/TextVQA_VAL_39033.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/run_smoke001/observations/TextVQA_VAL_39033.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/6b04d36a25ce69fc982c1377dda74eb6d529a528f17b5fc19a770a706629e949.json",
+      "sha256": "c164e7fe8ec8e93b1a3cdff3c7c654b3b3b86056126e5d0ace57dda52d81690a",
+      "bytes": 58401
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/run_smoke001/observations/TextVQA_VAL_39033_generated.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/run_smoke001/observations/TextVQA_VAL_39033_generated.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/07a95ac89644bafb69e57a7d52a7e070e5fd4495183a24a5a208583629fae8ca.json",
+      "sha256": "74627cb9ebc1e8705bbb6a8d81a41a9833a4b0bc7193a5c636b6b6e4ea36f9be",
+      "bytes": 12726
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/worker.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_dev384/worker.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/76484723644b2c40572a5b5881fa25680190a57138a1b9853fe1eef2bb1b42c3.py",
+      "sha256": "bc4195481ec92127fe33942a80ef7e0b60b36a34ae465cbf76183b3be7d684c1",
+      "bytes": 16422
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/initial_plan.json": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/initial_plan.json",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/d6dc959858c7d7f22617d62717d79b5413185afce4bca4ae50e1a185ab802348.json",
+      "sha256": "2a11cfcc2dc9404eac218f1f727e39508a687a73e0343101ae564be3e99c30e6",
+      "bytes": 1286
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py": {
+      "source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/run_001_sources/fd6f5943360711e83132dca397b63f2ea4f99b909da7a56a38241b9d73aadab9.py",
+      "sha256": "dddd62696ca10f2624654feec9831c83d308ddf8eb982c645ad3c5eac827ff17",
+      "bytes": 8305
+    }
+  }
+}

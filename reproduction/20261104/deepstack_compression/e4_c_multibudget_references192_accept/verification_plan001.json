@@ -1,0 +1,19 @@
+{
+  "status": "prepared",
+  "run_id": "001",
+  "GPU_authorized": false,
+  "created_unix": 1793870190.822538,
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_references192_accept/verify.py": "87d4dca8052c122e338c28d33a8a7aed0ec0450b9b9df7109bac9b8e2651e683",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_references192_accept/snapshot.py": "9f746836708851a77f4e173bd43e52a1134c8a44f34efc902a86cc4cc126d24e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_references192_accept/test_verify.py": "e06514e678afdafcca1bad94cfa24a3378385bc9017bcc020d0e6fb54fb93373",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_references192_accept/freeze.py": "a3f4a5bba668e1b26b37dfd5e97cc95063c8dca0061be3e509e9e95caa44e37a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_references192/execution_plan001.json": "b518ae3d1f93de758ebe7fdc3653c9fedb5a86caa0febb61d49da2ae5f6e72b1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_references192/gate.py": "fdd588a9914cb624a4fb496158f4166a5b571a64db8a6dfacb8db316471920c6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_references192/core.py": "4b547f9dc55df349bb190c12a9eef0c54f1b99f0c7aa8f36b1375b22b1ea69d0",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_fixed32/core.py": "45d73748cf0ad15cba11156bed043f6c3becfb21e1d5afcbef16f821b683674b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_references192/references.py": "5088d92e0afbc4d9aaf01b1bf419f04b00e07d910b739a723e13c477470d9388"
+  },
+  "tests": "test_actual_arm_event_and_missing_or_mismatched_raw (test_verify.Tests) ... ok\ntest_complete_888_denominator_and_missing_event (test_verify.Tests) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+  "scope": "formal 888-reference verification after complete GPU/container/supervisor exit; no GT/scoring; post-run snapshot cannot exclude transient source changes"
+}

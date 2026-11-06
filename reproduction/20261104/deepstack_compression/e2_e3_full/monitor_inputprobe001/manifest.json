@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-11-04T19:29:18.852993+00:00",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "-c",
+    "import sys,json;sys.path.insert(0,\"e2_e3_full\");import panel_worker;p=json.load(open(\"e1/e1full001_completion.json\"));rows,refs=panel_worker.inputs(p);print(\"questions\",len(rows),\"E1 endpoint refs\",len(refs))"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression",
+  "timeout_seconds": 900.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 3600,
+  "poll_seconds": 15.0,
+  "grace_seconds": 20,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_full/monitor_inputprobe001",
+    "/media/disk2"
+  ]
+}

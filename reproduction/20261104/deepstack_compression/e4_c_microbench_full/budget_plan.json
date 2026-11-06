@@ -1,0 +1,23 @@
+{
+  "scope": "32 DEV images, isolated warm-cache component profiling; no GT/scoring or end-to-end TTFT",
+  "posthoc_extension": "32 image expansion was decided after observing the independently accepted single-image pilot; frozen source schedule predates pilot",
+  "images": 32,
+  "jobs": 1920,
+  "warmups_per_image_component": 3,
+  "diagnostic_generations": 32,
+  "schedule_sha256": "9847833ca9a0a98f7318dc34299156c5452e07e5d5698a552427a5a647ad9149",
+  "pilot_formal_sha256": "ff4798d2c8b44f8572c5ab33a994312cd26e75c81fa0d06b1cefca93bdcccc6b",
+  "pilot_review_sha256": "f93f1ee7f220f802a22fdaeed2802a0caf11aa9422ac84966a310fc3c1ab73b1",
+  "pilot_supervisor_sha256": "e356ec8f130971f0b8b4bfbdc2c30924311fe57b15224d2c46839d499235b6ef",
+  "pilot_elapsed_seconds": 50.250667532905936,
+  "pilot_reference_bytes": 88387414,
+  "inner_timeout_seconds": 7200,
+  "outer_timeout_seconds": 7320,
+  "stale_seconds": 1200,
+  "grace_seconds": 90,
+  "snapshot_seconds": 3600,
+  "poll_seconds": 10,
+  "minimum_free_bytes": 16106127360,
+  "gpu_policy": "exclusive",
+  "limit_notes": "Hard upper bounds are operational, not predictions. Three-day deadline checked before launch. 32 full diagnostic captures will be archived; no individual measured outputs archived."
+}

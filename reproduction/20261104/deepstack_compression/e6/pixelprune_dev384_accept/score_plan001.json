@@ -1,0 +1,12 @@
+{
+  "scope": "exploratory full 384-question DEV scoring after complete formal and independent no-GT acceptance",
+  "inputs": "exact 384-question accepted E1 DEV panel; reference answer values only after all gates",
+  "methods": ["PixelPrune dynamic threshold-zero", "E1 P3-D1", "E4 K256 DS-on", "E4 K1024 DS-on"],
+  "primary_reporting": "per-task PixelPrune official and independent mean plus dynamic selected-token K distribution, 128 questions per task",
+  "comparisons": "paired per-question score differences versus accepted E1 P3-D1, E4 K256 DS-on and E4 K1024 DS-on; task-specific and exploratory",
+  "bootstrap": {"unit": "image_group", "replicates": 10000, "seed": 20261104, "interval": "95% percentile", "paired": true},
+  "denominator": 384,
+  "answer_access": "DEV question IDs only; do not decode CONFIRM or FINAL answer values",
+  "required_before_predictions_or_labels": ["complete 384-question formal no-GT acceptance and actual supervisor exit", "independent complete-record review and actual supervisor exit", "frozen sources and input identity", "independent scoring-source and synthetic-counterexample prelaunch review"],
+  "limitations": ["Scoring plan follows earlier exploratory DEV results and is not a prospectively preregistered confirmatory hypothesis", "no multiplicity correction; no claim of statistical equivalence from a crossing-zero interval", "dynamic token K changes both compute and accuracy; K256 and K1024 are not equal-compute controls", "instrumented generation gives no latency or cost result", "AI2D uses the same deterministic local score convention as the existing E1 analysis"]
+}

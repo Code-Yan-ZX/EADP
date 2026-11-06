@@ -1,0 +1,9 @@
+# E4-A full DEV panel snapshot
+
+This is a separate full-panel snapshot. It preserves the completed E4 smoke and K1024 native diagnostic sources and proofs. Admission requires the complete E1 DEV acceptance, independently reviewed E4 smoke, and independently reviewed three-task K1024 native identity proof, all with clean real process/container exits. The native evidence covers three anchors and does not authorize reusing E1 outputs; every K256 arm is generated again.
+
+The full panel consists of 384 DEV questions × four visual budgets × two DeepStack settings, or 3,072 natural generations. It reads no GT and performs no scoring. Runtime verifies actual selection, P3 positions, DeepStack injection, and per-step per-layer KV cache lengths. It immediately fsyncs generated token IDs and then stores ordering, position/cache traces and tensor hashes. Per the experimental protocol, full high-dimensional arrays are not saved and cannot be reconstructed from hashes; the separate smoke and native anchors retain their diagnostic arrays. Instrumentation overhead makes this unsuitable for latency claims.
+
+`budget_plan.json` fixes exclusive GPU, at least 30 GiB free disk, a 10,800-second inner and 10,920-second outer deadline, a 1,800-second generated-journal stale limit and hourly health snapshots. The plan binds the initial three-day budget source and refuses startup if the entire outer timeout would extend past 2026-11-07 23:30:14 Beijing time. Smoke file-completion-interval extrapolations are planning heuristics, not latency estimates or confidence intervals.
+
+`cpu_check_003/verification.json` contains eight CPU-only tests and exact source hashes. The external `panel_approval.json` is absent, so the worker and launcher remain locked until an independent review of the exact source and CPU proof is bound. A verifier proof only establishes completeness and identity checks; GT remains unopened and no score is claimed.

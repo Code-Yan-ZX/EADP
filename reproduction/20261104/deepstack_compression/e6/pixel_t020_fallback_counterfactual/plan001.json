@@ -1,0 +1,13 @@
+{
+  "status": "posthoc_exploratory_frozen_before_counterfactual_rows",
+  "scope": "384 DEV only, 128 questions and distinct image groups per task",
+  "thresholds": [128, 256, 512],
+  "route": "if observed PixelPrune t020 selected_count <= threshold choose same-question accepted t0 score and t0 selected_count; else choose t020 score and selected_count",
+  "references": ["pixel_t0", "e4_k256_d1"],
+  "bootstrap": {"unit":"image group", "group_order":"ascending group_id", "replicates":10000, "seed":20261104, "confidence":0.95, "multiplicity_adjustment":"none"},
+  "output": "per task and threshold: full denominator, fallback count/rate, mean chosen K, mean original K for each source, mean score, t0 and EADP K256 paired score differences and percentile 95% image-group bootstrap intervals, improved/declined/unchanged counts",
+  "GT_opened": false,
+  "generation_performed": false,
+  "score_files_contain_predictions": true,
+  "limitations": ["policy defined after observing both DEV arms, exploratory and not confirmatory", "routing is an offline counterfactual, not an actual conditional model execution or trained policy", "score files contain prediction text; parsing source records necessarily opens them", "fallback checks both selectors and the additional selection cost is not measured", "routed mean K is output token budget only, not equal FLOPs or end-to-end runtime", "no new CONFIRM/FINAL labels or results"]
+}

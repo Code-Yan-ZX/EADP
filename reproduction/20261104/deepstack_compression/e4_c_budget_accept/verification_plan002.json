@@ -1,0 +1,24 @@
+{
+  "stage": "post-run no-GT identity verifier",
+  "run_id": "001",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/verify.py": "63f007d13c22af43554a6b5d216786298851adfa3cb5bf695b235d81d3d1b2af",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/test_verify.py": "add7f863573856443a9abc8cfbaf8b50b66a5c2db5ef30da0f1237a0cd23385c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_accept/snapshot.py": "14f4ac2e3186844cb91ef30b78c3270cad50197469b3101ccc232ca67cf7f89f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/gate.py": "ddec9d0de490b23af80ed71772fd61117d317c9769fb6737ffec6bee8fdea104",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_execution/execution_plan001.json": "e4e46e54cf176764c485742b53b878d429d18bb7236cd86c85955691db539df7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/reference.py": "7060af120a0285a8ea639babe3790c39472c67a5c60196ae9313d76aa09cc322",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/diagnostic_core.py": "540aa0bfc07f52f85dc776c3b728fd1359e1c77403c5bdeedd20341f297cdfaf",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/budget_compare.py": "bc1a21b5e88a584089cb230fa664f21bda2bbbbf12eb64f96857c9eb58a97489",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4c_budget_execution_prelaunch_review.json": "ff0b1afdd5dbc1b6e138012a62bf1f14bdafb5d924b08247a8f531446d6e6966",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py": "dddd62696ca10f2624654feec9831c83d308ddf8eb982c645ad3c5eac827ff17"
+  },
+  "cpu_started_sha256": "fc4d6e4f64e0eb49888d01d721d7d09ba6633e3f3655d764c103a1e97d00c911",
+  "cpu_terminal_sha256": "de9f0b0ff9b27f7d59ce3b3ff2fb92f0c1fbdb005b6d542971bd6fede8ad2bd9",
+  "expected_pairs": 16,
+  "expected_generations": 32,
+  "forced_steps": 32,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": "Verifier v2 frozen after GPU completion and before examining output values; source snapshot verifies endpoints, not transient changes. Independent post-run review required."
+}

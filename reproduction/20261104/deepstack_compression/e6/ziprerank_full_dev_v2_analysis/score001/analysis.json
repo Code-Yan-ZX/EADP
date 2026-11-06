@@ -1,0 +1,243 @@
+{
+  "status": "completed",
+  "questions": 384,
+  "zip_generations": 768,
+  "tasks": {
+    "DocVQA_VAL": {
+      "n_questions": 128,
+      "n_image_groups": 128,
+      "arm_means_pct": {
+        "zip_prefix_rope": 33.483651454399535,
+        "zip_user_text_rope": 41.286423721693176,
+        "eadp_p3_d1": 67.84538557047036
+      },
+      "arm_percentile_95_ci_pct": {
+        "zip_prefix_rope": [
+          26.309717779434354,
+          40.88006914079821
+        ],
+        "zip_user_text_rope": [
+          33.68178408701514,
+          49.12483833915982
+        ],
+        "eadp_p3_d1": [
+          60.56281627326104,
+          74.97486492913437
+        ]
+      },
+      "bootstrap": {
+        "unit": "image_group",
+        "replicates": 10000,
+        "seed": 20261104,
+        "method": "percentile"
+      },
+      "contrasts": {
+        "prefix_minus_eadp": {
+          "difference_pp": -34.36173411607082,
+          "image_cluster_percentile_95_ci_pp": [
+            -44.40362532083003,
+            -24.025129207614665
+          ],
+          "improved": 18,
+          "declined": 78,
+          "unchanged": 32,
+          "answer_changed": 112
+        },
+        "user_text_minus_eadp": {
+          "difference_pp": -26.558961848777173,
+          "image_cluster_percentile_95_ci_pp": [
+            -36.485294955204544,
+            -16.331649104226216
+          ],
+          "improved": 18,
+          "declined": 68,
+          "unchanged": 42,
+          "answer_changed": 102
+        },
+        "user_text_minus_prefix": {
+          "difference_pp": 7.802772267293643,
+          "image_cluster_percentile_95_ci_pp": [
+            -1.299875078216617,
+            16.787706744831652
+          ],
+          "improved": 40,
+          "declined": 25,
+          "unchanged": 63,
+          "answer_changed": 112
+        }
+      },
+      "terminal": {
+        "zip_prefix_rope": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "zip_user_text_rope": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        }
+      }
+    },
+    "TextVQA_VAL": {
+      "n_questions": 128,
+      "n_image_groups": 128,
+      "arm_means_pct": {
+        "zip_prefix_rope": 53.20312499999999,
+        "zip_user_text_rope": 44.375,
+        "eadp_p3_d1": 80.78125
+      },
+      "arm_percentile_95_ci_pct": {
+        "zip_prefix_rope": [
+          44.765625,
+          61.328124999999986
+        ],
+        "zip_user_text_rope": [
+          36.171875,
+          52.81249999999999
+        ],
+        "eadp_p3_d1": [
+          74.296875,
+          87.03125
+        ]
+      },
+      "bootstrap": {
+        "unit": "image_group",
+        "replicates": 10000,
+        "seed": 20261104,
+        "method": "percentile"
+      },
+      "contrasts": {
+        "prefix_minus_eadp": {
+          "difference_pp": -27.578125000000004,
+          "image_cluster_percentile_95_ci_pp": [
+            -36.640625,
+            -19.062499999999993
+          ],
+          "improved": 9,
+          "declined": 43,
+          "unchanged": 76,
+          "answer_changed": 64
+        },
+        "user_text_minus_eadp": {
+          "difference_pp": -36.40625,
+          "image_cluster_percentile_95_ci_pp": [
+            -45.234375,
+            -27.421875000000018
+          ],
+          "improved": 3,
+          "declined": 53,
+          "unchanged": 72,
+          "answer_changed": 70
+        },
+        "user_text_minus_prefix": {
+          "difference_pp": -8.828125,
+          "image_cluster_percentile_95_ci_pp": [
+            -18.203124999999996,
+            0.624999999999998
+          ],
+          "improved": 16,
+          "declined": 30,
+          "unchanged": 82,
+          "answer_changed": 80
+        }
+      },
+      "terminal": {
+        "zip_prefix_rope": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "zip_user_text_rope": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        }
+      }
+    },
+    "AI2D_TEST": {
+      "n_questions": 128,
+      "n_image_groups": 128,
+      "arm_means_pct": {
+        "zip_prefix_rope": 58.59375,
+        "zip_user_text_rope": 68.75,
+        "eadp_p3_d1": 82.03125
+      },
+      "arm_percentile_95_ci_pct": {
+        "zip_prefix_rope": [
+          50.0,
+          67.1875
+        ],
+        "zip_user_text_rope": [
+          60.9375,
+          76.5625
+        ],
+        "eadp_p3_d1": [
+          75.0,
+          88.28125
+        ]
+      },
+      "bootstrap": {
+        "unit": "image_group",
+        "replicates": 10000,
+        "seed": 20261104,
+        "method": "percentile"
+      },
+      "contrasts": {
+        "prefix_minus_eadp": {
+          "difference_pp": -23.4375,
+          "image_cluster_percentile_95_ci_pp": [
+            -32.03125,
+            -15.625
+          ],
+          "improved": 3,
+          "declined": 33,
+          "unchanged": 92,
+          "answer_changed": 54
+        },
+        "user_text_minus_eadp": {
+          "difference_pp": -13.28125,
+          "image_cluster_percentile_95_ci_pp": [
+            -20.3125,
+            -6.25
+          ],
+          "improved": 3,
+          "declined": 20,
+          "unchanged": 105,
+          "answer_changed": 37
+        },
+        "user_text_minus_prefix": {
+          "difference_pp": 10.15625,
+          "image_cluster_percentile_95_ci_pp": [
+            2.34375,
+            18.75
+          ],
+          "improved": 21,
+          "declined": 8,
+          "unchanged": 99,
+          "answer_changed": 48
+        }
+      },
+      "terminal": {
+        "zip_prefix_rope": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "zip_user_text_rope": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        }
+      }
+    }
+  },
+  "scores_sha256": "fba6493dd544abbc30cbc2a9c8d1f630d3a30b21b1cda37ebf4c3c7b01a76994",
+  "plan_sha256": "b97faf34dfe692e4e97c54a7ca6d11ae6f7db01e0208e1c8a3ebb00b06f2759c",
+  "limitations": [
+    "DEV post-hoc exploratory; comparisons unadjusted",
+    "both Zip paths use local RoPE repair; user-text path also changes selection scope",
+    "fixed K does not prove equal compute; no latency claim",
+    "AI2D deterministic local scorer"
+  ]
+}

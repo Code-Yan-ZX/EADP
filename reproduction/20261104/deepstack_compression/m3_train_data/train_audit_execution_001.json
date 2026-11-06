@@ -1,0 +1,22 @@
+{
+  "scope": "full label-free third-party train image audit; different pages of same document remain separate unless other image edges connect them",
+  "worker": "m3_train_data/train_audit.py",
+  "run_id": "001",
+  "supervisor": "monitor/supervise.py",
+  "supervisor_run_dir": "m3_train_data/monitor_train_audit001",
+  "timeout_seconds": 7200,
+  "stale_seconds": 1800,
+  "snapshot_seconds": 3600,
+  "poll_seconds": 15,
+  "grace_seconds": 60,
+  "minimum_disk_free_bytes": 21474836480,
+  "minimum_memory_available_bytes": 8589934592,
+  "python_executable": "/home/dell/miniconda3/bin/python",
+  "python_version": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:12:24) [GCC 11.2.0]",
+  "numpy": "1.26.4",
+  "pyarrow": "21.0.0",
+  "pillow": "11.2.1",
+  "scipy": "1.15.2",
+  "protocol_sha256": "b7714f0dab1f80bcea31f025d0615cab646e134c657ea188e2ad2f8f9409bdd9",
+  "created_unix": 1793829479.261564
+}

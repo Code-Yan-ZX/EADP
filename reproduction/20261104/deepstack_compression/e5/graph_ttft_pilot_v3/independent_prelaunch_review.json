@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "25bdcb12864b173d57cf39cf4ec3ebc3c96b6b9726442489299be6190b07cc72",
+  "preflight_sha256": "28417607d644f895e1d9ebaf6590aa59108971891a20e7e5d0f889f262e45397",
+  "preflight_started_sha256": "c3ec1b4b5500dd5b2d064a2d9f1807ab6e20057232f060cadc6de3e9f062da8d",
+  "preflight_terminal_sha256": "3b68b50435a0bac17ced2c4c59c57913df0515c1b06aa22dc948ff7b26afd45b",
+  "preflight_exit_sha256": "ba9392d5b8aa8d20c7ea3ba5b0d96cbf9122cf14c7706797b2f7a9828f9aa26c",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_graph_ttft_pilot_v3_prelaunch.py",
+  "reviewer_sha256": "885fd4de5c2f7ec3641010350848f7e66365de7bd63f11c28d1e2b01655ab53f",
+  "review_started_sha256": "25736c66d37ba6bd3a84ae8e6e3ac7b8a07831399baebad27c5734a8b2ab2cf5",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_graph_ttft_pilot_v3_prelaunch/terminal.json",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "gpu_authorized": "subject to root scheduling",
+  "cpu_tests": 6,
+  "original_cpu_tests": 6,
+  "source_files": 62,
+  "scheduled_jobs": 36,
+  "scope": "three-anchor fixed32 TTFT pilot prelaunch; no GPU execution yet",
+  "limitations": [
+    "existing E1 DEV mixed prediction journal is parsed solely for input identity during GPU work",
+    "equal-output aggregate timing requires every paired 256-index selection and 32 generated IDs to match",
+    "graph capture/setup and persistent allocator memory are measured separately; only TTFT is interpretable",
+    "raw-output fsync happens after first-token boundary and affects end-of-generation time",
+    "supervisor health windows and background work cannot be localized to individual samples",
+    "three anchors and five measured pairs per anchor do not establish full M1 or quality results",
+    "Triton cache was writable during no-GPU preflight; runtime disk availability and compilation remain subject to actual execution",
+    "preflight rehashed four weights; review checks recorded stat rather than rereading payload"
+  ],
+  "errors": []
+}

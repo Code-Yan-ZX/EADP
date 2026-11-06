@@ -1,0 +1,788 @@
+{
+  "status": "passed",
+  "n_expected": 384,
+  "n_verified": 384,
+  "checks": 20400,
+  "errors": [],
+  "natural_eos": 1536,
+  "natural_truncated": 0,
+  "cross_smoke_count": 128,
+  "cross_smoke_all_identical": true,
+  "cross_smoke": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "20741",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "20741",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "20741",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "20741",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "55114",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "55114",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "55114",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "55114",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "58737",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "58737",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "58737",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "58737",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "5821",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "5821",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "5821",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "5821",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "49406",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "49406",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "49406",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "49406",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "65404",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "65404",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "65404",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "65404",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "59692",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "59692",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "59692",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "59692",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63779",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63779",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63779",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63779",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "5721",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "5721",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "5721",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "5721",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63346",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63346",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63346",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63346",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "60881",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "60881",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "60881",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "60881",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38108",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38108",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38108",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38108",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "34794",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "34794",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "34794",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "34794",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "36267",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "36267",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "36267",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "36267",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "35571",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "35571",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "35571",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "35571",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38721",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38721",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38721",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38721",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38908",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38908",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38908",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38908",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "37933",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "37933",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "37933",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "37933",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38385",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38385",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38385",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38385",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38572",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38572",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38572",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38572",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "36216",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "36216",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "36216",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "36216",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38874",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38874",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38874",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38874",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "392501",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "392501",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "392501",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "392501",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "419201",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "419201",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "419201",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "419201",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "50010",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "50010",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "50010",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "50010",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "2814",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "2814",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "2814",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "2814",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "190200",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "190200",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "190200",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "190200",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "49006",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "49006",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "49006",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "49006",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "59802",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "59802",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "59802",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "59802",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "193100",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "193100",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "193100",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "193100",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "78104",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "78104",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "78104",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "78104",
+      "arm": "P3-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "69400",
+      "arm": "P1-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "69400",
+      "arm": "P1-D1",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "69400",
+      "arm": "P3-D0",
+      "identical": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "69400",
+      "arm": "P3-D1",
+      "identical": true
+    }
+  ],
+  "scope": "all 1536 DEV natural arms; CPU metadata/position/journal/token decode and exit; no GT, score, model forward or independent full feature bytes (not archived)",
+  "completion_proof_sha256": "95981ce2400d7467ba93d3177275a0860a656fc8558080c243040663e40a52fb",
+  "completion_started_sha256": "a030d80a913b1dadc918a31f1bcf3572cb09032db5854dd76bb5aa75df8cc2c2",
+  "completion_terminal_sha256": "9d7175ad4c87dd92755a109718e9cc223de3f6b3977c9a4fcf4d0d971cb69d93",
+  "reviewer_sha256": "cde3b56d0c17236152d0458214bca337fdde6fcce20665d8b8c6e54481217c4a",
+  "start_unix": 1793811967.2684138,
+  "end_unix": 1793811976.5507126
+}

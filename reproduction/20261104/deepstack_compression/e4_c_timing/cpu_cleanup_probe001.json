@@ -1,0 +1,64 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "-d",
+    "--network",
+    "none",
+    "--cap-drop",
+    "ALL",
+    "--name",
+    "eadp-light-cleanup-probe-354416",
+    "--entrypoint",
+    "/bin/sh",
+    "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "-c",
+    "sleep 120"
+  ],
+  "name": "eadp-light-cleanup-probe-354416",
+  "gpu_requested": false,
+  "cleanup_source_sha256": "53ee99ea24ad3b0afbdddf8452b3379e625ae0f204645f4431d6ac97b5c5ca10",
+  "started_unix": 1793822913.1380951,
+  "status": "passed",
+  "container_id": "beddcf1a1b9cbd281c8431dd93da8c6734e03ddb2746633f257b797edfb8c012",
+  "observed": {
+    "cleanup_attempts": [
+      {
+        "action": "stop",
+        "returncode": 0,
+        "stdout": "Flag --time has been deprecated, use --timeout instead\neadp-light-cleanup-probe-354416\n",
+        "stderr": ""
+      }
+    ],
+    "inspect": {
+      "id": "beddcf1a1b9cbd281c8431dd93da8c6734e03ddb2746633f257b797edfb8c012",
+      "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+      "state": {
+        "Status": "exited",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 137,
+        "Error": "",
+        "StartedAt": "2026-11-04T20:08:33.344719153Z",
+        "FinishedAt": "2026-11-04T20:08:43.520811056Z"
+      },
+      "config": {
+        "Image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+        "Entrypoint": [
+          "/bin/sh"
+        ],
+        "Cmd": [
+          "-c",
+          "sleep 120"
+        ]
+      },
+      "host_devices": [],
+      "device_requests": null
+    }
+  },
+  "finished_unix": 1793822923.591543
+}

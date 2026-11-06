@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "jobs": 1520,
+  "warmups": 240,
+  "measured": 1280,
+  "images": 32,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "predictions_opened": true,
+  "errors": [],
+  "analysis_sha256": "ff21abca1557f4abae63ca4e38e7334d6529fa1b61d163db8953e0223e9533e0",
+  "analysis_started_sha256": "3a18373a7ad186b500b813b91338214682368f44be2285be561edc550da4341b",
+  "analysis_terminal_sha256": "88f2d177feb6f9fe50716382f7d251546a24a4bd402054716e099868366be832",
+  "analysis_plan_sha256": "d24cad4089daef7cc98f6203b463456ff131d19eb4d725b4b6f47de2dd145819",
+  "formal_sha256": "3a0e838d27df884aa99d3dc6aab833b59d01be97cc999a4a52f37e42807a2ff3",
+  "independent_result_sha256": "d024f3d294176c3e0c768b7efaaa8fca2e5255ae28e40c79ee26b4e0ad572270",
+  "journal_sha256": "f5b43849bd339071c7a3b9ad8ba106338b06a887ab7cda9184fb4c59f35ec0a0",
+  "observer_samples_sha256": "f7c4bcf0e5a43de851508ce59f28c493755f5610f52ec85455f12adb977d474b",
+  "observer_health_sha256": "7a635995788ee50a1741cb9e56f3f77fd7f984bef75c39bb96fdeb6152906c20",
+  "manual_checks_sha256": "f43fa14da9229c0a0876440193834ec34ed7dad5d941ef2a3f25c5ec6724cfb4",
+  "reviewer_sha256": "5a7065c7d6354bb63b913cfda17162f32e7db625acf3761ff07cf8498abeeb0a",
+  "numpy_version": "2.2.6",
+  "recomputed_cells": 24,
+  "bootstrap_samples_per_contrast": 10000,
+  "background_validation": {
+    "jobs": 1520,
+    "hourly_entries": 0,
+    "manual_hour_unknown": 0,
+    "supervisor_hour_unknown": 0
+  },
+  "limitations": [
+    "Posthoc 32-image pilot, with task denominators 11/11/10.",
+    "No samples removed for possible interference; ps is sparse and process CPU is lifetime average.",
+    "Observer second fsync, manual-log fsync, stop marker and residual background activity unknown.",
+    "TTFT and synchronized generation completion stop before token copy, fsync and text decoding; not end-to-end latency."
+  ]
+}

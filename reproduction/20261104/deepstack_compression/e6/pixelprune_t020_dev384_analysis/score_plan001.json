@@ -1,0 +1,11 @@
+{
+  "status": "frozen_before_panel_results",
+  "scope": "384 DEV questions, 128 per task; full denominators, no CONFIRM or FINAL",
+  "arms": ["pixel_t020", "pixel_t0", "e4_k256_d1", "e4_k1024_d1"],
+  "contrasts": {"t020_minus_t0": ["pixel_t020", "pixel_t0"], "t020_minus_e4_k256": ["pixel_t020", "e4_k256_d1"], "t020_minus_e4_k1024": ["pixel_t020", "e4_k1024_d1"]},
+  "tasks": ["DocVQA_VAL", "TextVQA_VAL", "AI2D_TEST"],
+  "bootstrap": {"unit": "image group", "paired": true, "replicates": 10000, "seed": 20261104, "confidence": 0.95, "multiplicity_adjustment": "none"},
+  "required_before_predictions_or_labels": ["t020 four-image no-GT formal independent review", "t020 384 complete-panel formal and independent no-GT reviews and actual exits", "t0 full formal and independent scoring proofs and actual exits", "E1 and E4 formal, independent and scoring proofs", "independent source prelaunch review and its actual exit"],
+  "threshold": 0.2,
+  "limitations": ["threshold and experiment chosen after inspecting DEV results and K calibration; exploratory", "dynamic K differs from fixed K and is not equal compute", "all planned questions retained, including EOS, cap and empty output", "no latency or CONFIRM/FINAL claim"]
+}

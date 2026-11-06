@@ -1,0 +1,39 @@
+"""Independent prelaunch audit; no current timing, model, GPU or GT access."""
+import argparse,hashlib,importlib.util,json,os,subprocess,sys
+from pathlib import Path
+I=Path(__file__).resolve().parent;B=I.parent;D=B/'e6/pixel_wavefront_t020_timing_final_v9';A=B/'e6/pixel_wavefront_t020_timing_accept_v5';S=B/'e6/pixel_wavefront_t020_timing_formal_smoke_v5';N=B/'e6/pixel_wavefront_t020_timing_analysis_v5';P=B/'e6/pixel_wavefront_t020_timing_plan_v4';F=B/'e6/pixel_wavefront_t020_timing_formal_plan_v5';X=B/'e6/pixel_wavefront_t020_timing_exec_supplement_v5';OUT=I/'pixel_wavefront_t020_timing_final_v9_prelaunch_review.json'
+def sha(p):
+ h=hashlib.sha256()
+ with Path(p).open('rb') as f:
+  for data in iter(lambda:f.read(1024*1024),b''):h.update(data)
+ return h.hexdigest()
+def read(p):return json.loads(Path(p).read_text())
+def terminal(d,script,out=None):
+ s=read(d/'started.json');t=read(d/'terminal.json');c=s['command'];cwd=Path(s['cwd'])
+ if (cwd.resolve()!=B or t.get('reason')!='completed' or t.get('worker_returncode')!=0 or t.get('remaining_process_group')!=[] or type(s.get('worker_pid')) is not int or s['worker_pid']<=0 or s['worker_pid']!=t.get('worker_pid') or len(c)<2 or (cwd/c[1]).resolve()!=script.resolve() or (out is not None and (c.count('--out')!=1 or (cwd/c[c.index('--out')+1]).resolve()!=out.resolve()))):raise ValueError('supervisor '+str(d))
+def main():
+ a=argparse.ArgumentParser();a.add_argument('--out',required=True,type=Path);o=a.parse_args().out.resolve()
+ if o!=OUT or o.exists():raise ValueError('output')
+ for d,script in [(P/'monitor_cpu001',P/'cpu_check.py'),(P/'monitor_freeze001',P/'freeze.py'),(A/'monitor_cpu001',A/'cpu_check.py'),(F/'monitor_freeze001',F/'freeze.py'),(X/'monitor_freeze001',X/'freeze.py'),(S/'monitor001',S/'smoke.py')]:terminal(d,script)
+ plan=read(D/'gpu_plan001.json');sources=plan['source_sha256']
+ if not sources or {p:sha(p) for p in sources}!=sources:raise ValueError('GPU source mismatch')
+ cpu=read(A/'cpu_proof001.json');formal=read(A/'verification_plan001.json')
+ if cpu.get('status')!='passed' or cpu.get('GPU_used') is not False or cpu.get('GT_opened') is not False or cpu.get('predictions_opened') is not False or cpu['source_sha256_before']!=cpu['source_sha256_after'] or formal['source_sha256']!=cpu['source_sha256_after'] or {p:sha(p) for p in formal['source_sha256']}!=formal['source_sha256'] or formal['gpu_plan_sha256']!=sha(D/'gpu_plan001.json'):raise ValueError('formal source')
+ smoke=read(S/'proof001.json');diag=Path(smoke['diagnose_path']);runtime=Path(smoke['runtime_path'])
+ if (smoke.get('status')!='passed' or smoke.get('errors')!=[] or smoke.get('actual_missing_result_rejected') is not True or any(smoke.get(k) is not False for k in ('GPU_used','model_loaded','cuda_initialized','GT_opened','predictions_opened')) or smoke['smoke_sha256']!=sha(S/'smoke.py') or smoke['formal_plan_sha256']!=sha(A/'verification_plan001.json') or smoke['gpu_plan_sha256']!=sha(D/'gpu_plan001.json') or smoke['entry_sha256']!=sha(A/'verify_entry.py') or smoke['verifier_sha256']!=sha(A/'verify.py') or diag!=runtime.parent/'diagnose.py' or smoke['diagnose_sha256']!=sha(diag) or sources[str(diag)]!=sha(diag) or smoke['runtime_sha256']!=sha(runtime) or sources[str(runtime)]!=sha(runtime) or any(sha(i['path'])!=i['sha256'] for i in smoke['loaded'])):raise ValueError('real formal import smoke')
+ ar=I/'pixel_wavefront_t020_timing_analysis_v5_prelaunch_review.json';ascript=I/'review_pixel_wavefront_t020_timing_analysis_v5_prelaunch.py';am=I/'monitor_pixel_wavefront_t020_timing_analysis_v5_prelaunch';terminal(am,ascript,ar);q=read(ar)
+ if q.get('status')!='passed' or q.get('independent_review') is not True or q.get('timing_results_opened') is not False or q.get('GT_opened') is not False or q.get('errors')!=[] or q['reviewer_sha256']!=sha(ascript) or q['plan_sha256']!=sha(N/'analysis_plan001.json') or q['gpu_plan_sha256']!=sha(D/'gpu_plan001.json') or q['formal_plan_sha256']!=sha(A/'verification_plan001.json') or any(sha(k)!=v for k,v in q['source_sha256'].items()):raise ValueError('independent analysis proof')
+ supp=read(X/'plan001.json')
+ if supp['gpu_plan_sha256']!=sha(D/'gpu_plan001.json') or supp['formal_plan_sha256']!=sha(A/'verification_plan001.json') or supp['freeze_source_sha256']!=sha(X/'freeze.py') or supp['snapshot_source_sha256']!=sha(A/'snapshot_entry.py') or supp['verifier_source_sha256']!=sha(A/'verify_entry.py') or supp['cwd']!=str(B) or supp['automatic_retry'] is not False:raise ValueError('postrun supplement')
+ for key,entry,out in [('snapshot_command',A/'snapshot_entry.py',D/'run_001_sources'),('verify_command',A/'verify_entry.py',A/'verification001.json')]:
+  c=supp[key]
+  if c.count('--')!=1 or c[c.index('--')+2:]!=[str(entry),'--out',str(out)] or '--timeout' not in c or int(c[c.index('--timeout')+1])<=0:raise ValueError('postrun command '+key)
+ path=D/'gpu_gate.py';sp=importlib.util.spec_from_file_location('_independent_v9_gpu_gate',path);m=importlib.util.module_from_spec(sp);sp.loader.exec_module(m);m.prerequisites();w=m.weight_preflight()
+ if plan['weight_reference_sha256']!=w['worker_preflight_sha256'] or plan['weight_files']!=[x['path'] for x in w['expected']] or plan['scope']!='pixel_t020_isolated_process_ttft_24' or len(plan['jobs'])!=24 or plan['jobs']!=read(B/'e6/pixel_wavefront_t020_model_timing_v2/design001.json')['jobs']:raise ValueError('schedule or weight identity')
+ if sum(x['phase']=='warmup' for x in plan['jobs'])!=6 or sum(x['phase']=='measured' for x in plan['jobs'])!=18:raise ValueError('phase count')
+ tests=subprocess.run([sys.executable,'-m','unittest','-v','test_completion_contract','test_docker_contract','test_formal_locks','test_pipeline','test_verify_candidate','test_window_overlap'],cwd=A,env=dict(os.environ,CUDA_VISIBLE_DEVICES='',PYTHONDONTWRITEBYTECODE='1'),capture_output=True,text=True,timeout=120)
+ if tests.returncode or {p:sha(p) for p in sources}!=sources:raise ValueError('formal tests or source changed '+tests.stderr[-2000:])
+ fields={'plan_sha256':D/'gpu_plan001.json','reviewer_sha256':Path(__file__),'runtime_review_sha256':I/'pixel_wavefront_t020_timing_runtime_v4_preflight_result_review.json','run_preflight_review_sha256':I/'pixel_wavefront_t020_timing_run_v2_preflight_result_review.json','final_preflight_review_sha256':I/'pixel_wavefront_t020_timing_final_v9_preflight_result_review.json','formal_plan_sha256':A/'verification_plan001.json','analysis_review_sha256':ar,'analysis_review_started_sha256':am/'started.json','analysis_review_terminal_sha256':am/'terminal.json','formal_smoke_sha256':S/'proof001.json','formal_smoke_started_sha256':S/'monitor001/started.json','formal_smoke_terminal_sha256':S/'monitor001/terminal.json','formal_supplement_sha256':X/'plan001.json','formal_supplement_started_sha256':X/'monitor_freeze001/started.json','formal_supplement_terminal_sha256':X/'monitor_freeze001/terminal.json'}
+ proof={'status':'passed','independent_review':True,'scope':'pixel_t020_timing_gpu_prelaunch','source_sha256':sources,'GT_opened':False,'scoring_performed':False,'timing_results_opened':False,'existing_DEV_predictions_opened':True,'GPU_used':False,'errors':[],'independent_formal_tests':tests.stdout+tests.stderr,'limitations':['Formal dependency smoke ran with clean process and actual paths; it is not a guarantee against injected modules in a different process.','Twenty-four jobs on three anchors are an exploratory isolated-process timing, not full DEV or simultaneous pairing.','Previously accepted DEV mixed prediction files are opened only for source hashes and identity prerequisites.','GPU execution, actual formal acceptance and independent result review remain future events.'],**{k:sha(v) for k,v in fields.items()}}
+ with o.open('x') as f:json.dump(proof,f,indent=2);f.write('\n');f.flush();os.fsync(f.fileno())
+if __name__=='__main__':main()

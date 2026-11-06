@@ -1,0 +1,23 @@
+{
+  "observed_unix": 1793807522.4014692,
+  "host_init": {
+    "pid": 4158890,
+    "start_ticks": 1393874716,
+    "session_id": 4158890,
+    "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+  },
+  "start_ticks_matches": true,
+  "host_cmdline": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e0_identity/array_worker.py",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e0_identity/array16",
+    "--limit",
+    "16"
+  ],
+  "cgroup": "13:freezer:/docker/9264fc091aa9f72bbf9e3b9f06ccd931b37477398311a6661478910d9b8baa22\n12:memory:/docker/9264fc091aa9f72bbf9e3b9f06ccd931b37477398311a6661478910d9b8baa22\n11:hugetlb:/docker/9264fc091aa9f72bbf9e3b9f06ccd931b37477398311a6661478910d9b8baa22\n10:devices:/docker/9264fc091aa9f72bbf9e3b9f06ccd931b37477398311a6661478910d9b8baa22\n9:rdma:/docker/9264fc091aa9f72bbf9e3b9f06ccd931b37477398311a6661478910d9b8baa22\n8:net_cls,net_prio:/docker/9264fc091aa9f72bbf9e3b9f06ccd931b37477398311a6661478910d9b8baa22\n7:cpu,cpuacct:/docker/9264fc091aa9f72bbf9e3b9f06ccd931b37477398311a6661478910d9b8baa22\n6:perf_event:/docker/9264fc091aa9f72bbf9e3b9f06ccd931b37477398311a6661478910d9b8baa22\n5:blkio:/docker/9264fc091aa9f72bbf9e3b9f06ccd931b37477398311a6661478910d9b8baa22\n4:cpuset:/docker/9264fc091aa9f72bbf9e3b9f06ccd931b37477398311a6661478910d9b8baa22\n3:misc:/docker/9264fc091aa9f72bbf9e3b9f06ccd931b37477398311a6661478910d9b8baa22\n2:pids:/docker/9264fc091aa9f72bbf9e3b9f06ccd931b37477398311a6661478910d9b8baa22\n1:name=systemd:/docker/9264fc091aa9f72bbf9e3b9f06ccd931b37477398311a6661478910d9b8baa22\n0::/docker/9264fc091aa9f72bbf9e3b9f06ccd931b37477398311a6661478910d9b8baa22\n",
+  "container_id": "9264fc091aa9f72bbf9e3b9f06ccd931b37477398311a6661478910d9b8baa22",
+  "gpu_compute_pids": [
+    4158890
+  ]
+}

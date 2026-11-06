@@ -1,0 +1,156 @@
+{
+  "evidence": {
+    "dedup": {
+      "sha256": {
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_dedup/monitor001/started.json": "ecb6e282bbb88cd21195e57b678945eb2a2e02a6288a0c80fd8934031f02dc05",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_dedup/monitor001/terminal.json": "5f707b6c3bf89937d984f0c87af3fad5cf658197bd069e148840b2549a71f2fa",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_dedup/plan001.json": "9b568850a8ee2eb8abd575a2de1d05c54cf6a899d2d0fd7125c2e8c86585d602",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_dedup/probe.py": "711dad9c5a6424cae1c89f193f9c6053fc91429f3d1d7c7eea2e437b0bf16668",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_dedup/result001.json": "4aab845f43fe63881bab89f80c1c852f5517b18c46e2d5f4b13b6ce41e6202c4"
+      },
+      "source_files_verified": 21
+    },
+    "smoke": {
+      "sha256": {
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_smoke/monitor001/started.json": "e4426497377e2b64f3de61956cb8fec69e03caf2897d98a18f1eceb0330f7d09",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_smoke/monitor001/terminal.json": "26f626cccef9ea4f8765e297369dd08ebadcb95e62ce2a1595d10b9c36ef5f3f",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_smoke/plan001.json": "60642232a213ae5fe37fd1fae327aacad39771bd923cdba8181cd516626d31ae",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_smoke/probe.py": "79add32f634769a990a88e2d760361ffbedb31dcb05eec20e526fc71163c7311",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_smoke/result001.json": "66e70b55a4ef92e77415bc59e2bfec2445a9d642e699baad54f532d329370f62"
+      },
+      "source_files_verified": 19
+    }
+  },
+  "external_worktree_clean": true,
+  "findings": {
+    "dedup": {
+      "cache_lengths": [
+        12,
+        12,
+        9
+      ],
+      "disabled_tokens_equal": true,
+      "output_ids": [
+        [
+          [
+            3,
+            123,
+            121,
+            121,
+            121,
+            121,
+            124,
+            4,
+            5,
+            69,
+            3,
+            12,
+            22
+          ]
+        ],
+        [
+          [
+            3,
+            123,
+            121,
+            121,
+            121,
+            121,
+            124,
+            4,
+            5,
+            69,
+            3,
+            12,
+            22
+          ]
+        ],
+        [
+          [
+            3,
+            123,
+            121,
+            121,
+            121,
+            121,
+            124,
+            4,
+            5,
+            95,
+            113,
+            113,
+            36
+          ]
+        ]
+      ],
+      "selector_kept_indices": [
+        [
+          0
+        ]
+      ]
+    },
+    "smoke": {
+      "cache_lengths": [
+        9,
+        9,
+        9
+      ],
+      "disabled_tokens_equal": true,
+      "output_ids": [
+        [
+          [
+            3,
+            123,
+            121,
+            124,
+            4,
+            5,
+            75,
+            13,
+            36,
+            70
+          ]
+        ],
+        [
+          [
+            3,
+            123,
+            121,
+            124,
+            4,
+            5,
+            75,
+            13,
+            36,
+            70
+          ]
+        ],
+        [
+          [
+            3,
+            123,
+            121,
+            124,
+            4,
+            5,
+            75,
+            13,
+            36,
+            70
+          ]
+        ]
+      ],
+      "selector_kept_indices": null
+    }
+  },
+  "limitations": [
+    "smoke has one merged visual token and does not establish pruning",
+    "dedup uses four identical synthetic visual tokens; selector [[0]] was a separate direct call, while the actual generation hook was not captured with full arrays",
+    "random tiny model, synthetic inputs, CPU eager and four generated tokens; no inference about real-model compatibility, FA2, quality or speed",
+    "only final cache length was recorded, not per-layer cache content"
+  ],
+  "reviewer_sha256": "da76948887402a85125301222e99055a07a2dc8a837d79942bb4380946ecb947",
+  "scope": "independent read-only evidence review; no model or selector rerun",
+  "source_commit": "8d347eb1bdec92c5991057e75d424ecc1ecfe53e",
+  "status": "passed"
+}

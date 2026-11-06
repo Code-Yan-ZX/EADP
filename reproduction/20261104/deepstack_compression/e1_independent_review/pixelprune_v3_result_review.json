@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "selected_count": {
+    "unpatched": 1024,
+    "patched_disabled": 1024,
+    "patched_enabled": 572
+  },
+  "forced_calls_per_arm": 33,
+  "decode_calls_per_arm": 32,
+  "layers_per_call": 36,
+  "position_candidate_image_starts": [
+    4
+  ],
+  "disabled_unpatched_logits_runtime_allclose_argmax": true,
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/run_smoke001/observations/unpatched_started.json": "34bfd5baab0d82fa5851852d497ad8f81e4312d3861111dd4c5792437ba85936",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/run_smoke001/observations/patched_enabled.json": "13db37a7b6fca1b06505dc2f37c6eadd534e699436244c3708f0f3360712f496",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/run_smoke001/observations/unpatched_generated.json": "cd9ceac564693f0dcf5bf5f195611b68b96d9574b6bf41a39989630839775a52",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/run_smoke001/observations/started.json": "89373e3584b4b8d1a49eedb26fd93015d6dd44a1dab2c729b8d35580d81617fc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/run_smoke001/observations/patched_enabled_generated.json": "cd9ceac564693f0dcf5bf5f195611b68b96d9574b6bf41a39989630839775a52",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/run_smoke001/observations/patched_disabled_generated.json": "cd9ceac564693f0dcf5bf5f195611b68b96d9574b6bf41a39989630839775a52",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/run_smoke001/observations/unpatched.json": "c254890fc59e0f37ee4cdee412c488ea7d56fd50091c20ad7492dcb9cf525f59",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/run_smoke001/observations/worker_complete.json": "a8749488cfc6e5f645ad2ce655fcb8b694b1ac5024ac3afc44019d9771bef0c6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/run_smoke001/observations/patched_disabled_started.json": "a7af287a726ec175afe56f8a659e8701314ec21d31bd1d27b7bcf716908a0a65",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/run_smoke001/observations/patched_enabled_started.json": "30e5515c73725bb1e5d9a3200b7b267b78c6fa09eef70232564fdd5242a5bcca",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/run_smoke001/observations/patched_disabled.json": "220b5cd2df44a7af5d3c49a18f50374fefc592fdfc590702a423c02fb8aaabec",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/run_smoke001/observations/progress.jsonl": "cab28e887e934a0ed357fb44f275ad91f888350d6e3501fa24a1a39a8922a272",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/run_smoke001/launch.json": "3866066f4b967329feb1c5029541e08d089b5d14ce00e6df4dcfbec6fe9941a8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/run_smoke001/exit.json": "89bb8e772055a0cc2e8a7f6ac7ec66631d510214103cae6c32ca0d690bef24f2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/monitor_smoke001/started.json": "34841cdf424398028f78d6e27e57cdfd545735c991235fdd78505470364b5397",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/monitor_smoke001/terminal.json": "29a9469696458c8ece497eead49706bc8c3673a497c41de143a4b97eeee6997b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_gpu_smoke_v3/independent_prelaunch_review.json": "4b5fb9903901b5f708f0c5b7d0bf9737e4f59858555a9c558fa56b146ad7e749"
+  },
+  "reviewer_sha256": "c3d4bcf479c4880abcf62090e64ea9324b22c4686095150fa6acfcb2a4a8b6b5",
+  "limitations": [
+    "one image forced artificial prefix only",
+    "author patch applied after loading shared model",
+    "per-step logits, original main/DS tensors and KV caches not archived; runtime equality and hashes cannot be independently rebuilt",
+    "enabled budget is data dependent, no quality/latency or general correctness claims"
+  ],
+  "errors": []
+}

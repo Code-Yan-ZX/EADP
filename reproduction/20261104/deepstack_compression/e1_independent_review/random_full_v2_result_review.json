@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "questions": 384,
+  "generations": 1152,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "predictions_opened": true,
+  "errors": [],
+  "formal_sha256": "2de7b5c038c4b698f38f93d6ff530bc944c666547f963a4d6edc6640e0c6807e",
+  "formal_started_sha256": "2d37749db7c03f1dba5eca00b05a1688a1bb148579f5d49772fa7926c8c9c218",
+  "formal_terminal_sha256": "a6f284a2f59c87a241a5fd1dd1acbdcfde1fc9ae27750f3ef7b46ae00f0fbe09",
+  "run_started_sha256": "8cb55df6b9e0f0a8c6dd01078c906f875fcd5042fc2d22667e833eb72550bda4",
+  "run_terminal_sha256": "65e007ad5f5d39f1e6b3112b5b03bde3a98a03e7e04553976a8ff8d8a2d4d03e",
+  "reviewer_sha256": "7a705b30cb68cfe33bc737adc32b340aa718b11453885933b6a50487a0800471",
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_full_exec_v2/run_001/launch.json": "0ff1d10617fc52c3c2a73484427ef01be61cf146f959f7e2e99da0ce1a9e61a4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_full_exec_v2/run_001/exit.json": "6a2b0be57c86f274639808e8bca00ca65383c03d193987a05e2f6d95df62b9c3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_full_exec_v2/run_001/model_ready.json": "752a852d0617849e1b284626c63bb811c0da65b69d0d1f8308b5a1ba829a57ef",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_full_exec_v2/run_001/completion_provenance.json": "6245afe91a537bb0ecffbe4ba3f8f465d2cca7c3ea5de9528c282b8a3f75173d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_full_exec_v2/run_001/worker_complete.json": "7694b42e36f3f157fd9d4b73bf916a49c25174575fd2f3a5fcaca8760685fc30",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_full_exec_v2/run_001/journal.jsonl": "85b37e50bce2e7c8d0751b1568bfc6240a7292f762f6ea6e82c3afd16fcba592",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_full_exec_v2/run_001/generated.jsonl": "7f833d1c6f9a16b4fb0cb59d8b5af4d27f6fa2901d3dc2022ae751bc74754cb0",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_full_exec_v2/run_001/records.jsonl": "493fca61a170890d414826155d04325b325f193f3c9efab0ae05b32bcae61736",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_full_exec_v2/run_001_sources/manifest.json": "05a1a6bde401f126539b59322b804e39f745a67bb19b4ebd4e7c83f7eb0ab4a9"
+  },
+  "limitations": [
+    "Posthoc DEV study after observing earlier DEV results.",
+    "Full panel stores runtime summaries rather than reconstructable tensor arrays; actual KV tensor bytes were not archived.",
+    "Extra author greedy pass invalidates performance comparisons.",
+    "Weight stat equality cannot exclude transient replacement."
+  ]
+}

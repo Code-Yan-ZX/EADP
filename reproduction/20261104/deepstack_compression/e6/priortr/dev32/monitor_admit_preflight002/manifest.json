@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-11-04T20:21:00.472132+00:00",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "-c",
+    "import sys; sys.path.insert(0,\"e6/priortr/dev32\"); import gate; print(gate.execution_gate(preflight=True))"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression",
+  "timeout_seconds": 1200.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 3600,
+  "poll_seconds": 15,
+  "grace_seconds": 20,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/priortr/dev32/monitor_admit_preflight002",
+    "/media/disk2"
+  ]
+}

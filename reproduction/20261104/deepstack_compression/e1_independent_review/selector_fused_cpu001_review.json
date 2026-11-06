@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "image": "DocVQA_VAL/16539",
+  "similarity_shape": [
+    1,
+    1024,
+    1024
+  ],
+  "importance_shape": [
+    1,
+    1024
+  ],
+  "selection_count": 256,
+  "cpu_order_matches_recorded_gpu": true,
+  "GT_opened": false,
+  "gpu_used": false,
+  "reviewer_sha256": "f95f8816fb8e3d6071e11d51da825f67c804c8e59e251afe98e932c1886d3d02",
+  "artifact_sha256": "7b708264d313ed38a656828aed91940a961c00fa75e4df0ba1de6140a664c604",
+  "result_sha256": "3a4260ac1670f92a5aa57f2e594bbcb9a1e8999a33ff68ba3a36f66e335267d8",
+  "limitations": [
+    "one image only; CPU reconstruction is not a universal CPU/GPU identity guarantee",
+    "historical GPU selector internal similarity/importance were not archived and cannot be directly compared",
+    "no performance or model-quality claim"
+  ],
+  "errors": []
+}

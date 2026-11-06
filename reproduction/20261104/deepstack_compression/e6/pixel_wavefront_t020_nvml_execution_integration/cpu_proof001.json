@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "source_sha256_before": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_execution_candidate_v6/gate.py": "51779490594059820db26b2625ec35e32528ef059923b6d87e7b9d073b7530c8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_execution_candidate_v6/worker.py": "651b089d136fba69ea1d6293307f50fb516c70e9b5271de7e723262b46402faa",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_execution_integration/cpu_check.py": "4280464a46d2a040307231d7cf444c150d888efc88003b6994dbd0a22a32f7a7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_execution_integration/test_worker_main.py": "57a893f27b266396fb88b5718283cff3de5d632a7f246232b1e7079ac6c1a3b4"
+  },
+  "source_sha256_after": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_execution_candidate_v6/gate.py": "51779490594059820db26b2625ec35e32528ef059923b6d87e7b9d073b7530c8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_execution_candidate_v6/worker.py": "651b089d136fba69ea1d6293307f50fb516c70e9b5271de7e723262b46402faa",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_execution_integration/cpu_check.py": "4280464a46d2a040307231d7cf444c150d888efc88003b6994dbd0a22a32f7a7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_execution_integration/test_worker_main.py": "57a893f27b266396fb88b5718283cff3de5d632a7f246232b1e7079ac6c1a3b4"
+  },
+  "GPU_used": false,
+  "model_loaded": false,
+  "GT_opened": false,
+  "predictions_opened": false,
+  "limitations": [
+    "real entry main but fake gate, input, and model continuation",
+    "not real Docker, NVML, CUDA or GPU evidence"
+  ]
+}

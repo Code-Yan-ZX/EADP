@@ -1,0 +1,35 @@
+{
+  "audited_close_pairs_directed": 17,
+  "audited_phash_queries": 256,
+  "builder_sha256": "dde392a3a331231ac9eb25ed459792573dd5afa1f409bac098562cf20938f55e",
+  "checked": [
+    "source and output SHA256",
+    "source qid inventory",
+    "no group split leakage",
+    "deterministic task-priority panel reconstruction",
+    "near-edge distances",
+    "brute force pHash neighbor completeness for deterministic 256-image sample"
+  ],
+  "document_missing_identifier_counts": {
+    "docId": 0,
+    "image_path": 0,
+    "ucsf_document_id": 0,
+    "ucsf_document_page_no": 0
+  },
+  "groups": 5252,
+  "panel_counts": {
+    "AI2D_TEST:CONFIRM": 256,
+    "AI2D_TEST:DEV": 128,
+    "DocVQA_VAL:CONFIRM": 256,
+    "DocVQA_VAL:DEV": 128,
+    "TextVQA_VAL:CONFIRM": 256,
+    "TextVQA_VAL:DEV": 128
+  },
+  "source_question_counts": {
+    "AI2D_TEST": 3088,
+    "DocVQA_VAL": 5349,
+    "TextVQA_VAL": 5000
+  },
+  "status": "pass",
+  "verifier_sha256": "96314a2fcd3f4cdac99988c9afe0e457851b682432a86392746eee349af3a5e3"
+}

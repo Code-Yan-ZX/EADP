@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "artifact review; enabled author paths failed",
+  "arm_statuses": {
+    "disabled": "completed",
+    "keep_all": "failed",
+    "keep_256": "failed"
+  },
+  "all_instance_and_global_forward_hook_counts_zero_at_boundaries": true,
+  "disabled_tokens_equal_observed_run": true,
+  "enabled_errors_equal_observed_run": true,
+  "files_sha256": {
+    "disabled.json": "76cdbbf216bcb9b5837e4d4b2cdf3b1e3e2f7e7382bec404a163aec53b78cb69",
+    "disabled_started.json": "8844df58ec3d9d4ba08e1bb7f886d6d6595b1a56655fe3b1e3b966c63c241c80",
+    "disabled_generated.json": "af20e2b39e1c897585be160f2d29d7182ce198f045c831049f5d513f190a97cc",
+    "keep_all.json": "7152b64438e8ad5830861e0e65c7fa97a0a77859ebe86db0b052b8a57bf45f1b",
+    "keep_all_started.json": "de4bbe8a20d2489ec6aa08c86dfb6b53fdd0eda41fc01750944283e40ec5d852",
+    "keep_all_exception.json": "7152b64438e8ad5830861e0e65c7fa97a0a77859ebe86db0b052b8a57bf45f1b",
+    "keep_256.json": "b7375f955bbd28cf657d182c34d19509aba319d043e037dcda3e7024fec44839",
+    "keep_256_started.json": "826d77ca87d32ab9ad845359f1d20831bdc6da4f4e1d8cc735a0cbe3246b4d7d",
+    "keep_256_exception.json": "b7375f955bbd28cf657d182c34d19509aba319d043e037dcda3e7024fec44839",
+    "started.json": "69598835173a8acd7a20cdfdaa3bc7d00b1dbc8c53895dc4cdae8c1594f4173b",
+    "progress.jsonl": "539c2d6c262383ff99815366709eaa2867cf9c75ffeba107ac1fddf0bfd43632",
+    "worker_complete.json": "f34837c5845b9507d3a7e9becbe6033263f735f0c2da089ec649f8efa5724857"
+  },
+  "plan_sha256": "8ffa8a85c9fb33c2232d5b982fd3e5bb320111de31df30b014c94e42eaf19133",
+  "run_started_sha256": "4c13936e043b24eccb8cbd4424c6fee7dfbf555350d1ab255a729ac9eef15434",
+  "run_terminal_sha256": "78ea2a9808bc38e2776d03758f09252475ee4fcd340f986b6b515f403e8b792b",
+  "run_exit_sha256": "cee0b319d2a2b0b4ffba363303681c25239bdddcc182721a43857611279fcdcb",
+  "reviewer_sha256": "7f2f7d79ee600b4f89cb678beb85a2ccf72f75bb49a8f415513d4a40f5f065ae",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": [
+    "One image and forced prefix only; failure confirmed without module/global forward hooks at the recorded boundaries.",
+    "No-hook run cannot observe internal per-step states and cannot prove the particular rope-state mechanism by itself."
+  ],
+  "errors": []
+}

@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "349c92e0f947e997c926f33b455a665a395380c31be0ae76ffc007f962ed7e20",
+  "preflight_sha256": "4d223654ac6ea5365a18ee70ff6fbe21be0b70927ef9d8b53cdcd46e397b2f32",
+  "preflight_started_sha256": "a628bba6e691ed97e76622cce00ba52bed6153e431737058f76193fcbd6fda8b",
+  "preflight_terminal_sha256": "287b4cbc313db8f7df6176ad3ab0c2d48100291c30c63641e242d8e723f8ee83",
+  "preflight_exit_sha256": "6d755f50b1fef39bd2e4b03cd14ba0bb0b0ac146ff4442943dde949eed8bb582",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_graph_selector_prelaunch.py",
+  "reviewer_sha256": "bc1e4015e853d5fe708d6721371decc893eb89eece4d30037f8092d6d59f5632",
+  "review_started_sha256": "0a864eaabb873094644eeeb54a30d0ddeb03402b276ba778da60c110d6fcb58f",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_graph_selector_prelaunch/terminal.json",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "scope": "single numerical input CUDA-graph and synthetic GPU identity gate prior to component timing",
+  "limitations": [
+    "Triton and torch reduction order and rounding can differ; tie and near-tie tests do not prove universal selection identity",
+    "graph capture/setup and persistent storage excluded, replay includes input copies; fixed shape and single input only, not full model or deployed method",
+    "each measured selection revalidated; any observed mismatch invalidates run"
+  ],
+  "errors": []
+}

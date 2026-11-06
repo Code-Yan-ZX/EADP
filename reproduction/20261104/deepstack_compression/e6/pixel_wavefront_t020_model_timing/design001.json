@@ -1,0 +1,335 @@
+{
+  "scope": "post-hoc three-anchor natural model TTFT and separate sampled memory design",
+  "threshold": 0.2,
+  "execution_plan_sha256": "1f9638dde0a4eb7d30db58d20f706e2b026460db24725494a520d893d897deab",
+  "contract_sha256": "21fa0d55d9e843c00df0f31410afec6d6db1ca65654d79f5929dab839c208ffc",
+  "test_sha256": "b83085e4a822ba28676948e861335b2902934e27f900221b70f6a2f5622d8bb5",
+  "cpu_started_sha256": "a239fe04e592b991972b6d44c7fba42d518809c702cb1418a4d20c858a50bbb8",
+  "cpu_terminal_sha256": "9987b4746c367e062603ef969f3caad15b14baabf08635c55883469c0bef87b5",
+  "seed": 20261105,
+  "anchors": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "group_id": "389856c961891188878b76ead370e491d6676fdb6920ed745a2768ffeb001f36",
+      "image_sha256": "28963c9cf473009ad263d579538d7604526e03d74639a0ad6e0464091b50aace",
+      "message_sha256": "700cde8ec9b6cd4f4cd8da234bbcd4a9161329b7a3145f0cc3fcb64e53546bf9"
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "group_id": "62febe51574839f93054b1a9491be61c89ed9c57df6fd69a5782bee2b597aad2",
+      "image_sha256": "7bfd2a5701581fd25e9a0066d6c67370e4d01fe1a154e96747bcbe1de232b7c0",
+      "message_sha256": "bf7b04fbf0394376fd5d569d0b3a28c7852b1adae7825f3ddd152ba8da7c7bc7"
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "group_id": "465926724f5cc81e49f19c5b47043843344d79304413f52af49788a36a433300",
+      "image_sha256": "5223e745456e8067db989735a20d79557548864522176432e3c0ff0058c8f7c5",
+      "message_sha256": "80bffe435227cfc543d382d8f183e7638e8ca8cfdcfea9b82324c3aefb1e8584"
+    }
+  ],
+  "jobs": [
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "group_id": "62febe51574839f93054b1a9491be61c89ed9c57df6fd69a5782bee2b597aad2",
+      "image_sha256": "7bfd2a5701581fd25e9a0066d6c67370e4d01fe1a154e96747bcbe1de232b7c0",
+      "message_sha256": "bf7b04fbf0394376fd5d569d0b3a28c7852b1adae7825f3ddd152ba8da7c7bc7",
+      "arm": "author",
+      "phase": "warmup",
+      "repeat": 0,
+      "order": 0
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "group_id": "62febe51574839f93054b1a9491be61c89ed9c57df6fd69a5782bee2b597aad2",
+      "image_sha256": "7bfd2a5701581fd25e9a0066d6c67370e4d01fe1a154e96747bcbe1de232b7c0",
+      "message_sha256": "bf7b04fbf0394376fd5d569d0b3a28c7852b1adae7825f3ddd152ba8da7c7bc7",
+      "arm": "wavefront",
+      "phase": "warmup",
+      "repeat": 0,
+      "order": 1
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "group_id": "465926724f5cc81e49f19c5b47043843344d79304413f52af49788a36a433300",
+      "image_sha256": "5223e745456e8067db989735a20d79557548864522176432e3c0ff0058c8f7c5",
+      "message_sha256": "80bffe435227cfc543d382d8f183e7638e8ca8cfdcfea9b82324c3aefb1e8584",
+      "arm": "author",
+      "phase": "warmup",
+      "repeat": 0,
+      "order": 2
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "group_id": "389856c961891188878b76ead370e491d6676fdb6920ed745a2768ffeb001f36",
+      "image_sha256": "28963c9cf473009ad263d579538d7604526e03d74639a0ad6e0464091b50aace",
+      "message_sha256": "700cde8ec9b6cd4f4cd8da234bbcd4a9161329b7a3145f0cc3fcb64e53546bf9",
+      "arm": "author",
+      "phase": "warmup",
+      "repeat": 0,
+      "order": 3
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "group_id": "465926724f5cc81e49f19c5b47043843344d79304413f52af49788a36a433300",
+      "image_sha256": "5223e745456e8067db989735a20d79557548864522176432e3c0ff0058c8f7c5",
+      "message_sha256": "80bffe435227cfc543d382d8f183e7638e8ca8cfdcfea9b82324c3aefb1e8584",
+      "arm": "wavefront",
+      "phase": "warmup",
+      "repeat": 0,
+      "order": 4
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "group_id": "389856c961891188878b76ead370e491d6676fdb6920ed745a2768ffeb001f36",
+      "image_sha256": "28963c9cf473009ad263d579538d7604526e03d74639a0ad6e0464091b50aace",
+      "message_sha256": "700cde8ec9b6cd4f4cd8da234bbcd4a9161329b7a3145f0cc3fcb64e53546bf9",
+      "arm": "wavefront",
+      "phase": "warmup",
+      "repeat": 0,
+      "order": 5
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "group_id": "389856c961891188878b76ead370e491d6676fdb6920ed745a2768ffeb001f36",
+      "image_sha256": "28963c9cf473009ad263d579538d7604526e03d74639a0ad6e0464091b50aace",
+      "message_sha256": "700cde8ec9b6cd4f4cd8da234bbcd4a9161329b7a3145f0cc3fcb64e53546bf9",
+      "arm": "wavefront",
+      "phase": "measurement",
+      "repeat": 0,
+      "order": 6
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "group_id": "62febe51574839f93054b1a9491be61c89ed9c57df6fd69a5782bee2b597aad2",
+      "image_sha256": "7bfd2a5701581fd25e9a0066d6c67370e4d01fe1a154e96747bcbe1de232b7c0",
+      "message_sha256": "bf7b04fbf0394376fd5d569d0b3a28c7852b1adae7825f3ddd152ba8da7c7bc7",
+      "arm": "author",
+      "phase": "measurement",
+      "repeat": 0,
+      "order": 7
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "group_id": "62febe51574839f93054b1a9491be61c89ed9c57df6fd69a5782bee2b597aad2",
+      "image_sha256": "7bfd2a5701581fd25e9a0066d6c67370e4d01fe1a154e96747bcbe1de232b7c0",
+      "message_sha256": "bf7b04fbf0394376fd5d569d0b3a28c7852b1adae7825f3ddd152ba8da7c7bc7",
+      "arm": "wavefront",
+      "phase": "measurement",
+      "repeat": 0,
+      "order": 8
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "group_id": "465926724f5cc81e49f19c5b47043843344d79304413f52af49788a36a433300",
+      "image_sha256": "5223e745456e8067db989735a20d79557548864522176432e3c0ff0058c8f7c5",
+      "message_sha256": "80bffe435227cfc543d382d8f183e7638e8ca8cfdcfea9b82324c3aefb1e8584",
+      "arm": "author",
+      "phase": "measurement",
+      "repeat": 0,
+      "order": 9
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "group_id": "389856c961891188878b76ead370e491d6676fdb6920ed745a2768ffeb001f36",
+      "image_sha256": "28963c9cf473009ad263d579538d7604526e03d74639a0ad6e0464091b50aace",
+      "message_sha256": "700cde8ec9b6cd4f4cd8da234bbcd4a9161329b7a3145f0cc3fcb64e53546bf9",
+      "arm": "author",
+      "phase": "measurement",
+      "repeat": 0,
+      "order": 10
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "group_id": "465926724f5cc81e49f19c5b47043843344d79304413f52af49788a36a433300",
+      "image_sha256": "5223e745456e8067db989735a20d79557548864522176432e3c0ff0058c8f7c5",
+      "message_sha256": "80bffe435227cfc543d382d8f183e7638e8ca8cfdcfea9b82324c3aefb1e8584",
+      "arm": "wavefront",
+      "phase": "measurement",
+      "repeat": 0,
+      "order": 11
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "group_id": "389856c961891188878b76ead370e491d6676fdb6920ed745a2768ffeb001f36",
+      "image_sha256": "28963c9cf473009ad263d579538d7604526e03d74639a0ad6e0464091b50aace",
+      "message_sha256": "700cde8ec9b6cd4f4cd8da234bbcd4a9161329b7a3145f0cc3fcb64e53546bf9",
+      "arm": "wavefront",
+      "phase": "measurement",
+      "repeat": 1,
+      "order": 12
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "group_id": "62febe51574839f93054b1a9491be61c89ed9c57df6fd69a5782bee2b597aad2",
+      "image_sha256": "7bfd2a5701581fd25e9a0066d6c67370e4d01fe1a154e96747bcbe1de232b7c0",
+      "message_sha256": "bf7b04fbf0394376fd5d569d0b3a28c7852b1adae7825f3ddd152ba8da7c7bc7",
+      "arm": "author",
+      "phase": "measurement",
+      "repeat": 1,
+      "order": 13
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "group_id": "389856c961891188878b76ead370e491d6676fdb6920ed745a2768ffeb001f36",
+      "image_sha256": "28963c9cf473009ad263d579538d7604526e03d74639a0ad6e0464091b50aace",
+      "message_sha256": "700cde8ec9b6cd4f4cd8da234bbcd4a9161329b7a3145f0cc3fcb64e53546bf9",
+      "arm": "author",
+      "phase": "measurement",
+      "repeat": 1,
+      "order": 14
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "group_id": "465926724f5cc81e49f19c5b47043843344d79304413f52af49788a36a433300",
+      "image_sha256": "5223e745456e8067db989735a20d79557548864522176432e3c0ff0058c8f7c5",
+      "message_sha256": "80bffe435227cfc543d382d8f183e7638e8ca8cfdcfea9b82324c3aefb1e8584",
+      "arm": "wavefront",
+      "phase": "measurement",
+      "repeat": 1,
+      "order": 15
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "group_id": "62febe51574839f93054b1a9491be61c89ed9c57df6fd69a5782bee2b597aad2",
+      "image_sha256": "7bfd2a5701581fd25e9a0066d6c67370e4d01fe1a154e96747bcbe1de232b7c0",
+      "message_sha256": "bf7b04fbf0394376fd5d569d0b3a28c7852b1adae7825f3ddd152ba8da7c7bc7",
+      "arm": "wavefront",
+      "phase": "measurement",
+      "repeat": 1,
+      "order": 16
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "group_id": "465926724f5cc81e49f19c5b47043843344d79304413f52af49788a36a433300",
+      "image_sha256": "5223e745456e8067db989735a20d79557548864522176432e3c0ff0058c8f7c5",
+      "message_sha256": "80bffe435227cfc543d382d8f183e7638e8ca8cfdcfea9b82324c3aefb1e8584",
+      "arm": "author",
+      "phase": "measurement",
+      "repeat": 1,
+      "order": 17
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "group_id": "389856c961891188878b76ead370e491d6676fdb6920ed745a2768ffeb001f36",
+      "image_sha256": "28963c9cf473009ad263d579538d7604526e03d74639a0ad6e0464091b50aace",
+      "message_sha256": "700cde8ec9b6cd4f4cd8da234bbcd4a9161329b7a3145f0cc3fcb64e53546bf9",
+      "arm": "author",
+      "phase": "measurement",
+      "repeat": 2,
+      "order": 18
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "group_id": "465926724f5cc81e49f19c5b47043843344d79304413f52af49788a36a433300",
+      "image_sha256": "5223e745456e8067db989735a20d79557548864522176432e3c0ff0058c8f7c5",
+      "message_sha256": "80bffe435227cfc543d382d8f183e7638e8ca8cfdcfea9b82324c3aefb1e8584",
+      "arm": "wavefront",
+      "phase": "measurement",
+      "repeat": 2,
+      "order": 19
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "group_id": "465926724f5cc81e49f19c5b47043843344d79304413f52af49788a36a433300",
+      "image_sha256": "5223e745456e8067db989735a20d79557548864522176432e3c0ff0058c8f7c5",
+      "message_sha256": "80bffe435227cfc543d382d8f183e7638e8ca8cfdcfea9b82324c3aefb1e8584",
+      "arm": "author",
+      "phase": "measurement",
+      "repeat": 2,
+      "order": 20
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "group_id": "389856c961891188878b76ead370e491d6676fdb6920ed745a2768ffeb001f36",
+      "image_sha256": "28963c9cf473009ad263d579538d7604526e03d74639a0ad6e0464091b50aace",
+      "message_sha256": "700cde8ec9b6cd4f4cd8da234bbcd4a9161329b7a3145f0cc3fcb64e53546bf9",
+      "arm": "wavefront",
+      "phase": "measurement",
+      "repeat": 2,
+      "order": 21
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "group_id": "62febe51574839f93054b1a9491be61c89ed9c57df6fd69a5782bee2b597aad2",
+      "image_sha256": "7bfd2a5701581fd25e9a0066d6c67370e4d01fe1a154e96747bcbe1de232b7c0",
+      "message_sha256": "bf7b04fbf0394376fd5d569d0b3a28c7852b1adae7825f3ddd152ba8da7c7bc7",
+      "arm": "wavefront",
+      "phase": "measurement",
+      "repeat": 2,
+      "order": 22
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "group_id": "62febe51574839f93054b1a9491be61c89ed9c57df6fd69a5782bee2b597aad2",
+      "image_sha256": "7bfd2a5701581fd25e9a0066d6c67370e4d01fe1a154e96747bcbe1de232b7c0",
+      "message_sha256": "bf7b04fbf0394376fd5d569d0b3a28c7852b1adae7825f3ddd152ba8da7c7bc7",
+      "arm": "author",
+      "phase": "measurement",
+      "repeat": 2,
+      "order": 23
+    }
+  ],
+  "timing": {
+    "warmup_jobs": 6,
+    "measured_jobs": 18,
+    "repetitions_per_image_arm": 3,
+    "isolation": "fresh process and retained container per job; only one model process at a time",
+    "start": "GPU synchronized immediately before entering normal message/image path; includes input/image read, preprocessing, selector and model prefill",
+    "first_token": "stopping criterion invoked after first token selection, synchronize GPU then record monotonic ns",
+    "completion": "full generation returned; raw output copy/fsync may affect completion, TTFT is sole speed endpoint",
+    "identity": "each actual processor, full ordered indices, raw output, EOS and generation scalars equal same-anchor same-arm independently accepted identity",
+    "health": "record per-query monotonic start/end and time namespace; overlap/unknown retained; no deletion",
+    "host": "record Unix and monotonic start/first/end, environment and background windows; isolate worker and retain Docker stdout/stderr and cleanup"
+  },
+  "nvml": {
+    "separate_run": true,
+    "same_anchor_arms": 6,
+    "sampling": "host NVML query windows with target compute PID and GPU UUID; identify/retain graphics/background processes without names or command lines",
+    "coverage": "bracket model request and retain missing/unknown; reject query gaps including query duration above frozen max",
+    "peak": "max observed samples only, MiB-granularity; may miss transient peaks; device total/used/free/reserved and process usage separate",
+    "phases": "record model load, request start/end, and cleanup separately; CPU inspection/synchronization overhead disclosed"
+  },
+  "admission": {
+    "formal_identity_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_accept/verification001.json",
+    "independent_identity_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/pixel_wavefront_t020_run_result_review.json",
+    "requirements": "future separately frozen worker, launcher, CPU tests, real no-GPU container and independent reviews; actual identity evidence and completed monitor bound only after they exist",
+    "GPU_authorized": false
+  },
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": [
+    "Prior DEV results informed selection and optimization.",
+    "Three anchors and three repetitions are exploratory, no inference about population.",
+    "Both arms use t=.2 dynamic K; comparisons with t0 or EADP fixed K are not equal-compute.",
+    "The two arms use the same output and selected IDs under a new model identity test, not a universal equivalence guarantee.",
+    "NVML sampling and timed runs are separate; allocator metrics are not device-wide NVML.",
+    "No GPU implementation, container preflight or authorization is created by this design."
+  ]
+}

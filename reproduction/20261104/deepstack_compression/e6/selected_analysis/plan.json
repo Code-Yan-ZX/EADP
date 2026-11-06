@@ -1,0 +1,21 @@
+{
+  "stage": "predeclared_selected_full_DEV_analysis",
+  "tasks": ["DocVQA_VAL", "TextVQA_VAL", "AI2D_TEST"],
+  "questions_per_task": 128,
+  "questions_total": 384,
+  "natural_predictions_total": 1536,
+  "configurations": ["div:author_stock", "div:adapted", "cd:author_stock", "cd:adapted"],
+  "contrasts": {
+    "div_adapted_minus_stock": ["div:adapted", "div:author_stock"],
+    "cd_adapted_minus_stock": ["cd:adapted", "cd:author_stock"],
+    "adapted_div_minus_cd": ["div:adapted", "cd:adapted"],
+    "stock_div_minus_cd": ["div:author_stock", "cd:author_stock"]
+  },
+  "bootstrap": {"unit": "image_group", "replicates": 10000, "seed": 20261104, "method": "percentile", "interval": 0.95},
+  "metric": "Existing independently checked E1 author scoring; DocVQA ANLS, TextVQA consensus, deterministic local AI2D exact; author XLSX/pandas roundtrip preserved",
+  "scope": "Exploratory complete DEV only; per-image paired; no CONFIRM or FINAL prediction or decoded answer",
+  "gate": "Full 384-question/1536-prediction panel, genuine container/worker/verifier/reviewer exit and both independent acceptance proofs before opening predictions or decoding truth",
+  "missing_outputs": "Empty and truncated answers remain in the denominator and are counted separately",
+  "multiplicity": "Four contrasts and task-level intervals are exploratory and are not corrected for multiple comparisons",
+  "cost": "No speed or memory claim from identity/quality panel"
+}

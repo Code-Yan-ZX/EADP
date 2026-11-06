@@ -1,0 +1,8 @@
+{
+  "scope": "Post-hoc descriptive DEV quality by observed threshold 0.45 K; already-scored predictions only",
+  "score_path": "e6/pixelprune_t045_dev384_analysis/score001/scores.jsonl",
+  "independent_review": "e1_independent_review/pixel_t045_dev384_scores_review.json",
+  "bins_inclusive": [[1,64],[65,128],[129,256],[257,512],[513,1024]],
+  "metrics": ["count", "mean_t045", "mean_t0_on_same_items", "paired_mean_t045_minus_t0", "eos", "truncated"],
+  "limitations": ["Cutpoints chosen after seeing DEV results; all bins including empty reported", "Observed K depends on image and is not randomized; bin differences do not prove causal effect of K", "Small strata and same-data exploration; no significance or generalization claims", "No new labels, new model calls, actual timing or equal-compute claim"]
+}

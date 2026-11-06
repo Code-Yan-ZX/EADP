@@ -1,0 +1,539 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "anchors": 3,
+  "jobs": 36,
+  "comparisons": 18,
+  "unequal_comparisons": 0,
+  "per_anchor": {
+    "DocVQA_VAL:63709": {
+      "original": {
+        "n": 5,
+        "median_ms": 399.450878,
+        "min_ms": 393.97752,
+        "max_ms": 402.079946,
+        "raw_ms": [
+          393.97752,
+          397.341784,
+          400.376757,
+          402.079946,
+          399.450878
+        ]
+      },
+      "graph": {
+        "n": 5,
+        "median_ms": 362.977003,
+        "min_ms": 362.281866,
+        "max_ms": 368.538875,
+        "raw_ms": [
+          362.281866,
+          362.977003,
+          364.549456,
+          368.538875,
+          362.939695
+        ]
+      },
+      "relative_change_pct": -9.131003837723439
+    },
+    "TextVQA_VAL:39033": {
+      "original": {
+        "n": 5,
+        "median_ms": 353.625533,
+        "min_ms": 347.70136,
+        "max_ms": 356.348996,
+        "raw_ms": [
+          356.348996,
+          347.70136,
+          353.648054,
+          350.382612,
+          353.625533
+        ]
+      },
+      "graph": {
+        "n": 5,
+        "median_ms": 324.964704,
+        "min_ms": 315.906026,
+        "max_ms": 330.997969,
+        "raw_ms": [
+          315.906026,
+          324.964704,
+          330.997969,
+          325.826911,
+          321.599238
+        ]
+      },
+      "relative_change_pct": -8.104852824640362
+    },
+    "AI2D_TEST:11001": {
+      "original": {
+        "n": 5,
+        "median_ms": 356.664739,
+        "min_ms": 355.444769,
+        "max_ms": 360.996363,
+        "raw_ms": [
+          355.604694,
+          356.664739,
+          358.527464,
+          355.444769,
+          360.996363
+        ]
+      },
+      "graph": {
+        "n": 5,
+        "median_ms": 324.414088,
+        "min_ms": 316.231539,
+        "max_ms": 325.369479,
+        "raw_ms": [
+          324.414088,
+          316.231539,
+          322.157054,
+          325.369479,
+          324.885916
+        ]
+      },
+      "relative_change_pct": -9.042287468736854
+    }
+  },
+  "aggregate_only_if_all_pairs_equal": {
+    "original_median_of_anchor_medians_ms": 356.664739,
+    "graph_median_of_anchor_medians_ms": 324.964704,
+    "relative_change_of_medians_pct": -8.887908316611027
+  },
+  "graph_setup": {
+    "capture_wall_ms": 342.69882552325726,
+    "allocated_before": 17538516992,
+    "allocated_after": 17542718464,
+    "allocated_delta": 4201472,
+    "reserved_before": 17576230912,
+    "reserved_after": 17559453696,
+    "reserved_delta": -16777216
+  },
+  "all_times": [
+    {
+      "job": {
+        "phase": "warmup",
+        "repeat": 0,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 1680.858349
+    },
+    {
+      "job": {
+        "phase": "warmup",
+        "repeat": 0,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 361.91725
+    },
+    {
+      "job": {
+        "phase": "warmup",
+        "repeat": 0,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 372.172057
+    },
+    {
+      "job": {
+        "phase": "warmup",
+        "repeat": 0,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 325.271716
+    },
+    {
+      "job": {
+        "phase": "warmup",
+        "repeat": 0,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 363.136438
+    },
+    {
+      "job": {
+        "phase": "warmup",
+        "repeat": 0,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 400.628804
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 0,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 362.281866
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 0,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 393.97752
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 0,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 355.604694
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 0,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 324.414088
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 0,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 356.348996
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 0,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 315.906026
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 1,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 324.964704
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 1,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 347.70136
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 1,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 356.664739
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 1,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 316.231539
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 1,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 397.341784
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 1,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 362.977003
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 2,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 358.527464
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 2,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 322.157054
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 2,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 364.549456
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 2,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 400.376757
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 2,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 353.648054
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 2,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 330.997969
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 3,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 350.382612
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 3,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 325.826911
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 3,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 368.538875
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 3,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 402.079946
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 3,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 355.444769
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 3,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 325.369479
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 4,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 360.996363
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 4,
+        "task": "AI2D_TEST",
+        "qid": "11001",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 324.885916
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 4,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 353.625533
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 4,
+        "task": "TextVQA_VAL",
+        "qid": "39033",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 321.599238
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 4,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "graph",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 362.939695
+    },
+    {
+      "job": {
+        "phase": "measured",
+        "repeat": 4,
+        "task": "DocVQA_VAL",
+        "qid": "63709",
+        "method": "original",
+        "protocol": "fixed32"
+      },
+      "first_token_ms": 399.450878
+    }
+  ],
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/plan001.json": "25bdcb12864b173d57cf39cf4ec3ebc3c96b6b9726442489299be6190b07cc72",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/independent_prelaunch_review.json": "bcde5f39f3ffae7d9163f1e80aa630ec18893c44d472a0d94282a43354a1480a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/run_smoke001/launch.json": "eb78e6342fab3d80514a0348fdca2369468aee76e1d83229fa13871443942f6e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/run_smoke001/exit.json": "013a5ee23ba7c2b41ef55ff37db7eaa9cd682f26cbe60b3c928b6698bd209e5e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/monitor_smoke001/started.json": "cb5f584c10b590eca92e987e76e6a34215fe8ab129901e411bcfe3b10de599a5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/monitor_smoke001/terminal.json": "595a138a00b7768f7e5976cd372124d8b0cc97caf5a4bb7b5d2e8e790abfc909",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/preflight001.json": "28417607d644f895e1d9ebaf6590aa59108971891a20e7e5d0f889f262e45397",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/background_before001.json": "ae60faea3cc8cd37ed55ce784fddeebf2d1c84f0d5baddd7748efba03b74d12d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/run_smoke001/observations/worker_complete.json": "fb13c721b3e8991b2a125cf0b99a2d32ac574fd1b215fb410ab25484d1d91b7a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/run_smoke001/observations/graph_setup.json": "befcacc834aca1e6a4891b67ab155b17e3d083e07435bad45ecff5c020620c31",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/run_smoke001/observations/progress.jsonl": "688a7f1035e6fef8049cd86227beb5a548d6a2a4e992778f8bd93fe9955d3e46",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/run_smoke001/observations/records.jsonl": "14447c38e901abe9d0dbe6ac8dac540e0c718b3f234945de10fd0eec9b1701a1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/run_smoke001/observations/generated.jsonl": "ee9861ca71869c95e7ae3b69f8279080fe4bcd916309abbac1d550e787df3ae8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/run_smoke001/observations/generated_raw.jsonl": "0843f208d0eb9d91a29206495d5635480fe8951e515e32fc9001d70528c3d06f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/run_smoke001/observations/comparisons.jsonl": "708946a682e990ab3cf959c0b8ead9f5ed32ced9485ff4ba1a588dcbf1826501"
+  },
+  "reviewer_sha256": "7923f33502c8d9040170ecaed77ec46ee949b2cac5f2dbedae316c82d9489ca3",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": [
+    "Three DEV anchors, five warm-cache measured repetitions, fixed32; exploratory and not original full M1 criterion.",
+    "First-token boundary is from before image read to selected first token; graph capture/setup excluded and reported separately; no production or full-generation performance claim.",
+    "Graph replays the fused kernel; exact ordered selections and 32 outputs match only for the observed pairs, not universally.",
+    "Allocator deltas are PyTorch process allocated/reserved, not device-wide peak; other background processes and temperature may affect timing.",
+    "First-token criterion and P3/DS adapter are instrumentation; end-of-generation timestamps include raw output fsync and are not used as performance.",
+    "Worker finally restores monkey patches and container exited; no independent per-job post-cleanup hook inventory was archived.",
+    "Selected-ID and output equality do not independently reconstruct every prefill or DeepStack tensor."
+  ],
+  "errors": []
+}

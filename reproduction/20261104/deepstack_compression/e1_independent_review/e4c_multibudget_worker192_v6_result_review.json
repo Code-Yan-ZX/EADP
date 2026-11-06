@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "jobs": 7920,
+  "warmups": 240,
+  "measured": 7680,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "existing_DEV_predictions_opened": true,
+  "samples_excluded": 0,
+  "formal_sha256": "feae4a8daa561885ebd2b7cb1d4288f5fe2f5ffe188795acffacb1055cc2deef",
+  "formal_started_sha256": "47486d81eac727953c6447868aee4cc5137e752ae29aa6703df732e74d17ffcd",
+  "formal_terminal_sha256": "a545b3791c17acec89ed64fcebbab2e5f591cbce8ce073443d35bdc6139a3a74",
+  "run_started_sha256": "afc74aa72c73fbaac84c96075458abc96d44bad99deedf0272a2eaf26f915131",
+  "run_terminal_sha256": "737a26abe01e8c8aed728d6ce25a8754586569a2e16968edce55cf584540a31a",
+  "reviewer_sha256": "2a57acea27c54550bbbd7153f27aa9672b26f941bfdaaa1ea1ec02eb1529206e",
+  "journal_sha256": "b22c3d4b5508310fd27963fc90c092a0cb5e742bb639a8bad9123b9cd34957b9",
+  "health_sha256": "9e5094bfb5081ad4f2ebb7fe63aec445493107cd1ef0f8b04511d42eb80f6b96",
+  "snapshot_manifest_sha256": "9047ad2dd48d58634e89de2d7c88eb11dc57f0f7c6b661e1e3688b872e85a2a1",
+  "reference_formal_sha256": "7be44c8ea0c85c00d46690525f94583240bfc65c09f13871f1c173d65081dd12",
+  "reference_review_sha256": "c5ab1b6f65fbde2e95d931dfbc67df6a5baa8f8c7ec61627a646b99898374a18",
+  "environment_files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_environment192_v2/samples001.jsonl": "169792fe25a4f46ad937b397cb74b06b176a3553da2f69e0c7d4d2ec7d9ee16a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_environment192_v2/manual_checks001.jsonl": "f12de775d830c3d70d035d8d377dfc67895c75eb24f214b9cdf6b588050fc929",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_environment192_v2/monitor_watch001/health.jsonl": "2c1868ab00db6760e2d837727c3dafd365d8fa783b1f9a5ededbd6e03f8c8627",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_environment192_v2/monitor_watch001/started.json": "aab6009732bf72652a3da56e54f6b0e2d0e67ad4c9da661f9f1185a8aa21cc92",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_environment192_v2/monitor_watch001/terminal.json": "ad67a2552b5220cfadead47cf24eeccd8830f7c51485f8c68f4c6586af188869",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_environment192_v2/stop001": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "environment_jobs_verified": 7920,
+  "source_files_verified": 263,
+  "scope": "independent complete identity, output, boundary and recorded-observation review; no timing aggregation",
+  "limitations": [
+    "Second fsync, manual writes, marker writes, unrecorded background and residual effects have unknown overlap; all observations retained.",
+    "Snapshot and endpoint source/weight checks cannot exclude transient replacement.",
+    "Existing accepted DEV prediction records read only to validate endpoints; no GT or score."
+  ],
+  "errors": []
+}

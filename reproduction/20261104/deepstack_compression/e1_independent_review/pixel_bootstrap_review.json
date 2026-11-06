@@ -1,0 +1,125 @@
+{
+  "status": "passed",
+  "GT_opened": false,
+  "questions": 384,
+  "bootstrap_replicates": 10000,
+  "seed": 20261104,
+  "per_task": {
+    "DocVQA_VAL": {
+      "means": {
+        "pixel_dynamic": 91.6197246763653,
+        "e1_p3_d1": 67.84538557047036,
+        "e4_k256_d1": 67.84538557047036,
+        "e4_k1024_d1": 91.9455555295399
+      },
+      "contrasts": {
+        "pixel_minus_e1": {
+          "difference_pp": 23.77433910589495,
+          "95_percent_ci_pp": [
+            16.533107066298314,
+            31.086856915138412
+          ]
+        },
+        "pixel_minus_e4_k256": {
+          "difference_pp": 23.77433910589495,
+          "95_percent_ci_pp": [
+            16.533107066298314,
+            31.086856915138412
+          ]
+        },
+        "pixel_minus_e4_k1024": {
+          "difference_pp": -0.32583085317460325,
+          "95_percent_ci_pp": [
+            -2.880394345238091,
+            2.0551215277777817
+          ]
+        }
+      },
+      "dynamic_k": {
+        "min": 161,
+        "median": 666.0,
+        "max": 992
+      }
+    },
+    "TextVQA_VAL": {
+      "means": {
+        "pixel_dynamic": 83.75,
+        "e1_p3_d1": 80.78125,
+        "e4_k256_d1": 80.78125,
+        "e4_k1024_d1": 85.546875
+      },
+      "contrasts": {
+        "pixel_minus_e1": {
+          "difference_pp": 2.96875,
+          "95_percent_ci_pp": [
+            -0.7031250000000047,
+            6.874999999999987
+          ]
+        },
+        "pixel_minus_e4_k256": {
+          "difference_pp": 2.96875,
+          "95_percent_ci_pp": [
+            -0.7031250000000047,
+            6.874999999999987
+          ]
+        },
+        "pixel_minus_e4_k1024": {
+          "difference_pp": -1.7968749999999998,
+          "95_percent_ci_pp": [
+            -4.144531250000015,
+            0.0
+          ]
+        }
+      },
+      "dynamic_k": {
+        "min": 462,
+        "median": 759.5,
+        "max": 1024
+      }
+    },
+    "AI2D_TEST": {
+      "means": {
+        "pixel_dynamic": 82.03125,
+        "e1_p3_d1": 82.03125,
+        "e4_k256_d1": 82.03125,
+        "e4_k1024_d1": 82.03125
+      },
+      "contrasts": {
+        "pixel_minus_e1": {
+          "difference_pp": 0.0,
+          "95_percent_ci_pp": [
+            -3.90625,
+            3.90625
+          ]
+        },
+        "pixel_minus_e4_k256": {
+          "difference_pp": 0.0,
+          "95_percent_ci_pp": [
+            -3.90625,
+            3.90625
+          ]
+        },
+        "pixel_minus_e4_k1024": {
+          "difference_pp": 0.0,
+          "95_percent_ci_pp": [
+            -2.34375,
+            2.34375
+          ]
+        }
+      },
+      "dynamic_k": {
+        "min": 187,
+        "median": 493.5,
+        "max": 950
+      }
+    }
+  },
+  "scores_sha256": "c5d97adfe7d712b93b1d33547c3e105c7391d8c5d5533caa33e426b3d62f3668",
+  "analysis_sha256": "f128394c829b9bad8d91d59f177e17dd9149891b91f7b512d43c0809b9544e9f",
+  "previous_review_sha256": "d19949b8236b7d8cd95ca2e6df70dc7ace1c8360dff64f243f84b1cf676a45f4",
+  "reviewer_sha256": "eed454eaf688b9ee57be3283ece4c7e741666a7945b2c3036214edcdf6d3191d",
+  "limitations": [
+    "reuses archived per-question scores; does not independently reopen labels or recompute task metrics",
+    "post-hoc DEV comparisons are uncorrected and dynamic K is not equal compute"
+  ]
+}

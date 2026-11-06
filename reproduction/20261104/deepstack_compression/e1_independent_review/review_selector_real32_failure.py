@@ -1,0 +1,22 @@
+"""Independent CPU recomputation of real32 selector divergence evidence."""
+import argparse,json,math,sys
+from pathlib import Path
+import torch
+B=Path(__file__).resolve().parent.parent;D=B/'e5/selector_real32_failure';R=B/'e1_independent_review';S=B/'e5/selector_real32';sys.path.insert(0,str(B/'e4_c_latency'));from identity_gate import sha
+p=argparse.ArgumentParser();p.add_argument('--out',type=Path,required=True);a=p.parse_args();assert a.out.resolve()==R/'selector_real32_failure_review.json'
+def read(p):return json.loads(p.read_text())
+def terminal(mon,script):
+ s=read(mon/'started.json');t=read(mon/'terminal.json');cwd=Path(s['cwd']);assert t['reason']=='completed' and t['worker_returncode']==0 and t['remaining_process_group']==[] and s['worker_pid']==t['worker_pid'] and [(cwd/x).resolve() for x in s['command'] if Path(x).name==script.name]==[script.resolve()];return s
+s=terminal(D/'monitor_analysis001',D/'analyze.py');terminal(S/'monitor_verify_run001',S/'verify.py');terminal(R/'monitor_selector_real32_run001',R/'review_selector_real32_run001.py');r=read(D/'result_001.json');formal=read(S/'run_001_verification.json');prior=read(R/'selector_real32_run001_review.json');assert r['status']=='completed' and r['formal_sha256']==sha(S/'run_001_verification.json') and r['independent_review_sha256']==sha(R/'selector_real32_run001_review.json') and r['source_sha256']==sha(D/'analyze.py') and r['formal_counts']==formal['counts'] and prior['status']=='passed' and len(r['divergences'])==2 and not r['unavailable']
+events=[json.loads(x) for x in (S/'run_001/journal.jsonl').read_text().splitlines() if x.strip()];assert r['journal_sha256']==sha(S/'run_001/journal.jsonl');torch.set_num_threads(1);checks=[]
+for x in r['divergences']:
+ assert x['task']=='TextVQA_VAL' and x['qid']=='35191' and x['image_index']==17 and x['budget']==512 and x['method'] in ('fused','graph')
+ event=next(e for e in events if e.get('image_index')==17 and e.get('budget')==512 and e.get('status')=='case_completed');candidate=event['result']['identity'][x['method']+'_ordered_ids'];path=S/'run_001/image_017/case_512.pt';assert sha(path)==x['numeric_archive_sha256']==formal['array_sha256'][str(path)];raw=torch.load(path,map_location='cpu',weights_only=True);author=raw['ordered'][0].tolist();assert author==x['author_order'] and candidate==x['candidate_order']
+ differences=[i for i,(u,v) in enumerate(zip(author,candidate)) if u!=v];assert differences and differences[0]==x['first_divergent_step_zero_based']==332 and len(differences)==x['ordered_positions_differing']==2 and set(author)==set(candidate) and x['set_intersection']==x['set_union']==512 and x['author_only']==x['candidate_only']==[]
+ sim=raw['similarity'].detach().cpu().reshape(1024,1024);imp=raw['importance'].detach().cpu().reshape(1024);assert torch.isfinite(sim).all() and torch.isfinite(imp).all();prefix=author[:332];assert prefix==candidate[:332] and x['author_pick']==author[332] and x['candidate_pick']==candidate[332]
+ for dtype,name in ((torch.float32,'cpu_float32'),(torch.float64,'cpu_float64')):
+  matrix=sim.to(dtype);weights=imp.to(dtype);cover=matrix[prefix,:].amax(dim=0);gains=[]
+  for pick in (author[332],candidate[332]):gains.append(float((((matrix[pick,:]-cover).clamp_min(0))*weights).sum().item()))
+  recorded=x[name];assert math.isclose(gains[0],recorded['author_gain'],rel_tol=1e-10,abs_tol=1e-10) and math.isclose(gains[1],recorded['candidate_gain'],rel_tol=1e-10,abs_tol=1e-10) and math.isclose(gains[0]-gains[1],recorded['author_minus_candidate'],rel_tol=1e-10,abs_tol=1e-10)
+ checks.append({'method':x['method'],'author_pick':author[332],'candidate_pick':candidate[332],'cpu_float32':x['cpu_float32'],'cpu_float64':x['cpu_float64']})
+out={'status':'passed','independent_review':True,'cases':2,'result_sha256':sha(D/'result_001.json'),'analysis_started_sha256':sha(D/'monitor_analysis001/started.json'),'analysis_terminal_sha256':sha(D/'monitor_analysis001/terminal.json'),'prior_review_sha256':sha(R/'selector_real32_run001_review.json'),'reviewer_sha256':sha(__file__),'checks':checks,'GT_opened':False,'scoring_performed':False,'limitations':['CPU reconstruction uses stored floating-point inputs and a common prefix; original CUDA per-step gains are unavailable','numerical tie and reduction differences are plausible but no GPU cause is established'],'errors':[]};a.out.write_text(json.dumps(out,indent=2)+'\n');print('passed')

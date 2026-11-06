@@ -1,0 +1,46 @@
+{
+  "status": "prepared_awaiting_completed_full_run",
+  "scope": "CPU-only full latency verification, no GT, no sample deletion",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_full/monitor_verify_full001",
+    "--timeout",
+    "3600",
+    "--grace-seconds",
+    "90",
+    "--disk",
+    "/media/disk2",
+    "--",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_full/full_verify.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_full/full_001",
+    "--monitor",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_full/monitor_full001",
+    "--annotations",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_full/full_001_annotations.jsonl",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_full/full_001_verification.json"
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "launch_plan_sha256": "356dc2a0f35042a4fd730ace8aba2e47f9cb46a76ea418c32ddf3b12b62c5968",
+  "verifier_sha256": "6e3de247edc784864e930d9c64da763bd4cf3ff8e0af2c9e8ea363450d50351f",
+  "supervisor_sha256": "dddd62696ca10f2624654feec9831c83d308ddf8eb982c645ad3c5eac827ff17",
+  "requirements": [
+    "full 5940 jobs and all raw records complete",
+    "container/worker supervisor real exit0 and GPU released",
+    "fresh verifier outputs",
+    "reviewer independently verifies full proof, all samples, provenance and health windows"
+  ],
+  "limitations": [
+    "known Java activity is background, direct hourly snapshot overlap does not rule out residual effects",
+    "all samples retained; no memory claim"
+  ],
+  "prepared_unix": 1793829837.2338912
+}

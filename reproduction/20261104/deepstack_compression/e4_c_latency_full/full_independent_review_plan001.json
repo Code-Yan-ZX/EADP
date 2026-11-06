@@ -1,0 +1,41 @@
+{
+  "status": "prepared_full_run_not_started",
+  "scope": "independent CPU full latency review; all 5940 jobs retained, no GT/scoring",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4c_latency_full001",
+    "--timeout",
+    "3600",
+    "--snapshot-seconds",
+    "3600",
+    "--poll-seconds",
+    "5",
+    "--grace-seconds",
+    "90",
+    "--disk",
+    "/media/disk2",
+    "--",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_e4c_latency_full001.py",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4c_latency_full001_review.json"
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "launch_plan_sha256": "356dc2a0f35042a4fd730ace8aba2e47f9cb46a76ea418c32ddf3b12b62c5968",
+  "formal_verify_plan_sha256": "db953865440f97bd4233a2deb6b95e9fb614e7be5989b08bd64c8a9b24f4f517",
+  "reviewer_sha256": "4cd91a418d4b758f46c218778663598b993880914831bc780f8f2172f49ce6b0",
+  "reviewer_cpu_started_sha256": "30e3da2184990ece144299464dd28dfb66d35ac596418d4804db8325e553f253",
+  "reviewer_cpu_terminal_sha256": "20fb432c42fda8d0fe5e25748fd9500607f99cf731794cfc5cad6537ce13d94a",
+  "requirements": [
+    "full job set completed, actual Docker/worker exit0 and GPU released",
+    "formal full proof passed and formal supervisor exit0",
+    "all evidence and source snapshots match"
+  ],
+  "prepared_unix": 1793829989.98376
+}

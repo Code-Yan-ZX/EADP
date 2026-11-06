@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "questions": 384,
+  "task_positive_counts": {
+    "DocVQA_VAL": 11,
+    "TextVQA_VAL": 1,
+    "AI2D_TEST": 0
+  },
+  "analysis_sha256": "6a68b6f4059e11b736c1494cc502c0d4e503a65809efe3d5ecd45cc0daf1638f",
+  "plan_sha256": "c53789f71e610eacdeb9546047759938e42da8467eebe5ca673fecaecad51296",
+  "analysis_started_sha256": "5ae23d4d5a3731fe81bd3f54f14fe02efb3832ba17c765421d46e4f5bd40525c",
+  "analysis_terminal_sha256": "783ce95ecaa6b0ef99964cbd553974fe0aa4362af855a83c3157935fe751fa26",
+  "feature_review_sha256": "a664759d05e667eadae4f3f2f50ce2693d42930bf558b155f53ac16bba1efb08",
+  "pixel_review_sha256": "2e472c7b863bd9729a3b075b9b31df9a94a3e9214d0e174c96fa37810eba88cd",
+  "reviewer_sha256": "5fe646c30eab500759b878d8cd9c0c55d4e3303f464b98cb9321a0d6a55e7a26",
+  "GT_opened": false,
+  "new_predictions_opened": false,
+  "existing_mixed_score_prediction_records_parsed_for_identity_and_k": true,
+  "limitations": [
+    "Exploratory same DEV after seeing score/K strata; associations do not establish causal or predictive generalization",
+    "K<=64 is the post-hoc diagnostic bin, not a predetermined production threshold",
+    "AUC uses a same-sample descriptive target and does not assess a deployment rule, threshold, latency or downstream score",
+    "No new GT, generation, model or GPU"
+  ],
+  "errors": []
+}

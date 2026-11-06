@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "final",
+  "errors": [],
+  "GT_opened": false,
+  "GPU_used": false,
+  "checks": [
+    "real Docker exited/PID0/no device/non-OOM and exact image/env/12 mounts",
+    "three actual processor checks and four payload hashes",
+    "preflight source, baseline and candidate prior admission",
+    "GPU launch refuses before final review and respects absolute budget",
+    "formal verifier retains all 384 equality and mismatch rows"
+  ],
+  "prediction_scope": "existing E1 DEV mixed journal parsed for identity; 768 accepted baseline DEV files opened for SHA only",
+  "limitations": [
+    "same DEV posthoc exploratory test",
+    "candidate selector and saved output/indices checked, full earlier high-dimensional tensors unavailable",
+    "not a latency experiment"
+  ],
+  "plan_sha256": "8e29a0a3b521e06107b967be53790f479635999b23c98d4ec3b8a9f304befc30",
+  "reviewer_sha256": "5b9ecf041926d9bd7612ad4d5552316bb624966e82830e43b9e9eafe8dcec5b7",
+  "cpu_proof_sha256": "57ed0578f4ff7f9cfcb6e6be8d2b8d4e7fdf7ed51534753386525d070d81c430",
+  "cpu_started_sha256": "309ef09ae3be69dd481bf9d13f3deb5b3b1e34bb2ad59a14ce1c90745d3668d7",
+  "cpu_terminal_sha256": "c50f5ce2fcb9350bea45341ec2826066df848eb1f1e9860bcfa31408beeec8b2",
+  "preflight_sha256": "1ee26d3825e4b043532f1541a384c61ac29609105a6661023ba196efcbaad3b1",
+  "preflight_exit_sha256": "e767ee6a9644c5d98a9d3272e35023da114e6c374951ba07f6fc8b8ac6549a7d",
+  "preflight_launch_sha256": "5b6811adb361c1412b99739f63d6670aa76184b6eb940115cb193e99e668856d",
+  "preflight_started_sha256": "b7bda7de5491c648061b5b071275c2debd1c58977d129e7c89b42d2e7380b4cb",
+  "preflight_terminal_sha256": "02f066134996a9b2755d23f6d9ac0315ad738f0788ec3d290970d308eb9fa4ec"
+}

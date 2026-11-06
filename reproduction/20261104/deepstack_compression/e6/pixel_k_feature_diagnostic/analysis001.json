@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "plan_sha256": "c53789f71e610eacdeb9546047759938e42da8467eebe5ca673fecaecad51296",
+  "features_sha256": "c36ddadc1d6c2dfebfbba585d5338be5c03edf05075905c1a8107d42483522ec",
+  "pixel_scores_sha256": "f4d29d7ea35b13f9dc0fcb954b389f3e9f6517c98419149ed238ebe6ac7e6afb",
+  "tasks": {
+    "DocVQA_VAL": {
+      "questions": 128,
+      "k_le64": 11,
+      "statistics": {
+        "gray_entropy16": {
+          "spearman_with_k": 0.3456734336199921,
+          "higher_feature_auc_k_le64": 0.6581196581196581
+        },
+        "gray_gradient": {
+          "spearman_with_k": 0.7811719395204156,
+          "higher_feature_auc_k_le64": 0.32556332556332557
+        },
+        "user_text_chars": {
+          "spearman_with_k": 0.2269797900335753,
+          "higher_feature_auc_k_le64": 0.31662781662781664
+        }
+      }
+    },
+    "TextVQA_VAL": {
+      "questions": 128,
+      "k_le64": 1,
+      "statistics": {
+        "gray_entropy16": {
+          "spearman_with_k": 0.5967061234912733,
+          "higher_feature_auc_k_le64": null
+        },
+        "gray_gradient": {
+          "spearman_with_k": 0.8681562361360995,
+          "higher_feature_auc_k_le64": null
+        },
+        "user_text_chars": {
+          "spearman_with_k": -0.020684262508693946,
+          "higher_feature_auc_k_le64": null
+        }
+      }
+    },
+    "AI2D_TEST": {
+      "questions": 128,
+      "k_le64": 0,
+      "statistics": {
+        "gray_entropy16": {
+          "spearman_with_k": 0.4756227191742438,
+          "higher_feature_auc_k_le64": null
+        },
+        "gray_gradient": {
+          "spearman_with_k": 0.6525749260504135,
+          "higher_feature_auc_k_le64": null
+        },
+        "user_text_chars": {
+          "spearman_with_k": -0.013449238245623711,
+          "higher_feature_auc_k_le64": null
+        }
+      }
+    }
+  },
+  "GT_opened": false,
+  "new_predictions_opened": false,
+  "existing_mixed_score_prediction_records_parsed_for_identity_and_k": true,
+  "limitations": [
+    "Exploratory same DEV after seeing score/K strata; associations do not establish causal or predictive generalization",
+    "K<=64 is the post-hoc diagnostic bin, not a predetermined production threshold",
+    "AUC uses a same-sample descriptive target and does not assess a deployment rule, threshold, latency or downstream score",
+    "No new GT, generation, model or GPU"
+  ]
+}

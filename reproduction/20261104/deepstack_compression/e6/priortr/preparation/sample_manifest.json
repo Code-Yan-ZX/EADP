@@ -1,0 +1,187 @@
+{
+  "status": "frozen",
+  "scope": "DEV only; unscored until identity and CPU scoring gates pass",
+  "selection": "3 DocVQA, 3 TextVQA, 2 AI2D unique groups; excludes all old E0 anchors; ascending sha256(20261104|e6-priortr|task|group_id)",
+  "e1_completion_sha256": "95981ce2400d7467ba93d3177275a0860a656fc8558080c243040663e40a52fb",
+  "e1_review_sha256": "59be360409326074b22a2e8d99fa302740fc2f6f0162e6acc335f1be32ad59be",
+  "inputs_sha256": "f3fef75929f88fa21b96458337030c47f2b7afaa596f540879afddd72847f59d",
+  "panel_sha256": "5696221e24ab189c483288b1b0314fd65143450bd3a23a9ba16fee200aa2f71b",
+  "old_anchor_sha256": "ec19f952d164d47baf4c60afc1872d740fdaab731ca696fce3f4a04b36d60d1f",
+  "method_configs": [
+    {
+      "name": "native_off",
+      "enabled": false
+    },
+    {
+      "name": "author_default",
+      "enabled": true,
+      "strategy": "priortr",
+      "prune_layer": 3,
+      "keep_ratio": 0.1111
+    },
+    {
+      "name": "k256",
+      "enabled": true,
+      "strategy": "priortr",
+      "prune_layer": 3,
+      "keep_tokens": 256
+    },
+    {
+      "name": "priortr_keep_all",
+      "enabled": true,
+      "strategy": "priortr",
+      "prune_layer": 3,
+      "keep_tokens": 1024
+    }
+  ],
+  "rows": [
+    {
+      "group_id": "7496c07ef9631e5a13066ce69c770220cdea03e45428286f1cd5f9b155edf139",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/kxvh0227_p1.jpg",
+      "image_sha256": "8b6b83d4081373a5f0c6c9ffe586b19c8f5a6c370b1c1c7d106b75003a55b159",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/kxvh0227_p1.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What is the date mentioned at the bottom?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "message_sha256": "b4d672fccf409a353edf49b36361ef5955105e4a445f15f89d7eac14f337ef8c",
+      "qid": "65062",
+      "task": "DocVQA_VAL"
+    },
+    {
+      "group_id": "f0ea5f44e15adb7c541d034c7ec4806e95daa377125b49063d31eff6f8dfca81",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/ztlg0227_p0.jpg",
+      "image_sha256": "a8cf14940ee6010a030b832deb95ee6abfc91fe647c3eee878ae10cbbd91fac4",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/ztlg0227_p0.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What is Marianne T Weggeman's employee number?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "message_sha256": "58f1fab6444c186bc5c6b80d46419119f02e5d339efdca8230ec24b89aa99fec",
+      "qid": "40799",
+      "task": "DocVQA_VAL"
+    },
+    {
+      "group_id": "a0d405ed775c7142af059ce4f235879de30f68d23a54b54d00d125b2cbcb7c9e",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/kjlp0227_p0.jpg",
+      "image_sha256": "d8e5ca88511200394e90d1bb2b3a8036f1474080bbd890adf0497deeedde7e3e",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/kjlp0227_p0.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What is the diagram no.?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "message_sha256": "0edd2f83784ea32d0635273a39f45c847fdb15052985a6d859cbf9304ab4b219",
+      "qid": "62840",
+      "task": "DocVQA_VAL"
+    },
+    {
+      "group_id": "5af05c33b1d666aca348ee9bc02819882fed75b20109cc16de9950810a78a1ba",
+      "image_path": "/media/disk2/YZX/LMUData/images/TextVQA_VAL/35666.jpg",
+      "image_sha256": "4aa52fffc9a1086fea66f68a2ddc05735749e6f08d37fa81deb98d1e8678c09a",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/TextVQA_VAL/35666.jpg"
+        },
+        {
+          "type": "text",
+          "value": "what number appears several times in red?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "message_sha256": "04ff5a3d3e11deb7bff46a367db1da688a6a9be64ea6bdf0d5d8dc773f04056e",
+      "qid": "35666",
+      "task": "TextVQA_VAL"
+    },
+    {
+      "group_id": "45ed1c75aab61e9be6af0f6797698d81f21f4920d35213bbf1f9194f313bedc3",
+      "image_path": "/media/disk2/YZX/LMUData/images/TextVQA_VAL/37351.jpg",
+      "image_sha256": "f14cfc062fb268d1d47970428f93182b74c4de1bf6e3075ca2a53c55d2cfed16",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/TextVQA_VAL/37351.jpg"
+        },
+        {
+          "type": "text",
+          "value": "what roman numeral is the small hand of the clock pointing to?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "message_sha256": "b30848ad9e7de97fa94aa752375f336d0dc5f94560f58e88103c6482cee5b094",
+      "qid": "37351",
+      "task": "TextVQA_VAL"
+    },
+    {
+      "group_id": "6d90b127473def6c586002ae7a9fe1f98663c859f13358a2291baf7e2b39a3e1",
+      "image_path": "/media/disk2/YZX/LMUData/images/TextVQA_VAL/35191.jpg",
+      "image_sha256": "15dee8f410bf1a09f18a2434e53c344d6ae3616c22938c7a8331a759a13c6ea3",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/TextVQA_VAL/35191.jpg"
+        },
+        {
+          "type": "text",
+          "value": "how many ounces are in each of the bottles?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "message_sha256": "6ab7aec4f195ff0085ce083c57663d18400922dccf88f0c9a4fa7e5757106ee7",
+      "qid": "35191",
+      "task": "TextVQA_VAL"
+    },
+    {
+      "group_id": "3334b95b0789881a9959e67111b9699ac3227e2c0160c2851b3617c1a8a3ea85",
+      "image_path": "/media/disk2/YZX/LMUData/images/AI2D_TEST/ai2d/images/1092.png",
+      "image_sha256": "eea320e951082ccb8b08459076626d31db14d0634341b7707bd3ba22806ca3d8",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/AI2D_TEST/ai2d/images/1092.png"
+        },
+        {
+          "type": "text",
+          "value": "Question: Which is the stem?\nOptions:\nA. None of these\nB. A\nC. B\nD. C\nAnswer with the option letter only."
+        }
+      ],
+      "message_sha256": "e62464fb9dfd8f66b5fccb4ba2e810a3e633c22bab394be43e6e67682cfeb3a0",
+      "qid": "109201",
+      "task": "AI2D_TEST"
+    },
+    {
+      "group_id": "e8f7131ebf5a15b7dee853c20823de338d4caae0efb304862da3771e37f43e2e",
+      "image_path": "/media/disk2/YZX/LMUData/images/AI2D_TEST/ai2d/images_abc/2625.png",
+      "image_sha256": "1bc985eed515dc789a6adc6a2e3691564fc3403145709a15908f404c500d297a",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/AI2D_TEST/ai2d/images_abc/2625.png"
+        },
+        {
+          "type": "text",
+          "value": "Question: What letter occurs at March 21?\nOptions:\nA. d\nB. j\nC. f\nD. c\nAnswer with the option letter only."
+        }
+      ],
+      "message_sha256": "630f3251b6451f6571d93f72c39940d41baee2289b4bc02cd173b5347d8ed098",
+      "qid": "262501",
+      "task": "AI2D_TEST"
+    }
+  ],
+  "source_sha256": {
+    "admission.py": "33c4b72aa80044e5303e35689d83ed451676deb0c16721503b3099642934048b",
+    "freeze_sample.py": "0052e702f3f85cab39122d8038632223b91eb485ff18402dc358e332b98220e2"
+  }
+}

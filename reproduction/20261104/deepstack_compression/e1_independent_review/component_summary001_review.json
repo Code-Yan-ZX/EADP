@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "images": 32,
+  "jobs": 1920,
+  "comparisons": "per image median of 20 repetitions then median and range of 32 image medians",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "summary_sha256": "4eb934d7a25044d39361bd97f61963307b9befdf7dee4effdbb58e468044f42a",
+  "run_journal_sha256": "f66a449bfbdc27555ba87cf083102280390182e5512d898a4f8216cfbbf13381",
+  "run_review_sha256": "10a87653b7f84b71f5310324e26e9942dd2ec44e9a0d7e8797230eb6b41d8db5",
+  "reviewer_sha256": "05de0bf372c5d750f2b4cb96d87af7c5486c7236ab7c28810e4ef19b06273cae",
+  "limitations": [
+    "32-image expansion was post hoc",
+    "known brief Python stat window cannot be mapped to specific measurement; all retained",
+    "DS staging excludes decoder addition and component measurements are not TTFT"
+  ],
+  "errors": []
+}

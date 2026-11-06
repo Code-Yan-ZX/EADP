@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "972484e2480124136e2e64c671de03dd02602fc9a42408a17962e475d6f834e0",
+  "preflight_sha256": "5459622e61d9515972f56b2afc52105894cd481e8827d45dc74f377eb2125a85",
+  "preflight_started_sha256": "543a54663aafdbd1ee304588d4c47bc06403b84fcbc90d35df749a2724c5aed8",
+  "preflight_terminal_sha256": "c023153ad16f20d29db0197a696dc9bcdd2494a1b7b4b8e35067c4e6b617f166",
+  "preflight_exit_sha256": "a24fdede8ccfca75fdf7eefd5a6831a7eb0d6120c7209c4e9e5a88eaa49279aa",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_pixel_natural3_prelaunch.py",
+  "reviewer_sha256": "e0865af4bb5eaa19dc8bda4b133695458582b83bcd65766be066c2a95ec741c7",
+  "review_started_sha256": "b5744c5a4332fb1ae76658bcffe93ba674254ebfc3cc050a06391cd03ef5b33c",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_natural3_prelaunch/terminal.json",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "gpu_authorized": "subject to root scheduling",
+  "cpu_tests": 8,
+  "scope": "three DEV anchor natural generations with author patch before model loading; no quality score or timing",
+  "limitations": [
+    "threshold zero produces data-dependent visual budgets, not equal K",
+    "generation top_p=0.8 and top_k=20 differ from E1 0.001 and 1 even though do_sample=false; no complete recipe identity claim",
+    "full processor tensor hashes not recorded; no processor tensor identity claim",
+    "high-dimensional logits, DS and KV not archived; online comparison only",
+    "CPU preflight imports/patches actual model class but does not process actual images; no GPU result yet"
+  ],
+  "errors": []
+}

@@ -1,0 +1,23 @@
+{
+  "scope": "supplementary low-frequency ps and Docker list observation",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_observer_v2/observe.py": "6f789e9af8003b4bc94465b482cfc9c566e90fbec88c9b3216d95d4c1c210b3d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_observer_v2/test_observe.py": "c9aab7a5f5c464abc2bd90931858dc277d3a7c1c2305263f1e3630eb5733abce",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_observer_v2/freeze.py": "714384b5e2e81f44abc5d443e7aa6517fd92e22977ed0c5b4d488e8cec553093"
+  },
+  "gpu_plan_sha256": "ebc23bdaff66e25683686663d162d52a18008072fd8a6d97b3b1125c0c76e695",
+  "formal_plan_sha256": "93d938f3b1482c715ed66ff9f87e2c171ec4ca6d54db088678cac2f7013c583e",
+  "interval_seconds": 60,
+  "duration_seconds": 30000,
+  "output": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_observer_v2/observations001.jsonl",
+  "stop": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_observer_v2/stop001",
+  "limitations": [
+    "not part of GPU gate; separate independent review required",
+    "query windows and first fsync bounded; second fsync duration unknown",
+    "point observations cannot rule out unobserved background or causally quantify it",
+    "observer queries themselves can disturb timing",
+    "no GPU query or model access"
+  ],
+  "GT_opened": false,
+  "GPU_used": false
+}

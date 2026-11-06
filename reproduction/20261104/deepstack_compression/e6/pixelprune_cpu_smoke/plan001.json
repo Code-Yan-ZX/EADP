@@ -1,0 +1,26 @@
+{
+  "scope": "isolated tiny random Qwen3-VL CPU, 3 arms unpatched/explicit disabled/enabled threshold0; no real model, real input, labels, quality or GPU",
+  "sources": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_smoke/probe.py": "79add32f634769a990a88e2d760361ffbedb31dcb05eec20e526fc71163c7311",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py": "dd63ed3b124232735b3dca1bfa28f9d6b0d3f7182afcb75dde8f3e724b2b22da",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/configuration_qwen3_vl.py": "177fd0a4dc1b08307c08ca72cf26b8d7dc028ab6ab5975bf650fc14ab8132a83",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/__init__.py": "f29e57664c32853e3988659d4d20bad10e9a0d278e8feede9a2839f21968b5cd",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/core.py": "b401bb956b03c29586397e38a40dfdee7ac1a02339af5c874d9968185f7f41b6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/dedup.py": "4eb68ba5afb4c33634988bea71f12ffe886483559e5b9b3c0225d3d8ee9289e8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/__init__.py": "4358539b9c40ac47aa6e24b5e2d46a598b6c1aa72457e13c7f5f94d061f445bc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/base.py": "7b86b9133383673123c4fe87a644ddcac82283bbeaef35cf7791414e9536938e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/conncomp.py": "b7ca7c17a0807484c23f295cbc34b8b58fda10eed103cb8c462fdafffe8863c6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/pred_2d.py": "666a3b82daffbfe97fd26b7fa9530178b906e113b340bf7b4cc96b0932273848",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/random_select.py": "41400f96a987c0f0a32a5648f70a22d0e7747f0444b12c690822a5544c1685de",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/raster.py": "a31286550984e4aec4cc0e165e35474e3d9f4d49aee5300cf15af9b895674fab",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/serpentine.py": "d9360276eb718c02808095007ba7923a57b343bd5ef94c1c8be3e2c7898307c5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/__init__.py": "627b5ffe8f41e574ae5a91df83efb27f05cd6f44cf862543f51127be7b74fbbe",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_5_hf.py": "55f0fbcd79e0f9606adf88c6312b1ec72c277ffcf99b2b025e8d65092066856d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_5_vllm.py": "96365263e42d060acdd3c775f83bc3e8233f9c3041081e3e868a02f352ee7bcf",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_vl_hf.py": "173ed25b49ac48bb922e534f951b7c9b15027e6821db3d698953072d14b230c2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_vl_vllm.py": "17727ea3d6040272ef7a0389730461aa8cf28f6efa37a3e8a1579c6828b204c2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/vllm_bootstrap.py": "0b4814de32a8ef3220c98e9c5230baa0930f9af68b32175d8e85ac7a1589661e"
+  },
+  "source_commit": "8d347eb1bdec92c5991057e75d424ecc1ecfe53e",
+  "limits": "Disabled identity tests this synthetic example; enabled threshold zero may still drop duplicate patches; no GPU/FA2 compatibility or performance conclusion."
+}

@@ -1,0 +1,61 @@
+{
+  "stage": "synthetic_target_gradient_smoke",
+  "plan_sha256": "241312e020b751c4aa2ebde01588b05cee20813c1fa627a7881da5f4eafdc37f",
+  "approval": {
+    "approval_sha256": "af734f42811d53a3da1703bd89a18b98b785da176ebc88607bd1dee0e27ccdce",
+    "cpu_sha256": "909fef51af7804f1980924c27eb3c29dfa24272357d5f87a3ffec33640dbfcba",
+    "review_sha256": "222278aca13b79b65a8977fa93e5f02b3a32a79861ad1d42dab3ede07e87dbfa",
+    "upstream": {
+      "sample_sha256": "6f742f53afcda311cd3753db7ed9c3f4d466c20dcc5a3779e67d78fc0f06b869",
+      "sample_review_sha256": "23980c48ab1f26785b16850a5ba9847c41a2ffdb56fb499cee22d94a1143663f",
+      "oracle_review_sha256": "c056ef7fc170dbd8e5920bf97875b2f3d17ed61a192ee8398c257fcfada752bb",
+      "native_proof_sha256": "2d10caff1f9ab03915f4307f3b9c9129453d3198a5dbc99cdfa8fb112fc938c3",
+      "native_review_sha256": "4c0ef5c1fccdbbada28f58a42eea3060260a7302e71328423139b9058cbddf95"
+    }
+  },
+  "sample_sha256": "6f742f53afcda311cd3753db7ed9c3f4d466c20dcc5a3779e67d78fc0f06b869",
+  "anchor_record_sha256": "543952122656374f147e633562dffaf218ac9bfc3452bd148fa875a554160d1b",
+  "anchor_array_sha256": "b199cd3c7d8313ba735600389fb3f531916d4772a02f3a153999b83a9b97a7de",
+  "weights_identity_sha256": "7bfe695c2dbb0aa4e625183f0344d26bcbdc3add24658a068302c2744dc07ec8",
+  "weight_stats_before": {
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00001-of-00004.safetensors": [
+      2065,
+      68682060,
+      4902275944,
+      1766122873997458552,
+      1766132886669770948
+    ],
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00002-of-00004.safetensors": [
+      2065,
+      68682061,
+      4915962496,
+      1766122889153369070,
+      1766132901889718733
+    ],
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00003-of-00004.safetensors": [
+      2065,
+      68682062,
+      4999831048,
+      1766122889477367168,
+      1766132915557671854
+    ],
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00004-of-00004.safetensors": [
+      2065,
+      68682063,
+      2716270024,
+      1766122804961880310,
+      1766132929133625302
+    ]
+  },
+  "task": "DocVQA_VAL",
+  "qid": "63709",
+  "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+  "target_ids": [
+    100,
+    200,
+    300
+  ],
+  "gt_read": false,
+  "scoring": false,
+  "generation": false
+}

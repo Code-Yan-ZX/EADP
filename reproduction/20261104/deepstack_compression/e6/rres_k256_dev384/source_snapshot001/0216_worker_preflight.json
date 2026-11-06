@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "scope": "same-image noGPU worker imports; no model or generation",
+  "worker_sha256": "87e0b3f42c7b2919545a7b21ffbeeeb972e474761333cc773247d4ab3fba67e5",
+  "module_paths": {
+    "arm": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_pilot_v2/arm.py",
+    "capture": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_pilot_v2/capture.py",
+    "resolution": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_pilot_v2/resolution.py",
+    "panel_core": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_dev384/panel_core.py",
+    "decode_observer": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/decode_observer.py",
+    "input_preflight": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/input_preflight.py",
+    "vlmeval.vlm.qwen3_vl.model_fixed_res": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py"
+  },
+  "container_id": "4d4ed05479e0cfdfb558d62ea3393027ae01786eed1f30f6c93b2f0b2deef347",
+  "approval": {
+    "plan_sha256": "d53e6bbae60b96ed856bb98565b3aa8fac2adc5a99ca2fae962d08f9e1d1710e",
+    "review_sha256": "a886012145104c6621bb1cdaedff4e282e4d646ed51123fe39c3bd3900819aa1"
+  },
+  "model_loaded": false,
+  "cuda_initialized": false,
+  "GPU_authorized": false,
+  "GT_opened": false,
+  "existing_DEV_predictions_opened": true,
+  "scoring_performed": false,
+  "errors": []
+}

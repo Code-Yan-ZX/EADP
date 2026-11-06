@@ -1,0 +1,1 @@
+The generated sequence shape check preceded raw sequence fsync, so malformed outputs could be lost. This preflight is retained and no GPU run is admitted. Version v4 persists raw sequences before any shape/prefix validation and has regression cases.

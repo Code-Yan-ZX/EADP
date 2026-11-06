@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "stage": "synthetic_target_gradient_smoke",
+  "task": "DocVQA_VAL",
+  "qid": "63709",
+  "gradients": 4,
+  "target_ids": [
+    100,
+    200,
+    300
+  ],
+  "GT_opened": false,
+  "scoring_performed": false,
+  "generation_performed": false,
+  "peak_allocated_bytes": 23389204480,
+  "peak_reserved_bytes": 23441965056,
+  "model_load_seconds": 40.32294571585953,
+  "total_seconds": 44.053964817896485,
+  "native_first_logits_comparison": {
+    "max_abs": 0.0,
+    "same_argmax": true,
+    "dtype": "torch.bfloat16",
+    "shape": [
+      1,
+      151936
+    ]
+  },
+  "teacher_first_logits_comparison": {
+    "max_abs": 0.125,
+    "same_argmax": true,
+    "dtype": "torch.bfloat16",
+    "shape": [
+      1,
+      151936
+    ]
+  },
+  "scope": "single DEV image, arbitrary synthetic targets, no quality or oracle claim",
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_gpu_smoke/monitor_smoke001/started.json": "82dd456c2ff72d5df261f2889481931810867f3422d8ced96d574298aa7abc2b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_gpu_smoke/monitor_smoke001/terminal.json": "a447b1ac727b75c448453af5041d7f7862b5ea36e2fba673f3cefcdd2ae80f35",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_gpu_smoke/smoke_001/launch.json": "76ea3a231ac32d47ce54050cbd1dc1e8a0f1cbbc4a7a1d4ad172bf00ca7c9b7a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_gpu_smoke/smoke_001/exit.json": "ab2c760f72b26774e8b081c21c07eb3a0c7a77f6d28854bcb02b0f57c52c8f98",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_gpu_smoke/smoke_001/frozen.json": "71e214955a11bf2fb522770b92680e2a7676492107473607833d920b3c71a804",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_gpu_smoke/smoke_001/result.json": "855fda15c4b3c9ea8ae945fb692969a8803093426bdf80759631f5adbfb6a717",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_gpu_smoke/smoke_001/events.jsonl": "83dc55ffccce7fe744903b9f2c6af6a2b309f950c876540dd386036be7793f5a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_gpu_smoke/smoke_001/arrays.npz": "f02d13e5b2fcececb208e883dfa0a5dee2b0a506d9282be257628cc9cb68d7b1"
+  },
+  "verifier_sha256": "5001432189f49f1a38b4ace9b6de87f4b265587e8afb1847b044057bccb030f4"
+}

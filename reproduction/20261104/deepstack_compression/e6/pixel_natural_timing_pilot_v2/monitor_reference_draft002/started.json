@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-11-05T04:06:40.105039+00:00",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "-c",
+    "import json,sys;sys.path.insert(0,'e6/pixel_natural_timing_pilot_v2');import reference_candidate as r;from pathlib import Path;p=json.loads(Path('e6/pixel_natural_timing_pilot_v2/plan001.json').read_text());refs=r.load_refs(p['anchors']);print('same-arm DEV reference count',len(refs))"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression",
+  "timeout_seconds": 300.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 3600.0,
+  "poll_seconds": 2.0,
+  "grace_seconds": 15.0,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_natural_timing_pilot_v2/monitor_reference_draft002"
+  ],
+  "worker_pid": 1088864,
+  "process_group": 1088864
+}

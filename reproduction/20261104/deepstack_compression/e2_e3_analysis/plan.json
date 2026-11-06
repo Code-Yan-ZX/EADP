@@ -1,0 +1,24 @@
+{
+  "stage": "cpu_analysis_contract_only",
+  "sample": "each task's complete 128-question DEV panel, using one frozen image group per question",
+  "e2_endpoints": "actual same-run E2/000 and E2/111; no E1 substitution",
+  "e3_endpoints": "OFF and MATCH reference same-question E2/000 and E2/111 from the same run",
+  "bootstrap": {"replicates": 10000, "seed": 20261104, "unit": "image_group", "estimate": "question-weighted mean", "method": "percentile"},
+  "e2_primary": {
+    "contrasts": ["E2/111 - E2/011", "E2/111 - E2/101", "E2/111 - E2/110"],
+    "interval_coverage_each": "1 - 0.05/3, i.e. approximately 98.333 percent",
+    "interpretation": "each leave-one-slot effect is conditional on the other two being enabled"
+  },
+  "exploratory": {
+    "e2_single_slot": ["E2/100 - E2/000", "E2/010 - E2/000", "E2/001 - E2/000"],
+    "e2_three_way": "E2/111 - E2/110 - E2/101 - E2/011 + E2/100 + E2/010 + E2/001 - E2/000",
+    "e3": ["MATCH - PERM", "MATCH - MEAN", "PERM - OFF", "MEAN - OFF"],
+    "interval_coverage_each": "95 percent, not multiplicity-adjusted"
+  },
+  "limits": [
+    "DEV exploratory evidence; do not describe an interval crossing zero as equivalence.",
+    "All E2 arms compute the full vision tower and all three mergers; no savings are implied.",
+    "E3 misalignment interventions cannot alone establish an OCR or localized-pixel mechanism.",
+    "This file and paired.py do not access labels or predictions and do not authorize scoring."
+  ]
+}

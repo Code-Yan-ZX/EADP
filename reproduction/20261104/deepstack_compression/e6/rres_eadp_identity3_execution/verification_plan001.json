@@ -1,0 +1,33 @@
+{
+  "status": "frozen",
+  "scope": "six-case non-timing identity formal verification",
+  "gpu_plan_sha256": "9b2367cf21a0800f2f3a09289fe1a25748456a7d82f047203ded3a05397dda2a",
+  "verifier_sha256": "288407514f63966ccefd551364f9bd4a2fd2772d9d00aa598ef653803d75b779",
+  "snapshot_sha256": "5cc8e97bd1ff7ee48868b791fbb6506855a10789ee6c7139d512c18ad99f672e",
+  "snapshot_command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/monitor_snapshot001",
+    "--timeout",
+    "900",
+    "--",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/snapshot.py"
+  ],
+  "verify_command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/monitor_verify001",
+    "--timeout",
+    "900",
+    "--",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/verify.py",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/verification001.json"
+  ],
+  "GT_opened": false,
+  "timing_claims": false
+}

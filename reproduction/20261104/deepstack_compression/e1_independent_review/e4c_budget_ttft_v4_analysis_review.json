@@ -1,0 +1,203 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "samples": 48,
+  "warmups": 12,
+  "measured": 36,
+  "cells": 12,
+  "analysis_sha256": "e23449a15b2b9d928da804ad9ceb94e0c94a65d4aac813a5f90d85b6fd9fb917",
+  "analysis_started_sha256": "17182fb2d23e48d65b9836a449ff4d4fe409627f028769a9e71d9a6a334ea352",
+  "analysis_terminal_sha256": "2625b13c64eb54b8d31302569f10e9403d9bf12b476cd8799f883a15d86fb463",
+  "reviewer_sha256": "763e26a9b97c3f804001e0811d990bd299e2fd086dd2fb691dbec220f4cbdc7e",
+  "cells_recomputed": [
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "budget": 128,
+      "n": 3,
+      "median_ttft_ms": 313.356359,
+      "min_ttft_ms": 311.844522,
+      "max_ttft_ms": 318.879839,
+      "paired_ratios_to_k256": [
+        0.8926771015530316,
+        0.8645551609362776,
+        0.8825235520201581
+      ],
+      "median_paired_ratio_to_k256": 0.8825235520201581
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "budget": 256,
+      "n": 3,
+      "median_ttft_ms": 361.327285,
+      "min_ttft_ms": 349.336307,
+      "max_ttft_ms": 362.448081,
+      "paired_ratios_to_k256": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "median_paired_ratio_to_k256": 1.0
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "budget": 512,
+      "n": 3,
+      "median_ttft_ms": 428.330539,
+      "min_ttft_ms": 419.627653,
+      "max_ttft_ms": 428.953471,
+      "paired_ratios_to_k256": [
+        1.2279097889473023,
+        1.1577593453998727,
+        1.185436463786564
+      ],
+      "median_paired_ratio_to_k256": 1.185436463786564
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "budget": 1024,
+      "n": 3,
+      "median_ttft_ms": 443.928243,
+      "min_ttft_ms": 439.187878,
+      "max_ttft_ms": 443.94145,
+      "paired_ratios_to_k256": [
+        1.257206506164846,
+        1.2248414966776993,
+        1.2286042638601178
+      ],
+      "median_paired_ratio_to_k256": 1.2286042638601178
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "budget": 128,
+      "n": 3,
+      "median_ttft_ms": 357.422106,
+      "min_ttft_ms": 349.040666,
+      "max_ttft_ms": 360.868506,
+      "paired_ratios_to_k256": [
+        0.9011251870681531,
+        0.8899730012885689,
+        0.8962713098927511
+      ],
+      "median_paired_ratio_to_k256": 0.8962713098927511
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "budget": 256,
+      "n": 3,
+      "median_ttft_ms": 398.787847,
+      "min_ttft_ms": 392.192421,
+      "max_ttft_ms": 400.464343,
+      "paired_ratios_to_k256": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "median_paired_ratio_to_k256": 1.0
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "budget": 512,
+      "n": 3,
+      "median_ttft_ms": 470.521115,
+      "min_ttft_ms": 466.7172,
+      "max_ttft_ms": 472.522816,
+      "paired_ratios_to_k256": [
+        1.1749388509228649,
+        1.1900209565752928,
+        1.18489773335545
+      ],
+      "median_paired_ratio_to_k256": 1.18489773335545
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "budget": 1024,
+      "n": 3,
+      "median_ttft_ms": 481.312983,
+      "min_ttft_ms": 480.008419,
+      "max_ttft_ms": 487.494488,
+      "paired_ratios_to_k256": [
+        1.1986296093282893,
+        1.2272368287300481,
+        1.2224406828526047
+      ],
+      "median_paired_ratio_to_k256": 1.2224406828526047
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "budget": 128,
+      "n": 3,
+      "median_ttft_ms": 305.707975,
+      "min_ttft_ms": 303.930277,
+      "max_ttft_ms": 309.354877,
+      "paired_ratios_to_k256": [
+        0.8499896419077324,
+        0.8760906613291435,
+        0.8190956628494737
+      ],
+      "median_paired_ratio_to_k256": 0.8499896419077324
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "budget": 256,
+      "n": 3,
+      "median_ttft_ms": 359.660824,
+      "min_ttft_ms": 346.916467,
+      "max_ttft_ms": 377.678568,
+      "paired_ratios_to_k256": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "median_paired_ratio_to_k256": 1.0
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "budget": 512,
+      "n": 3,
+      "median_ttft_ms": 421.914593,
+      "min_ttft_ms": 421.59291,
+      "max_ttft_ms": 429.580253,
+      "paired_ratios_to_k256": [
+        1.172195807458863,
+        1.2161849699685776,
+        1.1374229024295603
+      ],
+      "median_paired_ratio_to_k256": 1.172195807458863
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "budget": 1024,
+      "n": 3,
+      "median_ttft_ms": 443.059449,
+      "min_ttft_ms": 434.934896,
+      "max_ttft_ms": 457.474438,
+      "paired_ratios_to_k256": [
+        1.2092918299047215,
+        1.318687584812744,
+        1.1731124997275462
+      ],
+      "median_paired_ratio_to_k256": 1.2092918299047215
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Three known DEV anchors and three repeats per cell; descriptive exploratory result only.",
+    "K1024 is keep-all; all adapter overheads remain; no memory or population conclusion.",
+    "All measured samples retained. Direct health/ps windows shown; second ps fsync and other residual background unknown.",
+    "TTFT only; completion contains raw-output fsync."
+  ]
+}

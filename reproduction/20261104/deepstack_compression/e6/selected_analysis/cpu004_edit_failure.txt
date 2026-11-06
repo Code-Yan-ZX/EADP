@@ -1,0 +1,1 @@
+Initial edit command used the selected_analysis cwd with repository-relative paths; file edit raised FileNotFoundError, followed by old tests producing four expected NameError/AttributeError from transitional imports. No data read. Corrected cwd and reran.

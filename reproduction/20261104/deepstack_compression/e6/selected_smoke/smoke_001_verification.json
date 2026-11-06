@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "scope": "16 DEV diagnostic generations, observed author Div/CD selection and separate P1/D0 vs P3/D1 paths; no output equality or accuracy claim",
+  "questions": 3,
+  "generations": 16,
+  "pairs": 8,
+  "forced_decode_steps": 32,
+  "GT_opened": false,
+  "scoring": false,
+  "run": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_smoke/smoke_001",
+  "inspection": {
+    "container_id": "414b45afb69ee8b144c6827120b85c246377ad85138bbd2c569ca730c561ea3e",
+    "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "name": "eadp-selected-001-461338",
+    "devices": [
+      "/dev/nvidia0",
+      "/dev/nvidiactl",
+      "/dev/nvidia-uvm",
+      "/dev/nvidia-uvm-tools"
+    ],
+    "bind_mounts": 13
+  },
+  "source_manifest_sha256": "20ab92e1e5a1c21759791bc0e5b46590babb9d3a48bc3887f0793daf29e4a284",
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_smoke/monitor_smoke001/started.json": "2c696706d3aa9c5db4c1fe1a354f2f921443f8a69ba43bc782ddf332463e13a3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_smoke/monitor_smoke001/terminal.json": "73b3938127d994e25f2187fbed0fe4169cb819f1150b9a232d4477b954e7b32c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_smoke/smoke_001/frozen.json": "457ef79dbaaffe7b7ed53546a278cf887922f9a83da215e9ce46469b634d3240",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_smoke/smoke_001/worker_complete.json": "d4f7aa682ee615504f09718b02cca7278e8650c1c45e8d361e2490cbe4f41866",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_smoke/smoke_001/launch.json": "3dafc66538f9b8aeaadb6a8c1823baeff3e4b97dd9e5885afc3580f65bc76708",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_smoke/smoke_001/exit.json": "cf739f9551324106789c946f022a9d7a6bfca5370d2a0ea51d78a0b47ef3f9da",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_smoke/smoke_001/records.jsonl": "9b8df5755de3cc10f0627c9f77bae2d4e1916c3f9751a429d22fc29900f61eda",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_smoke/smoke_001/generated.jsonl": "9938aa6d4d4e658ce1dadd387159066d1193cd80975db20dadb045b792104bba",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_smoke/smoke_001/events.jsonl": "a009d148f1c17d517352a60659be051d57589ebf84fc072b9a059210ceced23c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_smoke/smoke_001/comparisons.jsonl": "74ff5e3c305f582f2ff6b3528b071ff84ac21fc16e3c13dd8397e874f1ea7a69"
+  },
+  "verifier_sha256": "64dc9a21a6dea934e06757fd935393d51b4857a6a4a7720d9483019ac5ce2a8a",
+  "kv_scope": "actual per-layer KV content fingerprints; raw KV tensors not archived"
+}

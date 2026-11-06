@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-11-05T14:49:22.014659+00:00",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "-c",
+    "import sys;sys.path.insert(0,\"e6/pixel_wavefront_t020_nvml_execution_candidate_v8\");import gate; a=gate.admit_gpu(); print(\"accepted jobs\",len(a[\"jobs\"]))"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression",
+  "timeout_seconds": 600.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 3600.0,
+  "poll_seconds": 5.0,
+  "grace_seconds": 30.0,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_execution_candidate_v8/monitor_gatecheck001"
+  ]
+}

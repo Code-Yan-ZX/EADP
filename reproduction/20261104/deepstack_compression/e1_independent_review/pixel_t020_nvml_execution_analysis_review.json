@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "jobs": 9,
+  "stages": 36,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "timing_claims": false,
+  "analysis_sha256": "5308ea66f1c5c41ad3da79809f7838d085acd9e3577fc3c07ca751962aa59ca8",
+  "analysis_started_sha256": "9e434b61a1eb3c37a1ead3f36f9e6b42132bf024d1ff2e27d0f5396618149f76",
+  "analysis_terminal_sha256": "e47b7b37ad716a66614978fdea443217c52e51c6836e9a1752ab9f5e82969abf",
+  "formal_sha256": "757b96ff7e0f75976ef275fb20e5b273d60a739cebd8b94129e9f8634beb93d1",
+  "independent_result_sha256": "27ba3c825eb216fe4b5cba0625680c606148be0cc47325ba0f51113c065f8a32",
+  "result_reviewer_sha256": "f75ce22fcca5d87c519464654df2d11ac3d3373e6b8f05351782d1dcde4c83b3",
+  "reviewer_sha256": "c89513da15daceeb58c2f0c4f811246ab81bf92f01e7e4583d6126a147487e63",
+  "errors": [],
+  "limits": [
+    "MiB sampled peaks can miss transient peaks; interval windows may extend across stage boundaries.",
+    "Target process, whole device and PyTorch allocator are distinct; absent/unknown are not zero.",
+    "Three posthoc DEV anchors with different dynamic K do not establish a population effect or equal compute; no TTFT claim."
+  ]
+}

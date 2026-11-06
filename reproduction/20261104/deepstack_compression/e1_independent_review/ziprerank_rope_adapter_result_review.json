@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "single-image local RoPE compatibility adaptation, forced prefix only",
+  "arm_statuses": {
+    "disabled": "completed",
+    "keep_all": "completed",
+    "keep_256": "completed"
+  },
+  "calls_per_arm": 33,
+  "decode_calls_per_arm": 32,
+  "cache_layers": 36,
+  "logit_comparisons_keep_all": 33,
+  "files_sha256": {
+    "disabled.json": "29c39afa0410aa995f3226216b854fca10fedd74c38ef67121af07b05f51a033",
+    "disabled_started.json": "53949e8c4cbe97d8565373587f207d3fdc512fbbdce5d5e619047ae35bef3d85",
+    "disabled_generated.json": "af20e2b39e1c897585be160f2d29d7182ce198f045c831049f5d513f190a97cc",
+    "keep_all.json": "47fcadd15aad786b5c51a6408e2fe4e61949e3856fb2c217292d16df654994ae",
+    "keep_all_started.json": "a0d5b223519091769ca72fd39750d5e4f2d9f3aeb424f71f71f511c74bc7b9b2",
+    "keep_all_generated.json": "19c2f269594a41ba01bbd76cdb64b05ab1678e0a20a695080ad2dc55a0d25caf",
+    "keep_256.json": "d167922a0926b978837f5be27d94fde7d7ab8edb22002f71f3488a6689d25f3a",
+    "keep_256_started.json": "7f2bc6a49865b99af806a0a960b092d7d2291ef106dbc7026e6d2f4ba0c9613c",
+    "keep_256_generated.json": "3728e64f78b6691232e45534e65e68ab923f4ddb1e18c8becaacd7f1fef42f9a",
+    "started.json": "d425e4674f48cf94246581c1b5a71243b12033a74a214ee40b5357365c1f13e5",
+    "progress.jsonl": "2d38be4d8edf614788dd6416bdefbef0240ef7274a14b8a4c0ad4f5e0efee2f9",
+    "worker_complete.json": "19567304e1f2f657f59759eba4393f033a927494a6af17b0914553455e1aaea8"
+  },
+  "plan_sha256": "45fdb7cda0ca224ae952f65a6d54be272f75a9239c2aca47f16fd8b4679800f6",
+  "nohook_original_review_sha256": "df68aadc1aea26cf861d8768322d9927db2529f93b2a0d4a19a681c713a83741",
+  "run_started_sha256": "d38a3d9a9cf35ba9b1d1d10a9029fd6f300d6a463fb6e2928fa6a23b19469c87",
+  "run_terminal_sha256": "7dad41756906413a4544d84155aec72f929a71a5f9c0da82e6d31b707c9abb33",
+  "run_exit_sha256": "065bf193db2f1529d6e7f70c5ff866751af5a7a85fb7bb32bfb7c9e00d5c855c",
+  "reviewer_sha256": "8350152e201db7335e92508cb8cd7a59f94d882596f671a2017ff1aa1e8e798a",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": [
+    "This is a local adaptation, not an unmodified author baseline.",
+    "Full high-dimensional inputs, DS, KV and logits are not archived; elementwise and logit comparisons are runtime observations, with recorded KV prefix hashes independently checked.",
+    "Single fixed image and forced prefix only; no natural quality, latency or generalization claim."
+  ],
+  "errors": []
+}

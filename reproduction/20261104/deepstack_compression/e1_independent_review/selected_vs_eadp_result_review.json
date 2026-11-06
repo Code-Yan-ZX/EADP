@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "n_questions": 384,
+  "tasks_verified": 4,
+  "contrasts_verified": 8,
+  "result_sha256": "82b93112d8ae1cce8bc31b1dfafd4bcf68194765c6bf0e1ba2940ca32dbe63de",
+  "plan_sha256": "c9076484a343c2d75e28bcffbd2879060281e926796a30811412f46b0a01e152",
+  "compare_started_sha256": "78f066cd9ff308bfe772b856d6d4ea39a6fe918c4b3cda78078a4e1a313936c3",
+  "compare_terminal_sha256": "6a3b372da95706b9e2182ef9976f002cca17426b63048e63385e0813ae94d14f",
+  "reviewer_sha256": "1ab57f6d665e10fb996d8d4cb21ee541e2f3af40c7d90c966f3b59313f37a50f",
+  "GT_opened": false,
+  "new_predictions_opened": false,
+  "errors": [],
+  "limitations": [
+    "No new labels or predictions and no CONFIRM/FINAL.",
+    "E1 stores six generation scalars but not every extra effective generation control recorded by Div/CD; do not assert identical unobserved controls.",
+    "Methods have different selectors and implementation pathways; no inference of matched total compute, speed or deployment effectiveness.",
+    "Do not infer a candidate decision or confirmatory conclusion from this post-hoc DEV comparison alone.",
+    "ALL averages questions across tasks with different metrics, not task-standardized; its non-stratified group bootstrap allows task proportions to vary. Interpret task-specific contrasts first."
+  ]
+}

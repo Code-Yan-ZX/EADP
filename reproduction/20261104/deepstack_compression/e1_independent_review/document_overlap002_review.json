@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "counts": {
+    "source_rows_all": 39463,
+    "source_rows_by_split": {
+      "fit": 30692,
+      "validation": 7668,
+      "excluded_eval": 1103
+    },
+    "eligible_rows_fit_plus_validation": 38360,
+    "source_document_ids": 5272,
+    "evaluation_docvqa_document_ids": 938,
+    "source_documents_also_in_eval": 523,
+    "source_rows_from_eval_documents_by_split": {
+      "fit": 7817,
+      "validation": 2108,
+      "excluded_eval": 421
+    },
+    "source_documents_also_in_eval_by_split": {
+      "fit": 482,
+      "validation": 256,
+      "excluded_eval": 42
+    },
+    "fit_validation_shared_documents": 763,
+    "rows_from_fit_validation_shared_documents_by_split": {
+      "fit": 11584,
+      "validation": 4773
+    }
+  },
+  "inputs": {
+    "rows_sha256": "992aff987a8f50d0f21bedcd6a53f4a626253c6ce31f45f74b219398be880e27",
+    "audit_result_sha256": "16cd193cb1666dbc157610cd116db5f86cf57819daa3732e85e49c8f0a2e6213",
+    "independent_review_sha256": "de458c215a708d7151573b5fc35dab1581a41c46de8e58ab15cb17fb05e40713",
+    "eval_manifest_sha256": "bfc1541bda41382afb2e80478af2be291a7f8d05f6f5c694863b693aad5dec60",
+    "protocol_sha256": "b7714f0dab1f80bcea31f025d0615cab646e134c657ea188e2ad2f8f9409bdd9",
+    "source_sha256": "d60e35bba2f306adcc27aa814624c932cad6544cdd3f297e2f47d7c924dbd8df"
+  },
+  "diagnostic_sha256": "8a1549ba0d3517ecfcf1f22c8940ef61f85874e3339ee367997f9a777b0bd4c7",
+  "diagnostic_started_sha256": "6fc826f4157abcebc2bd0bce1ada392d1e885708d9606a788b27830476269b61",
+  "diagnostic_terminal_sha256": "bd050754f3f281e018d061e8d162b4a7479e308dc38284cd8a61957d98b51ce6",
+  "audit_review_started_sha256": "6b869365ca10843c8dc01eef52b3b03188569b7b6f1478d735deaf3b118a93bd",
+  "audit_review_terminal_sha256": "dd025e4856a3c6f899e8ec0adc179a9d386a845e78776db73ec5e49af940a946",
+  "reviewer_sha256": "072d69bad1372d167b89caeffb17ae52279457bc069055a80ab8d2c9f43bc697",
+  "GT_opened": false,
+  "predictions_opened": false,
+  "training_performed": false,
+  "limitations": [
+    "Exact document-ID equality only; not evidence that pages are duplicates.",
+    "Evaluation document metadata is limited to DocVQA.",
+    "This diagnostic does not authorize training."
+  ]
+}

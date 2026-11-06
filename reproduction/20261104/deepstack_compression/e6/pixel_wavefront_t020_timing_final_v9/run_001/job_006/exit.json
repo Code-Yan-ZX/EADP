@@ -1,0 +1,78 @@
+{
+  "returncode": 0,
+  "timed_out": false,
+  "interrupted": null,
+  "client_exited_while_container_running": false,
+  "container_stopped_verified": true,
+  "container_exit_code": 0,
+  "container_identity": {
+    "container_id": "8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f",
+    "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "host_init": {
+      "pid": 1916331,
+      "start_ticks": 1401613293,
+      "session_id": 1916331,
+      "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+    },
+    "host_argv": [
+      "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_final_v9/worker.py",
+      "--job-index",
+      "6"
+    ],
+    "host_cgroup": "13:freezer:/docker/8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f\n12:memory:/docker/8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f\n11:hugetlb:/docker/8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f\n10:devices:/docker/8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f\n9:rdma:/docker/8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f\n8:net_cls,net_prio:/docker/8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f\n7:cpu,cpuacct:/docker/8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f\n6:perf_event:/docker/8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f\n5:blkio:/docker/8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f\n4:cpuset:/docker/8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f\n3:misc:/docker/8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f\n2:pids:/docker/8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f\n1:name=systemd:/docker/8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f\n0::/docker/8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f\n",
+    "observed_unix": 1793884625.148327
+  },
+  "failure_type": null,
+  "failure": null,
+  "cleanup_attempts": [],
+  "gpu_pids_after": [],
+  "last_inspect": {
+    "returncode": 0,
+    "stderr": "",
+    "id": "8ee93bc200087e041a200d42a2b47d23c4a07faa98c33435917a3299fe39d89f",
+    "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "running": false,
+    "pid": 0,
+    "exit_code": 0,
+    "host_devices": [
+      {
+        "PathOnHost": "/dev/nvidia0",
+        "PathInContainer": "/dev/nvidia0",
+        "CgroupPermissions": "rwm"
+      },
+      {
+        "PathOnHost": "/dev/nvidiactl",
+        "PathInContainer": "/dev/nvidiactl",
+        "CgroupPermissions": "rwm"
+      },
+      {
+        "PathOnHost": "/dev/nvidia-uvm",
+        "PathInContainer": "/dev/nvidia-uvm",
+        "CgroupPermissions": "rwm"
+      },
+      {
+        "PathOnHost": "/dev/nvidia-uvm-tools",
+        "PathInContainer": "/dev/nvidia-uvm-tools",
+        "CgroupPermissions": "rwm"
+      }
+    ],
+    "device_requests": null,
+    "pid_mode": "",
+    "entrypoint": [
+      "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python"
+    ],
+    "command": [
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_final_v9/worker.py",
+      "--job-index",
+      "6"
+    ]
+  },
+  "finished_unix": 1793884652.2296026,
+  "controller": {
+    "pid": 1911760,
+    "start_ticks": 1401596958,
+    "session_id": 1911760,
+    "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+  }
+}

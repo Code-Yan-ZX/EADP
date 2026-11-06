@@ -1,0 +1,59 @@
+{
+  "stage": "frozen DEV full latency analysis",
+  "scope": "CPU only, all jobs retained, no GT, exploratory and unadjusted",
+  "command": [
+    "python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_analysis/monitor_analysis001",
+    "--timeout",
+    "3600",
+    "--snapshot-seconds",
+    "3600",
+    "--poll-seconds",
+    "5",
+    "--grace-seconds",
+    "30",
+    "--",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_analysis/analyze.py",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_analysis/analysis001"
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "OMP_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "approval": {
+    "prelaunch": {
+      "source_sha256": {
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_analysis/analysis_plan001.json": "83d617c735ca12332783b92350c0448106f34b2c0eb2bf6b374006d980c30ef1",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_analysis/analysis_plan001_supplement.json": "7fb05c058125f038c1303eb23f722147500c27535337dfb7ad46641d45402636",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_analysis/analysis_gate.py": "0301124ca7b7e67c9542b700fdb9bcc19a55a67c2b982b604b794d1f3533de15",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_analysis/analysis_core.py": "b51edd4cad7f65f8e56871c0939551a176b23fcbbc7f63dcafbda53de61224f7",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_analysis/analyze.py": "134bf581c5a611c3a3b7b35fa4fe3c334995defdf7357b6d0f413b2dbfe727ca",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_analysis/test_analysis_core.py": "1f32678f70f95d3dcd79e5b4df89520565f177520f4dc6a55ea7f0c3b50965f3",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_analysis/test_analysis_gate.py": "ab2db9925d515217edacae9abe9197289d50cb4856d4c484ab31bb1e6985abbc",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_analysis/test_manual_overlap.py": "018d445f65f4533ac676b8e0a9a48384476dac9cdf79168b2bde27660e70e105",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_analysis/manual_overlap.py": "261171c9b754129d8f21445bd9fd6cb6f7d8441a474f50974982be38523944a6",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_analysis/cpu_check.py": "e4d80a94903995264e537aad8e11596a62798993b705e2d96e991e2273a797aa"
+      },
+      "prelaunch_sha256": "d8149065a5f801097c0da926ddd76ba2e4166c8f83edd51765444cc43d21eceb",
+      "cpu_sha256": "2ac621ded3c9d6a8c093366496d82606d526a0fed924b4805952accd9ccb5ba3"
+    },
+    "upstream": {
+      "formal_sha256": "b5998317e25511250c595862d06499d44596783bef4712cdd6552078bae0733c",
+      "independent_sha256": "fa1b3cacc431c0f02c2d6c3046b60c50f7b3f568f9a8609f032b06d419cf9f4d",
+      "manual_sha256": "90ec235540ea96c70f059cb5b5c1f3ecde8f080d5e1e3c06f59d5974d24f51e0",
+      "manual_review_sha256": "8bcfb82dcc5a8ca8fe406ccbfe1fcda22a578ba56053bc8a49437e1d3474168c",
+      "journal_sha256": "4fe863b86eddf806fa936692be2a73583c4f59e9934df84f8f3d2ec6288fd736",
+      "formal_annotations_sha256": "c82c59c3baa0515b341b06581d46f5b77346e470a113d58f8dda9ae14f0173ab",
+      "manual_annotations_sha256": "cf07abc977977c2c03b7996b5d48cb4b444fa16f0d0d1671c6078bb1c0ac497d",
+      "e1_acceptance_sha256": "95981ce2400d7467ba93d3177275a0860a656fc8558080c243040663e40a52fb",
+      "inputs_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/input_preparation_002/inputs.jsonl",
+      "inputs_sha256": "f3fef75929f88fa21b96458337030c47f2b7afaa596f540879afddd72847f59d",
+      "namespace": "time:[4026531834]"
+    }
+  }
+}

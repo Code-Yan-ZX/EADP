@@ -1,0 +1,18 @@
+{
+  "status": "prepared",
+  "execution_plan_sha256": "bc780d00c6d1a48ac9e76fd5f838b59e5de53d91f651233bb88e45e0a5677e37",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_smoke_accept/verify.py": "c0ced1d37b7f884a55a255288e03e9f373df7c251181ae5015a5176bb745731d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_smoke_accept/contract.py": "9d7e629b5ed5649e9235897f6360a2a8f1582722cf54b9eff64e86f960ab291d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_smoke_accept/inventory_contract.py": "9741c86b7f5e02b9b75b07b16ac8a049b5150606555c79030fa6b04b235a08c4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_smoke_accept/test_verify.py": "b0dd05578ebcc9881cb7324de77391013afe955455593ddecbb5902c51b3058b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_smoke_accept/test_contract.py": "5e6a42178fb1e3b914688cbe21264ff5ba67d481aa63652f2577a855cc0716c1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_smoke_accept/test_inventory_contract.py": "53e08422d41a0e44045752d27ee1a2ca8c1d59bc2e88852d0eb30c5dd44218d2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/random_smoke_accept/freeze.py": "1ec53c33ab7ea8ca32aa3d88050deb2e661ebdd02803a3823dcb36f697f65464"
+  },
+  "test_output": "test_missing_acceptance_plan_prevents_output_access (test_verify.Tests) ... ok\ntest_realistic_container_recipe (test_verify.Tests) ... ok\ntest_tampered_image_mount_device_or_command_rejected (test_verify.Tests) ... ok\ntest_forced32_decode_and_all_cache_fingerprints (test_contract.Tests) ... ok\ntest_matching (test_contract.Tests) ... ok\ntest_source_selection_decode_and_nonfinite_rejected (test_contract.Tests) ... ok\ntest_full_inventory (test_inventory_contract.Tests) ... ok\ntest_reject_missing_extra_changed_generation_and_bad_order (test_inventory_contract.Tests) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.030s\n\nOK\n",
+  "scope": "future completed random 3-anchor/18-arm no-GT acceptance only; GPU still locked pending independent reviews",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "GPU_authorized": false
+}

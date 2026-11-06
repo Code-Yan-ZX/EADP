@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "jobs": 60,
+  "warmups": 9,
+  "diagnostic_generations": 1,
+  "GT_opened": false,
+  "predictions_opened": true,
+  "scoring_performed": false,
+  "formal_sha256": "ff4798d2c8b44f8572c5ab33a994312cd26e75c81fa0d06b1cefca93bdcccc6b",
+  "formal_started_sha256": "fe90dfb91d8e43a7ee9b221954531e925ff2163f56a21593b2f5f14f1705ffe7",
+  "formal_terminal_sha256": "8466578041ea2fb90ff5b641f6b9808346f1c60079fc3132977886cb48863abc",
+  "reference_sha256": "cec29e6f8f822bddfe379c35b23c03630b91ade5a066887255dadc0210ea5662",
+  "journal_sha256": "72b568fdfefdeac2c9a1adb6388bc1677bdf0086b5e7f3009328f1c44ea45956",
+  "run_started_sha256": "4ce2b278d3362c66e17617531a44a630c60ef8a2ea432d23328ffa0cb4755cd8",
+  "run_terminal_sha256": "e356ec8f130971f0b8b4bfbdc2c30924311fe57b15224d2c46839d499235b6ef",
+  "reviewer_sha256": "328568a9667015433a2ba2940e49948f376de8ea1d195c1ffcd2ac054f6a85f9",
+  "container_id": "e3a5a3537a53af196d091a94c64527c834075c5f280d9b0e87a31aba663617af",
+  "reference_fingerprints": {
+    "selector": "37f67a5daccede6711e637413dd2f14984bbe575bae852ccde8e065ee6c3ff41",
+    "ds_merger_three_streams": "6f73b11dc6f46ce73a316e2eef28a38104c9b5fa48bde7f7fd6a609f6065427a",
+    "ds_injection": "3ebc7136ad872e90968ab7596df9d5691f47fb817e46d1c330be8b2aae644993"
+  },
+  "limitations": [
+    "single image warm-cache component pilot",
+    "individual outputs verified online and only fingerprints retained; offline reconstruction impossible",
+    "ds_injection measures selection and mask staging, excluding decoder addition",
+    "not end-to-end TTFT or a statistical generalization"
+  ],
+  "errors": []
+}

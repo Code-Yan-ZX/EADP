@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "post-run source review of pre-frozen supplemental coverage; no timing or output data opened",
+  "GT_opened": false,
+  "timing_results_opened": false,
+  "GPU_used": false,
+  "coverage_plan_sha256": "2dd1c969f0bf6080622c5a0b38aa63a39e8d9df1282e6ee157de1e0b063be6b1",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_coverage_v3/coverage.py": "64d4a4a8ed37e6cfc21df4cd91b05c8f66ebd78287445f37a725aadd3b1a39a3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_coverage_v3/coverage_entry.py": "12d25f34b2034901d2ba4e8f72e29006618e0f84d0316d1dc75e1c2910df0be3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_coverage_v3/test_coverage.py": "a426a0cfe8a10d138052455541dd723fd8a4d5ecfafae5a07e51f9af60aa5663",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_coverage_v3/coverage_freeze.py": "f1b990d0ac42dc29772154310e0b34eb73727c1846cc5cd8785872634e30fec3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_coverage_v3/test_entry_after_freeze.py": "566bcf1c084a71a5e5f1c3a2c76c1138f75d3c1ab846f1841114feb33a7cb7bf"
+  },
+  "reviewer_sha256": "1a44a0a03f5c23c1c6e4077a04ed4c8108e5b62a361d61d04f7c78ed11c6e0a9",
+  "supervision": {
+    "freeze": {
+      "started_sha256": "4f8af1f8a839e64b6772601081e6924ea39378d2924bb8f262fd8f1f305320e3",
+      "terminal_sha256": "34833fe74aa6c9c0a7ac1f373de96ca19010066555622a9fdd122db3fc297be3"
+    },
+    "entry_smoke": {
+      "started_sha256": "dbc61ca0cb21a3d4fbfba2dc12bb6bc27327be45385be5129be8824686add7b2",
+      "terminal_sha256": "9e887381b377f2755c92988a5986543b7d75e379fd247bfc8e86cbacf617c256"
+    }
+  },
+  "test_log": "test_direct_overlaps_and_incomplete_coverage (test_coverage.Tests) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+  "limitations": [
+    "coverage is supplemental, not proof of no interference",
+    "second fsync, watcher supervisor health and unsampled background remain unknown",
+    "all samples retained"
+  ],
+  "errors": []
+}

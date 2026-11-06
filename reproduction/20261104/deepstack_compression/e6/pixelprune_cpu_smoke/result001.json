@@ -1,0 +1,79 @@
+{
+  "scope": "tiny random CPU model and synthetic image, 4 generated synthetic tokens; no real data",
+  "plan_sha256": "60642232a213ae5fe37fd1fae327aacad39771bd923cdba8181cd516626d31ae",
+  "torch": "2.8.0+cu128",
+  "transformers": "4.57.1",
+  "before_signatures": {
+    "vision": "(self, hidden_states: torch.Tensor, grid_thw: torch.Tensor, **kwargs) -> torch.Tensor",
+    "image_features": "(self, pixel_values: torch.FloatTensor, image_grid_thw: Optional[torch.LongTensor] = None)",
+    "model_forward": "(self, input_ids: torch.LongTensor = None, attention_mask: Optional[torch.Tensor] = None, position_ids: Optional[torch.LongTensor] = None, past_key_values: Optional[transformers.cache_utils.Cache] = None, inputs_embeds: Optional[torch.FloatTensor] = None, pixel_values: Optional[torch.Tensor] = None, pixel_values_videos: Optional[torch.FloatTensor] = None, image_grid_thw: Optional[torch.LongTensor] = None, video_grid_thw: Optional[torch.LongTensor] = None, cache_position: Optional[torch.LongTensor] = None, **kwargs: typing_extensions.Unpack[transformers.utils.generic.TransformersKwargs]) -> Union[tuple, transformers.models.qwen3_vl.modeling_qwen3_vl.Qwen3VLModelOutputWithPast]",
+    "cg_forward": "(self, input_ids: torch.LongTensor = None, attention_mask: Optional[torch.Tensor] = None, position_ids: Optional[torch.LongTensor] = None, past_key_values: Optional[transformers.cache_utils.Cache] = None, inputs_embeds: Optional[torch.FloatTensor] = None, labels: Optional[torch.LongTensor] = None, pixel_values: Optional[torch.Tensor] = None, pixel_values_videos: Optional[torch.FloatTensor] = None, image_grid_thw: Optional[torch.LongTensor] = None, video_grid_thw: Optional[torch.LongTensor] = None, cache_position: Optional[torch.LongTensor] = None, logits_to_keep: Union[int, torch.Tensor] = 0, **kwargs: typing_extensions.Unpack[transformers.utils.generic.TransformersKwargs]) -> Union[tuple, transformers.models.qwen3_vl.modeling_qwen3_vl.Qwen3VLCausalLMOutputWithPast]"
+  },
+  "after_signatures": {
+    "vision": "(self: 'Any', hidden_states: 'torch.Tensor', grid_thw: 'torch.Tensor', keep_indices: 'Optional[List[torch.Tensor]]' = None, **kwargs: 'Any') -> 'Any'",
+    "image_features": "(self: 'Any', pixel_values: 'torch.Tensor', image_grid_thw: 'Optional[torch.LongTensor]' = None, keep_indices: 'Optional[List[torch.Tensor]]' = None) -> 'Tuple[Any, Any]'",
+    "model_forward": "(self: 'Any', input_ids: 'Optional[torch.LongTensor]' = None, attention_mask: 'Optional[torch.Tensor]' = None, position_ids: 'Optional[torch.LongTensor]' = None, past_key_values: 'Optional[Any]' = None, inputs_embeds: 'Optional[torch.FloatTensor]' = None, pixel_values: 'Optional[torch.Tensor]' = None, pixel_values_videos: 'Optional[torch.Tensor]' = None, image_grid_thw: 'Optional[torch.LongTensor]' = None, video_grid_thw: 'Optional[torch.LongTensor]' = None, cache_position: 'Optional[torch.LongTensor]' = None, keep_indices: 'Optional[List[torch.Tensor]]' = None, **kwargs: 'Any') -> 'Any'",
+    "cg_forward": "(self: 'Any', input_ids: 'Optional[torch.LongTensor]' = None, attention_mask: 'Optional[torch.Tensor]' = None, position_ids: 'Optional[torch.LongTensor]' = None, past_key_values: 'Optional[Any]' = None, inputs_embeds: 'Optional[torch.FloatTensor]' = None, labels: 'Optional[torch.LongTensor]' = None, pixel_values: 'Optional[torch.Tensor]' = None, pixel_values_videos: 'Optional[torch.Tensor]' = None, image_grid_thw: 'Optional[torch.LongTensor]' = None, video_grid_thw: 'Optional[torch.LongTensor]' = None, cache_position: 'Optional[torch.LongTensor]' = None, logits_to_keep: 'int' = 0, **kwargs: 'Any') -> 'Any'"
+  },
+  "records": [
+    {
+      "arm": "unpatched",
+      "status": "completed",
+      "output_ids": [
+        [
+          3,
+          123,
+          121,
+          124,
+          4,
+          5,
+          75,
+          13,
+          36,
+          70
+        ]
+      ],
+      "cache_length": 9
+    },
+    {
+      "arm": "patched_explicit_disabled",
+      "status": "completed",
+      "output_ids": [
+        [
+          3,
+          123,
+          121,
+          124,
+          4,
+          5,
+          75,
+          13,
+          36,
+          70
+        ]
+      ],
+      "cache_length": 9
+    },
+    {
+      "arm": "patched_enabled_threshold_zero",
+      "status": "completed",
+      "output_ids": [
+        [
+          3,
+          123,
+          121,
+          124,
+          4,
+          5,
+          75,
+          13,
+          36,
+          70
+        ]
+      ],
+      "cache_length": 9
+    }
+  ],
+  "disabled_output_equals_unpatched": true,
+  "cuda_initialized": false
+}

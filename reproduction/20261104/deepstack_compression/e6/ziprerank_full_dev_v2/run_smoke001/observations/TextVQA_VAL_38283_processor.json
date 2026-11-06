@@ -1,0 +1,39 @@
+{
+  "image_start": 4,
+  "visual_tokens": 1024,
+  "cache_condition": "warm: input preflight read/decode",
+  "processor": {
+    "input_ids": {
+      "dtype": "torch.int64",
+      "shape": [
+        1,
+        1052
+      ],
+      "sha256": "9688c776cc339e0dd1842ec72beff19b771b8f540e8798bf52139a36758c86e9"
+    },
+    "attention_mask": {
+      "dtype": "torch.int64",
+      "shape": [
+        1,
+        1052
+      ],
+      "sha256": "e50f2b94dc0dacc16b8d596038a056129e5a36f837522eb3001801607a072036"
+    },
+    "pixel_values": {
+      "dtype": "torch.bfloat16",
+      "shape": [
+        4096,
+        1536
+      ],
+      "sha256": "cad33d3ce909a500363fa18a9ef1929d94fab9cc2d1e9d9465db1b2c1e1f0fb5"
+    },
+    "image_grid_thw": {
+      "dtype": "torch.int64",
+      "shape": [
+        1,
+        3
+      ],
+      "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+    }
+  }
+}

@@ -1,0 +1,971 @@
+{
+  "status": "passed",
+  "failure": null,
+  "scope": "real no-model allocation and NVML sampling",
+  "lifecycle": {
+    "status": "passed",
+    "phase": "completed",
+    "container_id": "0107450345f4aaeecb9f8a27ea859eaf62a2ebeda334fb2bec373542f5093830",
+    "error": null,
+    "cleanup": null,
+    "audit": {
+      "status": "passed",
+      "mode": "C-ON",
+      "host_pid": 1104773,
+      "start_ticks": 1398367780,
+      "gpu_uuid": "GPU-6fbaa407-50bc-c1a5-a45f-77bddef8bf1e",
+      "samples": 16,
+      "nvml_process_sampled_peak_bytes": 339738624,
+      "scope": "whole isolated process, MiB-rounded sampled maximum; transient peaks can be missed"
+    }
+  },
+  "metadata": {
+    "status": "passed",
+    "sample_count": 16,
+    "device_field_coverage": {
+      "total": {
+        "known": 16,
+        "unknown": 0,
+        "complete": true
+      },
+      "used": {
+        "known": 16,
+        "unknown": 0,
+        "complete": true
+      },
+      "free": {
+        "known": 16,
+        "unknown": 0,
+        "complete": true
+      },
+      "reserved": {
+        "known": 16,
+        "unknown": 0,
+        "complete": true
+      }
+    },
+    "device_used_max_of_known_samples_bytes": 1570766848,
+    "device_total_known_values_bytes": [
+      48305799168
+    ],
+    "worker_used_max_of_present_samples_bytes": 339738624,
+    "worker_presence": {
+      "present": 13,
+      "absent_before_first": 1,
+      "absent_between_first_and_last": 0,
+      "absent_after_last": 2
+    },
+    "graphics_observations": [
+      {
+        "sample_monotonic_ns": 13983679646659171,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      },
+      {
+        "sample_monotonic_ns": 13983680307486442,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      },
+      {
+        "sample_monotonic_ns": 13983680920646655,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      },
+      {
+        "sample_monotonic_ns": 13983681553990138,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      },
+      {
+        "sample_monotonic_ns": 13983682206201859,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      },
+      {
+        "sample_monotonic_ns": 13983682841738710,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      },
+      {
+        "sample_monotonic_ns": 13983683471428266,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      },
+      {
+        "sample_monotonic_ns": 13983684105807265,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      },
+      {
+        "sample_monotonic_ns": 13983684743421980,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      },
+      {
+        "sample_monotonic_ns": 13983685373978792,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      },
+      {
+        "sample_monotonic_ns": 13983686002892580,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      },
+      {
+        "sample_monotonic_ns": 13983686651164674,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      },
+      {
+        "sample_monotonic_ns": 13983687296344814,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      },
+      {
+        "sample_monotonic_ns": 13983687949985283,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      },
+      {
+        "sample_monotonic_ns": 13983688607163316,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      },
+      {
+        "sample_monotonic_ns": 13983689243416257,
+        "other_graphics_processes": [
+          {
+            "pid": 1589,
+            "type": "G",
+            "used_bytes": 68157440
+          },
+          {
+            "pid": 28844,
+            "type": "G",
+            "used_bytes": 229638144
+          },
+          {
+            "pid": 29603,
+            "type": "G",
+            "used_bytes": 225443840
+          },
+          {
+            "pid": 29926,
+            "type": "G",
+            "used_bytes": 14680064
+          },
+          {
+            "pid": 30114,
+            "type": "G",
+            "used_bytes": 67108864
+          },
+          {
+            "pid": 30177,
+            "type": "G",
+            "used_bytes": 13631488
+          },
+          {
+            "pid": 644788,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 689184,
+            "type": "G",
+            "used_bytes": 0
+          },
+          {
+            "pid": 1969737,
+            "type": "G",
+            "used_bytes": 8388608
+          },
+          {
+            "pid": 3674879,
+            "type": "G",
+            "used_bytes": 24117248
+          }
+        ]
+      }
+    ],
+    "limitations": [
+      "device used and device capacity are not worker process memory",
+      "values are MiB-rounded samples; transient peaks can be missed",
+      "graphics processes are recorded as background, not treated as an idle device",
+      "device maxima use only known samples; unknown device values remain unknown",
+      "worker absence is not a zero-byte observation"
+    ]
+  },
+  "held_window_sample_count": 13,
+  "allocation": {
+    "allocation_bytes": 16777216,
+    "allocation_monotonic_ns": 13983680088142950,
+    "gpu_model": "NVIDIA A40",
+    "status": "allocated",
+    "model_loaded": false,
+    "GT_opened": false
+  },
+  "worker_complete": {
+    "status": "completed",
+    "allocation_bytes": 16777216,
+    "free_start_monotonic_ns": 13983688097614374,
+    "release_monotonic_ns": 13983688098431598,
+    "model_loaded": false,
+    "GT_opened": false
+  },
+  "limitations": [
+    "MiB-rounded samples can miss transient peaks",
+    "CUDA context and allocator overhead differ from 16 MiB allocation",
+    "device usage is not per-process usage",
+    "no model, performance, or full-workload conclusion"
+  ]
+}

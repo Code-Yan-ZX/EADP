@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "selected_score_prelaunch",
+  "GT_opened": false,
+  "predictions_opened": false,
+  "errors": [],
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_analysis/plan.json": "f397d895e27b143e1dab1ada05f8f039e8913fcc7a651eacfac9cd13c6832b43",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_analysis/admission.py": "13633003d08051f902908a2e11df3ea6ada70eaf66d2f90daebc7791a5183180",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_analysis/gate.py": "1d58de2384ee13afa23530f551232df8b04a618fb740e453616ce0eda99f341c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_analysis/inventory.py": "89f084aa0444b7c40d415c2c350eac0c3ce961516a454588a15bbb05147619fd",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_analysis/paired.py": "f958dea041e09c0f44d9a840b9ca591a114e960a125db0519137b299fbd63eeb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_analysis/score_selected.py": "82aa641895f978711898e09a8847d60c79d42095a239afa80b0a917ae8a59ebf",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_analysis/test_selected.py": "a258a52afa8d7a965053e42e3900974c51baa1e61d70b8ea83dfb02318572c68",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_analysis/cpu_check.py": "228715811c85e1bc79f34c38199e621afca85d9a23fb2859d83ac23558ba1ab6",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/dataset/utils/vqa_eval.py": "f63c9fd539a4a2750cfb4d17ca654e9871b58358bbb943549a71c947839de3ae",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/smp/misc.py": "e65a0e0a23305ab3bd16c6d1885e8f97b08b7a8fb3c4bf90691e5432a67f7ddf",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/utils/matching_util.py": "03435cedaeaf6282599816aed4ba57f26dd4858f2a37399490acca98d9f8f5f2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/metrics.py": "7e79c70937fe9eb1ecea9e3ea3c70ed9ba781a9cadc26fd5baa530d0f7bfbc10",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/paired_stats.py": "56e83840cb1ae399a992af7f7f408c8fbe9634aac880ab5472ffa1b8fa7fa4d5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/score.py": "6470bd9949e7430a3b95eb78c30b9fc3473436447034bf199227ace8ff080891",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/completion.py": "a94c45fee0ebc4680c8cd7d8bc2d44b93e8576a6fa1d517842945dc21b9f74cd",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_score_sources/completion.py": "a94c45fee0ebc4680c8cd7d8bc2d44b93e8576a6fa1d517842945dc21b9f74cd"
+  },
+  "plan_sha256": "f397d895e27b143e1dab1ada05f8f039e8913fcc7a651eacfac9cd13c6832b43",
+  "cpu_proof_sha256": "a9eb23ed165b65f60c2bf4649c39f87b4e5032dd2fd26bddf41c0b8578ff75cb",
+  "cpu_started_sha256": "a02c0682667c2d4afa7ae50c8908e1da4dbb145ca0a9ed9a86bdb98bbae77081",
+  "cpu_terminal_sha256": "6815dc013190c50b0d0a36fd3a766bc5112584397ccf66b429b76228aebb7254",
+  "e1_score_frozen_sha256": "1ba1c8345b0a6bc5065ad68a582d66ab7d5d668a875e4dbe4a18b2e0bb8c977f",
+  "e1_score_review_sha256": "a152ad12cc1017c9797ff9a4780545be89cdf9bcf456f7ed2d6b918053543459",
+  "reviewer_sha256": "76c4ed7fbc69a4c5b9d73483e3bc3d9cbf58fdb045342739a7fad3dad10e9e0d",
+  "limits": [
+    "DEV exploratory unadjusted comparisons; not a compute-matched benchmark.",
+    "Formal and independent full-panel completion remain separate gates before any predictions or labels are read."
+  ]
+}

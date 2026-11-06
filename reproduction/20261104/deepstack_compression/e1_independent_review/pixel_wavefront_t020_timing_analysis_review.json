@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "jobs": 24,
+  "warmups": 6,
+  "measured": 18,
+  "anchors": 3,
+  "samples_excluded": 0,
+  "analysis_sha256": "08a24bfca350143ec7fcd7291b6bf133f5d7e5249a4d5424d198eb171b25b07a",
+  "analysis_started_sha256": "39ce4e8ee148598f9e343b9bdc9af914e4fc94311575dbf75bcc10b0e221d6ce",
+  "analysis_terminal_sha256": "4613975aa4e09c3120e55018b64cae88c966a9bf0d696cca734d597f898d1770",
+  "coverage_sha256": "90e12adda31ea1043a4d6814ef4f2b47b5577a53b0577a93f2586dbf43c320ab",
+  "coverage_started_sha256": "90b7265a08c58b833801ba69780dd7e0bc56040b768f2875008be87437e93a44",
+  "coverage_terminal_sha256": "d207f13be2cfba8f0e75b6e2f965d37fc7373ac7f0eded6f64b2f5f6550390c2",
+  "formal_sha256": "c194045bad0732c886b9c6144925fe1ce83c397acde1cb67815f30ec2395e4cd",
+  "result_review_sha256": "a8223f51a5dae25ba73c2c4630a7cd34423dcf639edd577a5613832040aa12a8",
+  "reviewer_sha256": "035f63fd55ead2b89497333a434d2808c15b413f8b029816cc393da5a4422747",
+  "scope": "independent per-anchor three-repeat medians, matched-index ratios and observed-query windows",
+  "limitations": [
+    "Three posthoc anchors, three samples per arm and separate processes do not support population inference.",
+    "Equal repeat indices pair labels, not simultaneous measurement.",
+    "Second fsync, observer supervisor health and other unrecorded background have unknown overlap; all samples retained."
+  ],
+  "errors": []
+}

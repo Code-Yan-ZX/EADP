@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-11-04T18:08:31.093845+00:00",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "e4_panel_v2/panel_launch.py",
+    "--e1-acceptance",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_completion.json",
+    "--e1-started",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/monitorverifye1full001/started.json",
+    "--e1-terminal",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/monitorverifye1full001/terminal.json",
+    "--smoke-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/smoke_001",
+    "--smoke-proof",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/smoke_001_verification.json",
+    "--smoke-started",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/monitor_verify_smoke001/started.json",
+    "--smoke-terminal",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/monitor_verify_smoke001/terminal.json",
+    "--run-id",
+    "002",
+    "--timeout",
+    "10800"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression",
+  "timeout_seconds": 10920.0,
+  "stale_seconds": 1800.0,
+  "progress_paths": [
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_panel_v2/panel_002/generated.jsonl"
+  ],
+  "snapshot_seconds": 3600.0,
+  "poll_seconds": 15.0,
+  "grace_seconds": 90.0,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_panel_v2/monitor_panel002",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_panel_v2"
+  ]
+}

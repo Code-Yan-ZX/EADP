@@ -1,0 +1,119 @@
+{
+  "status": "completed",
+  "plan_sha256": "c9076484a343c2d75e28bcffbd2879060281e926796a30811412f46b0a01e152",
+  "source_sha256": "82e2189cca266b2beee6ffaedeaef1cc3fbabe2cf3e40e13e2d35314505263cc",
+  "reports": {
+    "ALL": {
+      "n_questions": 384,
+      "n_groups": 384,
+      "contrasts": {
+        "div-adapted_minus_eadp": {
+          "difference_pp": -3.910143187645406,
+          "percentile_95_ci_pp": [
+            -7.6678481777990015,
+            -0.12895300114216085
+          ],
+          "improved": 37,
+          "declined": 52,
+          "unchanged": 295
+        },
+        "cd-adapted_minus_eadp": {
+          "difference_pp": -6.472031437336727,
+          "percentile_95_ci_pp": [
+            -10.576359900046814,
+            -2.409191768871585
+          ],
+          "improved": 36,
+          "declined": 65,
+          "unchanged": 283
+        }
+      }
+    },
+    "DocVQA_VAL": {
+      "n_questions": 128,
+      "n_groups": 128,
+      "contrasts": {
+        "div-adapted_minus_eadp": {
+          "difference_pp": -1.7304295629362185,
+          "percentile_95_ci_pp": [
+            -10.580750692298212,
+            6.98944022889314
+          ],
+          "improved": 30,
+          "declined": 31,
+          "unchanged": 67
+        },
+        "cd-adapted_minus_eadp": {
+          "difference_pp": -10.66609431201018,
+          "percentile_95_ci_pp": [
+            -19.098977978563425,
+            -2.150347385661075
+          ],
+          "improved": 22,
+          "declined": 39,
+          "unchanged": 67
+        }
+      }
+    },
+    "TextVQA_VAL": {
+      "n_questions": 128,
+      "n_groups": 128,
+      "contrasts": {
+        "div-adapted_minus_eadp": {
+          "difference_pp": -5.312499999999999,
+          "percentile_95_ci_pp": [
+            -9.921875000000014,
+            -1.0937500000000042
+          ],
+          "improved": 3,
+          "declined": 11,
+          "unchanged": 114
+        },
+        "cd-adapted_minus_eadp": {
+          "difference_pp": -2.4999999999999996,
+          "percentile_95_ci_pp": [
+            -7.500000000000028,
+            2.343749999999989
+          ],
+          "improved": 8,
+          "declined": 12,
+          "unchanged": 108
+        }
+      }
+    },
+    "AI2D_TEST": {
+      "n_questions": 128,
+      "n_groups": 128,
+      "contrasts": {
+        "div-adapted_minus_eadp": {
+          "difference_pp": -4.6875,
+          "percentile_95_ci_pp": [
+            -10.15625,
+            0.78125
+          ],
+          "improved": 4,
+          "declined": 10,
+          "unchanged": 114
+        },
+        "cd-adapted_minus_eadp": {
+          "difference_pp": -6.25,
+          "percentile_95_ci_pp": [
+            -13.28125,
+            0.78125
+          ],
+          "improved": 6,
+          "declined": 14,
+          "unchanged": 108
+        }
+      }
+    }
+  },
+  "scope": "Created after the separately scored full DEV results were available; exploratory comparison only, no candidate-selection or confirmatory claim.",
+  "limitations": [
+    "No new labels or predictions and no CONFIRM/FINAL.",
+    "E1 stores six generation scalars but not every extra effective generation control recorded by Div/CD; do not assert identical unobserved controls.",
+    "Methods have different selectors and implementation pathways; no inference of matched total compute, speed or deployment effectiveness.",
+    "Do not infer a candidate decision or confirmatory conclusion from this post-hoc DEV comparison alone.",
+    "ALL averages questions across tasks with different metrics, not task-standardized; its non-stratified group bootstrap allows task proportions to vary. Interpret task-specific contrasts first."
+  ]
+}

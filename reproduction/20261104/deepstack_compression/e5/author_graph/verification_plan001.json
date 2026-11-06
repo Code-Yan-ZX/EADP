@@ -1,0 +1,32 @@
+{
+  "stage": "CPU formal verification after actual supervised GPU run",
+  "plan_sha256": "3caf0b12070fc0b4168fc342fba99295b636d683a968730e4adfe593d94afb8c",
+  "verifier_sha256": "0a2b01f9acaa936aa3b693d4ed7b5a5705efefca837cf85b6a19ab466bedbed2",
+  "timeout_seconds": 600,
+  "gpu_used": false,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/monitor_verify001",
+    "--timeout",
+    "600",
+    "--snapshot-seconds",
+    "3600",
+    "--poll-seconds",
+    "5",
+    "--grace-seconds",
+    "30",
+    "--",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/verify.py",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/smoke001_verification.json"
+  ],
+  "limits": [
+    "requires clean completed GPU run; partial or mismatched results fail and remain archived",
+    "independent post-run review is required before interpreting outcome"
+  ]
+}

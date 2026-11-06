@@ -1,0 +1,39 @@
+{
+  "stage": "post_hoc_document_disjoint_exploration",
+  "created_unix": 1793831705.3219635,
+  "disclosure": "Frozen after seeing substantial document-level overlap in completed independent diagnostic; exploratory plan, not a predeclared confirmatory sample.",
+  "scope": "DocVQA third-party train metadata only, no labels or predictions, no training, no change to original image split.",
+  "row_count": 39463,
+  "docvqa_eval_rows": 5349,
+  "source_rows_sha256": "992aff987a8f50d0f21bedcd6a53f4a626253c6ce31f45f74b219398be880e27",
+  "eval_full_manifest_sha256": "bfc1541bda41382afb2e80478af2be291a7f8d05f6f5c694863b693aad5dec60",
+  "evidence_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_train_data/train_audit_001/result.json": "16cd193cb1666dbc157610cd116db5f86cf57819daa3732e85e49c8f0a2e6213",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_train_data/monitor_train_audit001/started.json": "7ba266d05472aca114bcc1d030bf783368f8bf2e0e725d5acce8fdf35cfe7595",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_train_data/monitor_train_audit001/terminal.json": "252c12f6123b002deaf2a80c491d97c8e7c2997154344edaaf97df3797c7ec5f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/train_audit001_review.json": "de458c215a708d7151573b5fc35dab1581a41c46de8e58ab15cb17fb05e40713",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_train_audit001/started.json": "6b869365ca10843c8dc01eef52b3b03188569b7b6f1478d735deaf3b118a93bd",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_train_audit001/terminal.json": "dd025e4856a3c6f899e8ec0adc179a9d386a845e78776db73ec5e49af940a946",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_train_data/document_overlap_002.json": "8a1549ba0d3517ecfcf1f22c8940ef61f85874e3339ee367997f9a777b0bd4c7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_train_data/monitor_document_overlap002/started.json": "6fc826f4157abcebc2bd0bce1ada392d1e885708d9606a788b27830476269b61",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_train_data/monitor_document_overlap002/terminal.json": "bd050754f3f281e018d061e8d162b4a7479e308dc38284cd8a61957d98b51ce6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/document_overlap002_review.json": "959de93fa17392370cce590ba308739705d433f3a2d563bccb78678319bfe356",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/document_overlap_review001/monitor_recalc001/started.json": "0bfa9fc6a9e97f83ff4e21f4f1621c9960558de0b114a6cfc7ae0a689de0fa66",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/document_overlap_review001/monitor_recalc001/terminal.json": "91523fae229d6dcc86af44b0a687693c27568d693a54d9062d1822c1dcb1c310"
+  },
+  "graph": "Bipartite nodes are exact nonempty source document IDs and accepted image group IDs; edge for each source row. Close transitively across all source rows before exclusion.",
+  "exclude": "Every component with any member group previously excluded_eval, or any member document occurring in all frozen DocVQA evaluation manifest rows, is excluded as a whole.",
+  "component_id": "sha256 UTF-8 canonical compact JSON object with sorted docs and sorted group IDs (sort_keys true, ensure_ascii true).",
+  "assignment": "Sort nonexcluded components by SHA256(20261105|TRAIN_DOC_COMPONENT|component_id), tie by component_id; first floor(4*n/5) fit, rest validation; atomic per component.",
+  "checks": "Complete accounting; unique question IDs; no document or image group in multiple splits; no eligible component connected to evaluation group or evaluation document; report component sizes, rows/groups/documents and imbalance.",
+  "labels_opened": false,
+  "predictions_opened": false,
+  "gpu_used": false,
+  "training_performed": false,
+  "limitations": [
+    "Exact IDs identify shared documents, not semantic document variants.",
+    "Images or documents may still evade perceptual and source identity matching.",
+    "Third-party source equivalence to official release remains unverified.",
+    "Post-hoc exploratory split is not authorization to train."
+  ]
+}

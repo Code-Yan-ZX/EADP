@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "returncode": 0,
+  "timed_out": false,
+  "container_running": false,
+  "container_exit_code": 0,
+  "container_id": "e7024f12940f49a1c226536f0531e98a5726a03547c1642b28a820ed01517d28",
+  "worker_sha256": "e4c6dccfe2de63535b9b4e528624095df57ac24a1f570df637c0af9d8dcbb00e",
+  "preflight_sha256": "4c8306e66c03c48a7f4870b9d0d094785abe35b0757a8b3a38b278741f5205dc",
+  "launch_sha256": "c90b4a8cbef139aef4caf8099d57456922bb5f32cc8e68af28c850d5c40b91c4",
+  "receipt_sha256": "5bd7cfc215d5686cccd287e41658039e011c4f3d47d20004e000f8a44d49b18d",
+  "stdout_sha256": "2a1835872dd533f485600a0747bc5d0e419d2c6174d86de0fc3e4f717f552876",
+  "stderr_sha256": "d4702ea5c5dd60d38944f9b4cb406364da7b270a575450a143070d7a8a71ccb5",
+  "result": {
+    "status": "preflight_passed",
+    "cuda_initialized": false,
+    "model_loaded": false,
+    "predictions": false,
+    "GT_opened": false,
+    "target_ids": [
+      100,
+      200,
+      300
+    ],
+    "wrapper": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py",
+    "versions": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "transformers": "4.57.1",
+      "flash-attn": "2.8.3",
+      "accelerate": "1.12.0",
+      "qwen-vl-utils": "0.0.14",
+      "Pillow": "12.0.0",
+      "tokenizers": "0.22.2",
+      "numpy": "2.2.6",
+      "safetensors": "0.7.0",
+      "timm": "1.0.24"
+    }
+  },
+  "started_unix": 1793821118.9405422,
+  "finished_unix": 1793821190.9649765
+}

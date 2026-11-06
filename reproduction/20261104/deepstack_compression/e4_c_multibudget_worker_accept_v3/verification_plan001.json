@@ -1,0 +1,20 @@
+{
+  "status": "prepared",
+  "run_id": "001",
+  "GPU_authorized": false,
+  "created_unix": 1793863678.8451364,
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker_accept_v3/verify.py": "1bcf9cd319610bf5678d66f99372e2f909930b7370b895266fecc13aaa43a65d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker_accept_v3/snapshot.py": "d7cdfd3fc57580dbcaf021496e18918bbf9de06d4fa1fbd506268ca9fd615d33",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker_accept_v3/test_verify.py": "bfa64eb41f117703a4ffc59e9e71db7e5904628de2d27cdb83b61bf440d17aa2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker_accept_v3/freeze.py": "2b71dc52c21e2ebd31b117f370a0684bc4e4117e72bca6492cca1609b83b4696",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker_v3/runtime_plan001.json": "ae4738da4d520d28dc070e97cca58737b7e1b23b07152b8040cb783d15ff0542",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker_v3/admission.py": "cf605954ee344bfef05b927d41cc0eaffadd80da216723caab0988986ca186b8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker_v3/fixed_reference_gate.py": "c8e30bdec0e4e44f7f6312c2ca5f521e3a836c98927ff78dbaab0d3b69dac3ad",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker_v3/worker_core.py": "367bcb71fcd3674989c12117297021b04540d1cfaac8492a622c3c11cd277f3b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker_v3/references.py": "6a88fbff7ba9e31b1cd969e0a0ff36f3eb2ce978532f04d646adbb56a614eab5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_expansion/pilot_plan001.json": "94b8a159f4a787b541b9f41b27a62921e3a8a6a0b44ff648d8d35d46d5725f7f"
+  },
+  "tests": "test_natural_and_fixed_reference (test_verify.Tests) ... ok\ntest_wrong_fixed_reference_and_early_eos_are_rejected (test_verify.Tests) ... ok\ntest_zero_time_or_raw_late_mismatch_is_rejected (test_verify.Tests) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nOK\n",
+  "scope": "formal full 1520-job verification after actual supervisor/container exit; no GT/scoring; post-run source snapshot cannot exclude transient changes; health overlap only includes recorded calls"
+}

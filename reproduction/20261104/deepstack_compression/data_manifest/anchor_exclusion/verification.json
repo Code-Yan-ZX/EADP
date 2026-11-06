@@ -1,0 +1,20 @@
+{
+  "anchor_distinct_groups": 16,
+  "checks": [
+    "independent original-source SHA and anchor qid reconstruction",
+    "full ordered retained/dropped question lists",
+    "all anchor-linked groups excluded globally",
+    "CONFIRM panel partition",
+    "independent group count"
+  ],
+  "excluded_group_counts": {
+    "DocVQA_VAL:CONFIRM": 2,
+    "DocVQA_VAL:FINAL": 13
+  },
+  "excluded_questions": 94,
+  "predictions_or_answers_read": false,
+  "retained_questions": 12116,
+  "status": "pass",
+  "summary_sha256": "d149689cb18d74af056168d6124bee5b91ce864aeac74ac5319bb513f3a65ccc",
+  "verifier_sha256": "4c57ed86d2c21c6976fd4904270b3f2c266bc904df1fe801f3340317bec30a95"
+}

@@ -1,0 +1,11 @@
+{
+  "created_unix": 1793825702.5197318,
+  "stage": "pre-execution comparison definition",
+  "sample_unchanged_sha256": "c74d56b67836926d12d1c4e5065fc0eb5cea21bd395d6070754da0bc1d9764b3",
+  "reason": "E4 K1024 full records contain output IDs; high-dimensional first-logit arrays only exist for a small fixed anchor subset.",
+  "correction": "Compare completed stock output IDs against the same accepted E4 questions; this panel does not conduct cross-backend first-logit comparison. Do not assert cross-environment identity or compare instrumented timings.",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "new_generations_performed": false,
+  "native_anchor_note": "The complete DEV panel contains fixed E4 anchors; no cross-backend first-logit comparison is part of this protocol."
+}

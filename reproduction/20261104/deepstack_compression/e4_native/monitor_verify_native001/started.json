@@ -1,0 +1,42 @@
+{
+  "created_utc": "2026-11-04T17:49:20.521634+00:00",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "e4_native/native_verify.py",
+    "--e1-acceptance",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_completion.json",
+    "--e1-started",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/monitorverifye1full001/started.json",
+    "--e1-terminal",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/monitorverifye1full001/terminal.json",
+    "--smoke-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/smoke_001",
+    "--smoke-proof",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/smoke_001_verification.json",
+    "--smoke-started",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/monitor_verify_smoke001/started.json",
+    "--smoke-terminal",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/monitor_verify_smoke001/terminal.json",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_native/native_001",
+    "--run-started",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_native/monitor_native001/started.json",
+    "--run-terminal",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_native/monitor_native001/terminal.json",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_native/native_001_verification.json"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression",
+  "timeout_seconds": 3600.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 3600.0,
+  "poll_seconds": 15.0,
+  "grace_seconds": 30.0,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_native/monitor_verify_native001"
+  ],
+  "worker_pid": 139136,
+  "process_group": 139136
+}

@@ -1,0 +1,198 @@
+{
+  "status": "completed",
+  "plan_sha256": "75e5a32fff58a77da1ee22f475323071a0b56095a626a84d963a8caebcf016c9",
+  "feature_sha256": "c36ddadc1d6c2dfebfbba585d5338be5c03edf05075905c1a8107d42483522ec",
+  "scores_sha256": "fcf66bed80a17b2096c47a16e51b38475d02b8db0679058936a1e65eacec6c6b",
+  "assignments_sha256": "964cfbebb773be7eafa5bc608cbb58a17e47ec0394ca98ae0de780284a0c5bdc",
+  "tasks": {
+    "DocVQA_VAL": {
+      "n": 128,
+      "fixed_k256_mean_pct": 67.84538557047036,
+      "rules": {
+        "gray_entropy16": {
+          "mean_pct": 58.35143392610524,
+          "minus_fixed256_pp": -9.493951644365117,
+          "improved": 16,
+          "declined": 31,
+          "unchanged": 81,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "gray_gradient": {
+          "mean_pct": 63.091710709566385,
+          "minus_fixed256_pp": -4.753674860903967,
+          "improved": 20,
+          "declined": 27,
+          "unchanged": 81,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "user_text_chars": {
+          "mean_pct": 62.657584104736905,
+          "minus_fixed256_pp": -5.187801465733443,
+          "improved": 17,
+          "declined": 30,
+          "unchanged": 81,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_0": {
+          "mean_pct": 62.86712955808624,
+          "minus_fixed256_pp": -4.978256012384108,
+          "improved": 18,
+          "declined": 26,
+          "unchanged": 84,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_1": {
+          "mean_pct": 60.117612850150536,
+          "minus_fixed256_pp": -7.727772720319814,
+          "improved": 17,
+          "declined": 29,
+          "unchanged": 82,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_2": {
+          "mean_pct": 60.054071037469484,
+          "minus_fixed256_pp": -7.79131453300087,
+          "improved": 15,
+          "declined": 32,
+          "unchanged": 81,
+          "high_k_count": 42,
+          "mean_k": 254
+        }
+      }
+    },
+    "TextVQA_VAL": {
+      "n": 128,
+      "fixed_k256_mean_pct": 80.78125,
+      "rules": {
+        "gray_entropy16": {
+          "mean_pct": 79.296875,
+          "minus_fixed256_pp": -1.4843750000000044,
+          "improved": 5,
+          "declined": 7,
+          "unchanged": 116,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "gray_gradient": {
+          "mean_pct": 79.296875,
+          "minus_fixed256_pp": -1.4843750000000044,
+          "improved": 4,
+          "declined": 6,
+          "unchanged": 118,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "user_text_chars": {
+          "mean_pct": 80.3125,
+          "minus_fixed256_pp": -0.46875000000000666,
+          "improved": 5,
+          "declined": 5,
+          "unchanged": 118,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_0": {
+          "mean_pct": 78.4375,
+          "minus_fixed256_pp": -2.34375,
+          "improved": 5,
+          "declined": 8,
+          "unchanged": 115,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_1": {
+          "mean_pct": 77.96875,
+          "minus_fixed256_pp": -2.8125000000000067,
+          "improved": 3,
+          "declined": 8,
+          "unchanged": 117,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_2": {
+          "mean_pct": 79.140625,
+          "minus_fixed256_pp": -1.6406250000000067,
+          "improved": 3,
+          "declined": 7,
+          "unchanged": 118,
+          "high_k_count": 42,
+          "mean_k": 254
+        }
+      }
+    },
+    "AI2D_TEST": {
+      "n": 128,
+      "fixed_k256_mean_pct": 82.03125,
+      "rules": {
+        "gray_entropy16": {
+          "mean_pct": 78.125,
+          "minus_fixed256_pp": -3.90625,
+          "improved": 4,
+          "declined": 9,
+          "unchanged": 115,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "gray_gradient": {
+          "mean_pct": 77.34375,
+          "minus_fixed256_pp": -4.6875,
+          "improved": 3,
+          "declined": 9,
+          "unchanged": 116,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "user_text_chars": {
+          "mean_pct": 78.125,
+          "minus_fixed256_pp": -3.90625,
+          "improved": 4,
+          "declined": 9,
+          "unchanged": 115,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_0": {
+          "mean_pct": 78.125,
+          "minus_fixed256_pp": -3.90625,
+          "improved": 4,
+          "declined": 9,
+          "unchanged": 115,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_1": {
+          "mean_pct": 77.34375,
+          "minus_fixed256_pp": -4.6875,
+          "improved": 3,
+          "declined": 9,
+          "unchanged": 116,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_2": {
+          "mean_pct": 78.90625,
+          "minus_fixed256_pp": -3.125,
+          "improved": 4,
+          "declined": 8,
+          "unchanged": 116,
+          "high_k_count": 42,
+          "mean_k": 254
+        }
+      }
+    }
+  },
+  "GT_opened": false,
+  "new_predictions_opened": false,
+  "limitations": [
+    "Post-hoc exploratory feature panel designed after seeing DEV aggregate and answer oracle",
+    "Batch rank uses all 128 test images and per-task knowledge; it is not an online deployable policy",
+    "No actual runtime or equal-compute claim; no selector cost included",
+    "Three features are cheap heuristics, no novelty claim",
+    "All rules must be reported regardless of direction"
+  ]
+}

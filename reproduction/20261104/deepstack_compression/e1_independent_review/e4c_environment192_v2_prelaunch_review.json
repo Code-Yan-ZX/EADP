@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "GPU_used": false,
+  "GPU_authorized": false,
+  "plan_sha256": "6d6bb1ba19374313c6573b6a6b2738eb4bb6b6868f074853e79bc144887df725",
+  "reviewer_sha256": "072425f2e27d59c07ce45fcfd62700ee5eb6bbe90a8dded9246ed476352fe3b6",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_environment192_v2/watch.py": "9c73284e499246506fec9da9c55c401d2fcd45d706c5dad4b8864795f8bd2cfc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_environment192_v2/validate.py": "1e3c088969380282649c9c0f88efdfd61855623b0928b93a2c0a71af9c286e13",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_environment192_v2/test_validate.py": "57acb5a1e326b0082399d1f86fb9be00a9dc21a1e1f5db60dbccd3b8137eb614",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_environment192_v2/freeze.py": "3e377fc4ed5887710145cfa20c8182686e0bfcb28340ac441e3d7d4b18bc1d4e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/initial_plan.json": "2a11cfcc2dc9404eac218f1f727e39508a687a73e0343101ae564be3e99c30e6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py": "dddd62696ca10f2624654feec9831c83d308ddf8eb982c645ad3c5eac827ff17",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timing_supervise.py": "27e3db3242836f1534c06f6fe087390d6547a7c23b01c22d01f02c413c948d06"
+  },
+  "freeze_started_sha256": "584e164d2e8ca0d3e763bcd413fe028ab16a4fb942786a397ede18419b502516",
+  "freeze_terminal_sha256": "89955ab7ec1aeec470676e87ad6d5ff4c3f9a61a13665510bc8ddc1c26c9a0da",
+  "independent_cpu_tests": 3,
+  "scope": "observer prelaunch only; does not start observer or authorize GPU",
+  "limitations": [
+    "At launch the live gate must ensure the observer still covers GPU timeout plus cleanup and time namespaces match.",
+    "Hourly supervisor health windows, manual checks and complete watcher lifecycle require actual post-run verification.",
+    "Unlogged background, second fsync, manual log and stop-marker writes have unknown overlap; do not exclude or select samples.",
+    "Process observations cannot establish full device or host isolation."
+  ],
+  "errors": []
+}

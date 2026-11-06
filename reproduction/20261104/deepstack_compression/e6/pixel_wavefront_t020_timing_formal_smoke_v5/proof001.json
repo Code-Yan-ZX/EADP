@@ -1,0 +1,71 @@
+{
+  "status": "passed",
+  "scope": "actual formal entry and real dependency import order without proof gate or run data",
+  "GPU_used": false,
+  "model_loaded": false,
+  "cuda_initialized": false,
+  "GT_opened": false,
+  "predictions_opened": false,
+  "formal_plan_sha256": "93d938f3b1482c715ed66ff9f87e2c171ec4ca6d54db088678cac2f7013c583e",
+  "gpu_plan_sha256": "ebc23bdaff66e25683686663d162d52a18008072fd8a6d97b3b1125c0c76e695",
+  "entry_sha256": "9232a7a04e479118f05eaf1a55a6b59ccd23b089fa07597cdbe20ce189a65b19",
+  "verifier_sha256": "c02886eca4f45d10a0f596766b772ecb7449a122aada237662aac23404e9973a",
+  "diagnose_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/diagnose.py",
+  "diagnose_sha256": "283061a38ca893945b0f748d2469c908884f08d8ca86e2feb6b753ee93eb4902",
+  "runtime_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_panel.py",
+  "runtime_sha256": "aeee2a27c4394fc683245dce6fe2629f2fa1d9948ab66bb68edbdd46a9c65645",
+  "loaded": [
+    {
+      "name": "_pixel_t020_formal_gpu_gate",
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_final_v9/gpu_gate.py",
+      "sha256": "e412418baa0115993de23f5f9d5aa6f9cbb72051594c4db8ea0e5868cae87281"
+    },
+    {
+      "name": "_pixel_t020_formal_core",
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_accept_v5/verify_candidate.py",
+      "sha256": "1c99f2d6cf94e5a13c400634d2dfce048f613eb1c518c4fa6eb8ffe1b9fbc4e7"
+    },
+    {
+      "name": "_pixel_t020_formal_pipeline",
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_accept_v5/pipeline.py",
+      "sha256": "7e41de84c1d3af673757c9a4388983ac8ce29ca767725766ca34743a30bba6ae"
+    },
+    {
+      "name": "_pixel_t020_formal_docker",
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_accept_v5/docker_contract.py",
+      "sha256": "57fdc9f038bba548c89b3db2010e8fac7537b477460758b9d688838ccb36b4cc"
+    },
+    {
+      "name": "_pixel_t020_formal_completion",
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_accept_v5/completion_contract.py",
+      "sha256": "034243b59868f0e18f87e0b74e0d27de6d0bc7a87f41db4d48cc1d971f57200f"
+    },
+    {
+      "name": "_pixel_t020_formal_window",
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_accept_v5/window_overlap.py",
+      "sha256": "2abcc7367a4ba246c700e8bbf8bdcb8422f588f081b955764a662ae85408ad4c"
+    },
+    {
+      "name": "_pixel_t020_formal_jobcheck",
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_controller_draft/job_contract.py",
+      "sha256": "adf00287070c5ad339fbb17661703c4c8904edb5a733f5cecfa22d248ac9474b"
+    },
+    {
+      "name": "_pixel_t020_formal_prefix",
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_final_v9/raw_prefix.py",
+      "sha256": "42a33a30b7c72a46c29008881e3a0e8352a7c8e27dbd66977662c5f90485c124"
+    },
+    {
+      "name": "_pixel_t020_formal_refs",
+      "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_model_timing_v2/reference.py",
+      "sha256": "71e360efc7c01095252010f060323932375ade08c01a248e6be23136cc52c4c4"
+    }
+  ],
+  "actual_missing_result_rejected": true,
+  "limits": [
+    "GPU proof admission and actual post-run verification are not executed; only import feasibility and absent result tested.",
+    "Does not establish safety against injected modules in another process; formal execution must use the verified clean environment."
+  ],
+  "smoke_sha256": "8f33dc8ed556e6424c48ab466cb1707d508a298bddc4ba9d622e72a070b6e4c9",
+  "errors": []
+}

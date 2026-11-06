@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "bdb230dd61be5d2a277e6f276e06f718fb73d743113e3a1dcd7446b6ba6bb943",
+  "preflight_sha256": "9d96ad4b03f2ac8d0e550cbbb274cb0d11da350ef1ccbce19b30272e7002aaa4",
+  "preflight_started_sha256": "ba3516177dd864dd3637929756d494e9863a24b349cb368eec0e94e841f25498",
+  "preflight_terminal_sha256": "c9440db4d679719312d3213cf7ab61ac944b49add3d02810509395c86b50f395",
+  "preflight_exit_sha256": "fcc392447c6a29bab157372c1c4d7e9230b52f4f8ebbc73d0957fd995830dd1e",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_graph_ttft_pilot_v2_prelaunch.py",
+  "reviewer_sha256": "7e9bb6a904a79e92f91bd975e3e28779ab1076749d0612a9d7263f8934e83a2b",
+  "review_started_sha256": "43217b88e05c14f3159ef6d84fd1338b0084318fb5ff736c7b8caefb84147373",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_graph_ttft_pilot_v2_prelaunch002/terminal.json",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "gpu_authorized": "subject to root scheduling",
+  "cpu_tests": 5,
+  "original_cpu_tests": 4,
+  "source_files": 54,
+  "scheduled_jobs": 36,
+  "scope": "three-anchor fixed32 TTFT pilot prelaunch; no GPU execution yet",
+  "limitations": [
+    "existing E1 DEV mixed prediction journal is parsed solely for input identity during GPU work",
+    "equal-output aggregate timing requires every paired 256-index selection and 32 generated IDs to match",
+    "graph capture/setup and persistent allocator memory are measured separately; only TTFT is interpretable",
+    "raw-output fsync happens after first-token boundary and affects end-of-generation time",
+    "supervisor health windows and background work cannot be localized to individual samples",
+    "three anchors and five measured pairs per anchor do not establish full M1 or quality results",
+    "preflight rehashed four weights; review checks recorded stat rather than rereading payload"
+  ],
+  "errors": []
+}

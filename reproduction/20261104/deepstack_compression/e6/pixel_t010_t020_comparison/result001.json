@@ -1,0 +1,51 @@
+{
+  "status": "completed",
+  "plan_sha256": "72b40a64f342cd72f22bcd5fb7ee79f5a4de762407d95e88e7a904a725bb8ba1",
+  "script_sha256": "1f090923a950589de3e8a7a4a1cb4d7e1b026b3628f16a58e1c6778a851ee8b9",
+  "t010_score_sha256": "36e3637cd4f469cec6a98dfbd30c345b1d8d52fd159be34bf98e3c138fc6d2f1",
+  "t020_score_sha256": "8abe54a933492ad9776bdc0972e59360d2594be4cb7dfa233ab7c30ec75905d1",
+  "t010_review_sha256": "64ac5c3e4c5b1c8698d3cf1f1f1513b0e90adfead298638216e5e60e3b4727f5",
+  "t020_review_sha256": "3da8ef561c7b24f178ca6703f1cb58897c1f58f0ef83f11b721b87f16c8f0bca",
+  "results": {
+    "DocVQA_VAL": {
+      "questions": 128,
+      "mean_difference_pp": 0.188707729468599,
+      "image_cluster_percentile_95_ci_pp": [
+        -0.6944444444444445,
+        0.9567481884057972
+      ],
+      "improved": 4,
+      "declined": 1,
+      "unchanged": 123
+    },
+    "TextVQA_VAL": {
+      "questions": 128,
+      "mean_difference_pp": 0.15625000000000014,
+      "image_cluster_percentile_95_ci_pp": [
+        -1.8749999999999996,
+        2.109375
+      ],
+      "improved": 3,
+      "declined": 2,
+      "unchanged": 123
+    },
+    "AI2D_TEST": {
+      "questions": 128,
+      "mean_difference_pp": 0.78125,
+      "image_cluster_percentile_95_ci_pp": [
+        0.0,
+        2.34375
+      ],
+      "improved": 1,
+      "declined": 0,
+      "unchanged": 127
+    }
+  },
+  "limitations": [
+    "threshold and comparison selected after earlier DEV results; exploratory",
+    "dynamic token counts and real compute differ",
+    "no multiplicity adjustment or latency conclusion"
+  ],
+  "GT_opened": false,
+  "score_files_containing_predictions_opened": true
+}

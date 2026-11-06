@@ -1,0 +1,80 @@
+{
+  "status": "completed",
+  "scope": "smoke diagnostic generation plus full tensor archiving; not model performance",
+  "run_elapsed_seconds": 375.53331886418164,
+  "verification_elapsed_seconds": 180.41825009696186,
+  "natural_archive_bytes": 11191279904,
+  "natural_first_to_last_seconds": 259.396163133,
+  "per_arm": {
+    "K128-D0": {
+      "n": 31,
+      "mean_seconds": 1.143742662580645,
+      "p50_seconds": 1.044000804,
+      "p90_seconds": 1.432001124,
+      "max_seconds": 2.120001646
+    },
+    "K128-D1": {
+      "n": 32,
+      "mean_seconds": 0.86312556825,
+      "p50_seconds": 0.7700006025,
+      "p90_seconds": 1.0960008463000002,
+      "max_seconds": 2.132001657
+    },
+    "K256-D0": {
+      "n": 32,
+      "mean_seconds": 0.9080006079375,
+      "p50_seconds": 0.8300006495000001,
+      "p90_seconds": 1.1004008541,
+      "max_seconds": 1.644001277
+    },
+    "K256-D1": {
+      "n": 32,
+      "mean_seconds": 0.95262560228125,
+      "p50_seconds": 0.8800006844999999,
+      "p90_seconds": 1.156000902,
+      "max_seconds": 1.956001522
+    },
+    "K512-D0": {
+      "n": 32,
+      "mean_seconds": 1.04525065203125,
+      "p50_seconds": 0.962000752,
+      "p90_seconds": 1.2048009356000002,
+      "max_seconds": 1.948001514
+    },
+    "K512-D1": {
+      "n": 32,
+      "mean_seconds": 1.0241256259375,
+      "p50_seconds": 0.9700007580000001,
+      "p90_seconds": 1.2604007297000002,
+      "max_seconds": 1.488001156
+    },
+    "K1024-D0": {
+      "n": 32,
+      "mean_seconds": 1.09262566184375,
+      "p50_seconds": 1.03400081,
+      "p90_seconds": 1.2796009913000002,
+      "max_seconds": 1.47600114
+    },
+    "K1024-D1": {
+      "n": 32,
+      "mean_seconds": 1.11237567525,
+      "p50_seconds": 1.0580008300000001,
+      "p90_seconds": 1.3504010600000003,
+      "max_seconds": 1.640001274
+    }
+  },
+  "full_384_arm_interval_extrapolation_seconds": {
+    "sum_means": 3126.478869546968,
+    "sum_p50": 2898.4342619520003,
+    "sum_p90": 3793.7692581120004
+  },
+  "limitations": [
+    "Archive mtime differences include generation, synchronization, copying, serialization and filesystem effects; mtimes are mutable and are not direct latency measurements.",
+    "The first arm lacks a preceding archive and is omitted. Percentile sums are heuristic, not a confidence interval.",
+    "Full-panel summary-only writes have different overhead; smoke is only a rough planning reference.",
+    "No GT or scores were read."
+  ],
+  "acceptance_sha256": "3f744b871df35e481f59c875149de67d3d26a1516724ca881abe9491c6b6780a",
+  "records_sha256": "32967f5ff2630102e70a0954165f3028e4007c712d9376a2396102e2bf2e6dd1",
+  "estimator_sha256": "31803cf44f85d82eca8e01b32ebe4dc3f9f2aaa77d448d23e84a4fd94e0c23eb"
+}

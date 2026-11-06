@@ -1,0 +1,12 @@
+{
+  "stage": "DEV quality analysis plan, written before this full-panel generation",
+  "sample": "all accepted E1 DEV inputs, 128 questions per task, 384 globally distinct image groups",
+  "arms": ["stock_native", "author_default", "priortr_k256", "EADP_P3_D1_reused_E1"],
+  "predictions": "1152 PriorTR records must all be newly generated and independently accepted before any score or reference is parsed; EADP reuses fully accepted E1 scores for identical question/image groups",
+  "metrics": {"DocVQA_VAL": "local author ANLS and independent ANLS", "TextVQA_VAL": "local author VQA accuracy and independent equivalent", "AI2D_TEST": "local author exact match and independent equivalent"},
+  "contrasts": ["author_default - stock_native", "priortr_k256 - stock_native", "author_default - EADP_P3_D1_reused_E1", "priortr_k256 - EADP_P3_D1_reused_E1"],
+  "bootstrap": {"unit": "image group", "replicates": 10000, "seed": 20261104, "interval": "two-sided percentile 95%; exploratory, no familywise correction"},
+  "limits": ["This plan follows prior DEV results, and DEV supports screening rather than final claims.", "PriorTR runs in a pinned SDPA environment and EADP in FA2; document this software/backend difference and do not compare instrumented wall times.", "Layer token traces and budget differ; final K256 does not imply matched computation.", "Do not report any partial-panel score or select methods until all 1152 outputs and formal and independent validation complete.", "No CONFIRM or FINAL answer is read by this plan."],
+  "GT_opened": false,
+  "scoring_performed": false
+}

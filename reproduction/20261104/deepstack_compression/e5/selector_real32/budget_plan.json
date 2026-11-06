@@ -1,0 +1,41 @@
+{
+  "scope": "32 frozen DEV images, actual selector arguments and 96 budget comparisons; no GT or quality scoring",
+  "images": 32,
+  "budgets": [
+    128,
+    256,
+    512
+  ],
+  "cases": 96,
+  "repeat_per_implementation": 5,
+  "warmups_per_implementation": 1,
+  "manifest_sha256": "83171eb8298602706f9a1bad2e523cef0a833092b7b7c4673bef8bc984d92bf8",
+  "kernel_sha256": "a56a9d95312119b618dd784d538e6cdcc1ffd7057618d2fc739a563960e236fe",
+  "full_component_formal_sha256": "429cdc202474f94cdec922f944d7b5c437bff47c2f324a817098a9bf30db026e",
+  "full_component_review_sha256": "10a87653b7f84b71f5310324e26e9942dd2ec44e9a0d7e8797230eb6b41d8db5",
+  "e4_panel_formal_sha256": "3b451dde64379a0d0b3d68e2d00322d6eec443e3fa7cf36348cc3325042db90b",
+  "e4_panel_review_sha256": "aaa8b713caefa815ff8eca5b71d7d1bbd1bd5e3858466854119f63027ea44349",
+  "inner_timeout_seconds": 10800,
+  "outer_timeout_seconds": 10920,
+  "stale_seconds": 1200,
+  "snapshot_seconds": 3600,
+  "poll_seconds": 10,
+  "grace_seconds": 90,
+  "minimum_free_bytes": 16106127360,
+  "gpu_policy": "exclusive",
+  "sample_disclosure": "32-image pilot and 128-image expansion chosen after observing isolated selector timing; 128 fixed before these 96 equivalence cases",
+  "limitations": [
+    "E4 full high-dimensional arrays were not retained, so compare saved hashes/metadata and indices only",
+    "prefill-derived instruction tensors are reconstructions until compared with actual hook arguments",
+    "selector microbenchmark is not end-to-end TTFT",
+    "all planned cases retained including failures"
+  ],
+  "graph_sha256": "8c873423862dfaf49d3785ac400597c40be969e786752038cc58b73576332ae7",
+  "implementations": [
+    "author",
+    "fused",
+    "graph"
+  ],
+  "graph_policy": "one reusable fixed-shape graph per K, copy each actual sim/importance before replay, separately report setup and persistent memory",
+  "graph_single_review_sha256": "171d8a81544f6cc0347393106b02e98f29434a22ceebbde5db82a8d2ae00dee4"
+}

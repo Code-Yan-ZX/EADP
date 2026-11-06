@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "images": 32,
+  "budgets": 3,
+  "paired_counts": {
+    "128": 32,
+    "256": 32,
+    "512": 31
+  },
+  "summary_sha256": "b0a754c21b6e8e8f93122fda5dbf07040ac58998e0baec0b529080084ebc61aa",
+  "summary_started_sha256": "ef43a0c490b34e3771dd0c7a1fc599a8555c501d9d9dbdf2304d5b9c9fa04713",
+  "summary_terminal_sha256": "771a896d62addab6d011110af7c77e781a240386340900836374e89473d9856b",
+  "reviewer_sha256": "7a6ed317d00825bba39d9d0d1e1afb8dbf431f56a2c6cf6fa058b4bfe370e9c3",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": [
+    "32-image post-pilot exploratory sample; K512 excludes one failed identity and 31 paired cases may be selected",
+    "graph is replay of fused kernel with copies; capture/setup excluded and allocated memory separate",
+    "component CUDA event timings are not end-to-end TTFT"
+  ],
+  "errors": []
+}

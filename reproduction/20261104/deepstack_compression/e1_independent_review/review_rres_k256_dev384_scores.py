@@ -1,0 +1,119 @@
+"""Independent DEV-only random-full score and image-group bootstrap review."""
+import argparse,ast,csv,hashlib,importlib.util,io,json,math,os,re,string
+from collections import Counter,defaultdict
+from pathlib import Path
+import numpy as np,pandas as pd
+B=Path(__file__).resolve().parent.parent;I=B/'e1_independent_review';D=B/'e6/rres_k256_full_analysis_v2';P=B/'e6/rres_k256_dev384';E=B/'e6/rres_k256_dev384_exec';SEEDS=(20261104,20261105,20261106);TASKS=('DocVQA_VAL','TextVQA_VAL','AI2D_TEST');ARMS=('rres','eadp','e1_full',*[f'random_{s}' for s in SEEDS],'random_three_seed_mean')
+def sha(p):
+ h=hashlib.sha256()
+ with Path(p).open('rb') as f:
+  for b in iter(lambda:f.read(1048576),b''):h.update(b)
+ return h.hexdigest()
+def read(p):return json.loads(Path(p).read_text())
+def lines(p):
+ with Path(p).open() as f:return [json.loads(x) for x in f if x.strip()]
+def term(d,script,out=None):
+ s=read(d/'started.json');t=read(d/'terminal.json');c=s['command'];cwd=Path(s['cwd'])
+ if t.get('reason')!='completed' or t.get('worker_returncode')!=0 or t.get('remaining_process_group')!=[] or type(s.get('worker_pid')) is not int or s['worker_pid']<=0 or s['worker_pid']!=t.get('worker_pid') or [(cwd/x).resolve() for x in c if Path(x).name==script.name]!=[script.resolve()] or (out is not None and (c.count('--out')!=1 or (cwd/c[c.index('--out')+1]).resolve()!=out.resolve())):raise ValueError('missing completed supervisor '+str(d))
+def distance(a,b):
+ prev=list(range(len(b)+1))
+ for x in a:
+  cur=[prev[0]+1]
+  for j,y in enumerate(b):cur.append(min(cur[-1]+1,prev[j+1]+1,prev[j]+(x!=y)))
+  prev=cur
+ return prev[-1]
+def doc(pred,gold):
+ out=[]
+ for truth in gold:
+  n=max(len(truth.upper()),len(pred.upper()));sim=1-distance(' '.join(truth.lower().split()),' '.join(pred.lower().split()))/n if n else 1
+  out.append(sim if sim>=.5 else 0.)
+ return max(out)
+def text_score(pred,answers,normal):
+ x=[normal(a) for a in answers];p=normal(pred)
+ return sum(min(1,sum(a==p for j,a in enumerate(x) if i!=j)/3) for i in range(len(x)))/len(x)
+def option(pred,choices):
+ if 'Failed to obtain answer via API' not in pred:
+  if any(x in pred for x in ["Sorry, I can't help with images of people yet.","I can't process this file.","I'm sorry, but without the image provided",'Cannot determine the answer']):return 'Z'
+  w=re.sub(r'[.()\[\],:;!*#{}]',' ',pred).split();found=[k for k in choices if k in w]
+  if len(found)==1 and w.index(found[0])>len(w)-5:return found[0]
+  if not found and 'Z' in w:return 'Z'
+ if len(pred)>2*sum(len(str(x)) for x in choices.values()):return 'Z'
+ found=[k for k,val in choices.items() if str(val).lower() in pred.lower()]
+ return found[0] if len(found)==1 else 'Z'
+def truths(sources,needed,native_na):
+ csv.field_size_limit(100_000_000);out={}
+ for task,desc in sources.items():
+  if sha(desc['path'])!=desc['sha256']:raise ValueError('dataset hash')
+  wanted={q.encode() for t,q in needed if t==task}
+  with open(desc['path'],'rb') as file:
+   head=next(csv.reader([file.readline().decode()],delimiter='\t'));col=head.index('index')
+   if col not in (0,len(head)-1):raise ValueError('index location')
+   for raw in file:
+    q=(raw.split(b'\t',1)[0] if col==0 else raw.rstrip(b'\r\n').rsplit(b'\t',1)[-1])
+    if len(q)>=2 and q[:1]==q[-1:]==b'"':q=q[1:-1]
+    if q not in wanted:continue
+    fields=next(csv.reader([raw.decode()],delimiter='\t'))
+    if len(fields)!=len(head):raise ValueError('selected TSV row width')
+    row=dict(zip(head,fields));key=(task,str(row['index']))
+    if key in out or key not in needed:raise ValueError('selected qid duplicate')
+    if task=='AI2D_TEST':out[key]={'answer':row['answer'],'choices':{k:row[k] for k in string.ascii_uppercase if k in row and row[k] not in native_na}}
+    else:
+     try:value=ast.literal_eval(row['answer'])
+     except (ValueError,SyntaxError):value=row['answer']
+     out[key]={'answers':[str(x) for x in value] if isinstance(value,list) else [str(value)]}
+ if set(out)!=needed:raise ValueError('missing DEV truths')
+ return out
+
+def bootstrap(rows):
+ groups=defaultdict(list)
+ for x in rows:
+  vals=[x['rres']['score'],x['eadp']['score'],x['e1_full']['score']]+[x['random'][str(s)]['score'] for s in SEEDS];groups[x['group_id']].append(vals+[sum(vals[3:])/3])
+ ids=sorted(groups);totals=np.asarray([np.asarray(groups[g]).sum(axis=0) for g in ids]);sizes=np.array([len(groups[g]) for g in ids]);mean=100*totals.sum(axis=0)/sizes.sum();draw=np.random.default_rng(20261104).integers(0,len(ids),(10000,len(ids)));boot=100*totals[draw].sum(axis=1)/sizes[draw].sum(axis=1)[:,None]
+ return ids,mean,boot
+
+def main(out):
+ if np.__version__!='2.2.6':raise ValueError('NumPy version')
+ dest=D/'score001';term(D/'monitor_score001',D/'score.py',dest);term(P/'monitor_verify001',E/'verify.py',P/'verification001.json');term(I/'monitor_rres_k256_dev384_result',I/'review_rres_k256_dev384_result.py',I/'rres_k256_dev384_result_review.json');term(I/'monitor_rres_k256_full_score_prelaunch',I/'review_rres_k256_full_score_prelaunch.py',I/'rres_k256_full_score_prelaunch_review.json')
+ result=read(dest/'analysis.json');frozen=read(dest/'frozen.json');proof=read(I/'rres_k256_dev384_result_review.json');pre=read(I/'rres_k256_full_score_prelaunch_review.json');plan=read(D/'score_plan001.json');scorespath=dest/'scores.jsonl'
+ if result.get('status')!='completed' or result.get('questions')!=384 or result.get('scores_sha256')!=sha(scorespath) or result.get('plan_sha256')!=sha(D/'score_plan001.json') or pre.get('status')!='passed' or pre.get('score_plan_sha256')!=sha(D/'score_plan001.json') or pre.get('reviewer_sha256')!=sha(I/'review_rres_k256_full_score_prelaunch.py') or proof.get('status')!='passed' or proof.get('independent_review') is not True or proof.get('images')!=384 or proof.get('GT_opened') is not False or proof.get('scoring_performed') is not False or proof.get('reviewer_sha256')!=sha(I/'review_rres_k256_dev384_result.py') or proof.get('formal_sha256')!=sha(P/'verification001.json'):raise ValueError('score/result gates')
+ if any(sha(k)!=v for k,v in plan['source_sha256'].items()) or frozen['admission']['plan_sha256']!=sha(D/'score_plan001.json') or frozen['admission']['target']['independent_sha256']!=sha(I/'rres_k256_dev384_result_review.json') or any(sha(k)!=v for k,v in proof['files_sha256'].items()):raise ValueError('scoring sources/target changed')
+ spec=importlib.util.spec_from_file_location('_independent_rres_metrics',B/'e1_analysis/metrics.py');met=importlib.util.module_from_spec(spec);spec.loader.exec_module(met);author=met.author_functions();normal=author['process_answer']
+ anchors=read(B/'e6/pixelprune_t020_dev384/plan001.json')['anchors'];needed={(x['task'],str(x['qid'])) for x in anchors}
+ if len(anchors)!=384 or len(needed)!=384 or Counter(x['task'] for x in anchors)!={t:128 for t in TASKS}:raise ValueError('DEV cohort')
+ refs=frozen['references'];gold=truths(refs,needed,met.NATIVE_NA);scored=lines(scorespath);old=lines(B/'e1/e1full001_score/scores.jsonl');random=lines(B/'e6/random_full_analysis_v3/score001/scores.jsonl')
+ key=lambda r:(r['task'],str(r['qid']),r['group_id']);before={key(r):r for r in old};random_by={key(r):r for r in random};resultby={key(r):r for r in scored};am={key(r):r for r in anchors}
+ if len(resultby)!=384 or set(resultby)!=set(am) or set(before)!=set(am) or set(random_by)!=set(am):raise ValueError('score pair inventory')
+ records=[]
+ for a in anchors:records.append(read(P/('run001/observations/'+a['task']+'_'+str(a['qid'])+'.json')))
+ records_by={key(r):r for r in records}
+ if set(records_by)!=set(am):raise ValueError('target inventory')
+ native={}
+ for task in TASKS:
+  sub=[r for r in records if r['task']==task];f=io.BytesIO();pd.DataFrame({'index':range(len(sub)),'prediction':[r['answer'] for r in sub]}).to_excel(f,index=False,engine='xlsxwriter');f.seek(0);tab=pd.read_excel(f)
+  if len(sub)!=128 or len(tab)!=128 or list(tab['index'])!=list(range(128)):raise ValueError('XLSX denominator')
+  for r,v in zip(sub,tab['prediction']):native[key(r)]=str(v)
+ for k,a in am.items():
+  item=resultby[k];r=records_by[k];truth=gold[(k[0],k[1])];pred=native[k]
+  if item['eadp']!=before[k]['arms']['P3-D1'] or item['e1_full']!=before[k]['arms']['P1-D1'] or any(item['random'][str(s)]!=random_by[k]['arms'][str(s)] for s in SEEDS):raise ValueError('accepted reference mismatch')
+  if any(item['rres'][x]!=r[x] for x in ('answer','eos','truncated')) or r['image_sha256']!=a['image_sha256'] or r['message_sha256']!=a['message_sha256']:raise ValueError('target scoring input')
+  if k[0]=='AI2D_TEST':official=float((author['can_infer'](pred,dict(truth['choices'])) or 'Z')==truth['answer']);independent=float(option(pred,truth['choices'])==truth['answer'])
+  else:
+   method='anls' if k[0]=='DocVQA_VAL' else 'vqa_score';x=author['process_line']({'answer':repr(truth['answers']),'prediction':pred},method=method);official=float(author['hit_calculate']([x],k[0])[0]);independent=doc(pred,truth['answers']) if method=='anls' else text_score(pred,truth['answers'],normal)
+  sc=item['rres']
+  if not math.isfinite(official) or not math.isfinite(independent) or abs(official-independent)>1e-12 or abs(official-sc['score'])>1e-12 or abs(independent-sc['independent_score'])>1e-12:raise ValueError('per-question score mismatch')
+ for task in TASKS:
+  rows=[x for x in scored if x['task']==task];ids,mean,boot=bootstrap(rows);report=result['tasks'][task]
+  if len(rows)!=128 or report['questions']!=128 or report['image_groups']!=len(ids) or report['bootstrap']!={'unit':'image_group','group_order':'ascending','weighting':'question','replicates':10000,'seed':20261104,'numpy_version':'2.2.6'}:raise ValueError('bootstrap inventory')
+  for idx,name in enumerate(ARMS):
+   if not math.isclose(report['arm_mean_pct'][name],float(mean[idx]),abs_tol=1e-10,rel_tol=0) or not np.allclose(report['arm_ci95_pct'][name],np.quantile(boot[:,idx],[.025,.975]),atol=1e-10,rtol=0):raise ValueError('arm mean/CI')
+   if idx:
+    v=report['rres_minus'][name]
+    if not math.isclose(v['difference_pp'],float(mean[0]-mean[idx]),abs_tol=1e-10,rel_tol=0) or not np.allclose(v['ci95_pp'],np.quantile(boot[:,0]-boot[:,idx],[.025,.975]),atol=1e-10,rtol=0):raise ValueError('paired contrast/CI')
+  if report['rres_terminal']!={'eos':sum(x['rres']['eos'] for x in rows),'truncated':sum(x['rres']['truncated'] for x in rows),'empty':sum(not x['rres']['answer'].strip() for x in rows)}:raise ValueError('terminal counts')
+ if any(sha(p)!=h for p,h in plan['source_sha256'].items()) or any(sha(x['path'])!=x['sha256'] for x in refs.values()):raise ValueError('sources changed during review')
+ value={'status':'passed','independent_review':True,'questions':384,'GT_opened':True,'scoring_performed':True,'errors':[],'score_sha256':sha(scorespath),'analysis_sha256':sha(dest/'analysis.json'),'score_started_sha256':sha(D/'monitor_score001/started.json'),'score_terminal_sha256':sha(D/'monitor_score001/terminal.json'),'result_review_sha256':sha(I/'rres_k256_dev384_result_review.json'),'score_plan_sha256':sha(D/'score_plan001.json'),'reviewer_sha256':sha(__file__),'limits':['Posthoc DEV exploration; uncorrected intervals are not confirmation.','Three fixed random seeds averaged within each question.','Equal K does not imply equal compute; random executes discarded greedy pass.']}
+ with out.open('x') as f:json.dump(value,f,indent=2);f.write('\n');f.flush();os.fsync(f.fileno())
+if __name__=='__main__':
+ p=argparse.ArgumentParser();p.add_argument('--out',type=Path,required=True);a=p.parse_args()
+ if a.out.resolve()!=I/'rres_k256_dev384_scores_review.json' or a.out.exists():raise ValueError('fixed output required')
+ main(a.out)

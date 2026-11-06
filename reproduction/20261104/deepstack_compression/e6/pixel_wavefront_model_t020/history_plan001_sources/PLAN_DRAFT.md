@@ -1,0 +1,7 @@
+# PixelPrune threshold 0.2: separate three-anchor identity preparation
+
+This is a new post-hoc engineering diagnostic. Threshold 0.2 is fixed independently of the earlier 0.45 draft and binds the 0.2 four-image model smoke and 0.2 32-image component review. Three tasks use the first frozen smoke anchor each; data and DEV outputs were previously observed. The 32 component inputs include the three anchors, are reused, and do not prove model identity.
+
+The first stage is a source-bound, independently reviewed no-GPU processor/four-weight preflight. It cannot load a model or admit a GPU. The candidate identity worker, independent P3 reconstruction and six-isolated-arm schedule are drafts; a separate reviewed controller, source/weight frozen plan, real no-GPU execution preflight, deadline and cleanup gates are necessary before root may schedule any GPU identity work. A later separate timing plan requires all six arms and an independent full-model identity acceptance. No 0.45 model identity is assumed or reused.
+
+The future model run compares author and wavefront actual ordered indices, original prompt and natural tokens against the accepted 0.2 smoke, archived prefill and three DeepStack inputs, P3 and per-step 36-layer KV fingerprints. KV tensor bytes per step are not archived. This is an engineering implementation check, not an independent new sample, a quality experiment or a model-wide equivalence claim.

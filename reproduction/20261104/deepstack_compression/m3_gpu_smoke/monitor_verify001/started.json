@@ -1,0 +1,28 @@
+{
+  "created_utc": "2026-11-04T19:43:39.211426+00:00",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "m3_gpu_smoke/verify.py",
+    "--run-dir",
+    "m3_gpu_smoke/smoke_001",
+    "--run-started",
+    "m3_gpu_smoke/monitor_smoke001/started.json",
+    "--run-terminal",
+    "m3_gpu_smoke/monitor_smoke001/terminal.json",
+    "--out",
+    "m3_gpu_smoke/smoke_001_verification.json"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression",
+  "timeout_seconds": 900.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 3600,
+  "poll_seconds": 5.0,
+  "grace_seconds": 20.0,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_gpu_smoke/monitor_verify001"
+  ],
+  "worker_pid": 312832,
+  "process_group": 312832
+}

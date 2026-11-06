@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "14a2259ca04aea2c8c422372ba562c00f807304129b2e2ee6d772510de01f8e1",
+  "reviewer_sha256": "657b4ca9047d9fdfbe159c6b37b46cfaa7ae2e7844b82b0d7b4cbecfe5aec653",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker192_v6_accept/verify.py": "cbedccb194e854a0ad2526f5fb820b93bbd61774cd6f04784eadd595ebba6f60",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker192_v6_accept/snapshot.py": "a5562dbe3189ccbadd9ebeeb2f47840cebc6dbf8c288180fc7deb8b8445d53eb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker192_v6_accept/test_verify.py": "c834b85e7c39e2ffa3d164ce9d5995e044925ab20545c64a02b5da396f5438b4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker192_v6_accept/freeze.py": "1a168114f33850a33898fdc51837bc178eb17bd9eb8e968bb3eda6e9e67930d5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker192_v6/cpu_plan001.json": "7fb58c40f5a9ac7176e8ba356719b9959c9d87b07ad4491e94b281a9dc880050",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker192_v6/gpu_gate.py": "f31b9de0a7ebc7e3769e9581dc45b9fbeba03e36e624776d29e45bc9667ce9f2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker192_v6/fixed_reference_gate.py": "17254049539f1db8f1a78cab606f9190342267f06d221f9c3bc1bf59e99e85f0",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker192_v6/core.py": "5abf852da74f9042b9ffb674737014572e460d9245d3b0dd00573f0ca3636192",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_references192/references.py": "5088d92e0afbc4d9aaf01b1bf419f04b00e07d910b739a723e13c477470d9388",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_expansion192/proposal002.json": "a1142f412a4fd384b2683f068c345651962f98f2386fe9829a650f0548e915c9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_analysis192_independent/window_detail.py": "46ee3805e63400c257be1d37c58b052b47ff9bb526908abce32944236ac0398e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_analysis192_independent/test_window_detail.py": "1ca84ccae9c95ff71b4a40dece06efd6725f5fcde99dcd06dccfa10c1087bc54",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_analysis192_v2/test_metrics.py": "3ad743ac6555177dbfee814a4e55f829aa9e7f654bdc0f0a48867a471f9473d1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_analysis192_v2/metrics.py": "75ad63b8aa1cf129848d12192d9cdcad0bdc27cbcce030b023a339e58037310e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_environment192_v2/plan001.json": "6d6bb1ba19374313c6573b6a6b2738eb4bb6b6868f074853e79bc144887df725",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_environment192_v2/validate.py": "1e3c088969380282649c9c0f88efdfd61855623b0928b93a2c0a71af9c286e13"
+  },
+  "errors": [],
+  "GT_opened": false,
+  "target_predictions_opened": false,
+  "GPU_authorized": false,
+  "formal_tests": "test_auxiliary_cache_same_file_rejected (test_verify.Tests) ... ok\ntest_common_wrong_job_identity_rejected (test_verify.Tests) ... ok\ntest_gate_tamper_never_executes (test_verify.Tests) ... ok\ntest_natural_and_fixed_reference (test_verify.Tests) ... ok\ntest_preloaded_gate_is_rejected (test_verify.Tests) ... ok\ntest_wrong_fixed_reference_and_early_eos_are_rejected (test_verify.Tests) ... ok\ntest_zero_time_or_raw_late_mismatch_is_rejected (test_verify.Tests) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.010s\n\nOK\n",
+  "window_tests": "test_full_cohort_and_unknown_manual (test_window_detail.Tests) ... ok\ntest_incomplete_clock_and_fsync (test_window_detail.Tests) ... ok\ntest_missing_observer_or_changed_identity (test_window_detail.Tests) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.239s\n\nOK\n",
+  "limitations": [
+    "pre-run formal verifier review, not a timing result",
+    "source snapshots and endpoint weight stats cannot rule out transient replacement",
+    "observer second fsync and unobserved residual activity remain unknown"
+  ]
+}

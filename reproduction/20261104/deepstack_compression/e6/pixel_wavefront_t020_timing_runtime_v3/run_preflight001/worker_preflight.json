@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "approval": {
+    "plan_sha256": "cebf2ecbea44f5ec705f7b2446f7630c0fb5b323b1018b85bb2a686ee6a6e80c",
+    "review_sha256": "4377cf20ec8284eebffeb7dc51ef122da5097995562e2041b9892ea5bcb0fba0"
+  },
+  "references": 6,
+  "container_id": "9cefc21b5b8418d2a286230b2fbe0a56ccaac5f23ee006ef830a8e936d93c14b",
+  "container_identity_sha256": "0dd19d127213e5fd922ff67f12f1511838bb074e982932f6d07daa0902857b87",
+  "module_paths": {
+    "worker": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_runtime_v3/worker.py",
+    "controller": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_runtime_v3/controller.py",
+    "host_runner": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_runtime_v3/host_runner.py",
+    "nvml_stages": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_runtime_v3/nvml_stages.py",
+    "check": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_controller_draft/job_contract.py",
+    "model": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_model_timing_v2/model_candidate.py"
+  },
+  "model_module_paths": {
+    "pixelprune": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/__init__.py",
+    "pixelprune.methods.pred_2d": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/pred_2d.py",
+    "pixelprune.patches.qwen3_vl_hf": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_vl_hf.py",
+    "vlmeval.vlm.qwen3_vl.model_fixed_res": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py",
+    "transformers.models.qwen3_vl.modeling_qwen3_vl": "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py"
+  },
+  "GPU_authorized": false,
+  "model_loaded": false,
+  "cuda_initialized": false,
+  "GT_opened": false,
+  "existing_DEV_predictions_opened": true
+}

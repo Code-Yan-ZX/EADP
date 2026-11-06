@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "GT_opened": false,
+  "scores_parsed": false,
+  "existing_score_files_opened_for_hash": true,
+  "errors": [],
+  "plan_sha256": "8848d8d51a0130195e7f0b4af6b8d63e64cd328d61cf0842e0fa3af74713185c",
+  "cpu_proof_sha256": "a7780bff372e4c18a9795177162b5f45349c9c75a9d9a3e9f41b311d8b21dc4c",
+  "cpu_started_sha256": "c774223aaef3357f2c133a35ee997525bf44fccf9e1429fc8447821289aae4d0",
+  "cpu_terminal_sha256": "9c7304d8c258156f6459bc97f877b41a1488fd8373d8e3abf5bdc316bc73aa6c",
+  "reviewer_sha256": "de167cd83d6c86ae64264a1747ab3374a1abd37d344f6f3d6dbe50f3f04730b8",
+  "cpu_test_stderr": "test_actual_cli_missing_prelaunch_cannot_parse_scores (test_compare.Tests) ... ok\ntest_bad_prelaunch_rejected (test_compare.Tests) ... ok\ntest_deadline_rejects_before_plan_or_scores (test_compare.Tests) ... ok\ntest_exact_controls_and_scores (test_compare.Tests) ... ok\ntest_prelaunch_supervisor_wrong_output_rejected (test_compare.Tests) ... ok\ntest_question_weighted_groups_and_direction (test_compare.Tests) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.185s\n\nOK\n",
+  "scope": "prelaunch code and synthetic tests only",
+  "limitations": [
+    "Posthoc comparison after observing both methods and tau=0; intervals uncorrected.",
+    "R-res six kwargs and EOS checked online but per-request observed kwargs and full effective config not archived.",
+    "Different visual resolutions and dynamic K; no equal-compute or speed claim."
+  ]
+}

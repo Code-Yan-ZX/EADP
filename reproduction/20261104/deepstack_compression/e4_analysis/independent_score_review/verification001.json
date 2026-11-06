@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "questions": 384,
+  "arms_recomputed": 3072,
+  "per_task_arms": {
+    "DocVQA_VAL": 1024,
+    "TextVQA_VAL": 1024,
+    "AI2D_TEST": 1024
+  },
+  "errors": [],
+  "scope": "384 DEV only; qid byte filter before answer decoding; no CONFIRM/FINAL predictions or answer parsing",
+  "score_sha256": "fcf66bed80a17b2096c47a16e51b38475d02b8db0679058936a1e65eacec6c6b",
+  "analysis_sha256": "cb613dbf8185382934f9786fac208e84d12aeb92b1a4424a41737a71072fbb0f",
+  "panel_proof_sha256": "3b451dde64379a0d0b3d68e2d00322d6eec443e3fa7cf36348cc3325042db90b",
+  "review_proof_sha256": "aaa8b713caefa815ff8eca5b71d7d1bbd1bd5e3858466854119f63027ea44349",
+  "source_sha256": "04b7f6d6ad0bd67528ae8829a7dd6b9d8d740c8480dfb53d4a39640cbe3e148d",
+  "limitation": "author source functions and previously independent E1 metric implementations are reused; paired/bootstrap audit performed separately"
+}

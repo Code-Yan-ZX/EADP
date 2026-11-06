@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "questions": 384,
+  "GT_opened": false,
+  "existing_predictions_opened": true,
+  "errors": [],
+  "plan_sha256": "0e8df1b6fe73336593dd895b192aa60d836d306c045eda5c22e7ad48d478e7dc",
+  "result_sha256": "e26bc60fefcc9252c239100f0f5feadc7d64fd773e87e2abb6b95f1756146f4e",
+  "compare_started_sha256": "df8dfad4f1a223a2d9e01c55bad2cc421feca7b57ab6f7786352b55a6509b6b9",
+  "compare_terminal_sha256": "443c4568138c37da4f3319685d1d1232531283050ef4d11eb16c77f341d8d4ad",
+  "reviewer_sha256": "f11571b50a2728e070f7326ef485df0fa47102385d5c1678866fc1f1aa0d3858",
+  "limitations": [
+    "Posthoc comparison was executed before this independent review.",
+    "R-res six generation kwargs and EOS were checked online against inherited E1 values; full effective generation config and per-request observed kwargs were not archived.",
+    "Different visual resolution and dynamic visual budget; no equal-compute or speed claim.",
+    "Uncorrected taskwise bootstrap intervals are exploratory."
+  ]
+}

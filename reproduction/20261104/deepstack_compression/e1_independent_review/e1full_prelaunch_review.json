@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "scope": "read-only prelaunch review of named code only; no GPU work, predictions, GT, or scores",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/full_runner.py": "2c452cbc39f5908d3f70c6fc82647f44fd906070251aca2cf37fc552769cc042",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/full_launch.py": "44778b0c271c6dae8c2798c619db7d990eadea30d9dd5e7d07eff076f6b7a7d3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/position_adapter.py": "8eba6c74310897956cb9bd024e7b19d333106aa2b3e0925e4fb941dc0024deea",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/contract.py": "9c560e09402e598f6ec34aa095b07f777871475e89ed35343563f99f03a12b1e"
+  },
+  "smoke_proof_sha256": "44a1a273a307ddc2cd1028af7483ee6a80db9e8e1f244595de2fc14f4078dd80",
+  "smoke_review_sha256": "739a4e28dc30fae8973c1d7a31b576a80ae6f6466578c5f8ee29ad3db73973fd",
+  "smoke_binding_sha256": "a633500a493c0e6d5be4799aaa2e60bd32c57e90e9278c23d94b2f79a8555777",
+  "checks": [
+    "full natural generation intervention code compared with smoke source; expected differences are 384 natural questions, no NPZ capture, and gates",
+    "both entry points reject --resume before GPU initialization",
+    "CPU exit_code controls reject missing container identity, nonempty GPU PIDs, container still running, prematurely exited Docker client, and timeout",
+    "smoke verifier/reviewer source snapshots and proofs bound; both supervisor exits 0"
+  ],
+  "limitations": [
+    "does not prove prospective generation or endpoint outcomes",
+    "no programmatic three-day budget gate exists in these two source files; budget and supervisor deadline must be checked independently"
+  ],
+  "review_unix": 1793810484.1184268
+}

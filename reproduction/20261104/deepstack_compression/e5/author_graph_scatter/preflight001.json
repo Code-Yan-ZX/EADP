@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "scope": "CPU-only frozen author and archived case identity; no GPU/graph execution",
+  "author_sha256": "bf809614c207142b8a4fc945f29a8828688c88a2896ebd349d55c4a0b1a917e6",
+  "case_sha256": "f651a859849d1e0c84119a7b708ffff794cbe8beaf60e0d9a8bf63d5ae24f95d",
+  "real32_proof_sha256": "d6f22f3deec8c6ceae8305adb01e6e03653d65933bac954d542dd21bdb0d682d",
+  "real32_journal_sha256": "52855757b185a001da51781114f5ee005af3fc6cb51078d73eee98a724554273",
+  "image_index": 17,
+  "k": 512,
+  "importance_shape": [
+    1,
+    1024
+  ],
+  "similarity_shape": [
+    1,
+    1024,
+    1024
+  ],
+  "stored_order_shape": [
+    1,
+    512
+  ],
+  "torch_version": "2.8.0+cu128",
+  "torch_file": "/home/dell/miniconda3/envs/qwen3vl_serving/lib/python3.10/site-packages/torch/__init__.py",
+  "cuda_initialized": false,
+  "GT_opened": false,
+  "new_predictions_opened": false,
+  "scoring_performed": false,
+  "gpu_authorized": false,
+  "limitations": [
+    "does not execute author greedy, graph capture or replay",
+    "real32 formal evidence binds archive; independent real32 review must also precede later GPU admission"
+  ],
+  "source_plan_sha256": "bb68bcf5a2a89cb6fd712f9f4c48d627947957c24300b84cf996123e81e20fc9",
+  "case_count": 1,
+  "model_loaded": false
+}

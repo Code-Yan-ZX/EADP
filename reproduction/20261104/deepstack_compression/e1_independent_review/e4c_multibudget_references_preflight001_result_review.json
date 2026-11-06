@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "preflight_only": true,
+  "GT_opened": false,
+  "predictions_opened": true,
+  "scoring_performed": false,
+  "GPU_authorized": false,
+  "images": 62,
+  "references": 248,
+  "weights_verified": 4,
+  "source_count": 222,
+  "plan_sha256": "08a5a396b7ab878a1c048155b1c3e565541de226d2c9f93ba6adbbccf52f9a41",
+  "preflight_review_sha256": "19154a80672a275105e51718a454de4e491d6e70886925bdd225fe13b784111b",
+  "worker_preflight_sha256": "d42156b812ecf3dc45c8addac223a1e8be81eb941b7159982ca1838225574bb7",
+  "processor_preflight_sha256": "0f69a6b71c60b3a582e9b8c76ddeef96c6e6afd8221069dc71060ae6edd03148",
+  "launch_sha256": "324de6302caa32b1cb82f7e6be7a0417650db42b3b0979864f9447f0f849f827",
+  "exit_sha256": "14aa4bca6e341cdc3ec54dae6b579748535b97135ceae7c4eb59980b136cd610",
+  "started_sha256": "fddb21e8c3dd475a14ef3f6645c12aca98d908728d1cc1740f2838befd5eceef",
+  "terminal_sha256": "14e85c6c23e856ba2694314cf10b470504e3124c3874275d1a060beee2bd9428",
+  "reviewer_sha256": "17c611c01fe74ae8cddc3ff9e09e1afd67756f1bef08744f2667d61edef6d5fb",
+  "errors": [],
+  "limitations": [
+    "Only existing DEV prediction identity and real no-GPU processor/weight preflight; no new model generation or GPU identity.",
+    "248 fixed references and 12-pair identity must be generated and independently accepted before any timing or GPU release."
+  ]
+}

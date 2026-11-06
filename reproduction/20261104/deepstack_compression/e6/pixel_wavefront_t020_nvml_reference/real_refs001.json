@@ -1,0 +1,107 @@
+{
+  "status": "passed",
+  "references": 9,
+  "inventory": [
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "arm": "t020_author",
+      "selected_count": 549,
+      "selected_indices_sha256": "b3c4657bf1459392edfa916a779904ebbbd90718c5d068847d4828e0f9add2b7",
+      "generated_count": 2,
+      "record_sha256": "4715f3f0add902e238803da59851fc439ee3efcbb6c09a7956c72d7708c14f5d"
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "arm": "t020_wavefront",
+      "selected_count": 549,
+      "selected_indices_sha256": "b3c4657bf1459392edfa916a779904ebbbd90718c5d068847d4828e0f9add2b7",
+      "generated_count": 2,
+      "record_sha256": "3eef15abd664fd311b0bd22f3ca9dd09a431dc332e6086d385f496d6ea90996f"
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "arm": "t0_author",
+      "selected_count": 692,
+      "selected_indices_sha256": "d774a34fc6ff0fe33749e79eeb381390737c74056044bd02a24abafdf0ab64f2",
+      "generated_count": 2,
+      "record_sha256": "aefa953b7481396935c9de89457a9a4e2f991ccf437e6368acc70fc644345be6"
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "arm": "t020_author",
+      "selected_count": 598,
+      "selected_indices_sha256": "891e5e8eed958733f0477a872482b6308ad95565026cdc40d5613b1212e739fd",
+      "generated_count": 13,
+      "record_sha256": "71166d1c940fbd1de15004fbba3566af5418ca76cdbc7b9dfcc68a2cc82d146b"
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "arm": "t020_wavefront",
+      "selected_count": 598,
+      "selected_indices_sha256": "891e5e8eed958733f0477a872482b6308ad95565026cdc40d5613b1212e739fd",
+      "generated_count": 13,
+      "record_sha256": "2cb24843310e1b295470b53c5e80b2db3cae3cf8b78b8d861f5353b91b6e63b3"
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "arm": "t0_author",
+      "selected_count": 667,
+      "selected_indices_sha256": "63d2ee157f4d25314eaeb0626fdadf4a2d87a6787d5cff98d53559bb33d4eab2",
+      "generated_count": 13,
+      "record_sha256": "d4c69571f704df2c41f0f9f522ea1c67895d0d70fba203fc0a13beee2997e2c5"
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "arm": "t020_author",
+      "selected_count": 703,
+      "selected_indices_sha256": "6df15b7683e75cf67f9f642216681635e0a2a5d8a545cad1ce3bc0d73b357fa4",
+      "generated_count": 2,
+      "record_sha256": "09b555cd88f1a142da1da0ab8c47335675a203d0e0af05a030a723d651132c2e"
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "arm": "t020_wavefront",
+      "selected_count": 703,
+      "selected_indices_sha256": "6df15b7683e75cf67f9f642216681635e0a2a5d8a545cad1ce3bc0d73b357fa4",
+      "generated_count": 2,
+      "record_sha256": "2190e0d3bdcebe34a7a861932143c020be26f24560ef4f9c87af6c11e25364bb"
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "arm": "t0_author",
+      "selected_count": 770,
+      "selected_indices_sha256": "3ab3687c1b4c867a76dba5d9b9b278cb9c8500eb9a145c1e91f71aed007a0a4e",
+      "generated_count": 2,
+      "record_sha256": "344f37f7c9e83b149e8567be29955030e3bc931dd1a7f8fe814eefdb50ebb151"
+    }
+  ],
+  "source_sha256": "fded5482d9964e2f7aede526e6abfc6bba3d3dc613bc975829133c57411e10d7",
+  "prior": {
+    "design_sha256": "e9407a0da048c129ef5d212c8d3e1f6256e097047553c10c51fb849b503d37b5",
+    "t020_approval": {
+      "formal_sha256": "2b0a043d9f95cfbc7cc85fbc051dc67690602dc2607eb1c742de7ebf4392603c",
+      "review_sha256": "eba11149c0e9fc32090206acf460dc5c9b554d4a64b63c3250895ce2fb4ffb79",
+      "design_sha256": "e8b104862c808ceb93b5b935b96761bbe83e0dc638e672a72abc0742708c39aa"
+    },
+    "t0_formal_sha256": "8f84e387bf818777e3fcc1336c6edbc53c116de8347699b9f78d7103f1da6ba0",
+    "t0_review_sha256": "74bb252af44eacc1b8a04116a692abbe9b744eb27f83a7b4b3436d9cd3454aa5",
+    "reference_scope": "archived input identities, generated tokens, and selected indices; intermediate high-dimensional tensors not fully archived"
+  },
+  "existing_DEV_predictions_opened": true,
+  "prediction_scope": "accepted same-arm reference identity only",
+  "GT_opened": false,
+  "GPU_used": false,
+  "model_loaded": false,
+  "limitations": [
+    "t0 complete ordered indices checked in prior record; high-dimensional intermediate tensors not fully archived"
+  ]
+}

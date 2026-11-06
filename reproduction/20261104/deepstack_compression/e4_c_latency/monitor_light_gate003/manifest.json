@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-11-04T21:17:41.687209+00:00",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "-c",
+    "import json;from latency_gate import require_light_identity;print(json.dumps(require_light_identity(),sort_keys=True))"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency",
+  "timeout_seconds": 300.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 3600,
+  "poll_seconds": 15,
+  "grace_seconds": 20,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/monitor_light_gate003",
+    "/media/disk2"
+  ]
+}

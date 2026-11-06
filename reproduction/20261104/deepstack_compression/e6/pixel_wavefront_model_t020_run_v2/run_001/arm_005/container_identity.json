@@ -1,0 +1,24 @@
+{
+  "container_id": "4ac30b0e10304d04c6a685109ecdad194c789b623edb426a7dd18b23cd7919c9",
+  "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+  "host_init": {
+    "pid": 1414897,
+    "start_ticks": 1399542248,
+    "session_id": 1414897,
+    "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+  },
+  "host_argv": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run_v2/worker_entry.py",
+    "--task",
+    "AI2D_TEST",
+    "--qid",
+    "368100",
+    "--arm",
+    "wavefront",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run_v2/run_001/arm_005/observations"
+  ],
+  "host_cgroup": "13:freezer:/docker/4ac30b0e10304d04c6a685109ecdad194c789b623edb426a7dd18b23cd7919c9\n12:memory:/docker/4ac30b0e10304d04c6a685109ecdad194c789b623edb426a7dd18b23cd7919c9\n11:hugetlb:/docker/4ac30b0e10304d04c6a685109ecdad194c789b623edb426a7dd18b23cd7919c9\n10:devices:/docker/4ac30b0e10304d04c6a685109ecdad194c789b623edb426a7dd18b23cd7919c9\n9:rdma:/docker/4ac30b0e10304d04c6a685109ecdad194c789b623edb426a7dd18b23cd7919c9\n8:net_cls,net_prio:/docker/4ac30b0e10304d04c6a685109ecdad194c789b623edb426a7dd18b23cd7919c9\n7:cpu,cpuacct:/docker/4ac30b0e10304d04c6a685109ecdad194c789b623edb426a7dd18b23cd7919c9\n6:perf_event:/docker/4ac30b0e10304d04c6a685109ecdad194c789b623edb426a7dd18b23cd7919c9\n5:blkio:/docker/4ac30b0e10304d04c6a685109ecdad194c789b623edb426a7dd18b23cd7919c9\n4:cpuset:/docker/4ac30b0e10304d04c6a685109ecdad194c789b623edb426a7dd18b23cd7919c9\n3:misc:/docker/4ac30b0e10304d04c6a685109ecdad194c789b623edb426a7dd18b23cd7919c9\n2:pids:/docker/4ac30b0e10304d04c6a685109ecdad194c789b623edb426a7dd18b23cd7919c9\n1:name=systemd:/docker/4ac30b0e10304d04c6a685109ecdad194c789b623edb426a7dd18b23cd7919c9\n0::/docker/4ac30b0e10304d04c6a685109ecdad194c789b623edb426a7dd18b23cd7919c9\n",
+  "observed_unix": 1793863914.701604
+}

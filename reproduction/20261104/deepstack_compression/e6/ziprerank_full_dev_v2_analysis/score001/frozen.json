@@ -1,0 +1,167 @@
+{
+  "scope": "DEV selected qids only",
+  "scorer_prelaunch": {
+    "source_sha256": {
+      "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/dataset/utils/vqa_eval.py": "f63c9fd539a4a2750cfb4d17ca654e9871b58358bbb943549a71c947839de3ae",
+      "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/smp/misc.py": "e65a0e0a23305ab3bd16c6d1885e8f97b08b7a8fb3c4bf90691e5432a67f7ddf",
+      "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/utils/matching_util.py": "03435cedaeaf6282599816aed4ba57f26dd4858f2a37399490acca98d9f8f5f2",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/completion.py": "a94c45fee0ebc4680c8cd7d8bc2d44b93e8576a6fa1d517842945dc21b9f74cd",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/metrics.py": "7e79c70937fe9eb1ecea9e3ea3c70ed9ba781a9cadc26fd5baa530d0f7bfbc10",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/paired_stats.py": "56e83840cb1ae399a992af7f7f408c8fbe9634aac880ab5472ffa1b8fa7fa4d5",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/score.py": "6470bd9949e7430a3b95eb78c30b9fc3473436447034bf199227ace8ff080891",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_full_dev_v2_accept/score_plan001.json": "b97faf34dfe692e4e97c54a7ca6d11ae6f7db01e0208e1c8a3ebb00b06f2759c",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_full_dev_v2_analysis/admission.py": "c18f8fde56fbe4dbfc283cda3e23be28ae6546e1dbe0432d22fd31eacfab43bd",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_full_dev_v2_analysis/cpu_check.py": "652beb9e35dd7858f82b973fc18fdec0f78f35c3b59610af9e426a7a41cba24b",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_full_dev_v2_analysis/paired.py": "8e1c9e6e64ded240c93c122ca7c1d1a9b964f54fa27583fa718f1a1187822544",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_full_dev_v2_analysis/score.py": "3aa45f986450f25676f84d5fae2c6ee858ed8a3c2fd0d3a64ffa0bbd967cd50b",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_full_dev_v2_analysis/test_main_integration.py": "8fed49a28eec42242d3e014d3eabf2e8b35cc1413505bb9c6d39fd84548f87f4",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_full_dev_v2_analysis/test_score.py": "027bbf5c3216295322315343e804430ead114d40721225c0013a18ed00a6db53"
+    },
+    "zip_formal_sha256": "c9d122feb18d547f9914b7b39ebbba76eb4f51f1550c6a79c9f7063f09916ec3",
+    "zip_review_sha256": "8fb0708a134572b14812e5a9813d57a53c22eb54e6d40df167edd906f0bcc126",
+    "e1_frozen": {
+      "acceptance_sha256": "95981ce2400d7467ba93d3177275a0860a656fc8558080c243040663e40a52fb",
+      "acceptance_started_sha256": "a030d80a913b1dadc918a31f1bcf3572cb09032db5854dd76bb5aa75df8cc2c2",
+      "acceptance_terminal_sha256": "9d7175ad4c87dd92755a109718e9cc223de3f6b3977c9a4fcf4d0d971cb69d93",
+      "dataset_summary_sha256": "264c1428175f2c7d4f57ac9742c152d3fe497010db9c9577a85b31038f48151e",
+      "inputs": {
+        "frozen": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001/frozen.json",
+          "sha256": "80ebf8879ff89d9f706e05e6f5cac18bc438c9baf90aa2cd2cb2d32325317c28"
+        },
+        "worker_complete": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001/worker_complete.json",
+          "sha256": "ed504a266d27dbc9d84145e28e9c9bcf040bf78761cfa5981112c32fe3804c25"
+        },
+        "journal": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001/raw_predictions.jsonl",
+          "sha256": "be49921c44f10f532d5d480f81478d87bb070bb040bb943db6db6dbf2b9f56d9"
+        },
+        "quartets": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001/validated_quartets.jsonl",
+          "sha256": "24c2bfa4eae0dd96a796731af6d5ecca66cf760bc03a572f45b1aacb4a71c05f"
+        },
+        "generated_arms": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001/generated_arms.jsonl",
+          "sha256": "b1100bc4da064f203037c8cf914390a08dc58790f0b2bbfc6ff75377df817537"
+        },
+        "panel": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/data_manifest/panel_manifest.jsonl",
+          "sha256": "5696221e24ab189c483288b1b0314fd65143450bd3a23a9ba16fee200aa2f71b"
+        },
+        "terminal": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/monitore1full001/terminal.json",
+          "sha256": "65ce759aa1aaae8ccefa43549f82a38e60177116c2141029f0a27b9617680f73"
+        },
+        "container_exit": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_exit.json",
+          "sha256": "b6d1578c8b10143786b6d364de72524bca2c28793e26e3a5a5d058d294c0cd2f"
+        },
+        "launch": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_launch.json",
+          "sha256": "0d542fd03aed7307e024a2a865a03e7cb77135f90271c843010c437bc17a028c"
+        },
+        "inputs": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/input_preparation_002/inputs.jsonl",
+          "sha256": "f3fef75929f88fa21b96458337030c47f2b7afaa596f540879afddd72847f59d"
+        },
+        "input_proof": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/input_preparation_002/independent_verification.json",
+          "sha256": "7928a94bbad71818dcd05b85789a0be8a34a3bc0f77312fd6be40dd8afb0b8e2"
+        },
+        "contract": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_sources/contract.py",
+          "sha256": "9c560e09402e598f6ec34aa095b07f777871475e89ed35343563f99f03a12b1e"
+        },
+        "runner": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_sources/full_runner.py",
+          "sha256": "2c452cbc39f5908d3f70c6fc82647f44fd906070251aca2cf37fc552769cc042"
+        },
+        "launcher_source": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_sources/full_launch.py",
+          "sha256": "44778b0c271c6dae8c2798c619db7d990eadea30d9dd5e7d07eff076f6b7a7d3"
+        },
+        "position_adapter": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_sources/position_adapter.py",
+          "sha256": "8eba6c74310897956cb9bd024e7b19d333106aa2b3e0925e4fb941dc0024deea"
+        },
+        "e0_adapter": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_sources/adapter.py",
+          "sha256": "f0984cbe1ded51616a3d6f553be47334bfc61c7080bfaa6749f0e785b3b172ae"
+        },
+        "plan": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_plan.json",
+          "sha256": "d752c876367803c5728ffa84a819fd63b4c129cfd0e2eb78931f7d94dae5d4ad"
+        },
+        "dataset_summary": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/data_manifest/manifest_summary.json",
+          "sha256": "264c1428175f2c7d4f57ac9742c152d3fe497010db9c9577a85b31038f48151e"
+        },
+        "dataset_verification": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/data_manifest/verification.json",
+          "sha256": "e3dd8b59885a5ee504599a6d5eac133f1127422be142d02bca788b758ffd47cf"
+        },
+        "dataset_builder": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/data_manifest/build.py",
+          "sha256": "dde392a3a331231ac9eb25ed459792573dd5afa1f409bac098562cf20938f55e"
+        },
+        "dataset_verifier": {
+          "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/data_manifest/verify.py",
+          "sha256": "96314a2fcd3f4cdac99988c9afe0e457851b682432a86392746eee349af3a5e3"
+        },
+        "tokenizer_tokenizer_config.json": {
+          "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/tokenizer_config.json",
+          "sha256": "c2da771801886ad9ae98181793ffd3dfb7f1af30f6f7c6a4e15d7dbba52e2399"
+        },
+        "tokenizer_vocab.json": {
+          "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/vocab.json",
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "tokenizer_tokenizer.json": {
+          "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/tokenizer.json",
+          "sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7"
+        }
+      },
+      "code_sha256": {
+        "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/dataset/utils/vqa_eval.py": "f63c9fd539a4a2750cfb4d17ca654e9871b58358bbb943549a71c947839de3ae",
+        "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/smp/misc.py": "e65a0e0a23305ab3bd16c6d1885e8f97b08b7a8fb3c4bf90691e5432a67f7ddf",
+        "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/utils/matching_util.py": "03435cedaeaf6282599816aed4ba57f26dd4858f2a37399490acca98d9f8f5f2",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/metrics.py": "7e79c70937fe9eb1ecea9e3ea3c70ed9ba781a9cadc26fd5baa530d0f7bfbc10",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/paired_stats.py": "56e83840cb1ae399a992af7f7f408c8fbe9634aac880ab5472ffa1b8fa7fa4d5",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/score.py": "6470bd9949e7430a3b95eb78c30b9fc3473436447034bf199227ace8ff080891"
+      },
+      "native_na_policy": "Exact author xlsxwriter/pandas prediction-column round trip by task and arm; raw answers retained; literal-score diagnostic separately.",
+      "runtime_versions": {
+        "numpy": "2.2.6",
+        "pandas": "2.3.3",
+        "xlsxwriter": "3.2.9",
+        "openpyxl": "3.1.5"
+      },
+      "ai2d": "author can_infer deterministic exact_matching, unresolved mapped Z; no external judge",
+      "text_independent": "separately coded punctuation and closed-form leave-one-out consensus; constants extracted from author source",
+      "bootstrap": {
+        "unit": "image group",
+        "replicates": 10000,
+        "seed": 20261104,
+        "method": "percentile"
+      },
+      "scope": "384 DEV questions only; no CONFIRM/FINAL predictions read"
+    },
+    "prelaunch_review_sha256": "5e3295939dc2cbd5cd3a8789d798b64c006e5f1fd0df0ff54b34f0259982cf4f"
+  },
+  "plan_sha256": "b97faf34dfe692e4e97c54a7ca6d11ae6f7db01e0208e1c8a3ebb00b06f2759c",
+  "references": {
+    "AI2D_TEST": {
+      "path": "/media/disk2/YZX/LMUData/AI2D_TEST.tsv",
+      "sha256": "3b16aa83c6809149df6978c7d5a6ee830b75f0010a60b26d33c004c47d575c4a"
+    },
+    "DocVQA_VAL": {
+      "path": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+      "sha256": "05fea8a88593b192cd23415797771c94603832377d3b4b2dec4f0a6fb87a4d25"
+    },
+    "TextVQA_VAL": {
+      "path": "/media/disk2/YZX/LMUData/TextVQA_VAL.tsv",
+      "sha256": "f9bd2e1518185f678a60b9a31fea5655f7533704fa7d7c9b3775bf0ca2a6b8d0"
+    }
+  }
+}

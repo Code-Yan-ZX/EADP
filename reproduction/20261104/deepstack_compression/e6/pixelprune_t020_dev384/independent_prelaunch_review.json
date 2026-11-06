@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_pixel_t020_dev384_prelaunch.py",
+  "reviewer_sha256": "986acef14fbaed09e50808283a36d08f90b282ac8d5e21b7f669e3c270df4c89",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_t020_dev384_prelaunch/terminal.json",
+  "review_started_sha256": "c58a8e0de29347944ecbf40f7ef8afcbb611cfde19d8feb06009a15aae31fdc2",
+  "plan_sha256": "f51308e999b7b55400a05d66f7ff1918d5a71e6db70e60059bb5eb486f70d76e",
+  "preflight_sha256": "1ee26d3825e4b043532f1541a384c61ac29609105a6661023ba196efcbaad3b1",
+  "preflight_started_sha256": "5713e17f6dc2ec57862c5a0b7132dd5afadc6f0b10a30ac70768fb3c05ca139b",
+  "preflight_terminal_sha256": "ff4a7135e2b6c88cde945d2ea0de21deac0e9d5d7b5fa731a2e794d1eff5131e",
+  "preflight_exit_sha256": "39dcba24e325b05f2140ebeafd9eff193b1671af05cc856abaf3b8666c77e18a",
+  "acceptance_plan_sha256": "2296baafda9614c428f0f65f7eac652dc0bc19159b1ff10f21c3a68f534bfcda",
+  "score_plan_sha256": "5c83009aea551eb23b481ad939938b01a5476026dccb3742744ae0d61a9f1987",
+  "source_count": 132,
+  "questions": 384,
+  "independent_cpu_tests": 13,
+  "GT_opened": false,
+  "new_panel_predictions_opened": false,
+  "predictions_opened_for_identity": true,
+  "limitations": [
+    "threshold selected after prior DEV studies and 32-image CPU calibration; quality is post-hoc exploratory",
+    "dynamic K is not equal-K or equal-compute",
+    "full high-dimensional visual/DS/KV tensors are not retained",
+    "four-sample CPU/GPU identity does not guarantee all 384 inputs"
+  ],
+  "scoring_source_prelaunch_still_required": true
+}

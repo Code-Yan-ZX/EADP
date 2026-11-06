@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "actual_command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_coverage_v3/coverage_entry.py",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_coverage_v3/coverage001.json"
+  ],
+  "exit_nonzero": true,
+  "denial": "missing formal supervisor started.json",
+  "plan_sha256": "2dd1c969f0bf6080622c5a0b38aa63a39e8d9df1282e6ee157de1e0b063be6b1",
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_coverage_v3/coverage_entry.py\", line 12, in <module>\n    if __name__=='__main__':m.main()\n  File \"/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_coverage_v3/coverage.py\", line 37, in main\n    formal=A/'verification001.json';review=I/'pixel_wavefront_t020_timing_result_review.json';reviewer=I/'review_pixel_wavefront_t020_timing_result.py';terminal(A/'monitor_verify001',A/'verify_entry.py',formal);terminal(I/'monitor_pixel_wavefront_t020_timing_result',reviewer,review);terminal(R/'monitor_run001',R/'launch.py')\n  File \"/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_coverage_v3/coverage.py\", line 8, in terminal\n    s=read(d/'started.json');t=read(d/'terminal.json');c=s['command'];cwd=Path(s['cwd'])\n  File \"/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_coverage_v3/coverage.py\", line 6, in read\n    def read(p):return json.loads(Path(p).read_text())\n  File \"/home/dell/miniconda3/envs/qwen3vl_serving/lib/python3.10/pathlib.py\", line 1134, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n  File \"/home/dell/miniconda3/envs/qwen3vl_serving/lib/python3.10/pathlib.py\", line 1119, in open\n    return self._accessor.open(self, mode, buffering, encoding, errors,\nFileNotFoundError: [Errno 2] No such file or directory: '/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_accept_v5/monitor_verify001/started.json'\n",
+  "timing_results_opened": false,
+  "GPU_used": false,
+  "GT_opened": false
+}

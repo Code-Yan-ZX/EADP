@@ -1,0 +1,27 @@
+{
+  "scope": "three-anchor descriptive per-image paired same-repeat TTFT",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis/test_analysis.py": "af422f13d99720058b74fdd75133b2cf90d381c195f7ae8809dceb60484a4670",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis/analysis.py": "b67a7c05b60bec140282ef249bb4efa43dadba97657720bdccdc5d1ecb7914dc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis/freeze.py": "9abe8f550a587b4b00e851667a29f35dc89e7f400ba3b3443039c87ad8aadee4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis/analysis_entry.py": "dcd7d4fe5594369f79600429d4e22c4943d5e238fc38bab157ed9405e605b254",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis/gate.py": "ecbff53ad87fa5548dfbe0f2e9f69dc5f109b2631352d29b73b0715db396adf4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis/cpu_check.py": "491923e599e177a6844a71c275060364d9426408b5021b163be53aed2f50b0b7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis/test_gate.py": "9e6233a0a21906b80a2d97d55e5839ae93d93e1610d815c046c2a218bc09ec5c"
+  },
+  "gpu_plan_sha256": "196f4b82fc9a0e533189a108fd0ea585cf06ceeadc0a5a6398e9a091a396f16d",
+  "formal_plan_sha256": "7b966368d0f86b13af72db7be01fe3a1efbad8b0a42f74bbdc11175755bfec38",
+  "warmups": 6,
+  "measured": 18,
+  "ratio": "wavefront TTFT divided by author TTFT per anchor and repeat",
+  "aggregation": "per-arm median of three measured independent processes per anchor; all raw rows retained",
+  "limits": [
+    "post-hoc 3 DEV anchors",
+    "separate process warmup does not warm later process",
+    "observed monitoring windows only; missing background is unknown",
+    "no population inference or confidence interval",
+    "t=.2 uses dynamic visual budget"
+  ],
+  "GT_opened": false,
+  "timing_results_opened": false
+}

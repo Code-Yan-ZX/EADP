@@ -1,0 +1,49 @@
+{
+  "stage": "prospective_label_free_train_eligibility_audit",
+  "created_unix": 1793829138.2588785,
+  "scope": "all 36 pinned TRAIN parquet shards from a third-party DocVQA repack; source equivalence remains unverified; no student training",
+  "inputs_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_train_data/source_inventory_001.json": "e210f0b838a83298c9d6f9e58e629ddf8de98db84b6b0b36ded092ec48c47e42",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/data_manifest/manifest_summary.json": "264c1428175f2c7d4f57ac9742c152d3fe497010db9c9577a85b31038f48151e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/data_manifest/images.jsonl": "3628cc16e2bee91ee7f6de6d97e0a26cd18e7626f131c287e1e4adfa72bf284a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/data_manifest/full_manifest.jsonl": "bfc1541bda41382afb2e80478af2be291a7f8d05f6f5c694863b693aad5dec60",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_train_data/eval_path_semantics_001.json": "edebe2cb7a5e71941f849465b56231de82631a47fe0c939be5a28f0387cc31cb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/data_manifest/build.py": "dde392a3a331231ac9eb25ed459792573dd5afa1f409bac098562cf20938f55e"
+  },
+  "read_columns": [
+    "image",
+    "question_id",
+    "data_split",
+    "other_metadata"
+  ],
+  "exclude_all_eval": "all evaluation images and existing cross-task groups, regardless of DEV/CONFIRM/FINAL",
+  "edges": [
+    "identical image bytes",
+    "identical EXIF-corrected RGB pixels",
+    "same original UCSF document and one-based page",
+    "pHash Hamming distance <= 4 across TRAIN and evaluation images"
+  ],
+  "transitive_rule": "union all TRAIN and existing eval groups across all edges; exclude every entire connected component containing any evaluation image",
+  "page_semantics": "evaluation filename _pN is original page N+1; bound by eval_path_semantics_001.json across 5349 projected rows",
+  "image_fingerprint": "reuse frozen data_manifest/build.py describe() in Pillow 11.2.1/SciPy 1.15.2; preserve hashes and original image dimensions",
+  "near_candidate_enumeration": "five bit partitions (13,13,13,13,12), check XOR bit_count <=4, as existing eval grouping; no approximate index misses under this threshold",
+  "eligible_group_identifier": "SHA256 UTF-8 group| followed by sorted member byte-SHA256 joined with |; no dependence on question, answer or model output",
+  "fit_validation": "sort eligible TRAIN groups by SHA256(20261105|TRAIN_FIT_VAL|group_id), tie group_id; first floor(0.8*n) fit, remaining early-stop-validation; split applies to every question in group",
+  "question_selection_if_needed": "before accessing labels or training, choose one question per group by SHA256(20261105|TRAIN_QID|qid), ties numeric/string qid; any later training subset must be frozen separately",
+  "proof_requirements": [
+    "36 downloaded shards with SHA256 and completion/exit evidence",
+    "evaluation fingerprints, semantic mapping and source versions unchanged",
+    "every TRAIN row and question ID accounted for; no evaluation-connected group in eligible list",
+    "each group belongs to exactly one fit or validation split",
+    "independent implementation and synthetic transitive/cross-split counterexamples",
+    "third-party provenance scope and all unverified aspects explicitly retained"
+  ],
+  "limitations": [
+    "pHash threshold may miss re-renders or semantic duplicates; no mathematical guarantee of complete decontamination",
+    "No reference answer, question text, prediction, model or GPU is needed by this audit",
+    "A training plan, teacher budget, train labels and student validation must be fixed separately; no training is authorized by this audit alone"
+  ],
+  "GT_opened": false,
+  "predictions_opened": false,
+  "training_performed": false
+}

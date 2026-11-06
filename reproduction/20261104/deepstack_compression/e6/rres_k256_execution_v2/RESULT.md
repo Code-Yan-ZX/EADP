@@ -1,0 +1,7 @@
+# 512px / 256-visual-token three-anchor diagnostic
+
+Three previously observed DEV anchors, one per task, completed the scoped 512px author-processor and stock-model path. Each produced exactly 256 merged visual tokens. Formal and independent verification passed processor and input identity, 3D positions, three DeepStack injection streams, 36-layer cache length/position traces, raw sequence decoding, restoration of hooks/resolution, and stopped container with empty recorded GPU compute lists before and after. Natural generations had 13, 2 and 2 output tokens and all ended in EOS.
+
+This is an identity and feasibility diagnostic, not a quality, latency or equal-compute result. Full visual, DeepStack and KV tensors were not archived: their relationships were checked online, with hashes and lengths retained. The 512px intervention changes vision computation as well as token count. The log contains an unavailable kernel-cache-directory warning, an FA2 dtype warning and greedy sampling-parameter warnings; runtime checks verified bf16 and FA2, and no timing inference is made. A prior version generated three records but its supervisor failed because its GPU-process callback was missing; the old run is retained and is not part of this accepted result. The independent reviewer also retained a first failed attempt due to a container-name schema mistake.
+
+Evidence: `verification001.json`, `source_snapshot001/manifest.json`, and `../../e1_independent_review/rres_k256_v2_result_review.json`. No ground-truth answers were opened or scores computed.

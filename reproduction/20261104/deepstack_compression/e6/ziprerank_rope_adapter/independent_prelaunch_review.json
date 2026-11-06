@@ -1,0 +1,27 @@
+{
+  "nohook_control_review_sha256": "df68aadc1aea26cf861d8768322d9927db2529f93b2a0d4a19a681c713a83741",
+  "status": "passed",
+  "independent_review": true,
+  "scope": "single DEV image, locally adapted RoPE state, three forced diagnostics; no quality or timing claim",
+  "plan_sha256": "45fdb7cda0ca224ae952f65a6d54be272f75a9239c2aca47f16fd8b4679800f6",
+  "preflight_sha256": "aee7504694da590132cb7d23c0c30327a52039d8a556ea10e42b779ada2227a1",
+  "preflight_started_sha256": "1e725c98391c9ed3a79631f2cf69f6ca9091e9e9d995f3fc1c47a6c15c8716f7",
+  "preflight_terminal_sha256": "b08a5c213a2e519ad225835f4c48ed0f55a58430afeb0aa65abf0f3b604903e4",
+  "preflight_exit_sha256": "3fccdfc18fdba138de2c080b13782ebbdc40331c5f0eac75558960158b5245a6",
+  "preflight_launch_sha256": "e7063565070f94c811a1bc3dad0acaa656124c1f7db9148ff2ffa04ea645a402",
+  "reviewer_sha256": "f1694d4f48aad8d41f2ca2a5f37b49cbfe90817c4ae8c8f4974f0a82ddadae4e",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_ziprerank_rope_adapter.py",
+  "review_started_sha256": "86600ffe88826c923df0fb7feead4890b4dd34b74b3145ca58e01092c8d9f6ba",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_ziprerank_rope_adapter_review/terminal.json",
+  "container_id": "dc7fe4984d70b149a63f6ae7e02545dc2506e83bca0586b028fb0a0ebb878ce6",
+  "synthetic_tests": 9,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "gpu_used": false,
+  "limitations": [
+    "Local compatibility adaptation, not the unmodified author method; completion records attempts, not necessarily success.",
+    "Single fixed image and forced prefix; author exceptions and all failed checks must remain visible.",
+    "FA2 matches E1 backend, but complete generation recipe and method are not automatically equivalent."
+  ],
+  "errors": []
+}

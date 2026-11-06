@@ -1,0 +1,20 @@
+{
+  "scope": "post-hoc 32-step CPU comparison with prompt-only PA-Fusion reference",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_decode_v3/probe.py": "6e21b901c84abaa29bcce4930fed2d6ae3b6579150fcf94d605c025ed274c835",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_decode_v2/plan001.json": "764d21f17a23527e4e0d2539ed6086adc1be59a6b769704cbd1ddd83e8daf894",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_decode_v2/result001.json": "34c2e3a89588b231af2dec2b9966d5e1d01a0561b9e444e0b18e5e0398f7b809",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_decode_v2/monitor_probe001/terminal.json": "b1f7d9c5b5e1fa9efc35decb1ea6ab26faf1391e8de9bab516054d91fdfe1673",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/hilo_prune/models/qwen3_vl/modeling_hilo_qwen3_vl.py": "09ba0fadf0b6e9972ac0352a184723b1424ccffd3387c5a3ec046af7ee32cabb"
+  },
+  "steps": 32,
+  "atol": 1e-05,
+  "rtol": 1e-05,
+  "GT_opened": false,
+  "gpu_authorized": false,
+  "limitations": [
+    "Constructed post-hoc reference does not establish author intended decode behavior",
+    "tiny CPU model and simple default positions, not real Qwen3",
+    "local patched implementation only"
+  ]
+}

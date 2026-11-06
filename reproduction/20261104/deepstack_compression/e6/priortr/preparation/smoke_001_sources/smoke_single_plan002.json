@@ -1,0 +1,93 @@
+{
+  "status": "frozen",
+  "scope": "single DEV question identity smoke, no scoring",
+  "selected": {
+    "group_id": "7496c07ef9631e5a13066ce69c770220cdea03e45428286f1cd5f9b155edf139",
+    "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/kxvh0227_p1.jpg",
+    "image_sha256": "8b6b83d4081373a5f0c6c9ffe586b19c8f5a6c370b1c1c7d106b75003a55b159",
+    "message": [
+      {
+        "type": "image",
+        "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/kxvh0227_p1.jpg"
+      },
+      {
+        "type": "text",
+        "value": "What is the date mentioned at the bottom?\nPlease answer concisely with short words or phrases when possible."
+      }
+    ],
+    "message_sha256": "b4d672fccf409a353edf49b36361ef5955105e4a445f15f89d7eac14f337ef8c",
+    "qid": "65062",
+    "task": "DocVQA_VAL"
+  },
+  "source_eight_manifest_sha256": "2374eedec17578c1b23c22e4f05b00d19e0c311a49cec94ac39761b58e109674",
+  "cpu_processor_proof_sha256": "6972f12b69b28dc73e728704b6b9a7e390ba935249a2e2d34cde560744386774",
+  "cpu_processor_terminal_sha256": "afe1a11e778d3225026a83e29ed98a6e63bbc75d4578176444d2d7e61b0b380e",
+  "priortr_commit": "e442a4c14af1b333067a6b8310c9111cad922033",
+  "transformers_commit": "f8f2834e1a82970f93e06f9bb076a361ca2d70c0",
+  "backend": "sdpa as published; distinguish E1 FA2, never infer parity without checks",
+  "precision": "bfloat16",
+  "cases": [
+    {
+      "name": "stock",
+      "enabled": false,
+      "generation": "natural"
+    },
+    {
+      "name": "stock_forced",
+      "enabled": false,
+      "generation": "forced_33"
+    },
+    {
+      "name": "patched_disabled",
+      "enabled": false,
+      "generation": "natural"
+    },
+    {
+      "name": "author_default",
+      "enabled": true,
+      "strategy": "priortr",
+      "prune_layer": 3,
+      "keep_ratio": 0.1111,
+      "generation": "natural"
+    },
+    {
+      "name": "k256",
+      "enabled": true,
+      "strategy": "priortr",
+      "prune_layer": 3,
+      "keep_tokens": 256,
+      "generation": "natural"
+    },
+    {
+      "name": "priortr_keep_all",
+      "enabled": true,
+      "strategy": "priortr",
+      "prune_layer": 3,
+      "keep_tokens": 1024,
+      "generation": "natural"
+    },
+    {
+      "name": "k256_forced",
+      "enabled": true,
+      "strategy": "priortr",
+      "prune_layer": 3,
+      "keep_tokens": 256,
+      "generation": "forced_33"
+    }
+  ],
+  "required": [
+    "all logits and processor input arrays on diagnostic anchors",
+    "actual full-sequence selected index and original mRoPE gather",
+    "three DS visual outputs and injection rows/mask before/after pruning",
+    "all decoder layers prefill token counts and per-layer KV length",
+    "32 actual forced decode position and cache traces",
+    "immediate fsynced output ID journal",
+    "same input image/processor hashes as E1",
+    "full container supervisor and verifier exits",
+    "stock is actual unmodified text model class; patched disabled explicitly separate"
+  ],
+  "not_accepted_yet": true,
+  "prerequisite": "independent CPU code review, bounded launcher with real container stop, author/default/no-pruning behavior and isolated-environment provenance; no heldout predictions",
+  "created_utc": "2026-11-04T17:49:25.376828+00:00",
+  "supersedes_sha256": "edaac3a555813b8b42116ce9f8e4edeea9617299402089ae7188f94cf20fb110"
+}

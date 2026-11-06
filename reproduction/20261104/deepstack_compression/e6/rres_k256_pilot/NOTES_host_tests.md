@@ -1,0 +1,1 @@
+Initial unsupervised `test_capture` failed because the synthetic boolean-mask mutation used `+=1`, which PyTorch refuses to cast back to bool. The test was corrected to assign a boolean-compatible value; this was a test-fixture error, not a model run. No GPU was used.

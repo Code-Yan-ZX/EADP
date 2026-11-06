@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "3b483d26530f237b10fe1e812b9ab525f868afba11f6ad89f9d168171722329c",
+  "preflight_sha256": "949a9de09858e19aa6ee71b77fa51a1bb7fb382db1ed457c2a38457dc217410c",
+  "preflight_started_sha256": "fc409f979f016e7f0ba09f377d1a8595960b1b5a06ba8b3e006117aca363afe3",
+  "preflight_terminal_sha256": "974721f39b15829e2bb6caa33785f596bdffa46b064822d3221d270152659c40",
+  "preflight_exit_sha256": "b012223e145f175b0d23a734adaab8cd06b01e0676aac186ee0903d24f80fc31",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_pixel_t045_prelaunch.py",
+  "reviewer_sha256": "b285b11675a9cc4d204dbd558199896925d942ee470a32b18176967a8c42767c",
+  "review_started_sha256": "1375ab884c5cdd6bdc8b59c53fae1fae74f5cc1e477ae260af7346e502ec295c",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_t045_prelaunch/terminal.json",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "cpu_tests": 10,
+  "gpu_authorized": "subject to root scheduling",
+  "scope": "four deliberately chosen post-hoc DEV examples, CPU/GPU selection and model diagnostic only",
+  "limitations": [
+    "no GPU selection or model result yet",
+    "E1 DEV mixed prediction log parsed only for input identity",
+    "CPU K=1 is an expectation, GPU identity is not assumed",
+    "online feature/DS/position checks do not archive full tensors or KV contents",
+    "no accuracy, equal-compute or performance claim"
+  ],
+  "errors": []
+}

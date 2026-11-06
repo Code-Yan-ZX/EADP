@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "single-image local RoPE and full-user-text selector adaptations, forced prefix only",
+  "arm_statuses": {
+    "disabled": "completed",
+    "keep_all": "completed",
+    "keep_256": "completed",
+    "question_256": "completed"
+  },
+  "calls_per_arm": 33,
+  "decode_calls_per_arm": 32,
+  "cache_layers": 36,
+  "logit_comparisons_keep_all": 33,
+  "files_sha256": {
+    "disabled.json": "425a9678441c8783717168c0a7bb9d84daf683bbfb05c8f1a0ae7ebbd4f27bff",
+    "disabled_started.json": "53949e8c4cbe97d8565373587f207d3fdc512fbbdce5d5e619047ae35bef3d85",
+    "disabled_generated.json": "af20e2b39e1c897585be160f2d29d7182ce198f045c831049f5d513f190a97cc",
+    "keep_all.json": "3143bb2e86d8047933778ab60f825267a10981267ca31f8cc7e3a2b52f8002a7",
+    "keep_all_started.json": "a0d5b223519091769ca72fd39750d5e4f2d9f3aeb424f71f71f511c74bc7b9b2",
+    "keep_all_generated.json": "19c2f269594a41ba01bbd76cdb64b05ab1678e0a20a695080ad2dc55a0d25caf",
+    "keep_256.json": "25ceddadf5fb79f52fe0d3b0981ef8c9ba5c562d74b5cd53d23d04bc30352f9d",
+    "keep_256_started.json": "7f2bc6a49865b99af806a0a960b092d7d2291ef106dbc7026e6d2f4ba0c9613c",
+    "keep_256_generated.json": "3728e64f78b6691232e45534e65e68ab923f4ddb1e18c8becaacd7f1fef42f9a",
+    "question_256.json": "3619758ed3d6eca5ecdd17d50ee61b19004eb2bf6de9965d823cff6e91bc114e",
+    "question_256_started.json": "21c35a49d5d45257e8c072b2cc4aa921e2c8b6d9e0747bf3237a6704e950af9a",
+    "question_256_generated.json": "9af846bc5674cddb47e96c7a66ade0393a5c5ad576ed558679875aee0c1f0fd8",
+    "started.json": "bbc20fa8509517ad43a198bfb68449b609686591b4362e2fbf58784c42f2dcc9",
+    "progress.jsonl": "0ce0c8efbce135d208c77063ca01bfb4e7bde56cbab886acd65512f32cc512a0",
+    "worker_complete.json": "2dc290dc6769b8efb9dea482ed5d8b8c85ac3eb16016af3a34dd3755fc124579"
+  },
+  "plan_sha256": "199fddd1bae619e24711c808922b6d72685fb1af18f1883ff5439bcb763e6b0b",
+  "nohook_original_review_sha256": "df68aadc1aea26cf861d8768322d9927db2529f93b2a0d4a19a681c713a83741",
+  "run_started_sha256": "283ce4d42935e5eeb8ede896e264171bc2aa0746190a24b161afcb18d51f806d",
+  "run_terminal_sha256": "2eac0523fd1333ff6b56e8bab58a46ea97b6dd6433f65a6865227548be595ba9",
+  "run_exit_sha256": "5639aab6410ba2d77284246b75d1ea3c72023ee44b92eed4db9d65ab04feb879",
+  "reviewer_sha256": "27bbb939b8fb06762d0d61e134bac205066625c4414521a26a2075c370af42b9",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": [
+    "Both RoPE and full-user-text selection are local adaptations; user text includes instructions and choices.",
+    "Full high-dimensional inputs, DS, KV and logits are not archived; elementwise and logit comparisons are runtime observations, with recorded KV prefix hashes independently checked.",
+    "Single fixed image and forced prefix only; no natural quality, latency or generalization claim."
+  ],
+  "errors": []
+}

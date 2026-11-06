@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "questions": 384,
+  "routes_checked": 1152,
+  "intervals_checked": 18,
+  "GT_opened": false,
+  "score_files_containing_predictions_opened": true,
+  "generation_performed": false,
+  "plan_sha256": "15f54b8677c19ce5a4d9c26fc88a0b1467d65c3976e0e841d47e63920705e436",
+  "source_freeze_sha256": "b4d55fe17edaa4e94100426fe9ea66274e9cbe0aff5447a5ab9af64a123f7a1e",
+  "result_sha256": "d25477faf5e116f3a5f91d0c43e30d4148dfec9723d184bc8e08874d2e2235a9",
+  "routes_sha256": "7cf443fe3b8efe2d8b087634e343952dba1249c65181e690ba31a20ff19a4b69",
+  "reviewer_sha256": "6974d2176643b9d36c745d0be8c4a551312cb1554799287c2c84109b4e410e4e",
+  "errors": [],
+  "limitations": [
+    "policy defined after observing both DEV arms, exploratory and not confirmatory",
+    "routing is an offline counterfactual, not an actual conditional model execution or trained policy",
+    "score files contain prediction text; parsing source records necessarily opens them",
+    "fallback checks both selectors and the additional selection cost is not measured",
+    "routed mean K is output token budget only, not equal FLOPs or end-to-end runtime",
+    "no new CONFIRM/FINAL labels or results"
+  ]
+}

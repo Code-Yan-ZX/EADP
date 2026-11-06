@@ -1,0 +1,40 @@
+{
+  "created_utc": "2026-11-04T21:29:12.064347+00:00",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "m3_oracle_analysis_v2/score_driver.py",
+    "--run",
+    "m3_oracle_exec/runtime_001",
+    "--proof",
+    "m3_oracle_verify_v2/runtime_001_verification_author.json",
+    "--verify-started",
+    "m3_oracle_verify_v2/monitor_verify002/started.json",
+    "--verify-terminal",
+    "m3_oracle_verify_v2/monitor_verify002/terminal.json",
+    "--run-started",
+    "m3_oracle_exec/monitor_runtime001/started.json",
+    "--run-terminal",
+    "m3_oracle_exec/monitor_runtime001/terminal.json",
+    "--review",
+    "e1_independent_review/m3oracle_panel_review.json",
+    "--review-started",
+    "e1_independent_review/monitor_m3oracle_panel001/started.json",
+    "--review-terminal",
+    "e1_independent_review/monitor_m3oracle_panel001/terminal.json",
+    "--out",
+    "m3_oracle_analysis_v2/score_001"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression",
+  "timeout_seconds": 1800.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 3600.0,
+  "poll_seconds": 5.0,
+  "grace_seconds": 30.0,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle_analysis_v2/monitor_score001"
+  ],
+  "worker_pid": 484285,
+  "process_group": 484285
+}

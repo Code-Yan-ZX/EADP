@@ -1,0 +1,58 @@
+{
+  "anchor_distinct_groups": 16,
+  "anchor_plan_sha256": "5fbf6c3c4355d55a26fe2f2ff8395a47bb6d39e14ed35046214f6a0459060e0c",
+  "anchor_question_counts": {
+    "DocVQA_VAL:CONFIRM": 2,
+    "DocVQA_VAL:DEV": 1,
+    "DocVQA_VAL:FINAL": 13
+  },
+  "builder_sha256": "cf8df2dfb05a269add6af79e3342ba19981969752c66846634f9dadf7f3f6486",
+  "confirm_panel_excluded_counts": {
+    "DocVQA_VAL:CONFIRM": 2
+  },
+  "confirm_panel_retained_counts": {
+    "AI2D_TEST:CONFIRM": 256,
+    "DocVQA_VAL:CONFIRM": 254,
+    "TextVQA_VAL:CONFIRM": 256
+  },
+  "excluded_group_counts": {
+    "DocVQA_VAL:CONFIRM": 2,
+    "DocVQA_VAL:FINAL": 13
+  },
+  "excluded_question_counts": {
+    "DocVQA_VAL:CONFIRM": 9,
+    "DocVQA_VAL:FINAL": 85
+  },
+  "full_manifest_sha256": "bfc1541bda41382afb2e80478af2be291a7f8d05f6f5c694863b693aad5dec60",
+  "limitations": [
+    "This is a conservative sensitivity analysis alongside original split; datasets were historically exposed.",
+    "CONFIRM requires frozen candidate/controls before screening; FINAL requires final candidate/reference lock and one formal evaluation.",
+    "No predictions or scores read or generated."
+  ],
+  "outputs_sha256": {
+    "anchor_groups.jsonl": "ec19f952d164d47baf4c60afc1872d740fdaab731ca696fce3f4a04b36d60d1f",
+    "confirm_panel_excluded.jsonl": "89aeb6949821c6f6bf0d2e3a6a353a91faec3953216be9ea085b26c5e40223a3",
+    "confirm_panel_supplement.jsonl": "1f53fda9c192e0e188dbc5b264d10b164bb8bca4bdf48ab83c90526d236e516b",
+    "excluded_questions.jsonl": "da293dab4978debc8ce903295e98f89638e6965d76ef03ad67cea656b271dd1b",
+    "inference_questions.jsonl": "26bee7347ee2013c9575b6ebba8d8d94bf14431285cacfdc1f2e87f23f195f40"
+  },
+  "panel_manifest_sha256": "5696221e24ab189c483288b1b0314fd65143450bd3a23a9ba16fee200aa2f71b",
+  "policy": "Original split untouched; exclude all anchor-linked groups globally from CONFIRM/FINAL supplemental lists. Anchor outputs were used for identity diagnostics without GT/score; do not call affected groups never generated.",
+  "retained_group_counts": {
+    "AI2D_TEST:CONFIRM": 256,
+    "AI2D_TEST:FINAL": 425,
+    "DocVQA_VAL:CONFIRM": 254,
+    "DocVQA_VAL:FINAL": 880,
+    "TextVQA_VAL:CONFIRM": 256,
+    "TextVQA_VAL:FINAL": 2782
+  },
+  "retained_question_counts": {
+    "AI2D_TEST:CONFIRM": 1000,
+    "AI2D_TEST:FINAL": 1576,
+    "DocVQA_VAL:CONFIRM": 1016,
+    "DocVQA_VAL:FINAL": 3724,
+    "TextVQA_VAL:CONFIRM": 394,
+    "TextVQA_VAL:FINAL": 4406
+  },
+  "status": "completed"
+}

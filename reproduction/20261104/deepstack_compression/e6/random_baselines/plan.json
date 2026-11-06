@@ -1,0 +1,21 @@
+{
+  "stage": "cpu_preparation_only",
+  "purpose": "E6 random visual-token baseline, three fixed seeds; no model run authorized",
+  "seeds": [20261104, 20261105, 20261106],
+  "seed_timing": "seed values frozen after E1/E2/E4 DEV results but before any E6 random output",
+  "unit": "same image SHA256 and seed yield identical selection independent of question",
+  "domain": "eadp-e6-random-v1|<decimal-seed>|<lowercase-image-sha256>",
+  "seed_derivation": "SHA256 UTF-8 serialization, first eight bytes unsigned big endian",
+  "random_stream": "SHA256(seed64 as eight big-endian bytes || counter as eight big-endian bytes), counter starts zero; consume successive big-endian uint64 words",
+  "permutation": "unbiased rejection sampling and descending Fisher-Yates over 0..1023; retain first 256, then spatially sort",
+  "input_tokens": 1024,
+  "retained_tokens": 256,
+  "positions": "native full-input three-axis P3 gathered at same spatial indices",
+  "deepstack": "DS111: gather all three original streams at the same selected spatial indices",
+  "dataset_scope": "future accepted DEV panel only; no GT or predictions during CPU preparation",
+  "cost_limit": "diagnostic adapter recomputes and discards author greedy: never use as performance timing",
+  "future_gate": "independent source review, actual same-container no-GPU worker preflight, original/full and E1 inputs/recipe binding, real model forced 32-decode cache/position/DS smoke and independent acceptance before DEV panel",
+  "GT_opened": false,
+  "gpu_used": false,
+  "generation_performed": false
+}

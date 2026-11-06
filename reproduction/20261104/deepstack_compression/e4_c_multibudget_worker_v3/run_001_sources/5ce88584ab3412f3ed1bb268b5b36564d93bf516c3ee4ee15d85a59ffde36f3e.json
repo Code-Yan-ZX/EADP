@@ -1,0 +1,477 @@
+{
+  "stage": "proposed 3-anchor four-budget natural TTFT pilot; no GPU authority",
+  "seed": "eadp-budget-ttft-20261105-001",
+  "anchors": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "message_sha256": "3d2636338b6f3c75bdc977a06f98d10c1b739cf73826caa471fd9aa1d0c3bb71",
+      "image_sha256": "0eba9d3a112a7c067a528a4f4888fa960646f526d2701accf85962a95f92970b",
+      "split": "DEV"
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "message_sha256": "c9d65da2d598e7bcab6b2aa4ce302e78d1920c1fa950356e5e97e6c9d5c24252",
+      "image_sha256": "c876e0657fe696d35fc6449d2b064c0cac5522e51a4957b0e378ea0fba0e9daf",
+      "split": "DEV"
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "message_sha256": "a46263f3e82975b9c718fd3c40efd15da530e2c813e561119df2605b0f4f55f1",
+      "image_sha256": "ccc7c3664e5f71b23731d1a828726da4026e87a44203dde91ebb178f43e4b00e",
+      "split": "DEV"
+    }
+  ],
+  "jobs": [
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "warmup",
+      "replicate": 0,
+      "budget": 128,
+      "order": 0
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "warmup",
+      "replicate": 0,
+      "budget": 1024,
+      "order": 1
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "warmup",
+      "replicate": 0,
+      "budget": 512,
+      "order": 2
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "warmup",
+      "replicate": 0,
+      "budget": 256,
+      "order": 3
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "warmup",
+      "replicate": 0,
+      "budget": 128,
+      "order": 4
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "warmup",
+      "replicate": 0,
+      "budget": 256,
+      "order": 5
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "warmup",
+      "replicate": 0,
+      "budget": 512,
+      "order": 6
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "warmup",
+      "replicate": 0,
+      "budget": 1024,
+      "order": 7
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "warmup",
+      "replicate": 0,
+      "budget": 512,
+      "order": 8
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "warmup",
+      "replicate": 0,
+      "budget": 1024,
+      "order": 9
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "warmup",
+      "replicate": 0,
+      "budget": 256,
+      "order": 10
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "warmup",
+      "replicate": 0,
+      "budget": 128,
+      "order": 11
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "measure",
+      "replicate": 0,
+      "budget": 1024,
+      "order": 12
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "measure",
+      "replicate": 0,
+      "budget": 256,
+      "order": 13
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "measure",
+      "replicate": 0,
+      "budget": 128,
+      "order": 14
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "measure",
+      "replicate": 0,
+      "budget": 512,
+      "order": 15
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "measure",
+      "replicate": 0,
+      "budget": 512,
+      "order": 16
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "measure",
+      "replicate": 0,
+      "budget": 256,
+      "order": 17
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "measure",
+      "replicate": 0,
+      "budget": 1024,
+      "order": 18
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "measure",
+      "replicate": 0,
+      "budget": 128,
+      "order": 19
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "measure",
+      "replicate": 0,
+      "budget": 256,
+      "order": 20
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "measure",
+      "replicate": 0,
+      "budget": 512,
+      "order": 21
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "measure",
+      "replicate": 0,
+      "budget": 128,
+      "order": 22
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "measure",
+      "replicate": 0,
+      "budget": 1024,
+      "order": 23
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "measure",
+      "replicate": 1,
+      "budget": 1024,
+      "order": 24
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "measure",
+      "replicate": 1,
+      "budget": 256,
+      "order": 25
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "measure",
+      "replicate": 1,
+      "budget": 128,
+      "order": 26
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "measure",
+      "replicate": 1,
+      "budget": 512,
+      "order": 27
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "measure",
+      "replicate": 1,
+      "budget": 128,
+      "order": 28
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "measure",
+      "replicate": 1,
+      "budget": 256,
+      "order": 29
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "measure",
+      "replicate": 1,
+      "budget": 1024,
+      "order": 30
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "measure",
+      "replicate": 1,
+      "budget": 512,
+      "order": 31
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "measure",
+      "replicate": 1,
+      "budget": 1024,
+      "order": 32
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "measure",
+      "replicate": 1,
+      "budget": 256,
+      "order": 33
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "measure",
+      "replicate": 1,
+      "budget": 512,
+      "order": 34
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "measure",
+      "replicate": 1,
+      "budget": 128,
+      "order": 35
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "measure",
+      "replicate": 2,
+      "budget": 512,
+      "order": 36
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "measure",
+      "replicate": 2,
+      "budget": 1024,
+      "order": 37
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "measure",
+      "replicate": 2,
+      "budget": 256,
+      "order": 38
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "phase": "measure",
+      "replicate": 2,
+      "budget": 128,
+      "order": 39
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "measure",
+      "replicate": 2,
+      "budget": 1024,
+      "order": 40
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "measure",
+      "replicate": 2,
+      "budget": 128,
+      "order": 41
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "measure",
+      "replicate": 2,
+      "budget": 512,
+      "order": 42
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "phase": "measure",
+      "replicate": 2,
+      "budget": 256,
+      "order": 43
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "measure",
+      "replicate": 2,
+      "budget": 512,
+      "order": 44
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "measure",
+      "replicate": 2,
+      "budget": 1024,
+      "order": 45
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "measure",
+      "replicate": 2,
+      "budget": 128,
+      "order": 46
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "phase": "measure",
+      "replicate": 2,
+      "budget": 256,
+      "order": 47
+    }
+  ],
+  "warmups": 12,
+  "measured": 36,
+  "repetitions_per_anchor_budget": 3,
+  "schedule_source_sha256": "adbe00a396015baf7fd12ca2c0e88a0db01dc1956fc6d728d15c5c4043d64232",
+  "anchor_plan_sha256": "932c680092184569a069d09c2827e02d6c68ff1299de75db35b90951012ad996",
+  "known_context": "anchors and E4 same-arm outputs and previous 3-anchor Pixel/EADP pilot already known; identity diagnostic completed but independent review pending",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "GPU_authorized": false,
+  "first_token": "synchronize before image read; synchronize after criterion sees first selected appended token",
+  "completion_timing": "contains raw journal fsync, not clean end-to-end",
+  "interference": "retain all samples, full health windows and unknown background",
+  "memory": "not measured"
+}

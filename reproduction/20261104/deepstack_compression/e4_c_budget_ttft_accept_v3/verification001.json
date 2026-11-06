@@ -1,0 +1,420 @@
+{
+  "status": "passed",
+  "jobs": 48,
+  "warmups": 12,
+  "measured": 36,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "predictions_opened": true,
+  "plan_sha256": "26762b5b30ed28509309e31cf47ef1bbcddef5f8cacf8fddf85c74bb1e32766a",
+  "run_started_sha256": "3d838f09f8f82c3f952537cd0f420bd47202762441d29c2975baac2645cb6878",
+  "run_terminal_sha256": "fe747d7db9afec97a5c65f90d9fa06a8369e1f46f4bda90ecaa7c78ba595e4b4",
+  "launch_sha256": "bbe332671572de0a283ac8ffb9b8d2fecdd9c1eebc7f4dea9adff79006c82488",
+  "exit_sha256": "11c796d3da71a94d49afd9c960f18be302266044b557c25ab51ef109acc277af",
+  "worker_complete_sha256": "91fdbacdd41365f525f40ec5f0449153cc172f1b1c821f9a75775f0c937c940f",
+  "journal_sha256": "3b1d38b42b51a2f48dc719d60e927463ccb36880e3b24c6122210981bdb73b32",
+  "health_sha256": "a3bc35ebd9c5ed306a55b7594adab64b8281898270ed053eb4bc3d98e693872a",
+  "snapshot_manifest_sha256": "ef307a63333f481cf2b2f2e8c9b59b0002bf488be344ec9adb0f9e43d26ec1e0",
+  "snapshot_started_sha256": "be42e42bc550587daa95d966d9eef04f46a49c1cb734f0df4ef777d13d43c614",
+  "snapshot_terminal_sha256": "a2e046c6d766c3e65ea725a60f849dcaf8347bf3eabc97ba5ab38db9b6bd7c8d",
+  "health_windows": [
+    [
+      13990045275917226,
+      13990045372531842
+    ],
+    [
+      13990140448223651,
+      13990140552601401
+    ]
+  ],
+  "annotations": [
+    {
+      "order": 0,
+      "phase": "warmup",
+      "task": "AI2D_TEST",
+      "budget": 128,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 1,
+      "phase": "warmup",
+      "task": "AI2D_TEST",
+      "budget": 1024,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 2,
+      "phase": "warmup",
+      "task": "AI2D_TEST",
+      "budget": 512,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 3,
+      "phase": "warmup",
+      "task": "AI2D_TEST",
+      "budget": 256,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 4,
+      "phase": "warmup",
+      "task": "TextVQA_VAL",
+      "budget": 128,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 5,
+      "phase": "warmup",
+      "task": "TextVQA_VAL",
+      "budget": 256,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 6,
+      "phase": "warmup",
+      "task": "TextVQA_VAL",
+      "budget": 512,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 7,
+      "phase": "warmup",
+      "task": "TextVQA_VAL",
+      "budget": 1024,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 8,
+      "phase": "warmup",
+      "task": "DocVQA_VAL",
+      "budget": 512,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 9,
+      "phase": "warmup",
+      "task": "DocVQA_VAL",
+      "budget": 1024,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 10,
+      "phase": "warmup",
+      "task": "DocVQA_VAL",
+      "budget": 256,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 11,
+      "phase": "warmup",
+      "task": "DocVQA_VAL",
+      "budget": 128,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 12,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 1024,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 13,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 256,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 14,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 128,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 15,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 512,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 16,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 512,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 17,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 256,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 18,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 1024,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 19,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 128,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 20,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 256,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 21,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 512,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 22,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 128,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 23,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 1024,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 24,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 1024,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 25,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 256,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 26,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 128,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 27,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 512,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 28,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 128,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 29,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 256,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 30,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 1024,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 31,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 512,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 32,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 1024,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 33,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 256,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 34,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 512,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 35,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 128,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 36,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 512,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 37,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 1024,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 38,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 256,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 39,
+      "phase": "measure",
+      "task": "AI2D_TEST",
+      "budget": 128,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 40,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 1024,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 41,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 128,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 42,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 512,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 43,
+      "phase": "measure",
+      "task": "DocVQA_VAL",
+      "budget": 256,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 44,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 512,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 45,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 1024,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 46,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 128,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    },
+    {
+      "order": 47,
+      "phase": "measure",
+      "task": "TextVQA_VAL",
+      "budget": 256,
+      "ttft_health_overlap_indices": [],
+      "full_job_health_overlap_indices": []
+    }
+  ],
+  "limits": "Direct health overlap only; unknown background and residual overhead cannot be assigned, no samples excluded; completion boundary includes raw fsync.",
+  "verifier_sha256": "245e0c917379d7f5379113519b73a46f99cc21adcba6ec82ac74fd2154876097",
+  "errors": [],
+  "verification_plan_sha256": "dc28df401196d0d536fe1dbaf719f231bb143e0a8ae166caa1d601d1f8134e27"
+}

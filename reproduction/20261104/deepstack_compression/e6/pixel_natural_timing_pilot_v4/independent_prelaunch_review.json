@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "plan_sha256": "932c680092184569a069d09c2827e02d6c68ff1299de75db35b90951012ad996",
+  "reviewer_sha256": "61e01fd6e43c17edc46f76b52ae15c4ffbf3d6ddd454e6a31454c7f58b8efc13",
+  "same_arm_references": 9,
+  "cpu_tests": 36,
+  "limitations": [
+    "No GPU/model run was performed by this review.",
+    "Three anchors and one timed call per arm cannot establish population latency.",
+    "Allocator peaks do not establish NVML process or total device peaks.",
+    "Existing mixed DEV records were parsed for reference identity."
+  ],
+  "cpu_sha256": "0e35f8a29f85f8efc7d06ce94cd7a294bee5a134eeac03fd31889760b11d93e4",
+  "cpu_started_sha256": "500cffe2d319a2192c9f6fa9949a5e30e24b1a3778cd5b0bdb68a08dc439661a",
+  "cpu_terminal_sha256": "c72faf9d3016cabf09ee71835ac54b5209405e246a78d968aaa9e361c7f82902",
+  "preflight_sha256": "d1a12cacbac47d5c87f0b5af7b5d59102d4ff87102efd7d2b1cb1f4f7f591375",
+  "preflight_launch_sha256": "ea848a07eb8b2ce2e5aed298eaa37c1a03ad82ebee39a3bb37ca3f2d0f35b83c",
+  "preflight_exit_sha256": "ae77371ab08045a1c1c86844b6f1f6b5c0235e9a8f3341574bb864c778595a8f",
+  "preflight_started_sha256": "292c8264b89ca6f2c3f49f21f4666d6cdd1363f35520552dfec4d338e69d9c12",
+  "preflight_terminal_sha256": "5e70769bf72f832ddd6972d999fa84a78d67d864a8610a39a5c40a9b03119c47",
+  "handshake_sha256": "ab6347e39fb9007f77fda76630cb1b7e91d091cf4a6e2181e5310fc49392bc83",
+  "handshake_launch_sha256": "2164a5a6f35368f54e7c9cc7e87cc9644bbff8709fc3cd7131a0a711477b69a1",
+  "handshake_exit_sha256": "7b68c67ec4083f782670548aa27e2b918bbde4f54588955612fadd8256dac59b",
+  "handshake_release_sha256": "30a5fa6a2e3ac02948ed1e71efa0b6cb1a1b70271895b81c9cd39dea0656bd6b",
+  "handshake_started_sha256": "18370c4ff5f1eb2a67f188c6cb93a5d07e4b5ff3c13f73f1bcc52cfcbdfd8e48",
+  "handshake_terminal_sha256": "5cfff29cc0a65528ba46b3c2c6b311f81aeacbdd22e9921f6ab1eefc9ca6a08a"
+}

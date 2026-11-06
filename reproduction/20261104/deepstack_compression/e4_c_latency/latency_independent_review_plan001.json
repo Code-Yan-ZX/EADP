@@ -1,0 +1,40 @@
+{
+  "status": "command_prepared_reviewer_source_pending_and_pilot_not_started",
+  "scope": "independent CPU review of complete 72-job latency pilot; no GT, no sample removal",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4c_latency001",
+    "--timeout",
+    "1800",
+    "--snapshot-seconds",
+    "3600",
+    "--poll-seconds",
+    "5",
+    "--grace-seconds",
+    "30",
+    "--",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_e4c_latency001.py",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4c_latency001_review.json"
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "pilot_plan_sha256": "aeb3c35b4d0bcb16ededf0d0548ef41a38e13aeaf1741deaf4667e92607ac3d5",
+  "formal_verify_plan_sha256": "a1196132459041d3849039a70c631f230661a19d4dc65b4cb7e99b2018744fc2",
+  "supervisor_sha256": "dddd62696ca10f2624654feec9831c83d308ddf8eb982c645ad3c5eac827ff17",
+  "reviewer_source_sha256": null,
+  "requirements": [
+    "reviewer source completed and independently fixed before execution",
+    "pilot complete, container and GPU released, supervisor actual exit0",
+    "formal CPU proof passed and its supervisor actual exit0",
+    "source, annotations and health-window evidence complete"
+  ],
+  "expected_review": "status passed; independent_review true; 72 jobs; GT/scoring false; errors empty; bind formal proof/terminals, run/terminals, launch plan, health/annotation hashes and reviewer hash",
+  "prepared_unix": 1793827681.8216617
+}

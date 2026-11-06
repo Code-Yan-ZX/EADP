@@ -1,0 +1,27 @@
+{
+  "scope": "three-anchor descriptive per-image paired same-repeat TTFT",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis_v3/test_analysis.py": "af422f13d99720058b74fdd75133b2cf90d381c195f7ae8809dceb60484a4670",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis_v3/analysis.py": "b67a7c05b60bec140282ef249bb4efa43dadba97657720bdccdc5d1ecb7914dc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis_v3/freeze.py": "9abe8f550a587b4b00e851667a29f35dc89e7f400ba3b3443039c87ad8aadee4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis_v3/analysis_entry.py": "9b144020b6e82cc0a5950670b2409171c4ef347815c30c48c9f32be89168a6f0",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis_v3/gate.py": "843c12e720c28bdfb8b126d065ff750e046985b9b199c39ea046af2ad6abd27b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis_v3/cpu_check.py": "491923e599e177a6844a71c275060364d9426408b5021b163be53aed2f50b0b7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_analysis_v3/test_gate.py": "e2ff3bbfdce8749a21763ca9353e0d109b9f815dec30c5815f68bde7c10f0b9f"
+  },
+  "gpu_plan_sha256": "196f4b82fc9a0e533189a108fd0ea585cf06ceeadc0a5a6398e9a091a396f16d",
+  "formal_plan_sha256": "7b966368d0f86b13af72db7be01fe3a1efbad8b0a42f74bbdc11175755bfec38",
+  "warmups": 6,
+  "measured": 18,
+  "ratio": "wavefront TTFT divided by author TTFT per anchor and repeat",
+  "aggregation": "per-arm median of three measured independent processes per anchor; all raw rows retained",
+  "limits": [
+    "post-hoc 3 DEV anchors",
+    "separate process warmup does not warm later process",
+    "observed monitoring windows only; missing background is unknown",
+    "no population inference or confidence interval",
+    "t=.2 uses dynamic visual budget"
+  ],
+  "GT_opened": false,
+  "timing_results_opened": false
+}

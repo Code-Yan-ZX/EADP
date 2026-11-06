@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "anchors": 3,
+  "jobs": 36,
+  "comparisons": 18,
+  "unequal_comparisons": 0,
+  "formal_sha256": "ed20d3cd732437d3b36f643081b401ae43f43e7cf50ea8085e463ff07a63be4d",
+  "formal_started_sha256": "75b6bf8f10991705d6c4455654be20c9e03e7a8873ec7a2bdf9ebe04cbe73422",
+  "formal_terminal_sha256": "27894a5ebd1d540642ec8672bba958aa09cb64f5df124fee3bf1a4df25e0ec20",
+  "run_started_sha256": "14402d2c613c842a77838d506f974c7190d5a735585e1f32fc8c56c1e6f7f8eb",
+  "run_terminal_sha256": "a3608ab2698f240340e1c2957bd0a7e1a584628d00c2b83a5e76b00ab286a3a7",
+  "plan_sha256": "4f0b135f0af34d0d256d1c2e8e3f71c572604451aa286dece965acf50ea2efaa",
+  "verification_plan_sha256": "3d052f2723a5da7f398517d78458a3bb82336c4c84118668159240d3482b1c04",
+  "reviewer_sha256": "384a996fc061f744ddb9b1b1ba9ad7df9b89de5f0384fb790e879ca4a16b4c42",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": [
+    "formal verifier prepared after GPU completion and before inspecting values",
+    "three anchors and 5 warm fixed32 repeats, exploratory, not M1",
+    "background load not attributable to individual samples",
+    "full DeepStack/prefill arrays and post-job hook inventory not archived",
+    "graph setup excluded; generation end time includes fsync, not suitable for full-generation timing"
+  ],
+  "errors": []
+}

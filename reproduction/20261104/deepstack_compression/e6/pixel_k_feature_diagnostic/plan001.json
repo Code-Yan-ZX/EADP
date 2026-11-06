@@ -1,0 +1,11 @@
+{
+  "scope": "Post-hoc descriptive association of previously fixed unlabeled image/text features with observed Pixel t045 K on the same DEV images; existing mixed score/answer records parsed only for identity and K",
+  "features": "e4_adaptive_features/features001/features.jsonl",
+  "feature_review": "e1_independent_review/e4_adaptive_features_review003.json",
+  "pixel_scores": "e6/pixelprune_t045_dev384_analysis/score001/scores.jsonl",
+  "pixel_review": "e1_independent_review/pixel_t045_dev384_scores_review.json",
+  "tasks": ["DocVQA_VAL", "TextVQA_VAL", "AI2D_TEST"],
+  "features_list": ["gray_entropy16", "gray_gradient", "user_text_chars"],
+  "statistics": "Per-task Spearman correlation with observed K and rank AUC for K<=64 vs >64 when each class has >=2 examples; larger feature predicts K<=64, do not select direction as confirmed. Report all n and null unsupported cases.",
+  "limitations": ["Exploratory same DEV after seeing score/K strata; associations do not establish causal or predictive generalization", "K<=64 is the post-hoc diagnostic bin, not a predetermined production threshold", "AUC uses a same-sample descriptive target and does not assess a deployment rule, threshold, latency or downstream score", "No new GT, generation, model or GPU"]
+}

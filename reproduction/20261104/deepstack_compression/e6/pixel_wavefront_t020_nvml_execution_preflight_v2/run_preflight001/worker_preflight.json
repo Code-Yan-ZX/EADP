@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "approval": {
+    "plan_sha256": "bb25244bcf082de3915d8a6f57fde6e3052eb7aa04ee302cc580b5a6b8e04dc6",
+    "review_sha256": "af71e54680ac632160af2f53fcc03e7d94562614310b9d590461c7ce419903ae"
+  },
+  "container_id": "433797b51815ea4ecfa5e122b2ddefe86d1f76e49a8611334dfcaf9ca8742201",
+  "actual_entry_smokes": {
+    "worker": {
+      "status": "passed",
+      "references": 9,
+      "cuda_initialized": false,
+      "model_loaded": false,
+      "barrier": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_runtime_candidate_v2/worker_barrier.py",
+      "model_run": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_model_candidate/model_run.py"
+    },
+    "controller": {
+      "status": "passed",
+      "module_paths": [
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_runtime_candidate_v2/controller.py",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_runtime_candidate_v2/guard.py",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_panel.py",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_host_candidate/stages.py",
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_runtime_candidate_v2/verify_metadata.py"
+      ],
+      "gpu_queried": false,
+      "model_loaded": false
+    },
+    "sampler": {
+      "status": "passed",
+      "module": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_runtime_candidate_v2/real_sampler.py",
+      "gpu_queried": false,
+      "model_loaded": false
+    }
+  },
+  "weight_stat_preflight": {
+    "worker_preflight_sha256": "cb2614f9d8da15c8c33bc826d5fb6902d3eeb6b16ec42d47f4facbf567087488",
+    "review_sha256": "fd6ca3c674dbb6ec92f3f143cc60618a54ef88ee1218b952084ff8d2d6baed57",
+    "expected": [
+      {
+        "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00001-of-00004.safetensors",
+        "size": 4902275944,
+        "mtime_ns": 1766122873997458552,
+        "ctime_ns": 1766132886669770948,
+        "inode": 68682060,
+        "device": 2065
+      },
+      {
+        "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00002-of-00004.safetensors",
+        "size": 4915962496,
+        "mtime_ns": 1766122889153369070,
+        "ctime_ns": 1766132901889718733,
+        "inode": 68682061,
+        "device": 2065
+      },
+      {
+        "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00003-of-00004.safetensors",
+        "size": 4999831048,
+        "mtime_ns": 1766122889477367168,
+        "ctime_ns": 1766132915557671854,
+        "inode": 68682062,
+        "device": 2065
+      },
+      {
+        "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00004-of-00004.safetensors",
+        "size": 2716270024,
+        "mtime_ns": 1766122804961880310,
+        "ctime_ns": 1766132929133625302,
+        "inode": 68682063,
+        "device": 2065
+      }
+    ]
+  },
+  "cuda_initialized": false,
+  "model_loaded": false,
+  "GPU_authorized": false,
+  "GT_opened": false,
+  "existing_DEV_predictions_opened": true,
+  "prediction_scope": "accepted same-arm reference identities only",
+  "limits": [
+    "host process dependencies tested in noGPU container, no GPU or NVML query",
+    "weight endpoint stat cannot exclude transient replacement",
+    "full executable admission and processor/worker execution require separate review"
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "images": 128,
+  "results": {
+    "128": {
+      "paired": {
+        "author": {
+          "n": 128,
+          "median_ms": 18.291104316711426,
+          "min_ms": 18.00396728515625,
+          "max_ms": 18.967679977416992
+        },
+        "fused": {
+          "n": 128,
+          "median_ms": 13.026576042175293,
+          "min_ms": 12.87945556640625,
+          "max_ms": 18.37900733947754
+        },
+        "graph": {
+          "n": 128,
+          "median_ms": 1.70278400182724,
+          "min_ms": 1.696671962738037,
+          "max_ms": 1.785823941230774
+        }
+      },
+      "excluded": [],
+      "graph_setup": {
+        "observed_pilot": {
+          "capture_wall_ms": 214.877479,
+          "allocated_before_bytes": 17747855872,
+          "allocated_after_bytes": 17752056320,
+          "allocated_delta_bytes": 4200448,
+          "reserved_before_bytes": 17880317952,
+          "reserved_after_bytes": 17790140416
+        },
+        "added": {
+          "capture_wall_ms": 225.680004,
+          "allocated_before_bytes": 17747773952,
+          "allocated_after_bytes": 17751974400,
+          "allocated_delta_bytes": 4200448,
+          "reserved_before_bytes": 17878220800,
+          "reserved_after_bytes": 17790140416
+        }
+      }
+    },
+    "256": {
+      "paired": {
+        "author": {
+          "n": 128,
+          "median_ms": 36.31265640258789,
+          "min_ms": 35.79673767089844,
+          "max_ms": 38.627681732177734
+        },
+        "fused": {
+          "n": 128,
+          "median_ms": 25.893232345581055,
+          "min_ms": 25.59343910217285,
+          "max_ms": 28.770431518554688
+        },
+        "graph": {
+          "n": 128,
+          "median_ms": 3.357200026512146,
+          "min_ms": 3.3420159816741943,
+          "max_ms": 3.574399948120117
+        }
+      },
+      "excluded": [],
+      "graph_setup": {
+        "observed_pilot": {
+          "capture_wall_ms": 222.119745,
+          "allocated_before_bytes": 17752058368,
+          "allocated_after_bytes": 17756258816,
+          "allocated_delta_bytes": 4200448,
+          "reserved_before_bytes": 17794334720,
+          "reserved_after_bytes": 17792237568
+        },
+        "added": {
+          "capture_wall_ms": 226.328017,
+          "allocated_before_bytes": 17751976448,
+          "allocated_after_bytes": 17756176896,
+          "allocated_delta_bytes": 4200448,
+          "reserved_before_bytes": 17794334720,
+          "reserved_after_bytes": 17792237568
+        }
+      }
+    },
+    "512": {
+      "paired": {
+        "author": {
+          "n": 127,
+          "median_ms": 72.287841796875,
+          "min_ms": 71.2503662109375,
+          "max_ms": 79.63410949707031
+        },
+        "fused": {
+          "n": 127,
+          "median_ms": 51.510433197021484,
+          "min_ms": 51.01744079589844,
+          "max_ms": 59.62995147705078
+        },
+        "graph": {
+          "n": 127,
+          "median_ms": 6.877471923828125,
+          "min_ms": 6.717663764953613,
+          "max_ms": 6.945216178894043
+        }
+      },
+      "excluded": [
+        "observed_pilot:17"
+      ],
+      "graph_setup": {
+        "observed_pilot": {
+          "capture_wall_ms": 252.359057,
+          "allocated_before_bytes": 17756262912,
+          "allocated_after_bytes": 17760465408,
+          "allocated_delta_bytes": 4202496,
+          "reserved_before_bytes": 17796431872,
+          "reserved_after_bytes": 17794334720
+        },
+        "added": {
+          "capture_wall_ms": 254.581969,
+          "allocated_before_bytes": 17756180992,
+          "allocated_after_bytes": 17760383488,
+          "allocated_delta_bytes": 4202496,
+          "reserved_before_bytes": 17796431872,
+          "reserved_after_bytes": 17794334720
+        }
+      }
+    }
+  },
+  "timing_sha256": "53ac7520398d89079e8322efbcb4bd64448e4d875edfa7af15d062cb0657f9b5",
+  "timing_started_sha256": "9d95800329c21042f14ad6d908d47bca46de8127204c75f70d1a6095ed2844c0",
+  "timing_terminal_sha256": "b737db4e82d9c5cd6a8d687c795b7e5c7227326116bc2248b6e74c2f2513427c",
+  "combined_review_sha256": "ecd86364fee329e4e155219c8c33183a2b8f18523037a49d930bc8b961ca602b",
+  "reviewer_sha256": "06ed44c44d11976d26be2872d799f286b25d6e67bc8f815c1726c67888360e11",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": [
+    "K512 paired analysis excludes the single strict identity failure and has selection bias",
+    "pilot observed before expansion; not an independent 128-image confirmation",
+    "light code editing and other background activity unquantified; no per-sample windows",
+    "component CUDA event timing, not TTFT; graph setup separate",
+    "allocator figures do not represent device-wide peak"
+  ],
+  "errors": []
+}

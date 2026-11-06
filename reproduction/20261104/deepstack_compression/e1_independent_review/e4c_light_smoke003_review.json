@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "generations": 16,
+  "lightweight_generations": 12,
+  "comparisons": 16,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "timing_claims": false,
+  "errors": [],
+  "formal_proof_sha256": "86b0c24d14bd99f067126d3815511636c43dd6c630638be6fbf51ea716be2173",
+  "formal_started_sha256": "5df7df2bec18cc8569d80f69aa20e6b4dc6bac714a773a3dbf5d2181b79f20b0",
+  "formal_terminal_sha256": "21caa342a6d514fcd28730c26e14f7307d88a13c6fc2a093366be136d0af49ce",
+  "run_started_sha256": "ea6955a06f0eeb0fad2c52e7ab146c35d1648748b137de3b3ebe61e36f665fc4",
+  "run_terminal_sha256": "f26fa89adca2325edc4070957a0cc7ac076b842806275477b1eb98648f8f93c8",
+  "launch_plan_sha256": "a19420875d70b120fbf198d8cd3d75f2064fe2dffbe7adaaa13c4256757f68f3",
+  "reviewer_sha256": "2ce49134b9e86f0ec01c4d7751358d55d581d930c2ba0d9cfa3fe88182d1c071",
+  "array_tensor_comparisons": 154,
+  "scope": "3 DEV natural anchors plus one 32-step forced anchor; no GT or timing",
+  "limitations": [
+    "Prior E4 ON reference lacks KV fingerprints; only fresh ON versus lightweight ON compares them.",
+    "KV content retained as per-layer hashes; full KV values are not archived."
+  ]
+}

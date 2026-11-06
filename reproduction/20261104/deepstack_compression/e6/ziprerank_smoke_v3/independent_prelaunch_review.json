@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "single DEV image, three forced diagnostics; no quality or timing claim",
+  "plan_sha256": "8e6ca743d2017392c09ca1c76a8c8887c8ae9fbefeadee78bf300b122f094d8f",
+  "preflight_sha256": "2cfd1809b055c269f1ea73a6421d8d3d88935b389cc54a74a1f2f54310a5d20f",
+  "preflight_started_sha256": "f40d658c579d7bd7bc11e9b65af2b4040cdf7fb8a62ab4387f70328393f83886",
+  "preflight_terminal_sha256": "995089887269d604a7812c199bf173d59d12a3a7d5cf6a25514c3bd0e94d8e1b",
+  "preflight_exit_sha256": "91794dc107607c0e062798bc52cc08270449847f241d59200b47278f1857a7f9",
+  "preflight_launch_sha256": "7adcfc48d056524a2a727de6d7262545d013ed9de600c563a907081a0a606eae",
+  "reviewer_sha256": "681c277f9fae16c9fa9bb4d806d9389fc813bb92ccad1b908064b583c48358b6",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_ziprerank_smoke_v3.py",
+  "review_started_sha256": "fa67188f9e7e034f7e6b075742d96478fcb1ed1accc06d48acb4718911f8ea7a",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_ziprerank_smoke_v3_review/terminal.json",
+  "container_id": "73b3b969510bb03cfcf593a2b389044884ac12b00fcbd4235f1ac3eeea139f4b",
+  "synthetic_tests": 8,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "gpu_used": false,
+  "limitations": [
+    "Completion records diagnostic attempts, not necessarily successful paths.",
+    "Single fixed image and forced prefix; author exceptions and all failed checks must remain visible.",
+    "FA2 matches E1 backend, but complete generation recipe and method are not automatically equivalent."
+  ],
+  "errors": []
+}

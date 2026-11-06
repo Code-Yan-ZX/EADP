@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "real NVML worker CPU preflight, no actual sampling",
+  "gpu_authorized": false,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "existing_DEV_predictions_opened": true,
+  "new_predictions_generated": false,
+  "schedule_jobs": 72,
+  "source_count": 100,
+  "container_id": "7a9e609ae6c200c271211c24248971ebb6e89d9721be8ddf3c7d1ca0c32a99d2",
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_real/container_preflight001/launch.json": "b7d7221b53092eae5eb7dc40f25958995d941e60a0af70ed04caf1dd6f01a845",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_real/container_preflight001/exit.json": "7c3c53aa6d62dac195159bb0dc5100948b34ef78973ca62b65b9d2f6bead122c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_real/container_preflight001/worker_preflight.json": "8617186f1b024eb358e66a95a2775807e91693fe4fc4600e8df4de02178baca2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_real/monitor_preflight001/started.json": "5287c77acbaab91c94c183642dab03a6a9e5dc9b3634bc824c3c8b07722a834a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_real/monitor_preflight001/terminal.json": "c847569c4c5ea5e3107e5df23e885dd0229133732aa866b362b5947e790373dd",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4c_memory_real_worker_preflight_review.json": "9975fea075149f309c9ff330469a266afaca6e98718424919bde71536218fa07",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4c_memory_runtime_container001_scope_correction.json": "2c7504d984178b67e0ba5c33d1a93747e535aa8ff04e4573f942ebc11f90f12d"
+  },
+  "reviewer_sha256": "74e0a3853fba64aab80cbdac327343813a1e5955726e80e96157ad298b33b31c",
+  "limitations": [
+    "no actual GPU worker, NVML sampler or GPU measurement authorized",
+    "actual weight rehash was performed by CPU preflight; independent review binds evidence, does not rehash weight payloads"
+  ],
+  "errors": []
+}

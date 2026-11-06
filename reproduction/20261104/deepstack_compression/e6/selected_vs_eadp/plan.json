@@ -1,0 +1,44 @@
+{
+  "stage": "post_hoc_DEV_only_frozen_before_cross_method_effect_calculation",
+  "created_unix": 1793831382.1190345,
+  "post_hoc_disclosure": "Created after the separately scored full DEV results were available; exploratory comparison only, no candidate-selection or confirmatory claim.",
+  "questions": 384,
+  "contrasts": [
+    "div:adapted - EADP:P3-D1",
+    "cd:adapted - EADP:P3-D1"
+  ],
+  "primary_estimand": "paired mean score difference in percentage points, image-group clustered percentile 95% intervals",
+  "bootstrap": {
+    "replicates": 10000,
+    "seed": 20261104,
+    "unit": "image_group"
+  },
+  "strata": [
+    "ALL",
+    "DocVQA_VAL",
+    "TextVQA_VAL",
+    "AI2D_TEST"
+  ],
+  "alignment": "identical task/qid/group, image and prompt hashes, complete processor tensor metadata, main-visual hash, six recorded generation scalars, EOS IDs; exactly 256 selected visual tokens per arm",
+  "inputs_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_completion.json": "95981ce2400d7467ba93d3177275a0860a656fc8558080c243040663e40a52fb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e1full001_review.json": "59be360409326074b22a2e8d99fa302740fc2f6f0162e6acc335f1be32ad59be",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_score/scores.jsonl": "e4a00f58e7c606ba33c94d11b580832c7f871eeb4075e47ac9c4f589bf260a1f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e1full001_score_review.json": "a152ad12cc1017c9797ff9a4780545be89cdf9bcf456f7ed2d6b918053543459",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_full/panel_001_verification.json": "5b20e3f9dd1541994c89ddddff19a5f01a237b984cb772ad035a7c7b0b6677c7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/selected_full_panel001_review.json": "8d54ca95f2e2d38ef340592c7d8b49765e6691563577cf147774547d1ccd7d0d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_analysis/score002/scores.jsonl": "dc5075d85b415b8958a7093c27ffbc0dd049d9221d58feda529ed3c711603873",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e6_selected_scores_review.json": "a76d68f1b429be2980a16bfc4fb98de4f232757f114420b0d9c5f7e195099b1a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001/raw_predictions.jsonl": "be49921c44f10f532d5d480f81478d87bb070bb040bb943db6db6dbf2b9f56d9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/input_preparation_002/inputs.jsonl": "f3fef75929f88fa21b96458337030c47f2b7afaa596f540879afddd72847f59d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_full/panel_001/records.jsonl": "7f8792f0bd5c1e74ded1648a773f4b66b7f0fce424fcbfb468ea2a2a82501572"
+  },
+  "constraints": [
+    "No new labels or predictions and no CONFIRM/FINAL.",
+    "E1 stores six generation scalars but not every extra effective generation control recorded by Div/CD; do not assert identical unobserved controls.",
+    "Methods have different selectors and implementation pathways; no inference of matched total compute, speed or deployment effectiveness.",
+    "Do not infer a candidate decision or confirmatory conclusion from this post-hoc DEV comparison alone."
+  ],
+  "GT_opened": false,
+  "new_predictions_opened": false
+}

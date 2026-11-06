@@ -1,0 +1,13 @@
+{
+  "purpose": "Three DEV task anchors; unmodified stock native versus K1024 DS-on, no GT or scores",
+  "natural_generations": 6,
+  "fixed_prefix_generations": 6,
+  "fixed_decode_steps_per_arm": 32,
+  "inner_hard_timeout_seconds": 5400,
+  "external_hard_timeout_seconds": 5520,
+  "monitor_snapshot_seconds": 3600,
+  "monitor_poll_seconds": 15,
+  "stale_kill_enabled": false,
+  "notes": "Full actual per-layer KV tensors are fingerprinted during 33 steps in each forced arm; diagnostic copies and hashes are not performance timings.",
+  "full_panel_authorized_by_this_file": false
+}

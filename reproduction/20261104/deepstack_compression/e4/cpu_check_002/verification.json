@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "-m",
+    "unittest",
+    "-v",
+    "test_skip_deepstack"
+  ],
+  "returncode": 0,
+  "timeout": false,
+  "started_unix": 1793809439.4363341,
+  "finished_unix": 1793809444.9596887,
+  "python": "3.10.20 | packaged by conda-forge | (main, Mar  5 2026, 16:42:22) [GCC 14.3.0]",
+  "cuda_visible_devices": "",
+  "source_sha256_before": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/skip_deepstack.py": "1732cf751dbb56d225c5bbf2fb6cd1e00cfa595d1a16368ca0137f2799994412",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/test_skip_deepstack.py": "9563f434fc172034ea9d8df2199ff745a08661760e57b52c3c5bada55b6ceda3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/run_cpu_checks.py": "9ed171ecc5238e53ea3ddc6db4f2e727039dc034e47a297100fa84c4fbbe5967",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py": "34556188962a1b057382269bc1f9f0cdba1a12e9cf1861acb60fa4fa0a59fe34",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py": "dd63ed3b124232735b3dca1bfa28f9d6b0d3f7182afcb75dde8f3e724b2b22da",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/configuration_qwen3_vl.py": "177fd0a4dc1b08307c08ca72cf26b8d7dc028ab6ab5975bf650fc14ab8132a83"
+  },
+  "source_sha256_after": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/skip_deepstack.py": "1732cf751dbb56d225c5bbf2fb6cd1e00cfa595d1a16368ca0137f2799994412",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/test_skip_deepstack.py": "9563f434fc172034ea9d8df2199ff745a08661760e57b52c3c5bada55b6ceda3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/run_cpu_checks.py": "9ed171ecc5238e53ea3ddc6db4f2e727039dc034e47a297100fa84c4fbbe5967",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py": "34556188962a1b057382269bc1f9f0cdba1a12e9cf1861acb60fa4fa0a59fe34",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py": "dd63ed3b124232735b3dca1bfa28f9d6b0d3f7182afcb75dde8f3e724b2b22da",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/configuration_qwen3_vl.py": "177fd0a4dc1b08307c08ca72cf26b8d7dc028ab6ab5975bf650fc14ab8132a83"
+  },
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "c45b968e7cc6f939891e1622f9a422a2b3a38d78b1eaaeae9514d937d8871a9a",
+  "scope": "Synthetic and randomly initialized tiny Qwen3 vision CPU only; no benchmark, trained weights, GPU, generation or downstream identity."
+}

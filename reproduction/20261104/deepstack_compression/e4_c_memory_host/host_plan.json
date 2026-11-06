@@ -1,0 +1,13 @@
+{
+  "scope":"future C-ON isolated process memory smoke; no latency or quality claim",
+  "stage":"smoke", "mode":"C-ON", "jobs":24,
+  "worker_timeout_seconds":1800, "sampler_timeout_seconds":2100,
+  "outer_timeout_seconds":2400, "grace_seconds":180,
+  "ready_timeout_seconds":300, "sample_interval_ns":500000000,
+  "max_sample_gap_ns":5000000000,
+  "budget_source":"initial_plan.json",
+  "budget_source_sha256":"2a11cfcc2dc9404eac218f1f727e39508a687a73e0343101ae564be3e99c30e6",
+  "no_stale_watchdog_reason":"The single-arm 2048-token tail has not been bounded empirically; retain ready and hard stage deadlines.",
+  "device_policy":"one A40; no other compute process; graphics usage explicitly recorded",
+  "limitations":["process samples and device totals/used are distinct","MiB rounding and periodic sampling can miss transient peaks","existing DEV prediction journal is parsed for input identity, no GT"]
+}

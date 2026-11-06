@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "n_jobs": 5940,
+  "n_generated": 5940,
+  "n_monitor_overlaps": 1,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "errors": [],
+  "formal_proof_sha256": "b5998317e25511250c595862d06499d44596783bef4712cdd6552078bae0733c",
+  "formal_started_sha256": "6cfac1bdba27c101bb8e28109787de6b34c7f1399b81738f88b302f461f0fc9e",
+  "formal_terminal_sha256": "c4d930ec1f9065aedf21c3b6d9a4991e2007425ee0673f3f26d08c2c4ca0b565",
+  "run_started_sha256": "282098a46dffed0f251bc36c5ba0574d473be392dc8f5ff7835006e0d90f87d9",
+  "run_terminal_sha256": "c7660fd33555701a0ce45ea6519ef9bebc82cbd131222750e17041084de670ad",
+  "launch_plan_sha256": "356dc2a0f35042a4fd730ace8aba2e47f9cb46a76ea418c32ddf3b12b62c5968",
+  "health_sha256": "d182aca82f2ddec40ca4d238d723123c1a6df01bead0b4ec9a07f0d789f52d9c",
+  "annotations_sha256": "c82c59c3baa0515b341b06581d46f5b77346e470a113d58f8dda9ae14f0173ab",
+  "reviewer_sha256": "4cd91a418d4b758f46c218778663598b993880914831bc780f8f2172f49ce6b0",
+  "limitations": [
+    "Single-process interleaving; all 5940 jobs retained, including health overlaps.",
+    "Snapshot windows cannot rule out residual interference.",
+    "No exact peak VRAM, quality score, or full-stage speed claim."
+  ]
+}

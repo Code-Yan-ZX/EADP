@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "scope": "preliminary CPU preparation only; not GPU or model execution admission",
+  "tests": 12,
+  "images": 32,
+  "jobs": 64,
+  "GT_opened": false,
+  "GPU_used": false,
+  "model_executed": false,
+  "real_feature_archives_opened": false,
+  "cohort_started_sha256": "7db12ce61a785e086359909be86c6ec007681af7d8f01eccd14fb997d521a54a",
+  "cohort_terminal_sha256": "6c47f6e7706460586262fcf944d4d8be1a6b8f0d60d6104031bd1ef57d6d12be",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_local_minimax_model_proposal/PLAN.md": "a95216b82b37fc3666a417218496c02b418b57b2ad94c0fadd67ae4db4a076b8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_local_minimax_model_proposal/cohort.py": "c60d36fe061fa7237941ddc85fb427a07d5269c9af8ee7f5bc5bfabac23cafa5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_local_minimax_model_proposal/cohort001.json": "d6ea70ccead5c40b0e34c8f51eb555106617a3c7da000198532725a409cd956c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_local_minimax_model_proposal/arm.py": "aa34757d177a31100a408539ab7d3ceb396476ca2ce7101e5cad75e8a417b3b5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_local_minimax_model_proposal/test_cpu.py": "61f8b4a92418956a59373f9f3e1fa0299ea081cf1d0fb40fb33dac77bd81c7cb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_local_minimax_model_proposal/cpu_check.py": "98e7b5e83cede51cee9bb27e582f8d24e527b9d1b17d3244e3991ca587b0ad98",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle_exec/selection_adapter.py": "e1a120b067d932043c188bc0c2475038a665cbb7c6087df699f0470203191ced",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/budget_runner.py": "ed3bfceff8ea15177fd1eecea7329f11b3e407222f4071ea9e69641c0200fcb2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/budget_adapter.py": "48c597ec575369f029182c96fcd790e1710ba444adbf3daafd2d8520c41c2f2f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/off_adapter.py": "2147d9e136530d65760bf0e5f7cfac84094f2802f07b5d1e77aca7c367de8d9c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/skip_deepstack.py": "1732cf751dbb56d225c5bbf2fb6cd1e00cfa595d1a16368ca0137f2799994412",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/identity_records.py": "70e671d05be1c9dd1dcee4e492feca65880b0c72b2b381c40dd741e07bf58401",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/decode_observer.py": "9c68bdeaab6c5e68cbb789a9952a37ac99bb02a1af42f0315acf4b3e25d18b0e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/test_off_adapter.py": "22c2b5eb71c5412638a44319aab6a9d7e6f7b75c4f758f48a6da11f020d0d7a2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/test_skip_deepstack.py": "9563f434fc172034ea9d8df2199ff745a08661760e57b52c3c5bada55b6ceda3"
+  },
+  "limitations": [
+    "Simulated candidate entry and real selected-adapter CPU hook chain; actual model generation not tested.",
+    "Future worker, actual source-pinned imports, raw output preservation, GPU admission, container preflight, formal/independent acceptance and score gate remain to be implemented and reviewed."
+  ],
+  "errors": []
+}

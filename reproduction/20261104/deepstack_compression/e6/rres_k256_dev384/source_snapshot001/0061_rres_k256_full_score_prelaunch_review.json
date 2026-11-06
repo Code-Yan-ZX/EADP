@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "rres_k256_full_score_prelaunch",
+  "GT_opened": false,
+  "target_predictions_opened": false,
+  "errors": [],
+  "score_plan_sha256": "81efdba3660b7bc6bfcaf6f0fd34aa4cc2a2126ddf1a620ffd22e159a7003b07",
+  "cpu_proof_sha256": "c261cea5cfaf98b3fe49435f7a33c77180a4b6d6f73f8e82c4161155292950cd",
+  "reviewer_sha256": "b41ad13cfbca7c774278fcc42edb299a137d38d65d600da2c15747abab160387",
+  "checks": [
+    "real accepted E1 and 3-seed random proof chain; only hash mixed artifacts",
+    "actual entry refuses before prelaunch and target/GT",
+    "executor/monitor path separation checked",
+    "independent group bootstrap and within-question seed averaging",
+    "source and 5 real CPU test supervisors"
+  ],
+  "limitations": [
+    "prior DEV and three pilot cases already observed; not independent confirmation",
+    "same visual-token count does not establish equal compute"
+  ]
+}

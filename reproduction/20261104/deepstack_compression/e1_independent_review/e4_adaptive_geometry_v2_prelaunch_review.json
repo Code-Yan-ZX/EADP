@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "GT_opened": false,
+  "feature_values_opened": false,
+  "score_values_opened": false,
+  "predictions_opened": true,
+  "prediction_scope": "accepted E4/E1 files hashed only; no prediction or geometric value parsed",
+  "extraction_freeze_sha256": "22afc80efa2d5465a5f42f5934fae31832bf9897287191d604ce109d1eaa68d8",
+  "cpu_proof_sha256": "275a73113c4ea941d4acc23aa806347ee377e10c3ba939adcfb44c07f5ebd474",
+  "cpu_started_sha256": "e19f76614734bcb2cab1074872266ab8b1af6e30a2c148b32388ba3df79fe347",
+  "cpu_terminal_sha256": "b0f706f615c3da5fef617857d8075d5b305fce56495ff780f0507042c335ce51",
+  "reviewer_sha256": "69cdbc37f8750aec2d1cd2545086333bd3c52f3df2efe1591f51141db9cdfb20",
+  "accepted_source_bindings": {
+    "e1_formal_sha256": "95981ce2400d7467ba93d3177275a0860a656fc8558080c243040663e40a52fb",
+    "e1_independent_sha256": "59be360409326074b22a2e8d99fa302740fc2f6f0162e6acc335f1be32ad59be",
+    "inputs_sha256": "f3fef75929f88fa21b96458337030c47f2b7afaa596f540879afddd72847f59d",
+    "e4_formal_sha256": "3b451dde64379a0d0b3d68e2d00322d6eec443e3fa7cf36348cc3325042db90b",
+    "e4_independent_sha256": "aaa8b713caefa815ff8eca5b71d7d1bbd1bd5e3858466854119f63027ea44349",
+    "records_sha256": "3cb6217b7a4c20c10667b397c2eb47e1e569df862abbbc0cd98dff6eb18ec868"
+  },
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_adaptive_geometry_v2/admission.py": "ec47e61d03abd9fb0a4f582df791e08b02bd90d96c902ac8640d8ff2c37bdee4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_adaptive_geometry_v2/extract.py": "9f161aad62244a4dcf69640cddbd1dfd0321873a37cc469d7b2785565ec365f3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_adaptive_geometry_v2/features.py": "e3e70ed9779f27ada4ea290b83ff5013b0a9ac775101fdef230b5299406d17ab",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_adaptive_geometry_v2/test_features.py": "543f7b3cb1c4b6722123e98858d97c5d6067cc03e89efe239e7e2041dc74e9b7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_adaptive_geometry_v2/test_admission.py": "95d9ee231ccefc847ebc38445c7bea6affa751fe54f4eb91b70d485574ed7a44",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_adaptive_geometry_v2/cpu_check.py": "8bc74177d023d9dcd01ef377e5e116843e7743d0a73f966d4d1b45c07da47968",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_adaptive_geometry_v2/freeze.py": "c801b78f4eea504e1668d6bbc7d9de36d50ca65bcb42518f4c5875259ca272f6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_adaptive_geometry/PLAN.md": "dd96052fa50d7d523feca6f10d05e8c0e2ecd7ec59788befed9b243bc0d4af15",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_adaptive_geometry/plan_freeze002.json": "3a12fa7b695b4826462bebffc35089efb8af6b1dcd0bcc6c05d60bf51ab38322"
+  },
+  "cpu_retest": "test_rectangular_grid_and_known_occupancy (test_features.Tests) ... ok\ntest_reject_duplicate_ids_or_coordinates (test_features.Tests) ... ok\ntest_respects_offset_and_selected_identity (test_features.Tests) ... ok\ntest_hash_before_execution_and_preloaded_rejected (test_admission.Tests) ... ok\ntest_missing_preflight_stops_before_record_parse (test_admission.Tests) ... ok\ntest_supervisor_command_exit_and_output (test_admission.Tests) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.022s\n\nOK\n",
+  "errors": [],
+  "limitations": [
+    "Geometry uses accepted E4 K128 selected positions; E4 verifier binds processor identity to accepted E1 indirectly.",
+    "E4 panel evidence is summary-level; no new tensor reconstruction.",
+    "Posthoc batch routing study, not measured end-to-end compute or speed."
+  ]
+}

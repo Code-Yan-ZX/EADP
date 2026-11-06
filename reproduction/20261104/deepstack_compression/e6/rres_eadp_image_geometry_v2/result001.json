@@ -1,0 +1,161 @@
+{
+  "status": "passed",
+  "questions": 384,
+  "tasks": {
+    "DocVQA_VAL": {
+      "all": {
+        "questions": 128,
+        "image_groups": 128,
+        "rres_mean_pct": 80.98298842514463,
+        "eadp_mean_pct": 67.84538557047034,
+        "difference_pp": 13.13760285467428
+      },
+      "aspect": {
+        "portrait": {
+          "questions": 105,
+          "image_groups": 105,
+          "rres_mean_pct": 80.54751604843025,
+          "eadp_mean_pct": 65.06219791992031,
+          "difference_pp": 15.485318128509945
+        },
+        "middle": {
+          "questions": 7,
+          "image_groups": 7,
+          "rres_mean_pct": 82.14285714285714,
+          "eadp_mean_pct": 73.21428571428571,
+          "difference_pp": 8.928571428571429
+        },
+        "landscape": {
+          "questions": 16,
+          "image_groups": 16,
+          "rres_mean_pct": 83.33333333333334,
+          "eadp_mean_pct": 83.76116071428572,
+          "difference_pp": -0.4278273809523836
+        }
+      },
+      "area": {
+        "small": {
+          "questions": 4,
+          "image_groups": 4,
+          "rres_mean_pct": 88.75,
+          "eadp_mean_pct": 93.75,
+          "difference_pp": -5.000000000000004
+        },
+        "large": {
+          "questions": 124,
+          "image_groups": 124,
+          "rres_mean_pct": 80.73243966466542,
+          "eadp_mean_pct": 67.00975284693713,
+          "difference_pp": 13.72268681772829
+        }
+      }
+    },
+    "TextVQA_VAL": {
+      "all": {
+        "questions": 128,
+        "image_groups": 128,
+        "rres_mean_pct": 72.8125,
+        "eadp_mean_pct": 80.78125,
+        "difference_pp": -7.968750000000002
+      },
+      "aspect": {
+        "portrait": {
+          "questions": 26,
+          "image_groups": 26,
+          "rres_mean_pct": 80.0,
+          "eadp_mean_pct": 83.46153846153848,
+          "difference_pp": -3.4615384615384697
+        },
+        "middle": {
+          "questions": 14,
+          "image_groups": 14,
+          "rres_mean_pct": 56.42857142857143,
+          "eadp_mean_pct": 75.0,
+          "difference_pp": -18.571428571428566
+        },
+        "landscape": {
+          "questions": 88,
+          "image_groups": 88,
+          "rres_mean_pct": 73.29545454545455,
+          "eadp_mean_pct": 80.90909090909089,
+          "difference_pp": -7.613636363636351
+        }
+      },
+      "area": {
+        "small": {
+          "questions": 118,
+          "image_groups": 118,
+          "rres_mean_pct": 74.83050847457628,
+          "eadp_mean_pct": 81.27118644067797,
+          "difference_pp": -6.44067796610169
+        },
+        "large": {
+          "questions": 10,
+          "image_groups": 10,
+          "rres_mean_pct": 49.00000000000001,
+          "eadp_mean_pct": 75.0,
+          "difference_pp": -25.999999999999993
+        }
+      }
+    },
+    "AI2D_TEST": {
+      "all": {
+        "questions": 128,
+        "image_groups": 128,
+        "rres_mean_pct": 82.03125,
+        "eadp_mean_pct": 82.03125,
+        "difference_pp": 0.0
+      },
+      "aspect": {
+        "portrait": {
+          "questions": 11,
+          "image_groups": 11,
+          "rres_mean_pct": 90.9090909090909,
+          "eadp_mean_pct": 90.9090909090909,
+          "difference_pp": 0.0
+        },
+        "middle": {
+          "questions": 50,
+          "image_groups": 50,
+          "rres_mean_pct": 82.0,
+          "eadp_mean_pct": 84.0,
+          "difference_pp": -2.0
+        },
+        "landscape": {
+          "questions": 67,
+          "image_groups": 67,
+          "rres_mean_pct": 80.59701492537313,
+          "eadp_mean_pct": 79.1044776119403,
+          "difference_pp": 1.492537313432836
+        }
+      },
+      "area": {
+        "small": {
+          "questions": 112,
+          "image_groups": 112,
+          "rres_mean_pct": 82.14285714285714,
+          "eadp_mean_pct": 82.14285714285714,
+          "difference_pp": 0.0
+        },
+        "large": {
+          "questions": 16,
+          "image_groups": 16,
+          "rres_mean_pct": 81.25,
+          "eadp_mean_pct": 81.25,
+          "difference_pp": 0.0
+        }
+      }
+    }
+  },
+  "rows_sha256": "b533be4db1b8497d4f503ec65acebf1240fe49d0ab7b6a887df1fd4d7c5b8a66",
+  "plan_sha256": "780cd291af14993899e9787fba031ef20145812f502d99b4e2ac5a0df9745a50",
+  "GT_opened": false,
+  "existing_predictions_opened": true,
+  "errors": [],
+  "limits": [
+    "Posthoc descriptive fixed bins; multiple comparisons; no causal or routing claims.",
+    "Encoded raw image dimensions, EXIF orientation not applied.",
+    "Different input resolution; same K is not equal compute.",
+    "Six runtime kwargs/EOS checked online; full effective generation config not separately archived."
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "scope": "post-hoc independent nine-process model NVML design, not an executable admission",
+  "design_sha256": "e8b104862c808ceb93b5b935b96761bbe83e0dc638e672a72abc0742708c39aa",
+  "seed": 20261105,
+  "jobs": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "group_id": "389856c961891188878b76ead370e491d6676fdb6920ed745a2768ffeb001f36",
+      "image_sha256": "28963c9cf473009ad263d579538d7604526e03d74639a0ad6e0464091b50aace",
+      "message_sha256": "700cde8ec9b6cd4f4cd8da234bbcd4a9161329b7a3145f0cc3fcb64e53546bf9",
+      "arm": "t020_wavefront",
+      "order": 0
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "group_id": "62febe51574839f93054b1a9491be61c89ed9c57df6fd69a5782bee2b597aad2",
+      "image_sha256": "7bfd2a5701581fd25e9a0066d6c67370e4d01fe1a154e96747bcbe1de232b7c0",
+      "message_sha256": "bf7b04fbf0394376fd5d569d0b3a28c7852b1adae7825f3ddd152ba8da7c7bc7",
+      "arm": "t0_author",
+      "order": 1
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "group_id": "465926724f5cc81e49f19c5b47043843344d79304413f52af49788a36a433300",
+      "image_sha256": "5223e745456e8067db989735a20d79557548864522176432e3c0ff0058c8f7c5",
+      "message_sha256": "80bffe435227cfc543d382d8f183e7638e8ca8cfdcfea9b82324c3aefb1e8584",
+      "arm": "t020_wavefront",
+      "order": 2
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "group_id": "62febe51574839f93054b1a9491be61c89ed9c57df6fd69a5782bee2b597aad2",
+      "image_sha256": "7bfd2a5701581fd25e9a0066d6c67370e4d01fe1a154e96747bcbe1de232b7c0",
+      "message_sha256": "bf7b04fbf0394376fd5d569d0b3a28c7852b1adae7825f3ddd152ba8da7c7bc7",
+      "arm": "t020_author",
+      "order": 3
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "group_id": "389856c961891188878b76ead370e491d6676fdb6920ed745a2768ffeb001f36",
+      "image_sha256": "28963c9cf473009ad263d579538d7604526e03d74639a0ad6e0464091b50aace",
+      "message_sha256": "700cde8ec9b6cd4f4cd8da234bbcd4a9161329b7a3145f0cc3fcb64e53546bf9",
+      "arm": "t020_author",
+      "order": 4
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "group_id": "62febe51574839f93054b1a9491be61c89ed9c57df6fd69a5782bee2b597aad2",
+      "image_sha256": "7bfd2a5701581fd25e9a0066d6c67370e4d01fe1a154e96747bcbe1de232b7c0",
+      "message_sha256": "bf7b04fbf0394376fd5d569d0b3a28c7852b1adae7825f3ddd152ba8da7c7bc7",
+      "arm": "t020_wavefront",
+      "order": 5
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "group_id": "465926724f5cc81e49f19c5b47043843344d79304413f52af49788a36a433300",
+      "image_sha256": "5223e745456e8067db989735a20d79557548864522176432e3c0ff0058c8f7c5",
+      "message_sha256": "80bffe435227cfc543d382d8f183e7638e8ca8cfdcfea9b82324c3aefb1e8584",
+      "arm": "t020_author",
+      "order": 6
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "group_id": "465926724f5cc81e49f19c5b47043843344d79304413f52af49788a36a433300",
+      "image_sha256": "5223e745456e8067db989735a20d79557548864522176432e3c0ff0058c8f7c5",
+      "message_sha256": "80bffe435227cfc543d382d8f183e7638e8ca8cfdcfea9b82324c3aefb1e8584",
+      "arm": "t0_author",
+      "order": 7
+    },
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "group_id": "389856c961891188878b76ead370e491d6676fdb6920ed745a2768ffeb001f36",
+      "image_sha256": "28963c9cf473009ad263d579538d7604526e03d74639a0ad6e0464091b50aace",
+      "message_sha256": "700cde8ec9b6cd4f4cd8da234bbcd4a9161329b7a3145f0cc3fcb64e53546bf9",
+      "arm": "t0_author",
+      "order": 8
+    }
+  ],
+  "prior_proof_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_accept_v2/verification001.json": "2b0a043d9f95cfbc7cc85fbc051dc67690602dc2607eb1c742de7ebf4392603c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/pixel_wavefront_t020_run_v2_result_review.json": "eba11149c0e9fc32090206acf460dc5c9b554d4a64b63c3250895ce2fb4ffb79",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_wavefront_t020_run_v2_result/started.json": "650cb116959c65ceb3cb72efa38cc3b779a19e9f3346b03d83859bab7c447b37",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_wavefront_t020_run_v2_result/terminal.json": "47e8cc8a0e51843d69c82da59f105b1fa349b4b71c7c35c7b4110a6ee79fe2d8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_dev384_accept/verification001.json": "8f84e387bf818777e3fcc1336c6edbc53c116de8347699b9f78d7103f1da6ba0",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/pixel_dev384_result_review.json": "74bb252af44eacc1b8a04116a692abbe9b744eb27f83a7b4b3436d9cd3454aa5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_dev384_result/started.json": "0d68b0eca9119a0d8ffb7d4af34f1000f64ba510dc4b60666444a09b82b63e8d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_dev384_result/terminal.json": "e022c283484330e97940629f98cc849c1eeaf1aac6de6b61d7d847f1df8b3275"
+  },
+  "separate_from_ttft": true,
+  "gpu_authorized": false,
+  "GT_opened": false,
+  "predictions_opened": false,
+  "limitations": [
+    "proposed nine fresh processes; not a model or GPU run",
+    "sample query windows bracket load, request and teardown; unknown is not zero, MiB granularity and sampled peak can miss transients",
+    "target process and whole device are distinct; graphics background retained and foreign compute rejected",
+    "actual processor, generated IDs, EOS and K must match the accepted same-arm same-anchor reference",
+    "t=.2 prior identity provides complete ordered selection; t0 full DEV prior records K and diagnostics but not necessarily raw complete ordered selection, so archive actual indices without asserting retrospectively proved identical ordering",
+    "capture and CPU synchronization can affect memory; no TTFT is measured in this run",
+    "three post-hoc anchors and dynamic K; not equal compute to fixed K or to one another",
+    "final executable worker, gate, container preflight, bounded cleanup, source and formal-verifier freeze and independent reviews are required"
+  ],
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_nine/design.py": "1900bea389d896b562d26c0d1a929894f57ed2990502dbd4cf8bdb72058f2970",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_nine/test_design.py": "a2cc55ec87fc1996ce31bd15cc79e5dcedf15400b781406ff6d51f5e78bc4259",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_nvml_nine/freeze.py": "3c84cb7f7ec2257a41a0eaf8ef7313d672bf65c95d9c7cc3a71ad95bfee68c18"
+  },
+  "cpu_tests_passed": true
+}

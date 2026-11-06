@@ -1,0 +1,27 @@
+{
+  "status": "frozen_during_stacktok_generation_before_observing_panel_results",
+  "scope": "384 DEV questions, 128 per task; all questions retained; no CONFIRM/FINAL",
+  "arms": ["stacktok_k256", "eadp_k256_d1", "pixel_t0", "pixel_t045"],
+  "contrasts": {
+    "stacktok_minus_eadp": ["stacktok_k256", "eadp_k256_d1"],
+    "stacktok_minus_pixel_t0": ["stacktok_k256", "pixel_t0"],
+    "stacktok_minus_pixel_t045": ["stacktok_k256", "pixel_t045"]
+  },
+  "tasks": ["DocVQA_VAL", "TextVQA_VAL", "AI2D_TEST"],
+  "bootstrap": {"unit": "image group", "paired": true, "replicates": 10000, "seed": 20261104, "confidence": 0.95, "multiplicity_adjustment": "none"},
+  "scoring": "same already independently checked E1 author and independent DEV scorer; independent scorer agreement <=1e-12; use accepted previous scores only after source and output identity checks",
+  "required_before_predictions_or_labels": [
+    "full StackTok 384 generations, stopped container and supervisor exit0",
+    "full StackTok no-GT formal acceptance and independent acceptance with actual completed supervisors",
+    "already accepted E1/E4 and both Pixel panels, scoring source and independent reviews, and supervisor exits",
+    "384 matching input, image-group, processor, image/message, model recipe and EOS identities",
+    "independent source prelaunch review and completed supervisor"
+  ],
+  "limitations": [
+    "Plan fixed while full generation was ongoing, before opening panel predictions or labels; exploratory after prior DEV investigations.",
+    "Three task-wise comparisons, 95% paired cluster intervals uncorrected for multiplicity; all contrasts reported.",
+    "Equal K256 does not imply equal compute; Pixel thresholds have dynamic K.",
+    "Include EOS, generation-cap and empty outputs in the full denominator; no accuracy-based filtering.",
+    "No held-out inference, GPU/model latency or population-level claims."
+  ]
+}

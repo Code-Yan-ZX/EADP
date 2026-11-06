@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "artifact verification only; enabled diagnostic arms failed",
+  "arm_statuses": {
+    "disabled": "completed",
+    "keep_all": "failed",
+    "keep_256": "failed"
+  },
+  "disabled_decode_calls": 32,
+  "enabled_completed_decode_calls": 0,
+  "formal_limitations": [
+    "Prefill comparisons/logit differences are runtime summaries; full arrays are not available for independent reconstruction.",
+    "No-hook control not yet run; observer effects cannot be excluded empirically.",
+    "One fixed image/forced prefix; no natural quality, speed or generalization conclusion."
+  ],
+  "files_sha256": {
+    "disabled.json": "4c73e844e42a643835131eb18bd7cd7030409396f22ddf15a574845b30ef2441",
+    "disabled_started.json": "e136d15b024839c0915c2344ab13ae1c94be4d68efd91f6aace22c546ebe5b08",
+    "disabled_generated.json": "af20e2b39e1c897585be160f2d29d7182ce198f045c831049f5d513f190a97cc",
+    "keep_all.json": "fe1c159210e102aed9e6e991b261196f6f7aeea123eb7930b2c1f8c2fe422363",
+    "keep_all_started.json": "f9f6be26c8f5368f93ebcb076b32eaaa9fbd0376ccb9de37c2f9005780fd1f83",
+    "keep_all_exception.json": "2a82cc7ede432c14a24b7255cfed1867ec467c6b90366bd91ef7b70cc63a9566",
+    "keep_256.json": "d7cacad6acf34e4338471048355f83f4dab9a2c578f71dabbf193e8656efebca",
+    "keep_256_started.json": "c060e65193b55c315ec73d30387c3ab08fa51ade7cdf14d86ff5a238c5af1e27",
+    "keep_256_exception.json": "75dabd667843c088b1c42ad179abad7b052fe91a5241713083c655acb2073ae2",
+    "worker_complete.json": "5424311b1be1cea173dace7675db6640365ba29503c02dd6b678b92f785909f9",
+    "started.json": "884e8ecc03e37934bc027d7b3548e60efc3f869b89f9847e4f467b41aedafd3e",
+    "progress.jsonl": "910065fc45b79533e617d6ea951208e1d7f88e094b4a3aa7eb50b3c82d0c12ea"
+  },
+  "plan_sha256": "8e6ca743d2017392c09ca1c76a8c8887c8ae9fbefeadee78bf300b122f094d8f",
+  "run_started_sha256": "205d53c9027e166a243378905c683f0bf0a43f2e21df1361698b0a1b6aad8af3",
+  "run_terminal_sha256": "bb74b06ef14a7450e11342cec172f8ca1460f562b914eaa149789fbe800699b2",
+  "run_exit_sha256": "66504e93e88b3414d65696a99ea58abd6f3aa57d6ce85ea39325796245883ba2",
+  "reviewer_sha256": "3aef3780688833522246fe326443f3370b503c4002a5f02a6f51535e6b6e31e3",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "errors": []
+}

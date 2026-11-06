@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-11-04T15:42:10.852330+00:00",
+  "command": [
+    "env",
+    "OPENBLAS_NUM_THREADS=1",
+    "OMP_NUM_THREADS=1",
+    "python",
+    "-u",
+    "data_manifest/audit_localized_paths.py"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression",
+  "timeout_seconds": 900.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 600.0,
+  "poll_seconds": 10.0,
+  "grace_seconds": 20,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/panel_runtime_paths_supervision",
+    "/media/disk2"
+  ]
+}

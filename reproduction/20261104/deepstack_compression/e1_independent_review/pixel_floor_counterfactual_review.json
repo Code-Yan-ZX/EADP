@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "questions": 384,
+  "route_records": 1152,
+  "tasks": 3,
+  "routes": 3,
+  "contrasts": 27,
+  "bootstrap_replicates": 10000,
+  "fallback_counts": {
+    "DocVQA_VAL": {
+      "fallback_le128": 16,
+      "fallback_le256": 35,
+      "fallback_le512": 97
+    },
+    "TextVQA_VAL": {
+      "fallback_le128": 11,
+      "fallback_le256": 40,
+      "fallback_le512": 110
+    },
+    "AI2D_TEST": {
+      "fallback_le128": 0,
+      "fallback_le256": 27,
+      "fallback_le512": 116
+    }
+  },
+  "analysis_sha256": "e97e83f4042849cc4c8458f0aaf3e6d0eed74b069eaa69e34a126db24a9f5e8b",
+  "routes_sha256": "c70e78642333038db47066edb93638ee83541f4743d0a878f868afc5034f1743",
+  "plan_sha256": "3fc34b9d923266c811ea22e6d5d6be335c572df81cc11608110cce9e83fd90a3",
+  "analysis_started_sha256": "429afec68e9ca64e7fe8fa77a9774b6cb266122a719e4f6090ceeff5a6194a07",
+  "analysis_terminal_sha256": "89c4790aaa5dea147347eacfd9beda92bbcf2b952cf16cb1493c122a229d8174",
+  "reviewer_sha256": "c89180936779b50b85007e54f66c0961314f7c6935cda72d9e242397be3b1c4e",
+  "GT_opened": false,
+  "new_predictions_opened": false,
+  "limitations": [
+    "Thresholds and candidate were chosen after observing DEV scores and K strata; all routes and contrasts reported as exploratory only",
+    "Offline combination of two previously run outputs assumes a new conditional selector reproduces those outputs; no such identity has yet been shown",
+    "Threshold decision uses unlabelled t045 K but requires both selectors for fallback items; actual extra work and model timing not measured",
+    "K is not FLOPs, actual latency or memory, nor equal-compute evidence",
+    "No CONFIRM or FINAL; no new predictions, labels or causal claim"
+  ],
+  "errors": []
+}

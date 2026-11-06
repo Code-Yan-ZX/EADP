@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "questions": 3,
+  "generations": 16,
+  "pairs": 8,
+  "forced_decode_steps": 32,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "errors": [],
+  "formal_proof_sha256": "273768168a909bf65adf097fc4e71b24b0e2c67bdbd8e234ad31cb34c7c7daf7",
+  "formal_started_sha256": "be54162f33e8d738540cc184f04dffabeb61b1bff2637f682ad8c80ff6685592",
+  "formal_terminal_sha256": "e9232cc1a3245627d0536b65c597b7d1bfe2ff3fa3097eee97f67e394a5b55d1",
+  "run_started_sha256": "2c696706d3aa9c5db4c1fe1a354f2f921443f8a69ba43bc782ddf332463e13a3",
+  "run_terminal_sha256": "73b3938127d994e25f2187fbed0fe4169cb819f1150b9a232d4477b954e7b32c",
+  "source_manifest_sha256": "20ab92e1e5a1c21759791bc0e5b46590babb9d3a48bc3887f0793daf29e4a284",
+  "reviewer_sha256": "fda15bbfb912341c275d5c878c80b103841f96d22b6c559cb7aedc33c9f5a442",
+  "limitations": [
+    "Stock P1/D0 and adapted P3/D1 outputs are not asserted equal.",
+    "KV content is represented by per-layer fingerprints, not archived raw KV tensors."
+  ]
+}

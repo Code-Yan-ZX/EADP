@@ -1,0 +1,18 @@
+"""Independent metadata review after completed fused-selector GPU probe."""
+import argparse,collections,hashlib,json,math,subprocess
+from pathlib import Path
+B=Path(__file__).resolve().parent.parent;D=B/'e5/fused_selector';O=D/'run_smoke001/observations';R=B/'e1_independent_review'
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def get(p):return json.loads(Path(p).read_text())
+def term(d):
+ s=get(d/'started.json');t=get(d/'terminal.json');assert t['reason']=='completed' and t['worker_returncode']==0 and t['remaining_process_group']==[] and s['worker_pid']==t['worker_pid'];return s
+p=argparse.ArgumentParser();p.add_argument('--out',type=Path,required=True);a=p.parse_args();term(R/'monitor_fused_selector_prelaunch');s=term(D/'monitor_smoke001');plan=get(D/'plan001.json')
+for f,h in plan['sha256'].items():assert sha(f)==h,f
+l=get(D/'run_smoke001/launch.json');ex=get(D/'run_smoke001/exit.json');assert l['plan_sha256']==sha(D/'plan001.json') and s['worker_pid']==l['controller']['pid']==ex['controller']['pid'] and ex['returncode']==ex['container_exit_code']==0 and ex['container_stopped_verified'] and ex['client_exited_while_container_running'] is False and ex['gpu_pids_after']==[]
+ins=json.loads(subprocess.run(['docker','inspect',ex['container_identity']['container_id']],capture_output=True,text=True,check=True,timeout=15).stdout)[0];st=ins['State'];assert ins['Id']==ex['last_inspect']['id'] and ins['Image']==ex['container_identity']['image'] and not st['Running'] and st['Pid']==0 and st['ExitCode']==0 and not st['OOMKilled'];assert ins['Config']['Cmd']==[str(D/'worker.py'),'--out',str(O)] and ins['HostConfig']['NetworkMode']=='none'
+devices=ins['HostConfig']['Devices'];assert {(x['PathOnHost'],x['PathInContainer'],x['CgroupPermissions']) for x in devices}=={(x,x,'rwm') for x in ['/dev/nvidia0','/dev/nvidiactl','/dev/nvidia-uvm','/dev/nvidia-uvm-tools']}
+toy=get(O/'synthetic_identity.json');assert {x['case'] for x in toy}=={'all_tied','zero_gain','near_tied','seeded_random'} and all(x['equal'] and x['author']==x['fused'] for x in toy)
+identity=get(O/'identity.json');assert identity['original_equals_accepted'] and identity['fused_equals_original'] and identity['original_indices']==identity['fused_indices'] and len(identity['original_indices'])==len(set(identity['original_indices']))==256
+measure=[json.loads(x) for x in (O/'measurements.jsonl').read_text().splitlines()];assert len(measure)==10 and {(m['repeat'],m['implementation']) for m in measure}=={(i,k) for i in range(5) for k in ('original','fused')}
+for m in measure:assert m['equals_accepted_order'] is True and m['selected_indices']==identity['original_indices'] and all(type(m[k]) in (int,float) and math.isfinite(m[k]) and m[k]>=0 for k in ('cuda_event_ms','host_wall_ms'))
+assert get(O/'worker_complete.json')['status']=='completed';files=list(O.glob('*.json'))+list(O.glob('*.jsonl'))+[D/'run_smoke001/launch.json',D/'run_smoke001/exit.json',D/'monitor_smoke001/started.json',D/'monitor_smoke001/terminal.json'];r={'status':'passed','independent_review':True,'synthetic_cases':4,'selection_count':256,'measurements':10,'GT_opened':False,'scoring_performed':False,'files_sha256':{str(f):sha(f) for f in files},'reviewer_sha256':sha(__file__),'limitations':['one fixed CPU-reconstructed numeric input','selection outputs were recorded, per-round gains and random matrices not separately archived','GPU events include scheduling and kernel launches, not model end-to-end','Triton and PyTorch reductions may differ on other inputs or near ties'],'errors':[]};a.out.write_text(json.dumps(r,indent=2)+'\n');print('passed')

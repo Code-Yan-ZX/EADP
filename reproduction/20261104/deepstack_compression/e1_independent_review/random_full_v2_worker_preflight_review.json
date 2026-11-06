@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "CPU worker preflight only",
+  "runtime_plan_sha256": "2f4ed231d311dafa970b6aa119bfbedd5c052af28a329be6cd92e597bd9a5653",
+  "verification_plan_sha256": "4da2897e26bb2832f7096e291ab5f89ec50ca8c1acbd7ca6ff943cb37a67bb1c",
+  "reviewer_sha256": "8bd1c549b4838aa1cf4d6792547736ec3bc076290913a98981d47b937b6497cb",
+  "source_count": 284,
+  "manifest_sha256": "ac48c033618de907afb1337821c6dc75fd124f825e691cf6ff7800b8b95fdef1",
+  "questions": 384,
+  "selections": 1152,
+  "GT_opened": false,
+  "target_predictions_opened": false,
+  "GPU_authorized": false,
+  "errors": [],
+  "limitations": [
+    "static and synthetic review permits only real no-GPU preflight",
+    "no high-dimensional full-run tensors or GPU behavior verified",
+    "execution author independently built the underlying frozen plan"
+  ]
+}

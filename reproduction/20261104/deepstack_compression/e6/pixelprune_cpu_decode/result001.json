@@ -1,0 +1,6738 @@
+{
+  "scope": "tiny random CPU model and synthetic image, 33 forced synthetic tokens; no real data",
+  "plan_sha256": "0a0e9510090e0789f9114f94622f750ee12ec81bff615b0c4dc96045caf06e1a",
+  "torch": "2.8.0+cu128",
+  "transformers": "4.57.1",
+  "before_signatures": {
+    "vision": "(self, hidden_states: torch.Tensor, grid_thw: torch.Tensor, **kwargs) -> torch.Tensor",
+    "image_features": "(self, pixel_values: torch.FloatTensor, image_grid_thw: Optional[torch.LongTensor] = None)",
+    "model_forward": "(self, input_ids: torch.LongTensor = None, attention_mask: Optional[torch.Tensor] = None, position_ids: Optional[torch.LongTensor] = None, past_key_values: Optional[transformers.cache_utils.Cache] = None, inputs_embeds: Optional[torch.FloatTensor] = None, pixel_values: Optional[torch.Tensor] = None, pixel_values_videos: Optional[torch.FloatTensor] = None, image_grid_thw: Optional[torch.LongTensor] = None, video_grid_thw: Optional[torch.LongTensor] = None, cache_position: Optional[torch.LongTensor] = None, **kwargs: typing_extensions.Unpack[transformers.utils.generic.TransformersKwargs]) -> Union[tuple, transformers.models.qwen3_vl.modeling_qwen3_vl.Qwen3VLModelOutputWithPast]",
+    "cg_forward": "(self, input_ids: torch.LongTensor = None, attention_mask: Optional[torch.Tensor] = None, position_ids: Optional[torch.LongTensor] = None, past_key_values: Optional[transformers.cache_utils.Cache] = None, inputs_embeds: Optional[torch.FloatTensor] = None, labels: Optional[torch.LongTensor] = None, pixel_values: Optional[torch.Tensor] = None, pixel_values_videos: Optional[torch.FloatTensor] = None, image_grid_thw: Optional[torch.LongTensor] = None, video_grid_thw: Optional[torch.LongTensor] = None, cache_position: Optional[torch.LongTensor] = None, logits_to_keep: Union[int, torch.Tensor] = 0, **kwargs: typing_extensions.Unpack[transformers.utils.generic.TransformersKwargs]) -> Union[tuple, transformers.models.qwen3_vl.modeling_qwen3_vl.Qwen3VLCausalLMOutputWithPast]"
+  },
+  "after_signatures": {
+    "vision": "(self: 'Any', hidden_states: 'torch.Tensor', grid_thw: 'torch.Tensor', keep_indices: 'Optional[List[torch.Tensor]]' = None, **kwargs: 'Any') -> 'Any'",
+    "image_features": "(self: 'Any', pixel_values: 'torch.Tensor', image_grid_thw: 'Optional[torch.LongTensor]' = None, keep_indices: 'Optional[List[torch.Tensor]]' = None) -> 'Tuple[Any, Any]'",
+    "model_forward": "(self: 'Any', input_ids: 'Optional[torch.LongTensor]' = None, attention_mask: 'Optional[torch.Tensor]' = None, position_ids: 'Optional[torch.LongTensor]' = None, past_key_values: 'Optional[Any]' = None, inputs_embeds: 'Optional[torch.FloatTensor]' = None, pixel_values: 'Optional[torch.Tensor]' = None, pixel_values_videos: 'Optional[torch.Tensor]' = None, image_grid_thw: 'Optional[torch.LongTensor]' = None, video_grid_thw: 'Optional[torch.LongTensor]' = None, cache_position: 'Optional[torch.LongTensor]' = None, keep_indices: 'Optional[List[torch.Tensor]]' = None, **kwargs: 'Any') -> 'Any'",
+    "cg_forward": "(self: 'Any', input_ids: 'Optional[torch.LongTensor]' = None, attention_mask: 'Optional[torch.Tensor]' = None, position_ids: 'Optional[torch.LongTensor]' = None, past_key_values: 'Optional[Any]' = None, inputs_embeds: 'Optional[torch.FloatTensor]' = None, labels: 'Optional[torch.LongTensor]' = None, pixel_values: 'Optional[torch.Tensor]' = None, pixel_values_videos: 'Optional[torch.Tensor]' = None, image_grid_thw: 'Optional[torch.LongTensor]' = None, video_grid_thw: 'Optional[torch.LongTensor]' = None, cache_position: 'Optional[torch.LongTensor]' = None, logits_to_keep: 'int' = 0, **kwargs: 'Any') -> 'Any'"
+  },
+  "synthetic_image_grid": [
+    1,
+    4,
+    4
+  ],
+  "original_merged_tokens": 4,
+  "selector_kept_indices": [
+    [
+      0
+    ]
+  ],
+  "original_rope_delta": [
+    [
+      -2
+    ]
+  ],
+  "original_max_position": 6,
+  "records": [
+    {
+      "arm": "unpatched",
+      "status": "completed",
+      "output_ids": [
+        [
+          3,
+          123,
+          121,
+          121,
+          121,
+          121,
+          124,
+          4,
+          5,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7
+        ]
+      ],
+      "cache_length": 41,
+      "checks": {
+        "exactly_33_calls": true,
+        "forced_tokens_33": true,
+        "prefill_original_positions": true,
+        "prefill_ds_rows": true,
+        "decode_positions": true,
+        "three_layer_cache_lengths": true
+      },
+      "language_model_inputs": [
+        {
+          "positions": [
+            [
+              [
+                0,
+                1,
+                2,
+                2,
+                2,
+                2,
+                4,
+                5,
+                6
+              ]
+            ],
+            [
+              [
+                0,
+                1,
+                2,
+                2,
+                3,
+                3,
+                4,
+                5,
+                6
+              ]
+            ],
+            [
+              [
+                0,
+                1,
+                2,
+                3,
+                2,
+                3,
+                4,
+                5,
+                6
+              ]
+            ]
+          ],
+          "visual_count": 4,
+          "ds_rows": [
+            4,
+            4,
+            4
+          ]
+        },
+        {
+          "positions": [
+            [
+              [
+                7
+              ]
+            ],
+            [
+              [
+                7
+              ]
+            ],
+            [
+              [
+                7
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                8
+              ]
+            ],
+            [
+              [
+                8
+              ]
+            ],
+            [
+              [
+                8
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                9
+              ]
+            ],
+            [
+              [
+                9
+              ]
+            ],
+            [
+              [
+                9
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                10
+              ]
+            ],
+            [
+              [
+                10
+              ]
+            ],
+            [
+              [
+                10
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                11
+              ]
+            ],
+            [
+              [
+                11
+              ]
+            ],
+            [
+              [
+                11
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                12
+              ]
+            ],
+            [
+              [
+                12
+              ]
+            ],
+            [
+              [
+                12
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                13
+              ]
+            ],
+            [
+              [
+                13
+              ]
+            ],
+            [
+              [
+                13
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                14
+              ]
+            ],
+            [
+              [
+                14
+              ]
+            ],
+            [
+              [
+                14
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                15
+              ]
+            ],
+            [
+              [
+                15
+              ]
+            ],
+            [
+              [
+                15
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                16
+              ]
+            ],
+            [
+              [
+                16
+              ]
+            ],
+            [
+              [
+                16
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                17
+              ]
+            ],
+            [
+              [
+                17
+              ]
+            ],
+            [
+              [
+                17
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                18
+              ]
+            ],
+            [
+              [
+                18
+              ]
+            ],
+            [
+              [
+                18
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                19
+              ]
+            ],
+            [
+              [
+                19
+              ]
+            ],
+            [
+              [
+                19
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                20
+              ]
+            ],
+            [
+              [
+                20
+              ]
+            ],
+            [
+              [
+                20
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                21
+              ]
+            ],
+            [
+              [
+                21
+              ]
+            ],
+            [
+              [
+                21
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                22
+              ]
+            ],
+            [
+              [
+                22
+              ]
+            ],
+            [
+              [
+                22
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                23
+              ]
+            ],
+            [
+              [
+                23
+              ]
+            ],
+            [
+              [
+                23
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                24
+              ]
+            ],
+            [
+              [
+                24
+              ]
+            ],
+            [
+              [
+                24
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                25
+              ]
+            ],
+            [
+              [
+                25
+              ]
+            ],
+            [
+              [
+                25
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                26
+              ]
+            ],
+            [
+              [
+                26
+              ]
+            ],
+            [
+              [
+                26
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                27
+              ]
+            ],
+            [
+              [
+                27
+              ]
+            ],
+            [
+              [
+                27
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                28
+              ]
+            ],
+            [
+              [
+                28
+              ]
+            ],
+            [
+              [
+                28
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                29
+              ]
+            ],
+            [
+              [
+                29
+              ]
+            ],
+            [
+              [
+                29
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                30
+              ]
+            ],
+            [
+              [
+                30
+              ]
+            ],
+            [
+              [
+                30
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                31
+              ]
+            ],
+            [
+              [
+                31
+              ]
+            ],
+            [
+              [
+                31
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                32
+              ]
+            ],
+            [
+              [
+                32
+              ]
+            ],
+            [
+              [
+                32
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                33
+              ]
+            ],
+            [
+              [
+                33
+              ]
+            ],
+            [
+              [
+                33
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                34
+              ]
+            ],
+            [
+              [
+                34
+              ]
+            ],
+            [
+              [
+                34
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                35
+              ]
+            ],
+            [
+              [
+                35
+              ]
+            ],
+            [
+              [
+                35
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                36
+              ]
+            ],
+            [
+              [
+                36
+              ]
+            ],
+            [
+              [
+                36
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                37
+              ]
+            ],
+            [
+              [
+                37
+              ]
+            ],
+            [
+              [
+                37
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                38
+              ]
+            ],
+            [
+              [
+                38
+              ]
+            ],
+            [
+              [
+                38
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        }
+      ],
+      "layer_cache_shapes": [
+        [
+          {
+            "key": [
+              1,
+              2,
+              9,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              9,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              9,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              9,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              9,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              9,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              10,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              10,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              10,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              10,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              10,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              10,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              11,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              11,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              11,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              11,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              11,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              11,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              12,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              12,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              12,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              13,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              13,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              13,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              13,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              13,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              13,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              14,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              14,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              14,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              15,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              15,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              15,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              15,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              15,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              15,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              16,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              16,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              16,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              16,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              16,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              16,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              17,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              17,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              17,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              17,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              17,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              17,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              18,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              18,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              18,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              18,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              18,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              18,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              19,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              19,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              19,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              19,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              19,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              19,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              20,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              20,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              20,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              20,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              20,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              20,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              21,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              21,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              21,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              21,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              21,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              21,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              22,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              22,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              22,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              22,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              22,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              22,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              23,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              23,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              23,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              23,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              23,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              23,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              24,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              24,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              24,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              24,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              24,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              24,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              25,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              25,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              25,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              25,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              25,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              25,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              26,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              26,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              26,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              26,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              26,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              26,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              27,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              27,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              27,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              27,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              27,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              27,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              28,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              28,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              28,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              28,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              28,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              28,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              29,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              29,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              29,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              29,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              29,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              29,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              30,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              30,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              30,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              30,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              30,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              30,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              31,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              31,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              31,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              31,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              31,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              31,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              32,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              32,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              32,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              32,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              32,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              32,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              33,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              33,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              33,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              33,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              33,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              33,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              34,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              34,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              34,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              34,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              34,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              34,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              35,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              35,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              35,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              35,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              35,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              35,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              36,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              36,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              36,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              36,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              36,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              36,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              37,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              37,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              37,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              37,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              37,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              37,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              38,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              38,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              38,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              38,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              38,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              38,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              39,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              39,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              39,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              39,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              39,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              39,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              40,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              40,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              40,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              40,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              40,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              40,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              41,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              41,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              41,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              41,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              41,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              41,
+              8
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "arm": "patched_explicit_disabled",
+      "status": "completed",
+      "output_ids": [
+        [
+          3,
+          123,
+          121,
+          121,
+          121,
+          121,
+          124,
+          4,
+          5,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7
+        ]
+      ],
+      "cache_length": 41,
+      "checks": {
+        "exactly_33_calls": true,
+        "forced_tokens_33": true,
+        "prefill_original_positions": true,
+        "prefill_ds_rows": true,
+        "decode_positions": true,
+        "three_layer_cache_lengths": true
+      },
+      "language_model_inputs": [
+        {
+          "positions": [
+            [
+              [
+                0,
+                1,
+                2,
+                2,
+                2,
+                2,
+                4,
+                5,
+                6
+              ]
+            ],
+            [
+              [
+                0,
+                1,
+                2,
+                2,
+                3,
+                3,
+                4,
+                5,
+                6
+              ]
+            ],
+            [
+              [
+                0,
+                1,
+                2,
+                3,
+                2,
+                3,
+                4,
+                5,
+                6
+              ]
+            ]
+          ],
+          "visual_count": 4,
+          "ds_rows": [
+            4,
+            4,
+            4
+          ]
+        },
+        {
+          "positions": [
+            [
+              [
+                7
+              ]
+            ],
+            [
+              [
+                7
+              ]
+            ],
+            [
+              [
+                7
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                8
+              ]
+            ],
+            [
+              [
+                8
+              ]
+            ],
+            [
+              [
+                8
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                9
+              ]
+            ],
+            [
+              [
+                9
+              ]
+            ],
+            [
+              [
+                9
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                10
+              ]
+            ],
+            [
+              [
+                10
+              ]
+            ],
+            [
+              [
+                10
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                11
+              ]
+            ],
+            [
+              [
+                11
+              ]
+            ],
+            [
+              [
+                11
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                12
+              ]
+            ],
+            [
+              [
+                12
+              ]
+            ],
+            [
+              [
+                12
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                13
+              ]
+            ],
+            [
+              [
+                13
+              ]
+            ],
+            [
+              [
+                13
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                14
+              ]
+            ],
+            [
+              [
+                14
+              ]
+            ],
+            [
+              [
+                14
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                15
+              ]
+            ],
+            [
+              [
+                15
+              ]
+            ],
+            [
+              [
+                15
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                16
+              ]
+            ],
+            [
+              [
+                16
+              ]
+            ],
+            [
+              [
+                16
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                17
+              ]
+            ],
+            [
+              [
+                17
+              ]
+            ],
+            [
+              [
+                17
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                18
+              ]
+            ],
+            [
+              [
+                18
+              ]
+            ],
+            [
+              [
+                18
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                19
+              ]
+            ],
+            [
+              [
+                19
+              ]
+            ],
+            [
+              [
+                19
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                20
+              ]
+            ],
+            [
+              [
+                20
+              ]
+            ],
+            [
+              [
+                20
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                21
+              ]
+            ],
+            [
+              [
+                21
+              ]
+            ],
+            [
+              [
+                21
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                22
+              ]
+            ],
+            [
+              [
+                22
+              ]
+            ],
+            [
+              [
+                22
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                23
+              ]
+            ],
+            [
+              [
+                23
+              ]
+            ],
+            [
+              [
+                23
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                24
+              ]
+            ],
+            [
+              [
+                24
+              ]
+            ],
+            [
+              [
+                24
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                25
+              ]
+            ],
+            [
+              [
+                25
+              ]
+            ],
+            [
+              [
+                25
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                26
+              ]
+            ],
+            [
+              [
+                26
+              ]
+            ],
+            [
+              [
+                26
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                27
+              ]
+            ],
+            [
+              [
+                27
+              ]
+            ],
+            [
+              [
+                27
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                28
+              ]
+            ],
+            [
+              [
+                28
+              ]
+            ],
+            [
+              [
+                28
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                29
+              ]
+            ],
+            [
+              [
+                29
+              ]
+            ],
+            [
+              [
+                29
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                30
+              ]
+            ],
+            [
+              [
+                30
+              ]
+            ],
+            [
+              [
+                30
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                31
+              ]
+            ],
+            [
+              [
+                31
+              ]
+            ],
+            [
+              [
+                31
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                32
+              ]
+            ],
+            [
+              [
+                32
+              ]
+            ],
+            [
+              [
+                32
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                33
+              ]
+            ],
+            [
+              [
+                33
+              ]
+            ],
+            [
+              [
+                33
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                34
+              ]
+            ],
+            [
+              [
+                34
+              ]
+            ],
+            [
+              [
+                34
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                35
+              ]
+            ],
+            [
+              [
+                35
+              ]
+            ],
+            [
+              [
+                35
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                36
+              ]
+            ],
+            [
+              [
+                36
+              ]
+            ],
+            [
+              [
+                36
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                37
+              ]
+            ],
+            [
+              [
+                37
+              ]
+            ],
+            [
+              [
+                37
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                38
+              ]
+            ],
+            [
+              [
+                38
+              ]
+            ],
+            [
+              [
+                38
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        }
+      ],
+      "layer_cache_shapes": [
+        [
+          {
+            "key": [
+              1,
+              2,
+              9,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              9,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              9,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              9,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              9,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              9,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              10,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              10,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              10,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              10,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              10,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              10,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              11,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              11,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              11,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              11,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              11,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              11,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              12,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              12,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              12,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              13,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              13,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              13,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              13,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              13,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              13,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              14,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              14,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              14,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              15,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              15,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              15,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              15,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              15,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              15,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              16,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              16,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              16,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              16,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              16,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              16,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              17,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              17,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              17,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              17,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              17,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              17,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              18,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              18,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              18,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              18,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              18,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              18,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              19,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              19,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              19,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              19,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              19,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              19,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              20,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              20,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              20,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              20,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              20,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              20,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              21,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              21,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              21,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              21,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              21,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              21,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              22,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              22,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              22,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              22,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              22,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              22,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              23,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              23,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              23,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              23,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              23,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              23,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              24,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              24,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              24,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              24,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              24,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              24,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              25,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              25,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              25,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              25,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              25,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              25,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              26,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              26,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              26,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              26,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              26,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              26,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              27,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              27,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              27,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              27,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              27,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              27,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              28,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              28,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              28,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              28,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              28,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              28,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              29,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              29,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              29,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              29,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              29,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              29,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              30,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              30,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              30,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              30,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              30,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              30,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              31,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              31,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              31,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              31,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              31,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              31,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              32,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              32,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              32,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              32,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              32,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              32,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              33,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              33,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              33,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              33,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              33,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              33,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              34,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              34,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              34,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              34,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              34,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              34,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              35,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              35,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              35,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              35,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              35,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              35,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              36,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              36,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              36,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              36,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              36,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              36,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              37,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              37,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              37,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              37,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              37,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              37,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              38,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              38,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              38,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              38,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              38,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              38,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              39,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              39,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              39,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              39,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              39,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              39,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              40,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              40,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              40,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              40,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              40,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              40,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              41,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              41,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              41,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              41,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              41,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              41,
+              8
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "arm": "patched_enabled_threshold_zero",
+      "status": "completed",
+      "output_ids": [
+        [
+          3,
+          123,
+          121,
+          121,
+          121,
+          121,
+          124,
+          4,
+          5,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7
+        ]
+      ],
+      "cache_length": 38,
+      "checks": {
+        "exactly_33_calls": true,
+        "forced_tokens_33": true,
+        "prefill_original_positions": true,
+        "prefill_ds_rows": true,
+        "decode_positions": true,
+        "three_layer_cache_lengths": true
+      },
+      "language_model_inputs": [
+        {
+          "positions": [
+            [
+              [
+                0,
+                1,
+                2,
+                4,
+                5,
+                6
+              ]
+            ],
+            [
+              [
+                0,
+                1,
+                2,
+                4,
+                5,
+                6
+              ]
+            ],
+            [
+              [
+                0,
+                1,
+                2,
+                4,
+                5,
+                6
+              ]
+            ]
+          ],
+          "visual_count": 1,
+          "ds_rows": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "positions": [
+            [
+              [
+                7
+              ]
+            ],
+            [
+              [
+                7
+              ]
+            ],
+            [
+              [
+                7
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                8
+              ]
+            ],
+            [
+              [
+                8
+              ]
+            ],
+            [
+              [
+                8
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                9
+              ]
+            ],
+            [
+              [
+                9
+              ]
+            ],
+            [
+              [
+                9
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                10
+              ]
+            ],
+            [
+              [
+                10
+              ]
+            ],
+            [
+              [
+                10
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                11
+              ]
+            ],
+            [
+              [
+                11
+              ]
+            ],
+            [
+              [
+                11
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                12
+              ]
+            ],
+            [
+              [
+                12
+              ]
+            ],
+            [
+              [
+                12
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                13
+              ]
+            ],
+            [
+              [
+                13
+              ]
+            ],
+            [
+              [
+                13
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                14
+              ]
+            ],
+            [
+              [
+                14
+              ]
+            ],
+            [
+              [
+                14
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                15
+              ]
+            ],
+            [
+              [
+                15
+              ]
+            ],
+            [
+              [
+                15
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                16
+              ]
+            ],
+            [
+              [
+                16
+              ]
+            ],
+            [
+              [
+                16
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                17
+              ]
+            ],
+            [
+              [
+                17
+              ]
+            ],
+            [
+              [
+                17
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                18
+              ]
+            ],
+            [
+              [
+                18
+              ]
+            ],
+            [
+              [
+                18
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                19
+              ]
+            ],
+            [
+              [
+                19
+              ]
+            ],
+            [
+              [
+                19
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                20
+              ]
+            ],
+            [
+              [
+                20
+              ]
+            ],
+            [
+              [
+                20
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                21
+              ]
+            ],
+            [
+              [
+                21
+              ]
+            ],
+            [
+              [
+                21
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                22
+              ]
+            ],
+            [
+              [
+                22
+              ]
+            ],
+            [
+              [
+                22
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                23
+              ]
+            ],
+            [
+              [
+                23
+              ]
+            ],
+            [
+              [
+                23
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                24
+              ]
+            ],
+            [
+              [
+                24
+              ]
+            ],
+            [
+              [
+                24
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                25
+              ]
+            ],
+            [
+              [
+                25
+              ]
+            ],
+            [
+              [
+                25
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                26
+              ]
+            ],
+            [
+              [
+                26
+              ]
+            ],
+            [
+              [
+                26
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                27
+              ]
+            ],
+            [
+              [
+                27
+              ]
+            ],
+            [
+              [
+                27
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                28
+              ]
+            ],
+            [
+              [
+                28
+              ]
+            ],
+            [
+              [
+                28
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                29
+              ]
+            ],
+            [
+              [
+                29
+              ]
+            ],
+            [
+              [
+                29
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                30
+              ]
+            ],
+            [
+              [
+                30
+              ]
+            ],
+            [
+              [
+                30
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                31
+              ]
+            ],
+            [
+              [
+                31
+              ]
+            ],
+            [
+              [
+                31
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                32
+              ]
+            ],
+            [
+              [
+                32
+              ]
+            ],
+            [
+              [
+                32
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                33
+              ]
+            ],
+            [
+              [
+                33
+              ]
+            ],
+            [
+              [
+                33
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                34
+              ]
+            ],
+            [
+              [
+                34
+              ]
+            ],
+            [
+              [
+                34
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                35
+              ]
+            ],
+            [
+              [
+                35
+              ]
+            ],
+            [
+              [
+                35
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                36
+              ]
+            ],
+            [
+              [
+                36
+              ]
+            ],
+            [
+              [
+                36
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                37
+              ]
+            ],
+            [
+              [
+                37
+              ]
+            ],
+            [
+              [
+                37
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        },
+        {
+          "positions": [
+            [
+              [
+                38
+              ]
+            ],
+            [
+              [
+                38
+              ]
+            ],
+            [
+              [
+                38
+              ]
+            ]
+          ],
+          "visual_count": null,
+          "ds_rows": null
+        }
+      ],
+      "layer_cache_shapes": [
+        [
+          {
+            "key": [
+              1,
+              2,
+              6,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              6,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              6,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              6,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              6,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              6,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              7,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              7,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              7,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              8,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              8,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              8,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              8,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              8,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              8,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              9,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              9,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              9,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              9,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              9,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              9,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              10,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              10,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              10,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              10,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              10,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              10,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              11,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              11,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              11,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              11,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              11,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              11,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              12,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              12,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              12,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              13,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              13,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              13,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              13,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              13,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              13,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              14,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              14,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              14,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              15,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              15,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              15,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              15,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              15,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              15,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              16,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              16,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              16,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              16,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              16,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              16,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              17,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              17,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              17,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              17,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              17,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              17,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              18,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              18,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              18,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              18,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              18,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              18,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              19,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              19,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              19,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              19,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              19,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              19,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              20,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              20,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              20,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              20,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              20,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              20,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              21,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              21,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              21,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              21,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              21,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              21,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              22,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              22,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              22,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              22,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              22,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              22,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              23,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              23,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              23,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              23,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              23,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              23,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              24,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              24,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              24,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              24,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              24,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              24,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              25,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              25,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              25,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              25,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              25,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              25,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              26,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              26,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              26,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              26,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              26,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              26,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              27,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              27,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              27,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              27,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              27,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              27,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              28,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              28,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              28,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              28,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              28,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              28,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              29,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              29,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              29,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              29,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              29,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              29,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              30,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              30,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              30,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              30,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              30,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              30,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              31,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              31,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              31,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              31,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              31,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              31,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              32,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              32,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              32,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              32,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              32,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              32,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              33,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              33,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              33,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              33,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              33,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              33,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              34,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              34,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              34,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              34,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              34,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              34,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              35,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              35,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              35,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              35,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              35,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              35,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              36,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              36,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              36,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              36,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              36,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              36,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              37,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              37,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              37,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              37,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              37,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              37,
+              8
+            ]
+          }
+        ],
+        [
+          {
+            "key": [
+              1,
+              2,
+              38,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              38,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              38,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              38,
+              8
+            ]
+          },
+          {
+            "key": [
+              1,
+              2,
+              38,
+              8
+            ],
+            "value": [
+              1,
+              2,
+              38,
+              8
+            ]
+          }
+        ]
+      ]
+    }
+  ],
+  "disabled_output_equals_unpatched": true,
+  "cuda_initialized": false
+}

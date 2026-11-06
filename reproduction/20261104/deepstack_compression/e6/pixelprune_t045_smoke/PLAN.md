@@ -1,0 +1,9 @@
+# PixelPrune threshold 0.45: four-image diagnostic
+
+This post-hoc diagnostic checks the author's `pred_2d`, `max`, anchored selector at threshold 0.45, patched before loading the Qwen3-VL model. The fixed sample is the first K>1 CPU-calibration example per task plus the first different CPU K=1 example: DocVQA 16539 (CPU K568), TextVQA 39421 (K499), AI2D 368100 (K500), DocVQA 31078 (K1). The sample was deliberately chosen after DEV results; it is not representative or preregistered.
+
+The worker binds actual processor inputs to accepted E1 identities and compares the author GPU-selected full index sequence with the frozen CPU-calibration sequence. A mismatch remains a recorded diagnostic failure and is not silently omitted. It records main/text and three DeepStack runtime checks, position and 36-layer KV shapes/positions, and actual natural generation under the E1 scalar recipe. The full prompt and raw generated token IDs are fsynced immediately after `generate` returns, before decoding. A failed arm is preserved; worker completion means all attempts recorded, not that all checks passed.
+
+The retained evidence does not contain complete visual/DeepStack/KV tensors, so those checks cannot be independently reconstructed element by element. Preflight parsed previously accepted E1 DEV mixed prediction records solely for identity; no new answer label was opened. No accuracy or latency result, or equal-K comparison, is implied. GPU execution requires the launcher's separate independent prelaunch review and root scheduling.
+
+Preflight is `preflight001.json` with `monitor_preflight001` (completed/0), source/CPU expected indices are fixed in `plan001.json`, and original detailed observations will be under `run_smoke001/observations/` if scheduled. GPU selector behavior, especially the CPU K=1 edge, remains unknown until executed and independently checked.

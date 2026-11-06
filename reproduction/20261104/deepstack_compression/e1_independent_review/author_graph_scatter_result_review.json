@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "cases": [
+    {
+      "case": "index_assign",
+      "outcome": "failed",
+      "failure_types": [
+        "AcceleratorError"
+      ],
+      "comparisons": 0
+    },
+    {
+      "case": "scatter_assign",
+      "outcome": "completed",
+      "failure_types": [],
+      "comparisons": 0
+    },
+    {
+      "case": "index_read",
+      "outcome": "completed",
+      "failure_types": [],
+      "comparisons": 0
+    },
+    {
+      "case": "boolean_mask_assign",
+      "outcome": "completed",
+      "failure_types": [],
+      "comparisons": 0
+    },
+    {
+      "case": "k_001",
+      "outcome": "completed",
+      "failure_types": [],
+      "comparisons": 6
+    },
+    {
+      "case": "k_016",
+      "outcome": "completed",
+      "failure_types": [],
+      "comparisons": 6
+    },
+    {
+      "case": "k_128",
+      "outcome": "completed",
+      "failure_types": [],
+      "comparisons": 6
+    },
+    {
+      "case": "k_256",
+      "outcome": "completed",
+      "failure_types": [],
+      "comparisons": 6
+    },
+    {
+      "case": "k_512",
+      "outcome": "completed",
+      "failure_types": [],
+      "comparisons": 6
+    }
+  ],
+  "case_input_sha256": "f651a859849d1e0c84119a7b708ffff794cbe8beaf60e0d9a8bf63d5ae24f95d",
+  "formal_sha256": "9de7551b4d1ffcc871afc6dfc29e484df8b34b02a10c911adb9a152fc1ba1546",
+  "formal_started_sha256": "90fa0bf092cdbdeb69c88ad633f4591bea9add5b560d237e8b1d13269d20ec66",
+  "formal_terminal_sha256": "4c3810703fc6697ee1fbf7827c9bf1abf4583a23422d33d1bbe7300e6a6933c7",
+  "run_started_sha256": "8464c47e97461adcfb61ee574778c66b4d65b884907940ef06ef37e52e4f86e4",
+  "run_terminal_sha256": "90a0e0e8e8279a35354c00452930385a367352fcd4cc412236089d794eec2f9b",
+  "plan_sha256": "bb68bcf5a2a89cb6fd712f9f4c48d627947957c24300b84cf996123e81e20fc9",
+  "verification_plan_sha256": "8a5b06770273ab6f0a1441d9a357feb04cec0d76aae968d6dc49b17e7a23bb91",
+  "reviewer_sha256": "fcd3adb4bc1621ce07a2cad35d119fdde11d6839383d7e31d9984bc28b9366cb",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": [
+    "CUDA errors may surface asynchronously, so a reported primitive failure is not by itself proof of the cause",
+    "one real archived case plus synthetic variants; no universal numerical identity or full-model claim",
+    "allocator fraction excludes CUDA context, driver and graph metadata; no end-to-end TTFT claim"
+  ],
+  "errors": []
+}

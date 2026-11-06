@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "scope": "synthetic CPU statistics contract only, no scoring or GT",
+  "plan_sha256": "1589b540c6ddc355a4a89ba2b416642fe7c901794e87c62be826b1dc2bc00915",
+  "source_sha256": "d96c60caeae78ef29d4b05e98347ac9ecf30180fe7d198367efb3807531aa877",
+  "test_sha256": "b0cb40162e903c775acdd4dae9a14629b14da070a7aa11c7590408a868495eef",
+  "prior_cpu_started_sha256": "6dbb801b382827ac03c58237b61e80a8f160612a12aafccf72f1ff60b59ea3b8",
+  "prior_cpu_terminal_sha256": "7a1575230052eaeb662ef47bd587e6f81d5d691a2af6606a86fd42dd39f4f19e",
+  "reviewer_sha256": "ae7b8e9de2c641dcbd9eb143aac87a973e67357f88ddef26fa77b983e60021e8",
+  "contrasts_verified": 11,
+  "checks": [
+    "independent unequal-cluster resampling",
+    "all signed contrasts",
+    "Bonferroni 98.333% primary intervals",
+    "95% exploratory intervals",
+    "question weighting and positive/negative counts"
+  ],
+  "GT_opened": false,
+  "scoring_performed": false
+}

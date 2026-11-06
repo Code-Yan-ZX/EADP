@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "preflight_only": true,
+  "GPU_authorized": false,
+  "GT_opened": false,
+  "existing_DEV_predictions_opened": true,
+  "scoring_performed": false,
+  "errors": [],
+  "plan_sha256": "e2e9ece33a2e92af609145e175bb18f7c17c7b0f0bf77b3fff930261f16b15c9",
+  "worker_preflight_sha256": "bae16a8bca0b6fda6e7ed02bf68604990adac695c0ebcdf3de2f3e07c9755e8d",
+  "launch_sha256": "24022ac208506a3c48eb4188e2f6d00a89e535ce91242315d3913ea705380ef8",
+  "identity_sha256": "4bc27c3a524b2ab1d14edd79c36525e40281c7420c71d347cb2687dc05f4598d",
+  "exit_sha256": "1542017e383cbcb4d354892dabfaab9c03b46f639dcd5502c8dcb525d94b812d",
+  "started_sha256": "873cd68e029ce398ad89c0922fb2b99381d66134acc94317691080715ed55bdb",
+  "terminal_sha256": "03d42b076d798ba659f1736d98115da288011ac37843f7ffb215750c5e154b70",
+  "reviewer_sha256": "11ad3a9ac77b1637bdd39e4faced733b1b8012a1483158b162400391e9386ccd",
+  "input_count": 193,
+  "weights": 4,
+  "container_id": "618a2b89887fcfbfc495101acde4f73d3674ebaa5c83c79f566dd945dd3fce37",
+  "bind_mounts": 12,
+  "limitations": [
+    "actual processor tensors checked online; recorded hashes/metadata are reference values",
+    "four weight payload hashes performed by preflight; this review checks recorded hashes and actual endpoint stats",
+    "four prior t020 generated files opened only for SHA; accepted E1/older six-arm mixed records used for identity",
+    "host launcher extra smoke remains to be explicitly bound in GPU plan",
+    "no model, CUDA, or GPU run authorized"
+  ]
+}

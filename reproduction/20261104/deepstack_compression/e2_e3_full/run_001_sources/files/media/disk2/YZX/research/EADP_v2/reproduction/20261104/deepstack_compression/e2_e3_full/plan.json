@@ -1,0 +1,39 @@
+{
+  "stage": "cpu_design_only",
+  "scope": "384 frozen DEV questions, 128 per task, no labels or scoring during generation",
+  "selection": {
+    "policy": "every frozen DEV question, original input order",
+    "question_count": 384,
+    "image_groups": 384
+  },
+  "e2_arms": [
+    "000",
+    "100",
+    "010",
+    "001",
+    "110",
+    "101",
+    "011",
+    "111"
+  ],
+  "e3_new_arms": [
+    "PERM",
+    "MEAN"
+  ],
+  "e3_endpoint_aliases": {
+    "OFF": "E2/000",
+    "MATCH": "E2/111"
+  },
+  "endpoint_policy": "Generate E2/000 and E2/111 anew for each question; E1 endpoints are comparisons, not substituted predictions. E3 uses these same-run endpoints by question and immutable generation-record hash.",
+  "physical_generations_expected": 3840,
+  "tensor_retention": "fixed three DEV anchors (one per task): full original visual/DS, selected-before and actual-injected three-slot arrays; remaining questions: only per-slot/feature summaries, selection, positions, output and runtime intervention/injection checks; non-anchor tensors cannot be reconstructed offline",
+  "generation": {
+    "budget": 256,
+    "mode": "natural",
+    "do_sample": false,
+    "max_new_tokens": 2048
+  },
+  "scoring": "Each family remains locked until its entire 384-question inventory has passed formal and independent no-GT acceptance and actual exit checks.",
+  "guard": "No GPU execution until completed E4-B identity and actual E2/E3 smoke acceptance/review, frozen independent code review, actual same-container full preflight, bounded supervisor and exclusive GPU.",
+  "diagnostic_anchor_policy": "Use the same three preselected and independently accepted E2/E3 smoke questions, one per task; freeze identities before full panel and do not select by predictions."
+}

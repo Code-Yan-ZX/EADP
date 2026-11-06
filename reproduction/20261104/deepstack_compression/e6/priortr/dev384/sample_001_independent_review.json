@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "sample_sha256": "c74d56b67836926d12d1c4e5065fc0eb5cea21bd395d6070754da0bc1d9764b3",
+  "reviewer_sha256": "fa40f6169e4afed51fd262b65554b08cad6cd81c1d1447eaaa139b691c6c2eb3",
+  "freeze_source_sha256": "3c98fe176576fb1f39f8ff722c596ee6162ae29e269904a687ac62f327944a1c",
+  "freeze_started_sha256": "cb5bf023dd7a384183cb2169c52ab71db7c3f88fc0eacf2c9a113e4e7a39e984",
+  "freeze_terminal_sha256": "35d2a07617ad28b3a1559ef80e9c799ccac097f77056ca6990f01deb723283db",
+  "input_sha256": "f3fef75929f88fa21b96458337030c47f2b7afaa596f540879afddd72847f59d",
+  "panel_sha256": "5696221e24ab189c483288b1b0314fd65143450bd3a23a9ba16fee200aa2f71b",
+  "questions_verified": 384,
+  "counts": {
+    "DocVQA_VAL": 128,
+    "TextVQA_VAL": 128,
+    "AI2D_TEST": 128
+  },
+  "prior_exposure_overlap": {
+    "prior_dev32_groups": 32,
+    "historical_e0_anchor_groups": 1
+  },
+  "GT_opened": false,
+  "predictions_opened": false,
+  "scoring_performed": false,
+  "limits": [
+    "Entire existing DEV panel, frozen after earlier DEV findings; no prospective pre-score selection claim.",
+    "All 1152 outputs are to be newly generated; this audit contains no model outputs or labels.",
+    "PriorTR SDPA environment differs from E1/E4 FA2; no direct timing or numerical equivalence claim."
+  ]
+}

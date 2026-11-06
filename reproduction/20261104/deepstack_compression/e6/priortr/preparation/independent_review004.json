@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "single DEV PriorTR CPU source/environment audit and synthetic checks; no real-model GPU inference or score",
+  "cpu_proof_sha256": "e223f3e8437ee2042a45d0ff27737729d976b7a44f65787ff7280f25b88bd516",
+  "cpu_terminal_sha256": "154a3c33cf1836c89d2f63019e0f33d66c32374a43baea396156d434eecb2c7d",
+  "source_sha256": {
+    "admission.py": "33c4b72aa80044e5303e35689d83ed451676deb0c16721503b3099642934048b",
+    "preprocess.py": "7c29472627883e127b6a7679a67418a9d1843c2f1b625360c17fcb58f5e60b67",
+    "trace.py": "4cc397b19b1c32e4bb24b404d21e2f5c0234c782a067216f1646b63eee0f8e25",
+    "smoke_worker.py": "aa0fdb7890a5c1488a147a3b2755114a518474ab2fd5a9cc36ef843a248628cb",
+    "smoke_launch.py": "efc45b27b19a39c0f128539e66776200aedbebf1fb7b5111bd164273abd4eaef",
+    "smoke_verify.py": "32a4223a0ea58caceea1d74c4cfbc4b30040ab6144e0fbf07af1685635ed0035",
+    "test_trace.py": "06736d7bdf256ba4313335d626b60fa9812dfa50d02f167a4028f920b860fd73",
+    "test_env_contract.py": "77aa87c4723c269f65ca2609d6d43ce5df63ce7e7e057a3af27bf41436576c61",
+    "test_launch.py": "4c9165814f0ebba005943fe862c85e7996d90089111edd4b0484da0f27beb59e",
+    "env_contract.py": "e5165ab9e3322d5d8e60ec39e0fcbc44e47c6394f458a5cc27873fd6e2564b07",
+    "cpu_validation.py": "4f9043b1c74523b3c5808b00e8e7ac4bafdb76929c414f964f12fec786402fef"
+  },
+  "plan_sha256": "8aec21febebd95d4d9a14ca0e03ca71d7c507f25f05c884b1ade14b4da0e1a5a",
+  "processor_sha256": "6972f12b69b28dc73e728704b6b9a7e390ba935249a2e2d34cde560744386774",
+  "env_fingerprint_sha256": "f90ff9fff9e654ccc3605cf0f116912cdd159b6d9ef698ef32a3e17f4f4030ef",
+  "environment_provenance_sha256": "16a3284ef487d39e80663193ded50e37d5e202a148d386ddbf4f761b189e534c",
+  "independent_cpu_terminal_sha256": "83558540872562317b8ef4ac891bdda114ef273e3d99c7160682795f5f8cf32a",
+  "independent_env_terminal_sha256": "47efefd5319dfd2bd50478fb9a350b42825da6ba9acbd8b977afedf82bc7d604",
+  "checks": [
+    "actual separately imported stock versus patched-disabled and keep-all remain separate cases",
+    "DEV input, prompt, image and processor hashes tied to E1; no GT scoring",
+    "actual priortr selected tokens, per-layer injection and decode KV trace, forced prefix, logits finite and natural/forced prefill comparison reviewed",
+    "immediate output journal before hook cleanup, bounded container lifecycle and exit verification reviewed",
+    "40,756 runtime files and 1,399 symlinks independently rehashed; priortr 16 source files match fixed E5 copy and isolated import paths/versions checked",
+    "synthetic multimodal trace versus uninstrumented logits, environment tamper and launcher exit tests independently rerun with CPU-only supervisor"
+  ],
+  "limitations": [
+    "GPU single-question diagnostic remains unrun; all seven model behaviors and endpoint identities remain empirical",
+    "PriorTR uses distinct torch/transformers and SDPA backend from E1 FA2; do not claim backend parity or timing parity",
+    "environment provenance reports pip check metadata issue for decord despite successful actual CPU import, and notes two redownloaded wheel hashes were not first-download hashes",
+    "KV trace checks lengths and positions; this review does not claim raw KV content identity"
+  ],
+  "review_unix": 1793815460.4869993
+}

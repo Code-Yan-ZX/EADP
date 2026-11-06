@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/home/dell/miniconda3/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "reproduction/20261104/deepstack_compression/e2_e3_contract",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "start_unix": 1793808025.1949897,
+  "end_unix": 1793808026.9031656,
+  "exit_code": 0,
+  "output": "test_all_e2_patterns_keep_original_slot_and_dtype (test_interventions.Interventions.test_all_e2_patterns_keep_original_slot_and_dtype) ... ok\ntest_mean_is_selected_row_mean_per_slot (test_interventions.Interventions.test_mean_is_selected_row_mean_per_slot) ... ok\ntest_off_and_match_preserve_three_slot_order (test_interventions.Interventions.test_off_and_match_preserve_three_slot_order) ... ok\ntest_perm_fixed_sha_seed_and_common_nonfixed_row_mapping (test_interventions.Interventions.test_perm_fixed_sha_seed_and_common_nonfixed_row_mapping) ... ok\ntest_reject_invalid_geometry_bits_and_hash (test_interventions.Interventions.test_reject_invalid_geometry_bits_and_hash) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.006s\n\nOK\n",
+  "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:12:24) [GCC 11.2.0]",
+  "torch": "2.8.0+cu128",
+  "cuda_initialized_in_recorder": false,
+  "implementation_sha256": "feea1a16176feab1d2461cc7f32f9c1c63cc2911d7a8c02bcbb495643407242c",
+  "tests_sha256": "168347120f8e1747d4c14614cbe807dcd7c4217784171855c2782053a05e4333",
+  "scope": "CPU tensor contracts; no VLM model, generation, GPU, GT or scores"
+}

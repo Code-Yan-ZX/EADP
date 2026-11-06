@@ -1,0 +1,25 @@
+{
+  "status": "frozen",
+  "analysis_plan_sha256": "a1efa09ac6ad49dd227317e41f621c2139b134be9e93b74605fcedda78f55540",
+  "pilot_plan_sha256": "94b8a159f4a787b541b9f41b27a62921e3a8a6a0b44ff648d8d35d46d5725f7f",
+  "freeze_source_sha256": "db0f55b2dcc25f355098854d0966a5bf60e6b9ae2ce68561ea9c8199b74ad62c",
+  "n_images": 32,
+  "by_task": {
+    "DocVQA_VAL": 11,
+    "TextVQA_VAL": 11,
+    "AI2D_TEST": 10
+  },
+  "measured_jobs": 1280,
+  "warmup_jobs": 240,
+  "gpu_authorized": false,
+  "GT_opened": false,
+  "predictions_opened": false,
+  "timing_results_opened": false,
+  "posthoc_exploratory": true,
+  "limitations": [
+    "prior DEV and pilot evidence already observed",
+    "repeat measurements are not independent images",
+    "fixed32 includes 31 decode forwards after prefill",
+    "background interference may not be attributable per sample"
+  ]
+}

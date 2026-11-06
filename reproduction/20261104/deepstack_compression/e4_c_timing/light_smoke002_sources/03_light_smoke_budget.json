@@ -1,0 +1,17 @@
+{
+  "stage": "light_adapter_identity",
+  "inner_timeout_seconds": 3600,
+  "outer_timeout_seconds": 3720,
+  "journal_stale_seconds": 1200,
+  "snapshot_seconds": 3600,
+  "poll_seconds": 15,
+  "grace_seconds": 90,
+  "minimum_free_bytes": 32212254720,
+  "budget_source": "../initial_plan.json",
+  "budget_source_sha256": "2a11cfcc2dc9404eac218f1f727e39508a687a73e0343101ae564be3e99c30e6",
+  "budget_start_unix": 1793806214,
+  "budget_end_unix": 1794065414,
+  "gpu_policy": "exclusive",
+  "basis": "B identity: eight generations including model load and diagnostic arrays completed in 405.57 seconds; this 16-generation diagnostic is not a latency benchmark",
+  "limitation": "No observed single-question 2048-token worst case; stale threshold is a bounded operational policy, not a guarantee of no false stop. Preserve partial records and stop the container on timeout."
+}

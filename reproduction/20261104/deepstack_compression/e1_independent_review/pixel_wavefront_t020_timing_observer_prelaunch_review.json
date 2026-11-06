@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "supplementary observer and frozen post-run commands only; no GPU authorization",
+  "GT_opened": false,
+  "GPU_used": false,
+  "model_loaded": false,
+  "samples_used_for_filtering": false,
+  "observer_plan_sha256": "9af70e60a2979554ebc35af9f0418892f2ec818dbea2cc76c9e5ce4fd705c3ee",
+  "supplement_plan_sha256": "b2146b3b469c4e55b4d62cae01b69acd703f917016ac20fbbed8c177a3643632",
+  "gpu_plan_sha256": "196f4b82fc9a0e533189a108fd0ea585cf06ceeadc0a5a6398e9a091a396f16d",
+  "formal_plan_sha256": "7b966368d0f86b13af72db7be01fe3a1efbad8b0a42f74bbdc11175755bfec38",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_observer/observe.py": "6f789e9af8003b4bc94465b482cfc9c566e90fbec88c9b3216d95d4c1c210b3d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_observer/test_observe.py": "c9aab7a5f5c464abc2bd90931858dc277d3a7c1c2305263f1e3630eb5733abce",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_observer/freeze.py": "53d18e9be0c36ac443783bf832515374c256ef461a5b14c0c7d725796c4f6d37"
+  },
+  "supplement_sources": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_exec_supplement/freeze.py": "cf809bad42d92f5e78eac51f1ac6645d4205517c8c6da00d601e95a6d00b4b91",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_accept_final/snapshot_entry.py": "3a312d8167a7ae01faf48774b6668275f9260c5207000588909f9d36e2ea52df",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_accept_final/verify_entry.py": "56e6e53f19e32d1a955ba8a2780f58b820680afa1a45d4515093c2293948d006",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_accept_final/snapshot.py": "990f729a9d2923505a2c08d12eb4ee7e663bd690478cce965ea3fa2b4780f1c4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_accept_final/verify.py": "3f5f2d88879cd00d698afe61f87bcb12ebec0f00c9a213f2ae1ab555f9cb3ca2"
+  },
+  "freeze_supervision": {
+    "observer_freeze": {
+      "started_sha256": "220ff8d21d83c68618a7d68f1a992fc3d5f43494698ebe0336fdf3e28187380f",
+      "terminal_sha256": "90e286d7811a6e90b6edbbfc0e929f507695b6cf5b4fdd778112faec07afdd4e"
+    },
+    "supplement_freeze": {
+      "started_sha256": "fc11b4e54e3db9c7c42e9abb828f977a4252ae98566f4f0c64de3eb6e18f6ea3",
+      "terminal_sha256": "d1fe7eb93b53f6903331478afedeaaf0ea5e4a4e6cec93df41a00a07df9bf4f0"
+    }
+  },
+  "independent_cpu_tests": 2,
+  "limitations": [
+    "Queries and first fsync have recorded boundaries; second fsync and other background actions have unknown windows.",
+    "Point observations cannot prove machine isolation or identify all interference; retain all samples.",
+    "Observer can disturb timing and query failures or missing coverage cannot be interpreted as no interference.",
+    "Supplement is not automatically enforced by the GPU gate; actual run, observer coverage and post-run proofs require separate verification."
+  ],
+  "reviewer_sha256": "75dace1afe203320faa3724b31ed38dfbe4cb24356dd66bb319debf603eb6e56",
+  "errors": []
+}

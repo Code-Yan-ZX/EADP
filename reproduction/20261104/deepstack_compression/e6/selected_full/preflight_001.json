@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "exit": {
+    "returncode": 0,
+    "timed_out": false,
+    "interrupted": null,
+    "container_stopped_verified": true,
+    "client_exited_while_container_running": false,
+    "container_identity": {
+      "container_id": "27eab6dc196e901f5c8c8e83c9cd86ccf7ce20463eabe50bd581b8c297bf8065",
+      "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+      "host_init": {
+        "pid": 508070,
+        "start_ticks": 1396019936,
+        "session_id": 508070,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      }
+    },
+    "errors": [],
+    "container_exit_code": 0,
+    "controller": {
+      "pid": 507993,
+      "start_ticks": 1396019893,
+      "session_id": 507993,
+      "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+    },
+    "name": "eadp-selected-full-preflight-001",
+    "finished_unix": 1793828722.6035445,
+    "gpu_pids_after": []
+  },
+  "container_id": "27eab6dc196e901f5c8c8e83c9cd86ccf7ce20463eabe50bd581b8c297bf8065",
+  "container_running": false,
+  "container_pid": 0,
+  "container_exit_code": 0,
+  "launch_sha256": "44175a0e8ac7a1a8f9d921fca9dc58cb695c4e95a4fb81dbd69c3126804f0ddf",
+  "log_sha256": "f28429667ca8aa7f6fd9b04e6ff42deeb635fe2b8baa64bd2bad8c5bb280ff4a",
+  "exit_sha256": "e3a6c74a368140453cd874e6f28543acf4c146ac27c490c55daa98f2108c05b9",
+  "receipt_sha256": "ea6a179c8deefc40f5f1ec516bbb47ad011c5ccc285186a0d326f4846a0e2807",
+  "cpu_proof_sha256": "c1a19f38a21c9eb2510e5d12720c3720a504f39dd0eafedfe051e9b35796d0fd",
+  "preflight_sha256": "1532b8140127b7e545f8820b85e6c8111f647f16665347490d2f304babbc9378",
+  "result": {
+    "status": "passed",
+    "cuda_initialized": false,
+    "model_loaded": false,
+    "GT_opened": false,
+    "predictions_opened": false,
+    "inputs_verified": 384,
+    "weights_sha256_verified": 4,
+    "source_count_verified": 126,
+    "source_manifest_sha256": "71a6de304188f9df7aa60be9cd481cdae7b741b01ed79f821868c87c8808268e",
+    "versions": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "transformers": "4.57.1",
+      "flash-attn": "2.8.3",
+      "accelerate": "1.12.0",
+      "qwen-vl-utils": "0.0.14",
+      "Pillow": "12.0.0",
+      "tokenizers": "0.22.2",
+      "numpy": "2.2.6",
+      "safetensors": "0.7.0",
+      "timm": "1.0.24"
+    },
+    "classes": {
+      "CDPruner": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/model/cdpruner.py",
+      "DivPruner": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/model/divpruner.py",
+      "Qwen3VLChatCDPruner": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py",
+      "Qwen3VLChatDivPruner": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py"
+    }
+  },
+  "actual_mount_count_verified": 13,
+  "started_unix": 1793828690.4998622,
+  "finished_unix": 1793828722.6345212,
+  "scope": "no GPU, model load, GT or predictions; no GPU authorization"
+}

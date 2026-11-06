@@ -1,0 +1,202 @@
+{
+  "status": "completed",
+  "plan_sha256": "3a44871e7522b7ba890c2417d230df5f16426f03cea03ce76584c04d3cb01ea7",
+  "scores_sha256": "f4d29d7ea35b13f9dc0fcb954b389f3e9f6517c98419149ed238ebe6ac7e6afb",
+  "independent_review_sha256": "2e472c7b863bd9729a3b075b9b31df9a94a3e9214d0e174c96fa37810eba88cd",
+  "tasks": {
+    "DocVQA_VAL": [
+      {
+        "range": [
+          1,
+          64
+        ],
+        "count": 11,
+        "mean_t045_pct": 0.0,
+        "mean_t0_on_same_items_pct": 92.2077922077922,
+        "paired_difference_pp": -92.2077922077922,
+        "eos": 9,
+        "truncated": 2
+      },
+      {
+        "range": [
+          65,
+          128
+        ],
+        "count": 5,
+        "mean_t045_pct": 40.0,
+        "mean_t0_on_same_items_pct": 80.0,
+        "paired_difference_pp": -40.0,
+        "eos": 5,
+        "truncated": 0
+      },
+      {
+        "range": [
+          129,
+          256
+        ],
+        "count": 19,
+        "mean_t045_pct": 85.80465587044534,
+        "mean_t0_on_same_items_pct": 87.82894736842105,
+        "paired_difference_pp": -2.0242914979757103,
+        "eos": 19,
+        "truncated": 0
+      },
+      {
+        "range": [
+          257,
+          512
+        ],
+        "count": 62,
+        "mean_t045_pct": 88.97275307972652,
+        "mean_t0_on_same_items_pct": 92.24659748853298,
+        "paired_difference_pp": -3.273844408806468,
+        "eos": 62,
+        "truncated": 0
+      },
+      {
+        "range": [
+          513,
+          1024
+        ],
+        "count": 31,
+        "mean_t045_pct": 89.88351254480285,
+        "mean_t0_on_same_items_pct": 94.35483870967742,
+        "paired_difference_pp": -4.471326164874569,
+        "eos": 31,
+        "truncated": 0
+      }
+    ],
+    "TextVQA_VAL": [
+      {
+        "range": [
+          1,
+          64
+        ],
+        "count": 1,
+        "mean_t045_pct": 100.0,
+        "mean_t0_on_same_items_pct": 100.0,
+        "paired_difference_pp": 0.0,
+        "eos": 1,
+        "truncated": 0
+      },
+      {
+        "range": [
+          65,
+          128
+        ],
+        "count": 10,
+        "mean_t045_pct": 40.0,
+        "mean_t0_on_same_items_pct": 90.0,
+        "paired_difference_pp": -50.0,
+        "eos": 10,
+        "truncated": 0
+      },
+      {
+        "range": [
+          129,
+          256
+        ],
+        "count": 29,
+        "mean_t045_pct": 58.27586206896551,
+        "mean_t0_on_same_items_pct": 73.79310344827586,
+        "paired_difference_pp": -15.517241379310349,
+        "eos": 29,
+        "truncated": 0
+      },
+      {
+        "range": [
+          257,
+          512
+        ],
+        "count": 70,
+        "mean_t045_pct": 74.14285714285714,
+        "mean_t0_on_same_items_pct": 86.57142857142857,
+        "paired_difference_pp": -12.42857142857143,
+        "eos": 70,
+        "truncated": 0
+      },
+      {
+        "range": [
+          513,
+          1024
+        ],
+        "count": 18,
+        "mean_t045_pct": 67.77777777777777,
+        "mean_t0_on_same_items_pct": 84.44444444444444,
+        "paired_difference_pp": -16.66666666666667,
+        "eos": 18,
+        "truncated": 0
+      }
+    ],
+    "AI2D_TEST": [
+      {
+        "range": [
+          1,
+          64
+        ],
+        "count": 0,
+        "mean_t045_pct": null,
+        "mean_t0_on_same_items_pct": null,
+        "paired_difference_pp": null,
+        "eos": 0,
+        "truncated": 0
+      },
+      {
+        "range": [
+          65,
+          128
+        ],
+        "count": 0,
+        "mean_t045_pct": null,
+        "mean_t0_on_same_items_pct": null,
+        "paired_difference_pp": null,
+        "eos": 0,
+        "truncated": 0
+      },
+      {
+        "range": [
+          129,
+          256
+        ],
+        "count": 27,
+        "mean_t045_pct": 85.18518518518519,
+        "mean_t0_on_same_items_pct": 85.18518518518519,
+        "paired_difference_pp": 0.0,
+        "eos": 27,
+        "truncated": 0
+      },
+      {
+        "range": [
+          257,
+          512
+        ],
+        "count": 89,
+        "mean_t045_pct": 83.14606741573034,
+        "mean_t0_on_same_items_pct": 83.14606741573034,
+        "paired_difference_pp": 0.0,
+        "eos": 89,
+        "truncated": 0
+      },
+      {
+        "range": [
+          513,
+          1024
+        ],
+        "count": 12,
+        "mean_t045_pct": 66.66666666666667,
+        "mean_t0_on_same_items_pct": 66.66666666666667,
+        "paired_difference_pp": 0.0,
+        "eos": 12,
+        "truncated": 0
+      }
+    ]
+  },
+  "GT_opened": false,
+  "new_predictions_opened": false,
+  "limitations": [
+    "Cutpoints chosen after seeing DEV results; all bins including empty reported",
+    "Observed K depends on image and is not randomized; bin differences do not prove causal effect of K",
+    "Small strata and same-data exploration; no significance or generalization claims",
+    "No new labels, new model calls, actual timing or equal-compute claim"
+  ]
+}

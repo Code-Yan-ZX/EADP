@@ -1,0 +1,46 @@
+{
+  "returncode": 0,
+  "interrupted": null,
+  "timed_out": false,
+  "identity": {
+    "container_id": "2116e89aa8bab88b9be09904034c05b374213003b293d960677467feea600f0e",
+    "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "host_init": {
+      "pid": 323713,
+      "start_ticks": 1395336638,
+      "session_id": 323713,
+      "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+    }
+  },
+  "inspect": {
+    "id": "2116e89aa8bab88b9be09904034c05b374213003b293d960677467feea600f0e",
+    "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-04T19:50:57.579003675Z",
+      "FinishedAt": "2026-11-04T19:51:07.289030383Z"
+    },
+    "config": {
+      "Image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+      "Entrypoint": [
+        "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python"
+      ],
+      "Cmd": [
+        "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_timing/light_container_probe.py"
+      ]
+    },
+    "host_devices": [],
+    "device_requests": null
+  },
+  "error": null,
+  "source_unchanged": true,
+  "finished_unix": 1793821867.5869036
+}

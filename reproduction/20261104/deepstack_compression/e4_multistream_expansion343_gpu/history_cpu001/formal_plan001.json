@@ -1,0 +1,14 @@
+{
+  "scope": "prospective 343-image complete identity and norm-feature acceptance",
+  "images": 343,
+  "status_sequence": "343 images in frozen order with 343 record files and float64 4x1024 norm archives; first failure marks every remaining image not evaluated and prohibits passed",
+  "identity_requirements": "accepted E1 processor and prefill identity, accepted E4 same-task/qid/group/image/message K256 processor, main visual and three DS fingerprints, hook restoration and weight/source integrity",
+  "offline_reconstruction_boundary": "recompute eight frozen features from stored norm vectors; full high-dimensional tensors were not retained and their association to norms is online evidence",
+  "timing_boundary": "diagnostic setup, processor preflight, capture including processor visual selector one-token generation, feature CPU transfer and norm fsync are not TTFT",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "GPU_used_in_verification": false,
+  "prediction_scope": "already accepted E1/E4 DEV mixed records for identity; 343 new one-token diagnostic generations in durable journal",
+  "automatic_retry": false,
+  "prior_pilot": "bind nine-image v4 independent review and formal before reuse"
+}

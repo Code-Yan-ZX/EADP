@@ -1,0 +1,34 @@
+{
+  "stage": "post-run CPU evidence verification, defined after GPU completion before reading measurement values",
+  "plan_sha256": "4f0b135f0af34d0d256d1c2e8e3f71c572604451aa286dece965acf50ea2efaa",
+  "verifier_sha256": "5e52d5ecf129fd8b0a7cdd8662842b897f7e1b81b1b7c687926a36e0f6d053a2",
+  "test_started_sha256": "b699d47f2a023cce8c6ba29b1ed823004f42ceb267819ddc6c1964e80779077c",
+  "test_terminal_sha256": "e03a715fa143d63ab958ba4d1c2223e46e4bbb087413942214b0fd5703dcb661",
+  "test_script_sha256": "181821aebc7a8c8e40ece4a1dd74bbeb0c17eec5f71d66ab1ef523811af5205c",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "gpu_used": false,
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/monitor_verify001",
+    "--timeout",
+    "900",
+    "--snapshot-seconds",
+    "3600",
+    "--poll-seconds",
+    "5",
+    "--grace-seconds",
+    "30",
+    "--",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/verify.py",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/scatter_graph_ttft_v2/smoke001_verification.json"
+  ],
+  "limits": [
+    "formal verifier was frozen after GPU run, prior to reading measured values",
+    "formal proof requires independent post-run review before interpretation"
+  ]
+}

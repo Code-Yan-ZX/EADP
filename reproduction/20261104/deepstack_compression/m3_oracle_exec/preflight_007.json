@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "exit": {
+    "returncode": 0,
+    "timed_out": false,
+    "interrupted": null,
+    "container_stopped_verified": true,
+    "client_exited_while_container_running": false,
+    "container_identity": {
+      "container_id": "4164be51821d6c67d75156ec3868859e913ab05ecfec7c8e42953d870be450df",
+      "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+      "host_init": {
+        "pid": 377154,
+        "start_ticks": 1395527168,
+        "session_id": 377154,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      }
+    },
+    "errors": [],
+    "container_exit_code": 0,
+    "controller": {
+      "pid": 377087,
+      "start_ticks": 1395527148,
+      "session_id": 377087,
+      "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+    },
+    "name": "eadp-m3-oracle-preflight-007",
+    "finished_unix": 1793823935.0751088,
+    "gpu_pids_after": []
+  },
+  "container_id": "4164be51821d6c67d75156ec3868859e913ab05ecfec7c8e42953d870be450df",
+  "container_running": false,
+  "container_pid": 0,
+  "container_exit_code": 0,
+  "launch_sha256": "f392b83cfacff1c86dc5f0c3a155023825220f935f4fc26f584c8fd57b06c039",
+  "log_sha256": "6ca11496190f0e0ac954e7c1b51273001aee40847d7d5bad7e5832c013764271",
+  "exit_sha256": "d5b6147451ae62f53f58f23591f90cb0941f07783873d3ec11d75dc1492e1841",
+  "receipt_sha256": "81d11613f404dfa0f94f085bb0bd5736a71bc0bc56f42179738cea3348478ffc",
+  "cpu_proof_sha256": "80ebf0ae454cae664576fefbd26be7eb4ac043d136c4b9b640dda1446332ba26",
+  "preflight_sha256": "3f9a9042e0be998a8dd99bbac5674be0783a299fa41b91c4bc236d63025bf10d",
+  "result": {
+    "status": "passed",
+    "cuda_initialized": false,
+    "model_loaded": false,
+    "GT_opened": false,
+    "predictions_opened": false,
+    "inputs_verified": 384,
+    "sample_verified": 128,
+    "weights_sha256_verified": 4,
+    "pruner_path": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/model/pruner.py",
+    "wrapper_path": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py",
+    "tokenizer_length": 151669,
+    "prediction_journal_byte_hash_deferred": true
+  },
+  "started_unix": 1793823762.8124804,
+  "finished_unix": 1793823935.106384,
+  "scope": "no GPU, no model loading, no ground truth or predictions; not approval for real execution"
+}

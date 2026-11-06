@@ -1,0 +1,102 @@
+{
+  "source_proof_sha256": "44a1a273a307ddc2cd1028af7483ee6a80db9e8e1f244595de2fc14f4078dd80",
+  "n_sampled_questions_per_task": {
+    "DocVQA_VAL": 11,
+    "TextVQA_VAL": 11,
+    "AI2D_TEST": 10
+  },
+  "natural_per_task_arm_observed_seconds": {
+    "AI2D_TEST|P1-D0|natural": {
+      "count": 10,
+      "mean": 0.927144868299365,
+      "min": 0.8862594310194254,
+      "max": 1.0463065635412931
+    },
+    "AI2D_TEST|P1-D1|natural": {
+      "count": 10,
+      "mean": 0.9676032995805144,
+      "min": 0.8747043590992689,
+      "max": 1.0874999519437551
+    },
+    "AI2D_TEST|P3-D0|natural": {
+      "count": 10,
+      "mean": 0.8904606766998768,
+      "min": 0.785688403993845,
+      "max": 0.964911088347435
+    },
+    "AI2D_TEST|P3-D1|natural": {
+      "count": 10,
+      "mean": 0.9737006288021803,
+      "min": 0.9064117819070816,
+      "max": 1.0427068173885345
+    },
+    "DocVQA_VAL|P1-D0|natural": {
+      "count": 11,
+      "mean": 1.2584273324094035,
+      "min": 0.9210551716387272,
+      "max": 3.363628188148141
+    },
+    "DocVQA_VAL|P1-D1|natural": {
+      "count": 11,
+      "mean": 1.1938738672232085,
+      "min": 1.015825005248189,
+      "max": 1.4877363592386246
+    },
+    "DocVQA_VAL|P3-D0|natural": {
+      "count": 11,
+      "mean": 1.1114318198101087,
+      "min": 0.9304536916315556,
+      "max": 1.4015797190368176
+    },
+    "DocVQA_VAL|P3-D1|natural": {
+      "count": 11,
+      "mean": 1.192659586837346,
+      "min": 0.989651245996356,
+      "max": 1.4863802399486303
+    },
+    "TextVQA_VAL|P1-D0|natural": {
+      "count": 11,
+      "mean": 0.9966248969801448,
+      "min": 0.9065749477595091,
+      "max": 1.1456618215888739
+    },
+    "TextVQA_VAL|P1-D1|natural": {
+      "count": 11,
+      "mean": 1.0515069131824104,
+      "min": 0.9630248490720987,
+      "max": 1.2311060279607773
+    },
+    "TextVQA_VAL|P3-D0|natural": {
+      "count": 11,
+      "mean": 0.9977293867956508,
+      "min": 0.9016778655350208,
+      "max": 1.1662067752331495
+    },
+    "TextVQA_VAL|P3-D1|natural": {
+      "count": 11,
+      "mean": 1.0393591604449532,
+      "min": 0.9052980691194534,
+      "max": 1.2452680133283138
+    }
+  },
+  "observed_extrema_extrapolated_384x4_hours": {
+    "min": 0.39063554922739663,
+    "mean": 0.44801857554009467,
+    "max": 0.5926752556694879
+  },
+  "method": "For each task and arm, multiply the observed sample min/mean/max by 128 and sum; extrema are illustrative, not confidence bounds or worst cases.",
+  "limitations": "Smoke wall timings include its diagnostic observer and NPZ persistence; the full runner omits NPZ. Estimates exclude preflight and model loading, and 32 samples may miss long responses up to 2048 tokens. Forced decode smoke contributes to observed launcher elapsed but is not in this natural extrapolation. Not a latency benchmark, not applicable to E4 K128/K512/K1024.",
+  "smoke_total_launcher_seconds": 570.2649791426957,
+  "proposed_inner_timeout_seconds": 7200,
+  "proposed_outer_timeout_seconds": 7500,
+  "proposed_stall_seconds": 1800,
+  "outer_grace_seconds": 90,
+  "start_request_utc": "2026-11-04T16:41:41.684391+00:00",
+  "overall_budget_deadline_local": "2026-11-07 23:30 Asia/Shanghai",
+  "reviewed_source_sha256": {
+    "full_runner.py": "2c452cbc39f5908d3f70c6fc82647f44fd906070251aca2cf37fc552769cc042",
+    "full_launch.py": "44778b0c271c6dae8c2798c619db7d990eadea30d9dd5e7d07eff076f6b7a7d3",
+    "position_adapter.py": "8eba6c74310897956cb9bd024e7b19d333106aa2b3e0925e4fb941dc0024deea",
+    "contract.py": "9c560e09402e598f6ec34aa095b07f777871475e89ed35343563f99f03a12b1e"
+  }
+}

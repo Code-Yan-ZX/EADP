@@ -1,0 +1,45 @@
+{
+  "stage": "prospective Div/CD full DEV panel, approval absent",
+  "inputs_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/input_preparation_002/inputs.jsonl",
+  "inputs_sha256": "f3fef75929f88fa21b96458337030c47f2b7afaa596f540879afddd72847f59d",
+  "questions": 384,
+  "groups": 384,
+  "tasks": {
+    "DocVQA_VAL": 128,
+    "TextVQA_VAL": 128,
+    "AI2D_TEST": 128
+  },
+  "methods": [
+    "div",
+    "cd"
+  ],
+  "paths": [
+    "author_stock",
+    "adapted_p3_ds"
+  ],
+  "generation_count": 1536,
+  "recipe": "E1 frozen natural greedy; original Div/CD K256 selection",
+  "storage": "actual IDs, positions, runtime selector/DS checks, tensor hashes and outputs; full tensors only in prior smoke",
+  "inner_timeout_seconds": 10800,
+  "outer_timeout_seconds": 10980,
+  "progress_stale_seconds": 1800,
+  "snapshot_seconds": 3600,
+  "poll_seconds": 15,
+  "grace_seconds": 90,
+  "minimum_free_bytes": 32212254720,
+  "budget_end_unix": 1794065414,
+  "upstream_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_completion.json": "95981ce2400d7467ba93d3177275a0860a656fc8558080c243040663e40a52fb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_smoke/smoke_001_verification.json": "273768168a909bf65adf097fc4e71b24b0e2c67bdbd8e234ad31cb34c7c7daf7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_smoke/monitor_verify001/started.json": "be54162f33e8d738540cc184f04dffabeb61b1bff2637f682ad8c80ff6685592",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_smoke/monitor_verify001/terminal.json": "e9232cc1a3245627d0536b65c597b7d1bfe2ff3fa3097eee97f67e394a5b55d1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/selected_smoke001_review.json": "01655a4977dd41191cb81fb29241f4a4b37923cb10790458febb9abfaf4e1659",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_selected_smoke001/started.json": "57a2ac12b022b726f890480fee4ac1761f29a15c5328662ff00d4a48b6dd2557",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_selected_smoke001/terminal.json": "0f715f81ef5ea91a108cee9fd09a25b8f9f9b2a804f44ba4ed8d671b766eb5c0",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_smoke/smoke_001_sources/manifest.json": "20ab92e1e5a1c21759791bc0e5b46590babb9d3a48bc3887f0793daf29e4a284",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/initial_plan.json": "2a11cfcc2dc9404eac218f1f727e39508a687a73e0343101ae564be3e99c30e6"
+  },
+  "gt_opened": false,
+  "scoring": false,
+  "gpu_authorized": false
+}

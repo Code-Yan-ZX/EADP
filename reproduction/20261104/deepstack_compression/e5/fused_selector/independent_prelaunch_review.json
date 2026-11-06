@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "aae205e9db0e563ccaba6c65faa1a9fcd7c1bcf12d50aa994cb0e3700f2ea107",
+  "preflight_sha256": "e754b3b537aa7a7ef6f0926aa0888ba3bdd6c833e18b4c11ca32220f6bd6e5b7",
+  "preflight_started_sha256": "42dcaf725be15e83e040bb4961bf9e4fddce250e386c7a21427ac1eaa62002a1",
+  "preflight_terminal_sha256": "4121a0a38e9c3ce15dc12cceac06d1c1262b9955a8eed813f538fda042bfab0e",
+  "preflight_exit_sha256": "d6eb62bd8fd2eee9886aab83c7ccc353023e7b703923e0472371f3241aa2b116",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_fused_selector_prelaunch.py",
+  "reviewer_sha256": "7f49ebde2f92abfc4312b28f393301581891241e8ae2b50d8e302496489cff04",
+  "review_started_sha256": "b153df0b54834b929e527406527db71e66991d17267b6dfd219550bcdef2f0cb",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_fused_selector_prelaunch/terminal.json",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "scope": "single numerical input and synthetic GPU identity gate prior to component timing",
+  "limitations": [
+    "Triton and torch reduction order and rounding can differ; tie and near-tie tests do not prove universal selection identity",
+    "timing includes repeated kernel launches and allocations; only single fixed numeric input, not full model or deployed method",
+    "each measured selection revalidated; any observed mismatch invalidates run"
+  ],
+  "errors": []
+}

@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "scope": "no-GPU model-before-load processor/dependency preflight; GPU remains locked",
+  "plan_sha256": "8815b32b0dab83922a64f8fcb67ba357dddffc341cb77424441cef3537205632",
+  "sources_checked": 120,
+  "cuda_initialized": false,
+  "model_loaded": false,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "predictions_opened": true,
+  "prediction_scope": "accepted E1 mixed DEV journal and accepted E4 DEV outputs for input and same-arm identity",
+  "same_arm_references": 12,
+  "anchors": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "image_start": 4,
+      "attention_mask_all_one": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "image_start": 4,
+      "attention_mask_all_one": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "image_start": 4,
+      "attention_mask_all_one": true
+    }
+  ],
+  "weight_stats": {
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00001-of-00004.safetensors": [
+      2065,
+      68682060,
+      4902275944,
+      1766122873997458552,
+      1766132886669770948
+    ],
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00002-of-00004.safetensors": [
+      2065,
+      68682061,
+      4915962496,
+      1766122889153369070,
+      1766132901889718733
+    ],
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00003-of-00004.safetensors": [
+      2065,
+      68682062,
+      4999831048,
+      1766122889477367168,
+      1766132915557671854
+    ],
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00004-of-00004.safetensors": [
+      2065,
+      68682063,
+      2716270024,
+      1766122804961880310,
+      1766132929133625302
+    ]
+  },
+  "weight_payloads_hashed": 4,
+  "force_processor_code_identities_resolved": 2,
+  "torch": "2.8.0+cu128",
+  "transformers": "4.57.1",
+  "delta_contract": "batch 1 with unpadded attention: full delta = max(full position)+1-original length; adjusted=full delta+1024-K",
+  "keep_all_contract": "K1024 uses identity indices and zero greedy calls; real-model verification pending"
+}

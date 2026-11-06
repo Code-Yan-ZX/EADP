@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "returncode": 0,
+  "source_sha256_before": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/freeze_sample.py": "67c3b4f91aaeb9c5134f0c13ccfecb38f829ea1338ce3ac9a40d60197943c997",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/proposals.py": "3834985597cf38982c3197719c86a9128cd34a9cb16d90122bccddde553d8642",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/saliency.py": "45b47ed5e4e964dd96478d74c19eddb1776176cea2c88b66a1f956c1ec3b934e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/teacher_contract.py": "999903a279f5ffcd477a5af93b220b663ee53de8a43091f83f3c8fdff069f9c3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/oracle_teacher.py": "68864aa92f5ac4656ece2dcd77bc5b163bedbefac5e16409d94cf2a1654e7261",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/test_proposals.py": "f7d24d5c00a661fd244922f4238f21d93a5315a0f4861b4edada0f5dac681e2a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/test_saliency.py": "444b59fad99127d73605b3fbdfd3698b78c0f2befa7089ef79bcef7c45943c70",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/test_teacher_contract.py": "de58084b146519d319a0b0462ee1d1a7e9b586a98c948fc29b83266bab7758cc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/cpu_validation.py": "0792b45417f52a004960988d70a1a42eea0ca6670533abac3680c6765406f3ad"
+  },
+  "source_sha256_after": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/freeze_sample.py": "67c3b4f91aaeb9c5134f0c13ccfecb38f829ea1338ce3ac9a40d60197943c997",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/proposals.py": "3834985597cf38982c3197719c86a9128cd34a9cb16d90122bccddde553d8642",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/saliency.py": "45b47ed5e4e964dd96478d74c19eddb1776176cea2c88b66a1f956c1ec3b934e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/teacher_contract.py": "999903a279f5ffcd477a5af93b220b663ee53de8a43091f83f3c8fdff069f9c3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/oracle_teacher.py": "68864aa92f5ac4656ece2dcd77bc5b163bedbefac5e16409d94cf2a1654e7261",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/test_proposals.py": "f7d24d5c00a661fd244922f4238f21d93a5315a0f4861b4edada0f5dac681e2a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/test_saliency.py": "444b59fad99127d73605b3fbdfd3698b78c0f2befa7089ef79bcef7c45943c70",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/test_teacher_contract.py": "de58084b146519d319a0b0462ee1d1a7e9b586a98c948fc29b83266bab7758cc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/cpu_validation.py": "0792b45417f52a004960988d70a1a42eea0ca6670533abac3680c6765406f3ad"
+  },
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "stdout": "",
+  "stderr": "test_exhausted_draws_reduce_all_sources_equally (test_proposals.ProposalTests) ... ok\ntest_fixed_proposals_and_equal_search_budget (test_proposals.ProposalTests) ... ok\ntest_input_identity_and_fail_closed (test_proposals.ProposalTests) ... ok\ntest_rank_tie_breaks_in_favor_of_smaller_id (test_proposals.ProposalTests) ... ok\ntest_four_streams_mean_absolute_product_in_float32 (test_saliency.SaliencyTests) ... ok\ntest_invalid_or_nonfinite_stream_rejected (test_saliency.SaliencyTests) ... ok\ntest_compact_positions_preserve_decode_origin_and_selected_rows (test_teacher_contract.TeacherContractTests) ... ok\ntest_four_actual_stream_gradients_and_teacher_alignment (test_teacher_contract.TeacherContractTests) ... ok\ntest_four_stream_gradient_matches_directional_finite_difference (test_teacher_contract.TeacherContractTests) ... ok\ntest_frozen_model_wrapper_requires_grad_only_for_visual_streams (test_teacher_contract.TeacherContractTests) ... ok\ntest_invalid_teacher_geometry_and_target_length (test_teacher_contract.TeacherContractTests) ... ok\ntest_teacher_logits_match_incremental_cached_decode (test_teacher_contract.TeacherContractTests) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.143s\n\nOK\n",
+  "finished_unix": 1793819974.0069368,
+  "scope": "CPU synthetic/tiny random Qwen3-VL text model; no reference answers, real weights or GPU"
+}

@@ -1,0 +1,89 @@
+{
+  "description": "Three real DEV inputs; author default text mode; no labels or model weights",
+  "torch": "2.8.0+cu128",
+  "transformers": "4.57.1",
+  "author_wrapper_path": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py",
+  "author_selector_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/ziprerank_f367b09/models/qwen3vl_with_qi_early.py",
+  "cuda_initialized": false,
+  "plan_sha256": "91404e3a8a2768ecc95d7e05c54aab9612dd66c614a5c8ea5cb461d74e575024",
+  "anchors": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "20741",
+      "image_sha256": "dd63901f887d6a4ba84a50c580ffb42ad624e0aef93b2e9f71932c62c6ac61f3",
+      "message_sha256": "dbdbee6035d026017bc11cad1a329ac645b1db8abe0e71fec74bddee29dc58a3",
+      "input_token_count": 1052,
+      "image_token_count": 1024,
+      "first_image_token_index": 4,
+      "selected_token_indices": [
+        0,
+        1,
+        2
+      ],
+      "selected_token_count": 3,
+      "question_after_image_in_template": true,
+      "prefix_tokenization_matches_processor": true,
+      "question_text_in_selected_scope": false,
+      "selected_prefix_sha256": "8ad8444cdab95a0b102c11c9c60cb27f797b9b25557c593bb0dacd7af528b65b",
+      "image_grid_thw": [
+        [
+          1,
+          64,
+          64
+        ]
+      ]
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38108",
+      "image_sha256": "894272a3f730f899864ace0724306702e7cf1822f2aee0f245c2736206a4882b",
+      "message_sha256": "3638780d411e024494788c64532a48e3af0b016c561510fae6f40b94b3fe2075",
+      "input_token_count": 1053,
+      "image_token_count": 1024,
+      "first_image_token_index": 4,
+      "selected_token_indices": [
+        0,
+        1,
+        2
+      ],
+      "selected_token_count": 3,
+      "question_after_image_in_template": true,
+      "prefix_tokenization_matches_processor": true,
+      "question_text_in_selected_scope": false,
+      "selected_prefix_sha256": "8ad8444cdab95a0b102c11c9c60cb27f797b9b25557c593bb0dacd7af528b65b",
+      "image_grid_thw": [
+        [
+          1,
+          64,
+          64
+        ]
+      ]
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "392501",
+      "image_sha256": "1d981ee30939e63fec3a1ed9815f9d2f0658ca4567f25a4570b8e7633f65156d",
+      "message_sha256": "ac72227f97b529325351b4c0711e8da18746e74dc41a51cded799c6fb6d94e52",
+      "input_token_count": 1096,
+      "image_token_count": 1024,
+      "first_image_token_index": 4,
+      "selected_token_indices": [
+        0,
+        1,
+        2
+      ],
+      "selected_token_count": 3,
+      "question_after_image_in_template": true,
+      "prefix_tokenization_matches_processor": true,
+      "question_text_in_selected_scope": false,
+      "selected_prefix_sha256": "8ad8444cdab95a0b102c11c9c60cb27f797b9b25557c593bb0dacd7af528b65b",
+      "image_grid_thw": [
+        [
+          1,
+          64,
+          64
+        ]
+      ]
+    }
+  ]
+}

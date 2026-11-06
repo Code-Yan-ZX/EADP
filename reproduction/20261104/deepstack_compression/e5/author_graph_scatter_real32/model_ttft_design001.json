@@ -1,0 +1,83 @@
+{
+  "status": "design_only_locked",
+  "scope": "optional three-anchor model TTFT diagnostic after full 32x3 identity and independent reviews",
+  "upstream_reference_plan": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/plan001.json",
+  "upstream_reference_plan_sha256": "25bdcb12864b173d57cf39cf4ec3ebc3c96b6b9726442489299be6190b07cc72",
+  "anchors": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "message_sha256": "3d2636338b6f3c75bdc977a06f98d10c1b739cf73826caa471fd9aa1d0c3bb71",
+      "image_sha256": "0eba9d3a112a7c067a528a4f4888fa960646f526d2701accf85962a95f92970b"
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "message_sha256": "c9d65da2d598e7bcab6b2aa4ce302e78d1920c1fa950356e5e97e6c9d5c24252",
+      "image_sha256": "c876e0657fe696d35fc6449d2b064c0cac5522e51a4957b0e378ea0fba0e9daf"
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "message_sha256": "a46263f3e82975b9c718fd3c40efd15da530e2c813e561119df2605b0f4f55f1",
+      "image_sha256": "ccc7c3664e5f71b23731d1a828726da4026e87a44203dde91ebb178f43e4b00e"
+    }
+  ],
+  "configuration": {
+    "model": "Qwen3-VL-8B-Instruct",
+    "position": "P3",
+    "deepstack": "on",
+    "visual_tokens_kept": 256,
+    "protocol": "fixed32",
+    "same_recipe_as": "e5/graph_ttft_pilot_v3",
+    "generation_and_images": "E1 accepted identities and exact input processor"
+  },
+  "schedule": {
+    "seed": 20261105,
+    "warmup_pairs_per_anchor": 1,
+    "measured_pairs_per_anchor": 5,
+    "paired_adjacent_randomized_order": true,
+    "all_pairs_retained": true,
+    "methods": [
+      "unmodified author greedy",
+      "single-statement scatter author-op CUDA graph"
+    ],
+    "jobs": 36
+  },
+  "preconditions": [
+    "scatter32 formal and independent reviews both pass with complete_96_identity true",
+    "three DEV anchor identities, image and processor tensor hashes match accepted E1",
+    "reviewed graph candidate module is exactly one AST statement substitution; torch and author sources pinned",
+    "no GT, scoring or new model generation until root GPU scheduling and full independent prelaunch",
+    "GPU exclusive and other dense CPU/disk work stopped"
+  ],
+  "endpoints": [
+    "all 256 ordered indices and quota each arm",
+    "all 32 forced output token IDs per pair",
+    "actual prompt, generation recipe, EOS/length, hook/monkeypatch cleanup and per-arm failures"
+  ],
+  "failure_rules": [
+    "one selection or output mismatch prevents equal-output aggregate timing claim",
+    "any missing pair, unclear cleanup, timeout or graph capture failure prevents a complete diagnostic claim",
+    "all samples and failures retained; no post-hoc dropping"
+  ],
+  "timing": {
+    "start": "before image loading",
+    "first_token_boundary": "after first generated token chosen and appended; fixed stopping criterion with synchronization",
+    "graph_setup": "capture startup outside warm TTFT and separately recorded",
+    "memory": "allocated/reserved during graph setup separately; not a device-wide peak",
+    "raw_output": "fsync occurs after first-token boundary; no end-to-end timing claim",
+    "interference": "record health snapshot windows where available, disclose unknown background and preserve all samples"
+  },
+  "limits": [
+    "three images, warm cache, fixed32, diagnostic instrumentation",
+    "does not establish full M1 or model accuracy",
+    "requires actual model-hook identity validation distinct from 32-image component test"
+  ],
+  "GT_opened": false,
+  "scoring_performed": false,
+  "gpu_authorized": false
+}

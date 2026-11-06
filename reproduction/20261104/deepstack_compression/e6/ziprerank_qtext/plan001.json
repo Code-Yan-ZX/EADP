@@ -1,0 +1,21 @@
+{
+  "scope": "Validate local full user-text embedding selector on all384 DEV tokenizer templates and three real processor anchors; no weights, labels, GPU or predictions",
+  "sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_qtext/selector.py": "735b1cd26a3245f88a80aecc350247ee441731b0da6c154c65cdfbaba0d4bbaa",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_qtext/test_selector.py": "12f1609cababf3e550e50bd5929418970be424f44bbdc8a0b23a5a31dd5618eb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_qtext/validate_real.py": "b907de0cbe92fa8d13eec34947e95c605a5402013274f905a05992e655dbebc1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_qtext/monitor_test001/terminal.json": "58514f413b286e8f27503ed4c50fc7ebf82caef9cd5a6009be6ec73d7efbe163",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_qtext/monitor_test001/stderr.log": "a9d04229c6c2052a13228a3ad4674ba76179eadfbcaacf3835c646d22e949a64",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/input_preparation_002/inputs.jsonl": "f3fef75929f88fa21b96458337030c47f2b7afaa596f540879afddd72847f59d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_question_scope/result001.json": "92d6ebfc3204a1cc9910a4391b6b04c84b1b08976350656a07aa8f1e780d8ffc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/ziprerank_question_scope001_review.json": "219a5edcef1a1ae9c5692e03b52c328c44c8b55ec3931feb2be780e97458ccfa",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model.py": "4d27418413ee72aa5fe422d7bb97103d1c097411e6c20945e2f11dcf607fb475",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py": "34556188962a1b057382269bc1f9f0cdba1a12e9cf1861acb60fa4fa0a59fe34",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/config.json": "5cd452860dc1e9c29dd71cc3cef7f39b338b7a40793f7a260655c2d3568f3661",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/preprocessor_config.json": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/tokenizer.json": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/tokenizer_config.json": "c2da771801886ad9ae98181793ffd3dfb7f1af30f6f7c6a4e15d7dbba52e2399",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/chat_template.json": "5c72a170d2a4a1a3bc5adad2e689ae28138a9700e5b8c96c0266331e86c0acce"
+  },
+  "limitations": "user text includes any instructions/options; token scope is a local adapter; not quality or author implementation"
+}

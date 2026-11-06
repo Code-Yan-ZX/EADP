@@ -1,0 +1,46 @@
+{
+  "dependency_smoke": {
+    "status": "passed",
+    "paths": [
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_runtime_v4/controller.py",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_runtime_v4/host_runner.py",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_controller_draft/job_contract.py",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_model_timing_v2/reference.py",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_final_v9/raw_prefix.py",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_final_v9/gpu_bounded.py",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_panel.py"
+    ],
+    "gpu_queried": false,
+    "model_loaded": false
+  },
+  "status": "passed",
+  "approval": {
+    "plan_sha256": "3e8d91628d3c08dfc5435705590ac481753999cb3085a4ed31950ecea1572bf0",
+    "review_sha256": "13877933f48f27029823df489f3a7d2027861036ee7829d5233339f8aa26be81"
+  },
+  "references": 6,
+  "container_id": "3416ad2cc1b74e990e786a695bc8877dc60f2dcd1a3b8950db47b0722176b98b",
+  "gpu_worker_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_final_v9/worker.py",
+  "gpu_launcher_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_final_v9/launch.py",
+  "container_identity_sha256": "ee0a86cc60da15df2c1707e5d1c4da1134339f36a5a8419ae294f0b2d2ba61a5",
+  "module_paths": {
+    "worker": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_runtime_v4/worker.py",
+    "controller": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_runtime_v4/controller.py",
+    "host_runner": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_runtime_v4/host_runner.py",
+    "nvml_stages": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_runtime_v4/nvml_stages.py",
+    "check": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_timing_controller_draft/job_contract.py",
+    "model": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_model_timing_v2/model_candidate.py"
+  },
+  "model_module_paths": {
+    "pixelprune": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/__init__.py",
+    "pixelprune.methods.pred_2d": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/pred_2d.py",
+    "pixelprune.patches.qwen3_vl_hf": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_vl_hf.py",
+    "vlmeval.vlm.qwen3_vl.model_fixed_res": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py",
+    "transformers.models.qwen3_vl.modeling_qwen3_vl": "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py"
+  },
+  "GPU_authorized": false,
+  "model_loaded": false,
+  "cuda_initialized": false,
+  "GT_opened": false,
+  "existing_DEV_predictions_opened": true
+}

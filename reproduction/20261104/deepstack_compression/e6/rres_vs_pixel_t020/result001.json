@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "questions": 384,
+  "GT_opened": false,
+  "existing_predictions_opened": true,
+  "plan_sha256": "8848d8d51a0130195e7f0b4af6b8d63e64cd328d61cf0842e0fa3af74713185c",
+  "tasks": {
+    "DocVQA_VAL": {
+      "questions": 128,
+      "image_groups": 128,
+      "rres_mean_pct": 80.98298842514463,
+      "pixel_mean_pct": 91.50278373454125,
+      "difference_pp": -10.519795309396628,
+      "ci95_pp": [
+        -15.811990759666553,
+        -5.521565346854903
+      ],
+      "improved": 5,
+      "decreased": 34,
+      "unchanged": 89,
+      "rres_eos": 128,
+      "pixel_eos": 128,
+      "rres_truncated": 0,
+      "pixel_truncated": 0
+    },
+    "TextVQA_VAL": {
+      "questions": 128,
+      "image_groups": 128,
+      "rres_mean_pct": 72.81249999999999,
+      "pixel_mean_pct": 82.34375,
+      "difference_pp": -9.531250000000014,
+      "ci95_pp": [
+        -15.078124999999986,
+        -4.218749999999986
+      ],
+      "improved": 4,
+      "decreased": 18,
+      "unchanged": 106,
+      "rres_eos": 128,
+      "pixel_eos": 128,
+      "rres_truncated": 0,
+      "pixel_truncated": 0
+    },
+    "AI2D_TEST": {
+      "questions": 128,
+      "image_groups": 128,
+      "rres_mean_pct": 82.03125,
+      "pixel_mean_pct": 81.25,
+      "difference_pp": 0.78125,
+      "ci95_pp": [
+        -3.90625,
+        5.46875
+      ],
+      "improved": 5,
+      "decreased": 4,
+      "unchanged": 119,
+      "rres_eos": 128,
+      "pixel_eos": 128,
+      "rres_truncated": 0,
+      "pixel_truncated": 0
+    }
+  },
+  "limitations": [
+    "Posthoc same DEV; uncorrected intervals.",
+    "R-res six recorded controls were inherited from E1 and checked online against actual kwargs and EOS, but actual per-request kwargs were not separately archived; Pixel recorded num_beams and use_cache.",
+    "Different resolution and dynamic visual budget; no equal-compute or speed claim."
+  ]
+}

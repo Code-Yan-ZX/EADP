@@ -1,0 +1,283 @@
+{
+  "acceptance_sha256": "95981ce2400d7467ba93d3177275a0860a656fc8558080c243040663e40a52fb",
+  "limits": [
+    "DEV only, exploratory; 95% intervals are per contrast without multiplicity adjustment.",
+    "AI2D reports deterministic local exact-matching fallback, not an API judge.",
+    "Bootstrap resamples image groups with all their questions; benchmark datasets were historically exposed."
+  ],
+  "n_questions": 384,
+  "scores_sha256": "e4a00f58e7c606ba33c94d11b580832c7f871eeb4075e47ac9c4f589bf260a1f",
+  "status": "completed",
+  "tasks": {
+    "AI2D_TEST": {
+      "arm_means_pct": {
+        "P1-D0": 71.875,
+        "P1-D1": 75.78125,
+        "P3-D0": 82.03125,
+        "P3-D1": 82.03125
+      },
+      "contrasts": {
+        "DS_at_P1": {
+          "answer_changed": 23,
+          "declined": 3,
+          "difference_pp": 3.90625,
+          "image_cluster_percentile_95_ci_pp": [
+            -0.78125,
+            9.375
+          ],
+          "improved": 8,
+          "unchanged": 117
+        },
+        "DS_at_P3": {
+          "answer_changed": 15,
+          "declined": 3,
+          "difference_pp": 0.0,
+          "image_cluster_percentile_95_ci_pp": [
+            -3.90625,
+            3.90625
+          ],
+          "improved": 3,
+          "unchanged": 122
+        },
+        "P3_minus_P1_at_D0": {
+          "answer_changed": 30,
+          "declined": 3,
+          "difference_pp": 10.15625,
+          "image_cluster_percentile_95_ci_pp": [
+            3.90625,
+            17.1875
+          ],
+          "improved": 16,
+          "unchanged": 109
+        },
+        "P3_minus_P1_at_D1": {
+          "answer_changed": 26,
+          "declined": 3,
+          "difference_pp": 6.25,
+          "image_cluster_percentile_95_ci_pp": [
+            0.78125,
+            11.71875
+          ],
+          "improved": 11,
+          "unchanged": 114
+        },
+        "interaction_DS_by_position": {
+          "declined": 10,
+          "difference_pp": -3.90625,
+          "image_cluster_percentile_95_ci_pp": [
+            -10.15625,
+            2.34375
+          ],
+          "improved": 5,
+          "unchanged": 113
+        }
+      },
+      "n_image_groups": 128,
+      "n_questions": 128,
+      "replicates": 10000,
+      "seed": 20261104,
+      "terminal": {
+        "P1-D0": {
+          "empty": 0,
+          "eos": 128,
+          "truncated": 0
+        },
+        "P1-D1": {
+          "empty": 0,
+          "eos": 128,
+          "truncated": 0
+        },
+        "P3-D0": {
+          "empty": 0,
+          "eos": 128,
+          "truncated": 0
+        },
+        "P3-D1": {
+          "empty": 0,
+          "eos": 128,
+          "truncated": 0
+        }
+      }
+    },
+    "DocVQA_VAL": {
+      "arm_means_pct": {
+        "P1-D0": 56.06247117050539,
+        "P1-D1": 64.62289621720618,
+        "P3-D0": 60.675445017939154,
+        "P3-D1": 67.84538557047036
+      },
+      "contrasts": {
+        "DS_at_P1": {
+          "answer_changed": 62,
+          "declined": 11,
+          "difference_pp": 8.560425046700782,
+          "image_cluster_percentile_95_ci_pp": [
+            2.1823320594961144,
+            15.28249564999276
+          ],
+          "improved": 27,
+          "unchanged": 90
+        },
+        "DS_at_P3": {
+          "answer_changed": 42,
+          "declined": 9,
+          "difference_pp": 7.169940552531197,
+          "image_cluster_percentile_95_ci_pp": [
+            1.9004500744564774,
+            12.683930989089934
+          ],
+          "improved": 19,
+          "unchanged": 100
+        },
+        "P3_minus_P1_at_D0": {
+          "answer_changed": 58,
+          "declined": 13,
+          "difference_pp": 4.612973847433766,
+          "image_cluster_percentile_95_ci_pp": [
+            -1.5400953079918576,
+            10.96876117447621
+          ],
+          "improved": 22,
+          "unchanged": 93
+        },
+        "P3_minus_P1_at_D1": {
+          "answer_changed": 35,
+          "declined": 9,
+          "difference_pp": 3.2224893532641796,
+          "image_cluster_percentile_95_ci_pp": [
+            -1.902166491512959,
+            8.43401667750496
+          ],
+          "improved": 14,
+          "unchanged": 105
+        },
+        "interaction_DS_by_position": {
+          "declined": 23,
+          "difference_pp": -1.3904844941695862,
+          "image_cluster_percentile_95_ci_pp": [
+            -8.822575268017948,
+            6.059349087661071
+          ],
+          "improved": 20,
+          "unchanged": 85
+        }
+      },
+      "n_image_groups": 128,
+      "n_questions": 128,
+      "replicates": 10000,
+      "seed": 20261104,
+      "terminal": {
+        "P1-D0": {
+          "empty": 0,
+          "eos": 128,
+          "truncated": 0
+        },
+        "P1-D1": {
+          "empty": 0,
+          "eos": 128,
+          "truncated": 0
+        },
+        "P3-D0": {
+          "empty": 0,
+          "eos": 128,
+          "truncated": 0
+        },
+        "P3-D1": {
+          "empty": 0,
+          "eos": 128,
+          "truncated": 0
+        }
+      }
+    },
+    "TextVQA_VAL": {
+      "arm_means_pct": {
+        "P1-D0": 73.203125,
+        "P1-D1": 79.453125,
+        "P3-D0": 81.71875,
+        "P3-D1": 80.78125
+      },
+      "contrasts": {
+        "DS_at_P1": {
+          "answer_changed": 26,
+          "declined": 3,
+          "difference_pp": 6.25,
+          "image_cluster_percentile_95_ci_pp": [
+            1.5625000000000109,
+            11.250000000000004
+          ],
+          "improved": 13,
+          "unchanged": 112
+        },
+        "DS_at_P3": {
+          "answer_changed": 15,
+          "declined": 5,
+          "difference_pp": -0.9375000000000003,
+          "image_cluster_percentile_95_ci_pp": [
+            -4.218749999999982,
+            2.187500000000009
+          ],
+          "improved": 3,
+          "unchanged": 120
+        },
+        "P3_minus_P1_at_D0": {
+          "answer_changed": 24,
+          "declined": 2,
+          "difference_pp": 8.515624999999998,
+          "image_cluster_percentile_95_ci_pp": [
+            3.4374999999999933,
+            14.0625
+          ],
+          "improved": 14,
+          "unchanged": 112
+        },
+        "P3_minus_P1_at_D1": {
+          "answer_changed": 7,
+          "declined": 2,
+          "difference_pp": 1.3281249999999998,
+          "image_cluster_percentile_95_ci_pp": [
+            -1.4062500000000089,
+            4.453124999999991
+          ],
+          "improved": 3,
+          "unchanged": 123
+        },
+        "interaction_DS_by_position": {
+          "declined": 15,
+          "difference_pp": -7.187500000000001,
+          "image_cluster_percentile_95_ci_pp": [
+            -13.046874999999991,
+            -1.562499999999989
+          ],
+          "improved": 4,
+          "unchanged": 109
+        }
+      },
+      "n_image_groups": 128,
+      "n_questions": 128,
+      "replicates": 10000,
+      "seed": 20261104,
+      "terminal": {
+        "P1-D0": {
+          "empty": 0,
+          "eos": 128,
+          "truncated": 0
+        },
+        "P1-D1": {
+          "empty": 0,
+          "eos": 128,
+          "truncated": 0
+        },
+        "P3-D0": {
+          "empty": 0,
+          "eos": 128,
+          "truncated": 0
+        },
+        "P3-D1": {
+          "empty": 0,
+          "eos": 128,
+          "truncated": 0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "Post-hoc DEV-only diagnostic of unlabeled image/question features for choosing among existing E4 outputs; no new generation or labels",
+  "inputs": "e1/input_preparation_002/inputs.jsonl",
+  "inputs_sha256": "f3fef75929f88fa21b96458337030c47f2b7afaa596f540879afddd72847f59d",
+  "scores": "e4_analysis/score_panel003/scores.jsonl",
+  "scores_sha256": "fcf66bed80a17b2096c47a16e51b38475d02b8db0679058936a1e65eacec6c6b",
+  "score_proofs": {
+    "e1_independent_review/e4score003_review.json": "9575bf8243afea62148565d1deeb1d6e0015ff28ba67d6d4a611dc1500389fe2",
+    "e4_analysis/independent_score_review/verification001.json": "34cf141edb872400f52a9ccc167dad2e3a3faf5c1d744909bd9a228fd93de05e"
+  },
+  "tasks": ["DocVQA_VAL", "TextVQA_VAL", "AI2D_TEST"],
+  "features": {
+    "gray_entropy16": "Convert original image to 8-bit grayscale; resize to 256x256 with PIL bilinear; histogram into 16 equal bins; Shannon entropy base 2 in bits.",
+    "gray_gradient": "Same grayscale image; mean absolute horizontal difference plus mean absolute vertical difference, computed as signed integer differences divided by 255.",
+    "user_text_chars": "Number of Unicode code points across all text parts of the original user message, including instructions and options."
+  },
+  "rules": "For each task and each of three features separately, allocate K512 to the 42 highest values among its 128 images, with SHA256('20261105|'+group_id) ascending as tie breaker, and K128 to the other 86. Predeclare all three and do not select a winner as confirmed.",
+  "random": "Three same-budget allocations: rank SHA256('20261105|random|seed|'+group_id) ascending for seed 0,1,2; first 42 K512, remainder K128. Report all seeds.",
+  "cost": "All rules total 42*512 + 86*128 = 32512, mean K254; fixed comparator K256 totals 32768. K counts are not actual measured compute, memory or latency.",
+  "analysis": "First extract features and write a frozen feature file without reading score journal or labels; then join existing E4 D1 per-question scores and report all 3 feature rules, all 3 random seeds and fixed K256 for each task. Each task has 128 image groups; no new predictions, GT, CONFIRM or FINAL accessed. No selection-based significance claim.",
+  "limitations": ["Post-hoc exploratory feature panel designed after seeing DEV aggregate and answer oracle", "Batch rank uses all 128 test images and per-task knowledge; it is not an online deployable policy", "No actual runtime or equal-compute claim; no selector cost included", "Three features are cheap heuristics, no novelty claim", "All rules must be reported regardless of direction"]
+}

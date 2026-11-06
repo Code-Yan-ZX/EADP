@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "pure statistics and normalized window CPU candidate only; not GPU or result-read admission",
+  "plan_sha256": "6df30ffdb13297e30d8f596e75c352d5bdfba79b478bca1119b869461c9c9ac8",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_analysis_proposal_v2/PLAN.md": "bc3dd464e24daf0c9e7184c9814069969bf76c05e2a115f487516c87ca4bc325",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_analysis_proposal_v2/metrics.py": "dde28733b173ac447f4c12bc59c3d7e90c8f433b099956b7fdd271760812d6e7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_analysis_proposal_v2/windows.py": "1033097641177ab1ba0ac09199f8697809ff89faa0c282c677e34729af71eab4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_analysis_proposal_v2/test_metrics.py": "23e9a7d6b0fd3c1105dbe2364e445eb33281c74e51eeb77899d2805d4c23b8a9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_analysis_proposal_v2/test_windows.py": "eb921ce03f62790986fc4043ab3aacd9c952489a63ae0faa3149e989966bff8a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_analysis_proposal_v2/freeze_statistics.py": "20eefc995e56b419956727c5187cd1e7dca0fd48e4cb7a53aafae880078b7e91",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_pilot_v4/schedule001.json": "72c97e5af1acbfd9ab9d57e9a29a75cd81a17f12704b4f134eb0216c3d980b06",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_pilot_v4/schedule.py": "dfdbc1a139270317677e144d2e66d6ffd4eed3ff671de80ff9896a768ac12203",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/initial_plan.json": "2a11cfcc2dc9404eac218f1f727e39508a687a73e0343101ae564be3e99c30e6"
+  },
+  "freeze_started_sha256": "14fd599ccddb765e9230011bb3662bdeb30f1535b42701970c70c1c7054935f6",
+  "freeze_terminal_sha256": "27b27effa721f38e90d5752b5d6d5846a012fe63be7123729e8f28820668545e",
+  "independent_test_sha256": "ea51b1289975f29b2caeb0e362c489b1b4b8930093ae8802781f47e407548ff7",
+  "window_test_sha256": "aa14cb295abb9e9707798ef2c9a7c7554552c5f1ff0f2cb107f72658c7924696",
+  "reviewer_sha256": "172663b51e8cf10c7ac49f06349f5a29d6c5ec7777552adb7ec0e5c6548619d5",
+  "GT_opened": false,
+  "timing_results_opened": false,
+  "GPU_used": false,
+  "errors": [],
+  "tests": [
+    "......\n----------------------------------------------------------------------\nRan 6 tests in 0.176s\n\nOK\n",
+    "......\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nOK\n",
+    ".\n----------------------------------------------------------------------\nRan 1 test in 0.690s\n\nOK\n",
+    "....\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+  ],
+  "limitations": [
+    "Read gate, actual observer and formal result interfaces require separate integration and independent review before real data.",
+    "Known observed overlap cannot establish absence of unobserved disturbances.",
+    "32 images are a small, exploratory DEV sample."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "created_unix": 1793822960.29249,
+  "stage": "pre-execution documentation correction",
+  "sample_unchanged_sha256": "6c65ce96eb8b0aa1d91f67e1cd37956f97b9343ccdb13b52e72873e3e26fff49",
+  "native_anchor_manifest_sha256": "c8e67db1517142dc71e5f34595f348a3a4d6956418bfffb804a01ea1b40a7c8c",
+  "native_anchor_overlap": [],
+  "reason": "The full E4 K1024 panel stored decoded outputs but not first-logit arrays for non-anchor questions; the three full native array anchors do not overlap this frozen 32-question sample.",
+  "correction": "Compare stock-native output tokens against independently accepted E4 K1024 DS-on records for the same questions, after full diagnostic completion. Retain PriorTR stock first-logit metadata and report cross-backend first-logit comparison unavailable on these 32. Do not claim logit equality or invent values. Existing single-question PriorTR stock/disabled/keep-all same-stack logits remain a separately scoped result.",
+  "sample_or_arms_changed": false,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "new_generations_performed": false
+}

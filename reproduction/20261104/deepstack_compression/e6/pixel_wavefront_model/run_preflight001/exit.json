@@ -1,0 +1,47 @@
+{
+  "returncode": 1,
+  "timed_out": false,
+  "interrupted": null,
+  "client_exited_while_container_running": false,
+  "container_stopped_verified": false,
+  "container_exit_code": 1,
+  "container_identity": null,
+  "failure_type": "RuntimeError",
+  "failure": "container identity unavailable or changed",
+  "cleanup_attempts": [
+    {
+      "action": "stop",
+      "returncode": 0,
+      "stdout": "Flag --time has been deprecated, use --timeout instead\neadp-wavefront-model-cpu-1240967\n",
+      "stderr": ""
+    }
+  ],
+  "gpu_pids_after": null,
+  "last_inspect": {
+    "returncode": 0,
+    "stderr": "",
+    "id": "7ed577838910354e7a93941e0c04be40c695401f2b849cb133447a66d49890fa",
+    "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "running": false,
+    "pid": 0,
+    "exit_code": 1,
+    "host_devices": [],
+    "device_requests": null,
+    "pid_mode": "",
+    "entrypoint": [
+      "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python"
+    ],
+    "command": [
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model/preflight_entry.py",
+      "--out",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model/run_preflight001/worker_preflight.json"
+    ]
+  },
+  "finished_unix": 1793857366.541642,
+  "controller": {
+    "pid": 1240967,
+    "start_ticks": 1398887406,
+    "session_id": 1240967,
+    "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+  }
+}

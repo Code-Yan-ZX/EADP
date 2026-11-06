@@ -1,0 +1,62 @@
+{
+  "status": "completed",
+  "stage": "post_hoc_document_disjoint_exploration",
+  "summary": {
+    "source_rows": 39463,
+    "components": 4962,
+    "row_counts": {
+      "fit": 21604,
+      "validation": 5819,
+      "excluded_eval": 12040
+    },
+    "document_counts": {
+      "fit": 3715,
+      "validation": 914,
+      "excluded_eval": 643
+    },
+    "group_counts": {
+      "fit": 5424,
+      "validation": 1450,
+      "excluded_eval": 2673
+    },
+    "component_counts": {
+      "fit": 3555,
+      "validation": 889,
+      "excluded_eval": 518
+    },
+    "max_component_rows": {
+      "fit": 214,
+      "validation": 105,
+      "excluded_eval": 716
+    },
+    "max_component_documents": {
+      "fit": 25,
+      "validation": 7,
+      "excluded_eval": 24
+    },
+    "max_component_groups": {
+      "fit": 32,
+      "validation": 23,
+      "excluded_eval": 88
+    },
+    "fit_fraction_eligible_rows": 0.7878058563979141,
+    "fit_fraction_eligible_groups": 0.7890602269421007
+  },
+  "plan_sha256": "26b1a37db5480b0ef8b799e83866c438c5a03b88577b7b73fc8383f2f24f6a89",
+  "source_rows_sha256": "992aff987a8f50d0f21bedcd6a53f4a626253c6ce31f45f74b219398be880e27",
+  "eval_manifest_sha256": "bfc1541bda41382afb2e80478af2be291a7f8d05f6f5c694863b693aad5dec60",
+  "assignments_sha256": "8e472757df2fadeb36f0e0d0b56268d6c2effe5e87865b734ee438845639ac46",
+  "review_sha256": "d679284eae67ee0ec3cbcb0fea9b5e1aebf507d9635c98cb94b9ad08f8b3fee5",
+  "source_sha256": "b1e26f13beb3c584576669679c540a14a472ac89e2f534cee000738394aa6114",
+  "scope": "DocVQA third-party train metadata only, no labels or predictions, no training, no change to original image split.",
+  "limitations": [
+    "Exact IDs identify shared documents, not semantic document variants.",
+    "Images or documents may still evade perceptual and source identity matching.",
+    "Third-party source equivalence to official release remains unverified.",
+    "Post-hoc exploratory split is not authorization to train."
+  ],
+  "labels_opened": false,
+  "predictions_opened": false,
+  "gpu_used": false,
+  "training_performed": false
+}

@@ -1,0 +1,19 @@
+"""Independent prelaunch review of Zip DEV scoring: synthetic only, no GT or real predictions."""
+import argparse,importlib.util,json,os,subprocess,sys
+from pathlib import Path
+R=Path(__file__).resolve().parent;B=R.parent;D=B/'e6/ziprerank_full_dev_v2_analysis';A=B/'e6/ziprerank_full_dev_v2_accept'
+spec=importlib.util.spec_from_file_location('_zip_score_admission_review',D/'admission.py');adm=importlib.util.module_from_spec(spec);spec.loader.exec_module(adm)
+def req(x,msg):
+ if not x:raise ValueError(msg)
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--out',type=Path,required=True);a=p.parse_args();cpu=D/'cpu_check003/verification.json';cm=D/'monitor_cpu003';started,terminal=adm.supervisor(cm,D/'cpu_check.py',cpu.parent);c=adm.read(cpu);sources=adm.source_hashes()
+ adm.eq(c,{'status':'passed','GT_opened':False,'real_predictions_opened':False,'source_sha256_before':sources,'source_sha256_after':sources});req('Ran 8 tests' in (cm/'stderr.log').read_text() and 'OK' in (cm/'stderr.log').read_text(),'CPU log')
+ script=(D/'score.py').read_text();req("ADMISSION_SHA='"+adm.sha(D/'admission.py')+"'" in script and "'_zip_full_score_admission' in sys.modules" in script,'admission loader binding')
+ plan=adm.read(adm.PLAN);req(plan['denominator']==384 and plan['bootstrap']=={'unit':'image_group','replicates':10000,'seed':20261104,'interval':'95% percentile','paired':True} and len(plan['comparisons'])==3,'plan scope')
+ adm.e1_identity();fm=A/'monitor_verify001';rm=R/'monitor_zip_full_dev_v2_result002';formal=A/'verification001.json';review=R/'zip_full_dev_v2_result_review.json';adm.supervisor(fm,A/'verify.py',formal);adm.supervisor(rm,R/'review_zip_full_dev_v2_result.py',review);f=adm.read(formal);q=adm.read(review)
+ adm.eq(f,{'status':'passed','questions':384,'physical_generations':768,'GT_opened':False,'scoring_performed':False,'errors':[],'verifier_sha256':adm.sha(A/'verify.py')});adm.eq(q,{'status':'passed','independent_review':True,'questions':384,'physical_generations':768,'GT_opened':False,'scoring_performed':False,'formal_sha256':adm.sha(formal),'formal_started_sha256':adm.sha(fm/'started.json'),'formal_terminal_sha256':adm.sha(fm/'terminal.json'),'run_started_sha256':adm.sha(adm.D/'monitor_smoke001/started.json'),'run_terminal_sha256':adm.sha(adm.D/'monitor_smoke001/terminal.json'),'run_exit_sha256':adm.sha(adm.D/'run_smoke001/exit.json'),'reviewer_sha256':adm.sha(R/'review_zip_full_dev_v2_result.py')});req(len(q['files_sha256'])==1920 and all(f['files_sha256'].get(k)==v for k,v in q['files_sha256'].items()),'independent inventory')
+ run=subprocess.run([sys.executable,'-m','unittest','-v','test_score','test_main_integration'],cwd=D,capture_output=True,text=True,timeout=180);print(run.stdout,end='');print(run.stderr,end='',file=sys.stderr);req(run.returncode==0 and 'Ran 8 tests' in run.stderr,'independent CPU tests');req(sources==adm.source_hashes(),'source changed during review')
+ out={'status':'passed','independent_review':True,'scope':'zip_full_dev_v2_score_prelaunch','GT_opened':False,'predictions_opened':False,'errors':[],'source_sha256':sources,'plan_sha256':adm.sha(adm.PLAN),'cpu_proof_sha256':adm.sha(cpu),'cpu_started_sha256':adm.sha(cm/'started.json'),'cpu_terminal_sha256':adm.sha(cm/'terminal.json'),'e1_score_frozen_sha256':adm.sha(adm.FROZEN),'e1_score_review_sha256':adm.sha(R/'e1full001_score_review.json'),'reviewer_sha256':adm.sha(__file__),'limitations':['Synthetic end-to-end replaces scoring gate and author metrics with fakes; actual official scorer and paired DEV accuracy remain unmeasured.','The 384-question comparison is DEV-only and posthoc, with local RoPE adaptations and incomplete generation controls.']}
+ with a.out.open('x') as h:json.dump(out,h,indent=2);h.write('\n');h.flush();os.fsync(h.fileno())
+ print('prelaunch passed')
+if __name__=='__main__':main()

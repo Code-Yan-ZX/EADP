@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "jobs_verified": 5940,
+  "counts": {
+    "warmup": {
+      "n": 180,
+      "manual_health": 0,
+      "manual_nvml": 0
+    },
+    "measure": {
+      "n": 5760,
+      "manual_health": 4,
+      "manual_nvml": 1
+    }
+  },
+  "proof_sha256": "90ec235540ea96c70f059cb5b5c1f3ecde8f080d5e1e3c06f59d5974d24f51e0",
+  "annotations_sha256": "cf07abc977977c2c03b7996b5d48cb4b444fa16f0d0d1671c6078bb1c0ac497d",
+  "manual_windows_sha256": "0e40b456fef8c4539bdbe8eac53257b27890f4316dfd1e56365382d212c8fa06",
+  "journal_sha256": "4fe863b86eddf806fa936692be2a73583c4f59e9934df84f8f3d2ec6288fd736",
+  "reviewer_sha256": "442c4c7fadc56abf0ee8b9a3ffaac382d36adcef5e40eaac1e3f23dc7b215618",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "latency_values_reported": false,
+  "limitations": [
+    "Manual recorded windows do not include short trailing log writes or residual effects before/after checks.",
+    "About 07:03:30 two short journal/status scans have no precise monotonic bounds and cannot be assigned to individual jobs.",
+    "Other brief project-side stat/ps, small source reads, notes, and remote queries occurred without per-event monotonic bounds; no claim of zero interference.",
+    "Hourly supervisor health windows are separately recorded in formal annotations."
+  ],
+  "errors": []
+}

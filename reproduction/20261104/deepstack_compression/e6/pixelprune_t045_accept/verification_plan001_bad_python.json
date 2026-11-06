@@ -1,0 +1,32 @@
+{
+  "stage": "future CPU-only no-GT acceptance after full DEV completed",
+  "panel_plan_sha256": "c68742ed65f69d9598e3943f04872763fce0ce62ae7a5db178891e260debb1b0",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_accept/verify.py": "e876d002c1ba91d341bc6c5a8a59375dcf8dcc4246111a5b86ec5bd2ef9d5701",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_accept/test_verify.py": "b9d258a0123bd790fb5e68b5231513d86423373e90159bd2a3c189b777d23ed2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_accept/monitor_test001/started.json": "bd2c01e89fa2ecba83274ba32703765ecfb68fe65d4dcf91adabbc00e2e59061",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_accept/monitor_test001/terminal.json": "0307e1aaefc164385ed00f1a7304390771285e0811f234c0fb0abcf5a6101f07",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_accept/monitor_test001/stderr.log": "b155bd1ba3d225a1f29b0f85469fe65ed9b3aadd755d179ac8ff433a3af60be4"
+  },
+  "expected_questions": 384,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "predictions_opened": true,
+  "limitations": [
+    "absence of full per-question tensors prevents independent reconstruction of visual/DS/KV contents",
+    "independent run review still required before scoring"
+  ],
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/reproduction/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_accept/monitor_verify001",
+    "--timeout",
+    "900",
+    "--",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_accept/verify.py",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_t045_accept/verification001.json"
+  ]
+}

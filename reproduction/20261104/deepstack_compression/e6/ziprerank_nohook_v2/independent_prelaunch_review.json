@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "single DEV image, unmodified author, no model-instance or global forward hooks, forced prefix; no quality or timing claim",
+  "plan_sha256": "8ffa8a85c9fb33c2232d5b982fd3e5bb320111de31df30b014c94e42eaf19133",
+  "preflight_sha256": "04f73af17d19681a16caaf7c08caca1330b1526eb624310997eb55dd5ad314bb",
+  "preflight_started_sha256": "0f480181e56820a943e1e9ebdfcb2ae73335b3451d3cbd2921c1c14186e0f8cb",
+  "preflight_terminal_sha256": "a15c8c544128508324f93c753b0a4b5f78c89b6be238897f94f1a720cf0a236f",
+  "preflight_exit_sha256": "d68f146e5b2dc5b32729f69c5c3fb27ecf84ea0184d4ada8359b5908569fd012",
+  "preflight_launch_sha256": "f8c86dc404d1d0b556d4baa94ffff2f96174df0847d502173074a65ad7dd1ff4",
+  "reviewer_sha256": "8c8105582ee26ee0cbc80e16b843ae1754dc99f95b6346ad3e022ff4d73a521e",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_ziprerank_nohook_v2.py",
+  "review_started_sha256": "3456f7cd9059a546dcd3d7f725a637ae86059f7379e199462e32032fc93c36d5",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_ziprerank_nohook_v2_review/terminal.json",
+  "container_id": "abc5c98250a1a71a0f6828e25934585416f80a0f7a3c62b074d09a6082313635",
+  "synthetic_tests": 4,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "gpu_used": false,
+  "limitations": [
+    "No forward or pre-forward hooks checked before and after each arm; forced logits processor remains present.",
+    "Single fixed image and forced prefix; author exceptions and all failed checks must remain visible.",
+    "FA2 matches E1 backend, but complete generation recipe and method are not automatically equivalent."
+  ],
+  "errors": []
+}

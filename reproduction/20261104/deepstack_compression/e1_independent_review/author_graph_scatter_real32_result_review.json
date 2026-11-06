@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "complete_96_identity": true,
+  "budgets": [
+    {
+      "budget": 128,
+      "compared": 32,
+      "identity_mismatch_images": [],
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "budget": 256,
+      "compared": 32,
+      "identity_mismatch_images": [],
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "budget": 512,
+      "compared": 32,
+      "identity_mismatch_images": [],
+      "returncode": 0,
+      "timed_out": false
+    }
+  ],
+  "formal_sha256": "c7b095a15c4d17db396b20b93c17796ab9341a42167f4ecd545df4fba8a9afb9",
+  "formal_started_sha256": "437b53edddb403e9d8ca90600bcdd18868a0c7b8d8263f8ce0c487a8b1f711e4",
+  "formal_terminal_sha256": "e60604074ba506471ec950f75265990423734a3015c63ff3e40273b6283ffad5",
+  "run_started_sha256": "c7d5024f7309e56dcfab50f7e3a9894a9327bcf3bdebb3bb2c48f90406c2d1cd",
+  "run_terminal_sha256": "57ebb8975b22d26a8be8c3a8aad57eb22c5fd13964c6777fe32a73aa0d238f62",
+  "plan_sha256": "7979812555a92805354e444c9e28371f2928a8ecc0f562e32daeaed742065244",
+  "verification_plan_sha256": "2ac3a9a91a420150e155be0cd9db1740bc6ca327d51ed16a34985bbb5fe9ea94",
+  "reviewer_sha256": "bc05425e5e652da947b3644f9d06bd1e54fec5d57363d96cfb65cdc89c12027d",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": [
+    "32 fixed images only; not general equivalence, model integration or TTFT",
+    "setup and device replay separate; allocator figures exclude driver and graph metadata",
+    "runtime repeated output checks do not prove correctness on unseen inputs"
+  ],
+  "errors": []
+}

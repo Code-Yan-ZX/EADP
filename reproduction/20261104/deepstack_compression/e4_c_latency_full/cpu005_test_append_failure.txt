@@ -1,0 +1,1 @@
+The attempted append of container identity tests used a path relative to the wrong working directory and failed. cpu_check005 ran and passed the earlier 7 tests only; it does not establish the new container-identity checks. Tests were added and rerun in a later distinct run.

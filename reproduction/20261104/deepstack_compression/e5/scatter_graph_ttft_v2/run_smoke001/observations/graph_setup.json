@@ -1,0 +1,20 @@
+{
+  "capture_wall_ms": 329.584339633584,
+  "before_bytes": {
+    "allocated": 17538516992,
+    "reserved": 17576230912
+  },
+  "after_bytes": {
+    "allocated": 17542718976,
+    "reserved": 17580425216
+  },
+  "setup_excluded_from_timing": true,
+  "transform": {
+    "author_sha256": "bf809614c207142b8a4fc945f29a8828688c88a2896ebd349d55c4a0b1a917e6",
+    "original_statement": "selected_mask[batch_indices, best_idx] = True",
+    "replacement_statement": "selected_mask.scatter_(1, best_idx.unsqueeze(1), True)",
+    "replacement_count": 1,
+    "other_statements": "author AST unchanged",
+    "source_written": false
+  }
+}

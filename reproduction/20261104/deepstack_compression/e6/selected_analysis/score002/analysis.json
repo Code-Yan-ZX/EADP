@@ -1,0 +1,321 @@
+{
+  "status": "completed",
+  "n_questions": 384,
+  "n_predictions": 1536,
+  "tasks": {
+    "DocVQA_VAL": {
+      "n_questions": 128,
+      "n_image_groups": 128,
+      "arm_means_pct": {
+        "div:author_stock": 49.88434874969801,
+        "div:adapted": 66.11495600753413,
+        "cd:author_stock": 53.27889423794596,
+        "cd:adapted": 57.179291258460175
+      },
+      "arm_percentile_95_ci_pct": {
+        "div:author_stock": [
+          42.0044287038916,
+          57.44857427792286
+        ],
+        "div:adapted": [
+          58.570402335294915,
+          73.38390426305465
+        ],
+        "cd:author_stock": [
+          45.76186283876714,
+          60.75172099885864
+        ],
+        "cd:adapted": [
+          49.433557680383856,
+          64.81937702849187
+        ]
+      },
+      "bootstrap": {
+        "unit": "image_group",
+        "replicates": 10000,
+        "seed": 20261104,
+        "method": "percentile"
+      },
+      "contrasts": {
+        "div_adapted_minus_stock": {
+          "difference_pp": 16.23060725783612,
+          "image_cluster_percentile_95_ci_pp": [
+            8.931415170052551,
+            23.69447066828441
+          ],
+          "improved": 42,
+          "declined": 10,
+          "unchanged": 76,
+          "answer_changed": 74
+        },
+        "cd_adapted_minus_stock": {
+          "difference_pp": 3.900397020514207,
+          "image_cluster_percentile_95_ci_pp": [
+            -0.7789878713950906,
+            8.646808893146757
+          ],
+          "improved": 25,
+          "declined": 9,
+          "unchanged": 94,
+          "answer_changed": 63
+        },
+        "adapted_div_minus_cd": {
+          "difference_pp": 8.935664749073963,
+          "image_cluster_percentile_95_ci_pp": [
+            0.4923190729401984,
+            17.732270209548286
+          ],
+          "improved": 35,
+          "declined": 28,
+          "unchanged": 65,
+          "answer_changed": 80
+        },
+        "stock_div_minus_cd": {
+          "difference_pp": -3.3945454882479478,
+          "image_cluster_percentile_95_ci_pp": [
+            -11.808198841179612,
+            5.19174551753895
+          ],
+          "improved": 29,
+          "declined": 33,
+          "unchanged": 66,
+          "answer_changed": 88
+        }
+      },
+      "terminal": {
+        "div:author_stock": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "div:adapted": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "cd:author_stock": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "cd:adapted": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        }
+      }
+    },
+    "TextVQA_VAL": {
+      "n_questions": 128,
+      "n_image_groups": 128,
+      "arm_means_pct": {
+        "div:author_stock": 71.24999999999999,
+        "div:adapted": 75.46875,
+        "cd:author_stock": 69.609375,
+        "cd:adapted": 78.28125
+      },
+      "arm_percentile_95_ci_pct": {
+        "div:author_stock": [
+          63.671874999999986,
+          78.59375
+        ],
+        "div:adapted": [
+          68.20312499999999,
+          82.42187499999997
+        ],
+        "cd:author_stock": [
+          61.87499999999999,
+          77.10937499999999
+        ],
+        "cd:adapted": [
+          71.48437499999999,
+          84.6875
+        ]
+      },
+      "bootstrap": {
+        "unit": "image_group",
+        "replicates": 10000,
+        "seed": 20261104,
+        "method": "percentile"
+      },
+      "contrasts": {
+        "div_adapted_minus_stock": {
+          "difference_pp": 4.21875,
+          "image_cluster_percentile_95_ci_pp": [
+            -2.109374999999991,
+            10.54687500000001
+          ],
+          "improved": 15,
+          "declined": 9,
+          "unchanged": 104,
+          "answer_changed": 33
+        },
+        "cd_adapted_minus_stock": {
+          "difference_pp": 8.671875,
+          "image_cluster_percentile_95_ci_pp": [
+            3.203125000000006,
+            14.453125
+          ],
+          "improved": 15,
+          "declined": 4,
+          "unchanged": 109,
+          "answer_changed": 26
+        },
+        "adapted_div_minus_cd": {
+          "difference_pp": -2.8125000000000004,
+          "image_cluster_percentile_95_ci_pp": [
+            -8.515624999999982,
+            2.8906249999999916
+          ],
+          "improved": 8,
+          "declined": 12,
+          "unchanged": 108,
+          "answer_changed": 26
+        },
+        "stock_div_minus_cd": {
+          "difference_pp": 1.6406249999999998,
+          "image_cluster_percentile_95_ci_pp": [
+            -4.375000000000007,
+            7.968750000000002
+          ],
+          "improved": 11,
+          "declined": 9,
+          "unchanged": 108,
+          "answer_changed": 35
+        }
+      },
+      "terminal": {
+        "div:author_stock": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "div:adapted": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "cd:author_stock": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "cd:adapted": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        }
+      }
+    },
+    "AI2D_TEST": {
+      "n_questions": 128,
+      "n_image_groups": 128,
+      "arm_means_pct": {
+        "div:author_stock": 66.40625,
+        "div:adapted": 77.34375,
+        "cd:author_stock": 69.53125,
+        "cd:adapted": 75.78125
+      },
+      "arm_percentile_95_ci_pct": {
+        "div:author_stock": [
+          58.59375,
+          74.21875
+        ],
+        "div:adapted": [
+          70.3125,
+          84.375
+        ],
+        "cd:author_stock": [
+          61.71875,
+          77.34375
+        ],
+        "cd:adapted": [
+          67.96875,
+          82.8125
+        ]
+      },
+      "bootstrap": {
+        "unit": "image_group",
+        "replicates": 10000,
+        "seed": 20261104,
+        "method": "percentile"
+      },
+      "contrasts": {
+        "div_adapted_minus_stock": {
+          "difference_pp": 10.9375,
+          "image_cluster_percentile_95_ci_pp": [
+            3.90625,
+            17.96875
+          ],
+          "improved": 18,
+          "declined": 4,
+          "unchanged": 106,
+          "answer_changed": 38
+        },
+        "cd_adapted_minus_stock": {
+          "difference_pp": 6.25,
+          "image_cluster_percentile_95_ci_pp": [
+            -1.5625,
+            14.0625
+          ],
+          "improved": 17,
+          "declined": 9,
+          "unchanged": 102,
+          "answer_changed": 36
+        },
+        "adapted_div_minus_cd": {
+          "difference_pp": 1.5625,
+          "image_cluster_percentile_95_ci_pp": [
+            -3.90625,
+            7.03125
+          ],
+          "improved": 8,
+          "declined": 6,
+          "unchanged": 114,
+          "answer_changed": 30
+        },
+        "stock_div_minus_cd": {
+          "difference_pp": -3.125,
+          "image_cluster_percentile_95_ci_pp": [
+            -10.15625,
+            3.125
+          ],
+          "improved": 7,
+          "declined": 11,
+          "unchanged": 110,
+          "answer_changed": 28
+        }
+      },
+      "terminal": {
+        "div:author_stock": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "div:adapted": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "cd:author_stock": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "cd:adapted": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        }
+      }
+    }
+  },
+  "scores_sha256": "dc5075d85b415b8958a7093c27ffbc0dd049d9221d58feda529ed3c711603873",
+  "plan_sha256": "f397d895e27b143e1dab1ada05f8f039e8913fcc7a651eacfac9cd13c6832b43",
+  "limitations": [
+    "DEV exploratory; task and contrast intervals are not adjusted for multiplicity",
+    "AI2D uses deterministic local scoring without an API judge",
+    "full panel saves tensor summaries, not reconstructable full tensors",
+    "quality panel is not a timing benchmark"
+  ]
+}

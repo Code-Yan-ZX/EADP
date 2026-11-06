@@ -1,0 +1,69 @@
+{
+  "builder_sha256": "dde392a3a331231ac9eb25ed459792573dd5afa1f409bac098562cf20938f55e",
+  "counts": {
+    "AI2D_TEST:CONFIRM:panel": 256,
+    "AI2D_TEST:CONFIRM:questions": 1000,
+    "AI2D_TEST:DEV:panel": 128,
+    "AI2D_TEST:DEV:questions": 512,
+    "AI2D_TEST:FINAL:questions": 1576,
+    "DocVQA_VAL:CONFIRM:panel": 256,
+    "DocVQA_VAL:CONFIRM:questions": 1025,
+    "DocVQA_VAL:DEV:panel": 128,
+    "DocVQA_VAL:DEV:questions": 515,
+    "DocVQA_VAL:FINAL:questions": 3809,
+    "TextVQA_VAL:CONFIRM:panel": 256,
+    "TextVQA_VAL:CONFIRM:questions": 394,
+    "TextVQA_VAL:DEV:panel": 128,
+    "TextVQA_VAL:DEV:questions": 200,
+    "TextVQA_VAL:FINAL:questions": 4406
+  },
+  "deficits": {
+    "AI2D_TEST:CONFIRM": 0,
+    "AI2D_TEST:DEV": 0,
+    "DocVQA_VAL:CONFIRM": 0,
+    "DocVQA_VAL:DEV": 0,
+    "TextVQA_VAL:CONFIRM": 0,
+    "TextVQA_VAL:DEV": 0
+  },
+  "group_id_definition": "SHA256 of UTF-8 group| plus sorted byte SHA256 values joined by |",
+  "groups": 5252,
+  "limitations": [
+    "Conservative transitive grouping can join perceptually similar but distinct images; pHash can miss semantically similar pages.",
+    "AI2D image variants sharing figure basename are grouped; DocVQA original document+page grouped.",
+    "TRAIN is not included; must audit separately against all evaluation groups before training.",
+    "Historical exposure remains; FINAL is held out only for this study.",
+    "Embedded TSV images are fingerprinted; source file pixels and runtime input must be checked before model runs."
+  ],
+  "near_candidate_pairs": 25104,
+  "near_pairs_hamming_le4": 154,
+  "outputs_sha256": {
+    "full_manifest.jsonl": "bfc1541bda41382afb2e80478af2be291a7f8d05f6f5c694863b693aad5dec60",
+    "images.jsonl": "3628cc16e2bee91ee7f6de6d97e0a26cd18e7626f131c287e1e4adfa72bf284a",
+    "near_pairs.jsonl": "707df1554e4eedd8e949feb40c77212487126b861d7a541a376ee1071dec8315",
+    "panel_manifest.jsonl": "5696221e24ab189c483288b1b0314fd65143450bd3a23a9ba16fee200aa2f71b"
+  },
+  "phash_definition": "EXIF transpose; RGB->L; Lanczos 32x32; orthonormal DCT-II; 8x8; threshold by median of 63 AC coefficients, compare all 64 bits; <=4 union",
+  "pillow": "11.2.1",
+  "scipy": "1.15.2",
+  "seed": "20261104",
+  "sources": {
+    "AI2D_TEST": {
+      "path": "/media/disk2/YZX/LMUData/AI2D_TEST.tsv",
+      "sha256": "3b16aa83c6809149df6978c7d5a6ee830b75f0010a60b26d33c004c47d575c4a"
+    },
+    "DocVQA_VAL": {
+      "path": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+      "sha256": "05fea8a88593b192cd23415797771c94603832377d3b4b2dec4f0a6fb87a4d25"
+    },
+    "TextVQA_VAL": {
+      "path": "/media/disk2/YZX/LMUData/TextVQA_VAL.tsv",
+      "sha256": "f9bd2e1518185f678a60b9a31fea5655f7533704fa7d7c9b3775bf0ca2a6b8d0"
+    }
+  },
+  "tasks_order": [
+    "DocVQA_VAL",
+    "TextVQA_VAL",
+    "AI2D_TEST"
+  ],
+  "unique_byte_images": 5652
+}

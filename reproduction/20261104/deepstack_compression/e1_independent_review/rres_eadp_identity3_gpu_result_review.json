@@ -1,0 +1,81 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "images": 3,
+  "generations": 6,
+  "formal_sha256": "f3da5c89ac82dc0f1cbdc8c4f2f3e0fe603be1f662621196fa41ee9bba5061ae",
+  "formal_started_sha256": "624e48069cf0a39bc55b4d51fed4e3d5268c060d6018dc58c1a9d4100515f993",
+  "formal_terminal_sha256": "3e36cc5ebd5d0c2974274809ed274e86affa881672510827ddcd1c7aecc44b13",
+  "run_started_sha256": "0c1eaaaa719744186bb7f8d398918a2e3231a9f41d54cf542781959af28b3a22",
+  "run_terminal_sha256": "59018a4d5d355da90a4af3eb53d96e5195b7d3038537260b7cfc51f1095b9553",
+  "source_manifest_sha256": "abd2715e24fc53a66fe09bd3470fb5241751c8b62e8da3d19f7d9357bc7469b2",
+  "reviewer_sha256": "5f925a06acc874adc0b32652c6de35a4760060fecf117270212d8742da944424",
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/run001/rres/observations/DocVQA_VAL_64588.json": "3c63496d5b36f1600bc85739f7d8ec7b9dc1cc757e98f5c333950baa1c75b26f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/run001/rres/observations/DocVQA_VAL_64588_raw.json": "f61103469d2626e18621d24b82cb57b33c8dfa192df5b439706ba57652fcbacd",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/run001/rres/observations/TextVQA_VAL_36511.json": "b0f10aae030a75163d64a959df15c601e3832eb6a270a8ac7ff5b2705f0faeb0",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/run001/rres/observations/TextVQA_VAL_36511_raw.json": "d715867a13c2c4467edccf131ecf9c5881b6114e82931cbcf45735c70aef1e96",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/run001/rres/observations/AI2D_TEST_207406.json": "4c27455972795cb3db544e02a9ecf3740d6899de35ce696896b9ad622500c244",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/run001/rres/observations/AI2D_TEST_207406_raw.json": "2473b2aa77d429bd10065c15b46ce7664ecc3c11872d228cd9c498eb6648d8d3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/run001/eadp/observations/DocVQA_VAL_64588.json": "1638345a611e8d571d7bb66f28242eda675257248efcf29e82c0e78bea3855b1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/run001/eadp/observations/DocVQA_VAL_64588_raw.json": "f855501d9bfe6a7eacaf129333f7303620f6fce5edc7b1f4149e3803c39ad030",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/run001/eadp/observations/TextVQA_VAL_36511.json": "aef15e659175a9d3a7bc4ec364f6d68ea7667aa333797e8256d3bafc56c183d9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/run001/eadp/observations/TextVQA_VAL_36511_raw.json": "2245ebfe6975723bc841cd6e75a24bece39a0f9eecfb05e6bb1532103c612077",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/run001/eadp/observations/AI2D_TEST_207406.json": "5c006e1d974d1e53dcd36e25d5d18e562136dd8b9be96cce2bfc2ea123fb68cd",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_identity3_execution/run001/eadp/observations/AI2D_TEST_207406_raw.json": "374a71b68270a81f27b32eb400fe9ca89e5dae76e71820db9e5fa7f7ed48b0f0"
+  },
+  "cases": [
+    {
+      "arm": "rres",
+      "task": "DocVQA_VAL",
+      "qid": "64588",
+      "record_sha256": "3c63496d5b36f1600bc85739f7d8ec7b9dc1cc757e98f5c333950baa1c75b26f",
+      "raw_sha256": "f61103469d2626e18621d24b82cb57b33c8dfa192df5b439706ba57652fcbacd"
+    },
+    {
+      "arm": "rres",
+      "task": "TextVQA_VAL",
+      "qid": "36511",
+      "record_sha256": "b0f10aae030a75163d64a959df15c601e3832eb6a270a8ac7ff5b2705f0faeb0",
+      "raw_sha256": "d715867a13c2c4467edccf131ecf9c5881b6114e82931cbcf45735c70aef1e96"
+    },
+    {
+      "arm": "rres",
+      "task": "AI2D_TEST",
+      "qid": "207406",
+      "record_sha256": "4c27455972795cb3db544e02a9ecf3740d6899de35ce696896b9ad622500c244",
+      "raw_sha256": "2473b2aa77d429bd10065c15b46ce7664ecc3c11872d228cd9c498eb6648d8d3"
+    },
+    {
+      "arm": "eadp",
+      "task": "DocVQA_VAL",
+      "qid": "64588",
+      "record_sha256": "1638345a611e8d571d7bb66f28242eda675257248efcf29e82c0e78bea3855b1",
+      "raw_sha256": "f855501d9bfe6a7eacaf129333f7303620f6fce5edc7b1f4149e3803c39ad030"
+    },
+    {
+      "arm": "eadp",
+      "task": "TextVQA_VAL",
+      "qid": "36511",
+      "record_sha256": "aef15e659175a9d3a7bc4ec364f6d68ea7667aa333797e8256d3bafc56c183d9",
+      "raw_sha256": "2245ebfe6975723bc841cd6e75a24bece39a0f9eecfb05e6bb1532103c612077"
+    },
+    {
+      "arm": "eadp",
+      "task": "AI2D_TEST",
+      "qid": "207406",
+      "record_sha256": "5c006e1d974d1e53dcd36e25d5d18e562136dd8b9be96cce2bfc2ea123fb68cd",
+      "raw_sha256": "374a71b68270a81f27b32eb400fe9ca89e5dae76e71820db9e5fa7f7ed48b0f0"
+    }
+  ],
+  "GT_opened": false,
+  "scoring_performed": false,
+  "timing_claims": false,
+  "errors": [],
+  "limits": [
+    "Three anchors only; diagnostic hooks change timing.",
+    "EADP prior prefill logits are not available.",
+    "High-dimensional tensors not archived, identity comparisons use saved fingerprints and actual online checks.",
+    "Endpoint hashes/stats and post-run source snapshot do not rule out transient modifications."
+  ]
+}

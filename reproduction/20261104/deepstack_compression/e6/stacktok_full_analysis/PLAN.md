@@ -1,0 +1,7 @@
+# StackTok full DEV scoring preparation
+
+This exploratory scoring plan was written while the full panel was still generating, without opening any of its partial outputs or additional ground-truth answers. It fixes the four arms, three task-wise paired contrasts and full 384-question denominator in `score_plan001.json`. The independent scorer and official author scorer must agree within the established 1e-12 tolerance. Inputs, processor, prompt, image, generation recipe and EOS must agree per question with accepted references before any labels are read.
+
+The candidate is the local Qwen3 adaptation of the upstream selector at K256. The reference arms are accepted EADP K256 with all three DeepStack injections and accepted PixelPrune t=0 and t=.45. The latter have dynamic K; fixed K is also not proof of equal compute. Three task-wise paired bootstrap intervals resample whole image groups using 10,000 draws and fixed seed, without multiple-comparison correction. All 384 questions, including empty answers, EOS and capped generations, remain in the denominator.
+
+Scoring is locked until the full run really exits, formal no-GT acceptance and independent acceptance both pass and actually exit, all paired upstream inference/score identities and scorer source/versions are checked, and a separate prelaunch reviewer passes. A full analysis driver and those gates are not implemented yet; the synthetic paired-statistic module and plan do not authorize reading predictions or answers.

@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "independent_of_scoring_driver_author": true,
+  "questions": 384,
+  "score_checks": 384,
+  "reference_checks": 1152,
+  "contrast_checks": 9,
+  "tasks": {
+    "DocVQA_VAL": {
+      "questions": 128,
+      "image_groups": 128,
+      "score_checks": 128,
+      "contrast_checks": 3
+    },
+    "TextVQA_VAL": {
+      "questions": 128,
+      "image_groups": 128,
+      "score_checks": 128,
+      "contrast_checks": 3
+    },
+    "AI2D_TEST": {
+      "questions": 128,
+      "image_groups": 128,
+      "score_checks": 128,
+      "contrast_checks": 3
+    }
+  },
+  "GT_opened_DEV_only": true,
+  "CONFIRM_FINAL_answers_opened": false,
+  "score_sha256": "2fe413e6df4e8b054cbdcc4ac05fce296d601e900d4f008064b30b12464c23d2",
+  "analysis_sha256": "c156ac29985539f5e55e911c228a44b77c768a0c80d021ccbc98ca72f2693bea",
+  "plan_sha256": "86713d629f9a6b96fa1256a0a758ea3ef510a817dec1bb8f3a80ce3edd4ebe49",
+  "score_started_sha256": "f90f9f012bc4a733028994949b5e464084db3414d5724a983c0d57d91ab76d7d",
+  "score_terminal_sha256": "d4955fd77c98faf5815e6e88e1cd6aba149c4dafd2efa05d2ccaa56f8deddf3f",
+  "reviewer_sha256": "25b76a5c7a2e0339e221e543a6f6a833454f0b2415648835e3ac8105c2021d25",
+  "limitations": [
+    "The accepted author and independent E1 metric implementations are reused.",
+    "All comparisons are exploratory DEV, uncorrected, and not equal-compute claims."
+  ]
+}

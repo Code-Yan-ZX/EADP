@@ -1,0 +1,43 @@
+{
+  "recipe": {
+    "model_path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "min_pixels": 1048576,
+    "max_pixels": 1048576,
+    "use_custom_prompt": true,
+    "use_vllm": false,
+    "max_new_tokens": 2048,
+    "top_p": 0.001,
+    "top_k": 1,
+    "temperature": 0.01,
+    "repetition_penalty": 1.0,
+    "presence_penalty": 0.0,
+    "visual_token_num": 1024,
+    "alpha": 0.5,
+    "beta": 2.0
+  },
+  "versions": {
+    "torch": "2.8.0",
+    "torchvision": "0.23.0",
+    "transformers": "4.57.1",
+    "flash-attn": "2.8.3",
+    "accelerate": "1.12.0",
+    "qwen-vl-utils": "0.0.14",
+    "Pillow": "12.0.0",
+    "tokenizers": "0.22.2",
+    "numpy": "2.2.6",
+    "safetensors": "0.7.0",
+    "timm": "1.0.24"
+  },
+  "pid": 1,
+  "gpu": "NVIDIA A40",
+  "model_instances": 1,
+  "panel_sha256": "5fbf6c3c4355d55a26fe2f2ff8395a47bb6d39e14ed35046214f6a0459060e0c",
+  "source_plan_sha256": "d752c876367803c5728ffa84a819fd63b4c129cfd0e2eb78931f7d94dae5d4ad",
+  "worker_sha256": "43069fb157742ccfe63f2c063b900d701d50f667e7f7fcb996062f8dda7df82e",
+  "adapter_sha256": "f0984cbe1ded51616a3d6f553be47334bfc61c7080bfaa6749f0e785b3b172ae",
+  "logits_abs_tolerance": 0.0,
+  "teacher_decode_steps": 32,
+  "scoring": false,
+  "gt_read": false,
+  "start_unix": 1793807167.7552302
+}

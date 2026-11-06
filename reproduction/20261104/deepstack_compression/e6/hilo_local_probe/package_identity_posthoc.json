@@ -1,0 +1,30 @@
+{
+  "scope": "post-run package comparison; exact Python files only",
+  "original_files": 6,
+  "candidate_files": 6,
+  "only_original": [],
+  "only_candidate": [],
+  "differing_files": [
+    "models/qwen3_vl/modeling_hilo_qwen3_vl.py"
+  ],
+  "candidate_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/hilo_prune/__init__.py": "5197cfa62fcc97f91266ee2f0980b4c4f0eaaeae8f45c70fc167d6642a0a9428",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/hilo_prune/models/__init__.py": "654f7b36f43237fc774ac2e09d8838635e58f4e3432307e139d9897965920240",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/hilo_prune/models/qwen3_vl/__init__.py": "1b99c4860e4b89f0df8225ac4ccae2da6957e23fe0762ff13e6cc0f42dcfbf12",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/hilo_prune/models/qwen3_vl/modeling_hilo_qwen3_vl.py": "09ba0fadf0b6e9972ac0352a184723b1424ccffd3387c5a3ec046af7ee32cabb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/hilo_prune/patches.py": "8d4b96cac1e0b3eeb26e80930ee153ab3465e6af789788044af7c1deddb27e50",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/hilo_prune/selection.py": "3732d070670aef31ef6ec41eb3043c2e6e93c602a81067140b0ce1653d4b5b39"
+  },
+  "original_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/Hi-Lo_Prune/hilo_prune/__init__.py": "5197cfa62fcc97f91266ee2f0980b4c4f0eaaeae8f45c70fc167d6642a0a9428",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/Hi-Lo_Prune/hilo_prune/models/__init__.py": "654f7b36f43237fc774ac2e09d8838635e58f4e3432307e139d9897965920240",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/Hi-Lo_Prune/hilo_prune/models/qwen3_vl/__init__.py": "1b99c4860e4b89f0df8225ac4ccae2da6957e23fe0762ff13e6cc0f42dcfbf12",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/Hi-Lo_Prune/hilo_prune/models/qwen3_vl/modeling_hilo_qwen3_vl.py": "d9e847c2ec5745f0998f005a39ae2bd14ac2c9d819e0d93499a5e657fe4af673",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/Hi-Lo_Prune/hilo_prune/patches.py": "8d4b96cac1e0b3eeb26e80930ee153ab3465e6af789788044af7c1deddb27e50",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/Hi-Lo_Prune/hilo_prune/selection.py": "3732d070670aef31ef6ec41eb3043c2e6e93c602a81067140b0ce1653d4b5b39"
+  },
+  "limitations": [
+    "post-run package comparison, not proof against changes during execution",
+    "native libraries/environment are not fully captured"
+  ]
+}

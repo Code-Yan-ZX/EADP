@@ -1,0 +1,40 @@
+{
+  "variant": "upstream",
+  "module": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/Hi-Lo_Prune/hilo_prune/models/qwen3_vl/modeling_hilo_qwen3_vl.py",
+  "torch": "2.10.0+cu128",
+  "transformers": "4.57.6",
+  "scope": "random tiny CPU model, not author fixed environment or full Qwen3 inference",
+  "cases": [
+    {
+      "selection": false,
+      "use_cache": false,
+      "status": "passed",
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "sha256": "0fa888a57428a5cfb9f1efd2d553eb13485802e7f2f91c55de6bd52c45d52e64"
+    },
+    {
+      "selection": true,
+      "use_cache": false,
+      "status": "failed",
+      "error_type": "NameError",
+      "error": "name 'top_index_1' is not defined",
+      "traceback": "Traceback (most recent call last):\n  File \"/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/probe.py\", line 25, in main\n    output=model(inputs_embeds=embeds.clone(),input_ids_=ids,image_token_id=9,image_tensor=patches if selected else None,\n  File \"/home/dell/miniconda3/envs/qwen3vl_clean/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/home/dell/miniconda3/envs/qwen3vl_clean/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/home/dell/miniconda3/envs/qwen3vl_clean/lib/python3.10/site-packages/transformers/utils/generic.py\", line 1072, in wrapper\n    outputs = func(self, *args, **kwargs)\n  File \"/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/Hi-Lo_Prune/hilo_prune/models/qwen3_vl/modeling_hilo_qwen3_vl.py\", line 1513, in forward\n    if top_index_1.numel() == 0:\nNameError: name 'top_index_1' is not defined\n"
+    },
+    {
+      "selection": true,
+      "use_cache": true,
+      "status": "failed",
+      "error_type": "NameError",
+      "error": "name 'top_index_1' is not defined",
+      "traceback": "Traceback (most recent call last):\n  File \"/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/probe.py\", line 25, in main\n    output=model(inputs_embeds=embeds.clone(),input_ids_=ids,image_token_id=9,image_tensor=patches if selected else None,\n  File \"/home/dell/miniconda3/envs/qwen3vl_clean/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/home/dell/miniconda3/envs/qwen3vl_clean/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/home/dell/miniconda3/envs/qwen3vl_clean/lib/python3.10/site-packages/transformers/utils/generic.py\", line 1072, in wrapper\n    outputs = func(self, *args, **kwargs)\n  File \"/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/Hi-Lo_Prune/hilo_prune/models/qwen3_vl/modeling_hilo_qwen3_vl.py\", line 1513, in forward\n    if top_index_1.numel() == 0:\nNameError: name 'top_index_1' is not defined\n"
+    }
+  ],
+  "GT_opened": false,
+  "model_weights_loaded": false,
+  "gpu_used": false,
+  "cuda_initialized": false
+}

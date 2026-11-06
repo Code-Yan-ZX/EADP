@@ -1,0 +1,138 @@
+{
+  "status": "passed",
+  "scope": "complete diagnostic evidence only; not an automatic method success",
+  "cases": [
+    {
+      "case": "index_assign",
+      "outcome": "failed",
+      "returncode": 1,
+      "timed_out": false,
+      "identity_mismatches": [],
+      "failure_types": [
+        "AcceleratorError"
+      ],
+      "captured_replay_comparisons": 0
+    },
+    {
+      "case": "scatter_assign",
+      "outcome": "completed",
+      "returncode": 0,
+      "timed_out": false,
+      "identity_mismatches": [],
+      "failure_types": [],
+      "captured_replay_comparisons": 0
+    },
+    {
+      "case": "index_read",
+      "outcome": "completed",
+      "returncode": 0,
+      "timed_out": false,
+      "identity_mismatches": [],
+      "failure_types": [],
+      "captured_replay_comparisons": 0
+    },
+    {
+      "case": "boolean_mask_assign",
+      "outcome": "completed",
+      "returncode": 0,
+      "timed_out": false,
+      "identity_mismatches": [],
+      "failure_types": [],
+      "captured_replay_comparisons": 0
+    },
+    {
+      "case": "k_001",
+      "outcome": "completed",
+      "returncode": 0,
+      "timed_out": false,
+      "identity_mismatches": [],
+      "failure_types": [],
+      "captured_replay_comparisons": 6
+    },
+    {
+      "case": "k_016",
+      "outcome": "completed",
+      "returncode": 0,
+      "timed_out": false,
+      "identity_mismatches": [],
+      "failure_types": [],
+      "captured_replay_comparisons": 6
+    },
+    {
+      "case": "k_128",
+      "outcome": "completed",
+      "returncode": 0,
+      "timed_out": false,
+      "identity_mismatches": [],
+      "failure_types": [],
+      "captured_replay_comparisons": 6
+    },
+    {
+      "case": "k_256",
+      "outcome": "completed",
+      "returncode": 0,
+      "timed_out": false,
+      "identity_mismatches": [],
+      "failure_types": [],
+      "captured_replay_comparisons": 6
+    },
+    {
+      "case": "k_512",
+      "outcome": "completed",
+      "returncode": 0,
+      "timed_out": false,
+      "identity_mismatches": [],
+      "failure_types": [],
+      "captured_replay_comparisons": 6
+    }
+  ],
+  "full_k_identity_all_passed": true,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "cuda_initialized": false,
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/plan001.json": "bb68bcf5a2a89cb6fd712f9f4c48d627947957c24300b84cf996123e81e20fc9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/launch.json": "f56be3156189de2395bd1225411e5d5a69b4077c594a6da163a31a565ea5768b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/exit.json": "d7291bba104e7296ae7516e1f99c8972e589ed272849ea5f5b65114b9cbeeaa7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/worker_complete.json": "a45c766f7b219c629abad27f10ab29b4416fdb23f4eb91284ac11f57ac2e2994",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/progress.jsonl": "1437f8dec9daf088ac44047312e1185556b0ed3e865957fec2de595e3983bc2b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/monitor_smoke001/started.json": "8464c47e97461adcfb61ee574778c66b4d65b884907940ef06ef37e52e4f86e4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/monitor_smoke001/terminal.json": "90a0e0e8e8279a35354c00452930385a367352fcd4cc412236089d794eec2f9b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/preflight001.json": "14de82de46352e65bd4509ad0327104d2ed7fb18f61b44547d158ba813e8c90c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/independent_prelaunch_review.json": "8770d2d9df658b0551e9fb0908e0c34cf5a1a23db345c8a889c14bf128cb1022",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/index_assign.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/index_assign.stderr.log": "a696c779be6c341037702d88676c94b4bae03608b09865b8c8bb60d06981fb1a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/index_assign.jsonl": "2747940f88079f1d8f7cbc57ae8422db59cdd6d4c8f43bec9edfa05766096b58",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/scatter_assign.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/scatter_assign.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/scatter_assign.jsonl": "10dbe142ba943d58c0e6c4b26b5d6bff73a568194eea118d81eabcda5df1b15f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/index_read.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/index_read.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/index_read.jsonl": "3000e0e686bf0adc5f49f9ee721e14769012c1de0d531b28212ee4db8a9f384b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/boolean_mask_assign.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/boolean_mask_assign.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/boolean_mask_assign.jsonl": "d41ac3a3bb91ebc2979de698424f2ae871743977084f3ed7a0e15914842c1c1e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/k_001.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/k_001.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/k_001.jsonl": "21a750583e0ea0427433a8ec279a9b156641867d507ed944119367d132f723cd",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/k_016.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/k_016.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/k_016.jsonl": "9b74c0f5dacf8cbf1c4409d77abffb5d81a48b1c147bc2e6aee90fd578f39e0b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/k_128.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/k_128.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/k_128.jsonl": "ec09d3b20940a25a7bc4c10b57ec5cea6e9ca5614652c074c7f30828310974b1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/k_256.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/k_256.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/k_256.jsonl": "4a4f31c25a7639415157e456f20c6df36f89bbc8a1db803ff89794a3841a4e5d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/k_512.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/k_512.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/run_smoke001/observations/k_512.jsonl": "4dd944669b139e36fee05b433a6952b3b46c6892c7a56ac519f3c71eb0e4c53b"
+  },
+  "verifier_sha256": "7402647e3506aec9cd27d06fbfb41fe2c88f3a52a852fd03cb60deb2d056bbb3",
+  "errors": [],
+  "limitations": [
+    "capture/OOM/timeout classified as failure, not numerical mismatch",
+    "only one archived real image and synthetic variations; no model integration, accuracy or TTFT claim",
+    "PyTorch allocator fraction and statistics do not bound device-wide memory"
+  ]
+}

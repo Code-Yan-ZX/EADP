@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "inputs": 62,
+  "generations": 248,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "predictions_opened": true,
+  "timing_claims": false,
+  "errors": [],
+  "formal_sha256": "3123f3fe22ae2b1f9d28614cb3fd4311a7e65c21009dcbd15705f00f890f0a73",
+  "formal_started_sha256": "45ab594459e09ed77e81bb1b0beb3bd7253aa65d48984904da815a51506823ae",
+  "formal_terminal_sha256": "82576b6b39362d6dfa168beef22d79af7c48c0297cb6994eb5e0aef0eb4655f6",
+  "run_started_sha256": "1a68c446f9e0decc10736411225defdd42224a902bb811ba0be543a39f02582b",
+  "run_terminal_sha256": "871832f393054b1b44c835a222a8cee466d2cc7da215f092bfb8c183cae454c2",
+  "snapshot_manifest_sha256": "873be315696ae95047672d00161c391abc11a020fd4757a2ec35e06d96e52c08",
+  "records_sha256": "ab24282890aace0da20a5af2164c458635a8a6a92def407f72c59e7c0980cc72",
+  "reviewer_sha256": "6309db1e1ba2357b19eec5ccc9928eb71616faa47d069ceed4b98a0c8c2e847b",
+  "limitations": [
+    "No full prefill or DS tensors archived; summaries and selection/position reconstructed against accepted E4.",
+    "Prefill KV hashes recorded at runtime; decode steps 1\u201331 have per-layer lengths/positions only.",
+    "Existing DEV mixed prediction records opened for identity; no GT or scoring."
+  ]
+}

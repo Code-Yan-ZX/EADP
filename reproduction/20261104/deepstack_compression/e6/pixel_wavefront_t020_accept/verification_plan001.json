@@ -1,0 +1,17 @@
+{
+  "stage": "pre-run formal identity acceptance",
+  "verifier_sha256": "6bded7f6d3efa71c25e5155710358ea8d8c97d0f05702df33a173c7d4561bf95",
+  "test_sha256": "7efd0868c36074ba1179e4daf994e3ac9a4b06079031887f8f241b5a8ea3d3ba",
+  "cpu_started_sha256": "b0fe21cd8d093ff49c41a4dd042bb2b81b7ccd7eb9c9c0e8caebe9d377a63e2e",
+  "cpu_terminal_sha256": "8d57515679d2759bc07e747d93ff38a67fd5c359033216438b4cccc6f7f9eb7d",
+  "execution_plan_sha256": "1f9638dde0a4eb7d30db58d20f706e2b026460db24725494a520d893d897deab",
+  "GPU_results_opened": false,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "timing_claims": false,
+  "limitations": [
+    "Formal acceptance is pre-run but verifier requires an additional independent post-run review.",
+    "KV fingerprints are runtime records, raw KV tensors are not archived.",
+    "Candidate implementation author reviewed earlier no-GPU preflights."
+  ]
+}

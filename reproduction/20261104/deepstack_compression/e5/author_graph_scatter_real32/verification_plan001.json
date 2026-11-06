@@ -1,0 +1,32 @@
+{
+  "stage": "CPU audit of all 96 graph component cases and failures",
+  "plan_sha256": "7979812555a92805354e444c9e28371f2928a8ecc0f562e32daeaed742065244",
+  "verifier_sha256": "f1d9cf71aa7fbf1b48cdbbe450da6558654a350ef103c371e2955562324b285b",
+  "timeout_seconds": 900,
+  "gpu_used": false,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter_real32/monitor_verify001",
+    "--timeout",
+    "900",
+    "--snapshot-seconds",
+    "3600",
+    "--poll-seconds",
+    "5",
+    "--grace-seconds",
+    "30",
+    "--",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter_real32/verify.py",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter_real32/smoke001_verification.json"
+  ],
+  "limits": [
+    "audit pass means evidence complete, not necessarily numerical identity",
+    "independent post-run review required before interpretation"
+  ]
+}

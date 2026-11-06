@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "sample_sha256": "6c65ce96eb8b0aa1d91f67e1cd37956f97b9343ccdb13b52e72873e3e26fff49",
+  "reviewer_sha256": "8816eb4674532e2c77c26bbc5fc77c61ce67c59f98c6108798529e8cf9cef2a2",
+  "freeze_source_sha256": "b60c16e0044b00cba736abf567249219c89d3ec757360c372ddfc9645552f668",
+  "freeze_started_sha256": "70c07d406f568329fb9063f9e037503d4c2039c24c811f7dc2447323340a5c07",
+  "freeze_terminal_sha256": "51ad1448b06d372c9ea79fe4faacb4c7a400d1d1e3adbb85e17288cf5922fe02",
+  "input_sha256": "f3fef75929f88fa21b96458337030c47f2b7afaa596f540879afddd72847f59d",
+  "panel_sha256": "5696221e24ab189c483288b1b0314fd65143450bd3a23a9ba16fee200aa2f71b",
+  "questions_verified": 32,
+  "counts": {
+    "DocVQA_VAL": 11,
+    "TextVQA_VAL": 11,
+    "AI2D_TEST": 10
+  },
+  "prior_exposure_overlap": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "15233"
+    }
+  ],
+  "GT_opened": false,
+  "predictions_opened": false,
+  "scoring_performed": false,
+  "limits": [
+    "sample and its hash ranking frozen after E4 DEV scores; no prospective pre-score selection claim",
+    "three arms and 96 generations are a diagnostic budget, not a full method comparison",
+    "PriorTR uses SDPA and a distinct environment; no direct timing parity claim",
+    "actual GPU execution remains unapproved"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "stage": "post-run no-GT timing pilot verification v2 frozen pre-GPU",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_accept_v3/verify.py": "245e0c917379d7f5379113519b73a46f99cc21adcba6ec82ac74fd2154876097",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_accept_v3/snapshot.py": "a6a100fa14dc15eb66fa1d698f35b433735a4e6d44465bc80e92113a2e835eea",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_accept_v3/test_verify.py": "69586540f5ee0155dbae869df705f4d1448427562af36197e052b89b7e62f60e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/admission.py": "6e3f35fe533b64bd66fa44c4cfd2c22e6d9911e97cc730acbe6b67f2ca5fb8af",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/identity_gate.py": "690ab54edca0490d0c6aad7f1443992171f033942de49802b737160dfe0f53f8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/contract.py": "adbe00a396015baf7fd12ca2c0e88a0db01dc1956fc6d728d15c5c4043d64232",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/runtime_plan001.json": "26762b5b30ed28509309e31cf47ef1bbcddef5f8cacf8fddf85c74bb1e32766a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_ttft_pilot_v3/pilot_plan001.json": "a82ae6e88a8f4a6d74d12cfc3b5e9ae459bb9a081415bd2d83fcd4e83e635d73",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_budget_pilot_v2/reference.py": "7060af120a0285a8ea639babe3790c39472c67a5c60196ae9313d76aa09cc322",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py": "dddd62696ca10f2624654feec9831c83d308ddf8eb982c645ad3c5eac827ff17",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timing_supervise.py": "27e3db3242836f1534c06f6fe087390d6547a7c23b01c22d01f02c413c948d06",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4c_budget_ttft_v3_prelaunch_review.json": "7abe9e544df3d0277acf006897580d20e837076b1cf43c503482f36973f179cc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_e4c_budget_ttft_v3_prelaunch.py": "bb9de74f3064787890c9dd1c41b9632884b0f808b8b2af86a44438cb7407e29a"
+  },
+  "cpu_started_sha256": "d946968dbbe29a610c372f1cf160854c2fa8983a36f85322b134e7bdddbee5a6",
+  "cpu_terminal_sha256": "9311b93978920f4889a17bcb2a20f39dae71515cc3b26a93280fb37255f0f931",
+  "jobs": 48,
+  "warmups": 12,
+  "measured": 36,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "time_boundary": "t0 < first selected token <= completion",
+  "limitations": "Exploratory three DEV anchors; known prior results; completed boundary includes raw journal fsync; only direct overlapping supervisor health windows known; no samples deleted."
+}

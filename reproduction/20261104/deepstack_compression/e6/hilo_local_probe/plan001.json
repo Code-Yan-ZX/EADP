@@ -1,0 +1,27 @@
+{
+  "scope": "non-author-environment random tiny CPU forward and one decode diagnostic",
+  "base_commit": "29265e3b13ef89ecfd2cbd8803f1678a2ce1bdb6",
+  "patch": "replace reference to undefined top_index_1 and condition with unconditional cast of selected indices to long",
+  "sources_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/Hi-Lo_Prune/hilo_prune/models/qwen3_vl/modeling_hilo_qwen3_vl.py": "d9e847c2ec5745f0998f005a39ae2bd14ac2c9d819e0d93499a5e657fe4af673",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/hilo_prune/models/qwen3_vl/modeling_hilo_qwen3_vl.py": "09ba0fadf0b6e9972ac0352a184723b1424ccffd3387c5a3ec046af7ee32cabb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/probe.py": "b994d598d8481d051e47b0ad1a5a9166ab9ead4d23ef59467ccdb6f10fa7cd01",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/audit/hilo_cpu_probe.py": "2d6334d72b2adb5d4368dbee84eb05ce44e21ffc72a025b800b9d3844787c464",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/audit/hilo_cpu_probe.log": "2e3a68e5b78723ca406008acae8f92081c3ad69bcb816a3c960a31532d22fdb5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_head_check_20261105.json": "b1ed1dba164337e81d93ce867660c28e84e6aaace6ac5ca3ca397873eda2ec84"
+  },
+  "environment": "/home/dell/miniconda3/envs/qwen3vl_clean/bin/python",
+  "tests": [
+    "same random no-selection output upstream vs local",
+    "record upstream and local selected prefill with and without cache",
+    "if cached prefill succeeds, attempt one naive decode and record per-layer lengths and failures"
+  ],
+  "GT_opened": false,
+  "model_weights_loaded": false,
+  "gpu_authorized": false,
+  "limitations": [
+    "No official author environment, real model, benchmark quality, or GPU claim.",
+    "One local semantic assumption; not a verified repair or author implementation.",
+    "Naive decode is a diagnostic, not a proven correct cache policy."
+  ]
+}

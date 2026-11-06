@@ -1,0 +1,252 @@
+{
+  "status": "completed",
+  "questions": 384,
+  "pixel_generations": 384,
+  "tasks": {
+    "DocVQA_VAL": {
+      "n_questions": 128,
+      "n_image_groups": 128,
+      "arm_means_pct": {
+        "pixel_t010": 91.69149146400984,
+        "pixel_t0": 91.6197246763653,
+        "e4_k256_d1": 67.84538557047036,
+        "e4_k1024_d1": 91.9455555295399
+      },
+      "arm_percentile_95_ci_pct": {
+        "pixel_t010": [
+          87.11966612520956,
+          95.55572994171625
+        ],
+        "pixel_t0": [
+          86.91524092769211,
+          95.62907835979124
+        ],
+        "e4_k256_d1": [
+          60.56281627326104,
+          74.97486492913437
+        ],
+        "e4_k1024_d1": [
+          87.25615489653575,
+          95.88452213476626
+        ]
+      },
+      "bootstrap": {
+        "unit": "image_group",
+        "replicates": 10000,
+        "seed": 20261104,
+        "method": "percentile"
+      },
+      "contrasts": {
+        "t010_minus_t0": {
+          "difference_pp": 0.071766787644545,
+          "image_cluster_percentile_95_ci_pp": [
+            -1.5480896885997966,
+            2.1356502511862097
+          ],
+          "improved": 2,
+          "declined": 5,
+          "unchanged": 121,
+          "answer_changed": 10
+        },
+        "t010_minus_e4_k256": {
+          "difference_pp": 23.846105893539495,
+          "image_cluster_percentile_95_ci_pp": [
+            16.560997645735736,
+            31.19546634798936
+          ],
+          "improved": 51,
+          "declined": 5,
+          "unchanged": 72,
+          "answer_changed": 65
+        },
+        "t010_minus_e4_k1024": {
+          "difference_pp": -0.2540640655300582,
+          "image_cluster_percentile_95_ci_pp": [
+            -1.839790092719786,
+            1.2662760416666585
+          ],
+          "improved": 4,
+          "declined": 4,
+          "unchanged": 120,
+          "answer_changed": 14
+        }
+      },
+      "dynamic_k": {
+        "min": 152,
+        "median": 510.5,
+        "max": 830
+      },
+      "terminal": {
+        "eos": 128,
+        "truncated": 0,
+        "empty": 0
+      }
+    },
+    "TextVQA_VAL": {
+      "n_questions": 128,
+      "n_image_groups": 128,
+      "arm_means_pct": {
+        "pixel_t010": 82.5,
+        "pixel_t0": 83.75,
+        "e4_k256_d1": 80.78125,
+        "e4_k1024_d1": 85.546875
+      },
+      "arm_percentile_95_ci_pct": {
+        "pixel_t010": [
+          76.17187499999999,
+          88.35937499999999
+        ],
+        "pixel_t0": [
+          77.5,
+          89.375
+        ],
+        "e4_k256_d1": [
+          74.296875,
+          87.03125
+        ],
+        "e4_k1024_d1": [
+          79.765625,
+          90.859375
+        ]
+      },
+      "bootstrap": {
+        "unit": "image_group",
+        "replicates": 10000,
+        "seed": 20261104,
+        "method": "percentile"
+      },
+      "contrasts": {
+        "t010_minus_t0": {
+          "difference_pp": -1.25,
+          "image_cluster_percentile_95_ci_pp": [
+            -4.140625000000009,
+            1.5625
+          ],
+          "improved": 1,
+          "declined": 3,
+          "unchanged": 124,
+          "answer_changed": 10
+        },
+        "t010_minus_e4_k256": {
+          "difference_pp": 1.7187500000000004,
+          "image_cluster_percentile_95_ci_pp": [
+            -1.562500000000011,
+            5.078124999999989
+          ],
+          "improved": 8,
+          "declined": 3,
+          "unchanged": 117,
+          "answer_changed": 17
+        },
+        "t010_minus_e4_k1024": {
+          "difference_pp": -3.046875,
+          "image_cluster_percentile_95_ci_pp": [
+            -6.796874999999991,
+            0.23437499999999778
+          ],
+          "improved": 1,
+          "declined": 6,
+          "unchanged": 121,
+          "answer_changed": 10
+        }
+      },
+      "dynamic_k": {
+        "min": 231,
+        "median": 625.0,
+        "max": 952
+      },
+      "terminal": {
+        "eos": 128,
+        "truncated": 0,
+        "empty": 0
+      }
+    },
+    "AI2D_TEST": {
+      "n_questions": 128,
+      "n_image_groups": 128,
+      "arm_means_pct": {
+        "pixel_t010": 82.03125,
+        "pixel_t0": 82.03125,
+        "e4_k256_d1": 82.03125,
+        "e4_k1024_d1": 82.03125
+      },
+      "arm_percentile_95_ci_pct": {
+        "pixel_t010": [
+          75.0,
+          88.28125
+        ],
+        "pixel_t0": [
+          75.0,
+          88.28125
+        ],
+        "e4_k256_d1": [
+          75.0,
+          88.28125
+        ],
+        "e4_k1024_d1": [
+          75.0,
+          88.28125
+        ]
+      },
+      "bootstrap": {
+        "unit": "image_group",
+        "replicates": 10000,
+        "seed": 20261104,
+        "method": "percentile"
+      },
+      "contrasts": {
+        "t010_minus_t0": {
+          "difference_pp": 0.0,
+          "image_cluster_percentile_95_ci_pp": [
+            -3.125,
+            3.125
+          ],
+          "improved": 2,
+          "declined": 2,
+          "unchanged": 124,
+          "answer_changed": 13
+        },
+        "t010_minus_e4_k256": {
+          "difference_pp": 0.0,
+          "image_cluster_percentile_95_ci_pp": [
+            -4.6875,
+            4.6875
+          ],
+          "improved": 5,
+          "declined": 5,
+          "unchanged": 118,
+          "answer_changed": 19
+        },
+        "t010_minus_e4_k1024": {
+          "difference_pp": 0.0,
+          "image_cluster_percentile_95_ci_pp": [
+            -3.90625,
+            3.90625
+          ],
+          "improved": 3,
+          "declined": 3,
+          "unchanged": 122,
+          "answer_changed": 21
+        }
+      },
+      "dynamic_k": {
+        "min": 157,
+        "median": 400.5,
+        "max": 857
+      },
+      "terminal": {
+        "eos": 128,
+        "truncated": 0,
+        "empty": 0
+      }
+    }
+  },
+  "scores_sha256": "36e3637cd4f469cec6a98dfbd30c345b1d8d52fd159be34bf98e3c138fc6d2f1",
+  "plan_sha256": "78a922351984fcc2db304f43f74e78b1158f36e7cdb17f39783ff4a5cfc3636c",
+  "limitations": [
+    "threshold chosen after DEV results and calibration; post-hoc exploratory and comparisons unadjusted",
+    "dynamic K differs from fixed-K compute; no latency claim",
+    "AI2D deterministic local scorer",
+    "full visual/DS/KV arrays not archived"
+  ]
+}

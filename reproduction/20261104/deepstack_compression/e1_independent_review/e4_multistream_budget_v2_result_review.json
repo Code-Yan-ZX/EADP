@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "questions": 32,
+  "features_per_question": 8,
+  "task_feature_correlations": 24,
+  "GT_opened": false,
+  "predictions_opened": true,
+  "GPU_used": false,
+  "scoring_performed": false,
+  "result_sha256": "03b7e36874c358ed090a3b4a831e05f0f74be226f5168595faab0881307705ca",
+  "result_started_sha256": "93e1b240ec36eff9a0d3a1e94b488b2969bd7f55d47d17092976845c952903b3",
+  "result_terminal_sha256": "2f211e2678083e16ffea7db87e3151ce070e879d59d3ce8b86f6729315e4c4ac",
+  "prelaunch_sha256": "f0c5a320f215a1d221ca79f718e4842883090d55e69f627d7a335472500a77df",
+  "reviewer_sha256": "dfcaf894dce68f04ac8c9bafc13c35254ea1413332b34acc9c3ca8c04c242bd1",
+  "plan_sha256": "5de63a5ba7b5d510af80dbf4dd4f62b543f16105386e7b7ee27abb8d09278460",
+  "scope": "independent per-capture features, accepted score identity and descriptive correlation recomputation",
+  "limitations": [
+    "32 images after earlier exploration; n=10/11 per task and no confirmatory inference.",
+    "Only existing accepted DEV scores/predictions accessed; no GT, training or new model generation.",
+    "Prior accepted E4 visual streams represented by hashes, not independently reconstructed full tensors."
+  ],
+  "errors": []
+}

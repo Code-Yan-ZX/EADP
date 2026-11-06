@@ -1,0 +1,24 @@
+{
+  "scope": "separate DEV component profiler, no GT or scoring; not end-to-end TTFT",
+  "pilot": {
+    "images": 1,
+    "image_selection": "first image in frozen schedule001.json, no performance-based selection",
+    "jobs": 60,
+    "warmups_per_image_component": 3,
+    "inner_timeout_seconds": 3600,
+    "outer_timeout_seconds": 3720,
+    "journal_stale_seconds": 1200,
+    "grace_seconds": 90,
+    "snapshot_seconds": 3600,
+    "gpu_policy": "exclusive",
+    "limitations": "Operational limits only, not a performance prediction. Pilot requires independently accepted real-model identity, reviewed launcher, real CPU container preflight and GPU scheduling."
+  },
+  "full": {
+    "images": 32,
+    "jobs": 1920,
+    "warmups_per_image_component": 3,
+    "inner_timeout_seconds": null,
+    "outer_timeout_seconds": null,
+    "limitations": "Full-stage timeouts and admission remain locked pending the actual accepted pilot and remaining three-day budget."
+  }
+}

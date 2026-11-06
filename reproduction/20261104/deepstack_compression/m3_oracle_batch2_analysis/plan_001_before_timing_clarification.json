@@ -1,0 +1,41 @@
+{
+  "stage": "frozen_second_look_before_batch2_outcomes",
+  "oracle_protocol_sha256": "013c861930cb5b9f52e1a72fd57a667b9c287763cd04e494a8b4dc04aa27247e",
+  "oracle_amendment_sha256": "224edc4e3ee297402b0ed1cc2407b2eb0dba481c52f849579242ad71be37da99",
+  "sample_sha256": "b8d9dfc8f771b063e7e3c426cb53c33b16348d0ca6ca1a2e921347674fc612e4",
+  "questions": 128,
+  "new_generations": 768,
+  "arms": [
+    "EADP",
+    "MAIN-r8",
+    "MULTI-r8",
+    "RANDOM-r8",
+    "MAIN-r16",
+    "MULTI-r16",
+    "RANDOM-r16"
+  ],
+  "contrasts": [
+    "MULTI-MAIN-r8",
+    "MULTI-RANDOM-r8",
+    "MULTI-MAIN-r16",
+    "MULTI-RANDOM-r16"
+  ],
+  "bootstrap": {
+    "replicates": 10000,
+    "seed": 20261104,
+    "unit": "image_group",
+    "interval": "percentile 95%"
+  },
+  "minimum_relevant_gain_pp": 1.0,
+  "scoring": "author and independent per question; original xlsxwriter/pandas prediction-column round trip; AI2D local fixed parser",
+  "gating": "entire panel acceptance and independent review with clean supervisor exits before reading any generated output or reference",
+  "GT_opened": false,
+  "predictions_opened": false,
+  "scoring_performed": false,
+  "first_batch_plan_sha256": "b69018cc38ae5f9dbf5e98dc2808d48a664b4d51d6435e47085850156feaf5a3",
+  "batch2_execution_sha256": "50830c3a8e7fcc0efc9ca6428e429697788a69e14d900e1c3a340edb4c83280f",
+  "look": "Second exploratory look after first DEV oracle scoring; separately report this batch; no predeclared pooled estimate.",
+  "weighting": "Unweighted over 128 sampled questions (64 DocVQA, 32 TextVQA, 32 AI2D); task-level estimates reported separately.",
+  "stopping_rule": "Report upper 95% interval < 1pp for each contrast only as the frozen threshold; r16 result does not imply equivalence for r8 or all settings.",
+  "created_unix": 1793830497.313458
+}

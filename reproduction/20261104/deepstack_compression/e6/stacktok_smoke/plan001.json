@@ -1,0 +1,63 @@
+{
+  "stage": "proposed local Qwen3 StackTok adaptation CPU prototype and future no-GT identity smoke",
+  "author_commit": "571bdc6c4c6b3c92a94fe2a92e3aaf42b989cc96",
+  "disclosure": "Qwen3 adaptation is local; author integration targets Qwen2.5. This plan precedes any proposed GPU smoke results; no GPU authorization.",
+  "sample_source": "e4_native/native_001/frozen.json",
+  "budgets": [
+    1024,
+    256
+  ],
+  "controls": "same input, processor, Qwen3 model/backend and E1 generation recipe; K1024 original native vs local keep-all; K256 local adapter vs unmodified author core on identical real pre/post merger tensors",
+  "question_scope": "author Qwen2.5 method joins user-message text parts, removes image markers, prepends Question: ; instructions/options may be included, never reference answers",
+  "stacktok_qwen_defaults": {
+    "tv_temperature": 0.01,
+    "vv_temperature": 0.2,
+    "beta_min": 0.3,
+    "beta_max": 0.9,
+    "swap_mode": "auto",
+    "epsilon_swap": 1e-06,
+    "swap_passes": 1,
+    "swap_auto_max_k": 16,
+    "remove_padding_indices": false
+  },
+  "p3_deepstack": "Retain original full 3-axis position IDs for each text and sorted selected visual token, update actual delta consistently, use same sorted visual IDs for main and each of three DS streams and actual injection masks; verify at prefill and each decode step.",
+  "evidence": "CPU synthetic group order, selector identity/tie/zero and DS/prefill tests first; before GPU source/weight/CPU proof binding, reviewer plus actual same-container no-GPU preflight and final independent review. GPU K1024 natural/forced32 compares real native prefill/logits/output/cache; K256 checks local selection against unchanged author selector using actual hook pre/post-merger tensors and natural/forced32 decoding. Record failures and hook cleanup, preserve no-GT exposure journal.",
+  "cost": "selection cost, tokenization, 4-patch mean, selector matrices and device synchronization included in full request timings; diagnostic cloning/hook/hash costs excluded; no equal K means equal compute assumption",
+  "limitation": "CPU fake tensors and isolated selector tests do not validate Qwen3 inference, package import, exact model identity or speed.",
+  "GT_opened": false,
+  "gpu_authorized": false,
+  "sample_source_sha256": "c8e67db1517142dc71e5f34595f348a3a4d6956418bfffb804a01ea1b40a7c8c",
+  "anchors": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "message_sha256": "3d2636338b6f3c75bdc977a06f98d10c1b739cf73826caa471fd9aa1d0c3bb71",
+      "image_sha256": "0eba9d3a112a7c067a528a4f4888fa960646f526d2701accf85962a95f92970b"
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "message_sha256": "c9d65da2d598e7bcab6b2aa4ce302e78d1920c1fa950356e5e97e6c9d5c24252",
+      "image_sha256": "c876e0657fe696d35fc6449d2b064c0cac5522e51a4957b0e378ea0fba0e9daf"
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "message_sha256": "a46263f3e82975b9c718fd3c40efd15da530e2c813e561119df2605b0f4f55f1",
+      "image_sha256": "ccc7c3664e5f71b23731d1a828726da4026e87a44203dde91ebb178f43e4b00e"
+    }
+  ],
+  "natural_generations": 9,
+  "forced_generations": 9,
+  "forced_steps": 32,
+  "inner_hard_timeout_seconds": 5400,
+  "outer_hard_timeout_seconds": 5520,
+  "journal_stale_seconds": 1200,
+  "snapshot_seconds": 3600,
+  "gpu_memory_fraction": 0.9,
+  "minimum_disk_free_bytes": 25769803776,
+  "scope": "Three existing DEV native anchors; native vs local keepall natural+forced, and K256 local StackTok natural+forced; no GT or scoring, not author Qwen3 code"
+}

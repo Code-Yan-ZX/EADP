@@ -1,0 +1,65 @@
+{
+  "evidence_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_decode/monitor001/started.json": "3b7192f77d0d68e3dec1a118a7f9fbc5c81880f24e4717d5f0e347fece93d43f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_decode/monitor001/terminal.json": "ba7a0d166f07aad3bbde92aa027b7e3d17974ada507882389285971eaf5fa6d3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_decode/plan001.json": "0a0e9510090e0789f9114f94622f750ee12ec81bff615b0c4dc96045caf06e1a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_decode/probe.py": "e863c7e93876a3d8acf352329500b0cc1f833a6a993ff485935877c9a01fcff6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_cpu_decode/result001.json": "97a2e98b8f07b0c8205285ae41aa6b9dc689e84efeecf08c66f1ef2ba5beda3d"
+  },
+  "findings": {
+    "calls_per_arm": 33,
+    "decode_positions": "7 through 38 in each of 3 axes",
+    "forced_output_tokens": 33,
+    "forced_token_id": 7,
+    "last_cache_lengths": [
+      41,
+      41,
+      38
+    ],
+    "original_max_position": 6,
+    "original_rope_delta": -2,
+    "prefill_cache_lengths": [
+      9,
+      9,
+      6
+    ],
+    "prefill_three_ds_rows": [
+      [
+        4,
+        4,
+        4
+      ],
+      [
+        4,
+        4,
+        4
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "prefill_visual_rows": [
+      4,
+      4,
+      1
+    ],
+    "selector_direct_call_kept_indices": [
+      [
+        0
+      ]
+    ]
+  },
+  "limitations": [
+    "tiny random CPU eager model and synthetic identical patches only",
+    "selector [[0]] is a separate direct call; generation traces did not independently archive actual selector IDs",
+    "cache tensor shapes only; KV contents and logits were not archived",
+    "no real model, GPU/FA2 compatibility, accuracy or timing conclusion"
+  ],
+  "reviewer_sha256": "0591b8dbeff5a442dba2c07207ba1d01589a3023fe39c5b88aabd383e424a79e",
+  "scope": "read-only independent recheck of saved traces; no model or selector rerun",
+  "source_commit": "8d347eb1bdec92c5991057e75d424ecc1ecfe53e",
+  "source_files_verified": 23,
+  "status": "passed"
+}

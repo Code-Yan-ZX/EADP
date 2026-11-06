@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "images": 3,
+  "GT_opened": false,
+  "existing_DEV_predictions_opened": true,
+  "scoring_performed": false,
+  "timing_claims": false,
+  "results": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "visual_tokens": 256,
+      "generated_count": 13,
+      "eos": true,
+      "truncated": false
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "visual_tokens": 256,
+      "generated_count": 2,
+      "eos": true,
+      "truncated": false
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "visual_tokens": 256,
+      "generated_count": 2,
+      "eos": true,
+      "truncated": false
+    }
+  ],
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/DocVQA_VAL_16539.json": "5618ecbad0fad1d8afd65ff762daf24db1ef4a56fd3954c9d91be7276e78381f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/DocVQA_VAL_16539_generated.json": "ef99b850dc75cc5836e3f857b552abd696fe3c331887cc3617c44fc77d7dc074",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/TextVQA_VAL_39421.json": "4a9efa9ab16be01ee073b43094d7ac059d7e543d745ec5488f13ce6d733794c7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/TextVQA_VAL_39421_generated.json": "3bb5b80fbf5035914609a3cbfc5b60ef17f84025c048be05a3e2e42ec2c2c950",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/AI2D_TEST_368100.json": "65a9d60839553a45ef54c1ba4654ba474274118cb1f1afe65792e87ee122d14a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/AI2D_TEST_368100_generated.json": "11589684aea9c58fe9fb8da6dee9884513a36582b24daae36b1ae504af1c217d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/progress.jsonl": "cc69c9d5ffe22b282b440e7f89b7bea2ce5a3809c7bee5cbd294473ed74f6a85",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/observations/worker_complete.json": "cd51bf4fa8ed9f0ecefa720c19b6d4c00e4830da7c128a95d19ef6eb1edb3510",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/launch.json": "c9ac56bf7a1913d4b9e784ab6bd9527d186871de7f052542562b12c6918c9086",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_k256_execution_v2/run001/exit.json": "cc99f70ab813e6134e4c185a139849165782c1168ed0610cbe2d736b063a1757"
+  },
+  "source_manifest_sha256": "54944a2b13bdc15270594c6ec74c17ed5ff156d1e81c23963a58f17e59940e4e",
+  "plan_sha256": "b64be46ec27b139343a43363ec62ae47950e5a0aee2e941a90e2d60aa1461fe7",
+  "verifier_sha256": "87fdcda6462579900a0dee3f0310d69efaa73983076e15f3e56fa4e172374e3d",
+  "limitations": [
+    "only 3 fixed DEV anchors; no quality or equal-compute conclusion",
+    "visual/DeepStack/KV payloads not archived; equality was checked online and hashes/lengths retained",
+    "post-run source snapshot and endpoint hashes cannot exclude transient modifications"
+  ],
+  "errors": []
+}

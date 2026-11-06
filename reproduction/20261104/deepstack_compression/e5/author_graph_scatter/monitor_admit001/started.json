@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-11-05T03:06:30.018719+00:00",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "-c",
+    "import sys;from pathlib import Path;sys.path.insert(0,\"e5/author_graph_scatter\");import worker;worker.common.require_review(Path(\"e5/author_graph_scatter/plan001.json\"));print(\"review_admitted_CPU_only\")"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression",
+  "timeout_seconds": 180.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 3600.0,
+  "poll_seconds": 3.0,
+  "grace_seconds": 30.0,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph_scatter/monitor_admit001"
+  ],
+  "worker_pid": 996986,
+  "process_group": 996986
+}

@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "199fddd1bae619e24711c808922b6d72685fb1af18f1883ff5439bcb763e6b0b",
+  "preflight_sha256": "5194fd8be5d5833d8d2ec88238db8b324a8a4483b69bd974e8ab4ed88017ad9f",
+  "preflight_started_sha256": "7081309e402568b9e6511c8de3a15a314a78f1c33c5e2ca5f2727b4bb9aceab3",
+  "preflight_terminal_sha256": "4fda92b0bd0df11847f179248e5c15110f2ab693a598a8bcc160509ac5047115",
+  "preflight_exit_sha256": "0c55b9b1b822a7d548e4fe58ea82ec5dc88982977725108a552edb9fb8b442b3",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_ziprerank_qtext_v2_prelaunch.py",
+  "reviewer_sha256": "6944ca2f368aa0bb52ed9c2ea80abc0e6a84ed47c97ef2bc18eb2c710c712c88",
+  "review_started_sha256": "f383f5a4082af8857729fb36841c57a2ed71293d39aa92f1aa05c5fc9c775886",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_ziprerank_qtext_v2_prelaunch/terminal.json",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "gpu_authorized": "subject to root scheduling",
+  "cpu_tests": 11,
+  "scope": "single-image forced 33-token diagnostics, author QI plus local RoPE and user-text adaptation; not quality or throughput",
+  "limitations": [
+    "local RoPE correction and user-text selection are not original author behavior",
+    "user text contains instructions and options; not strictly question-only",
+    "only summaries/hashes retained for high dimensional tensors",
+    "no GPU result yet"
+  ],
+  "errors": []
+}

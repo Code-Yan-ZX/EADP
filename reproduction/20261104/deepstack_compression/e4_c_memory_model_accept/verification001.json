@@ -1,0 +1,115 @@
+{
+  "status": "passed",
+  "stage": "one model process memory",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/monitor_run001/started.json": "58f4f8b8a55c42584ad6c42a3da8b35daaa627219d9f04189b06fe701b7a29ba",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/monitor_run001/terminal.json": "ba2b4ee74887fdaeb591dc0d8e0c341b26c661271e01802b04278c6aea24651f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/run_001/launch.json": "5ef105feb1ba6f60d175288cf29e1198f283947c0f675bd99706ca4054af6a01",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/run_001/exit.json": "22f82e9118fe97df836bab67e4a62da303fed881c430d9e7b8184fbff981f9a7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/run_001/expected.json": "d8945867c985ab256c6072ca8ca4d0a4367e085cf1e34fbd1f70f84671399774",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/run_001/worker_ready.json": "32387e14f573ce866c19f1760fd4f9dcdfe6204711d895d58278451adc0580c2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/run_001/release.json": "1672877a8fd75b51b3a279e41d61207634abf7c1c1f7b6cca3cbc98eb35e2cc7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/run_001/stopped.json": "25f8f01bc338ae236df5748b9a897bed215bd29b284d5eb59e62a2fa997ee139",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/run_001/stopped_inspect.json": "80980d1a2faacad6389a1072540235bbfad961a3cef6851954a2eed0fdb67829",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/run_001/samples.jsonl": "f6e1e142b4e1c609c6336aefdffa6150297bdc6ad68d84360bb0388e781b50fb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/run_001/device_metadata.jsonl": "f566c6d7f8ec11811cd65420c50e98eaa833641fe5c8e92ebec72555d02f6f0b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/run_001/worker_events.jsonl": "38780600b6a753244c2fdcb5ba97a124b0c1afe9aae43418c7c488a8ec032d4c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/run_001/worker_complete.json": "69b215b5f79d4419974fa409da93e778f8e125de4b0efd63856c07af37ce0638",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/run_001/identity.json": "f579d2e8509b09bd3c466865b534a6af07fdb1291027b2e3e1839a72b6382530",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/run_001/memory_summary.json": "ac0648f877a8ba3df9f551c3182b5dde6a61cd86f3317c9e85a054891d105335",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/run_001/sampler_monitor/started.json": "8e661b9669c552c1618e466c1f4c304f90bc3c8bd013585e4c8b536beb64ce6b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_memory_model_pilot/run_001/sampler_monitor/terminal.json": "52c4737a1a5ce7f3f78610676eb034073348412827df762a6d4ce855a56cc278"
+  },
+  "sample_count": 19,
+  "stage_bounds_monotonic_ns": {
+    "release_ns": 13987638839301904,
+    "model_load_start_ns": 13987638841756340,
+    "model_load_end_ns": 13987646040692230,
+    "request_start_ns": 13987646041955853,
+    "request_end_ns": 13987648149674018,
+    "teardown_end_ns": 13987648701122900
+  },
+  "nvml_stages": {
+    "pre_cuda": {
+      "fully_contained_samples": 1,
+      "process": {
+        "known": 0,
+        "unknown": 1,
+        "max_known_bytes": null,
+        "present": 0,
+        "absent": 1,
+        "present_unknown": 0
+      },
+      "device_used": {
+        "known": 1,
+        "unknown": 0,
+        "max_known_bytes": 1225785344
+      }
+    },
+    "model_load": {
+      "fully_contained_samples": 11,
+      "process": {
+        "known": 11,
+        "unknown": 0,
+        "max_known_bytes": 17576230912,
+        "present": 11,
+        "absent": 0,
+        "present_unknown": 0
+      },
+      "device_used": {
+        "known": 11,
+        "unknown": 0,
+        "max_known_bytes": 18765316096
+      }
+    },
+    "request": {
+      "fully_contained_samples": 3,
+      "process": {
+        "known": 3,
+        "unknown": 0,
+        "max_known_bytes": 18127781888,
+        "present": 3,
+        "absent": 0,
+        "present_unknown": 0
+      },
+      "device_used": {
+        "known": 3,
+        "unknown": 0,
+        "max_known_bytes": 19358810112
+      }
+    },
+    "teardown": {
+      "fully_contained_samples": 1,
+      "process": {
+        "known": 1,
+        "unknown": 0,
+        "max_known_bytes": 10391388160,
+        "present": 1,
+        "absent": 0,
+        "present_unknown": 0
+      },
+      "device_used": {
+        "known": 1,
+        "unknown": 0,
+        "max_known_bytes": 11853103104
+      }
+    }
+  },
+  "allocator_model_load": {
+    "allocated_peak_bytes": 17534318592,
+    "reserved_peak_bytes": 17555259392
+  },
+  "allocator_request": {
+    "allocated_peak_bytes": 17754808320,
+    "reserved_peak_bytes": 17832083456
+  },
+  "verifier_sha256": "4d232e07b119441a5eaca727f1d27d7eaa3e064dd1a0cb75d8652910a2113cbf",
+  "limitations": [
+    "processor hashes and actual selector indices were not archived; identity remains an online check",
+    "full process and device sampled peaks differ from per-request memory and can miss transients",
+    "one image only; no latency claim",
+    "mixed E1/E4 DEV prediction journals used for input identity"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "formal_proof_sha256": "8999583947b9e1154cd64c0eb8e502aa17d44b11f440ceb43647add17dbb667a",
+  "formal_started_sha256": "9b64b01e5e26f2be3a1e3dd4015449a632362ccf176391f062b3416b121af8bb",
+  "formal_terminal_sha256": "cc39b0bae1e2f3766a741ac8731dcff55d1f33e6bb82dc2d84529e96fc4c007c",
+  "source_manifest_sha256": "a874df75f2dd80d5b1ed677adeb41c17f837651e3a5565f614b218a0228ab4ce",
+  "launcher_log_sha256": "3a4ea29945e693135639c312f5bc304559d566dacb965ebb337995d388ae8e5f",
+  "reviewer_sha256": "3a5493b42b44ec5f2bbb621d4966301d7c5640f11904d2f540cf1c0e06940d14",
+  "cases": [
+    "stock",
+    "stock_forced",
+    "patched_disabled",
+    "author_default",
+    "k256",
+    "priortr_keep_all",
+    "k256_forced"
+  ],
+  "endpoints": {
+    "patched_disabled": {
+      "same_ids_as_stock": true,
+      "same_first_logits_as_stock": true
+    },
+    "priortr_keep_all": {
+      "same_ids_as_stock": true,
+      "same_first_logits_as_stock": true
+    }
+  },
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limits": [
+    "one DEV question only",
+    "KV lengths and positions verified; KV contents not archived",
+    "SDPA and newer torch/transformers differ from E1 FA2",
+    "CUDA kernel caching disabled by runtime warning; no timing comparison"
+  ]
+}

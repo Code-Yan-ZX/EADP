@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "exit": {
+    "returncode": 0,
+    "timed_out": false,
+    "interrupted": null,
+    "container_stopped_verified": true,
+    "client_exited_while_container_running": false,
+    "container_identity": {
+      "container_id": "af7b589bd5428d0d42c1281b3ff4c0f2d436faf30cbce38e07bb87971938286b",
+      "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+      "host_init": {
+        "pid": 368444,
+        "start_ticks": 1395491256,
+        "session_id": 368444,
+        "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+      }
+    },
+    "errors": [],
+    "container_exit_code": 0,
+    "controller": {
+      "pid": 368376,
+      "start_ticks": 1395491241,
+      "session_id": 368376,
+      "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+    },
+    "name": "eadp-m3-oracle-preflight-006",
+    "finished_unix": 1793823413.8205414,
+    "gpu_pids_after": []
+  },
+  "container_id": "af7b589bd5428d0d42c1281b3ff4c0f2d436faf30cbce38e07bb87971938286b",
+  "container_running": false,
+  "container_pid": 0,
+  "container_exit_code": 0,
+  "launch_sha256": "750eebedc27e39c0ba81361e3189c17f0d6436c2b414574df28b435b47a502be",
+  "log_sha256": "946c9c0bfbe2f83c31c545387cb0957763d88838c748edd5f6a60d6abf9a5381",
+  "exit_sha256": "3b0dce80603b1114f257844b4b8fbffbe626871003283d964f12b1c8e981d558",
+  "cpu_proof_sha256": "ca7fdbf5db5f9c1ff9266b5b392dd56cded4b351f83b8a13f6d647c3f23de84b",
+  "preflight_sha256": "84904ee87922043499962c87ad3e9861f506eacf96096fb35d5fc4282ebc2430",
+  "result": {
+    "status": "passed",
+    "cuda_initialized": false,
+    "model_loaded": false,
+    "GT_opened": false,
+    "predictions_opened": false,
+    "tokenizer_length": 151669,
+    "author_wrapper": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py",
+    "versions": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "transformers": "4.57.1",
+      "flash-attn": "2.8.3",
+      "accelerate": "1.12.0",
+      "qwen-vl-utils": "0.0.14",
+      "Pillow": "12.0.0",
+      "tokenizers": "0.22.2",
+      "numpy": "2.2.6",
+      "safetensors": "0.7.0",
+      "timm": "1.0.24"
+    }
+  },
+  "started_unix": 1793823403.7163715,
+  "finished_unix": 1793823413.8485472,
+  "scope": "no GPU, no model loading, no ground truth or predictions; not approval for real execution"
+}

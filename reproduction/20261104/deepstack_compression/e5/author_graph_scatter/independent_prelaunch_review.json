@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "bb68bcf5a2a89cb6fd712f9f4c48d627947957c24300b84cf996123e81e20fc9",
+  "preflight_sha256": "14de82de46352e65bd4509ad0327104d2ed7fb18f61b44547d158ba813e8c90c",
+  "preflight_started_sha256": "f8dcac268303760494b62d450a968ee19a486327c35a69dff8856c453d3e28f2",
+  "preflight_terminal_sha256": "4f038df9603da0583d5b0cb0b71fc2cdac5b5e72d7ce747315d91faeff816473",
+  "preflight_exit_sha256": "41d2ce16b208ef739a977ea5e3f731c3ee9fd08104139a871cf7ddc5249c59d9",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_author_graph_scatter_prelaunch.py",
+  "reviewer_sha256": "511573bffdae5ae809a4eb5a7fa28a1e3bf8d7cdd17d1913384abd7283fc6e7c",
+  "review_started_sha256": "b291808d5502770f9425ec298037a88011acdc9f4be78cc0793d3fc693b54b7c",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_author_graph_scatter_prelaunch/terminal.json",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "verification_plan_sha256": "8a5b06770273ab6f0a1441d9a357feb04cec0d76aae968d6dc49b17e7a23bb91",
+  "verifier_sha256": "7402647e3506aec9cd27d06fbfb41fe2c88f3a52a852fd03cb60deb2d056bbb3",
+  "scope": "one-statement scatter graph feasibility prelaunch; GPU only by root scheduler",
+  "limitations": [
+    "no GPU capture or correctness established in preflight",
+    "each K isolated and capture failure or OOM retained",
+    "graph setup/pool allocations separate from replay; not whole-device peak or TTFT",
+    "component timing may include input copies and is not a model integration result"
+  ],
+  "errors": []
+}

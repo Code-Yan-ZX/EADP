@@ -1,0 +1,19 @@
+{
+  "scope": "synthetic fake sampler and no-GPU Docker handshake only",
+  "gpu_authorized": false,
+  "model_loaded": false,
+  "run_id": "001",
+  "supervisor_timeout_seconds": 360,
+  "supervisor_grace_seconds": 90,
+  "worker_timeout_seconds": 90,
+  "sampler_supervisor_timeout_seconds": 150,
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "monitor/supervise.py", "--run-dir", "e4_c_memory_handshake/monitor_run001",
+    "--timeout", "360", "--snapshot-seconds", "3600", "--poll-seconds", "2",
+    "--grace-seconds", "90", "--",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "e4_c_memory_handshake/launch.py", "--run-id", "001"
+  ],
+  "limits": "Fabricated 1 MiB samples exercise control flow only. Supervisor health snapshots may inspect host GPU status; no GPU devices are granted to the test container."
+}

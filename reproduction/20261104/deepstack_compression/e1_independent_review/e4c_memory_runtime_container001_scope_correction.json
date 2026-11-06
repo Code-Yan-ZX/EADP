@@ -1,0 +1,21 @@
+{
+  "status": "scope_correction",
+  "original_record_preserved": true,
+  "predictions_opened": true,
+  "prediction_source": "previously accepted E1 DEV mixed prediction journal",
+  "use": "identity fields only; no accuracy scoring",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "gpu_authorized": false,
+  "explanation": "The recorded false prediction-opened fields in both historical worker preflight and independent review are incorrect. The preparation path parses the mixed journal to reconstruct input identity. The present correction reads source and metadata only and does not read the journal.",
+  "source_sha256": {
+    "e1_independent_review/e4c_memory_runtime_container001_review.json": "0db6e947217773480669693f1a5606aa8752aa79ec90187fc6615c052c4958ec",
+    "e4_c_memory_runtime/container_preflight001/worker_preflight.json": "7d4344f94dc88d07478a65513760b48dcb0c1400925f91360378c88860c70d51",
+    "e4_c_memory_runtime/runtime_preflight_entry.py": "ec1375a7def9196ca9490fc7e8c90504d07db30cb4fea2cb953dc52ec6e8d7d7",
+    "e4_c_memory/worker_preflight.py": "463b91351cee189dd34940cb8a74ee6508ab34ddc577f105c6ee70b2c70e0335",
+    "e4_c_latency/latency_worker.py": "06dda012569d2cceab1953c8608392c02f765a6e45f5f89d513eccf6f17e9343",
+    "e4_c_latency/input_preflight.py": "756846a58128101f554a036d370298a4f4400a1a1a34d5fe8412f257b0838edc",
+    "e4_c_latency/e1_reference_gate.py": "498e2c810471a94c2702135dfa996215d48e19bb4c20cc54d344c8cb63141b98"
+  },
+  "correction_script_sha256": "3e911fc409eb80384c89580f0698d08cec08455c93c84820ace7c441bd538a4c"
+}

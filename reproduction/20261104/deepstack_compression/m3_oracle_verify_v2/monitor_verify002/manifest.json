@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-11-04T21:19:56.658976+00:00",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "m3_oracle_verify_v2/verify.py",
+    "--run-dir",
+    "m3_oracle_exec/runtime_001",
+    "--run-started",
+    "m3_oracle_exec/monitor_runtime001/started.json",
+    "--run-terminal",
+    "m3_oracle_exec/monitor_runtime001/terminal.json",
+    "--out",
+    "m3_oracle_verify_v2/runtime_001_verification_author.json"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression",
+  "timeout_seconds": 3600.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 3600.0,
+  "poll_seconds": 5.0,
+  "grace_seconds": 90.0,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle_verify_v2/monitor_verify002"
+  ]
+}

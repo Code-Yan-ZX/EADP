@@ -1,0 +1,34 @@
+{
+  "stage": "prospective_safety_bound_not_latency_estimate",
+  "sample_sha256_source": "sample_001.json",
+  "scope": "384 DEV questions, three natural arms, 1152 new generations; generation before scoring",
+  "prior_single_question_evidence": "../dev32/run_001/exit.json",
+  "observed_single_question_inter_event_seconds": [
+    2.8,
+    1.96,
+    1.79,
+    1.75,
+    1.93,
+    2.86
+  ],
+  "observation_limit": "The 96-arm diagnostic finished in roughly 300 seconds including loading; no guarantee for the full panel or long generations, so the time bound remains conservative.",
+  "inner_timeout_seconds": 43200,
+  "outer_timeout_seconds": 43320,
+  "journal_stale_seconds": 1200,
+  "snapshot_seconds": 3600,
+  "poll_seconds": 15,
+  "grace_seconds": 90,
+  "minimum_disk_free_bytes": 32212254720,
+  "gpu_exclusive": true,
+  "required_before_launch": [
+    "frozen sample and independent review",
+    "complete CPU and source review",
+    "actual same-container no-GPU worker preflight",
+    "preflight and final independent reviews",
+    "E1 and PriorTR accepted smoke proof and exit chain",
+    "three-day deadline guard",
+    "clean owned container exit"
+  ],
+  "note": "The safety bound is intentionally conservative, cannot be presented as projected runtime, and does not authorize execution.",
+  "budget_source_sha256": "2a11cfcc2dc9404eac218f1f727e39508a687a73e0343101ae564be3e99c30e6"
+}

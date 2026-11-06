@@ -1,0 +1,90 @@
+{
+  "returncode": 1,
+  "timed_out": false,
+  "interrupted": null,
+  "client_exited_while_container_running": false,
+  "container_stopped_verified": true,
+  "container_exit_code": 1,
+  "container_identity": {
+    "container_id": "55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d",
+    "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "host_init": {
+      "pid": 1396529,
+      "start_ticks": 1399475156,
+      "session_id": 1396529,
+      "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+    },
+    "host_argv": [
+      "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/worker_entry.py",
+      "--task",
+      "DocVQA_VAL",
+      "--qid",
+      "16539",
+      "--arm",
+      "author",
+      "--out",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/run_001/arm_000/observations"
+    ],
+    "host_cgroup": "13:freezer:/docker/55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d\n12:memory:/docker/55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d\n11:hugetlb:/docker/55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d\n10:devices:/docker/55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d\n9:rdma:/docker/55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d\n8:net_cls,net_prio:/docker/55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d\n7:cpu,cpuacct:/docker/55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d\n6:perf_event:/docker/55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d\n5:blkio:/docker/55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d\n4:cpuset:/docker/55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d\n3:misc:/docker/55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d\n2:pids:/docker/55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d\n1:name=systemd:/docker/55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d\n0::/docker/55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d\n",
+    "observed_unix": 1793863243.7563505
+  },
+  "failure_type": null,
+  "failure": null,
+  "cleanup_attempts": [],
+  "gpu_pids_after": [],
+  "last_inspect": {
+    "returncode": 0,
+    "stderr": "",
+    "id": "55ab7bb16cf10fae7beb51db505e7eebc6581e81e4127f1b449d23921f60556d",
+    "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "running": false,
+    "pid": 0,
+    "exit_code": 1,
+    "host_devices": [
+      {
+        "PathOnHost": "/dev/nvidia0",
+        "PathInContainer": "/dev/nvidia0",
+        "CgroupPermissions": "rwm"
+      },
+      {
+        "PathOnHost": "/dev/nvidiactl",
+        "PathInContainer": "/dev/nvidiactl",
+        "CgroupPermissions": "rwm"
+      },
+      {
+        "PathOnHost": "/dev/nvidia-uvm",
+        "PathInContainer": "/dev/nvidia-uvm",
+        "CgroupPermissions": "rwm"
+      },
+      {
+        "PathOnHost": "/dev/nvidia-uvm-tools",
+        "PathInContainer": "/dev/nvidia-uvm-tools",
+        "CgroupPermissions": "rwm"
+      }
+    ],
+    "device_requests": null,
+    "pid_mode": "",
+    "entrypoint": [
+      "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python"
+    ],
+    "command": [
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/worker_entry.py",
+      "--task",
+      "DocVQA_VAL",
+      "--qid",
+      "16539",
+      "--arm",
+      "author",
+      "--out",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/run_001/arm_000/observations"
+    ]
+  },
+  "finished_unix": 1793863244.8024924,
+  "controller": {
+    "pid": 1396192,
+    "start_ticks": 1399474730,
+    "session_id": 1396192,
+    "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+  }
+}

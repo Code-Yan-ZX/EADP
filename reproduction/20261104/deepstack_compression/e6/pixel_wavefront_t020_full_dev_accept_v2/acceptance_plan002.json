@@ -1,0 +1,24 @@
+{
+  "run_plan_sha256": "8e29a0a3b521e06107b967be53790f479635999b23c98d4ec3b8a9f304befc30",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_full_dev_accept_v2/acceptance.py": "53ae36f6970ddabd8ed9e8cfd1e1b0f9dbddda04ce4a566f35cb823a1807e876",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_full_dev_accept_v2/finish_guard.py": "5ad2a80bd6657efb6ccd0ebefe7050e9ce1083d7d5922fb08f1287164e604c20",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_full_dev_accept_v2/snapshot.py": "54ddac3ea069c3c9039897f731051b39f48fce84df10452d6b7539c423575df9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_full_dev_accept_v2/verify.py": "ad026667b1220810ed5d55e850ffccdc4938c3c01389ed12a9dff10fc1459923",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_full_dev_accept_v2/test_guard.py": "b3a9677994979789d57dfcb1777953826f40c0e0d098d0597b6d5e3df4628633",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_full_dev_accept_v2/cpu_validation.py": "3c54118780f6d7ff8fe7b6e1875d01bc1af8d2388a5abd691764e7a43950d919",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_full_dev_accept_v2/freeze.py": "2e96f5f39f7dc3cc785710c3c38b4225a2b227418d7f65a862443f9909dc7e60"
+  },
+  "prior_evidence_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_full_dev/monitor_snapshot001/started.json": "edc6bd315ba794a2991a0cf4ae13991d9dc5adf859ec80f8b9a4c822224a3308",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_full_dev/monitor_snapshot001/terminal.json": "f0495d347ff94fd407ecd8e0f10f5af3a68bfe7ee4c3ff80f73514ce38afdb52",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_full_dev/monitor_snapshot001/stderr.log": "d87cc659f332ca6358ec728fbde21ab73a57e420ed1736e102265c3e61e8ba2a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_full_dev/monitor_run001/started.json": "c7e9c4a84f08f5ee11c21020f313bc61ff68a84dc8dc252d6310ae15b3a0d7ec",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_full_dev/monitor_run001/terminal.json": "0a2fabea987861e176ad2cb6ed5ff57b8a9ae1c0f6edeb65334dd72f7d510ad0",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_full_dev/run_run001/launch.json": "caf14c5523afe5a2887559705d4badbb7d5551b1c0c8fb65a3f57726c66a7de5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_t020_full_dev/run_run001/exit.json": "9129759ee9289bd945cb7a6b6664436f8218e92604bf06c8c43ff2b48fb0b04b"
+  },
+  "change": "post-run fix: retain run launch record instead of shadowing it with imported module; preserve original sources and failed snapshot",
+  "GT_opened": false,
+  "scoring_performed": false
+}

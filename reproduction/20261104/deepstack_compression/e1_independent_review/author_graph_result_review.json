@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "audit of failed probe; not a successful GPU experiment",
+  "attempted_k": [
+    1,
+    16,
+    128,
+    256,
+    512
+  ],
+  "results": [
+    {
+      "k": 1,
+      "capture_completed": false,
+      "replay_count": 0,
+      "timing_count": 0,
+      "failed_at_reported_author_line": 186,
+      "CUDA_error_reported": "operation not permitted when stream is capturing"
+    },
+    {
+      "k": 16,
+      "capture_completed": false,
+      "replay_count": 0,
+      "timing_count": 0,
+      "failed_at_reported_author_line": 186,
+      "CUDA_error_reported": "operation not permitted when stream is capturing"
+    },
+    {
+      "k": 128,
+      "capture_completed": false,
+      "replay_count": 0,
+      "timing_count": 0,
+      "failed_at_reported_author_line": 186,
+      "CUDA_error_reported": "operation not permitted when stream is capturing"
+    },
+    {
+      "k": 256,
+      "capture_completed": false,
+      "replay_count": 0,
+      "timing_count": 0,
+      "failed_at_reported_author_line": 186,
+      "CUDA_error_reported": "operation not permitted when stream is capturing"
+    },
+    {
+      "k": 512,
+      "capture_completed": false,
+      "replay_count": 0,
+      "timing_count": 0,
+      "failed_at_reported_author_line": 186,
+      "CUDA_error_reported": "operation not permitted when stream is capturing"
+    }
+  ],
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/run_smoke001/observations/k_001.jsonl": "6bbb76f1fa5c18a0a5a88c8950b14e2503e719769a2592f0be538d85dd85d4ea",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/run_smoke001/observations/k_016.jsonl": "c2f269d8745cf301c93a5457c91599aec55909dff7903de7571fabe823676f80",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/run_smoke001/observations/k_128.jsonl": "09c2cf39cfe33959a4c8777e3bce3aabb1bd22a383492826d90265f60570439a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/run_smoke001/observations/k_256.jsonl": "1fd6d09257534453d2cf1cc595d2e9f84fe480b9d24cf229c97ec228f46c8ad2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/run_smoke001/observations/k_512.jsonl": "42aca602c5d56836fad1ee591290799804f78ef03b958af12d6fabf1a276d73d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/run_smoke001/observations/worker_complete.json": "fbe1f17e299dd27edf177b86ebe36fda28b133f08d816a9e87c94c9855dcd35f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/run_smoke001/observations/progress.jsonl": "584d2326427c8c3fc050c8334f3785931a75bdf919dad7072b2f924b470192b9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/run_smoke001/launch.json": "3f134cad35ce731a38e77a39366c6926323e3cfb3998bd4bba661a498bbdddd3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/run_smoke001/exit.json": "219d647f7a404b6e1e972e02006cc733c36f4cfe663449e5b4829c29f3a65559",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/monitor_smoke001/started.json": "1c2c929927a20a7ae4877ea4c5b4197f0ae5a200ceddd212db57654cf4a7bebc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/monitor_smoke001/terminal.json": "2f533c38faa1d8938729548b14140789083c00e870519c616126b3e2ff7d94cd",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/plan001.json": "3caf0b12070fc0b4168fc342fba99295b636d683a968730e4adfe593d94afb8c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/author_graph/independent_prelaunch_review.json": "96198c1a14c524b5bb997549938e108d741d76add2753c2873bdcb31d3db3330"
+  },
+  "reviewer_sha256": "d1b1ca3b74a9aa6e43e1ea77af2756fe6f5ab720436b00bf7efacb99422b5c75",
+  "actual_container": {
+    "id": "32ae6db71540aa1ea8a894449a35d246cc96e44a9d2ed886a6e52b0ebe8743e1",
+    "running": false,
+    "pid": 0,
+    "exit_code": 1,
+    "oom_killed": false
+  },
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": [
+    "No graph capture or replay completed; no equivalence, latency, or memory comparison can be claimed.",
+    "CUDA errors can be asynchronous; the reported author source line is evidence of the surfaced error, not a definitive causal localization.",
+    "A failure of this exact unmodified implementation, environment and capture setup does not establish that all author-like implementations or environments are ungraphable."
+  ],
+  "errors": []
+}

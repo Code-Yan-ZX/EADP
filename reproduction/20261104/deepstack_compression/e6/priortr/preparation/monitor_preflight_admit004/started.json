@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-11-04T19:08:15.250397+00:00",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/priortr/install001/env/bin/python",
+    "-c",
+    "import json;from pathlib import Path;from smoke_worker import validate_preflight_records as v;p=Path('.');files=('container_preflight003_launch.json','container_preflight003_identity.json','container_preflight003_exit.json','container_preflight003.stdout','monitor_container_preflight003/started.json','monitor_container_preflight003/terminal.json');v(*(json.loads((p/f).read_text()) for f in files));print('preflight gate passed')"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/priortr/preparation",
+  "timeout_seconds": 120.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 3600,
+  "poll_seconds": 15,
+  "grace_seconds": 20,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/priortr/preparation/monitor_preflight_admit004",
+    "/media/disk2"
+  ],
+  "worker_pid": 257495,
+  "process_group": 257495
+}

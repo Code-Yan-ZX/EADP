@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "source_sha256_before": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle_verify_v2/verify.py": "c4372156272cadd69f6b996c4d443aec62b775c378f9b58f248248382a7fc235",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle_verify_v2/test_verify.py": "0fe4fee701fd4f7fee9ed3b24418b4180016d1d248b8796d1748371633e9d44e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle_verify_v2/cpu_validation.py": "0a47348cc56ae5209b5719b6ddc01c9d05307fe8600c91a3e9b35a1b9c247b92",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle_exec/verify.py": "fb82f65e6535817017d165306bad887650bca1d43fcfe4edbb23a1403a551c82",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/completion.py": "a94c45fee0ebc4680c8cd7d8bc2d44b93e8576a6fa1d517842945dc21b9f74cd",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle_exec/runtime_001_sources/manifest.json": "18c1702f64a2ccf3350740521f04f38cc3b77abc14f85835c2b025b25378069f"
+  },
+  "source_sha256_after": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle_verify_v2/verify.py": "c4372156272cadd69f6b996c4d443aec62b775c378f9b58f248248382a7fc235",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle_verify_v2/test_verify.py": "0fe4fee701fd4f7fee9ed3b24418b4180016d1d248b8796d1748371633e9d44e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle_verify_v2/cpu_validation.py": "0a47348cc56ae5209b5719b6ddc01c9d05307fe8600c91a3e9b35a1b9c247b92",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle_exec/verify.py": "fb82f65e6535817017d165306bad887650bca1d43fcfe4edbb23a1403a551c82",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/completion.py": "a94c45fee0ebc4680c8cd7d8bc2d44b93e8576a6fa1d517842945dc21b9f74cd",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle_exec/runtime_001_sources/manifest.json": "18c1702f64a2ccf3350740521f04f38cc3b77abc14f85835c2b025b25378069f"
+  },
+  "command": [
+    "/home/dell/miniconda3/bin/python",
+    "-m",
+    "unittest",
+    "-v",
+    "test_verify"
+  ],
+  "returncode": 0,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "b1baa91258b6f010fdb6e02d972b5d344f1fa15a666508a12912563c9992acbf",
+  "GT_opened": false,
+  "prediction_files_opened": false,
+  "scope": "actual frozen completion.alive import, live/dead process, minimal source diff"
+}

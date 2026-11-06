@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "questions": 384,
+  "tasks": 3,
+  "paired_bootstrap_replicates": 10000,
+  "GT_opened": false,
+  "score_files_containing_predictions_opened": true,
+  "result_sha256": "4210b1fe3b16001426d867f6fb496d8c78f4af6afe6874cb1b296b91476e29bb",
+  "plan_sha256": "26d1c8e1df6d9803bf74492a4be5725b42b32b23744c6819e5127d65f358834a",
+  "script_sha256": "25c200394b4ec812f93c29bede907e893e6acf3e56e430e9ad632da61c33876b",
+  "comparison_started_sha256": "0c1a105685b41f957655793b424279838d49f3dc9ca705bed972546bdff0ff09",
+  "comparison_terminal_sha256": "cfb50e44bcf249c1f99424ffcb773163e088494f781d4ce3233971d5f5b55d99",
+  "reviewer_sha256": "b70eb41221b4160641154b24d859b3160f9eba66129e3071e5c9a901c50d8e5c",
+  "limitations": [
+    "threshold selection and reference comparison follow previous DEV results",
+    "dynamic token counts and real compute differ",
+    "no significance adjustment or latency claim",
+    "first comparison failed after reading complete t020 scores; v2 source repair and the group ordering used for fixed-seed resampling were post-observation"
+  ],
+  "errors": []
+}

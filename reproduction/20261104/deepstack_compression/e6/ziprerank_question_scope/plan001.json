@@ -1,0 +1,37 @@
+{
+  "scope": "384 DEV prompt-only tokenizations, actual image processor first anchor of each task; no answers, model weights, CUDA or scoring",
+  "rule": "unique exact original message text in rendered user content; select all and only tokens with character offsets entirely inside the message; reject boundary-crossing tokens; map after image expansion",
+  "processor_anchors": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "20741",
+      "message_sha256": "dbdbee6035d026017bc11cad1a329ac645b1db8abe0e71fec74bddee29dc58a3",
+      "image_sha256": "dd63901f887d6a4ba84a50c580ffb42ad624e0aef93b2e9f71932c62c6ac61f3"
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "38108",
+      "message_sha256": "3638780d411e024494788c64532a48e3af0b016c561510fae6f40b94b3fe2075",
+      "image_sha256": "894272a3f730f899864ace0724306702e7cf1822f2aee0f245c2736206a4882b"
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "392501",
+      "message_sha256": "ac72227f97b529325351b4c0711e8da18746e74dc41a51cded799c6fb6d94e52",
+      "image_sha256": "1d981ee30939e63fec3a1ed9815f9d2f0658ca4567f25a4570b8e7633f65156d"
+    }
+  ],
+  "sources": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_question_scope/probe.py": "119031cfbb9da0d1862793a36f8ec02f0ca6b465b41fe56d466edf9f58e50448",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_scope/plan001.json": "91404e3a8a2768ecc95d7e05c54aab9612dd66c614a5c8ea5cb461d74e575024",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/input_preparation_002/inputs.jsonl": "f3fef75929f88fa21b96458337030c47f2b7afaa596f540879afddd72847f59d",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py": "34556188962a1b057382269bc1f9f0cdba1a12e9cf1861acb60fa4fa0a59fe34",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model.py": "4d27418413ee72aa5fe422d7bb97103d1c097411e6c20945e2f11dcf607fb475",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/config.json": "5cd452860dc1e9c29dd71cc3cef7f39b338b7a40793f7a260655c2d3568f3661",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/preprocessor_config.json": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/tokenizer.json": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/tokenizer_config.json": "c2da771801886ad9ae98181793ffd3dfb7f1af30f6f7c6a4e15d7dbba52e2399",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/chat_template.json": "5c72a170d2a4a1a3bc5adad2e689ae28138a9700e5b8c96c0266331e86c0acce"
+  },
+  "limitation": "Mapping feasibility only, not author method or accuracy; any adapted selector must be labeled and validated separately."
+}

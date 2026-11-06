@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "jobs": 48,
+  "watcher_windows": 3,
+  "errors": [],
+  "background_overlap_sha256": "90d198d701503d6dcb007ce30278d2a44d9084abd96936ddadc7f210417a6bdb",
+  "background_started_sha256": "3ca9230b5829762de5c1676734d79e4eb3a2c58261507fa8e271a7af6810f09c",
+  "background_terminal_sha256": "30676f5654bc5dfc6a8238b50cee0d062d7170fa7583d9be3617d423e10e601f",
+  "main_review_sha256": "4c1d66232c3aaebf964c014898352f238ad1ba2691d5fc65581a8345283ec2d0",
+  "reviewer_sha256": "40d315195a861ce1e55172dd0ae477abb4714368e7fc34a901bb9cd6775e449b",
+  "ttft_query_overlaps": 0,
+  "ttft_query_plus_first_fsync_overlaps": 0,
+  "limitations": [
+    "The second watcher fsync and residual or other background are not bounded; all samples retained."
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "one EADP K256 C-ON model process sampled memory",
+  "formal_sha256": "90afed3ced72a5afb06f1cbdfc1126b049b95e97b3ae670159f7e2b42c9740b4",
+  "formal_started_sha256": "c8aaad930ae5ae3a31ee4f1185a072f16d7cf09fc3e5b5ea10415a0e076f9dd5",
+  "formal_terminal_sha256": "6e20b08b3d249e0a478b14f8ad61d4fa99b528698c6008d61f38d63481230921",
+  "run_started_sha256": "58f4f8b8a55c42584ad6c42a3da8b35daaa627219d9f04189b06fe701b7a29ba",
+  "run_terminal_sha256": "ba2b4ee74887fdaeb591dc0d8e0c341b26c661271e01802b04278c6aea24651f",
+  "reviewer_sha256": "e670875ca06ed428d097aa75567e0eba4e89fcb1599e2c7776fa77d4bf66c9c0",
+  "sample_count": 19,
+  "independently_recomputed_windows": {
+    "pre_cuda": {
+      "fully_contained_samples": 1,
+      "process": {
+        "known": 0,
+        "unknown": 1,
+        "max_known_bytes": null,
+        "present": 0,
+        "absent": 1,
+        "present_unknown": 0
+      },
+      "device_used": {
+        "known": 1,
+        "unknown": 0,
+        "max_known_bytes": 1225785344
+      }
+    },
+    "model_load": {
+      "fully_contained_samples": 11,
+      "process": {
+        "known": 11,
+        "unknown": 0,
+        "max_known_bytes": 17576230912,
+        "present": 11,
+        "absent": 0,
+        "present_unknown": 0
+      },
+      "device_used": {
+        "known": 11,
+        "unknown": 0,
+        "max_known_bytes": 18765316096
+      }
+    },
+    "request": {
+      "fully_contained_samples": 3,
+      "process": {
+        "known": 3,
+        "unknown": 0,
+        "max_known_bytes": 18127781888,
+        "present": 3,
+        "absent": 0,
+        "present_unknown": 0
+      },
+      "device_used": {
+        "known": 3,
+        "unknown": 0,
+        "max_known_bytes": 19358810112
+      }
+    },
+    "teardown": {
+      "fully_contained_samples": 1,
+      "process": {
+        "known": 1,
+        "unknown": 0,
+        "max_known_bytes": 10391388160,
+        "present": 1,
+        "absent": 0,
+        "present_unknown": 0
+      },
+      "device_used": {
+        "known": 1,
+        "unknown": 0,
+        "max_known_bytes": 11853103104
+      }
+    }
+  },
+  "allocator_model_load": {
+    "allocated_peak_bytes": 17534318592,
+    "reserved_peak_bytes": 17555259392
+  },
+  "allocator_request": {
+    "allocated_peak_bytes": 17754808320,
+    "reserved_peak_bytes": 17832083456
+  },
+  "GT_opened": false,
+  "scoring_performed": false,
+  "predictions_opened_for_identity": true,
+  "limitations": [
+    "one image, single process and sampled time windows; no latency or generalization claim",
+    "NVML process and whole-device usage differ; graphics background present; sampled peaks may miss transient maxima, rounded to MiB",
+    "process absent in pre-CUDA sample is unknown, not measured zero",
+    "actual processor hashes and selection indices were checked online but not archived, so cannot be independently reconstructed from this run",
+    "actual P3 and three-DS behavior relies on the accepted same-source C-ON identity diagnostic"
+  ],
+  "errors": []
+}

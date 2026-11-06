@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "questions": 384,
+  "arms_verified": 1152,
+  "GT_scope": "384 DEV qids only",
+  "scoring_performed": true,
+  "score_sha256": "fba6493dd544abbc30cbc2a9c8d1f630d3a30b21b1cda37ebf4c3c7b01a76994",
+  "analysis_sha256": "9e3a323d70741faef8b3f1ef81e2d3b63f74b015fe3c7276335e6ab7a1271640",
+  "frozen_sha256": "37742d4d2e6076c5ea0fe4d7f05b960e0d5e55056a985dd6a5116e66d500cc68",
+  "score_started_sha256": "a81efd8c251a3b6fd62ca57b6eb2ced93d8f2288f4d8f8bb60e2f7093abe8d2a",
+  "score_terminal_sha256": "697ce3f4e5b247e104b936b8e28f024f339f3d833fe387523a9a89b086ad97f5",
+  "reviewer_sha256": "d12a0129abb89e40abb50714266fd35066666a5e6110f63bca7a62df4d1328ac",
+  "prelaunch_review_sha256": "5e3295939dc2cbd5cd3a8789d798b64c006e5f1fd0df0ff54b34f0259982cf4f",
+  "limitations": [
+    "DEV posthoc and unadjusted; neither equal computation nor latency established",
+    "only six recorded generation scalars and EOS establish comparability",
+    "local RoPE repair in both Zip arms, user-text selection includes instructions/options"
+  ],
+  "errors": []
+}

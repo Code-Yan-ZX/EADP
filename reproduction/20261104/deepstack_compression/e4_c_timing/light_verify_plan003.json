@@ -1,0 +1,49 @@
+{
+  "status": "prepared_only_awaiting_completed_run",
+  "scope": "CPU-only 16-arm formal identity verification; no GT, scoring, GPU or latency claim",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_timing/monitor_light_verify003",
+    "--timeout",
+    "1800",
+    "--grace-seconds",
+    "90",
+    "--disk",
+    "/media/disk2",
+    "--",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_timing/light_verify.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_timing/light_smoke_003",
+    "--started",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_timing/monitor_light_smoke003/started.json",
+    "--terminal",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_timing/monitor_light_smoke003/terminal.json",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_timing/light_smoke_003_verification.json"
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "run_plan_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_timing/light_gpu_smoke_launch_plan003.json",
+  "run_plan_sha256": "a19420875d70b120fbf198d8cd3d75f2064fe2dffbe7adaaa13c4256757f68f3",
+  "verifier_sha256": "21ec52f01b057eea670d5e4ed65703c48505f721e31570f21705d3b85fd80e67",
+  "supervisor_sha256": "dddd62696ca10f2624654feec9831c83d308ddf8eb982c645ad3c5eac827ff17",
+  "prepared_unix": 1793826451.1713657,
+  "timeout_seconds": 1800,
+  "prerequisites": [
+    "run003 generated all 16 arms and comparisons",
+    "real container stopped exit0, GPU process gone and supervisor worker_returncode=0/process group empty",
+    "actual runtime source and independent prelaunch proof still match",
+    "output/proof and monitor paths absent"
+  ],
+  "after_completion": [
+    "formal proof status passed, generations16, lightweight_generations12, comparisons16, errors=[]",
+    "verifier supervisor completed/0/process group empty",
+    "independent reviewer binds this formal proof and run/verify/launch evidence before any timing admission"
+  ]
+}

@@ -1,0 +1,1 @@
+The first test preparation command mistakenly used e6/selected_analysis/ paths while already in that directory and used ../monitor/supervise.py instead of ../../monitor/supervise.py. No test file was written and no tests ran; shell exited 2. The corrected files and distinct supervised run follow.

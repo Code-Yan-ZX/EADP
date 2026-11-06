@@ -1,0 +1,9 @@
+{
+  "scope": "post-hoc exploratory 384-question DEV scoring after complete formal and independent no-GT acceptance",
+  "methods": ["local author-prefix with RoPE repair", "local full-user-text selector with RoPE repair", "EADP E1 P3-D1"],
+  "comparisons": ["author-prefix minus EADP", "full-user-text minus EADP", "full-user-text minus author-prefix"],
+  "bootstrap": {"unit": "image_group", "replicates": 10000, "seed": 20261104, "interval": "95% percentile", "paired": true},
+  "denominator": 384,
+  "answer_access": "Only frozen DEV question IDs; do not decode CONFIRM or FINAL answers",
+  "limitations": ["DEV analysis is exploratory and uncorrected", "both Zip arms use local RoPE repair and one also uses user-message text including instructions and options", "fixed K does not establish equal compute", "instrumented generation gives no latency result"]
+}

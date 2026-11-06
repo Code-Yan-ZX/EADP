@@ -1,0 +1,18 @@
+{
+  "scope": "post-hoc 192-question paired warm-process implementation timing; no GT or quality decision",
+  "tasks": ["DocVQA_VAL", "TextVQA_VAL", "AI2D_TEST"],
+  "source_cohort": "e4_c_latency_full/full_001/frozen.json:schedule.cohort.measured",
+  "seed": "20261105|pixel-t020-warm192-v1",
+  "rank_encoding": "UTF-8 compact JSON array [seed,purpose,task,qid,group_id,image_sha256], SHA256 hexadecimal lexicographic ascending",
+  "partition": "within each task rank its 64 measured identities with purpose=partition and split consecutively into four blocks of 16",
+  "within_block": "rank the 48 combined task identities by purpose=block-N and the same encoding",
+  "process_arm_order": [["author", "wavefront"], ["wavefront", "author"], ["wavefront", "author"], ["author", "wavefront"]],
+  "warmup": "first DocVQA_VAL warmup group in the already-frozen E4 latency source cohort; identical warmup for every process; exclude from all measured groups",
+  "processes": 8,
+  "measured_questions": 192,
+  "measured_records": 384,
+  "warmup_records": 8,
+  "GPU_authorized": false,
+  "GT_opened": false,
+  "limits": ["chosen after observing three-anchor results", "cohort overlaps earlier timing work", "implementation comparison only; no quality or universal claim"]
+}

@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "jobs": 48,
+  "warmups": 12,
+  "measured": 36,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "predictions_opened": true,
+  "errors": [],
+  "formal_sha256": "99814e87ec389d2ade1134cfe8d6bf291132ced4aa3d8141e124893611ae3000",
+  "formal_started_sha256": "1535d9841c941d23e5ebc66d8886d773e007758791a4db577dd50a5f41c9fc9e",
+  "formal_terminal_sha256": "e2f8d0626e5f43f68bb7bcede30d1001b92a9f8a32683667e57b752a92cfef56",
+  "run_started_sha256": "3d838f09f8f82c3f952537cd0f420bd47202762441d29c2975baac2645cb6878",
+  "run_terminal_sha256": "fe747d7db9afec97a5c65f90d9fa06a8369e1f46f4bda90ecaa7c78ba595e4b4",
+  "reviewer_sha256": "8fbcfc1fb1376a4e373799a9b7bad708ff1d676309109a9e1eb8796eb8966278",
+  "snapshot_manifest_sha256": "ef307a63333f481cf2b2f2e8c9b59b0002bf488be344ec9adb0f9e43d26ec1e0",
+  "health_sha256": "a3bc35ebd9c5ed306a55b7594adab64b8281898270ed053eb4bc3d98e693872a",
+  "verification_plan_sha256": "dc28df401196d0d536fe1dbaf719f231bb143e0a8ae166caa1d601d1f8134e27",
+  "health_window_count": 2,
+  "limitations": [
+    "Three previously examined DEV anchors, each arm measured three times; exploratory and not a population estimate.",
+    "Completion boundary includes raw output journal fsync; only first-token timing is intended.",
+    "Direct health overlap only; unknown background and residual monitoring overhead cannot be ruled out.",
+    "Source snapshot was made after the run; source before/after hashes do not exclude transient changes."
+  ]
+}

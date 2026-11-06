@@ -1,0 +1,201 @@
+{
+  "status": "completed",
+  "tasks": {
+    "DocVQA_VAL": {
+      "n": 128,
+      "fixed_k256_mean_pct": 67.84538557047037,
+      "rules": {
+        "nearest_low": {
+          "mean_pct": 60.83934315229573,
+          "minus_fixed256_pp": -7.006042418174641,
+          "improved": 16,
+          "declined": 31,
+          "unchanged": 81,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "occupied8_high": {
+          "mean_pct": 62.90775737695993,
+          "minus_fixed256_pp": -4.937628193510446,
+          "improved": 21,
+          "declined": 30,
+          "unchanged": 77,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "entropy4_high": {
+          "mean_pct": 59.58099972762827,
+          "minus_fixed256_pp": -8.264385842842103,
+          "improved": 19,
+          "declined": 32,
+          "unchanged": 77,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_0": {
+          "mean_pct": 62.86712955808623,
+          "minus_fixed256_pp": -4.978256012384142,
+          "improved": 18,
+          "declined": 26,
+          "unchanged": 84,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_1": {
+          "mean_pct": 60.11761285015056,
+          "minus_fixed256_pp": -7.727772720319814,
+          "improved": 17,
+          "declined": 29,
+          "unchanged": 82,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_2": {
+          "mean_pct": 60.054071037469484,
+          "minus_fixed256_pp": -7.791314533000893,
+          "improved": 15,
+          "declined": 32,
+          "unchanged": 81,
+          "high_k_count": 42,
+          "mean_k": 254
+        }
+      }
+    },
+    "TextVQA_VAL": {
+      "n": 128,
+      "fixed_k256_mean_pct": 80.78124999999999,
+      "rules": {
+        "nearest_low": {
+          "mean_pct": 80.46874999999997,
+          "minus_fixed256_pp": -0.31250000000000444,
+          "improved": 4,
+          "declined": 5,
+          "unchanged": 119,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "occupied8_high": {
+          "mean_pct": 79.29687499999999,
+          "minus_fixed256_pp": -1.4843749999999933,
+          "improved": 3,
+          "declined": 5,
+          "unchanged": 120,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "entropy4_high": {
+          "mean_pct": 79.45312499999999,
+          "minus_fixed256_pp": -1.3281249999999911,
+          "improved": 3,
+          "declined": 6,
+          "unchanged": 119,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_0": {
+          "mean_pct": 78.43749999999999,
+          "minus_fixed256_pp": -2.34375,
+          "improved": 5,
+          "declined": 8,
+          "unchanged": 115,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_1": {
+          "mean_pct": 77.96874999999999,
+          "minus_fixed256_pp": -2.8124999999999956,
+          "improved": 3,
+          "declined": 8,
+          "unchanged": 117,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_2": {
+          "mean_pct": 79.14062499999999,
+          "minus_fixed256_pp": -1.6406249999999956,
+          "improved": 3,
+          "declined": 7,
+          "unchanged": 118,
+          "high_k_count": 42,
+          "mean_k": 254
+        }
+      }
+    },
+    "AI2D_TEST": {
+      "n": 128,
+      "fixed_k256_mean_pct": 82.03125,
+      "rules": {
+        "nearest_low": {
+          "mean_pct": 77.34375,
+          "minus_fixed256_pp": -4.6875,
+          "improved": 3,
+          "declined": 9,
+          "unchanged": 116,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "occupied8_high": {
+          "mean_pct": 78.125,
+          "minus_fixed256_pp": -3.90625,
+          "improved": 3,
+          "declined": 8,
+          "unchanged": 117,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "entropy4_high": {
+          "mean_pct": 77.34375,
+          "minus_fixed256_pp": -4.6875,
+          "improved": 2,
+          "declined": 8,
+          "unchanged": 118,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_0": {
+          "mean_pct": 78.125,
+          "minus_fixed256_pp": -3.90625,
+          "improved": 4,
+          "declined": 9,
+          "unchanged": 115,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_1": {
+          "mean_pct": 77.34375,
+          "minus_fixed256_pp": -4.6875,
+          "improved": 3,
+          "declined": 9,
+          "unchanged": 116,
+          "high_k_count": 42,
+          "mean_k": 254
+        },
+        "random_2": {
+          "mean_pct": 78.90625,
+          "minus_fixed256_pp": -3.125,
+          "improved": 4,
+          "declined": 8,
+          "unchanged": 116,
+          "high_k_count": 42,
+          "mean_k": 254
+        }
+      }
+    }
+  },
+  "assignments_sha256": "371f73895e6b1d3f9ebb1debdaf4976c6ecfe6601701f368623cb57499df8275",
+  "admission": {
+    "feature_sha256": "ea218cda6810566086d72d8d609ab0564f63b24755c1e2aef1947f47e1af49e7",
+    "feature_review_sha256": "f312c7715a08c6627b929921a806b51fb104af8579d9b7a24b9efd00ee4e70a4",
+    "scores_sha256": "fcf66bed80a17b2096c47a16e51b38475d02b8db0679058936a1e65eacec6c6b",
+    "analysis_freeze_sha256": "4608f6cc2278e0343c1e7d8153a44f2f775a5e850db8b2f485d591dfac5b7e61",
+    "prelaunch_sha256": "4829cf684b1c43310266ef5c39685d167b1d0502fb671fa7534c8dc6b70b0995"
+  },
+  "GT_opened": false,
+  "new_predictions_opened": false,
+  "limitations": [
+    "posthoc DEV exploration; all six fixed rules reported",
+    "batch ranking is not an online policy",
+    "token count is not equal compute or latency",
+    "K128 feature pass and possible second K512 generation must be included in any real cost"
+  ]
+}

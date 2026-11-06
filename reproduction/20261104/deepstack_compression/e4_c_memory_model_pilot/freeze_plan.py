@@ -1,0 +1,9 @@
+"""Freeze this local source bundle and accepted upstream facts before CPU tests."""
+import json,os,sys
+from pathlib import Path
+D=Path(__file__).resolve().parent;B=D.parent;R=B/'e1_independent_review';sys.path[:0]=[str(D),str(B/'e4_c_latency')]
+from gate import sha,prior
+from latency_worker import sources as latency_sources
+old=B/'e4_c_memory_real_handshake_v2/plan001.json';oldplan=json.loads(old.read_text());sources=set(map(Path,oldplan['source_sha256']))|set(latency_sources())|set(D.glob('*.py'))|{D/'PLAN.md',old,B/'e4_c_memory_real_handshake_v2/run_001/exit.json',B/'e4_c_memory_real_handshake_v2/monitor_run001/started.json',B/'e4_c_memory_real_handshake_v2/monitor_run001/terminal.json',R/'e4c_memory_real_handshake_v2_result_review.json',R/'review_e4c_memory_real_handshake_v2_result.py',R/'monitor_e4c_memory_real_handshake_v2_result/started.json',R/'monitor_e4c_memory_real_handshake_v2_result/terminal.json'}
+source={str(x.resolve()):sha(x) for x in sorted(sources)};identity=prior();p={'scope':'one DEV EADP K256 C-ON real model process memory; no GT or timing','source_sha256':source,'prior_identity':identity,'sample_interval_ns':500000000,'max_sample_gap_ns':5000000000,'worker_timeout_seconds':1200,'ready_timeout_seconds':300,'sampler_timeout_seconds':1500,'inner_timeout_seconds':1560,'outer_timeout_seconds':1680,'grace_seconds':90,'budget_source_sha256':sha(B/'initial_plan.json'),'GPU_authorization':'independent review and root scheduling required','GT_opened':False,'model_loaded_at_freeze':False}
+with (D/'plan001.json').open('x') as f:json.dump(p,f,indent=2);f.write('\n');f.flush();os.fsync(f.fileno())

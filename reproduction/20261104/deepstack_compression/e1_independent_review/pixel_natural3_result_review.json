@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "observed": {
+    "DocVQA_VAL": {
+      "qid": "20741",
+      "visual_tokens": 572,
+      "generated_tokens": 12,
+      "eos": true
+    },
+    "TextVQA_VAL": {
+      "qid": "38108",
+      "visual_tokens": 706,
+      "generated_tokens": 3,
+      "eos": true
+    },
+    "AI2D_TEST": {
+      "qid": "392501",
+      "visual_tokens": 311,
+      "generated_tokens": 2,
+      "eos": true
+    }
+  },
+  "layers_per_call": 36,
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_natural3_v3/run_smoke001/observations/AI2D_TEST_392501_generated.json": "365aa3aab1aa1d15d490300bed528ff512fe3160a2ba54944fb3548c1518a9b0",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_natural3_v3/run_smoke001/observations/TextVQA_VAL_38108.json": "ff8083d7fe35be89e87aedf208d13f26af02a15121b90f6542d74ca24dcdbaa9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_natural3_v3/run_smoke001/observations/DocVQA_VAL_20741_generated.json": "c3fd69506fc9a85609a7cd0e0d65343d8be37802cb088f125109d05e58d0d536",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_natural3_v3/run_smoke001/observations/AI2D_TEST_392501.json": "5772bab8621c7e672f401299ffdfdf51915081bae1a74bed0ab80edfdc7425b9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_natural3_v3/run_smoke001/observations/DocVQA_VAL_20741.json": "c54ed4d91efeb7b6a4d5b26376963cfe507f2e46c7fbd001c20d7d2fe6bfddd5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_natural3_v3/run_smoke001/observations/worker_complete.json": "351c14378beb13bcdbe5a5d1ee69a8949793d6ac63a4cf6dedb22c27f2ddcf76",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_natural3_v3/run_smoke001/observations/TextVQA_VAL_38108_generated.json": "25999e2d9b3889dcf2f5c0f8fd3a0df1e57e3ea09ca4a950c8b500275a948746",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_natural3_v3/run_smoke001/observations/progress.jsonl": "5ada03e6b0961e8aad69f98e9169c7be938138a9f6d6ea3dd589bed82d7dd203",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_natural3_v3/run_smoke001/launch.json": "25c11040c0d4a2911e7483dc328fcc061ab5f508997a588450f13dbc59bf1b63",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_natural3_v3/run_smoke001/exit.json": "1e8704696db6382bd4276caab2a0ed1c5f66cb6a519786d9d4f1bc19a256812a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_natural3_v3/monitor_smoke001/started.json": "f4ae53b7c2713fa57e6df6ee8bdb1566b85ccabce751351ed587d9634f984dff",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_natural3_v3/monitor_smoke001/terminal.json": "a628067393de71d1f189f31dac89ee4983528c189bf0cef8e054d5f5209a4376",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixelprune_natural3_v3/independent_prelaunch_review.json": "c41290c256283db390c8e3425b741c05dec52c177c1659904d30d14c082577ed"
+  },
+  "reviewer_sha256": "7198b6cf6cb545cd2b11c7e009d19a7e8c2bedd97ac1e10a719d94b6d2a6bccb",
+  "limitations": [
+    "three natural outputs only; no quality score",
+    "visual budget varies by image and is not equal K",
+    "top_p=0.8 and top_k=20 differ from E1 0.001 and 1, although do_sample=false; no complete generation recipe identity",
+    "full processor tensors, per-step logits, visual/DS and KV contents not archived; elementwise matches are online checks",
+    "no timing or general correctness claims"
+  ],
+  "errors": []
+}

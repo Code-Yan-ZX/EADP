@@ -1,0 +1,98 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "images": 128,
+  "planned_cases": 384,
+  "case_counts": {
+    "pilot": 96,
+    "added": 288
+  },
+  "counts": {
+    "128": {
+      "fused": {
+        "planned": 128,
+        "strict_order_pass": 128,
+        "strict_order_fail": 0,
+        "unavailable": 0,
+        "initial_spatial_equal_posthoc": 128,
+        "initial_spatial_different_posthoc": 0
+      },
+      "graph": {
+        "planned": 128,
+        "strict_order_pass": 128,
+        "strict_order_fail": 0,
+        "unavailable": 0,
+        "initial_spatial_equal_posthoc": 128,
+        "initial_spatial_different_posthoc": 0
+      }
+    },
+    "256": {
+      "fused": {
+        "planned": 128,
+        "strict_order_pass": 128,
+        "strict_order_fail": 0,
+        "unavailable": 0,
+        "initial_spatial_equal_posthoc": 128,
+        "initial_spatial_different_posthoc": 0
+      },
+      "graph": {
+        "planned": 128,
+        "strict_order_pass": 128,
+        "strict_order_fail": 0,
+        "unavailable": 0,
+        "initial_spatial_equal_posthoc": 128,
+        "initial_spatial_different_posthoc": 0
+      }
+    },
+    "512": {
+      "fused": {
+        "planned": 128,
+        "strict_order_pass": 127,
+        "strict_order_fail": 1,
+        "unavailable": 0,
+        "initial_spatial_equal_posthoc": 128,
+        "initial_spatial_different_posthoc": 0
+      },
+      "graph": {
+        "planned": 128,
+        "strict_order_pass": 127,
+        "strict_order_fail": 1,
+        "unavailable": 0,
+        "initial_spatial_equal_posthoc": 128,
+        "initial_spatial_different_posthoc": 0
+      }
+    }
+  },
+  "failures": [
+    {
+      "task": "TextVQA_VAL",
+      "qid": "35191",
+      "budget": 512,
+      "method": "fused",
+      "same_set": true,
+      "first_difference_zero_based": 332
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "35191",
+      "budget": 512,
+      "method": "graph",
+      "same_set": true,
+      "first_difference_zero_based": 332
+    }
+  ],
+  "failure_candidate_measurements_unavailable": true,
+  "combined_sha256": "eb9f6503fbf6f3343f5815e1defdd998f21fb0c1e63d79490dd2844926c5dfe5",
+  "combined_started_sha256": "ef2042889e2e0af1c4e1fa043e4861b97a137e03c9ccded0c2c27a871326df79",
+  "combined_terminal_sha256": "37924f13b07afd04dd3ac2da02fdaf53192a5d2f227188f692de2dd44cdd0d5d",
+  "reviewer_sha256": "67a08416f9681ab88aa0efde338a996096536961fc9d2efe6969985225e206bf",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": [
+    "post-pilot expansion is exploratory, not an independent 128-image confirmation",
+    "spatial set comparison is posthoc and cannot grant strict ordered equivalence",
+    "fused and graph share implementation; graph is not an independent algorithm replication",
+    "GPU round scores were not archived"
+  ],
+  "errors": []
+}

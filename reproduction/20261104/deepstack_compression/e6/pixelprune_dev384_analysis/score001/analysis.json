@@ -1,0 +1,252 @@
+{
+  "status": "completed",
+  "questions": 384,
+  "pixel_generations": 384,
+  "tasks": {
+    "DocVQA_VAL": {
+      "n_questions": 128,
+      "n_image_groups": 128,
+      "arm_means_pct": {
+        "pixel_dynamic": 91.6197246763653,
+        "e1_p3_d1": 67.84538557047036,
+        "e4_k256_d1": 67.84538557047036,
+        "e4_k1024_d1": 91.9455555295399
+      },
+      "arm_percentile_95_ci_pct": {
+        "pixel_dynamic": [
+          86.91524092769211,
+          95.62907835979124
+        ],
+        "e1_p3_d1": [
+          60.56281627326104,
+          74.97486492913437
+        ],
+        "e4_k256_d1": [
+          60.56281627326104,
+          74.97486492913437
+        ],
+        "e4_k1024_d1": [
+          87.25615489653575,
+          95.88452213476626
+        ]
+      },
+      "bootstrap": {
+        "unit": "image_group",
+        "replicates": 10000,
+        "seed": 20261104,
+        "method": "percentile"
+      },
+      "contrasts": {
+        "pixel_minus_e1": {
+          "difference_pp": 23.774339105894953,
+          "image_cluster_percentile_95_ci_pp": [
+            16.533107066298314,
+            31.086856915138412
+          ],
+          "improved": 50,
+          "declined": 4,
+          "unchanged": 74,
+          "answer_changed": 64
+        },
+        "pixel_minus_e4_k256": {
+          "difference_pp": 23.774339105894953,
+          "image_cluster_percentile_95_ci_pp": [
+            16.533107066298314,
+            31.086856915138412
+          ],
+          "improved": 50,
+          "declined": 4,
+          "unchanged": 74,
+          "answer_changed": 64
+        },
+        "pixel_minus_e4_k1024": {
+          "difference_pp": -0.32583085317460325,
+          "image_cluster_percentile_95_ci_pp": [
+            -2.880394345238091,
+            2.0551215277777817
+          ],
+          "improved": 4,
+          "declined": 3,
+          "unchanged": 121,
+          "answer_changed": 12
+        }
+      },
+      "dynamic_k": {
+        "min": 161,
+        "median": 666.0,
+        "max": 992
+      },
+      "terminal": {
+        "eos": 128,
+        "truncated": 0,
+        "empty": 0
+      }
+    },
+    "TextVQA_VAL": {
+      "n_questions": 128,
+      "n_image_groups": 128,
+      "arm_means_pct": {
+        "pixel_dynamic": 83.75,
+        "e1_p3_d1": 80.78125,
+        "e4_k256_d1": 80.78125,
+        "e4_k1024_d1": 85.546875
+      },
+      "arm_percentile_95_ci_pct": {
+        "pixel_dynamic": [
+          77.5,
+          89.375
+        ],
+        "e1_p3_d1": [
+          74.296875,
+          87.03125
+        ],
+        "e4_k256_d1": [
+          74.296875,
+          87.03125
+        ],
+        "e4_k1024_d1": [
+          79.765625,
+          90.859375
+        ]
+      },
+      "bootstrap": {
+        "unit": "image_group",
+        "replicates": 10000,
+        "seed": 20261104,
+        "method": "percentile"
+      },
+      "contrasts": {
+        "pixel_minus_e1": {
+          "difference_pp": 2.9687500000000004,
+          "image_cluster_percentile_95_ci_pp": [
+            -0.7031250000000047,
+            6.874999999999987
+          ],
+          "improved": 10,
+          "declined": 3,
+          "unchanged": 115,
+          "answer_changed": 19
+        },
+        "pixel_minus_e4_k256": {
+          "difference_pp": 2.9687500000000004,
+          "image_cluster_percentile_95_ci_pp": [
+            -0.7031250000000047,
+            6.874999999999987
+          ],
+          "improved": 10,
+          "declined": 3,
+          "unchanged": 115,
+          "answer_changed": 19
+        },
+        "pixel_minus_e4_k1024": {
+          "difference_pp": -1.7968749999999998,
+          "image_cluster_percentile_95_ci_pp": [
+            -4.144531250000015,
+            0.0
+          ],
+          "improved": 0,
+          "declined": 3,
+          "unchanged": 125,
+          "answer_changed": 6
+        }
+      },
+      "dynamic_k": {
+        "min": 462,
+        "median": 759.5,
+        "max": 1024
+      },
+      "terminal": {
+        "eos": 128,
+        "truncated": 0,
+        "empty": 0
+      }
+    },
+    "AI2D_TEST": {
+      "n_questions": 128,
+      "n_image_groups": 128,
+      "arm_means_pct": {
+        "pixel_dynamic": 82.03125,
+        "e1_p3_d1": 82.03125,
+        "e4_k256_d1": 82.03125,
+        "e4_k1024_d1": 82.03125
+      },
+      "arm_percentile_95_ci_pct": {
+        "pixel_dynamic": [
+          75.0,
+          88.28125
+        ],
+        "e1_p3_d1": [
+          75.0,
+          88.28125
+        ],
+        "e4_k256_d1": [
+          75.0,
+          88.28125
+        ],
+        "e4_k1024_d1": [
+          75.0,
+          88.28125
+        ]
+      },
+      "bootstrap": {
+        "unit": "image_group",
+        "replicates": 10000,
+        "seed": 20261104,
+        "method": "percentile"
+      },
+      "contrasts": {
+        "pixel_minus_e1": {
+          "difference_pp": 0.0,
+          "image_cluster_percentile_95_ci_pp": [
+            -3.90625,
+            3.90625
+          ],
+          "improved": 3,
+          "declined": 3,
+          "unchanged": 122,
+          "answer_changed": 22
+        },
+        "pixel_minus_e4_k256": {
+          "difference_pp": 0.0,
+          "image_cluster_percentile_95_ci_pp": [
+            -3.90625,
+            3.90625
+          ],
+          "improved": 3,
+          "declined": 3,
+          "unchanged": 122,
+          "answer_changed": 22
+        },
+        "pixel_minus_e4_k1024": {
+          "difference_pp": 0.0,
+          "image_cluster_percentile_95_ci_pp": [
+            -2.34375,
+            2.34375
+          ],
+          "improved": 1,
+          "declined": 1,
+          "unchanged": 126,
+          "answer_changed": 17
+        }
+      },
+      "dynamic_k": {
+        "min": 187,
+        "median": 493.5,
+        "max": 950
+      },
+      "terminal": {
+        "eos": 128,
+        "truncated": 0,
+        "empty": 0
+      }
+    }
+  },
+  "scores_sha256": "c5d97adfe7d712b93b1d33547c3e105c7391d8c5d5533caa33e426b3d62f3668",
+  "plan_sha256": "8158b81a9c841fe7ca549a4126af80d4ed70dec93d1490aa6984e0ad2e72a352",
+  "limitations": [
+    "DEV post-hoc exploratory; comparisons unadjusted",
+    "dynamic K differs from fixed-K compute; no latency claim",
+    "AI2D deterministic local scorer",
+    "full visual/DS/KV arrays not archived"
+  ]
+}

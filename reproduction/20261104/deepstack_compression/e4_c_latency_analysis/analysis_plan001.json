@@ -1,0 +1,80 @@
+{
+  "stage": "DEV_latency_blinded_analysis_plan",
+  "created_unix": 1793835922.7785459,
+  "disclosure": "Written while the full performance run was in progress, before inspecting any full-run measurement values. Earlier pilot results and operational budgets were already known; this is not a pre-run registered analysis.",
+  "scope": "batch-1 warm-cache DEV performance diagnosis; not FINAL evaluation or a candidate-success claim",
+  "upstream_gate": "Require completed 5940 jobs, real Docker and worker-supervisor clean exits, full formal verification and formal-supervisor exit 0, independent full-run review and reviewer-supervisor exit 0. Check complete accepted evidence hashes before parsing full timing records. No GT or quality scoring.",
+  "source_run": "e4_c_latency_full/full_001/journal.jsonl",
+  "formal_proof": "e4_c_latency_full/full_001_verification.json",
+  "independent_proof": "e1_independent_review/e4c_latency_full001_review.json",
+  "formal_annotations": "e4_c_latency_full/full_001_annotations.jsonl",
+  "manual_windows": "e4_c_latency_full/manual_health_windows.jsonl",
+  "inventory": {
+    "tasks": [
+      "DocVQA_VAL",
+      "TextVQA_VAL",
+      "AI2D_TEST"
+    ],
+    "modes": [
+      "C-ON",
+      "C-DROP",
+      "C-SKIP"
+    ],
+    "protocols": [
+      "natural",
+      "fixed32"
+    ],
+    "measured_images_per_task": 64,
+    "repetitions_per_image_mode_protocol": 5,
+    "measurements_per_task_mode_protocol": 320,
+    "warmup_jobs_total": 180,
+    "measured_jobs_total": 5760,
+    "jobs_total": 5940
+  },
+  "inventory_checks": "Frozen schedule, exact task/group/qid/mode/protocol/replicate identity and order; exactly five replicate IDs per image and mode/protocol; complete natural and fixed32, all generated plus completed records; no duplicate/missing/extra and only DEV; fail closed instead of imputing or dropping.",
+  "measurements": {
+    "TTFT_ms": "(first_token_selected_ns - t0_before_image_read_ns)/1e6",
+    "end_to_end_ms": "(generation_complete_ns - t0_before_image_read_ns)/1e6",
+    "first_token": "actual selected token after append; one boundary synchronization; logits-ready not measured",
+    "outputs": "report token count distribution, EOS and truncation by task/mode/protocol; fixed32 output is diagnostic, not scored"
+  },
+  "estimator": {
+    "point": "For each task, protocol, metric and mode, compute median and P95 across all 64*5=320 observed measurements; NumPy quantile method linear. Report n_images=64, repeats=5 and n_measurements=320.",
+    "contrasts": [
+      [
+        "C-DROP",
+        "C-ON"
+      ],
+      [
+        "C-SKIP",
+        "C-ON"
+      ],
+      [
+        "C-SKIP",
+        "C-DROP"
+      ]
+    ],
+    "absolute_difference": "quantile(A)-quantile(B), ms, same image groups",
+    "relative_change": "100*(quantile(A)/quantile(B)-1), percent; report A/B ratio too. Reject nonfinite or nonpositive denominator; never interpret ratio as mean of per-sample ratios.",
+    "scope": "Median and P95 estimands are quantiles of the pooled 320 repeats, with inference clustered by image, not median of 64 per-image medians. Repeat index does not imply same-time pairing; pairing is by the same image set."
+  },
+  "bootstrap": {
+    "unit": "image group within each task",
+    "n_images_drawn_per_replicate": 64,
+    "retain": "All 5 repeats for each drawn image, for every mode and both protocols; duplicate groups remain duplicated.",
+    "replicates": 10000,
+    "seed": 20261104,
+    "generator": "numpy.random.default_rng(20261104); task order DocVQA_VAL, TextVQA_VAL, AI2D_TEST; groups sorted lexicographically; one task-specific draw matrix shared across both protocols, all modes, metrics and quantiles",
+    "interval": "two-sided percentile 95%, NumPy quantile method linear; compute paired difference, ratio and relative change within each resample, not by combining marginal confidence intervals",
+    "multiplicity": "Unadjusted exploratory DEV intervals only; do not use for confirmatory multiplicity-adjusted promotion claims."
+  },
+  "reporting": [
+    "Report natural and fixed32 separately, each task separately; preserve all 5760 measured records and 180 warmups (warmups excluded from estimators only, still retained).",
+    "Report median/P95 TTFT and end-to-end latency by task/mode/protocol; all three paired differences and ratios with intervals; 64 independent image groups, not 320 independent images.",
+    "Report natural output token length and terminal counts; output-dependent natural total time is not a length-matched compute comparison.",
+    "Report formal hourly supervisor windows plus each manual whole health window and, only when present, NVML subwindow. Use inclusive monotonic overlap with each measurement interval, validate time namespace and retain all jobs.",
+    "Disclose approx 07:03:30 two unbounded journal/status scans without precise monotonic window, manual health record write tail outside its window, Java/container restarts, root disk and swap background, and that absence of direct overlap does not prove absence of residual interference.",
+    "No results-driven sample deletion, selective intervals or tuning. No GPU memory, batch4, cold-cache, FINAL or task-independent acceleration claim from this run."
+  ],
+  "analysis_code": "To be implemented and separately reviewed after the experiment; no code or result computed by freezing this contract."
+}

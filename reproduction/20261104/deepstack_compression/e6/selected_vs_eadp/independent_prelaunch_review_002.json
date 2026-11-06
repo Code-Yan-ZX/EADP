@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_vs_eadp/plan.json": "50a826648eb63b768ca86d25f535e1a9ce3fd899400c3a51408a9ff2cf64f4dc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_vs_eadp/plan_002.json": "a48074d1c88a3c5559a88ea55d5c8e1467168b372e1ea559f01092e9ec3db7a2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_vs_eadp/plan_003.json": "c9076484a343c2d75e28bcffbd2879060281e926796a30811412f46b0a01e152",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_vs_eadp/compare.py": "82e2189cca266b2beee6ffaedeaef1cc3fbabe2cf3e40e13e2d35314505263cc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_vs_eadp/test_compare.py": "a4704ddf04e8946d5ad80c082e2ba50438bdacf3c051a1c2e167105f8250e06b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_vs_eadp/cpu_validation.py": "5bac405b6c1603e277d185c10add5bd7e412c85f777144dfa8278391915451a6"
+  },
+  "reviewer_sha256": "95b70f4838712e1870534298b65ce3d15d5fadf5f73e9f83e204c1e8ad4cfbce",
+  "cpu_sha256": "2fa2f3650c23c95127a090b4fe0d5c7397603f6efacaf036c1d5a8cde630368a",
+  "cpu_started_sha256": "6924df75b29d8603ff776025722bb04dc4ad71604854422bc2d5a787920ac399",
+  "cpu_terminal_sha256": "a29a6c557771d0b58a50a1687e176fc21ea895aa4b8cf4cd6d6bce4b588efec4",
+  "plan_sha256": "c9076484a343c2d75e28bcffbd2879060281e926796a30811412f46b0a01e152",
+  "synthetic_tests": 5,
+  "GT_opened": false,
+  "predictions_opened": false,
+  "gpu_used": false,
+  "limitations": [
+    "No new labels or predictions and no CONFIRM/FINAL.",
+    "E1 stores six generation scalars but not every extra effective generation control recorded by Div/CD; do not assert identical unobserved controls.",
+    "Methods have different selectors and implementation pathways; no inference of matched total compute, speed or deployment effectiveness.",
+    "Do not infer a candidate decision or confirmatory conclusion from this post-hoc DEV comparison alone.",
+    "ALL averages questions across tasks with different metrics, not task-standardized; its non-stratified group bootstrap allows task proportions to vary. Interpret task-specific contrasts first."
+  ],
+  "errors": []
+}

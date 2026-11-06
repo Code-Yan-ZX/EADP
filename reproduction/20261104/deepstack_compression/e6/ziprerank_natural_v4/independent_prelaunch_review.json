@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "b87c850ce9636e3e63d5e34c9a8c188f9031aa76929e1a69bfca290d09e80758",
+  "preflight_sha256": "04cbece16073afe92364ab8715ddd83da9c256512a622b376ee4ee2e5ba7b2a1",
+  "preflight_started_sha256": "535690b862adaa88bf6b7ec5c0a2551524c75bb04e5e6f198524805babe0a6ef",
+  "preflight_terminal_sha256": "743c7f7ad72bb2d1bf1497a8be58ddca0f06c274aca7b6aa84eaf8c2419fb32e",
+  "preflight_exit_sha256": "9aebbe41c4fde5604fc970b505e9fdfa7c3779d3c06793593fa19a09b39c15d8",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_ziprerank_natural_v4_prelaunch.py",
+  "reviewer_sha256": "bfe874ac9dcdc6ca95a9c441720bb887051dee6ec4c353915c5fad7d759d33fb",
+  "review_started_sha256": "dfaafb2ad91d32b929c1eb3b05de4a80ff364ef5c328013ee449acc95baed2c2",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_ziprerank_natural_v4_prelaunch/terminal.json",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "gpu_authorized": "subject to root scheduling",
+  "cpu_tests": 7,
+  "source_files": 71,
+  "scope": "three DEV anchors, natural generation diagnostic; no model/GPU execution yet",
+  "limitations": [
+    "enabled arms use local RoPE-state repair; user-text selection includes instructions/options",
+    "per-step cache count is global or first layer; final cache records per-layer shapes without contents",
+    "no quality, accuracy, throughput or equal-compute comparison",
+    "preflight rehashed four weights; this review verifies recorded stat, not payload again"
+  ],
+  "errors": []
+}

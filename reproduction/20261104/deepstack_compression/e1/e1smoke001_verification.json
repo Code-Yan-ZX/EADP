@@ -1,0 +1,167 @@
+{
+  "status": "passed",
+  "errors": [],
+  "n_expected": 32,
+  "n_verified": 32,
+  "verifier_sha256": "b200ec3f3740462938447f017480af0a5118d7153e38dec9212963d297bdf793",
+  "frozen_sha256": "28ef61e62376101b85d29325484366fa3f772c5190538a2ea0c2731a24168a49",
+  "raw_predictions_sha256": "e5dba521cc96c31ba355a0b8b7d8166dc92e88a59e1761cdbf2567a062255b27",
+  "generated_arms_sha256": "928af5e3216bfd9000632fbb8d06c1bf45941f67bbcf0a3f8e0773c10bafd2d8",
+  "validated_quartets_sha256": "1dd65348dd3c2400570d451a1a4c4aa64230e0412199fc72e29b8952e236e634",
+  "worker_complete_sha256": "515f93369ff8e44a5ee109a7cc7fe840a675f22ea6d951c858083ca2c0c40ab1",
+  "launch_sha256": "1814a04896d4ddb23a142ebaa64b6b133435c7b5f09dc167c27ba504b6809a5e",
+  "container_exit_sha256": "8698744369f3350223af5b8436305bf4b929fb07fde8d44b0302219d927a383d",
+  "supervisor_terminal_sha256": "9dbea09cb8a2bcbe6f2feb955b33b9ac65ad7c649c5219efa19b4bbb3f3e066a",
+  "budget": {
+    "smoke_launcher_elapsed_seconds": 570.2649791426957,
+    "per_task_arm_seconds": {
+      "AI2D_TEST|P1-D0|forced": {
+        "count": 10,
+        "mean": 2.420168333686888,
+        "min": 2.364877911284566,
+        "max": 2.489771356806159
+      },
+      "AI2D_TEST|P1-D0|natural": {
+        "count": 10,
+        "mean": 0.927144868299365,
+        "min": 0.8862594310194254,
+        "max": 1.0463065635412931
+      },
+      "AI2D_TEST|P1-D1|forced": {
+        "count": 10,
+        "mean": 2.4717335645109415,
+        "min": 2.376470610499382,
+        "max": 2.600459599867463
+      },
+      "AI2D_TEST|P1-D1|natural": {
+        "count": 10,
+        "mean": 0.9676032995805144,
+        "min": 0.8747043590992689,
+        "max": 1.0874999519437551
+      },
+      "AI2D_TEST|P3-D0|forced": {
+        "count": 10,
+        "mean": 2.441073581390083,
+        "min": 2.3497281577438116,
+        "max": 2.5728003084659576
+      },
+      "AI2D_TEST|P3-D0|natural": {
+        "count": 10,
+        "mean": 0.8904606766998768,
+        "min": 0.785688403993845,
+        "max": 0.964911088347435
+      },
+      "AI2D_TEST|P3-D1|forced": {
+        "count": 10,
+        "mean": 2.468398732505739,
+        "min": 2.3106616213917732,
+        "max": 2.562876710668206
+      },
+      "AI2D_TEST|P3-D1|natural": {
+        "count": 10,
+        "mean": 0.9737006288021803,
+        "min": 0.9064117819070816,
+        "max": 1.0427068173885345
+      },
+      "DocVQA_VAL|P1-D0|forced": {
+        "count": 11,
+        "mean": 2.461032398553057,
+        "min": 2.412297435104847,
+        "max": 2.541363028809428
+      },
+      "DocVQA_VAL|P1-D0|natural": {
+        "count": 11,
+        "mean": 1.2584273324094035,
+        "min": 0.9210551716387272,
+        "max": 3.363628188148141
+      },
+      "DocVQA_VAL|P1-D1|forced": {
+        "count": 11,
+        "mean": 2.5177990807728334,
+        "min": 2.462205059826374,
+        "max": 2.5746579114347696
+      },
+      "DocVQA_VAL|P1-D1|natural": {
+        "count": 11,
+        "mean": 1.1938738672232085,
+        "min": 1.015825005248189,
+        "max": 1.4877363592386246
+      },
+      "DocVQA_VAL|P3-D0|forced": {
+        "count": 11,
+        "mean": 2.456266011704098,
+        "min": 2.3086702171713114,
+        "max": 2.661974595859647
+      },
+      "DocVQA_VAL|P3-D0|natural": {
+        "count": 11,
+        "mean": 1.1114318198101087,
+        "min": 0.9304536916315556,
+        "max": 1.4015797190368176
+      },
+      "DocVQA_VAL|P3-D1|forced": {
+        "count": 11,
+        "mean": 2.51369245858355,
+        "min": 2.472304694354534,
+        "max": 2.588143164291978
+      },
+      "DocVQA_VAL|P3-D1|natural": {
+        "count": 11,
+        "mean": 1.192659586837346,
+        "min": 0.989651245996356,
+        "max": 1.4863802399486303
+      },
+      "TextVQA_VAL|P1-D0|forced": {
+        "count": 11,
+        "mean": 2.4133754045787184,
+        "min": 2.332891024649143,
+        "max": 2.4950592778623104
+      },
+      "TextVQA_VAL|P1-D0|natural": {
+        "count": 11,
+        "mean": 0.9966248969801448,
+        "min": 0.9065749477595091,
+        "max": 1.1456618215888739
+      },
+      "TextVQA_VAL|P1-D1|forced": {
+        "count": 11,
+        "mean": 2.4420606019822033,
+        "min": 2.35328533872962,
+        "max": 2.524233201518655
+      },
+      "TextVQA_VAL|P1-D1|natural": {
+        "count": 11,
+        "mean": 1.0515069131824104,
+        "min": 0.9630248490720987,
+        "max": 1.2311060279607773
+      },
+      "TextVQA_VAL|P3-D0|forced": {
+        "count": 11,
+        "mean": 2.4056781308556143,
+        "min": 2.293143665418029,
+        "max": 2.488806650042534
+      },
+      "TextVQA_VAL|P3-D0|natural": {
+        "count": 11,
+        "mean": 0.9977293867956508,
+        "min": 0.9016778655350208,
+        "max": 1.1662067752331495
+      },
+      "TextVQA_VAL|P3-D1|forced": {
+        "count": 11,
+        "mean": 2.4636987859213892,
+        "min": 2.4098514560610056,
+        "max": 2.580311231315136
+      },
+      "TextVQA_VAL|P3-D1|natural": {
+        "count": 11,
+        "mean": 1.0393591604449532,
+        "min": 0.9052980691194534,
+        "max": 1.2452680133283138
+      }
+    },
+    "dev_natural_extrapolated_gpu_hours_mean": 0.4480185755400947,
+    "qualification": "exploratory extrapolation from 11/11/10 questions per task; per-arm times include observer and diagnostic NPZ persistence, model startup separately, 32-step teacher-forced diagnostics add overhead; not E4 performance or K128/K512/K1024 estimates"
+  },
+  "verified_unix": 1793810309.761876
+}

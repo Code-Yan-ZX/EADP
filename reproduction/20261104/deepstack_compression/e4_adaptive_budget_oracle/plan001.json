@@ -1,0 +1,15 @@
+{
+  "scope": "Post-hoc answer-informed diagnostic on already-scored E4 DEV only; no new labels or predictions",
+  "source_scores": "e4_analysis/score_panel003/scores.jsonl",
+  "source_scores_sha256": "fcf66bed80a17b2096c47a16e51b38475d02b8db0679058936a1e65eacec6c6b",
+  "source_reviews": ["e1_independent_review/e4score003_review.json", "e4_analysis/independent_score_review/verification001.json"],
+  "tasks": ["DocVQA_VAL", "TextVQA_VAL", "AI2D_TEST"],
+  "n_per_task": 128,
+  "arms": [128, 256, 512],
+  "deepstack": "D1",
+  "budget": "Within each task, total retained tokens at most 128*256. Choose the quality-maximizing K128/K256/K512 independently for each question by dynamic programming using its already observed reference-based score. Include K256 for every question as a feasible fixed-budget baseline.",
+  "unit": "One image/question group; exact capacity measured in units of 128 visual tokens",
+  "tie_break": "Sort questions by UTF-8 qid, enumerate K128,K256,K512 in that order, replace a state only on strictly better aggregate score; choose smallest total cost among equal score optima.",
+  "outputs": "Per-task mean oracle and fixed-K256 scores, observed in-sample difference, allocated K counts, retained-token cost, per-item assignment",
+  "limitations": ["Explicit answer-informed upper bound among these three existing outputs on these observed DEV questions, not a deployable policy or generalization guarantee", "Per-task resource constraint and task-specific selection assume information not available at inference", "Visual token K is not measured TTFT, FLOPs, GPU memory or equal compute", "No uncertainty interval or statistical significance for the same-data optimized diagnostic", "No new GT, no CONFIRM or FINAL access"]
+}

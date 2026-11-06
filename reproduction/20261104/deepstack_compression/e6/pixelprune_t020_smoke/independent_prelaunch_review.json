@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_pixel_t020_prelaunch.py",
+  "reviewer_sha256": "e6e56df445f9cba2cae0296933d7b6fb000532a2732a09bfa05f2c6235756135",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixel_t020_prelaunch002/terminal.json",
+  "review_started_sha256": "c6d07ee2de23122135bf2a3766f97d568a2573bd6f3d109333e9eb502cea43e7",
+  "plan_sha256": "84cbba9148986ce61d7f03a6bc5e78cb3ec0de47405ecb74f35eb13b3b869ca9",
+  "preflight_sha256": "f3834ee7395fd1bbc30206d1a2110ad13a897e701b96fc80f9c9d7ad41a331c6",
+  "preflight_started_sha256": "43bb9c0caf6addea49c5ada5f4bb94bdfdae7836be999eb7fb5bb20798ea8ffb",
+  "preflight_terminal_sha256": "230fc1473cc7761a66e1634ef64d4d4b4930e093e1aeeb18ce4d48d08a346b76",
+  "preflight_exit_sha256": "e6fbbc71e93b5c082a1ea747f08e879510720c872a773e9940d5c48debf90387",
+  "source_count": 138,
+  "anchors": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "cpu_K": 598
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "cpu_K": 703
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "cpu_K": 549
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "167200",
+      "cpu_K": 197
+    }
+  ],
+  "independent_cpu_tests": 11,
+  "GT_opened": false,
+  "predictions_opened_for_identity": true,
+  "gpu_launched": false,
+  "limitations": [
+    "Threshold and anchors selected after prior DEV work and CPU K calibration.",
+    "Four chosen images are not representative.",
+    "Dynamic K is not equal compute; no quality or speed claim.",
+    "No full high-dimensional visual/DS/KV arrays archived."
+  ]
+}

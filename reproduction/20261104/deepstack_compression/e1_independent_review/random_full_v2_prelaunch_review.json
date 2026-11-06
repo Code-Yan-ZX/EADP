@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "runtime_plan_sha256": "2f4ed231d311dafa970b6aa119bfbedd5c052af28a329be6cd92e597bd9a5653",
+  "scope": "GPU full DEV only",
+  "reviewer_sha256": "15fc580847674e0fa074260c825862fbed9f17852ceeac28a6d3887fec097b01",
+  "preflight_sha256": "641a7219e575a78f1e46f667b4f0a2425474d6f8049a0c61b37096be5c2f3fd7",
+  "preflight_terminal_sha256": "f2ff72ec1c3f9c9204ec69626fe894fac3df04f4f17674fb43c6bb34164b0fec",
+  "verification_plan_sha256": "4da2897e26bb2832f7096e291ab5f89ec50ca8c1acbd7ca6ff943cb37a67bb1c",
+  "preflight_started_sha256": "caee84d3bb7f09e88c6218c4322a52b2ebf1a5a4a848b8cd53bf7699bfee502a",
+  "preflight_launch_sha256": "aabc12cc1bf6e911eb4877d0b6914b2fa3f41d60fb0a1cc80ce06cd8166f01d8",
+  "preflight_exit_sha256": "fe66ec520033f57e444299513590ba3ae30f51962ab82ba77baf74e64db64696",
+  "container_id": "4497330d7bd2ff3e7e76de9981592a0520bcea7f99218361b0a9f6dc6a073d60",
+  "GT_opened": false,
+  "target_predictions_opened": false,
+  "errors": [],
+  "limitations": [
+    "preflight did not load model or run per-image processor",
+    "four weight hashes checked inside preflight but per-shard post-run digest not separately archived",
+    "final GPU gate and per-image processor checks run again at execution",
+    "random adapter includes discarded author greedy; no speed claim"
+  ]
+}

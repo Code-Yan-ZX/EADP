@@ -1,0 +1,24 @@
+{
+  "scope": "32-step CPU cached-vs-recompute synthetic decoder diagnostic",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_decode/probe.py": "46943cff589993761f81b114fc765316193b81a400f0a5eeb6e14657fdccae46",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/plan001.json": "aba4dc8d6a6c4a02edce0ca9de4e4064684722168fa6f13bf8e94bea81819c24",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/local001.json": "8ed1bbec0355c97cdfd971d07393a442ecf957c825181f4ff66daa17f27c93e9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/upstream001.json": "d74e2db6a6f222ad1e029a9db82349f696fee2d238a4954182e0a08fdac4fc81",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/hilo_prune/models/qwen3_vl/modeling_hilo_qwen3_vl.py": "09ba0fadf0b6e9972ac0352a184723b1424ccffd3387c5a3ec046af7ee32cabb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/monitor_local001/terminal.json": "e0574b4b9279c9833eb91fb8db208813913d2d51026888a4f03ef74058a75398",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/monitor_upstream001/terminal.json": "f742b7d035745d6d80b3bb29e4aef56d8cc0dd72a616b4255dfea76ee187914c"
+  },
+  "comparison": "cached one-token hidden states vs full prefix recomputation under same local patched model",
+  "steps": 32,
+  "atol": 1e-05,
+  "rtol": 1e-05,
+  "GT_opened": false,
+  "gpu_authorized": false,
+  "model_weights_loaded": false,
+  "limitations": [
+    "Tiny random model and synthetic default 1D positions only, not real Qwen3 P3",
+    "local patched Hi-Lo is not original author runtime",
+    "full recomputation is an internal reference; no quality or latency claim"
+  ]
+}

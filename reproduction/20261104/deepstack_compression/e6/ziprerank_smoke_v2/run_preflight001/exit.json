@@ -1,0 +1,59 @@
+{
+  "returncode": 0,
+  "timed_out": false,
+  "interrupted": null,
+  "client_exited_while_container_running": false,
+  "container_stopped_verified": true,
+  "container_exit_code": 0,
+  "container_identity": {
+    "container_id": "18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749",
+    "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "host_init": {
+      "pid": 785377,
+      "start_ticks": 1397161605,
+      "session_id": 785377,
+      "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+    },
+    "host_argv": [
+      "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_smoke_v2/worker.py",
+      "--preflight-only",
+      "--out",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_smoke_v2/preflight001.json"
+    ],
+    "host_cgroup": "13:freezer:/docker/18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749\n12:memory:/docker/18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749\n11:hugetlb:/docker/18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749\n10:devices:/docker/18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749\n9:rdma:/docker/18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749\n8:net_cls,net_prio:/docker/18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749\n7:cpu,cpuacct:/docker/18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749\n6:perf_event:/docker/18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749\n5:blkio:/docker/18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749\n4:cpuset:/docker/18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749\n3:misc:/docker/18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749\n2:pids:/docker/18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749\n1:name=systemd:/docker/18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749\n0::/docker/18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749\n",
+    "observed_unix": 1793840108.2470968
+  },
+  "failure_type": null,
+  "failure": null,
+  "cleanup_attempts": [],
+  "gpu_pids_after": [],
+  "last_inspect": {
+    "returncode": 0,
+    "stderr": "",
+    "id": "18489825516f37d33bf516859b5ad1e3bc2e6ff7c9a337b57a58294319d34749",
+    "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "running": false,
+    "pid": 0,
+    "exit_code": 0,
+    "host_devices": [],
+    "device_requests": null,
+    "pid_mode": "",
+    "entrypoint": [
+      "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python"
+    ],
+    "command": [
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_smoke_v2/worker.py",
+      "--preflight-only",
+      "--out",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_smoke_v2/preflight001.json"
+    ]
+  },
+  "finished_unix": 1793840138.307518,
+  "controller": {
+    "pid": 785310,
+    "start_ticks": 1397161578,
+    "session_id": 785310,
+    "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+  }
+}

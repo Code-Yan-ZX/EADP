@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "CPU scoring code and synthetic tests only; no approval to open real panel or GT",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_analysis/plan.json": "1589b540c6ddc355a4a89ba2b416642fe7c901794e87c62be826b1dc2bc00915",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_analysis/paired.py": "d96c60caeae78ef29d4b05e98347ac9ecf30180fe7d198367efb3807531aa877",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_analysis/score_core.py": "817d61c6dade25b2e71c0b2d46f9f401e586bd13afd72b4358340eadb2a26058",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_analysis/score_panel.py": "4ab4881031ff0074ddd8bb0b119bb3cdc2b7d30f27e72b01b856e7b6bcc27c48",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_analysis/test_paired.py": "b0cb40162e903c775acdd4dae9a14629b14da070a7aa11c7590408a868495eef",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_analysis/test_score_core.py": "9dc55844be7b8e844faf0206bf53591bc2d98298c99f53a5541d12638951c391",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_analysis/test_score_gate.py": "8be4083227f96398fae292666813642c0cd4fe6b1daae2ccb23a069dec28e1c9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/score.py": "6470bd9949e7430a3b95eb78c30b9fc3473436447034bf199227ace8ff080891",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/metrics.py": "7e79c70937fe9eb1ecea9e3ea3c70ed9ba781a9cadc26fd5baa530d0f7bfbc10",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/completion.py": "a94c45fee0ebc4680c8cd7d8bc2d44b93e8576a6fa1d517842945dc21b9f74cd",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/dataset/utils/vqa_eval.py": "f63c9fd539a4a2750cfb4d17ca654e9871b58358bbb943549a71c947839de3ae",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/utils/matching_util.py": "03435cedaeaf6282599816aed4ba57f26dd4858f2a37399490acca98d9f8f5f2",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/smp/misc.py": "e65a0e0a23305ab3bd16c6d1885e8f97b08b7a8fb3c4bf90691e5432a67f7ddf"
+  },
+  "reviewer_sha256": "64322a16cb8856e4c740848da6d3154faa8257ecafe383baa35c23ffed0b452e",
+  "prior_started_sha256": "05577f7625cd7033424b4b2d32855ef2373cf81e33e29eea81b80bc3763527ae",
+  "prior_terminal_sha256": "3deb07ce25111ca7e6164be37db2241a5b89838402402f2a19625e421c1a6b9c",
+  "tests": 11,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "checks": [
+    "formal and independent completed acceptance before panel predictions/DEV truth",
+    "exact inventory and aliases from accepted same-run endpoints",
+    "E1/E4 author and independent metrics and XLSX prediction conversion",
+    "synthetic positive gate, altered files, live verifier, invalid/discordant scores",
+    "separate frozen bootstrap/contrast audit"
+  ],
+  "limits": [
+    "full panel and independent acceptance must precede any actual scoring",
+    "only DEV truth permitted",
+    "no claim about results or FINAL"
+  ],
+  "stats_review_sha256": "6c98e81e81e9d3c67ac91faccaa0eec8ef2e6348fced0dda91a585f8edbdea37"
+}

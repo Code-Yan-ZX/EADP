@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "GPU_authorized": false,
+  "GT_opened": false,
+  "errors": [],
+  "worker_sha256": "bf0c533a17ccbbdf68062e64b392c007645e0052f4bc6506d0d7e36d212e9dbc",
+  "reviewer_sha256": "8309dfbefdc6a85aabe5bc85cac983006b105451280f53e8100967388392f58e",
+  "plan_sha256": "d89a7bd3ac83302df225022d9474345db6da96fc7124f51f58e3668e4f0ca45d",
+  "launch_sha256": "96977fef6cfdde58bc0ca05a3d275950b43098f87f236b28ef9dc5eb42a0edbf",
+  "identity_sha256": "c89c6f628ecbaccb3fb0cf33844a69c2eaec9df2d159893bf169ded9491bcb22",
+  "exit_sha256": "35a10c122270627b5dd0e590711bdf5f1bd3ccfe1370b0433cf65ae4b0702dec",
+  "started_sha256": "f25c4e55ddc808ce8054db1f858f8385e642bf085f59376dd5aaae1e447cd02e",
+  "terminal_sha256": "473b04a1be195f112b6452510b7dae00096f8e4f4e77358fedfc67d9403fc6ef",
+  "preflight_review_sha256": "3ac6d1e193d8422353a7821dd525fd3aeb62ec81eadbbbf1e8e21513a039b33e",
+  "checks": [
+    "206 source hashes and completed supervisors",
+    "real retained container image/process/env/12 mounts/no device/exit",
+    "seven actual imports; no model/CUDA, GPU lock active"
+  ],
+  "limitations": [
+    "no actual GPU execution or full-model DeepStack evidence"
+  ]
+}

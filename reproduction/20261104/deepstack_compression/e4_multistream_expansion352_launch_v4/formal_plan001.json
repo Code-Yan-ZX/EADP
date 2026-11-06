@@ -1,0 +1,13 @@
+{
+  "scope": "prospective nine-image full identity and norm-feature acceptance",
+  "images": 9,
+  "status_sequence": "all nine image_completed with one per-image JSON and float64 4x1024 norm archive; failure and not_evaluated states are preserved and prohibit passed",
+  "identity_requirements": "actual processor, main visual/three DS fingerprints, ordered/spatial IDs, prefill embedding/attention fingerprints and positions, rope delta, injection mask and three DS fingerprints must match all fields of accepted same-question E1 P3-D1; the complete E1 fields must independently match accepted E4 K256 D1",
+  "offline_reconstruction_boundary": "recompute eight frozen features from stored four float64 norm vectors and compare all stored actual identity summaries/coordinates to accepted E1/E4; full high-dimensional tensors not retained, their association to retained norms is runtime capture evidence",
+  "timing_boundary": "diagnostic setup, processor preflight, capture including processor visual selector one-token generation, feature CPU transfer and norm fsync are not TTFT",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "GPU_used_in_verification": false,
+  "prediction_scope": "existing E1/E4 mixed records used for identity; a new one-token diagnostic generation is retained in the durable journal",
+  "automatic_retry": false
+}

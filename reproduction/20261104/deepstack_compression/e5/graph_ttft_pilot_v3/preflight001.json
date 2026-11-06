@@ -1,0 +1,338 @@
+{
+  "status": "passed",
+  "cuda_initialized": false,
+  "model_loaded": false,
+  "GT_opened": false,
+  "source_plan_sha256": "25bdcb12864b173d57cf39cf4ec3ebc3c96b6b9726442489299be6190b07cc72",
+  "torch": "2.8.0+cu128",
+  "transformers": "4.57.1",
+  "weight_sha256_verified": 4,
+  "weight_stats": [
+    {
+      "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00001-of-00004.safetensors",
+      "size": 4902275944,
+      "mtime_ns": 1766122873997458552,
+      "inode": 68682060,
+      "device": 2065,
+      "ctime_ns": 1766132886669770948
+    },
+    {
+      "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00002-of-00004.safetensors",
+      "size": 4915962496,
+      "mtime_ns": 1766122889153369070,
+      "inode": 68682061,
+      "device": 2065,
+      "ctime_ns": 1766132901889718733
+    },
+    {
+      "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00003-of-00004.safetensors",
+      "size": 4999831048,
+      "mtime_ns": 1766122889477367168,
+      "inode": 68682062,
+      "device": 2065,
+      "ctime_ns": 1766132915557671854
+    },
+    {
+      "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00004-of-00004.safetensors",
+      "size": 2716270024,
+      "mtime_ns": 1766122804961880310,
+      "inode": 68682063,
+      "device": 2065,
+      "ctime_ns": 1766132929133625302
+    }
+  ],
+  "triton_cache_probe": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_ttft_pilot_v3/triton_cache",
+    "writable": true
+  },
+  "schedule": [
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 0,
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 0,
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 0,
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 0,
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 0,
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 0,
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 1,
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 1,
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 1,
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 1,
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 1,
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 1,
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 2,
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 2,
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 2,
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 2,
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 2,
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 2,
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 3,
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 3,
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 3,
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 3,
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 3,
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 3,
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 4,
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 4,
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 4,
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "method": "original",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 4,
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 4,
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "method": "graph",
+      "protocol": "fixed32"
+    },
+    {
+      "phase": "measured",
+      "repeat": 4,
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "method": "original",
+      "protocol": "fixed32"
+    }
+  ]
+}

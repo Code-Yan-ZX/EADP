@@ -1,0 +1,32 @@
+{
+  "author_sources_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/dataset/image_base.py": "9ca69d09e0d2a053fd65908c2d2b1247bad1a5c9a88dd151808554c5fad8ccd6",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/smp/file.py": "da566d1d84084101ee6af46ca02dd68827411f2350545c70bbeba2e7fc0ed233",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/smp/vlm.py": "69783556eb1e811b8bf1554586bef8745096ee39c52fd1107336bcab7bf6083f"
+  },
+  "limitations": [
+    "Actual E1 runner must explicitly consume these paths and verify hashes.",
+    "TSV-derived groups remain unchanged; no model inputs or old caches were overwritten.",
+    "Original qid.jpg audit used the non-localized branch and is not the author default on this installation."
+  ],
+  "localized_path_mismatches": [],
+  "localized_tsv": "/media/disk2/YZX/LMUData/TextVQA_VAL_local.tsv",
+  "localized_tsv_sha256": "77426bd4c94bf7daddbd30e37b9d59da831d6cd7aa5f78f85f3be8be31002bcf",
+  "original_path_audit_sha256": "065b815a495f9a68a22393919db0babaa6c35241b547b385ff8f7c63294a1e07",
+  "runtime_paths_sha256": "3f4fce74907e9e8e5aa771f15d39bce54121dc5d97fd7ef1606d5123ebbf2ab8",
+  "script_sha256": "860b02f2c69d4d57342b8d2542c0d4f5a1ba6d6f78a1b60a3448ae4c716678bb",
+  "source_local_id_count": 5000,
+  "source_tsv_sha256": "f9bd2e1518185f678a60b9a31fea5655f7533704fa7d7c9b3775bf0ca2a6b8d0",
+  "text_counts": {
+    "TextVQA_VAL:CONFIRM:byte_equal": 0,
+    "TextVQA_VAL:CONFIRM:found": 256,
+    "TextVQA_VAL:CONFIRM:phash_distance_gt4": 0,
+    "TextVQA_VAL:CONFIRM:rgb_equal": 0,
+    "TextVQA_VAL:CONFIRM:total": 256,
+    "TextVQA_VAL:DEV:byte_equal": 0,
+    "TextVQA_VAL:DEV:found": 128,
+    "TextVQA_VAL:DEV:phash_distance_gt4": 0,
+    "TextVQA_VAL:DEV:rgb_equal": 0,
+    "TextVQA_VAL:DEV:total": 128
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "GT_opened": false,
+  "score_values_opened": false,
+  "scope": "posthoc DEV-only source and route prelaunch; actual analysis remains separately gated",
+  "route_freeze_sha256": "d28361c06d6e5f957036af9b2ed5352357a32651b92b0a1480b7aacc18b86227",
+  "analysis_freeze_sha256": "4608f6cc2278e0343c1e7d8153a44f2f775a5e850db8b2f485d591dfac5b7e61",
+  "feature_review_sha256": "f312c7715a08c6627b929921a806b51fb104af8579d9b7a24b9efd00ee4e70a4",
+  "reviewer_sha256": "4f66b39b57743e3235c56ce2110ed9dcb666c8db4eddc48a21dce32361f59f5d",
+  "supervision": {
+    "route_cpu": {
+      "started_sha256": "952c8084dbdb6ab4f70519a21db2effde3c604cb8ae6db90a78175b0fb10ab63",
+      "terminal_sha256": "cd57e3f52007f4f67570e1183d057903c16787cfb522b0b80eecca6c8f910b0a"
+    },
+    "analysis_cpu": {
+      "started_sha256": "ec71124f5f77030338c996ebeff5bb48f2f6c7266209724f15e8436a609a2a65",
+      "terminal_sha256": "8013fbc7dd3ccc2383c4dc3d15d7c5a3cda1bf0880c59812b5911b769109404a"
+    },
+    "extract": {
+      "started_sha256": "e6fc28d84de1e093b46dd0e9f7911b3f46c82bff6a7ae214eefc018250a32cf4",
+      "terminal_sha256": "bc50c9d957cd97259e159573014cd5154874df089f6b38e9ee05e058a331cef4"
+    },
+    "feature_review": {
+      "started_sha256": "b9f305925c0226a4186218d76dcb5d60637e9bf0be1fd24c7e81058f0905078e",
+      "terminal_sha256": "6caed2beb0cdc81097fd90e13dec78f881c42d138534350405d516a63499e27f"
+    }
+  },
+  "independent_cpu_tests": 5,
+  "limitations": [
+    "The feature file existed and was independently inspected before analysis-gate fixes; allocation rules were frozen earlier.",
+    "Three geometry and three random rules must all be reported; batch ranking is exploratory and is not an online policy.",
+    "Mean token budget is not equal compute or latency; potential two-pass generation costs are excluded.",
+    "This prelaunch does not parse the existing score journal; the separate runtime gate must validate it before analysis."
+  ],
+  "errors": []
+}

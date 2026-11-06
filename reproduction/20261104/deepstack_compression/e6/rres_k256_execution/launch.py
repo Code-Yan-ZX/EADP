@@ -1,0 +1,20 @@
+"""Bounded three-anchor GPU launcher. Actual execution requires both reviews."""
+import argparse,hashlib,importlib.util,json,os,sys,time
+from pathlib import Path
+D=Path(__file__).resolve().parent;B=D.parents[1];ROOT=B.parents[2]
+def load(name,path,sha):
+ path=Path(path).resolve()
+ if name in sys.modules or hashlib.sha256(path.read_bytes()).hexdigest()!=sha:raise ValueError('changed or preloaded module')
+ spec=importlib.util.spec_from_file_location(name,path);module=importlib.util.module_from_spec(spec);sys.modules[name]=module;spec.loader.exec_module(module);return module
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('--run-id',choices=['001'],required=True);ap.parse_args()
+ gate=load('_rres_launch_gate',D/'gpu_gate.py','75e5966eb593eb2e6f0c156975c4850aba82a770cf7c99fb568bd87e1e3128ae');approval=gate.admit_gpu();plan=gate.read(D/'gpu_plan001.json');s=gate.read(D/'monitor_run001/started.json');cmd=s['command'];cwd=Path(s['cwd']);own=[x.decode() for x in Path('/proc/self/cmdline').read_bytes().split(b'\0') if x];parent=[x.decode() for x in (Path('/proc')/str(os.getppid())/'cmdline').read_bytes().split(b'\0') if x]
+ if cwd.resolve()!=B or s.get('worker_pid')!=os.getpid() or os.getpgrp()!=os.getpid() or os.getsid(0)!=os.getpid() or cmd!=own or s.get('timeout_seconds')!=3720 or s.get('grace_seconds')!=120 or cmd[-2:]!=['--run-id','001'] or not any((cwd/x).resolve()==B/'monitor/supervise.py' for x in parent):raise ValueError('supervisor identity')
+ if time.time()+3840>=gate.read(B/'initial_plan.json')['budget_end_unix']:raise ValueError('project deadline')
+ source=plan['source_sha256'];guardpath=B/'e6/pixel_wavefront_model_t020_run_v2/imports_guard.py';guard=load('_rres_gpu_import_guard',guardpath,source[str(guardpath)]);guard.check(guard.LATENCY);sys.path.insert(0,str(B/'e4_c_latency'));import timing_launch;guard.check(guard.LATENCY,require=True)
+ loaderpath=B/'e6/pixel_wavefront_t020_timing_final_v9/preflight_launch.py';loader=load('_rres_gpu_author_loader',loaderpath,source[str(loaderpath)]);runtime=loader.load_author(source);author=ROOT/'reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_plan.json';run=D/'run001';run.mkdir(exist_ok=False);out=run/'observations';out.mkdir();name='eadp-rres-k256-'+str(os.getpid());command=runtime.container_command(gate.read(author),[str(D/'worker.py'),'--out',str(out)],True,name)
+ if command.count('--rm')!=1:raise ValueError('unexpected container command')
+ command.remove('--rm')
+ with (run/'launch.json').open('x') as f:json.dump({'approval':approval,'controller':runtime.identity(os.getpid()),'command':command,'name':name},f,indent=2);f.write('\n');f.flush();os.fsync(f.fileno())
+ return timing_launch.run_bounded(command,name,3600,None,runtime.identity,run,require_gpu_idle=True)
+if __name__=='__main__':raise SystemExit(main())

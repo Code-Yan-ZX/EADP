@@ -1,0 +1,337 @@
+{
+  "visual": [
+    {
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1024,
+        4096
+      ],
+      "sha256": "4903c8727efe300eff775a7caf93d2b214dbcd84f6ffafb8bd24b99a9c01b0a3"
+    },
+    [
+      {
+        "dtype": "torch.bfloat16",
+        "shape": [
+          1024,
+          4096
+        ],
+        "sha256": "359455a9dc9cb22790fba1aaf513e24cb2110d49b555c77f63f6ee168b80a327"
+      },
+      {
+        "dtype": "torch.bfloat16",
+        "shape": [
+          1024,
+          4096
+        ],
+        "sha256": "09a727b5a2e0d3907a33426800013248623592e612ff4453625ec6d903458168"
+      },
+      {
+        "dtype": "torch.bfloat16",
+        "shape": [
+          1024,
+          4096
+        ],
+        "sha256": "b28a33c608356dc36338f4b78b18c53e82d64ced9f60a747358c5614e154df11"
+      }
+    ]
+  ],
+  "deltas": [
+    {
+      "dtype": "torch.int64",
+      "shape": [
+        1,
+        1
+      ],
+      "sha256": "4bbeb40ffa1673738addc3eb4cac57beb56929db1bc019942eca1d4487c9cd9c"
+    },
+    {
+      "dtype": "torch.int64",
+      "shape": [
+        1,
+        1
+      ],
+      "sha256": "4bbeb40ffa1673738addc3eb4cac57beb56929db1bc019942eca1d4487c9cd9c"
+    },
+    {
+      "dtype": "torch.int64",
+      "shape": [
+        1,
+        1
+      ],
+      "sha256": "4bbeb40ffa1673738addc3eb4cac57beb56929db1bc019942eca1d4487c9cd9c"
+    },
+    {
+      "dtype": "torch.int64",
+      "shape": [
+        1,
+        1
+      ],
+      "sha256": "4bbeb40ffa1673738addc3eb4cac57beb56929db1bc019942eca1d4487c9cd9c"
+    }
+  ],
+  "output_ids": [
+    [
+      51565,
+      7065,
+      10212,
+      151645
+    ]
+  ],
+  "ordered": {
+    "dtype": "torch.int64",
+    "shape": [
+      256
+    ],
+    "sha256": "135c78f3a3353a83d643d1f30a05a301b69b6b31fba988e03c89e213e36724c9"
+  },
+  "spatial": {
+    "dtype": "torch.int64",
+    "shape": [
+      256
+    ],
+    "sha256": "63e592a42af38683bd973b3ec25a13e367ff919fd0aad97a9cd49f0bee9af017"
+  },
+  "retained": {
+    "dtype": "torch.int64",
+    "shape": [
+      288
+    ],
+    "sha256": "10f29fa168c7d0518d289fcd551a8d4dc3c05b74aa1cb02f18f1eeea1f7fda96"
+  },
+  "full_delta": {
+    "dtype": "torch.int64",
+    "shape": [
+      1,
+      1
+    ],
+    "sha256": "43a238c1b783564a66f21a3461d9dc9366b0496e8747f6317f24247ec8e7b231"
+  },
+  "adjusted_delta": {
+    "dtype": "torch.int64",
+    "shape": [
+      1,
+      1
+    ],
+    "sha256": "4bbeb40ffa1673738addc3eb4cac57beb56929db1bc019942eca1d4487c9cd9c"
+  },
+  "mode": "zero",
+  "forced": false,
+  "response": "Mexican Government",
+  "seconds": 0.5573471058160067,
+  "llm": [
+    {
+      "inputs_embeds": {
+        "dtype": "torch.bfloat16",
+        "shape": [
+          1,
+          288,
+          4096
+        ],
+        "sha256": "759c97860fe4c1e0acd3d8424d1b97b8088a8c571bf2d0f18d7d1970ace6e3f1"
+      },
+      "attention_mask": {
+        "dtype": "torch.int64",
+        "shape": [
+          1,
+          288
+        ],
+        "sha256": "a9cb58536b9f8af98307248f9b2f444cc49fda617cc978d4829610374817790a"
+      },
+      "position_ids": {
+        "dtype": "torch.int64",
+        "shape": [
+          3,
+          1,
+          288
+        ],
+        "sha256": "8d000178b3f996c0d28ad6d58f46c71091aa1e1331431599a77524358cebfcce"
+      },
+      "cache_position": {
+        "dtype": "torch.int64",
+        "shape": [
+          288
+        ],
+        "sha256": "ba1b53cae912da6d52ef63ea1bc6596d368e11e463348612a15dea36c45b41fc"
+      },
+      "visual_pos_masks": {
+        "dtype": "torch.bool",
+        "shape": [
+          1,
+          288
+        ],
+        "sha256": "6170b6b16efd5dff203618c4f5e2f913c916c73f126fd99a73d239544061710f"
+      },
+      "deepstack_visual_embeds": [
+        {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            256,
+            4096
+          ],
+          "sha256": "5647f05ec18958947d32874eeb788fa396a05d0bab7c1b71f112ceb7e9b31eee"
+        },
+        {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            256,
+            4096
+          ],
+          "sha256": "5647f05ec18958947d32874eeb788fa396a05d0bab7c1b71f112ceb7e9b31eee"
+        },
+        {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            256,
+            4096
+          ],
+          "sha256": "5647f05ec18958947d32874eeb788fa396a05d0bab7c1b71f112ceb7e9b31eee"
+        }
+      ]
+    },
+    {
+      "inputs_embeds": {
+        "dtype": "torch.bfloat16",
+        "shape": [
+          1,
+          1,
+          4096
+        ],
+        "sha256": "9538f6233c88893951c26ee5cd18182082193d44c64aaab785f4fcfaee0c8dde"
+      },
+      "attention_mask": {
+        "dtype": "torch.int64",
+        "shape": [
+          1,
+          289
+        ],
+        "sha256": "c53c68fe33b63679c889b7e414db08c1e204f583d0d1c891d6a170c1e4f47e3f"
+      },
+      "position_ids": {
+        "dtype": "torch.int64",
+        "shape": [
+          3,
+          1,
+          1
+        ],
+        "sha256": "621d56ce7569c0141d0a40bc64aeee28ce2964ff82208f1191887dca24a85d87"
+      },
+      "cache_position": {
+        "dtype": "torch.int64",
+        "shape": [
+          1
+        ],
+        "sha256": "4196f20b32d12bc3331ca33815b1d24b71914a6217f1b3b284ff761600ea8437"
+      },
+      "visual_pos_masks": null,
+      "deepstack_visual_embeds": null
+    },
+    {
+      "inputs_embeds": {
+        "dtype": "torch.bfloat16",
+        "shape": [
+          1,
+          1,
+          4096
+        ],
+        "sha256": "752708d69952cc8c444438cd52531c390f327fa1d0692552b8c23a84e610cea4"
+      },
+      "attention_mask": {
+        "dtype": "torch.int64",
+        "shape": [
+          1,
+          290
+        ],
+        "sha256": "140929471a972bc0036ad30f26b568c52f9660c079b7b4c01b146982d760c563"
+      },
+      "position_ids": {
+        "dtype": "torch.int64",
+        "shape": [
+          3,
+          1,
+          1
+        ],
+        "sha256": "7d04e6d1f8ee5478f31ba21fdfb034722393492d4f47b9f9ce87806ad0e612fa"
+      },
+      "cache_position": {
+        "dtype": "torch.int64",
+        "shape": [
+          1
+        ],
+        "sha256": "9877bb391b413bfb845f1ef54856c4be496a656a8c3d9001abfef9e9aa0fba93"
+      },
+      "visual_pos_masks": null,
+      "deepstack_visual_embeds": null
+    },
+    {
+      "inputs_embeds": {
+        "dtype": "torch.bfloat16",
+        "shape": [
+          1,
+          1,
+          4096
+        ],
+        "sha256": "a0d0751bafdf5e6a875abe0ea585c27d1eb7504a9dd93afd71f0195424125435"
+      },
+      "attention_mask": {
+        "dtype": "torch.int64",
+        "shape": [
+          1,
+          291
+        ],
+        "sha256": "04e6909d603067ab715a078e4f1db05d56bd33a0364c50cdfb62dc36146f989f"
+      },
+      "position_ids": {
+        "dtype": "torch.int64",
+        "shape": [
+          3,
+          1,
+          1
+        ],
+        "sha256": "c2afd97da726dd472179779fee36495f82b392fc9f6411b8b30d44fa085a004d"
+      },
+      "cache_position": {
+        "dtype": "torch.int64",
+        "shape": [
+          1
+        ],
+        "sha256": "80385ab7650a9d4c198e8805d1f52624a8ff708577310f1c95dbf1b3a454204e"
+      },
+      "visual_pos_masks": null,
+      "deepstack_visual_embeds": null
+    }
+  ],
+  "logits": [
+    {
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        151936
+      ],
+      "sha256": "16eef3b7a244719c5798069cf32bd91112ae1ad468aff9b0806e5bdce3f1534f"
+    },
+    {
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        151936
+      ],
+      "sha256": "81618f85a337efbbe6bafeb4eea5fa62a94d67f2efffb6efa173735d52ca608c"
+    },
+    {
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        151936
+      ],
+      "sha256": "a59154e649339ac76a782a681484f738fe3678c25d81b40499ffb25d79b16180"
+    },
+    {
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        151936
+      ],
+      "sha256": "6bc7b47f02c0f2737c733854f6fcc99cc38aa8b20004a91eae67b398c72a4adc"
+    }
+  ]
+}

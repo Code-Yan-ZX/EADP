@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "cases": 2,
+  "result_sha256": "a14e978b76f4ac8d91ede455cc895d33cb75ff6dbe33bccd94a8c2725107e644",
+  "analysis_started_sha256": "49daf9f5d3f0530353d64deb77a68323c11510dd415d4ea7b67d935f25912a98",
+  "analysis_terminal_sha256": "46bd3c4bbb151e0bde3520e90af816d5c04e94686cb24da4e9d3ed775d939653",
+  "prior_review_sha256": "c4d0d5ac2b3f7938ede8d49d5cbb45805e79ac6a7af6bca0ad10ac0e3a35cdeb",
+  "reviewer_sha256": "963b19f63a911e7227cab491a73bb6f6dc9afdaabf4088c0620b87af40237c9a",
+  "checks": [
+    {
+      "method": "fused",
+      "author_pick": 21,
+      "candidate_pick": 360,
+      "cpu_float32": {
+        "author_gain": 0.04721146449446678,
+        "candidate_gain": 0.04721146449446678,
+        "author_minus_candidate": 0.0
+      },
+      "cpu_float64": {
+        "author_gain": 0.04721146295349854,
+        "candidate_gain": 0.04721146543440469,
+        "author_minus_candidate": -2.480906147184214e-09
+      }
+    },
+    {
+      "method": "graph",
+      "author_pick": 21,
+      "candidate_pick": 360,
+      "cpu_float32": {
+        "author_gain": 0.04721146449446678,
+        "candidate_gain": 0.04721146449446678,
+        "author_minus_candidate": 0.0
+      },
+      "cpu_float64": {
+        "author_gain": 0.04721146295349854,
+        "candidate_gain": 0.04721146543440469,
+        "author_minus_candidate": -2.480906147184214e-09
+      }
+    }
+  ],
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": [
+    "CPU reconstruction uses stored floating-point inputs and a common prefix; original CUDA per-step gains are unavailable",
+    "numerical tie and reduction differences are plausible but no GPU cause is established"
+  ],
+  "errors": []
+}

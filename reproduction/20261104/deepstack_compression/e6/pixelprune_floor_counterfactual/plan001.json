@@ -1,0 +1,19 @@
+{
+  "scope": "Post-hoc DEV counterfactual routing using only two already-completed PixelPrune outputs, no new labels or generation",
+  "t045_scores": "e6/pixelprune_t045_dev384_analysis/score001/scores.jsonl",
+  "t045_review": "e1_independent_review/pixel_t045_dev384_scores_review.json",
+  "t0_scores": "e6/pixelprune_dev384_analysis/score001/scores.jsonl",
+  "t0_review": "e1_independent_review/pixel_dev384_scores_review.json",
+  "routes": [
+    {"name": "fallback_le128", "use_t0_when_t045_k_le": 128},
+    {"name": "fallback_le256", "use_t0_when_t045_k_le": 256},
+    {"name": "fallback_le512", "use_t0_when_t045_k_le": 512}
+  ],
+  "rule": "When observed t045 K is <= the route threshold, use the already observed t0 output, score and K; otherwise use already observed t045. This is a counterfactual identity assumption, not an executed conditional model.",
+  "comparison_arms": ["pixel_t045", "pixel_t0", "eadp_k256_d1"],
+  "tasks": ["DocVQA_VAL", "TextVQA_VAL", "AI2D_TEST"],
+  "n_per_task": 128,
+  "bootstrap": {"unit":"image_group", "paired":true, "replicates":10000, "seed":20261104, "interval":"unadjusted 95% percentile"},
+  "token_summary": "mean, median, nearest-rank P95, minimum, maximum and number of fallbacks, all on 128 questions per task",
+  "limitations": ["Thresholds and candidate were chosen after observing DEV scores and K strata; all routes and contrasts reported as exploratory only", "Offline combination of two previously run outputs assumes a new conditional selector reproduces those outputs; no such identity has yet been shown", "Threshold decision uses unlabelled t045 K but requires both selectors for fallback items; actual extra work and model timing not measured", "K is not FLOPs, actual latency or memory, nor equal-compute evidence", "No CONFIRM or FINAL; no new predictions, labels or causal claim"]
+}

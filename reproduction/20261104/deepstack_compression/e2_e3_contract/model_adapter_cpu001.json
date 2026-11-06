@@ -1,0 +1,26 @@
+{
+  "timestamp_utc": "2026-11-04T18:07:41.878436+00:00",
+  "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:12:24) [GCC 11.2.0]",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+  "command": [
+    "/home/dell/miniconda3/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "reproduction/20261104/deepstack_compression/e2_e3_contract",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_all_e2_patterns_keep_original_slot_and_dtype (test_interventions.Interventions.test_all_e2_patterns_keep_original_slot_and_dtype) ... ok\ntest_mean_is_selected_row_mean_per_slot (test_interventions.Interventions.test_mean_is_selected_row_mean_per_slot) ... ok\ntest_off_and_match_preserve_three_slot_order (test_interventions.Interventions.test_off_and_match_preserve_three_slot_order) ... ok\ntest_perm_fixed_sha_seed_and_common_nonfixed_row_mapping (test_interventions.Interventions.test_perm_fixed_sha_seed_and_common_nonfixed_row_mapping) ... ok\ntest_reject_invalid_geometry_bits_and_hash (test_interventions.Interventions.test_reject_invalid_geometry_bits_and_hash) ... ok\ntest_all_slot_patterns_and_observed_injection (test_model_adapter.ModelAdapterTests.test_all_slot_patterns_and_observed_injection) ... ok\ntest_invalid_arm (test_model_adapter.ModelAdapterTests.test_invalid_arm) ... ok\ntest_perm_mean_and_corrupted_actual_stream (test_model_adapter.ModelAdapterTests.test_perm_mean_and_corrupted_actual_stream) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.010s\n\nOK\n",
+  "sha256": {
+    "model_adapter.py": "f2094bc8cdc22c651afb4c2205fae78de9b45fafce318fbb3701a6f27eaf120f",
+    "interventions.py": "feea1a16176feab1d2461cc7f32f9c1c63cc2911d7a8c02bcbb495643407242c",
+    "test_model_adapter.py": "c9b5d2b3a9c8fd0d386aa0e5e4d114567d99acfa19e19e2438c79150b153b968",
+    "test_interventions.py": "168347120f8e1747d4c14614cbe807dcd7c4217784171855c2782053a05e4333"
+  },
+  "scope": "CPU hook tests with mocked prefill; no model or GPU run"
+}

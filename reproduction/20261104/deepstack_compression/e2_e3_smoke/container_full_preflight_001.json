@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "returncode": 0,
+  "container_running": false,
+  "container_exit_code": 0,
+  "container_id": "ead14e16e967eb5b7b14296f6754bdb5d6f64ca0ecc9ba340579cb0bf1de2be5",
+  "worker_sha256": "0f836309c258e893c2244bd92b2f806a64b81f235b1cee05f5ac73c3900e5fdf",
+  "host_source_sha256": "37f31b2519adad0a4a5d8d12b358493603d9b7f485f81b71dc26588677c66150",
+  "launch_sha256": "599404c033ecfca2ffa513dd1074abcb2bebbd5286a1450cc374075a84b830b5",
+  "stdout_sha256": "98207c624b633c1eeecbad53da95ed754ee5504f9dfd53737c180827e31c740d",
+  "stderr_sha256": "0504b5b7062e817d0d96bee9128106685d02126177dc97e800195d4a26112381",
+  "timed_out": false,
+  "result": {
+    "status": "preflight_passed",
+    "model_loaded": false,
+    "predictions": false,
+    "cuda_initialized": false,
+    "imports": {
+      "model_adapter": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_contract/model_adapter.py",
+      "intervention_runner": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_smoke/intervention_runner.py",
+      "cache_fingerprints": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_smoke/cache_fingerprints.py",
+      "native_pruner": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/model/pruner.py",
+      "author_wrapper": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py"
+    },
+    "versions": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "transformers": "4.57.1",
+      "flash-attn": "2.8.3",
+      "accelerate": "1.12.0",
+      "qwen-vl-utils": "0.0.14",
+      "Pillow": "12.0.0",
+      "tokenizers": "0.22.2",
+      "numpy": "2.2.6",
+      "safetensors": "0.7.0",
+      "timm": "1.0.24"
+    }
+  },
+  "start_unix": 1793817461.8004944,
+  "end_unix": 1793817534.5397456
+}

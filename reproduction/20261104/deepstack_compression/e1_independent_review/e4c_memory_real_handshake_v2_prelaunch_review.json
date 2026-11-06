@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "minimal real GPU memory handshake prelaunch",
+  "GT_opened": false,
+  "model_loaded": false,
+  "errors": [],
+  "plan_sha256": "ccc64b26e2f46de3ac9ca68c2807383b59690aebcedc01b018e885c05ac738d9",
+  "cpu_sha256": "35531a0d2672c44725b64cc8c6460bfc2255668aa9b2ae9d55e436219e7e4fcb",
+  "cpu_started_sha256": "c42140e3f3402fc5fb263d80d3c0c1632527f167ca3d2058efd066bc5da8dd6e",
+  "cpu_terminal_sha256": "008575b25edc1e03cb6272a2fa99fb38c9f4cb8d5f5afb94bab77059b29beb31",
+  "preflight_sha256": "81145560ead097b0665a9129d0f83d8741d88155619d70f171366770d58958c6",
+  "preflight_started_sha256": "68fc96ef03d2df4dc54295e422d7be357b84aaac6a189515ed8d9ab97907657c",
+  "preflight_terminal_sha256": "6b931617cc6c2d8652f2c35d21e290448303fab40ce036ff0aa47470fdc16466",
+  "preflight_exit_sha256": "0150f9510295928d206ba9fef8314f95e69f0747b080a7bb1b63ff21fcfbc2a9",
+  "reviewer_sha256": "0c5eec723cd10fa982a20558b827bc63f5e19b3fd156083844d96b77e0a1654b",
+  "container_cpu_started_sha256": "306a3eee9d6f9655ad4c5581d8bdc11aec43843c4295f746ed5e8fce55287209",
+  "container_cpu_terminal_sha256": "6c88688f78bf35bef28afce57b07baaf509652cca9182772e5ff52450ccdbc2c",
+  "container_cpu_launch_sha256": "9d14958bbb0988b7aac8e39de0780427fbe0329da2a4fb1ad3352ef78491c2f5",
+  "container_cpu_exit_sha256": "d4c1e722a54ecbeefd3bd101d18bfe459e3c1f65210b804dc45bb8fa7837af9a",
+  "container_cpu_log_sha256": "b4183a7b43541c2af961556a6c7dc337e5d76739f139165726d0025e82987508",
+  "container_cpu_probe_sha256": "7a4b55a6d7cc0db25ddb3adf44ef8b95d6ba59914e3824a29c3859c3599ceb82",
+  "limitations": [
+    "Prelaunch review is not a real sample, model measurement, or proof of uninterrupted device exclusivity.",
+    "Sampling can miss transient peaks; process usage differs from tensor allocation and device usage."
+  ]
+}

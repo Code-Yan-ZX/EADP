@@ -1,0 +1,14 @@
+{
+  "scope":"C-ON 24-job worker and real sampler import-only CPU preflight",
+  "gpu_authorized":false,
+  "inner_timeout_seconds":1800,
+  "outer_timeout_seconds":2100,
+  "grace_seconds":120,
+  "command":["/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "monitor/supervise.py","--run-dir","e4_c_memory_smoke/monitor_preflight001",
+    "--timeout","2100","--snapshot-seconds","3600","--poll-seconds","5",
+    "--grace-seconds","120","--",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "e4_c_memory_smoke/preflight_launch.py","--run-id","001"],
+  "limits":"No GPU devices, CUDA initialized false, no model or new predictions; accepted E1 DEV mixed prediction journal parsed only for input identity, GT not read."
+}

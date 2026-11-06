@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "independent_reconstruction_of_runtime_records": true,
+  "reviewer_independent_of_implementation": false,
+  "images": 4,
+  "comparisons": 4,
+  "GT_opened": false,
+  "model_loaded": false,
+  "rows": [
+    {
+      "key": "DocVQA_VAL/16539",
+      "K": 568,
+      "author_wall_ns": 196864032,
+      "wavefront_wall_ns": 30637651
+    },
+    {
+      "key": "TextVQA_VAL/39421",
+      "K": 499,
+      "author_wall_ns": 191830753,
+      "wavefront_wall_ns": 29686533
+    },
+    {
+      "key": "AI2D_TEST/368100",
+      "K": 500,
+      "author_wall_ns": 193201524,
+      "wavefront_wall_ns": 29970841
+    },
+    {
+      "key": "DocVQA_VAL/31078",
+      "K": 1,
+      "author_wall_ns": 184419250,
+      "wavefront_wall_ns": 29848376
+    }
+  ],
+  "evidence_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_gpu/host_before001.txt": "722bd1ed22a86f3229a6b1d166174825ed31dfd7586f48d7b5014fc350c2b856",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_gpu/host_after001.txt": "5643e1c04a2795a6014d6dd41ef3855f47c52640c7be375a09b4ecbf3eb38809",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_gpu/plan001.json": "c37a16905c73f5acd64b1f537c74c691c39aed85415aed39bd938c27873b262b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_gpu/independent_prelaunch_review.json": "b484484846f18e3c503463881626d4e0e426dd9e0e1b854e1b3ed406b5767418",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_gpu/monitor_smoke001/started.json": "bee89014ad97c90d98491b0bd58509a10d0a345d1b93474f95934adc39453753",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_gpu/monitor_smoke001/terminal.json": "4ccacf76c70f6725b7e917382bc247fa3bbf47ba94a438a38d65f94917c3e698",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_gpu/run_smoke001/launch.json": "ddacfed40c7c47c51a03c2aa829e9b8320bc8dcaf2091476fa36df19cddd0dff",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_gpu/run_smoke001/exit.json": "5b311fcf4f99f902c6371540576dd436ae52da8ae73712eadc6a11405d21b031",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_gpu/run_smoke001/observations/complete.json": "3684796ce7a74a71fa0259131d7dd078447fa6b94f3a37e1375638f104087b29",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_gpu/run_smoke001/observations/progress.jsonl": "b5ab4039224d00fcad35b43b697332839ba74c8a5f51a7e523c6a9f87945232f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_pixel_wavefront_gpu_result.py": "bc04d6918ded0f3804eb15e0a41e0d8e2d88a81ada83bfdea99c683b38ed1502"
+  },
+  "limitations": [
+    "Reviewer implemented the tested candidate and worker; a separate person/agent must independently review before describing the audit as independent of the implementation.",
+    "GPU input intermediate tensors were not archived separately; selected indices and original captured CPU inputs were archived.",
+    "One synchronized host-wall measurement per implementation per image, including internal synchronizations, excluding transfers/processor/model.",
+    "Background process snapshots are before and after only and cannot establish the measurement-window load or its effect.",
+    "Four post-hoc images, no general numerical, model output, TTFT or speed conclusion."
+  ],
+  "errors": []
+}

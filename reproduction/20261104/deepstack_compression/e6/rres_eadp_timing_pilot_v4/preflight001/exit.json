@@ -1,0 +1,57 @@
+{
+  "returncode": 0,
+  "timed_out": false,
+  "interrupted": null,
+  "client_exited_while_container_running": false,
+  "container_stopped_verified": true,
+  "container_exit_code": 0,
+  "container_identity": {
+    "container_id": "4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17",
+    "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "host_init": {
+      "pid": 3304265,
+      "start_ticks": 1407481897,
+      "session_id": 3304265,
+      "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+    },
+    "host_argv": [
+      "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_pilot_v4/preflight_entry.py",
+      "--out",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_pilot_v4/preflight001"
+    ],
+    "host_cgroup": "13:freezer:/docker/4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17\n12:memory:/docker/4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17\n11:hugetlb:/docker/4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17\n10:devices:/docker/4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17\n9:rdma:/docker/4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17\n8:net_cls,net_prio:/docker/4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17\n7:cpu,cpuacct:/docker/4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17\n6:perf_event:/docker/4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17\n5:blkio:/docker/4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17\n4:cpuset:/docker/4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17\n3:misc:/docker/4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17\n2:pids:/docker/4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17\n1:name=systemd:/docker/4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17\n0::/docker/4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17\n",
+    "observed_unix": 1793943311.189578
+  },
+  "failure_type": null,
+  "failure": null,
+  "cleanup_attempts": [],
+  "gpu_pids_after": null,
+  "last_inspect": {
+    "returncode": 0,
+    "stderr": "",
+    "id": "4994a88d09ecfe3a04cc4f575feb9689170ce4d923b0874d693c4a44addb9a17",
+    "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "running": false,
+    "pid": 0,
+    "exit_code": 0,
+    "host_devices": [],
+    "device_requests": null,
+    "pid_mode": "",
+    "entrypoint": [
+      "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python"
+    ],
+    "command": [
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_pilot_v4/preflight_entry.py",
+      "--out",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_pilot_v4/preflight001"
+    ]
+  },
+  "finished_unix": 1793943324.2569573,
+  "controller": {
+    "pid": 3304191,
+    "start_ticks": 1407481866,
+    "session_id": 3304191,
+    "boot_id": "1b0bf851-085c-43c5-9855-503a2909543b"
+  }
+}

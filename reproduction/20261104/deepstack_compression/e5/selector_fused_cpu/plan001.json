@@ -1,0 +1,17 @@
+{
+  "stage": "one-image CPU reconstruction of EADP selector numeric inputs from accepted pilot capture",
+  "message_sha256": "700cde8ec9b6cd4f4cd8da234bbcd4a9161329b7a3145f0cc3fcb64e53546bf9",
+  "sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/selector_fused_cpu/prepare.py": "82bb874492c0f587b612f0c6b4a64885a748f837649b6601e55e59d34ada6035",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/pilot_001/reference.pt": "cec29e6f8f822bddfe379c35b23c03630b91ade5a066887255dadc0210ea5662",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_microbench_pilot/pilot_001_verification.json": "ff4798d2c8b44f8572c5ab33a994312cd26e75c81fa0d06b1cefca93bdcccc6b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/component_pilot001_review.json": "f93f1ee7f220f802a22fdaeed2802a0caf11aa9422ac84966a310fc3c1ab73b1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/input_preparation_002/inputs.jsonl": "f3fef75929f88fa21b96458337030c47f2b7afaa596f540879afddd72847f59d",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/model/pruner.py": "bf809614c207142b8a4fc945f29a8828688c88a2896ebd349d55c4a0b1a917e6",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/config.json": "5cd452860dc1e9c29dd71cc3cef7f39b338b7a40793f7a260655c2d3568f3661",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/tokenizer.json": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/tokenizer_config.json": "c2da771801886ad9ae98181793ffd3dfb7f1af30f6f7c6a4e15d7dbba52e2399"
+  },
+  "cpu_threads": 4,
+  "scope": "No model weight loading, new prediction, labels, scoring or GPU. Inputs consist of previously captured activations and tokenizer; CPU vs GPU ordering must be measured, not assumed."
+}

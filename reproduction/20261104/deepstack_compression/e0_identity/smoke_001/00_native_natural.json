@@ -1,0 +1,300 @@
+{
+  "visual": [
+    {
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1024,
+        4096
+      ],
+      "sha256": "4903c8727efe300eff775a7caf93d2b214dbcd84f6ffafb8bd24b99a9c01b0a3"
+    },
+    [
+      {
+        "dtype": "torch.bfloat16",
+        "shape": [
+          1024,
+          4096
+        ],
+        "sha256": "359455a9dc9cb22790fba1aaf513e24cb2110d49b555c77f63f6ee168b80a327"
+      },
+      {
+        "dtype": "torch.bfloat16",
+        "shape": [
+          1024,
+          4096
+        ],
+        "sha256": "09a727b5a2e0d3907a33426800013248623592e612ff4453625ec6d903458168"
+      },
+      {
+        "dtype": "torch.bfloat16",
+        "shape": [
+          1024,
+          4096
+        ],
+        "sha256": "b28a33c608356dc36338f4b78b18c53e82d64ced9f60a747358c5614e154df11"
+      }
+    ]
+  ],
+  "deltas": [
+    {
+      "dtype": "torch.int64",
+      "shape": [
+        1,
+        1
+      ],
+      "sha256": "43a238c1b783564a66f21a3461d9dc9366b0496e8747f6317f24247ec8e7b231"
+    },
+    {
+      "dtype": "torch.int64",
+      "shape": [
+        1,
+        1
+      ],
+      "sha256": "43a238c1b783564a66f21a3461d9dc9366b0496e8747f6317f24247ec8e7b231"
+    },
+    {
+      "dtype": "torch.int64",
+      "shape": [
+        1,
+        1
+      ],
+      "sha256": "43a238c1b783564a66f21a3461d9dc9366b0496e8747f6317f24247ec8e7b231"
+    },
+    {
+      "dtype": "torch.int64",
+      "shape": [
+        1,
+        1
+      ],
+      "sha256": "43a238c1b783564a66f21a3461d9dc9366b0496e8747f6317f24247ec8e7b231"
+    }
+  ],
+  "output_ids": [
+    [
+      51565,
+      7065,
+      10212,
+      151645
+    ]
+  ],
+  "mode": "native",
+  "forced": false,
+  "response": "Mexican Government",
+  "seconds": 2.0607019141316414,
+  "llm": [
+    {
+      "inputs_embeds": {
+        "dtype": "torch.bfloat16",
+        "shape": [
+          1,
+          1056,
+          4096
+        ],
+        "sha256": "2d2f2011ec3577aaebec6dc66db24fa67a55b14d8b8a6a753f95813d8e7ea73a"
+      },
+      "attention_mask": {
+        "dtype": "torch.int64",
+        "shape": [
+          1,
+          1056
+        ],
+        "sha256": "bd6fac2715a3536971cc7578392e4a9a5629d8c0d23851d2f92b793637a5f270"
+      },
+      "position_ids": {
+        "dtype": "torch.int64",
+        "shape": [
+          3,
+          1,
+          1056
+        ],
+        "sha256": "17d08c840420b5410b3ad9c7174b0a7764012bc01ff1ed76a6e7e36826c1c0d2"
+      },
+      "cache_position": {
+        "dtype": "torch.int64",
+        "shape": [
+          1056
+        ],
+        "sha256": "34347a718d31236492ccd1454f92b48f4619634c6b22b633b8d5ce0eb82d5348"
+      },
+      "visual_pos_masks": {
+        "dtype": "torch.bool",
+        "shape": [
+          1,
+          1056
+        ],
+        "sha256": "7a2c632bc91852d74036ec4f911878cbb91a5ad8d2a064102cce4043e24a5f6a"
+      },
+      "deepstack_visual_embeds": [
+        {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1024,
+            4096
+          ],
+          "sha256": "359455a9dc9cb22790fba1aaf513e24cb2110d49b555c77f63f6ee168b80a327"
+        },
+        {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1024,
+            4096
+          ],
+          "sha256": "09a727b5a2e0d3907a33426800013248623592e612ff4453625ec6d903458168"
+        },
+        {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1024,
+            4096
+          ],
+          "sha256": "b28a33c608356dc36338f4b78b18c53e82d64ced9f60a747358c5614e154df11"
+        }
+      ]
+    },
+    {
+      "inputs_embeds": {
+        "dtype": "torch.bfloat16",
+        "shape": [
+          1,
+          1,
+          4096
+        ],
+        "sha256": "9538f6233c88893951c26ee5cd18182082193d44c64aaab785f4fcfaee0c8dde"
+      },
+      "attention_mask": {
+        "dtype": "torch.int64",
+        "shape": [
+          1,
+          1057
+        ],
+        "sha256": "8c3ebd069aae5b038decc179b7483b7be60057f05bd4040be6cd5dc1d4485ea0"
+      },
+      "position_ids": {
+        "dtype": "torch.int64",
+        "shape": [
+          3,
+          1,
+          1
+        ],
+        "sha256": "621d56ce7569c0141d0a40bc64aeee28ce2964ff82208f1191887dca24a85d87"
+      },
+      "cache_position": {
+        "dtype": "torch.int64",
+        "shape": [
+          1
+        ],
+        "sha256": "baa21353d3a98ac89769275f1175630ee4c98cedc25da96e4c23af8c089776e3"
+      },
+      "visual_pos_masks": null,
+      "deepstack_visual_embeds": null
+    },
+    {
+      "inputs_embeds": {
+        "dtype": "torch.bfloat16",
+        "shape": [
+          1,
+          1,
+          4096
+        ],
+        "sha256": "752708d69952cc8c444438cd52531c390f327fa1d0692552b8c23a84e610cea4"
+      },
+      "attention_mask": {
+        "dtype": "torch.int64",
+        "shape": [
+          1,
+          1058
+        ],
+        "sha256": "4f1694fa089c75b88af81540ade3c4a6b026e50d943ea50208f72eefdf61bc32"
+      },
+      "position_ids": {
+        "dtype": "torch.int64",
+        "shape": [
+          3,
+          1,
+          1
+        ],
+        "sha256": "7d04e6d1f8ee5478f31ba21fdfb034722393492d4f47b9f9ce87806ad0e612fa"
+      },
+      "cache_position": {
+        "dtype": "torch.int64",
+        "shape": [
+          1
+        ],
+        "sha256": "edbfc037b58651f5a7d32b54b4354468bbb1e78833d7be420e8505eb61a6b56b"
+      },
+      "visual_pos_masks": null,
+      "deepstack_visual_embeds": null
+    },
+    {
+      "inputs_embeds": {
+        "dtype": "torch.bfloat16",
+        "shape": [
+          1,
+          1,
+          4096
+        ],
+        "sha256": "a0d0751bafdf5e6a875abe0ea585c27d1eb7504a9dd93afd71f0195424125435"
+      },
+      "attention_mask": {
+        "dtype": "torch.int64",
+        "shape": [
+          1,
+          1059
+        ],
+        "sha256": "fdd98ee5a062b3c4ed164176880829041002ef31814b04f8c86f831025a5c7d7"
+      },
+      "position_ids": {
+        "dtype": "torch.int64",
+        "shape": [
+          3,
+          1,
+          1
+        ],
+        "sha256": "c2afd97da726dd472179779fee36495f82b392fc9f6411b8b30d44fa085a004d"
+      },
+      "cache_position": {
+        "dtype": "torch.int64",
+        "shape": [
+          1
+        ],
+        "sha256": "649771b24399a65bc60342ed2bcf998a25abcf3c2f33984d1889841f5ea8ab1f"
+      },
+      "visual_pos_masks": null,
+      "deepstack_visual_embeds": null
+    }
+  ],
+  "logits": [
+    {
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        151936
+      ],
+      "sha256": "c722b48b179e0ff5d7ecfadb29a81f285ff73c0173c20f0de005451ae547dc60"
+    },
+    {
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        151936
+      ],
+      "sha256": "44c1c640ac3fd9db7b50e8301d324927aa01409216fbd4446a3a4ab57f9ee226"
+    },
+    {
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        151936
+      ],
+      "sha256": "097e22bfbb040256b86096a03e934d17058eb4f7d2b51c0afd65b1ac25c1579a"
+    },
+    {
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        151936
+      ],
+      "sha256": "f1ae6dbba1379aefa18ccd2f13e6730e1f25ff42b3d323f3860a22db6775ebf2"
+    }
+  ]
+}

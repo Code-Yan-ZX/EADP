@@ -1,0 +1,49 @@
+{
+  "stage": "prospective_cpu_protocol_only",
+  "created_unix": 1793820687.0891016,
+  "selection_after_e4_dev_scoring": true,
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/cpu_validation001.json": "a159f87519c780b481b589f4f2dfa6f130621b20c360355545d46467b13cf9b0",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/monitor_cpu_validation001/terminal.json": "56d82719bae5645db9d8ea13b79f6ac5e161768a55d9c52a668e3aff34f4ffd9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/sample_001.json": "6f742f53afcda311cd3753db7ed9c3f4d466c20dcc5a3779e67d78fc0f06b869",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/sample_001_independent_review.json": "23980c48ab1f26785b16850a5ba9847c41a2ffdb56fb499cee22d94a1143663f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/monitor_target001/terminal.json": "17eb24bcb2aaccd8b050aca0efa17e33b7d59611965df73545fa14a315b96741",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/target_contract.py": "fd0cb670577d4b48f6ad9dd79ca30ba47e8f20d843cc5aae90ee4488a3802acd",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/test_target_contract.py": "c7135b230154afa93261993dbc4eabe8e7f8b926afaa578a2cec2fc85af9d7f1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/freeze_protocol.py": "4f284d464a1ee5b1c91292246f86a8608db62ae547c29b890f97843e27a443ee"
+  },
+  "cpu_source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/freeze_sample.py": "67c3b4f91aaeb9c5134f0c13ccfecb38f829ea1338ce3ac9a40d60197943c997",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/proposals.py": "3834985597cf38982c3197719c86a9128cd34a9cb16d90122bccddde553d8642",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/saliency.py": "45b47ed5e4e964dd96478d74c19eddb1776176cea2c88b66a1f956c1ec3b934e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/teacher_contract.py": "999903a279f5ffcd477a5af93b220b663ee53de8a43091f83f3c8fdff069f9c3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/oracle_teacher.py": "68864aa92f5ac4656ece2dcd77bc5b163bedbefac5e16409d94cf2a1654e7261",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/test_proposals.py": "f7d24d5c00a661fd244922f4238f21d93a5315a0f4861b4edada0f5dac681e2a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/test_saliency.py": "444b59fad99127d73605b3fbdfd3698b78c0f2befa7089ef79bcef7c45943c70",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/test_teacher_contract.py": "de58084b146519d319a0b0462ee1d1a7e9b586a98c948fc29b83266bab7758cc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/m3_oracle/cpu_validation.py": "0792b45417f52a004960988d70a1a42eea0ca6670533abac3680c6765406f3ad"
+  },
+  "questions_by_task": {
+    "DocVQA_VAL": 64,
+    "TextVQA_VAL": 32,
+    "AI2D_TEST": 32
+  },
+  "GT_opened": false,
+  "predictions_opened": false,
+  "reference": "DocVQA/TextVQA first reference verbatim; AI2D correct option string; no alternate by loss",
+  "target_tokenization": "tokenizer.encode(answer, add_special_tokens=False), no added space/EOS; first 128 token IDs; report original length and truncation; empty target fails",
+  "teacher": "frozen full Qwen3-VL weights and P3, batch 1, 1024 full visual tokens for one gradient; no cache; mean token cross entropy",
+  "utility": "four streams mean(abs(float32(feature)*float32(gradient))) across hidden dimensions",
+  "rank": "0-1 percentile across all 1024 positions; lower spatial ID ranks higher on an exact utility tie",
+  "base_selection": "actual EADP greedy K256 order; always remove its final r IDs before replacement",
+  "proposals": "r=8/16; MAIN/MULTI/RANDOM each pool64, proposal0 top-r, 7 deterministic unique random subsets; max128 retries and equal source count",
+  "random_seed": "first 8 bytes big-endian SHA256 of UTF-8 pipe-separated 20261104,qid,source,r,j; random-pool seed uses 20261104,qid,RANDOM,POOL; Python random.Random",
+  "selection_by_teacher": "minimum reference mean NLL; tie do-nothing then proposal index; same per-source search budget, shared dedup cache",
+  "natural_generations": "one per winning source/r plus fixed EADP baseline; complete panel before scoring",
+  "bootstrap": "10000 image-group resamples; MULTI minus MAIN and MULTI minus RANDOM; 95% intervals, 1 percentage point minimum relevant gain",
+  "limits": [
+    "Answer-dependent oracle is not deployable or an upper bound.",
+    "No sample question is used for student confirmation.",
+    "Real-model smoke, resources, exact source freeze, gate and independent review are still required."
+  ]
+}

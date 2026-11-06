@@ -1,0 +1,45 @@
+{
+  "status": "prepared_only_awaiting_successful_pilot",
+  "scope": "CPU-only formal verification; no GT, score or sample removal",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/monitor_verify_latency001",
+    "--timeout",
+    "1800",
+    "--grace-seconds",
+    "90",
+    "--disk",
+    "/media/disk2",
+    "--",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_verify.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_001",
+    "--monitor",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/monitor_latency001",
+    "--annotations",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_001_annotations.jsonl",
+    "--out",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_001_verification.json"
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "pilot_plan_sha256": "aeb3c35b4d0bcb16ededf0d0548ef41a38e13aeaf1741deaf4667e92607ac3d5",
+  "verifier_sha256": "6de86fd33357de0f1fcb5632447c30386da2067a948160bc4c3e1d86d432797f",
+  "supervisor_sha256": "dddd62696ca10f2624654feec9831c83d308ddf8eb982c645ad3c5eac827ff17",
+  "prerequisites": [
+    "72 jobs completed; real container and worker supervisor exited0; GPU released",
+    "all 35 reviewed source snapshots and proof still match",
+    "fresh verifier output and monitor paths"
+  ],
+  "after_completion": [
+    "formal proof status passed, n_jobs=n_generated=72, errors=[]",
+    "verifier supervisor completed/0/empty group",
+    "independent CPU review binds formal proof, snapshots, annotations and monitor windows; full stage remains locked until measured budget is assessed"
+  ]
+}

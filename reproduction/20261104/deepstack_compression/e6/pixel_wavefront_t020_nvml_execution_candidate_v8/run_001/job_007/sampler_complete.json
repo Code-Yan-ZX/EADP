@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "scope": "NVML process/device samples, not timing",
+  "sample_count": 18,
+  "interval_ns": 500000000,
+  "limitations": [
+    "MiB rounding and interval sampling can miss transient peaks",
+    "device memory is not process memory; graphics processes remain background"
+  ]
+}

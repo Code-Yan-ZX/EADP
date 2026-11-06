@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "dd6b8100d0ebfe1e292553cd65faf8579a619dc4e95560cde8569e863aa03cf1",
+  "preflight_sha256": "7cdae84e28cad7ce6af0f4baefccc4a5eb00db2acb4842e981ad878a3c55e0c3",
+  "preflight_started_sha256": "5dcbb7a0d587977f5a08c0627d8eabdbd4baa93e442e831ee17a78b3b4e1f579",
+  "preflight_terminal_sha256": "30a2da68b2d1b0a1f10a24ed5ec1ee9a8ba5fb1b094eb9a6fa52caa63a88bb49",
+  "preflight_exit_sha256": "c3fc8c56b2e13bf7020de81b48386fd9cc187bf7de200eed9db3ffd5c8d72b19",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_pixelprune_v3_prelaunch.py",
+  "reviewer_sha256": "68a4c8fa711d76ce80f4d2fff5349fa3f68800b9e20851eaafcdfc64379ec2b0",
+  "review_started_sha256": "2eecb5b04c10cf1d43dd7effcc506cd2c190506a3c590b5834b785a056446686",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_pixelprune_v3_prelaunch/terminal.json",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "gpu_authorized": "subject to root scheduling",
+  "cpu_tests": 9,
+  "scope": "single-image forced 33-token diagnostics, unpatched/disabled/enabled threshold 0; not quality or throughput",
+  "limitations": [
+    "author patch applied after model construction on shared model, unlike documented ordering",
+    "enabled selection has data-dependent visual budget",
+    "only summaries/hashes retained for high dimensional tensors",
+    "no GPU result yet"
+  ],
+  "errors": []
+}

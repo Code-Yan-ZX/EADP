@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "approval": {
+    "plan_sha256": "0e83d59f87e75245a90d17925c034d1c3830f0672d06aa063b3242b26385e21c",
+    "review_sha256": "0e86b2fd71fa116aa37261436948cdef09d8c3605a9da94034e4fb76503d9be7"
+  },
+  "container_id": "b674cf9d2f06171ffa714f09acad60feadb5f5faeee1e4ead911c678b27046c0",
+  "processor_probe_sha256": "eaf1de73eb191be0861a28834865ea55d03d785e4f6dee35eb4d1847de5136aa",
+  "diagnostic_imports": [
+    "arm.py",
+    "capture.py",
+    "resolution.py"
+  ],
+  "weights_stats": {
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00001-of-00004.safetensors": [
+      2065,
+      68682060,
+      4902275944,
+      1766122873997458552,
+      1766132886669770948
+    ],
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00002-of-00004.safetensors": [
+      2065,
+      68682061,
+      4915962496,
+      1766122889153369070,
+      1766132901889718733
+    ],
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00003-of-00004.safetensors": [
+      2065,
+      68682062,
+      4999831048,
+      1766122889477367168,
+      1766132915557671854
+    ],
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00004-of-00004.safetensors": [
+      2065,
+      68682063,
+      2716270024,
+      1766122804961880310,
+      1766132929133625302
+    ]
+  },
+  "images": 3,
+  "visual_tokens": 256,
+  "model_loaded": false,
+  "cuda_initialized": false,
+  "GPU_authorized": false,
+  "GT_opened": false,
+  "existing_DEV_predictions_opened": true,
+  "scope": "same-image noGPU processor and weight preflight; GPU execution still locked",
+  "errors": []
+}

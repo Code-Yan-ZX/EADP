@@ -1,0 +1,45 @@
+{
+  "status": "diagnostic_completed",
+  "scope": "distinct DocVQA document IDs only; source rows include excluded records; no questions, answers or predictions extracted; frozen image groups unchanged",
+  "counts": {
+    "source_rows_all": 39463,
+    "source_rows_by_split": {
+      "fit": 30692,
+      "validation": 7668,
+      "excluded_eval": 1103
+    },
+    "eligible_rows_fit_plus_validation": 38360,
+    "source_document_ids": 5272,
+    "evaluation_docvqa_document_ids": 938,
+    "source_documents_also_in_eval": 523,
+    "source_rows_from_eval_documents_by_split": {
+      "fit": 7817,
+      "validation": 2108,
+      "excluded_eval": 421
+    },
+    "source_documents_also_in_eval_by_split": {
+      "fit": 482,
+      "validation": 256,
+      "excluded_eval": 42
+    },
+    "fit_validation_shared_documents": 763,
+    "rows_from_fit_validation_shared_documents_by_split": {
+      "fit": 11584,
+      "validation": 4773
+    }
+  },
+  "inputs": {
+    "rows_sha256": "992aff987a8f50d0f21bedcd6a53f4a626253c6ce31f45f74b219398be880e27",
+    "audit_result_sha256": "16cd193cb1666dbc157610cd116db5f86cf57819daa3732e85e49c8f0a2e6213",
+    "independent_review_sha256": "de458c215a708d7151573b5fc35dab1581a41c46de8e58ab15cb17fb05e40713",
+    "eval_manifest_sha256": "bfc1541bda41382afb2e80478af2be291a7f8d05f6f5c694863b693aad5dec60",
+    "protocol_sha256": "b7714f0dab1f80bcea31f025d0615cab646e134c657ea188e2ad2f8f9409bdd9",
+    "source_sha256": "d60e35bba2f306adcc27aa814624c932cad6544cdd3f297e2f47d7c924dbd8df"
+  },
+  "limitations": [
+    "Same-document pages are not automatically duplicate images, but dependence can affect generalization.",
+    "Evaluation document identifiers here are available for DocVQA only; the image graph covers all three tasks.",
+    "Third-party source provenance remains unverified.",
+    "This diagnostic requires independent review before any training decision."
+  ]
+}

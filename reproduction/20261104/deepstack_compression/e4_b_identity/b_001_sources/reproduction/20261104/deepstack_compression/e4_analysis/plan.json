@@ -1,0 +1,20 @@
+{
+  "stage": "predeclared_DEV_only",
+  "tasks": ["DocVQA_VAL", "TextVQA_VAL", "AI2D_TEST"],
+  "question_count_per_task": 128,
+  "budgets": [128, 256, 512, 1024],
+  "ds_modes": [false, true],
+  "configs": ["K128-D0", "K128-D1", "K256-D0", "K256-D1", "K512-D0", "K512-D1", "K1024-D0", "K1024-D1"],
+  "contrasts": {
+    "K128_D1_minus_K256_D0": ["K128-D1", "K256-D0"],
+    "K256_D1_minus_K512_D0": ["K256-D1", "K512-D0"],
+    "DS_at_K128": ["K128-D1", "K128-D0"],
+    "DS_at_K256": ["K256-D1", "K256-D0"],
+    "DS_at_K512": ["K512-D1", "K512-D0"],
+    "DS_at_K1024": ["K1024-D1", "K1024-D0"]
+  },
+  "bootstrap": {"unit": "image_group", "replicates": 10000, "seed": 20261104, "method": "percentile"},
+  "scope": "exploratory DEV; no CONFIRM/FINAL predictions or decoded answers",
+  "metric": "E1 author's exact scorer with independent item-level consistency; deterministic local AI2D, no API judge",
+  "labels": "no labels before accepted panel proof and exit chain"
+}

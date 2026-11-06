@@ -1,0 +1,11 @@
+{
+  "scope": "retained container complete CPU-only runtime preflight; no GPU, model load, generation, truth or score",
+  "stage": "smoke",
+  "gpu_authorized": false,
+  "inner_timeout_seconds": 1800,
+  "outer_timeout_seconds": 2100,
+  "grace_seconds": 120,
+  "gpu_policy": "no devices mounted and CUDA_VISIBLE_DEVICES empty; no model initialized",
+  "required_checks": ["prior memory CPU preflight and its independent review", "runtime source and synthetic CPU proof", "independent preflight-only source review", "retained Docker image/argv/env/mount/device and terminal identities", "real worker-path preflight and current weight hash", "sampler import in a separate no-GPU process"],
+  "limitations": ["This preflight cannot authorize a GPU memory run", "Controller/worker/sampler real handshake and GPU sampling require separate proof"]
+}

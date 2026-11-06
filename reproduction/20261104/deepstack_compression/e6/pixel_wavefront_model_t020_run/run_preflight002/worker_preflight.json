@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "approval": {
+    "plan_sha256": "0a2c73faaadfd59595ce5a6387726b81d811463929e825c84b4b6a7e9d865b6e",
+    "review_sha256": "a9595a89c15f1da0e0c44e54457e61262f1666f49bd3ae2bee23e5bbabf4ef94"
+  },
+  "gpu_authorized": false,
+  "cuda_initialized": false,
+  "model_loaded": false,
+  "GT_opened": false,
+  "existing_DEV_predictions_opened": true,
+  "module_paths": {
+    "gpu_admission": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/gpu_admission.py",
+    "worker_entry": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/worker_entry.py",
+    "single_arm": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/single_arm.py",
+    "controller": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/controller.py",
+    "bounded_runner_draft": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/bounded_runner_draft.py",
+    "schedule_contract": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/schedule_contract.py",
+    "upstream_identity": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/upstream_identity.py",
+    "execution_upstream": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/execution_upstream.py",
+    "snapshot_sources": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/snapshot_sources.py",
+    "weight_guard": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/weight_guard.py",
+    "supervision_contract": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/supervision_contract.py",
+    "imports_guard": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/pixel_wavefront_model_t020_run/imports_guard.py",
+    "pixelprune": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/__init__.py",
+    "pixelprune.methods.pred_2d": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/methods/pred_2d.py",
+    "pixelprune.patches.qwen3_vl_hf": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/external_sources/pixelprune_8d347eb/pixelprune/patches/qwen3_vl_hf.py",
+    "vlmeval.vlm.qwen3_vl.model_fixed_res": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py",
+    "transformers.models.qwen3_vl.modeling_qwen3_vl": "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py"
+  },
+  "upstream_review_sha256": "7f8a9c6308a940fa0b9d0fbdc199dfe7fb087f87c2c5420a19ac50371c8e41f2"
+}

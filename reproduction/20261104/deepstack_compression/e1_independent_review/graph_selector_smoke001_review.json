@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "synthetic_cases": 5,
+  "selection_count": 256,
+  "measurements": 15,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_selector/run_smoke001/observations/started.json": "865feaf1463157c3c02b36c5b3621ba862cc856415f9cc938374bacee5f78abb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_selector/run_smoke001/observations/graph_setup.json": "244284c35f0d81dc41fe9b706e674d14e7439250ae6f7bed6fe229f6aa10721c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_selector/run_smoke001/observations/identity.json": "6656f339650060863e4711906af1e56f0b52d9bd28c2ba01fdc6457cafa66aa4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_selector/run_smoke001/observations/synthetic_identity.json": "50a6897d6341591e7bf8db85ca1170d190892d37f815555b8276042f928abc98",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_selector/run_smoke001/observations/worker_complete.json": "9330c126eb4668473d60c756a5de4d8b8ff208af8669306de824d088d347d276",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_selector/run_smoke001/observations/measurements.jsonl": "340a4695ba9bb4792917cfe84466b78bd1e78045ee0d14fa1d9328124db16123",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_selector/run_smoke001/observations/progress.jsonl": "c49abf99682088904d58b21e2986788a6edb21911f2eb48e45c49cb1ef03fbd3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_selector/run_smoke001/launch.json": "11b7e17a2e4a60b1c9340f14d93eaf63618532d91fa257c6bf357b5cb5694644",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_selector/run_smoke001/exit.json": "a1d72858bc37fe58e463e7a77bbd158871f4a308e87a98cc26452a92f48e77f7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_selector/monitor_smoke001/started.json": "88bb3295c6c332dc958017b256a33c00ef0df82054e4319a9c973ef8bdd7afc1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/graph_selector/monitor_smoke001/terminal.json": "48a44ce4a592a905885856275ea1c704a16ae425178ee28c9ee9359d27d0dcce"
+  },
+  "reviewer_sha256": "aff2dbb922a958db26a899fdd8e73a6d2c06218f28d3172c60b9425d8b792fa7",
+  "limitations": [
+    "one fixed CPU-reconstructed numeric input",
+    "selection outputs were recorded, per-round gains and random matrices not separately archived",
+    "graph replay includes input copies but excludes capture/setup and persistent allocation; events are not model end-to-end",
+    "CPU background Java and other users observed before run; unknown effect, all samples retained",
+    "Triton and PyTorch reductions may differ on other inputs or near ties"
+  ],
+  "errors": []
+}

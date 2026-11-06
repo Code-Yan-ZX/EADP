@@ -1,0 +1,1272 @@
+{
+  "run_id": "Qwen_Doc_fixed16_LLMSpace_K256_a05_b2_formula_facility_run02",
+  "prepared_utc": "2026-10-28T14:06:41.235857+00:00",
+  "execution_status": "prepared_not_started",
+  "python": "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+  "author_root": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl",
+  "model_name": "Qwen3-VL-8B-EADP-256-a0.5-b2.0",
+  "recipe": {
+    "model_path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "min_pixels": 1048576,
+    "max_pixels": 1048576,
+    "use_custom_prompt": true,
+    "use_vllm": false,
+    "max_new_tokens": 2048,
+    "top_p": 0.001,
+    "top_k": 1,
+    "temperature": 0.01,
+    "repetition_penalty": 1.0,
+    "presence_penalty": 0.0,
+    "visual_token_num": 256,
+    "alpha": 0.5,
+    "beta": 2.0
+  },
+  "expected_versions": {
+    "torch": "2.8.0",
+    "torchvision": "0.23.0",
+    "transformers": "4.57.1",
+    "flash-attn": "2.8.3",
+    "accelerate": "1.12.0",
+    "qwen-vl-utils": "0.0.14",
+    "Pillow": "12.0.0",
+    "tokenizers": "0.22.2",
+    "numpy": "2.2.6",
+    "safetensors": "0.7.0",
+    "timm": "1.0.24"
+  },
+  "pruner_path": "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/model/pruner.py",
+  "modeling_path": "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py",
+  "source_AST_proof": {
+    "source_compute_AST_sha256": "52574c09f1a3ee03198c104ca7d222394adce1c01382aaf87f6e85ac2c984064",
+    "Eq10_compute_AST_sha256": "ab7c42a64c241cf816ee532a42f0132eb7568522a84b9b6ea8853b2e686df732",
+    "Eq10_inverse_restores_source": true,
+    "source_greedy_AST_sha256": "037c7ca091d90d6fc02cdae158be1bf142fdb8982a35f164893a7e1476d88c55",
+    "traced_greedy_AST_sha256": "04f7a94ce27040338f11e4a0d16737ee8d49a2e065e73d20997c1bc82933f513",
+    "observer_removed_restores_source": true,
+    "source_entropy_prefix_AST_sha256": "3d9af2b37333b0620ec4c2cfa934a1855644ba0aef2323d2f5e7231ff94cc865",
+    "Eq10_change": "Remove only numerator +1e-6; every denominator and all other statements unchanged"
+  },
+  "container_runtime_source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/container_runtime.py",
+  "container_image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+  "container_name": "eadp-qwen-doc16-formula-run02-20261028",
+  "import_overlay": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/import_overlay",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/config.py": "1af82d5cf4c11e1f9eefe9480d7cb78e2f18eae9d3852e3e05c9f0116587b08b",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/model/pruner.py": "bf809614c207142b8a4fc945f29a8828688c88a2896ebd349d55c4a0b1a917e6",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model.py": "4d27418413ee72aa5fe422d7bb97103d1c097411e6c20945e2f11dcf607fb475",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/model_fixed_res.py": "34556188962a1b057382269bc1f9f0cdba1a12e9cf1861acb60fa4fa0a59fe34",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/vlm/qwen3_vl/prompt.py": "98949c9bb67820750fc72496bcb4eb9acfe30b0d6fc8917ecdccb9f91e6cd281",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/inference.py": "de6a24104b00d60d900000d53c17fa66be9fdf438401c1f9278618df2e8afd2a",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/dataset/image_base.py": "9ca69d09e0d2a053fd65908c2d2b1247bad1a5c9a88dd151808554c5fad8ccd6",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/scripts/run_eadp.sh": "d5368f5ac7f72b0ba3f25f92500845e36b9f6b2a24ad35a32cd36a8be68115e8",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/scripts/env.sh": "25fb10ba57671b5b772144a251bfd0c44beed1f4e3fcbeeac319cc9c0d3aae52",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/run.py": "1990c8d4d663be171a712f55c00922aef1b197331dfe9bdc0201f6f39720e688",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/container_runtime.py": "7af58cb6477c968dc211169a6709f8ea9cd0f8d590caf4a72f97c1de1bb5f910",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/source_probe.py": "f215f12d00c1e3dc00d1c5a6e8e942402a7d97fb78d34726fc53cc45c1e2f38f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/run_public.py": "7f9880cac7382154f63fb722a76d3da1fc3e00ac89f13dfbad173add5099c623",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/run_packaged.py": "ff55e2c433fbe86a291ea1b99c74e900ac1ab03b46e49a4ca6ddf0cc1f4cb6f6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/import_overlay/sitecustomize.py": "d902093b48410c280b32e083cb72f5f3bd178abf7b482e68bec0003b677cadac",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/import_overlay/result_transfer.py": "d6225256ec0afa2ac9857b139df2f910b23b693749d2f2eb58cf7e696b9b6974",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/import_overlay/provenance.json": "2a16eb9ac9baa366dd5eb7872c5297c7c2dfe5dbbfdc72dd9c3974fe7a4cc649",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/tokenizer_config.json": "c2da771801886ad9ae98181793ffd3dfb7f1af30f6f7c6a4e15d7dbba52e2399",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/video_preprocessor_config.json": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/preprocessor_config.json": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/generation_config.json": "8469742d1fce0de951c8909b26a2c0c0d8490837ce476efb114da9e0cefc4d44",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/config.json": "5cd452860dc1e9c29dd71cc3cef7f39b338b7a40793f7a260655c2d3568f3661",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model.safetensors.index.json": "520b2e05079402e9468a8701d03d1154d14b2599593afb6effa7fb60c1bff070",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/chat_template.json": "5c72a170d2a4a1a3bc5adad2e689ae28138a9700e5b8c96c0266331e86c0acce",
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/tokenizer.json": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/lib/python3.10/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py": "dd63ed3b124232735b3dca1bfa28f9d6b0d3f7182afcb75dde8f3e724b2b22da",
+    "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05": "9e5dc72d6a9fda5d6a89e0cadbe5af832a006e4469d418ab21bb16b9c6a0017f",
+    "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05": "9ec08a9bc379bdcbd0bae105556b75d6ee89be1566032c4f0b82d25f89aa6431",
+    "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05": "109657e953cef78b4ab0070083962e33b82442731f94c49cb81b57a6eaa9c0a3",
+    "/usr/bin/nvidia-smi": "d3916c1ded83f3a1bc1106b2921c05845a90ddb258f7379214df3d81801b03c4"
+  },
+  "implementation_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/formula_helpers.py": "9f82bd4dd57880947455cb58d4c885a08c0b7f7e42e77bdb6b08259d73125399",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/diagnose.py": "283061a38ca893945b0f748d2469c908884f08d8ca86e2feb6b753ee93eb4902",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_panel.py": "aeee2a27c4394fc683245dce6fe2629f2fa1d9948ab66bb68edbdd46a9c65645",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/prepare_plan.py": "5c5dd0c916328a05feb01c0a882224c5171ec33a214ea5f09ea2c7e8691eb51d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/cpu_acceptance.py": "a8cf423797f99d6fae7412753e03db840660e810dfbd759d1fdd7ca71b9eacb7",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/README.md": "75bda803715494f2c850d639b97f97abb1edf0e5a4580373abfda9dd9b006842",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/namespace_guards.py": "02a6be2c0aeda20ef510207a30c96a95c86e533c78860e1a13dbdf818918da03",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/cpu_preflight.py": "05fbf8e705a5bacdcb0f17dd8f333ca6e3fc26b91548281fef54db6c3be71457",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/preflight.py": "123872d3fd990128564ebc0b125a9b50539fc5a8bc48170627f328feca457401"
+  },
+  "reference_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/public_fa2_full_run02_plan.json": "d1afef9e1f470d432105cb8669e25f54b9906d85b54f7685689a84b539feb467",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/source_probe_plan.json": "35ce85b0c18eb8e23670bdd6b7143985421ff50166f3c3717a9dffe681bba74e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/dataset_cache_audit.json": "266124eed212ce0969926446932c1d2c4fa4e6e15d73c031c3add958f6758c88",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/qwen_weight_identity.json": "7bfe695c2dbb0aa4e625183f0344d26bcbdc3add24658a068302c2744dc07ec8",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/qwen_processor_tokenizer_identity.json": "a5c5621c5a6a85794a8948b10bcb283a707bf74ca99968c1c02ff127be5f5a7b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/terminal_audit_preparation.json": "2a52c673886038022f28ed62d6a8f5a45da82aa9edd41ba6f91375aaf1f9d2b6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/processor_input_identity/fullDoc_comparison.json": "38e88c560860828dbbf9ed5645fb7561186b1dc1f7cd03f3bad807035c34d03d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/processor_input_identity/author_qwen_fullDoc/report.json": "d4b6413d9702d5b20b22dc0416a58941bfa9efc09ae6ffffa4c6a94ea70a8522",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/processor_input_identity/author_qwen_fullDoc/per_question.jsonl": "51c52ca77f8869623db64515795dd7ce1b22133c730d206f86a513d5b41207bd",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/cache_inventory.json": "83f56979fdd910346dc416bf2337d1917712614b1f67b6bfdb23764496fdc94d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run01_frozen_plan_reference.json": "7701cfd2e78fb72f6a83855887dff611601c3cab00b01be6df6ff3ef0e21c835",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/namespace_probe_report.json": "dfc560bffa863a8adafa1844dfb83607853383f760515d2b90f363e4f85861c6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/namespace_probe_container_record.json": "9b4619b4272ea6d5766dc1a2c5a317e3a175ffb0854e9a9e797d9e124d4a85ed",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/driver_mount_mapping.json": "9bb5906bf8fb51cbb046409ce5fba9bb8ba49e37592885ebd030e872e23a80c9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel/root_failed_terminal_process_proof.json": "0a25754d0d550dc6bc706d2ee4c73a9c393f5f6698a1e02af6f1f63b55c8444f"
+  },
+  "model_stat_guards": {
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00001-of-00004.safetensors": {
+      "prior_verified_sha256": "d5d0aef0eb170fc7453a296c43c0849a56f510555d3588e4fd662bb35490aefa",
+      "current_full_stat": {
+        "resolved": "/data/models/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/d5d0aef0eb170fc7453a296c43c0849a56f510555d3588e4fd662bb35490aefa",
+        "bytes": 4902275944,
+        "device": 2065,
+        "inode": 68682060,
+        "mtime_ns": 1766122873997458552,
+        "ctime_ns": 1766132886669770948
+      },
+      "prior_guard_source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/terminal_audit_preparation.json",
+      "prior_stat": {
+        "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00001-of-00004.safetensors",
+        "bytes": 4902275944,
+        "mtime_ns": 1766122873997458552
+      },
+      "container_resolved": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/d5d0aef0eb170fc7453a296c43c0849a56f510555d3588e4fd662bb35490aefa"
+    },
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00002-of-00004.safetensors": {
+      "prior_verified_sha256": "8be88fb5501e4d5719a6d4cc212e6a13480330e74f3e8c77daa1a68f199106b5",
+      "current_full_stat": {
+        "resolved": "/data/models/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/8be88fb5501e4d5719a6d4cc212e6a13480330e74f3e8c77daa1a68f199106b5",
+        "bytes": 4915962496,
+        "device": 2065,
+        "inode": 68682061,
+        "mtime_ns": 1766122889153369070,
+        "ctime_ns": 1766132901889718733
+      },
+      "prior_guard_source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/terminal_audit_preparation.json",
+      "prior_stat": {
+        "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00002-of-00004.safetensors",
+        "bytes": 4915962496,
+        "mtime_ns": 1766122889153369070
+      },
+      "container_resolved": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/8be88fb5501e4d5719a6d4cc212e6a13480330e74f3e8c77daa1a68f199106b5"
+    },
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00003-of-00004.safetensors": {
+      "prior_verified_sha256": "83de00eafe6e0d57ccd009dbcf71c9974d74df2f016c27afb7e95aafd16b2192",
+      "current_full_stat": {
+        "resolved": "/data/models/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/83de00eafe6e0d57ccd009dbcf71c9974d74df2f016c27afb7e95aafd16b2192",
+        "bytes": 4999831048,
+        "device": 2065,
+        "inode": 68682062,
+        "mtime_ns": 1766122889477367168,
+        "ctime_ns": 1766132915557671854
+      },
+      "prior_guard_source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/terminal_audit_preparation.json",
+      "prior_stat": {
+        "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00003-of-00004.safetensors",
+        "bytes": 4999831048,
+        "mtime_ns": 1766122889477367168
+      },
+      "container_resolved": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/83de00eafe6e0d57ccd009dbcf71c9974d74df2f016c27afb7e95aafd16b2192"
+    },
+    "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00004-of-00004.safetensors": {
+      "prior_verified_sha256": "0a88b98e9f96270973f567e6a2c103ede6ccdf915ca3075e21c755604d0377a5",
+      "current_full_stat": {
+        "resolved": "/data/models/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/0a88b98e9f96270973f567e6a2c103ede6ccdf915ca3075e21c755604d0377a5",
+        "bytes": 2716270024,
+        "device": 2065,
+        "inode": 68682063,
+        "mtime_ns": 1766122804961880310,
+        "ctime_ns": 1766132929133625302
+      },
+      "prior_guard_source": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/terminal_audit_preparation.json",
+      "prior_stat": {
+        "path": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/model-00004-of-00004.safetensors",
+        "bytes": 2716270024,
+        "mtime_ns": 1766122804961880310
+      },
+      "container_resolved": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/blobs/0a88b98e9f96270973f567e6a2c103ede6ccdf915ca3075e21c755604d0377a5"
+    }
+  },
+  "preparation_only_canonical_provenance": {
+    "path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/independent_audit/DocVQA_VAL.canonical.jsonl",
+    "sha256": "79091c0178d228237519c87a50f74f766ca8b2ea6c593d99790d3d0034a45ebc",
+    "runtime_file_read": false,
+    "fields_copied": [
+      "index",
+      "question",
+      "image_path"
+    ],
+    "GT_or_prediction_or_score_used_for_selection": false
+  },
+  "panel_rule": "position=floor((2*i+1)*5349/32), i=0..15, fixed before numeric extraction; no outcome selection",
+  "panel": [
+    {
+      "position": 167,
+      "index": "49399",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/xkbv0228_p2.jpg",
+      "image_sha256": "daedd01bf181c9cadf8128db49906f07e584480042d0bbdba0efdf5055f3043f",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/xkbv0228_p2.jpg"
+        },
+        {
+          "type": "text",
+          "value": "Which government is responsible for sponsoring the Congress ?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "b8382c7cd0a28c5dfcaccfc57b98fcd29c13f8f9e871e58945e836fa93e0d58a",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1056
+          ],
+          "sha256": "bd6fac2715a3536971cc7578392e4a9a5629d8c0d23851d2f92b793637a5f270"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1056
+          ],
+          "sha256": "d54357375410b5abe8557d1b9c892a94aee9f52a58ca407c2d0aaa1d3abc51d0"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "a5c616f74cb04f3bee2264c22758d60081ff74e657451bb4a2fb589de8c89f3a"
+        }
+      },
+      "question_sha256": "b3cee0abe0aba9413d1585eb62ff84e062e7eaea3b92d19cfea33ec6dea182f9"
+    },
+    {
+      "position": 501,
+      "index": "41800",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/qjgn0226_p193.jpg",
+      "image_sha256": "2bf444397f1d52bf48d8cd2fe17aed5037c919b2f1f1a7bb39b2ca438630f321",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/qjgn0226_p193.jpg"
+        },
+        {
+          "type": "text",
+          "value": "what is the royalty product name ?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "c5ae5a093b5a8b0c58f5c8f93bb445e8444bec5af22ca993902eaea6dc11ac82",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1054
+          ],
+          "sha256": "ffa69dd065333f7e1633ee94621e78d8361312d1671a5da610b587e6cc762250"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1054
+          ],
+          "sha256": "c8cf9cb8062305542f0d789af6b58683ed4984b25cbb074c79e3e674e0fd3743"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "71cb14fb2feae24a0206753995c3833b4342ffcd74e03fddaed3d663d0003cc4"
+        }
+      },
+      "question_sha256": "5b3f8eef89fabd9bf8df31cba26dbd0e452b0d01013a464019f268f45571d7e2"
+    },
+    {
+      "position": 835,
+      "index": "42297",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/fkxn0226_p13.jpg",
+      "image_sha256": "e1c57635bd76c632086461bbe3a5d7cbfa4a0f23344e3d07b5a4a90a58fba91c",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/fkxn0226_p13.jpg"
+        },
+        {
+          "type": "text",
+          "value": "what is the sales in 2006?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "b0e17cafb28d649fb38edd2261ee0ca814f62839ee9eaac8c5209fdc11249f2b",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1058
+          ],
+          "sha256": "4f1694fa089c75b88af81540ade3c4a6b026e50d943ea50208f72eefdf61bc32"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1058
+          ],
+          "sha256": "45bc42dcb4cfed72c6ad614943f2f00d46bf5f444c566e0ede966bdbe7e61e22"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "5346e80ec245e6ec7910144cb12fe8fdefd125d03196206627553c31d7a07237"
+        }
+      },
+      "question_sha256": "bc174ceca793669c45a8093b7a3c637ea880168c0acef1e21dfc7df91568b056"
+    },
+    {
+      "position": 1170,
+      "index": "51073",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/xqjf0226_p6.jpg",
+      "image_sha256": "d454592b92478b50c68b4b9069a509821003c280f4ef014053da43c535470462",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/xqjf0226_p6.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What is the strategic Intent?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "d1d630f0f733bf549b539ab76bdb3e5fcadc4b219ae249a056ca8f802b3d33a6",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1053
+          ],
+          "sha256": "437c86e13fb220ba619d31b85b04843910e7288b882eae6cd7ba09954ad7ac5e"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1053
+          ],
+          "sha256": "c19b16f7e89803f576dc8585c854c97bb479aa5c5a07e5909a698aa2271a599d"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "6b9865ca6baa2c193211e4ee5356eea60b087f0b32c91dbbe934fc53f39172cc"
+        }
+      },
+      "question_sha256": "13b0abb21b6e1a6989f754eb148d040ce425b1c049736d4725fa9789eb8d3f1e"
+    },
+    {
+      "position": 1504,
+      "index": "59664",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/hnnp0227_p50.jpg",
+      "image_sha256": "49d00b633a248f9949b44f476dbace2d8cdac8d17a0742c2c6c5b619f22f8354",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/hnnp0227_p50.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What is written within the logo?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "99c3d63762d3f0938f64e1d56a6761a88d105e557c81820958b248e100d17008",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1054
+          ],
+          "sha256": "ffa69dd065333f7e1633ee94621e78d8361312d1671a5da610b587e6cc762250"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1054
+          ],
+          "sha256": "e9587c96438521781bd8b776fdb1a3790a60fbd9bc8206103f338f3f23081bb5"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "3477b21dc8c87bf844a6445ad076dc09bbb71944995aa05fb6fb9a5b5b2f52a9"
+        }
+      },
+      "question_sha256": "b26f1c388e18d5714fa236665afbfa005ae8ad691333412f781f5873fe4db2c9"
+    },
+    {
+      "position": 1838,
+      "index": "47763",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/kshm0227_p6.jpg",
+      "image_sha256": "0b748ef342b2e291360028dbf88960297ca2fa6d48d89df85de73d5095587736",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/kshm0227_p6.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What was the amount allowable for meals and miscellaneous ?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "6eb88332d0a83439c71aa8541126944b681db66095f79dd875472ada8bed95d7",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1057
+          ],
+          "sha256": "8c3ebd069aae5b038decc179b7483b7be60057f05bd4040be6cd5dc1d4485ea0"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1057
+          ],
+          "sha256": "e2c758e2bf0d16a919c4dc4ddcd85d0ee5ea35f4bd1268e9398ab237c7ccbac2"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "c44882892435415ccc641f8d034642ed62765fe155c38c86c0e03740cff22571"
+        }
+      },
+      "question_sha256": "4a288c44cbb8f845e79f3facf49a104ff8f4c28841105d6f60abfdb9e6a71e41"
+    },
+    {
+      "position": 2173,
+      "index": "60785",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/rlvd0227_p1.jpg",
+      "image_sha256": "758b2e6e9a9f2fccaa61447ab7e1573ead301ebff5f6830de4494fbfb9121be7",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/rlvd0227_p1.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What did Samuel Lepkovsky write?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "bed20b4d6c67b8ac37f5a08fca29a84bec309336dffc4f4f1c736403224acda6",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1056
+          ],
+          "sha256": "bd6fac2715a3536971cc7578392e4a9a5629d8c0d23851d2f92b793637a5f270"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1056
+          ],
+          "sha256": "5eb66c0ce4bebe5a85413d884745700452620e721066cf04f3ac3f01800c19bd"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "3f4f06dd21a18f192d98bb0f5578e105813dcdf4e8f233824e77c5e28f3c3c8c"
+        }
+      },
+      "question_sha256": "94268d15684b68822f0336699abc1b19987c1be237509055877272feb0e14a73"
+    },
+    {
+      "position": 2507,
+      "index": "45016",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/nsnl0226_p0.jpg",
+      "image_sha256": "7da2f82c0b158e04c8ce97a0d741004118bf445606c1b3509e0b53cde73f0a3e",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/nsnl0226_p0.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What is the heading of the page?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "805f84004f13d18896a497696a1bde13bf70796fdb4298c87b1e97cdb2455000",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "e94dbb0aa866dc99db822878b00957c34dc7a060ab31bb2ee919e51a17930e55"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "883bc1bd1ceb7758d634995b1df808b3d6c0c60bdaf87b6e2ea1dd28414ba9ca"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "77c0aa5af52923a8e6ad5f131d200a98d2065db23e4c60a4fec965352efdb334"
+        }
+      },
+      "question_sha256": "716cb3f3ea7fec059ccc30ad03869c310508bf903044427e55526e972a8e7b27"
+    },
+    {
+      "position": 2841,
+      "index": "61972",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/zpyp0227_p3.jpg",
+      "image_sha256": "dddff47adf6fd3c11da79458ce8537320cfc747c5d396ff340ea018839d7bea7",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/zpyp0227_p3.jpg"
+        },
+        {
+          "type": "text",
+          "value": "Who is at the Lowest hierarchical level?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "4b402eb2f3712524c87ca931dd2e402ad5945c12eef5709ebaeff57bf9c5f546",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "e94dbb0aa866dc99db822878b00957c34dc7a060ab31bb2ee919e51a17930e55"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "fe29ae6694c722bd87e06ba4c00f294fa2c1c0f9980f586b1dd5f37009aecf0d"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "7a087610b3999a3b425409d0570d9718f508e617997629929832cf27473da49d"
+        }
+      },
+      "question_sha256": "6064bf26d381ad0a50cf837dabd3c029563853dd323932037f658462cdbf69d6"
+    },
+    {
+      "position": 3175,
+      "index": "62506",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/fybg0227_p3.jpg",
+      "image_sha256": "1620e93df3ce596b16c93edc3b1fcdc0ec04b56d83c8b577c7eff8f61f9996c9",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/fybg0227_p3.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What does the symbol * indicate?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "b6a470120541982763dadf3c691649259e8c03cb5f187f3487516cee809fe19f",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1054
+          ],
+          "sha256": "ffa69dd065333f7e1633ee94621e78d8361312d1671a5da610b587e6cc762250"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1054
+          ],
+          "sha256": "6fe40211913420d164dd99a23d2a42bf995cbefee9ee94525891bb2eaf998f07"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "a7139dd8205799d2c5aa54ab2fb1e333efd0617b49df61924647588ae15e6c11"
+        }
+      },
+      "question_sha256": "cca23d97a6edaabdf14a5da2a7d4c9513094a3c34c60b874c2b29f3c435bb70a"
+    },
+    {
+      "position": 3510,
+      "index": "5646",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/qzlj0226_p0.jpg",
+      "image_sha256": "784fe23ec37d68ce7d1397e2e743091a0ca3f7a9308b9e89ad1308e374fb721d",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/qzlj0226_p0.jpg"
+        },
+        {
+          "type": "text",
+          "value": "what is the name of sponsorship program?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "587772ae5100b5966488c01c8b74b460d842456cd73d0286e34a1561218b0dff",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "e94dbb0aa866dc99db822878b00957c34dc7a060ab31bb2ee919e51a17930e55"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "6f4d48a89a44284c5c727418685b43a968a486a7ee6bd29eacfea00a80b52a30"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "742f5f182a88d77fd084fe06411fb54359a0fb0763949ee5f6a84eeeb47509bb"
+        }
+      },
+      "question_sha256": "01e3d1b69dc39a41eb69ca701b5307b27d9e798b3e452346f81c717fb195bd6a"
+    },
+    {
+      "position": 3844,
+      "index": "55237",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/hsgj0223_p95.jpg",
+      "image_sha256": "9b723562ae0aa2502c0846551494cc714c03a930f0534276e4aa0817cdb55d1a",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/hsgj0223_p95.jpg"
+        },
+        {
+          "type": "text",
+          "value": "During previous year, how much is the ‘Managerial remuneration to directors towards Perquisities’?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "82810121a69c58da25c7d0386cecd21546ab1fa77516ec0da88a433ee2488f0e",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1069
+          ],
+          "sha256": "3bea96d01ed5340339635044e4ad35416562fd856001ba41e523a42314a1f636"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1069
+          ],
+          "sha256": "893f9c6e76ecdcfc391e32e9250729e7253f5ad61a47d2f884e2857f5ac614a4"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "36e44271561f64d928c196e38c3edbe0b990773ea833bc10ab7c1d76c68d60e2"
+        }
+      },
+      "question_sha256": "59b38fda8f3df30ad78538d4797aa13e99be34634e4ad5d4fc6f8d8162adb01b"
+    },
+    {
+      "position": 4178,
+      "index": "25726",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/jzhd0227_p16.jpg",
+      "image_sha256": "c505613f4189e361da344e09f30cef291eae65b285b82b6f053ed4a0a8964d24",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/jzhd0227_p16.jpg"
+        },
+        {
+          "type": "text",
+          "value": "who is the sponsor for the given program ?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "3c08c1d5bdc1b5d9cd1ff41c98703c25b56f294cecfef0921743ee82681b44a9",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1056
+          ],
+          "sha256": "bd6fac2715a3536971cc7578392e4a9a5629d8c0d23851d2f92b793637a5f270"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1056
+          ],
+          "sha256": "b21b8ced761890896e25f61e855001d975a9e736b00af1428f0c166d367e3ccd"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "54e7d006ce907738f4c123c65e6ed7c8eae1124b5464b61152363f2075f6037f"
+        }
+      },
+      "question_sha256": "1501e76cf9329ac1437921913773e4bcacd4a47c6d448fc58c1ddc233d59ff88"
+    },
+    {
+      "position": 4513,
+      "index": "15230",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/ysgj0223_p80.jpg",
+      "image_sha256": "e2f4134a906f36b5b97bd92e4472837406841398b965311f83e33d02bb490a14",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/ysgj0223_p80.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What is the number of weighted average Equity Shares outstanding for basic & diluted earnings per share in the current year?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "d9c1da9eaeda375bfb0781db1b3e19bd8647e6375f2278173d0898fae2da09be",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1069
+          ],
+          "sha256": "3bea96d01ed5340339635044e4ad35416562fd856001ba41e523a42314a1f636"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1069
+          ],
+          "sha256": "5b68138678bce51dcc3890496f9a1d7fd3dc541a8891bd8dfeb53fa93ab9f939"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "88a1ef3cdb8bd9c58d9b241426287f1160dc455ff35e7d86941d75e3b3431262"
+        }
+      },
+      "question_sha256": "028d85a10d14dcd6a2c00f997f44dc3825911615de49c718a94bb2bc1b1ecc26"
+    },
+    {
+      "position": 4847,
+      "index": "6963",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/khcw0004_p0.jpg",
+      "image_sha256": "7a1ae9767186ab2b0ad0322fbb2ed302a92c2b922c132561f4af9974f584d11e",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/khcw0004_p0.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What is the name of the college on the letter head?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "636ce21aa6f8cfaf317a823ce77d26a367088937269d4f0afe10590b6569a74b",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1059
+          ],
+          "sha256": "fdd98ee5a062b3c4ed164176880829041002ef31814b04f8c86f831025a5c7d7"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1059
+          ],
+          "sha256": "eff38111e6b14d9f695d10099f74cbeff02a7210c1e43d0d08247a05b64e1bfa"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "46ec901e841b915d73d0cc36ed63d6c3509d6997a07fcb206fcd63303021a766"
+        }
+      },
+      "question_sha256": "3198b3cb37bd33121299873b200b78d73e4ae99d083f7a2ff86e225f8bba03e6"
+    },
+    {
+      "position": 5181,
+      "index": "57159",
+      "image_path": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/znbx0223_p14.jpg",
+      "image_sha256": "6bc0c67f537f25e772746ba56b74cbaeba75fc087481e31a1077c4f83a0883fd",
+      "message": [
+        {
+          "type": "image",
+          "value": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/znbx0223_p14.jpg"
+        },
+        {
+          "type": "text",
+          "value": "What is written within the rectangular box?\nPlease answer concisely with short words or phrases when possible."
+        }
+      ],
+      "source_messages_sha256": "f16183e384f2569b7039568a48d6e6a53db012793b1836758cc01e1a92723c05",
+      "processor_expected": {
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "e94dbb0aa866dc99db822878b00957c34dc7a060ab31bb2ee919e51a17930e55"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "64174d759f964932c1584b369b92f23cad632e7a3d73a7590324dcaedceab934"
+        },
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            1055
+          ],
+          "sha256": "3cc162bb30315073d2e91ebaea8943ea4c66e40c32072832079d410590070fd9"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1536
+          ],
+          "sha256": "8b7a3f74f84b79e18edbbe372d9539fd5cfff902ee717d8d602eac9079cfcd40"
+        }
+      },
+      "question_sha256": "d9cfd6e7ae7a1730eb4b5c18cdd73e7438070b6b5d22ab5dd30a2e63d4bd7d11"
+    }
+  ],
+  "variants": [
+    "source",
+    "source_members_order_identity",
+    "eq6_quantile_membership_only",
+    "eq10_numerator_only"
+  ],
+  "native_get_calls": 16,
+  "planned_case_slots": 64,
+  "Eq6": {
+    "q": 0.2,
+    "convention": "torch.quantile linear interpolation; entropy <= threshold includes all ties",
+    "candidates": "All actual LLM instruction-token positions, actual dynamic L, exactly the native unmasked domain",
+    "order": "Preserve source top-floor members and order, append new threshold members by original token position",
+    "ragged": "Explicit unmeasured; no padding, rowwise reduction or batch replacement"
+  },
+  "Eq10": "Only remove numerator +1e-6; denominator +1e-6 and all other original arithmetic retained",
+  "dtype": {
+    "visual": "BF16 post-merger original Qwen3 visual",
+    "text": "Original LLM input embeddings BF16",
+    "global": "Original instruction sequence mean in native dtype, not CLIP",
+    "cross": "Source casts BF16 features/text to FP32 before norm and negative cosine",
+    "visual_sim": "Source BF16 normalization then cast to FP32 matmul",
+    "importance": "FP32"
+  },
+  "input_chain": "Native _build_messages/_processor_inputs/_get_instruction_sequence_embedding/_get_pruned_image_features; no answer generation",
+  "native_anchor": [
+    "Once original _get_pruned_image_features and pruner",
+    "Exact original global/dense/visualsim/importance",
+    "Source reconstructed ordered256 IDs and sorted final BF16 features bit-identical",
+    "Strict identity all importance/gain/ordered256/final sequence equal; trace matches unmodified greedy"
+  ],
+  "save_policy": "Native BF16 values stored as uint16 bit patterns with actual dtype/shape/SHA; FP32 arrays unchanged. Save full visual, instruction sequence/global, global/dense/sim/importance, IDs, native final features, gain traces; no repeated duplicate arrays for variant-selected BF16 features.",
+  "launch_policy": {
+    "root_review_required": true,
+    "separate_exact_root_allocation_required": true,
+    "max_GPU_models": 2,
+    "single_attempt": true,
+    "automatic_retry": false,
+    "watcher_or_queue_created": false,
+    "GPU_allocated": false
+  },
+  "claim_boundary": [
+    "Only16 fixed Doc questions and one already-completed K256/.5/2 recipe; feature/facility mechanism only.",
+    "No generated answers, GT input, accuracy, external API or external server. No parameter search or automatic full extension.",
+    "Linear quantile is an explicit threshold convention, not evidence of unpublished paper implementation.",
+    "No CLIP adapter, contextual LLM forward, DeepStack restoration, mRoPE/position repair or source numerical edits.",
+    "A source or identity anchor mismatch is retained as failure/unmeasured, never interpreted as a formula outcome.",
+    "Historic caches exist but do not supply a qualified complete native anchor for these fixed questions; see inventory.",
+    "Current author runtime diagnostics do not reconstruct the September historical environment or certify paper argv."
+  ],
+  "guard_namespace_mounts": [
+    {
+      "source": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+      "native_destination": "/usr/local/nvidia/lib64/libcuda.so.1",
+      "original_destination": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05"
+    },
+    {
+      "source": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+      "native_destination": "/usr/local/nvidia/lib64/libnvidia-ml.so.1",
+      "original_destination": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05"
+    },
+    {
+      "source": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+      "native_destination": "/usr/local/nvidia/lib64/libnvidia-ptxjitcompiler.so.1",
+      "original_destination": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05"
+    },
+    {
+      "source": "/usr/bin/nvidia-smi",
+      "native_destination": "/usr/local/nvidia/bin/nvidia-smi",
+      "original_destination": "/usr/bin/nvidia-smi"
+    }
+  ],
+  "model_bind_namespace": {
+    "source": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct",
+    "destination": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct",
+    "host_resolved_root": "/data/models/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct",
+    "source_readonly": true,
+    "probe_report_sha256": "dfc560bffa863a8adafa1844dfb83607853383f760515d2b90f363e4f85861c6"
+  },
+  "planned_container_command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--user",
+    "1000:1000",
+    "--name",
+    "eadp-qwen-doc16-formula-run02-20261028",
+    "--mount",
+    "type=bind,src=/home/dell/miniconda3,dst=/home/dell/miniconda3,readonly",
+    "--mount",
+    "type=bind,src=/media/disk2/YZX/research/EADP_v2,dst=/media/disk2/YZX/research/EADP_v2",
+    "--mount",
+    "type=bind,src=/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct,dst=/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct,readonly",
+    "--mount",
+    "type=bind,src=/media/disk2/YZX/LMUData,dst=/media/disk2/YZX/LMUData,readonly",
+    "--device",
+    "/dev/nvidia0",
+    "--device",
+    "/dev/nvidiactl",
+    "--device",
+    "/dev/nvidia-uvm",
+    "--device",
+    "/dev/nvidia-uvm-tools",
+    "--mount",
+    "type=bind,src=/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05,dst=/usr/local/nvidia/lib64/libcuda.so.1,readonly",
+    "--mount",
+    "type=bind,src=/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05,dst=/usr/local/nvidia/lib64/libnvidia-ml.so.1,readonly",
+    "--mount",
+    "type=bind,src=/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05,dst=/usr/local/nvidia/lib64/libnvidia-ptxjitcompiler.so.1,readonly",
+    "--mount",
+    "type=bind,src=/usr/bin/nvidia-smi,dst=/usr/local/nvidia/bin/nvidia-smi,readonly",
+    "--env",
+    "LMUData=/media/disk2/YZX/LMUData",
+    "--env",
+    "HF_HOME=/tmp/eadp_hf",
+    "--env",
+    "HF_HUB_OFFLINE=1",
+    "--env",
+    "HF_DATASETS_OFFLINE=1",
+    "--env",
+    "TRANSFORMERS_OFFLINE=1",
+    "--env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "--env",
+    "TOKENIZERS_PARALLELISM=false",
+    "--env",
+    "MPLCONFIGDIR=/tmp/eadp_matplotlib",
+    "--env",
+    "XDG_CACHE_HOME=/tmp/eadp_cache",
+    "--env",
+    "OMP_NUM_THREADS=4",
+    "--env",
+    "MKL_NUM_THREADS=4",
+    "--env",
+    "TZ=Asia/Shanghai",
+    "--env",
+    "QWEN3_VL_8B_MODEL_PATH=/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "--env",
+    "PYTHON=/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "--env",
+    "PYTHONUNBUFFERED=1",
+    "--env",
+    "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+    "--env",
+    "CUDA_VISIBLE_DEVICES=0",
+    "--env",
+    "PYTHONPATH=/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/import_overlay",
+    "--mount",
+    "type=bind,src=/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05,dst=/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05,readonly",
+    "--mount",
+    "type=bind,src=/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05,dst=/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05,readonly",
+    "--mount",
+    "type=bind,src=/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05,dst=/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05,readonly",
+    "--mount",
+    "type=bind,src=/usr/bin/nvidia-smi,dst=/usr/bin/nvidia-smi,readonly",
+    "--workdir",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl",
+    "--entrypoint",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/diagnose.py",
+    "--execute",
+    "--allocation-note",
+    "FUTURE_ROOT_REVIEWED_ALLOCATION.json"
+  ],
+  "expected_bind_mounts": [
+    {
+      "source": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct",
+      "destination": "/home/dell/.cache/huggingface/hub/models--Qwen--Qwen3-VL-8B-Instruct",
+      "readonly": true
+    },
+    {
+      "source": "/home/dell/miniconda3",
+      "destination": "/home/dell/miniconda3",
+      "readonly": true
+    },
+    {
+      "source": "/media/disk2/YZX/LMUData",
+      "destination": "/media/disk2/YZX/LMUData",
+      "readonly": true
+    },
+    {
+      "source": "/media/disk2/YZX/research/EADP_v2",
+      "destination": "/media/disk2/YZX/research/EADP_v2",
+      "readonly": false
+    },
+    {
+      "source": "/usr/bin/nvidia-smi",
+      "destination": "/usr/bin/nvidia-smi",
+      "readonly": true
+    },
+    {
+      "source": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+      "destination": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+      "readonly": true
+    },
+    {
+      "source": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+      "destination": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+      "readonly": true
+    },
+    {
+      "source": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+      "destination": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+      "readonly": true
+    },
+    {
+      "source": "/usr/bin/nvidia-smi",
+      "destination": "/usr/local/nvidia/bin/nvidia-smi",
+      "readonly": true
+    },
+    {
+      "source": "/usr/lib/x86_64-linux-gnu/libcuda.so.560.35.05",
+      "destination": "/usr/local/nvidia/lib64/libcuda.so.1",
+      "readonly": true
+    },
+    {
+      "source": "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.560.35.05",
+      "destination": "/usr/local/nvidia/lib64/libnvidia-ml.so.1",
+      "readonly": true
+    },
+    {
+      "source": "/usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.560.35.05",
+      "destination": "/usr/local/nvidia/lib64/libnvidia-ptxjitcompiler.so.1",
+      "readonly": true
+    }
+  ],
+  "run01_preserved": {
+    "plan_sha256": "7701cfd2e78fb72f6a83855887dff611601c3cab00b01be6df6ff3ef0e21c835",
+    "original_directory": "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel",
+    "correction_scope": "Driver/smi original-path readonly aliases and explicit model bind namespace only; formula/native feature/recipe/panel arithmetic unchanged"
+  }
+}

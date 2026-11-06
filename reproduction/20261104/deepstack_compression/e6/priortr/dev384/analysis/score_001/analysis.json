@@ -1,0 +1,228 @@
+{
+  "status": "completed",
+  "questions": 384,
+  "new_predictions": 1152,
+  "tasks": {
+    "DocVQA_VAL": {
+      "n_questions": 128,
+      "n_image_groups": 128,
+      "means_pct": {
+        "stock_native": 91.8088367795399,
+        "author_default": 39.275924813034194,
+        "priortr_k256": 63.16408838812332,
+        "EADP_P3_D1_reused_E1": 67.84538557047036
+      },
+      "contrasts": {
+        "author_default - stock_native": {
+          "difference_pp": -52.532911966505715,
+          "percentile_95_ci_pp": [
+            -60.473428779336984,
+            -44.590889606270466
+          ],
+          "positive_questions": 1,
+          "negative_questions": 82,
+          "zero_questions": 45
+        },
+        "priortr_k256 - stock_native": {
+          "difference_pp": -28.644748391416584,
+          "percentile_95_ci_pp": [
+            -36.16037879221472,
+            -21.423860778467837
+          ],
+          "positive_questions": 3,
+          "negative_questions": 49,
+          "zero_questions": 76
+        },
+        "author_default - EADP_P3_D1_reused_E1": {
+          "difference_pp": -28.56946075743616,
+          "percentile_95_ci_pp": [
+            -37.54184223119434,
+            -19.525495857176
+          ],
+          "positive_questions": 13,
+          "negative_questions": 62,
+          "zero_questions": 53
+        },
+        "priortr_k256 - EADP_P3_D1_reused_E1": {
+          "difference_pp": -4.681297182347037,
+          "percentile_95_ci_pp": [
+            -13.50797804161989,
+            4.197925989986011
+          ],
+          "positive_questions": 29,
+          "negative_questions": 33,
+          "zero_questions": 66
+        }
+      },
+      "terminal": {
+        "stock_native": {
+          "eos": 128,
+          "truncated": 0
+        },
+        "author_default": {
+          "eos": 126,
+          "truncated": 2
+        },
+        "priortr_k256": {
+          "eos": 128,
+          "truncated": 0
+        },
+        "EADP_P3_D1_reused_E1": {
+          "eos": 128,
+          "truncated": 0
+        }
+      }
+    },
+    "TextVQA_VAL": {
+      "n_questions": 128,
+      "n_image_groups": 128,
+      "means_pct": {
+        "stock_native": 86.015625,
+        "author_default": 61.484375,
+        "priortr_k256": 70.9375,
+        "EADP_P3_D1_reused_E1": 80.78125
+      },
+      "contrasts": {
+        "author_default - stock_native": {
+          "difference_pp": -24.53125,
+          "percentile_95_ci_pp": [
+            -31.796875000000004,
+            -17.656250000000018
+          ],
+          "positive_questions": 2,
+          "negative_questions": 38,
+          "zero_questions": 88
+        },
+        "priortr_k256 - stock_native": {
+          "difference_pp": -15.078125,
+          "percentile_95_ci_pp": [
+            -21.328124999999986,
+            -9.296875000000004
+          ],
+          "positive_questions": 3,
+          "negative_questions": 24,
+          "zero_questions": 101
+        },
+        "author_default - EADP_P3_D1_reused_E1": {
+          "difference_pp": -19.296874999999996,
+          "percentile_95_ci_pp": [
+            -26.406250000000007,
+            -12.578125000000018
+          ],
+          "positive_questions": 5,
+          "negative_questions": 31,
+          "zero_questions": 92
+        },
+        "priortr_k256 - EADP_P3_D1_reused_E1": {
+          "difference_pp": -9.843750000000002,
+          "percentile_95_ci_pp": [
+            -15.937499999999993,
+            -4.062500000000013
+          ],
+          "positive_questions": 6,
+          "negative_questions": 18,
+          "zero_questions": 104
+        }
+      },
+      "terminal": {
+        "stock_native": {
+          "eos": 128,
+          "truncated": 0
+        },
+        "author_default": {
+          "eos": 128,
+          "truncated": 0
+        },
+        "priortr_k256": {
+          "eos": 128,
+          "truncated": 0
+        },
+        "EADP_P3_D1_reused_E1": {
+          "eos": 128,
+          "truncated": 0
+        }
+      }
+    },
+    "AI2D_TEST": {
+      "n_questions": 128,
+      "n_image_groups": 128,
+      "means_pct": {
+        "stock_native": 81.25,
+        "author_default": 71.875,
+        "priortr_k256": 77.34375,
+        "EADP_P3_D1_reused_E1": 82.03125
+      },
+      "contrasts": {
+        "author_default - stock_native": {
+          "difference_pp": -9.375,
+          "percentile_95_ci_pp": [
+            -17.1875,
+            -1.5625
+          ],
+          "positive_questions": 7,
+          "negative_questions": 19,
+          "zero_questions": 102
+        },
+        "priortr_k256 - stock_native": {
+          "difference_pp": -3.90625,
+          "percentile_95_ci_pp": [
+            -9.375,
+            1.5625
+          ],
+          "positive_questions": 4,
+          "negative_questions": 9,
+          "zero_questions": 115
+        },
+        "author_default - EADP_P3_D1_reused_E1": {
+          "difference_pp": -10.15625,
+          "percentile_95_ci_pp": [
+            -17.1875,
+            -3.125
+          ],
+          "positive_questions": 5,
+          "negative_questions": 18,
+          "zero_questions": 105
+        },
+        "priortr_k256 - EADP_P3_D1_reused_E1": {
+          "difference_pp": -4.6875,
+          "percentile_95_ci_pp": [
+            -10.9375,
+            1.5625
+          ],
+          "positive_questions": 5,
+          "negative_questions": 11,
+          "zero_questions": 112
+        }
+      },
+      "terminal": {
+        "stock_native": {
+          "eos": 128,
+          "truncated": 0
+        },
+        "author_default": {
+          "eos": 128,
+          "truncated": 0
+        },
+        "priortr_k256": {
+          "eos": 128,
+          "truncated": 0
+        },
+        "EADP_P3_D1_reused_E1": {
+          "eos": 128,
+          "truncated": 0
+        }
+      }
+    }
+  },
+  "scores_sha256": "ee58498572e29b687ddc091a71d4f84725a404c68cf66448e1ad7aa84410d7ee",
+  "plan_sha256": "8b14460f6d7621dc6df9f2589ae5c04bc93f0afd1f38070261443f95303e7238",
+  "formal_sha256": "4545c3234edbf46d8bc9397e258b19a61e01d4eb42ebe36f18354939186e1cc4",
+  "independent_review_sha256": "8be9f6ab7c4d0db1c8fc172ee11eca54c510e622462ca618bd4a015a8cf601e4",
+  "limits": [
+    "This plan follows prior DEV results, and DEV supports screening rather than final claims.",
+    "PriorTR runs in a pinned SDPA environment and EADP in FA2; document this software/backend difference and do not compare instrumented wall times.",
+    "Layer token traces and budget differ; final K256 does not imply matched computation.",
+    "Do not report any partial-panel score or select methods until all 1152 outputs and formal and independent validation complete.",
+    "No CONFIRM or FINAL answer is read by this plan."
+  ]
+}

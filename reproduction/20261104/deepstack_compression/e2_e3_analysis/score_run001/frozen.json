@@ -1,0 +1,41 @@
+{
+  "stage": "E2/E3 DEV scoring",
+  "plan_sha256": "1589b540c6ddc355a4a89ba2b416642fe7c901794e87c62be826b1dc2bc00915",
+  "panel_proof_sha256": "3173835ac9124fe0340bf18e0ff68315ff6632e790cc628fa29f0b4e2097fa9a",
+  "review_proof_sha256": "891f0bfe72b4b0c5fb8170ccca31d81754b602daa23c66ed2508f0dd68bc6741",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_analysis/plan.json": "1589b540c6ddc355a4a89ba2b416642fe7c901794e87c62be826b1dc2bc00915",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_analysis/paired.py": "d96c60caeae78ef29d4b05e98347ac9ecf30180fe7d198367efb3807531aa877",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_analysis/score_core.py": "817d61c6dade25b2e71c0b2d46f9f401e586bd13afd72b4358340eadb2a26058",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e2_e3_analysis/score_panel.py": "9f40930e4a3f1dc42311a9c33145c9f7387c8ba8881c63c1a22e2f1e74226a33",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/score.py": "6470bd9949e7430a3b95eb78c30b9fc3473436447034bf199227ace8ff080891",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/metrics.py": "7e79c70937fe9eb1ecea9e3ea3c70ed9ba781a9cadc26fd5baa530d0f7bfbc10",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_analysis/completion.py": "a94c45fee0ebc4680c8cd7d8bc2d44b93e8576a6fa1d517842945dc21b9f74cd",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/dataset/utils/vqa_eval.py": "f63c9fd539a4a2750cfb4d17ca654e9871b58358bbb943549a71c947839de3ae",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/smp/misc.py": "e65a0e0a23305ab3bd16c6d1885e8f97b08b7a8fb3c4bf90691e5432a67f7ddf",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/author_eadp/Qwen_vl/VLMEvalKit/vlmeval/utils/matching_util.py": "03435cedaeaf6282599816aed4ba57f26dd4858f2a37399490acca98d9f8f5f2",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_e2e3full_run.py": "5675b63487b5d331fc4be8eee359dccf4a0eb122ff82b43089630155df3a7fe8"
+  },
+  "dataset_summary_sha256": "264c1428175f2c7d4f57ac9742c152d3fe497010db9c9577a85b31038f48151e",
+  "reference_tsv": {
+    "AI2D_TEST": {
+      "path": "/media/disk2/YZX/LMUData/AI2D_TEST.tsv",
+      "sha256": "3b16aa83c6809149df6978c7d5a6ee830b75f0010a60b26d33c004c47d575c4a"
+    },
+    "DocVQA_VAL": {
+      "path": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+      "sha256": "05fea8a88593b192cd23415797771c94603832377d3b4b2dec4f0a6fb87a4d25"
+    },
+    "TextVQA_VAL": {
+      "path": "/media/disk2/YZX/LMUData/TextVQA_VAL.tsv",
+      "sha256": "f9bd2e1518185f678a60b9a31fea5655f7533704fa7d7c9b3775bf0ca2a6b8d0"
+    }
+  },
+  "scope": "384 DEV only; non-DEV answer values not parsed",
+  "runtime_versions": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "xlsxwriter": "3.2.9",
+    "openpyxl": "3.1.5"
+  }
+}

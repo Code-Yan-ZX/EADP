@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "stage": "full_dev",
+  "questions": 384,
+  "generations": 1536,
+  "pairs": 768,
+  "GT_opened": false,
+  "scoring": false,
+  "run": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_full/panel_001",
+  "inspection": {
+    "container_id": "f6bfa0394f791d9617eccad5d37c24ef61bffe1949b47ac9ba89581781396b35",
+    "image": "sha256:91d767ae00637d58384a6ca70cbfe7b8c9bfa9f8920bbe4ddaaa9af178100faf",
+    "name": "eadp-selected-full-001-511726",
+    "devices": [
+      "/dev/nvidia0",
+      "/dev/nvidiactl",
+      "/dev/nvidia-uvm",
+      "/dev/nvidia-uvm-tools"
+    ],
+    "bind_mounts": 13
+  },
+  "source_manifest_sha256": "abf951a4f19bd0f422815d83b53051cccf3c534e2b9d9625afa8e3f161e67579",
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_full/monitor_panel001/started.json": "ab8336fd3488f49b3e8b4277c17a49f3c099f7caf8a618bbc297ecdb86a4d4d0",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_full/monitor_panel001/terminal.json": "22ad7f1f6f1a475d90d0e845f8f02fea1eac5335b89b57d3d41199eb02d2fea3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_full/panel_001/frozen.json": "efbe8c39af2b2569f93e34f6815105b966b8dcb5209b5cf26ce6606cce791c4b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_full/panel_001/worker_complete.json": "3fe2b44ad4e76444bb9da57128b9ad1722a4e8aaf2080446f22b6beb4455c681",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_full/panel_001/launch.json": "20ca900c61f7087b62f7878709523448b7b4977c46661d3a81ec04e560ae24a9",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_full/panel_001/exit.json": "4c7d54db511a389499d9bd42b6518e9877a37d27eddd71587f305957a092bbf4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_full/panel_001/records.jsonl": "7f8792f0bd5c1e74ded1648a773f4b66b7f0fce424fcbfb468ea2a2a82501572",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_full/panel_001/generated.jsonl": "625165cfcf580f2bf9cbd04d990773b499e4ca7fc55320f2416135bba9a958d4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_full/panel_001/events.jsonl": "dd9b8c76b7109fa2cf6fe54a9ac7a1d296b1c02b8c5d78410090dff745d91c21",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/selected_full/panel_001/pairs.jsonl": "3132aa1003d905bbfeb57bba5565f3775f3c5d22113165d8e6cf8e70b29527ff"
+  },
+  "verifier_sha256": "71c874e1972c9b615f1caae560b0407442af5f47175fbaf186e282caddcb3bbb",
+  "scope": "runtime checks, tensor summaries, selected IDs, positions, KV lengths and output replay; full tensors are not archived or independently reconstructed"
+}

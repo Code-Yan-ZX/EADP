@@ -1,0 +1,221 @@
+{
+  "status": "passed",
+  "anchors": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "16539",
+      "group_id": "389856c961891188878b76ead370e491d6676fdb6920ed745a2768ffeb001f36",
+      "image_sha256": "28963c9cf473009ad263d579538d7604526e03d74639a0ad6e0464091b50aace",
+      "message_sha256": "700cde8ec9b6cd4f4cd8da234bbcd4a9161329b7a3145f0cc3fcb64e53546bf9",
+      "original_visual_tokens": 1024,
+      "low_visual_tokens": 256,
+      "grid": [
+        [
+          1,
+          32,
+          32
+        ]
+      ],
+      "image_start": 4,
+      "text_prefix_suffix_identical": true,
+      "low_processor": {
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            289
+          ],
+          "sha256": "6d9f9236cef4c2f71d159c60141d367c97f8d9dd1e25735575a9bc93a8047f4c"
+        },
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            289
+          ],
+          "sha256": "c53c68fe33b63679c889b7e414db08c1e204f583d0d1c891d6a170c1e4f47e3f"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1024,
+            1536
+          ],
+          "sha256": "f80b840e893e740cc5feb45930d5f9ec1bc0d55fea246bc1231ea8b71c54ef9e"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "b2792a6c5b2a0c672ebf7b2b54dd0d5c41f66f287722f636642e5c7b7ede5a7a"
+        }
+      },
+      "position_ids": {
+        "dtype": "torch.int64",
+        "shape": [
+          3,
+          1,
+          289
+        ],
+        "sha256": "8ef83087d480dd71d8ab21f3944379e2e7091f9b47d3c4a7d1bc7f7002511ac3"
+      },
+      "rope_delta": [
+        [
+          -240
+        ]
+      ],
+      "position_formula_verified": true
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39421",
+      "group_id": "62febe51574839f93054b1a9491be61c89ed9c57df6fd69a5782bee2b597aad2",
+      "image_sha256": "7bfd2a5701581fd25e9a0066d6c67370e4d01fe1a154e96747bcbe1de232b7c0",
+      "message_sha256": "bf7b04fbf0394376fd5d569d0b3a28c7852b1adae7825f3ddd152ba8da7c7bc7",
+      "original_visual_tokens": 1024,
+      "low_visual_tokens": 256,
+      "grid": [
+        [
+          1,
+          32,
+          32
+        ]
+      ],
+      "image_start": 4,
+      "text_prefix_suffix_identical": true,
+      "low_processor": {
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            287
+          ],
+          "sha256": "fbd963dd94ecc5e00d22e98fd03e75e97745b55aab6923361a669848574fb5bc"
+        },
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            287
+          ],
+          "sha256": "975050592a00a983027ee741a3cb8ecfeab082d27544cf13d00d3b05d6b910b4"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1024,
+            1536
+          ],
+          "sha256": "190d6b7f36f9a417a95ffd0416abc6066f278cc0af1765939999075036e2619e"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "b2792a6c5b2a0c672ebf7b2b54dd0d5c41f66f287722f636642e5c7b7ede5a7a"
+        }
+      },
+      "position_ids": {
+        "dtype": "torch.int64",
+        "shape": [
+          3,
+          1,
+          287
+        ],
+        "sha256": "15200acdb495dea9f0a2ebc8d3edc08f2e8e89ddc942735e8f9a3784ada92f49"
+      },
+      "rope_delta": [
+        [
+          -240
+        ]
+      ],
+      "position_formula_verified": true
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "368100",
+      "group_id": "465926724f5cc81e49f19c5b47043843344d79304413f52af49788a36a433300",
+      "image_sha256": "5223e745456e8067db989735a20d79557548864522176432e3c0ff0058c8f7c5",
+      "message_sha256": "80bffe435227cfc543d382d8f183e7638e8ca8cfdcfea9b82324c3aefb1e8584",
+      "original_visual_tokens": 1024,
+      "low_visual_tokens": 256,
+      "grid": [
+        [
+          1,
+          32,
+          32
+        ]
+      ],
+      "image_start": 4,
+      "text_prefix_suffix_identical": true,
+      "low_processor": {
+        "input_ids": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            319
+          ],
+          "sha256": "b8c61708c680ba543a61dbe653d729cf490c2a1a2e5bf7a70fddbde98e7e4788"
+        },
+        "attention_mask": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            319
+          ],
+          "sha256": "c0f792e33a1c49de3fcf2f4c0d897b77f3c5769ad7cbabe41b102eeaabf5f4fe"
+        },
+        "pixel_values": {
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1024,
+            1536
+          ],
+          "sha256": "abe4ce7791b0ae96d048eb9726fd002062b60f573ac1b55c59647a09533d4448"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            3
+          ],
+          "sha256": "b2792a6c5b2a0c672ebf7b2b54dd0d5c41f66f287722f636642e5c7b7ede5a7a"
+        }
+      },
+      "position_ids": {
+        "dtype": "torch.int64",
+        "shape": [
+          3,
+          1,
+          319
+        ],
+        "sha256": "0c93a616e5242a18e80f580335c9310366f9fb2914f949855ad6d0e92396d2fc"
+      },
+      "rope_delta": [
+        [
+          -240
+        ]
+      ],
+      "position_formula_verified": true
+    }
+  ],
+  "images": 3,
+  "resolution": 512,
+  "original_resolution": 1024,
+  "GT_opened": false,
+  "existing_DEV_predictions_opened": true,
+  "scoring_performed": false,
+  "model_loaded": false,
+  "cuda_initialized": false,
+  "GPU_authorized": false,
+  "e1_formal_sha256": "95981ce2400d7467ba93d3177275a0860a656fc8558080c243040663e40a52fb",
+  "e1_independent_review_sha256": "59be360409326074b22a2e8d99fa302740fc2f6f0162e6acc335f1be32ad59be",
+  "design_sha256": "e9407a0da048c129ef5d212c8d3e1f6256e097047553c10c51fb849b503d37b5",
+  "author_source_sha256": "34556188962a1b057382269bc1f9f0cdba1a12e9cf1861acb60fa4fa0a59fe34",
+  "scope": "CPU processor + native mRoPE only; DS/model/GPU not tested",
+  "errors": []
+}

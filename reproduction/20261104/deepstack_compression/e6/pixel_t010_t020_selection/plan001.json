@@ -1,0 +1,25 @@
+{
+  "created": "2026-11-05T14:56:26.463359+08:00",
+  "scope": "posthoc descriptive selected-index overlap for all matched 384 DEV images, no new GT or quality stratification",
+  "reviews_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/pixel_t010_dev384_result_review.json": "56fd0db7c92ba1c379ab5fd4be75bdc404b33ec20605de38cc2fe432269dd89f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/pixel_t020_dev384_result_review.json": "dd052869652fee86ba2f6c2fd2994bde1cded56bc66049bbb01dac9c8ecbc0b6"
+  },
+  "tasks": [
+    "DocVQA_VAL",
+    "TextVQA_VAL",
+    "AI2D_TEST"
+  ],
+  "measures": [
+    "ordered index validity",
+    "K010 minus K020",
+    "number of K010 below K020",
+    "number of t020 sets not contained in t010",
+    "Jaccard intersection over union"
+  ],
+  "limitations": [
+    "thresholds chosen after prior DEV quality",
+    "mixed observation JSON files contain predictions but only identifiers and selected indices are analyzed",
+    "overlap does not establish causal effect, compute, latency or generalization"
+  ]
+}

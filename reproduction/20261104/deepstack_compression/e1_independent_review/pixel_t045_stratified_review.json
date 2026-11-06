@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "questions": 384,
+  "task_bin_counts": {
+    "DocVQA_VAL": [
+      11,
+      5,
+      19,
+      62,
+      31
+    ],
+    "TextVQA_VAL": [
+      1,
+      10,
+      29,
+      70,
+      18
+    ],
+    "AI2D_TEST": [
+      0,
+      0,
+      27,
+      89,
+      12
+    ]
+  },
+  "analysis_sha256": "d9fe11c554d79fe9a1201cbc27f2dfb7ea8bb62cdc9131dcd25ca55e823b4758",
+  "analysis_started_sha256": "047bf10a6b1e80fa59f9b6876809349dc003098aa0e7ec7a67e4a967d36f3a8d",
+  "analysis_terminal_sha256": "fcea96ae4d2d763c99b0f62a0df9dbfd3d58b01ff2106d80fe3e171d03e1b828",
+  "plan_sha256": "3a44871e7522b7ba890c2417d230df5f16426f03cea03ce76584c04d3cb01ea7",
+  "score_review_sha256": "2e472c7b863bd9729a3b075b9b31df9a94a3e9214d0e174c96fa37810eba88cd",
+  "reviewer_sha256": "8227f09f9d01609c48ecd60906a064ff67213ef3833f4457f473467913b3bf2d",
+  "GT_opened": false,
+  "new_predictions_opened": false,
+  "limitations": [
+    "post-hoc bins chosen after observing DEV; descriptive, not causal",
+    "empty bins have null means and small bins provide weak evidence",
+    "scores and threshold chosen on the same DEV data; no new quality or equal-compute claim"
+  ],
+  "errors": []
+}

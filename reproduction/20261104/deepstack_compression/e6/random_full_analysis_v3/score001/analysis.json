@@ -1,0 +1,295 @@
+{
+  "status": "completed",
+  "questions": 384,
+  "random_generations": 1152,
+  "tasks": {
+    "DocVQA_VAL": {
+      "questions": 128,
+      "image_groups": 128,
+      "seed_values": [
+        20261104,
+        20261105,
+        20261106
+      ],
+      "arm_mean_pct": {
+        "eadp": 67.84538557047034,
+        "random_20261104": 52.6071598413443,
+        "random_20261105": 56.961813026072086,
+        "random_20261106": 56.72142572993549,
+        "random_three_seed_mean": 55.430132865783946
+      },
+      "arm_ci95_pct": {
+        "eadp": [
+          60.56281627326104,
+          74.97486492913437
+        ],
+        "random_20261104": [
+          44.77513498950236,
+          60.62505961192959
+        ],
+        "random_20261105": [
+          49.34624980655389,
+          64.35095367159649
+        ],
+        "random_20261106": [
+          49.090316928144354,
+          64.27075469747714
+        ],
+        "random_three_seed_mean": [
+          49.51878974293664,
+          61.302829696214545
+        ]
+      },
+      "contrasts_vs_eadp": {
+        "random_20261104": {
+          "difference_pp": -15.238225729126043,
+          "ci95_pp": [
+            -24.794041496621805,
+            -5.564972351687296
+          ]
+        },
+        "random_20261105": {
+          "difference_pp": -10.883572544398255,
+          "ci95_pp": [
+            -19.596903171630053,
+            -2.2121910462912475
+          ]
+        },
+        "random_20261106": {
+          "difference_pp": -11.123959840534852,
+          "ci95_pp": [
+            -19.686039332606295,
+            -2.457536229595238
+          ]
+        },
+        "random_three_seed_mean": {
+          "difference_pp": -12.415252704686395,
+          "ci95_pp": [
+            -19.839222259395694,
+            -4.843582158027534
+          ]
+        }
+      },
+      "bootstrap": {
+        "unit": "image_group",
+        "group_order": "ascending",
+        "weighting": "question",
+        "replicates": 10000,
+        "seed": 20261104,
+        "numpy_version": "2.2.6"
+      },
+      "terminal": {
+        "20261104": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "20261105": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "20261106": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        }
+      }
+    },
+    "TextVQA_VAL": {
+      "questions": 128,
+      "image_groups": 128,
+      "seed_values": [
+        20261104,
+        20261105,
+        20261106
+      ],
+      "arm_mean_pct": {
+        "eadp": 80.78124999999999,
+        "random_20261104": 73.51562499999999,
+        "random_20261105": 72.18749999999999,
+        "random_20261106": 73.43749999999999,
+        "random_three_seed_mean": 73.04687500000001
+      },
+      "arm_ci95_pct": {
+        "eadp": [
+          74.296875,
+          87.03125
+        ],
+        "random_20261104": [
+          66.09374999999999,
+          80.62499999999999
+        ],
+        "random_20261105": [
+          64.68749999999999,
+          79.453125
+        ],
+        "random_20261106": [
+          66.24804687499997,
+          80.39062499999999
+        ],
+        "random_three_seed_mean": [
+          66.77018229166666,
+          79.06249999999999
+        ]
+      },
+      "contrasts_vs_eadp": {
+        "random_20261104": {
+          "difference_pp": -7.265625,
+          "ci95_pp": [
+            -14.0625,
+            -0.9375000000000142
+          ]
+        },
+        "random_20261105": {
+          "difference_pp": -8.59375,
+          "ci95_pp": [
+            -14.609374999999986,
+            -2.968749999999986
+          ]
+        },
+        "random_20261106": {
+          "difference_pp": -7.34375,
+          "ci95_pp": [
+            -14.218749999999986,
+            -0.6249999999999858
+          ]
+        },
+        "random_three_seed_mean": {
+          "difference_pp": -7.734374999999972,
+          "ci95_pp": [
+            -12.916666666666657,
+            -2.708333333333314
+          ]
+        }
+      },
+      "bootstrap": {
+        "unit": "image_group",
+        "group_order": "ascending",
+        "weighting": "question",
+        "replicates": 10000,
+        "seed": 20261104,
+        "numpy_version": "2.2.6"
+      },
+      "terminal": {
+        "20261104": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "20261105": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "20261106": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        }
+      }
+    },
+    "AI2D_TEST": {
+      "questions": 128,
+      "image_groups": 128,
+      "seed_values": [
+        20261104,
+        20261105,
+        20261106
+      ],
+      "arm_mean_pct": {
+        "eadp": 82.03125,
+        "random_20261104": 72.65625,
+        "random_20261105": 75.78125,
+        "random_20261106": 73.4375,
+        "random_three_seed_mean": 73.95833333333334
+      },
+      "arm_ci95_pct": {
+        "eadp": [
+          75.0,
+          88.28125
+        ],
+        "random_20261104": [
+          64.84375,
+          79.6875
+        ],
+        "random_20261105": [
+          68.75,
+          82.8125
+        ],
+        "random_20261106": [
+          65.625,
+          81.25
+        ],
+        "random_three_seed_mean": [
+          67.18750000000001,
+          80.46875
+        ]
+      },
+      "contrasts_vs_eadp": {
+        "random_20261104": {
+          "difference_pp": -9.375,
+          "ci95_pp": [
+            -15.625,
+            -3.125
+          ]
+        },
+        "random_20261105": {
+          "difference_pp": -6.25,
+          "ci95_pp": [
+            -12.5,
+            -0.78125
+          ]
+        },
+        "random_20261106": {
+          "difference_pp": -8.59375,
+          "ci95_pp": [
+            -14.84375,
+            -2.34375
+          ]
+        },
+        "random_three_seed_mean": {
+          "difference_pp": -8.072916666666657,
+          "ci95_pp": [
+            -13.28125,
+            -3.124999999999986
+          ]
+        }
+      },
+      "bootstrap": {
+        "unit": "image_group",
+        "group_order": "ascending",
+        "weighting": "question",
+        "replicates": 10000,
+        "seed": 20261104,
+        "numpy_version": "2.2.6"
+      },
+      "terminal": {
+        "20261104": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "20261105": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        },
+        "20261106": {
+          "eos": 128,
+          "truncated": 0,
+          "empty": 0
+        }
+      }
+    }
+  },
+  "scores_sha256": "8b23fff6599dd8c5ec25348748f6b8cdee117b91644e8a2ab44a97bd4b73b66f",
+  "plan_sha256": "ab48197e81e53aa53f601d82b58094efaf16dc5836ebfd791b6dac9019efaf15",
+  "limitations": [
+    "posthoc exploratory DEV; intervals uncorrected",
+    "three-seed mean is per question; seed uncertainty is not estimated",
+    "adapter executes discarded author greedy; timings are not comparable",
+    "same K does not establish equal compute",
+    "high-dimensional tensors are archived as fingerprints"
+  ]
+}

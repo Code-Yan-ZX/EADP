@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "jobs": 5940,
+  "window_count": 2,
+  "counts": {
+    "warmup": {
+      "n": 180,
+      "manual_health": 0,
+      "manual_nvml": 0
+    },
+    "measure": {
+      "n": 5760,
+      "manual_health": 4,
+      "manual_nvml": 1
+    }
+  },
+  "time_namespace": "time:[4026531834]",
+  "input_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_full/full_001_verification.json": "b5998317e25511250c595862d06499d44596783bef4712cdd6552078bae0733c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_full/monitor_verify_full001/started.json": "6cfac1bdba27c101bb8e28109787de6b34c7f1399b81738f88b302f461f0fc9e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_full/monitor_verify_full001/terminal.json": "c4d930ec1f9065aedf21c3b6d9a4991e2007425ee0673f3f26d08c2c4ca0b565",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_full/full_001/journal.jsonl": "4fe863b86eddf806fa936692be2a73583c4f59e9934df84f8f3d2ec6288fd736",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency_full/manual_health_windows.jsonl": "0e40b456fef8c4539bdbe8eac53257b27890f4316dfd1e56365382d212c8fa06"
+  },
+  "annotations_sha256": "cf07abc977977c2c03b7996b5d48cb4b444fa16f0d0d1671c6078bb1c0ac497d",
+  "annotator_sha256": "261171c9b754129d8f21445bd9fd6cb6f7d8441a474f50974982be38523944a6",
+  "all_samples_retained": true,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "limitations": [
+    "Manual recorded windows do not include short trailing log writes or residual effects before/after checks.",
+    "About 07:03:30 two short journal/status scans have no precise monotonic bounds and cannot be assigned to individual jobs.",
+    "Other brief project-side stat/ps, small source reads, notes, and remote queries occurred without per-event monotonic bounds; no claim of zero interference.",
+    "Hourly supervisor health windows are separately recorded in formal annotations."
+  ]
+}

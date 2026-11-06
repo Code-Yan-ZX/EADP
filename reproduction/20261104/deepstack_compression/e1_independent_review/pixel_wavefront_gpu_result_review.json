@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "scope": "four-image GPU anchored selector component",
+  "cases": [
+    {
+      "key": "DocVQA_VAL/16539",
+      "selected_count": 568,
+      "ordered_equal": true,
+      "component_wall_ns": {
+        "author": 196864032,
+        "wavefront": 30637651
+      }
+    },
+    {
+      "key": "TextVQA_VAL/39421",
+      "selected_count": 499,
+      "ordered_equal": true,
+      "component_wall_ns": {
+        "wavefront": 29686533,
+        "author": 191830753
+      }
+    },
+    {
+      "key": "AI2D_TEST/368100",
+      "selected_count": 500,
+      "ordered_equal": true,
+      "component_wall_ns": {
+        "author": 193201524,
+        "wavefront": 29970841
+      }
+    },
+    {
+      "key": "DocVQA_VAL/31078",
+      "selected_count": 1,
+      "ordered_equal": true,
+      "component_wall_ns": {
+        "wavefront": 29848376,
+        "author": 184419250
+      }
+    }
+  ],
+  "GT_opened": false,
+  "model_loaded": false,
+  "scoring_performed": false,
+  "container_id": "c28ba591ecef1d046d2aab71be4602e33b950a264ecddd2de0dd5ee33c27d519",
+  "reviewer_sha256": "c8157f05e6ad23eeafc52c662dadffa6d539fe72c94f59ab0d917d8307e415a7",
+  "plan_sha256": "c37a16905c73f5acd64b1f537c74c691c39aed85415aed39bd938c27873b262b",
+  "source_review_sha256": "b484484846f18e3c503463881626d4e0e426dd9e0e1b854e1b3ed406b5767418",
+  "worker_sha256": "77e80a6801b10ccd34aa0782daa4cf6dec8b7b2e20129269e67e53d1707290a2",
+  "progress_sha256": "b5ab4039224d00fcad35b43b697332839ba74c8a5f51a7e523c6a9f87945232f",
+  "complete_sha256": "3684796ce7a74a71fa0259131d7dd078447fa6b94f3a37e1375638f104087b29",
+  "launch_sha256": "ddacfed40c7c47c51a03c2aa829e9b8320bc8dcaf2091476fa36df19cddd0dff",
+  "exit_sha256": "5b311fcf4f99f902c6371540576dd436ae52da8ae73712eadc6a11405d21b031",
+  "started_sha256": "bee89014ad97c90d98491b0bd58509a10d0a345d1b93474f95934adc39453753",
+  "terminal_sha256": "4ccacf76c70f6725b7e917382bc247fa3bbf47ba94a438a38d65f94917c3e698",
+  "host_before_sha256": "722bd1ed22a86f3229a6b1d166174825ed31dfd7586f48d7b5014fc350c2b856",
+  "host_after_sha256": "5643e1c04a2795a6014d6dd41ef3855f47c52640c7be375a09b4ecbf3eb38809",
+  "limitations": [
+    "One measured invocation per arm/image; four post-hoc images, no general speed inference.",
+    "Worker saved elapsed values, not raw start/end timestamps; elapsed values are not independently recomputed.",
+    "Includes selector and synchronization, excludes input preprocessing/transfer and model.",
+    "Host snapshots only before/after; background activity during measurement is unknown.",
+    "Does not establish identity or performance of full-model inference."
+  ]
+}

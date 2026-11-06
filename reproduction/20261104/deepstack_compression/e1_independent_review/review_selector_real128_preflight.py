@@ -1,0 +1,17 @@
+"""Independent source/CPU review permitting only no-GPU 96-image preflight."""
+import argparse,collections,json,sys
+from pathlib import Path
+B=Path(__file__).resolve().parent.parent;D=B/'e5/selector_real128';R=B/'e1_independent_review';sys.path.insert(0,str(D));from admission import prior,sources
+from expansion_contract import load_manifest
+from panel_reference import get_records
+from identity_gate import sha
+p=argparse.ArgumentParser();p.add_argument('--out',required=True,type=Path);a=p.parse_args();assert a.out.resolve()==D/'independent_preflight_review.json'
+def read(p):return json.loads(p.read_text())
+def term(mon):
+ s=read(mon/'started.json');t=read(mon/'terminal.json');assert t['reason']=='completed' and t['worker_returncode']==0 and t['remaining_process_group']==[] and s['worker_pid']==t['worker_pid'];return s
+s=term(D/'monitor_cpu001');assert (Path(s['cwd'])/s['command'][1]).resolve()==D/'cpu_validation.py' and '--out' in s['command'] and (Path(s['cwd'])/s['command'][s['command'].index('--out')+1]).resolve()==D/'cpu_check001';term(R/'monitor_selector_real128_cpu_tests');assert 'Ran 21 tests' in (R/'monitor_selector_real128_cpu_tests/stderr.log').read_text()
+source={str(x.resolve()):sha(x) for x in sources()};cpu=read(D/'cpu_check001/verification.json');assert cpu['status']=='passed' and cpu['source_sha256_before']==cpu['source_sha256_after']==source and cpu['GT_opened'] is False and cpu['predictions_opened'] is False and cpu['gpu_used'] is False and cpu['model_loaded'] is False
+m,remaining=load_manifest(B/'e5/selector_real32/sample_manifest_001.json');assert len(remaining)==96 and len(m['pilot'])==32 and len(m['full_128'])==128 and len({x['group_id'] for x in remaining})==96 and not ({x['group_id'] for x in remaining}&{x['group_id'] for x in m['pilot']}) and len({x['group_id'] for x in m['full_128']})==128
+identity=prior(host=True);records=get_records(remaining,identity['e4']);assert len(records)==288 and set(records)=={(x['task'],str(x['qid']),k) for x in remaining for k in (128,256,512)}
+plan=read(D/'budget_plan.json');assert plan['images']==96 and plan['cases']==288 and plan['budgets']==[128,256,512] and plan['inner_timeout_seconds']==3600 and plan['outer_timeout_seconds']==3720 and plan['stale_seconds']==1200 and plan['GT_opened'] is False and plan['scoring_performed'] is False
+r={'status':'passed','independent_review':True,'preflight_only':True,'reviewer_sha256':sha(__file__),'source_sha256':source,'cpu_sha256':sha(D/'cpu_check001/verification.json'),'cpu_started_sha256':sha(D/'monitor_cpu001/started.json'),'cpu_terminal_sha256':sha(D/'monitor_cpu001/terminal.json'),'GT_opened':False,'prior_identity':identity,'independent_tests_terminal_sha256':sha(R/'monitor_selector_real128_cpu_tests/terminal.json'),'images':96,'cases':288,'task_counts':dict(collections.Counter(x['task'] for x in remaining)),'predictions_opened':True,'prediction_scope':'existing accepted E4 DEV mixed records only for selector/input identity','limitations':['only no-GPU worker preflight authorized; final review and root scheduling required for GPU','96-image expansion chosen after 32-image observed pilot; not independent 128-image validation','E4 records preserve summaries/hashes rather than full tensors','timing requires strict per-case ordered equality and unavailable cases remain in denominator'],'errors':[]};a.out.write_text(json.dumps(r,indent=2)+'\n');print('passed')

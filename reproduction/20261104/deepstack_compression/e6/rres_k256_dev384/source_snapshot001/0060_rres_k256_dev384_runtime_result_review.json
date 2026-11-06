@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "preflight_only": true,
+  "GPU_authorized": false,
+  "GT_opened": false,
+  "existing_DEV_predictions_opened": true,
+  "model_loaded": false,
+  "cuda_initialized": false,
+  "errors": [],
+  "plan_sha256": "d53e6bbae60b96ed856bb98565b3aa8fac2adc5a99ca2fae962d08f9e1d1710e",
+  "worker_preflight_sha256": "99f3d0008434a5139295872e3b2e43c518dd48175205e12af6963672a85b78ba",
+  "launch_sha256": "0ece90d42856567367bfcdb576b8f8d1a7652adf86b1f8313e2a3e4fe04071d9",
+  "identity_sha256": "22dfb341a38016e068000400f5563afee235092904bedd37a61eea2b02289e21",
+  "exit_sha256": "0922623fda005be7bbae937f6210d160da86f2102c64b7c3fb8784fd63e63677",
+  "started_sha256": "0a60f65527f715d2d64083eb844333ecbb650791edbb20678034f7fd4ebfa26a",
+  "terminal_sha256": "68c149278a52773e51925a0e856cf0b496f8268bf7d5974e5fca0ebe56d8270e",
+  "preflight_review_sha256": "a886012145104c6621bb1cdaedff4e282e4d646ed51123fe39c3bd3900819aa1",
+  "reviewer_sha256": "b3edae498864f5cb1d38e3557b8246f6a23ac9f7679c40ca3e1740985af2ce17",
+  "scope": "actual no-device worker/module imports; no model or GPU authorization",
+  "limitations": [
+    "worker dependency imports do not execute the actual model or generate",
+    "accepted DEV source artifacts hashed/parsed only for identity"
+  ]
+}

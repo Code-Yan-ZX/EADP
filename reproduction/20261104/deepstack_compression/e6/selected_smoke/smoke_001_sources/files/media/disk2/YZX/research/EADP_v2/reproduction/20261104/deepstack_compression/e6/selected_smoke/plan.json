@@ -1,0 +1,55 @@
+{
+  "purpose": "Div/CD stock selector and P3/DS adapter diagnostic; no GT or scoring",
+  "anchors": [
+    {
+      "task": "DocVQA_VAL",
+      "qid": "63709",
+      "group_id": "dd3c0ab5edc067ad04920cd66ea639ec85529b0ad6b6d25be7d423591bd59c80",
+      "message_sha256": "3d2636338b6f3c75bdc977a06f98d10c1b739cf73826caa471fd9aa1d0c3bb71",
+      "image_sha256": "0eba9d3a112a7c067a528a4f4888fa960646f526d2701accf85962a95f92970b"
+    },
+    {
+      "task": "TextVQA_VAL",
+      "qid": "39033",
+      "group_id": "89f88eeeb1203ac87118ee7bac7e0787f64d96c062754f7585dc3e8bc871769c",
+      "message_sha256": "c9d65da2d598e7bcab6b2aa4ce302e78d1920c1fa950356e5e97e6c9d5c24252",
+      "image_sha256": "c876e0657fe696d35fc6449d2b064c0cac5522e51a4957b0e378ea0fba0e9daf"
+    },
+    {
+      "task": "AI2D_TEST",
+      "qid": "11001",
+      "group_id": "42019cbf10b6b548874bff6208551de61943b12f913e160294a008f5e56631a1",
+      "message_sha256": "a46263f3e82975b9c718fd3c40efd15da530e2c813e561119df2605b0f4f55f1",
+      "image_sha256": "ccc7c3664e5f71b23731d1a828726da4026e87a44203dde91ebb178f43e4b00e"
+    }
+  ],
+  "methods": [
+    "div",
+    "cd"
+  ],
+  "natural_generations": 12,
+  "forced_generations": 4,
+  "fixed_prefix_task": "DocVQA_VAL",
+  "fixed_decode_steps": 32,
+  "max_natural_tokens": 2048,
+  "stock_vs_adapter": "processor, visual streams, author-selected rows and generation scalars; no cross-position output identity claim",
+  "inner_timeout_seconds": 7200,
+  "outer_timeout_seconds": 7380,
+  "progress_stale_seconds": 1800,
+  "poll_seconds": 15,
+  "grace_seconds": 90,
+  "snapshot_seconds": 3600,
+  "minimum_free_bytes": 32212254720,
+  "budget_end_unix": 1794065414,
+  "budget_source_sha256": "2a11cfcc2dc9404eac218f1f727e39508a687a73e0343101ae564be3e99c30e6",
+  "inputs_sha256": "f3fef75929f88fa21b96458337030c47f2b7afaa596f540879afddd72847f59d",
+  "upstream_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_native/native_001/frozen.json": "c8e67db1517142dc71e5f34595f348a3a4d6956418bfffb804a01ea1b40a7c8c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_native/native_001_verification.json": "2d10caff1f9ab03915f4307f3b9c9129453d3198a5dbc99cdfa8fb112fc938c3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/e4native001_review.json": "4c0ef5c1fccdbbada28f58a42eea3060260a7302e71328423139b9058cbddf95",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_e4native001/terminal.json": "71d4644b5592bd229cbf8e16a27a59bcc83ca4aa410de8118340aa7468f516be",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1/e1full001_completion.json": "95981ce2400d7467ba93d3177275a0860a656fc8558080c243040663e40a52fb"
+  },
+  "gt_read": false,
+  "gpu_authorized": false
+}

@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "plan_sha256": "cd8029189dae340f7ef8c9585cddfa5648de8ff143d4edae1af9b15328f977f2",
+  "preflight_sha256": "747b330d12cf37d692835bbb8cf7520130bc5fe888578ce6fa9be4cd4b1f4deb",
+  "preflight_started_sha256": "0682ef12dc13619ab6a0cefeefe750184a6a09380353a2bb61e087f6f1e009ad",
+  "preflight_terminal_sha256": "d5494d3c39b4d6139158077c4c92e2109159e445219cdb6725348cc125d36fa4",
+  "preflight_exit_sha256": "c8e0b5d9433889f661fc64fa631e1cb268b4f1ab575187e81825ad263c4bc82c",
+  "reviewer_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/review_zip_full_v2_prelaunch.py",
+  "reviewer_sha256": "b458bad21f54a70b7b350988455e79bf617beaa87d15f033edc9df43246f73ab",
+  "review_started_sha256": "b67d7957dd342bd5578455cf7b4a7c59aef38257a8b34689f341976e3e4b195c",
+  "review_terminal_path": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e1_independent_review/monitor_zip_full_v2_prelaunch002/terminal.json",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "gpu_authorized": "subject to root scheduling",
+  "cpu_tests": 11,
+  "source_files": 100,
+  "questions": 384,
+  "planned_natural_arms": 768,
+  "scope": "full DEV panel prelaunch; no model/GPU execution yet",
+  "limitations": [
+    "enabled arms use local RoPE-state repair; user-text selection includes instructions/options",
+    "per-step cache count is global or first layer; final cache records per-layer shapes without contents",
+    "accepted E1 DEV mixed prediction journal is parsed for processor identity and six recorded generation scalars plus EOS, no GT or scoring",
+    "other generation config values are recorded but E1 equality is not claimed",
+    "run exit0 and attempts_recorded alone do not prove every arm succeeded; separate complete formal and independent verification is required before scoring",
+    "no accuracy, throughput or equal-compute claim before later verified scoring",
+    "preflight rehashed four weights; this review verifies recorded stat, not payload again"
+  ],
+  "errors": []
+}

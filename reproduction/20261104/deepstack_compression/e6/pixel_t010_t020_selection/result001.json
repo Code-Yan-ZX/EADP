@@ -1,0 +1,60 @@
+{
+  "status": "completed",
+  "plan_sha256": "8c475948da422b3aff34e10437ad1e7bf6ace7852915332a7f3edde52e895516",
+  "script_sha256": "22d71b232c987ca04ffcdbfc3d4af24f66c60c1b3151c65b8e30d35f89a8a448",
+  "GT_opened": false,
+  "scoring_performed": false,
+  "mixed_prediction_files_opened": true,
+  "results": {
+    "DocVQA_VAL": {
+      "questions": 128,
+      "k010_minus_k020_min_median_max": [
+        0,
+        27.0,
+        267
+      ],
+      "k010_less_than_k020": 0,
+      "t020_not_subset_of_t010": 63,
+      "jaccard_min_median_max": [
+        0.6275510204081632,
+        0.9511264552235242,
+        1.0
+      ]
+    },
+    "TextVQA_VAL": {
+      "questions": 128,
+      "k010_minus_k020_min_median_max": [
+        2,
+        83.0,
+        471
+      ],
+      "k010_less_than_k020": 0,
+      "t020_not_subset_of_t010": 113,
+      "jaccard_min_median_max": [
+        0.2952522255192878,
+        0.8385286879880353,
+        0.9961089494163424
+      ]
+    },
+    "AI2D_TEST": {
+      "questions": 128,
+      "k010_minus_k020_min_median_max": [
+        -2,
+        9.0,
+        189
+      ],
+      "k010_less_than_k020": 1,
+      "t020_not_subset_of_t010": 65,
+      "jaccard_min_median_max": [
+        0.7140825035561877,
+        0.9739573770954849,
+        1.0
+      ]
+    }
+  },
+  "limitations": [
+    "thresholds chosen after prior DEV quality",
+    "mixed observation JSON files contain predictions but only identifiers and selected indices are analyzed",
+    "overlap does not establish causal effect, compute, latency or generalization"
+  ]
+}

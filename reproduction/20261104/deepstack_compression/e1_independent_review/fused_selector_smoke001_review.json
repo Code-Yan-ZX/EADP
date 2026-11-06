@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "synthetic_cases": 4,
+  "selection_count": 256,
+  "measurements": 10,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/fused_selector/run_smoke001/observations/started.json": "3028f04b43450158e02eb2fef3e4ca011584d776d1384f3b3861b3634571060a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/fused_selector/run_smoke001/observations/identity.json": "8c90a90aa15c4cd81cc8fb0d2d0e0e91f6295e79306f0d575b91df15df218841",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/fused_selector/run_smoke001/observations/synthetic_identity.json": "2bba912604ba04c7c13f9822bc0c4483f82f0fedc51b04aefbcdb933c5b3fabc",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/fused_selector/run_smoke001/observations/worker_complete.json": "77228e01b87b924762f9b0ecef673fb593e6e14875965bccf5be22e56bde3282",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/fused_selector/run_smoke001/observations/measurements.jsonl": "ce023d3bdc2f1d114884a97e6a907baa692614b8859d73eaefc5da24c3d7ec39",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/fused_selector/run_smoke001/observations/progress.jsonl": "7c89dfb2eb55ee6ea160e65cdb576e22a51d4d61beb9354d66dfd5eb75f68d8b",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/fused_selector/run_smoke001/launch.json": "8df56d9173ae654f7a05281372ca0d6f8f3b98a2449416f3cfcceb076300b20e",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/fused_selector/run_smoke001/exit.json": "89f4f6b30830aba4ba196f3552c06e55383c91ae3f8481e110f1f59f5b9af0c1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/fused_selector/monitor_smoke001/started.json": "cf28d3c17153dd9a09ff7bd5dcc6da7596734852bb180aae5e52f55ede9fce2d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e5/fused_selector/monitor_smoke001/terminal.json": "fa9a77511e7d22503e1c97ae8f64183288dc8dbcc63840d9149419d969d6bed3"
+  },
+  "reviewer_sha256": "8bacda201a809ebe547abd6ce7dc38372eaf90b5cfccc96606648ddfcf98a6d2",
+  "limitations": [
+    "one fixed CPU-reconstructed numeric input",
+    "selection outputs were recorded, per-round gains and random matrices not separately archived",
+    "GPU events include scheduling and kernel launches, not model end-to-end",
+    "Triton and PyTorch reductions may differ on other inputs or near ties"
+  ],
+  "errors": []
+}

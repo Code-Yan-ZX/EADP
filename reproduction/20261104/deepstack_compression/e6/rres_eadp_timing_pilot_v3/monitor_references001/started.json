@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-11-06T05:15:37.512529+00:00",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "-c",
+    "import sys;sys.path.insert(0,\"e6/rres_eadp_timing_pilot_v3\");import reference_inputs;r=reference_inputs.load();print(\"rows\",len(r[\"rows\"]),\"references\",len(r[\"references\"]),\"GT\",r[\"GT_opened\"])"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression",
+  "timeout_seconds": 300.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 3600,
+  "poll_seconds": 15,
+  "grace_seconds": 20,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/rres_eadp_timing_pilot_v3/monitor_references001"
+  ],
+  "worker_pid": 3275506,
+  "process_group": 3275506
+}

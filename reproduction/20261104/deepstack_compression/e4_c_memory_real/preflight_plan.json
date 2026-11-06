@@ -1,0 +1,17 @@
+{
+  "scope": "complete no-GPU controller and real worker CPU preparation",
+  "gpu_authorized": false,
+  "stage": "smoke",
+  "inner_timeout_seconds": 1800,
+  "outer_timeout_seconds": 2100,
+  "grace_seconds": 120,
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "monitor/supervise.py", "--run-dir", "e4_c_memory_real/monitor_preflight001",
+    "--timeout", "2100", "--snapshot-seconds", "3600", "--poll-seconds", "5",
+    "--grace-seconds", "120", "--",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "e4_c_memory_real/preflight_launch.py", "--run-id", "001"
+  ],
+  "limits": "No Docker GPU devices, CUDA_VISIBLE_DEVICES empty, no model or new predictions. Existing accepted E1 DEV prediction journal is parsed solely for input identity; no GT is opened. This does not authorize or test actual GPU sampling."
+}

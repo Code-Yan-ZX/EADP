@@ -1,0 +1,940 @@
+USER         PID %CPU %MEM STAT     ELAPSED COMMAND
+root     1137242  444  1.9 Ssl        00:07 java -jar -Duser.timezone=Asia/Shanghai etl-0.0.55.jar
+root     1136961  113  1.0 Ssl        00:16 java -jar /authority-manage.jar --spring.config.location=/config/application-dev.yml
+root     1134303 23.4  2.1 Ssl        02:23 java -jar -Xms4g -Xmx4g -Duser.timezone=Asia/Shanghai metadata.jar
+dell      644505 21.2  0.6 SLl  161-18:19:28 /usr/lib/x86_64-linux-gnu/webkit2gtk-4.0/WebKitWebProcess 13 258
+root     1134736  5.1  0.1 Sl+        02:10 python3 manage.py migrate
+root       28844  3.6  0.0 Sl+  161-20:36:12 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+dell      568578  3.3  0.0 Sl   44-14:01:34 /opt/todesk/bin/ToDesk
+dell       29603  2.7  0.3 Ssl  161-20:36:08 /usr/bin/gnome-shell
+root     1650080  2.7  0.5 Ssl  44-05:06:56 /opt/todesk/bin/ToDesk_Service
+dell      644302  2.4  3.2 Sl   161-18:19:28 clash-verge
+dell     1339591  1.2  0.2 Sl+  35-16:21:51 claude --resume 99583d4e-1d56-4d7b-98ad-ca87a5d1b096 --fork-session
+dell       29926  1.1  0.1 Sl   161-20:36:07 /usr/local/sunlogin/bin/sunloginclient --cmd=autorun
+root         310  1.0  0.0 S    161-20:42:08 [kcompactd0]
+root         311  1.0  0.0 S    161-20:42:08 [kcompactd1]
+sues      689122  0.9  0.5 Sl   109-16:11:15 /usr/lib/firefox/firefox -new-window
+root        1842  0.8  0.1 Ssl  161-20:41:54 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+dell     2379011  0.8  0.4 Sl+  50-21:09:10 claude --dangerously-skip-permissions
+dell     1969737  0.7  0.1 Sl   17-14:56:54 /usr/share/code/code --type=gpu-process --crashpad-handler-pid=40869 --enable-crash-reporter=7f949d25-38a2-4111-b813-2d480742ca80,no_channel --user-data-dir=/home/dell/.config/Code --gpu-preferences=UAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAABgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAABAAAAAAAAAAEAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAA --shared-files --field-trial-handle=3,i,6279710107610535031,262444284252352596,262144 --disable-features=CalculateNativeWinOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess --variations-seed-version
+root        1430  0.6  0.0 Sl   161-20:41:58 /usr/local/sunlogin/bin/sunloginclient --mod=service
+dell     2498564  0.6  0.2 Sl+  50-19:26:39 claude -r
+dell     3859745  0.6  0.3 Sl+  55-01:48:22 claude --dangerously-skip-permissions
+dell      295607  0.5  0.5 Sl+  28-10:49:22 claude --dangerously-skip-permissions
+sues     3679920  0.5  0.0 Sl   110-02:34:25 /opt/todesk/bin/ToDesk
+dell     1295498  0.4  0.4 SNsl+ 35-16:54:30 /usr/local/lib/node_modules/@anthropic-ai/claude-code-linux-x64/claude --session-id 99583d4e-1d56-4d7b-98ad-ca87a5d1b096 --fork-session --resume /home/dell/.claude/projects/-media-disk2-YZX-research-EADP/60a6a963-e824-4df5-be6f-ea37dd493337.jsonl --permission-mode bypassPermissions
+root         809  0.3  0.0 Ss   161-20:42:06 /lib/systemd/systemd-udevd
+message+    1326  0.3  0.0 Ss   161-20:41:58 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root        1451  0.3  0.0 Ssl  161-20:41:58 /usr/bin/containerd
+gdm         1809  0.3  0.1 Sl+  161-20:41:55 /usr/bin/gnome-shell
+dell       29742  0.3  0.0 Ssl  161-20:36:07 /usr/libexec/gvfs-udisks2-volume-monitor
+dell       79325  0.3  0.0 Ssl  161-20:25:50 /usr/libexec/gnome-terminal-server
+dell      562394  0.3  0.0 Sl   44-14:07:29 /usr/local/sunlogin/bin/sunloginclient_desktop --mod=desktopagent --port=16067 --agentid=49
+sues      689391  0.3  0.1 Sl   109-16:11:13 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 37346 -prefMapHandle 1 -prefMapSize 263874 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {e10f04aa-a5e6-42e9-af33-80fb295e7ee9} -parentPid 689122 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 8 tab
+dell     1392539  0.3  0.9 Sl   27-22:37:58 codex -c features.code_mode_host=true app-server --listen unix://
+dell     3534647  0.3  0.4 Sl+  90-18:54:35 claude -c --dangerously-skip-permissions
+sues     3675078  0.3  0.1 Ssl  110-02:37:36 /usr/bin/gnome-shell
+sues     3675171  0.3  0.0 Ssl  110-02:37:35 /usr/libexec/gvfs-udisks2-volume-monitor
+root           1  0.2  0.0 Ss   161-20:42:09 /sbin/init splash
+root        1327  0.2  0.0 Ssl  161-20:41:58 /usr/sbin/NetworkManager --no-daemon
+gdm         1572  0.2  0.0 Ss   161-20:41:57 /lib/systemd/systemd --user
+mysql       1595  0.2  0.0 Ssl  161-20:41:57 /usr/sbin/mysqld
+dell       28802  0.2  0.0 Ss   161-20:36:12 /lib/systemd/systemd --user
+dell      820059  0.2  1.2 SLl+ 46-19:33:30 /opt/baidunetdisk/baidunetdisk
+root     2655849  0.2  0.0 Ssl  86-05:02:26 /usr/sbin/tailscaled --state=/var/lib/tailscale/tailscaled.state --socket=/run/tailscale/tailscaled.sock
+yanzhen+ 3301013  0.2  0.0 Ss   90-22:26:30 /lib/systemd/systemd --user
+sues     3667831  0.2  0.0 Ss   110-02:43:11 /lib/systemd/systemd --user
+root         756  0.1  0.1 S<s  161-20:42:06 /lib/systemd/systemd-journald
+gdm         2120  0.1  0.0 Sl+  161-20:41:52 /usr/libexec/gsd-housekeeping
+dell       29845  0.1  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-housekeeping
+dell       40793  0.1  0.0 SLl  161-20:34:13 /usr/share/code/code
+dell       41236  0.1  0.0 Sl   161-20:34:10 /usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=zh-CN --service-sandbox-type=none --crashpad-handler-pid=40869 --enable-crash-reporter=7f949d25-38a2-4111-b813-2d480742ca80,no_channel --user-data-dir=/home/dell/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,6279710107610535031,262444284252352596,262144 --disable-features=CalculateNativeWinOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess --variations-seed-version
+root      644784  0.1  0.0 Sl   161-18:19:27 /usr/bin/verge-mihomo -d /home/dell/.local/share/io.github.clash-verge-rev.clash-verge-rev -f /home/dell/.local/share/io.github.clash-verge-rev.clash-verge-rev/clash-verge.yaml
+sues      689371  0.1  0.0 Sl   109-16:11:13 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 37289 -prefMapHandle 1 -prefMapSize 263874 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {626982e8-3e58-47c9-b3f3-9534d46529f5} -parentPid 689122 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 6 tab
+root     1136938  0.1  0.0 Sl         00:16 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 9a017b9661dc1aef6450ebbeb0a65bbf756e16bb6cda31b9a4e4e98c1472c023 -address /run/containerd/containerd.sock
+root     1137218  0.1  0.0 Sl         00:08 /usr/bin/containerd-shim-runc-v2 -namespace moby -id ab69af8e7d8c0f8d812338e0a56c2bc1d203254358262e0cc5cdbea3e2134968 -address /run/containerd/containerd.sock
+dell     1295454  0.1  0.1 Ssl  35-16:54:31 /usr/local/lib/node_modules/@anthropic-ai/claude-code-linux-x64/claude daemon run --origin transient --spawned-by {"label":"claude","cwd":"/media/disk2/YZX/research/EADP/Qwen_vl","pid":865520}
+root     2388126  0.1  0.0 Ssl  35-03:39:59 /usr/lib/snapd/snapd
+yanzhen+ 3307543  0.1  0.1 Sl+  90-22:20:28 claude -r
+sues     3675256  0.1  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-housekeeping
+dell     3863811  0.1  0.0 S    42-23:58:28 ugrep -G --ignore-files --hidden -I --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.hg --exclude-dir=.bzr --exclude-dir=.jj --exclude-dir=.sl -E --line-buffered SMOKE OK|Traceback|Error|max\|dlogits\||decode |prepared|engine built|dataset built|model loaded|G-C
+dell     3869335  0.1  0.0 S    42-23:53:57 ugrep -G --ignore-files --hidden -I --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.hg --exclude-dir=.bzr --exclude-dir=.jj --exclude-dir=.sl -E --line-buffered GATES|^\[G-|^=== |macro |PASS|FAIL|Traceback|^Error|M2_RUN_EXIT|prefill event|\[M2\]|\[saved\]|CORRECTNESS|/150|GATE
+dell     3887622  0.1  0.0 S    42-23:36:33 ugrep -G --ignore-files --hidden -I --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.hg --exclude-dir=.bzr --exclude-dir=.jj --exclude-dir=.sl -E --line-buffered GATES|^\[G-|^=== |macro |PASS|FAIL|Traceback|^Error|M2_RUN_EXIT|prefill event|\[M2\]|\[saved\]|CORRECTNESS|/150|astype
+dell     3903607  0.1  0.0 S    42-23:22:22 ugrep -G --ignore-files --hidden -I --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.hg --exclude-dir=.bzr --exclude-dir=.jj --exclude-dir=.sl -E --line-buffered ^\[G-|GATES|Traceback|^Error|CORRECTNESS
+dell     3908618  0.1  0.0 S    42-23:18:27 ugrep -G --ignore-files --hidden -I --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.hg --exclude-dir=.bzr --exclude-dir=.jj --exclude-dir=.sl -E --line-buffered GATES|worst|^=== |macro |Traceback|^TypeError|^AttributeError|M2_RUN_EXIT|CORRECTNESS|\[M2\]|\[saved\]|^  [0-9]+/150|prefill event
+dell     3988021  0.1  0.0 S    42-22:05:12 ugrep -G --ignore-files --hidden -I --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.hg --exclude-dir=.bzr --exclude-dir=.jj --exclude-dir=.sl -E --line-buffered GATES|^=== |macro |Traceback|M2_RUN_EXIT|\[saved\]|CORRECTNESS|^  (25|50|75|100|125|150)/150
+root           2  0.0  0.0 S    161-20:42:09 [kthreadd]
+root           3  0.0  0.0 I<   161-20:42:09 [rcu_gp]
+root           4  0.0  0.0 I<   161-20:42:09 [rcu_par_gp]
+root           5  0.0  0.0 I<   161-20:42:09 [slub_flushwq]
+root           6  0.0  0.0 I<   161-20:42:09 [netns]
+root           8  0.0  0.0 I<   161-20:42:09 [kworker/0:0H-events_highpri]
+root          11  0.0  0.0 I<   161-20:42:09 [mm_percpu_wq]
+root          12  0.0  0.0 S    161-20:42:09 [rcu_tasks_rude_]
+root          13  0.0  0.0 S    161-20:42:09 [rcu_tasks_trace]
+root          14  0.0  0.0 S    161-20:42:09 [ksoftirqd/0]
+root          15  0.0  0.0 I    161-20:42:09 [rcu_sched]
+root          16  0.0  0.0 S    161-20:42:09 [migration/0]
+root          17  0.0  0.0 S    161-20:42:09 [idle_inject/0]
+root          19  0.0  0.0 S    161-20:42:09 [cpuhp/0]
+root          20  0.0  0.0 S    161-20:42:09 [cpuhp/1]
+root          21  0.0  0.0 S    161-20:42:09 [idle_inject/1]
+root          22  0.0  0.0 S    161-20:42:09 [migration/1]
+root          23  0.0  0.0 S    161-20:42:09 [ksoftirqd/1]
+root          25  0.0  0.0 I<   161-20:42:09 [kworker/1:0H-events_highpri]
+root          27  0.0  0.0 S    161-20:42:09 [cpuhp/2]
+root          28  0.0  0.0 S    161-20:42:09 [idle_inject/2]
+root          29  0.0  0.0 S    161-20:42:09 [migration/2]
+root          30  0.0  0.0 S    161-20:42:09 [ksoftirqd/2]
+root          32  0.0  0.0 I<   161-20:42:09 [kworker/2:0H-events_highpri]
+root          33  0.0  0.0 S    161-20:42:09 [cpuhp/3]
+root          34  0.0  0.0 S    161-20:42:09 [idle_inject/3]
+root          35  0.0  0.0 S    161-20:42:09 [migration/3]
+root          36  0.0  0.0 S    161-20:42:09 [ksoftirqd/3]
+root          38  0.0  0.0 I<   161-20:42:09 [kworker/3:0H-kblockd]
+root          39  0.0  0.0 S    161-20:42:09 [cpuhp/4]
+root          40  0.0  0.0 S    161-20:42:09 [idle_inject/4]
+root          41  0.0  0.0 S    161-20:42:09 [migration/4]
+root          42  0.0  0.0 S    161-20:42:09 [ksoftirqd/4]
+root          44  0.0  0.0 I<   161-20:42:09 [kworker/4:0H-kblockd]
+root          45  0.0  0.0 S    161-20:42:09 [cpuhp/5]
+root          46  0.0  0.0 S    161-20:42:09 [idle_inject/5]
+root          47  0.0  0.0 S    161-20:42:09 [migration/5]
+root          48  0.0  0.0 S    161-20:42:09 [ksoftirqd/5]
+root          50  0.0  0.0 I<   161-20:42:09 [kworker/5:0H-kblockd]
+root          51  0.0  0.0 S    161-20:42:09 [cpuhp/6]
+root          52  0.0  0.0 S    161-20:42:09 [idle_inject/6]
+root          53  0.0  0.0 S    161-20:42:09 [migration/6]
+root          54  0.0  0.0 S    161-20:42:09 [ksoftirqd/6]
+root          56  0.0  0.0 I<   161-20:42:09 [kworker/6:0H-kblockd]
+root          57  0.0  0.0 S    161-20:42:09 [cpuhp/7]
+root          58  0.0  0.0 S    161-20:42:09 [idle_inject/7]
+root          59  0.0  0.0 S    161-20:42:09 [migration/7]
+root          60  0.0  0.0 S    161-20:42:09 [ksoftirqd/7]
+root          62  0.0  0.0 I<   161-20:42:09 [kworker/7:0H-kblockd]
+root          63  0.0  0.0 S    161-20:42:09 [cpuhp/8]
+root          64  0.0  0.0 S    161-20:42:09 [idle_inject/8]
+root          65  0.0  0.0 S    161-20:42:09 [migration/8]
+root          66  0.0  0.0 S    161-20:42:09 [ksoftirqd/8]
+root          68  0.0  0.0 I<   161-20:42:09 [kworker/8:0H-kblockd]
+root          69  0.0  0.0 S    161-20:42:08 [cpuhp/9]
+root          70  0.0  0.0 S    161-20:42:08 [idle_inject/9]
+root          71  0.0  0.0 S    161-20:42:08 [migration/9]
+root          72  0.0  0.0 S    161-20:42:08 [ksoftirqd/9]
+root          74  0.0  0.0 I<   161-20:42:08 [kworker/9:0H-kblockd]
+root          75  0.0  0.0 S    161-20:42:08 [cpuhp/10]
+root          76  0.0  0.0 S    161-20:42:08 [idle_inject/10]
+root          77  0.0  0.0 S    161-20:42:08 [migration/10]
+root          78  0.0  0.0 S    161-20:42:08 [ksoftirqd/10]
+root          80  0.0  0.0 I<   161-20:42:08 [kworker/10:0H-events_highpri]
+root          81  0.0  0.0 S    161-20:42:08 [cpuhp/11]
+root          82  0.0  0.0 S    161-20:42:08 [idle_inject/11]
+root          83  0.0  0.0 S    161-20:42:08 [migration/11]
+root          84  0.0  0.0 S    161-20:42:08 [ksoftirqd/11]
+root          86  0.0  0.0 I<   161-20:42:08 [kworker/11:0H-events_highpri]
+root          87  0.0  0.0 S    161-20:42:08 [cpuhp/12]
+root          88  0.0  0.0 S    161-20:42:08 [idle_inject/12]
+root          89  0.0  0.0 S    161-20:42:08 [migration/12]
+root          90  0.0  0.0 S    161-20:42:08 [ksoftirqd/12]
+root          92  0.0  0.0 I<   161-20:42:08 [kworker/12:0H-events_highpri]
+root          93  0.0  0.0 S    161-20:42:08 [cpuhp/13]
+root          94  0.0  0.0 S    161-20:42:08 [idle_inject/13]
+root          95  0.0  0.0 S    161-20:42:08 [migration/13]
+root          96  0.0  0.0 S    161-20:42:08 [ksoftirqd/13]
+root          98  0.0  0.0 I<   161-20:42:08 [kworker/13:0H-kblockd]
+root          99  0.0  0.0 S    161-20:42:08 [cpuhp/14]
+root         100  0.0  0.0 S    161-20:42:08 [idle_inject/14]
+root         101  0.0  0.0 S    161-20:42:08 [migration/14]
+root         102  0.0  0.0 S    161-20:42:08 [ksoftirqd/14]
+root         104  0.0  0.0 I<   161-20:42:08 [kworker/14:0H-kblockd]
+root         105  0.0  0.0 S    161-20:42:08 [cpuhp/15]
+root         106  0.0  0.0 S    161-20:42:08 [idle_inject/15]
+root         107  0.0  0.0 S    161-20:42:08 [migration/15]
+root         108  0.0  0.0 S    161-20:42:08 [ksoftirqd/15]
+root         110  0.0  0.0 I<   161-20:42:08 [kworker/15:0H-kblockd]
+root         111  0.0  0.0 S    161-20:42:08 [cpuhp/16]
+root         112  0.0  0.0 S    161-20:42:08 [idle_inject/16]
+root         113  0.0  0.0 S    161-20:42:08 [migration/16]
+root         114  0.0  0.0 S    161-20:42:08 [ksoftirqd/16]
+root         116  0.0  0.0 I<   161-20:42:08 [kworker/16:0H-kblockd]
+root         117  0.0  0.0 S    161-20:42:08 [cpuhp/17]
+root         118  0.0  0.0 S    161-20:42:08 [idle_inject/17]
+root         119  0.0  0.0 S    161-20:42:08 [migration/17]
+root         120  0.0  0.0 S    161-20:42:08 [ksoftirqd/17]
+root         122  0.0  0.0 I<   161-20:42:08 [kworker/17:0H-kblockd]
+root         123  0.0  0.0 S    161-20:42:08 [cpuhp/18]
+root         124  0.0  0.0 S    161-20:42:08 [idle_inject/18]
+root         125  0.0  0.0 S    161-20:42:08 [migration/18]
+root         126  0.0  0.0 S    161-20:42:08 [ksoftirqd/18]
+root         128  0.0  0.0 I<   161-20:42:08 [kworker/18:0H-kblockd]
+root         129  0.0  0.0 S    161-20:42:08 [cpuhp/19]
+root         130  0.0  0.0 S    161-20:42:08 [idle_inject/19]
+root         131  0.0  0.0 S    161-20:42:08 [migration/19]
+root         132  0.0  0.0 S    161-20:42:08 [ksoftirqd/19]
+root         134  0.0  0.0 I<   161-20:42:08 [kworker/19:0H-events_highpri]
+root         135  0.0  0.0 S    161-20:42:08 [cpuhp/20]
+root         136  0.0  0.0 S    161-20:42:08 [idle_inject/20]
+root         137  0.0  0.0 S    161-20:42:08 [migration/20]
+root         138  0.0  0.0 S    161-20:42:08 [ksoftirqd/20]
+root         140  0.0  0.0 I<   161-20:42:08 [kworker/20:0H-events_highpri]
+root         141  0.0  0.0 S    161-20:42:08 [cpuhp/21]
+root         142  0.0  0.0 S    161-20:42:08 [idle_inject/21]
+root         143  0.0  0.0 S    161-20:42:08 [migration/21]
+root         144  0.0  0.0 S    161-20:42:08 [ksoftirqd/21]
+root         146  0.0  0.0 I<   161-20:42:08 [kworker/21:0H-events_highpri]
+root         147  0.0  0.0 S    161-20:42:08 [cpuhp/22]
+root         148  0.0  0.0 S    161-20:42:08 [idle_inject/22]
+root         149  0.0  0.0 S    161-20:42:08 [migration/22]
+root         150  0.0  0.0 S    161-20:42:08 [ksoftirqd/22]
+root         152  0.0  0.0 I<   161-20:42:08 [kworker/22:0H-events_highpri]
+root         153  0.0  0.0 S    161-20:42:08 [cpuhp/23]
+root         154  0.0  0.0 S    161-20:42:08 [idle_inject/23]
+root         155  0.0  0.0 S    161-20:42:08 [migration/23]
+root         156  0.0  0.0 S    161-20:42:08 [ksoftirqd/23]
+root         158  0.0  0.0 I<   161-20:42:08 [kworker/23:0H-kblockd]
+root         159  0.0  0.0 S    161-20:42:08 [cpuhp/24]
+root         160  0.0  0.0 S    161-20:42:08 [idle_inject/24]
+root         161  0.0  0.0 S    161-20:42:08 [migration/24]
+root         162  0.0  0.0 S    161-20:42:08 [ksoftirqd/24]
+root         164  0.0  0.0 I<   161-20:42:08 [kworker/24:0H-events_highpri]
+root         165  0.0  0.0 S    161-20:42:08 [cpuhp/25]
+root         166  0.0  0.0 S    161-20:42:08 [idle_inject/25]
+root         167  0.0  0.0 S    161-20:42:08 [migration/25]
+root         168  0.0  0.0 S    161-20:42:08 [ksoftirqd/25]
+root         170  0.0  0.0 I<   161-20:42:08 [kworker/25:0H-kblockd]
+root         171  0.0  0.0 S    161-20:42:08 [cpuhp/26]
+root         172  0.0  0.0 S    161-20:42:08 [idle_inject/26]
+root         173  0.0  0.0 S    161-20:42:08 [migration/26]
+root         174  0.0  0.0 S    161-20:42:08 [ksoftirqd/26]
+root         176  0.0  0.0 I<   161-20:42:08 [kworker/26:0H-events_highpri]
+root         177  0.0  0.0 S    161-20:42:08 [cpuhp/27]
+root         178  0.0  0.0 S    161-20:42:08 [idle_inject/27]
+root         179  0.0  0.0 S    161-20:42:08 [migration/27]
+root         180  0.0  0.0 S    161-20:42:08 [ksoftirqd/27]
+root         182  0.0  0.0 I<   161-20:42:08 [kworker/27:0H-events_highpri]
+root         183  0.0  0.0 S    161-20:42:08 [cpuhp/28]
+root         184  0.0  0.0 S    161-20:42:08 [idle_inject/28]
+root         185  0.0  0.0 S    161-20:42:08 [migration/28]
+root         186  0.0  0.0 S    161-20:42:08 [ksoftirqd/28]
+root         188  0.0  0.0 I<   161-20:42:08 [kworker/28:0H-events_highpri]
+root         189  0.0  0.0 S    161-20:42:08 [cpuhp/29]
+root         190  0.0  0.0 S    161-20:42:08 [idle_inject/29]
+root         191  0.0  0.0 S    161-20:42:08 [migration/29]
+root         192  0.0  0.0 S    161-20:42:08 [ksoftirqd/29]
+root         194  0.0  0.0 I<   161-20:42:08 [kworker/29:0H-kblockd]
+root         195  0.0  0.0 S    161-20:42:08 [cpuhp/30]
+root         196  0.0  0.0 S    161-20:42:08 [idle_inject/30]
+root         197  0.0  0.0 S    161-20:42:08 [migration/30]
+root         198  0.0  0.0 S    161-20:42:08 [ksoftirqd/30]
+root         200  0.0  0.0 I<   161-20:42:08 [kworker/30:0H-events_highpri]
+root         201  0.0  0.0 S    161-20:42:08 [cpuhp/31]
+root         202  0.0  0.0 S    161-20:42:08 [idle_inject/31]
+root         203  0.0  0.0 S    161-20:42:08 [migration/31]
+root         204  0.0  0.0 S    161-20:42:08 [ksoftirqd/31]
+root         206  0.0  0.0 I<   161-20:42:08 [kworker/31:0H-kblockd]
+root         207  0.0  0.0 S    161-20:42:08 [cpuhp/32]
+root         208  0.0  0.0 S    161-20:42:08 [idle_inject/32]
+root         209  0.0  0.0 S    161-20:42:08 [migration/32]
+root         210  0.0  0.0 S    161-20:42:08 [ksoftirqd/32]
+root         212  0.0  0.0 I<   161-20:42:08 [kworker/32:0H-kblockd]
+root         213  0.0  0.0 S    161-20:42:08 [cpuhp/33]
+root         214  0.0  0.0 S    161-20:42:08 [idle_inject/33]
+root         215  0.0  0.0 S    161-20:42:08 [migration/33]
+root         216  0.0  0.0 S    161-20:42:08 [ksoftirqd/33]
+root         218  0.0  0.0 I<   161-20:42:08 [kworker/33:0H-events_highpri]
+root         219  0.0  0.0 S    161-20:42:08 [cpuhp/34]
+root         220  0.0  0.0 S    161-20:42:08 [idle_inject/34]
+root         221  0.0  0.0 S    161-20:42:08 [migration/34]
+root         222  0.0  0.0 S    161-20:42:08 [ksoftirqd/34]
+root         224  0.0  0.0 I<   161-20:42:08 [kworker/34:0H-events_highpri]
+root         225  0.0  0.0 S    161-20:42:08 [cpuhp/35]
+root         226  0.0  0.0 S    161-20:42:08 [idle_inject/35]
+root         227  0.0  0.0 S    161-20:42:08 [migration/35]
+root         228  0.0  0.0 S    161-20:42:08 [ksoftirqd/35]
+root         230  0.0  0.0 I<   161-20:42:08 [kworker/35:0H-events_highpri]
+root         231  0.0  0.0 S    161-20:42:08 [cpuhp/36]
+root         232  0.0  0.0 S    161-20:42:08 [idle_inject/36]
+root         233  0.0  0.0 S    161-20:42:08 [migration/36]
+root         234  0.0  0.0 S    161-20:42:08 [ksoftirqd/36]
+root         236  0.0  0.0 I<   161-20:42:08 [kworker/36:0H-kblockd]
+root         237  0.0  0.0 S    161-20:42:08 [cpuhp/37]
+root         238  0.0  0.0 S    161-20:42:08 [idle_inject/37]
+root         239  0.0  0.0 S    161-20:42:08 [migration/37]
+root         240  0.0  0.0 S    161-20:42:08 [ksoftirqd/37]
+root         242  0.0  0.0 I<   161-20:42:08 [kworker/37:0H-kblockd]
+root         243  0.0  0.0 S    161-20:42:08 [cpuhp/38]
+root         244  0.0  0.0 S    161-20:42:08 [idle_inject/38]
+root         245  0.0  0.0 S    161-20:42:08 [migration/38]
+root         246  0.0  0.0 S    161-20:42:08 [ksoftirqd/38]
+root         248  0.0  0.0 I<   161-20:42:08 [kworker/38:0H-kblockd]
+root         249  0.0  0.0 S    161-20:42:08 [cpuhp/39]
+root         250  0.0  0.0 S    161-20:42:08 [idle_inject/39]
+root         251  0.0  0.0 S    161-20:42:08 [migration/39]
+root         252  0.0  0.0 S    161-20:42:08 [ksoftirqd/39]
+root         254  0.0  0.0 I<   161-20:42:08 [kworker/39:0H-events_highpri]
+root         255  0.0  0.0 S    161-20:42:08 [cpuhp/40]
+root         256  0.0  0.0 S    161-20:42:08 [idle_inject/40]
+root         257  0.0  0.0 S    161-20:42:08 [migration/40]
+root         258  0.0  0.0 S    161-20:42:08 [ksoftirqd/40]
+root         260  0.0  0.0 I<   161-20:42:08 [kworker/40:0H-events_highpri]
+root         261  0.0  0.0 S    161-20:42:08 [cpuhp/41]
+root         262  0.0  0.0 S    161-20:42:08 [idle_inject/41]
+root         263  0.0  0.0 S    161-20:42:08 [migration/41]
+root         264  0.0  0.0 S    161-20:42:08 [ksoftirqd/41]
+root         266  0.0  0.0 I<   161-20:42:08 [kworker/41:0H-kblockd]
+root         267  0.0  0.0 S    161-20:42:08 [cpuhp/42]
+root         268  0.0  0.0 S    161-20:42:08 [idle_inject/42]
+root         269  0.0  0.0 S    161-20:42:08 [migration/42]
+root         270  0.0  0.0 S    161-20:42:08 [ksoftirqd/42]
+root         272  0.0  0.0 I<   161-20:42:08 [kworker/42:0H-kblockd]
+root         273  0.0  0.0 S    161-20:42:08 [cpuhp/43]
+root         274  0.0  0.0 S    161-20:42:08 [idle_inject/43]
+root         275  0.0  0.0 S    161-20:42:08 [migration/43]
+root         276  0.0  0.0 S    161-20:42:08 [ksoftirqd/43]
+root         278  0.0  0.0 I<   161-20:42:08 [kworker/43:0H-kblockd]
+root         279  0.0  0.0 S    161-20:42:08 [cpuhp/44]
+root         280  0.0  0.0 S    161-20:42:08 [idle_inject/44]
+root         281  0.0  0.0 S    161-20:42:08 [migration/44]
+root         282  0.0  0.0 S    161-20:42:08 [ksoftirqd/44]
+root         284  0.0  0.0 I<   161-20:42:08 [kworker/44:0H-events_highpri]
+root         285  0.0  0.0 S    161-20:42:08 [cpuhp/45]
+root         286  0.0  0.0 S    161-20:42:08 [idle_inject/45]
+root         287  0.0  0.0 S    161-20:42:08 [migration/45]
+root         288  0.0  0.0 S    161-20:42:08 [ksoftirqd/45]
+root         290  0.0  0.0 I<   161-20:42:08 [kworker/45:0H-kblockd]
+root         291  0.0  0.0 S    161-20:42:08 [cpuhp/46]
+root         292  0.0  0.0 S    161-20:42:08 [idle_inject/46]
+root         293  0.0  0.0 S    161-20:42:08 [migration/46]
+root         294  0.0  0.0 S    161-20:42:08 [ksoftirqd/46]
+root         296  0.0  0.0 I<   161-20:42:08 [kworker/46:0H-kblockd]
+root         297  0.0  0.0 S    161-20:42:08 [cpuhp/47]
+root         298  0.0  0.0 S    161-20:42:08 [idle_inject/47]
+root         299  0.0  0.0 S    161-20:42:08 [migration/47]
+root         300  0.0  0.0 S    161-20:42:08 [ksoftirqd/47]
+root         302  0.0  0.0 I<   161-20:42:08 [kworker/47:0H-kblockd]
+root         303  0.0  0.0 S    161-20:42:08 [kdevtmpfs]
+root         304  0.0  0.0 I<   161-20:42:08 [inet_frag_wq]
+root         305  0.0  0.0 S    161-20:42:08 [kauditd]
+root         307  0.0  0.0 S    161-20:42:08 [khungtaskd]
+root         308  0.0  0.0 S    161-20:42:08 [oom_reaper]
+root         309  0.0  0.0 I<   161-20:42:08 [writeback]
+root         312  0.0  0.0 SN   161-20:42:08 [ksmd]
+root         313  0.0  0.0 SN   161-20:42:08 [khugepaged]
+root         361  0.0  0.0 I<   161-20:42:08 [kintegrityd]
+root         362  0.0  0.0 I<   161-20:42:08 [kblockd]
+root         363  0.0  0.0 I<   161-20:42:08 [blkcg_punt_bio]
+root         364  0.0  0.0 I<   161-20:42:07 [tpm_dev_wq]
+root         365  0.0  0.0 I<   161-20:42:07 [ata_sff]
+root         366  0.0  0.0 I<   161-20:42:07 [md]
+root         367  0.0  0.0 I<   161-20:42:07 [edac-poller]
+root         368  0.0  0.0 I<   161-20:42:07 [devfreq_wq]
+root         369  0.0  0.0 S    161-20:42:07 [watchdogd]
+root         372  0.0  0.0 I<   161-20:42:07 [kworker/0:1H-kblockd]
+root         375  0.0  0.0 S    161-20:42:07 [kswapd0]
+root         376  0.0  0.0 S    161-20:42:07 [kswapd1]
+root         377  0.0  0.0 S    161-20:42:07 [ecryptfs-kthrea]
+root         380  0.0  0.0 I<   161-20:42:07 [kthrotld]
+root         382  0.0  0.0 I<   161-20:42:07 [acpi_thermal_pm]
+root         386  0.0  0.0 I<   161-20:42:07 [vfio-irqfd-clea]
+root         388  0.0  0.0 I<   161-20:42:07 [mld]
+root         389  0.0  0.0 I<   161-20:42:07 [kworker/24:1H-kblockd]
+root         390  0.0  0.0 I<   161-20:42:07 [ipv6_addrconf]
+root         400  0.0  0.0 I<   161-20:42:07 [kstrp]
+root         419  0.0  0.0 I<   161-20:42:07 [zswap-shrink]
+root         489  0.0  0.0 I<   161-20:42:07 [kworker/u99:0]
+root         490  0.0  0.0 I<   161-20:42:07 [kworker/u100:0]
+root         491  0.0  0.0 I<   161-20:42:07 [kworker/u101:0]
+root         498  0.0  0.0 I<   161-20:42:07 [charger_manager]
+root         520  0.0  0.0 I<   161-20:42:07 [kworker/2:1H-kblockd]
+root         566  0.0  0.0 I<   161-20:42:07 [kworker/30:1H-kblockd]
+root         577  0.0  0.0 S    161-20:42:07 [scsi_eh_0]
+root         578  0.0  0.0 I<   161-20:42:07 [scsi_tmf_0]
+root         644  0.0  0.0 I<   161-20:42:07 [kworker/39:1H-kblockd]
+root         647  0.0  0.0 S    161-20:42:07 [scsi_eh_1]
+root         648  0.0  0.0 I<   161-20:42:07 [scsi_tmf_1]
+root         649  0.0  0.0 S    161-20:42:07 [scsi_eh_2]
+root         650  0.0  0.0 I<   161-20:42:07 [scsi_tmf_2]
+root         653  0.0  0.0 S    161-20:42:07 [scsi_eh_3]
+root         654  0.0  0.0 I<   161-20:42:07 [scsi_tmf_3]
+root         655  0.0  0.0 S    161-20:42:07 [scsi_eh_4]
+root         656  0.0  0.0 I<   161-20:42:07 [scsi_tmf_4]
+root         657  0.0  0.0 S    161-20:42:07 [scsi_eh_5]
+root         658  0.0  0.0 I<   161-20:42:07 [scsi_tmf_5]
+root         659  0.0  0.0 S    161-20:42:07 [scsi_eh_6]
+root         660  0.0  0.0 I<   161-20:42:07 [scsi_tmf_6]
+root         661  0.0  0.0 S    161-20:42:07 [scsi_eh_7]
+root         662  0.0  0.0 I<   161-20:42:07 [scsi_tmf_7]
+root         663  0.0  0.0 S    161-20:42:07 [scsi_eh_8]
+root         664  0.0  0.0 I<   161-20:42:07 [scsi_tmf_8]
+root         665  0.0  0.0 S    161-20:42:07 [scsi_eh_9]
+root         666  0.0  0.0 I<   161-20:42:07 [scsi_tmf_9]
+root         667  0.0  0.0 S    161-20:42:07 [scsi_eh_10]
+root         668  0.0  0.0 I<   161-20:42:07 [scsi_tmf_10]
+root         675  0.0  0.0 I<   161-20:42:07 [kworker/11:1H-kblockd]
+root         679  0.0  0.0 I<   161-20:42:07 [poll_megasas0_s]
+root         680  0.0  0.0 I<   161-20:42:06 [kworker/4:1H-kblockd]
+root         683  0.0  0.0 I<   161-20:42:06 [kworker/26:1H-kblockd]
+root         684  0.0  0.0 I<   161-20:42:06 [kworker/20:1H-kblockd]
+root         685  0.0  0.0 I<   161-20:42:06 [kworker/12:1H-kblockd]
+root         704  0.0  0.0 I<   161-20:42:06 [kworker/16:1H-kblockd]
+root         705  0.0  0.0 S    161-20:42:06 [jbd2/sda2-8]
+root         706  0.0  0.0 I<   161-20:42:06 [ext4-rsv-conver]
+root         710  0.0  0.0 I<   161-20:42:06 [kworker/44:1H-kblockd]
+root         711  0.0  0.0 I<   161-20:42:06 [kworker/10:1H-kblockd]
+root         713  0.0  0.0 I<   161-20:42:06 [kworker/34:1H-kblockd]
+root         718  0.0  0.0 I<   161-20:42:06 [kworker/46:1H-kblockd]
+root         744  0.0  0.0 I<   161-20:42:06 [kworker/5:1H-kblockd]
+root         745  0.0  0.0 I<   161-20:42:06 [kworker/42:1H-kblockd]
+root         746  0.0  0.0 I<   161-20:42:06 [kworker/9:1H-kblockd]
+root         747  0.0  0.0 I<   161-20:42:06 [kworker/38:1H-kblockd]
+root         748  0.0  0.0 I<   161-20:42:06 [kworker/32:1H-kblockd]
+root         750  0.0  0.0 I<   161-20:42:06 [kworker/41:1H-kblockd]
+root         751  0.0  0.0 I<   161-20:42:06 [kworker/29:1H-kblockd]
+root         773  0.0  0.0 I<   161-20:42:06 [kworker/7:1H-kblockd]
+root         784  0.0  0.0 I<   161-20:42:06 [kworker/43:1H-kblockd]
+root         789  0.0  0.0 I<   161-20:42:06 [kworker/6:1H-kblockd]
+root         791  0.0  0.0 I<   161-20:42:06 [kworker/3:1H-kblockd]
+root         794  0.0  0.0 S    161-20:42:06 bpfilter_umh
+root         799  0.0  0.0 I<   161-20:42:06 [kworker/28:1H-kblockd]
+root         805  0.0  0.0 I<   161-20:42:06 [kworker/1:1H-kblockd]
+root         812  0.0  0.0 I<   161-20:42:06 [kworker/31:1H-kblockd]
+root         822  0.0  0.0 I<   161-20:42:06 [kworker/45:1H-kblockd]
+root         830  0.0  0.0 I<   161-20:42:06 [kworker/40:1H-kblockd]
+root         885  0.0  0.0 I<   161-20:42:05 [kworker/35:1H-kblockd]
+root         912  0.0  0.0 I<   161-20:42:05 [kworker/36:1H-kblockd]
+root         994  0.0  0.0 I<   161-20:42:05 [kworker/13:1H-kblockd]
+root         996  0.0  0.0 I<   161-20:42:05 [kworker/37:1H-kblockd]
+root         997  0.0  0.0 I<   161-20:42:05 [kworker/19:1H-kblockd]
+root         998  0.0  0.0 I<   161-20:42:05 [ipmi-msghandler]
+root         999  0.0  0.0 I<   161-20:42:05 [kworker/47:1H-kblockd]
+root        1000  0.0  0.0 I<   161-20:42:05 [kworker/25:1H-kblockd]
+root        1005  0.0  0.0 I<   161-20:42:05 [kworker/23:1H-kblockd]
+root        1006  0.0  0.0 I<   161-20:42:05 [kworker/17:1H-kblockd]
+root        1010  0.0  0.0 I<   161-20:42:05 [kworker/21:1H-kblockd]
+root        1011  0.0  0.0 I<   161-20:42:05 [kworker/22:1H-kblockd]
+root        1012  0.0  0.0 I<   161-20:42:05 [cryptd]
+root        1014  0.0  0.0 I<   161-20:42:05 [kworker/33:1H-kblockd]
+root        1022  0.0  0.0 I<   161-20:42:05 [kworker/27:1H-kblockd]
+root        1024  0.0  0.0 I<   161-20:42:05 [kworker/15:1H-kblockd]
+root        1096  0.0  0.0 I<   161-20:42:05 [kworker/8:1H-kblockd]
+root        1114  0.0  0.0 I<   161-20:42:05 [kworker/18:1H-kblockd]
+root        1121  0.0  0.0 S    161-20:42:05 [nv_queue]
+root        1122  0.0  0.0 S    161-20:42:05 [nv_queue]
+root        1124  0.0  0.0 S    161-20:42:05 [nv_open_q]
+root        1127  0.0  0.0 I<   161-20:42:05 [nfit]
+root        1130  0.0  0.0 I<   161-20:42:05 [kworker/14:1H-kblockd]
+root        1131  0.0  0.0 S    161-20:42:05 [nvidia-modeset/]
+root        1132  0.0  0.0 S    161-20:42:05 [nvidia-modeset/]
+root        1256  0.0  0.0 S    161-20:41:58 [jbd2/sdb1-8]
+root        1257  0.0  0.0 I<   161-20:41:58 [ext4-rsv-conver]
+root        1259  0.0  0.0 S    161-20:41:58 [jbd2/sdb2-8]
+root        1260  0.0  0.0 I<   161-20:41:58 [ext4-rsv-conver]
+systemd+    1290  0.0  0.0 Ss   161-20:41:58 /lib/systemd/systemd-resolved
+systemd+    1291  0.0  0.0 Ssl  161-20:41:58 /lib/systemd/systemd-timesyncd
+root        1318  0.0  0.0 Ssl  161-20:41:58 /usr/lib/accountsservice/accounts-daemon
+root        1319  0.0  0.0 Ss   161-20:41:58 /usr/sbin/acpid
+avahi       1322  0.0  0.0 Ss   161-20:41:58 avahi-daemon: running [dell-PowerEdge-R750.local]
+root        1323  0.0  0.0 Ss   161-20:41:58 /usr/sbin/cron -f
+root        1334  0.0  0.0 Ssl  161-20:41:58 /usr/sbin/irqbalance --foreground
+root        1335  0.0  0.0 Ss   161-20:41:58 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root        1342  0.0  0.0 Ssl  161-20:41:58 /usr/lib/policykit-1/polkitd --no-debug
+syslog      1346  0.0  0.0 Ssl  161-20:41:58 /usr/sbin/rsyslogd -n -iNONE
+root        1349  0.0  0.0 Ssl  161-20:41:58 /usr/local/sunlogin/bin/oray_rundaemon -m server
+root        1366  0.0  0.0 Ssl  161-20:41:58 /usr/libexec/switcheroo-control
+root        1368  0.0  0.0 Ss   161-20:41:58 /lib/systemd/systemd-logind
+root        1371  0.0  0.0 Ssl  161-20:41:58 /usr/lib/udisks2/udisksd
+root        1372  0.0  0.0 Ss   161-20:41:58 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+avahi       1380  0.0  0.0 S    161-20:41:58 avahi-daemon: chroot helper
+root        1439  0.0  0.0 Ssl  161-20:41:58 /usr/sbin/ModemManager
+root        1450  0.0  0.0 Ssl  161-20:41:58 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root        1470  0.0  0.0 Ssl  161-20:41:58 /usr/sbin/gdm3
+root        1471  0.0  0.0 Ss   161-20:41:58 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root        1497  0.0  0.0 Sl   161-20:41:58 gdm-session-worker [pam/gdm-launch-environment]
+root        1515  0.0  0.0 Ss   161-20:41:58 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+www-data    1516  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1517  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1518  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1519  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1520  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1521  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1522  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1523  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1524  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1525  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1526  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1527  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1528  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1529  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1530  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1531  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1532  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1533  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1534  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1535  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1536  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1537  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1538  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1539  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1540  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1541  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1542  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1543  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1544  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1545  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1546  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1547  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1548  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1549  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1550  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1551  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1552  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1553  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1554  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1555  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1556  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1557  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1558  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1559  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1560  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1561  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1562  0.0  0.0 S    161-20:41:58 nginx: worker process
+www-data    1563  0.0  0.0 S    161-20:41:58 nginx: worker process
+gdm         1573  0.0  0.0 S    161-20:41:57 (sd-pam)
+gdm         1580  0.0  0.0 Ssl  161-20:41:57 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+gdm         1581  0.0  0.0 Ssl+ 161-20:41:57 /usr/lib/gdm3/gdm-x-session dbus-run-session -- gnome-session --autostart /usr/share/gdm/greeter/autostart
+root        1589  0.0  0.0 Sl+  161-20:41:57 /usr/lib/xorg/Xorg vt1 -displayfd 3 -auth /run/user/126/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+rtkit       1604  0.0  0.0 SNsl 161-20:41:57 /usr/libexec/rtkit-daemon
+gdm         1625  0.0  0.0 Ss   161-20:41:57 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root        1629  0.0  0.0 S    161-20:41:57 [irq/204-nvidia]
+root        1630  0.0  0.0 S    161-20:41:57 [irq/205-nvidia]
+root        1631  0.0  0.0 S    161-20:41:57 [irq/206-nvidia]
+root        1632  0.0  0.0 S    161-20:41:57 [irq/207-nvidia]
+root        1633  0.0  0.0 S    161-20:41:57 [irq/208-nvidia]
+root        1634  0.0  0.0 S    161-20:41:57 [irq/209-nvidia]
+root        1635  0.0  0.0 S    161-20:41:57 [nvidia]
+root        1636  0.0  0.0 S    161-20:41:57 [nv_queue]
+gdm         1762  0.0  0.0 S+   161-20:41:55 dbus-run-session -- gnome-session --autostart /usr/share/gdm/greeter/autostart
+gdm         1763  0.0  0.0 S+   161-20:41:55 dbus-daemon --nofork --print-address 4 --session
+gdm         1764  0.0  0.0 Sl+  161-20:41:55 /usr/libexec/gnome-session-binary --systemd --autostart /usr/share/gdm/greeter/autostart
+gdm         1767  0.0  0.0 Sl+  161-20:41:55 /usr/libexec/at-spi-bus-launcher
+gdm         1772  0.0  0.0 S+   161-20:41:55 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+root        1836  0.0  0.0 Ssl  161-20:41:54 /usr/lib/clash-verge/resources/clash-verge-service
+whoopsie    1885  0.0  0.0 Ssl  161-20:41:54 /usr/bin/whoopsie -f
+kernoops    1893  0.0  0.0 Ss   161-20:41:54 /usr/sbin/kerneloops --test
+kernoops    1895  0.0  0.0 Ss   161-20:41:54 /usr/sbin/kerneloops
+gdm         1976  0.0  0.0 Sl   161-20:41:53 ibus-daemon --panel disable --xim
+gdm         1979  0.0  0.0 Sl   161-20:41:53 /usr/libexec/ibus-dconf
+gdm         1982  0.0  0.0 Sl   161-20:41:53 /usr/libexec/ibus-x11 --kill-daemon
+gdm         1987  0.0  0.0 Sl+  161-20:41:53 /usr/libexec/ibus-portal
+gdm         1995  0.0  0.0 Sl+  161-20:41:53 /usr/libexec/at-spi2-registryd --use-gnome-session
+gdm         2047  0.0  0.0 Sl+  161-20:41:53 /usr/libexec/xdg-permission-store
+root        2053  0.0  0.0 Ssl  161-20:41:53 /usr/lib/upower/upowerd
+gdm         2068  0.0  0.0 Sl+  161-20:41:53 /usr/libexec/dconf-service
+gdm         2081  0.0  0.0 Sl+  161-20:41:53 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+gdm         2092  0.0  0.0 Sl+  161-20:41:52 /usr/libexec/gsd-sharing
+gdm         2094  0.0  0.0 Sl+  161-20:41:52 /usr/libexec/gsd-wacom
+gdm         2095  0.0  0.0 Sl+  161-20:41:52 /usr/libexec/gsd-color
+gdm         2096  0.0  0.0 Sl+  161-20:41:52 /usr/libexec/gsd-keyboard
+gdm         2097  0.0  0.0 Sl+  161-20:41:52 /usr/libexec/gsd-print-notifications
+gdm         2098  0.0  0.0 Sl+  161-20:41:52 /usr/libexec/gsd-rfkill
+gdm         2099  0.0  0.0 Sl   161-20:41:52 /usr/libexec/ibus-engine-simple
+gdm         2100  0.0  0.0 Sl+  161-20:41:52 /usr/libexec/gsd-smartcard
+gdm         2102  0.0  0.0 Sl+  161-20:41:52 /usr/libexec/gsd-datetime
+gdm         2104  0.0  0.0 Sl+  161-20:41:52 /usr/libexec/gsd-media-keys
+gdm         2111  0.0  0.0 Sl+  161-20:41:52 /usr/libexec/gsd-screensaver-proxy
+gdm         2118  0.0  0.0 Sl+  161-20:41:52 /usr/libexec/gsd-sound
+gdm         2119  0.0  0.0 Sl+  161-20:41:52 /usr/libexec/gsd-a11y-settings
+gdm         2123  0.0  0.0 Sl+  161-20:41:52 /usr/libexec/gsd-power
+gdm         2158  0.0  0.0 Sl+  161-20:41:52 /usr/libexec/gsd-printer
+colord      2169  0.0  0.0 Ssl  161-20:41:52 /usr/libexec/colord
+root        2210  0.0  0.0 S    161-20:41:52 [UVM global queu]
+root        2211  0.0  0.0 S    161-20:41:52 [UVM deferred re]
+root        2212  0.0  0.0 S    161-20:41:52 [UVM Tools Event]
+root       28330  0.0  0.0 Sl   161-20:36:20 gdm-session-worker [pam/gdm-password]
+dell       28803  0.0  0.0 S    161-20:36:12 (sd-pam)
+dell       28814  0.0  0.0 Ssl  161-20:36:12 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+dell       28817  0.0  0.0 Sl   161-20:36:12 /usr/bin/gnome-keyring-daemon --daemonize --login
+dell       28828  0.0  0.0 Ss   161-20:36:12 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+dell       28842  0.0  0.0 Ssl+ 161-20:36:12 /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
+dell       28861  0.0  0.0 Sl+  161-20:36:11 /usr/libexec/gnome-session-binary --systemd --systemd --session=ubuntu
+dell       28902  0.0  0.0 Ssl  161-20:36:11 /usr/libexec/at-spi-bus-launcher
+dell       28907  0.0  0.0 S    161-20:36:11 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+dell       28915  0.0  0.0 Ssl  161-20:36:11 /usr/libexec/gvfsd
+dell       28926  0.0  0.0 Sl   161-20:36:11 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+dell       28965  0.0  0.0 Sl   161-20:36:11 /usr/libexec/at-spi2-registryd --use-gnome-session
+dell       29536  0.0  0.0 Ss   161-20:36:08 /usr/bin/ssh-agent /usr/bin/im-launch env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
+dell       29576  0.0  0.0 Ssl  161-20:36:08 /usr/libexec/gnome-session-ctl --monitor
+dell       29583  0.0  0.0 Ssl  161-20:36:08 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+dell       29667  0.0  0.0 Sl   161-20:36:07 ibus-daemon --panel disable --xim
+dell       29672  0.0  0.0 Sl   161-20:36:07 /usr/libexec/ibus-dconf
+dell       29673  0.0  0.0 Sl   161-20:36:07 /usr/libexec/ibus-extension-gtk3
+dell       29675  0.0  0.0 Sl   161-20:36:07 /usr/libexec/ibus-x11 --kill-daemon
+dell       29677  0.0  0.0 Sl   161-20:36:07 /usr/libexec/ibus-portal
+dell       29696  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/xdg-permission-store
+dell       29698  0.0  0.0 Sl   161-20:36:07 /usr/libexec/gnome-shell-calendar-server
+dell       29714  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/evolution-source-registry
+dell       29721  0.0  0.0 Sl   161-20:36:07 /usr/libexec/goa-daemon
+dell       29737  0.0  0.0 Sl   161-20:36:07 /usr/libexec/goa-identity-service
+dell       29738  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/evolution-calendar-factory
+dell       29757  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gvfs-gphoto2-volume-monitor
+dell       29763  0.0  0.0 Sl   161-20:36:07 /usr/libexec/dconf-service
+dell       29766  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/evolution-addressbook-factory
+dell       29777  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gvfs-afc-volume-monitor
+dell       29788  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gvfs-mtp-volume-monitor
+dell       29793  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gvfs-goa-volume-monitor
+dell       29817  0.0  0.0 Sl   161-20:36:07 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+dell       29833  0.0  0.0 Sl   161-20:36:07 /usr/libexec/gvfsd-trash --spawner :1.6 /org/gtk/gvfs/exec_spaw/0
+dell       29842  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-a11y-settings
+dell       29843  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-color
+dell       29844  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-datetime
+dell       29847  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-keyboard
+dell       29848  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-media-keys
+dell       29851  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-power
+dell       29852  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-print-notifications
+dell       29854  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-rfkill
+dell       29858  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-screensaver-proxy
+dell       29859  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-sharing
+dell       29864  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-smartcard
+dell       29868  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-sound
+dell       29871  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-usb-protection
+dell       29872  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-wacom
+dell       29874  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-wwan
+dell       29876  0.0  0.0 Ssl  161-20:36:07 /usr/libexec/gsd-xsettings
+dell       29906  0.0  0.0 Sl   161-20:36:07 /usr/libexec/evolution-data-server/evolution-alarm-notify
+dell       29924  0.0  0.0 Sl   161-20:36:07 /usr/libexec/gsd-disk-utility-notify
+dell       29975  0.0  0.0 Sl   161-20:36:06 /usr/libexec/gsd-printer
+dell       30054  0.0  0.0 Ssl  161-20:36:06 /usr/libexec/xdg-document-portal
+dell       30084  0.0  0.0 Sl   161-20:36:06 /usr/lib/ibus/ibus-engine-libpinyin --ibus
+dell       30114  0.0  0.0 Sl   161-20:36:06 /usr/local/sunlogin/bin/sunloginclient --type=zygote --no-sandbox --lang=en-US --locales-dir-path=/usr/local/sunlogin/res --log-file=/usr/local/sunlogin/bin/debug.log --resources-dir-path=/usr/local/sunlogin/res --user-agent=SLRC/15.2.0.63064 (Linux,x64,Person,loginver=10,appname=sunloginRemoteClient) Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.81 Safari/537.36
+dell       30124  0.0  0.0 SNsl 161-20:36:06 /usr/libexec/tracker-miner-fs
+dell       30177  0.0  0.0 Sl   161-20:36:06 /usr/local/sunlogin/bin/sunloginclient --type=gpu-process --no-sandbox --lang=en-US --locales-dir-path=/usr/local/sunlogin/res --log-file=/usr/local/sunlogin/bin/debug.log --resources-dir-path=/usr/local/sunlogin/res --user-agent=SLRC/15.2.0.63064 (Linux,x64,Person,loginver=10,appname=sunloginRemoteClient) Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.81 Safari/537.36 --supports-dual-gpus=false --gpu-driver-bug-workarounds=7,23,74 --disable-gl-extensions=GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent --gpu-vendor-id=0x10de --gpu-device-id=0x2235 --gpu-driver-vendor=NVIDIA --gpu-driver-version=560.35.05 --gpu-driver-date --gpu-secondary-vendor-ids=0x102b --gpu-secondary-device-ids=0x0536 --lang=en-US --locales-dir-path=/usr/local/sunlogin/res --log-file=/usr/local/sunlogin/bin/debug.log --resources-dir-path=/usr/local/sunlogin/res --user-agent=SLRC/15.2.0.63064 (Linux,x64,Person,loginver=10,appname=sunloginRemoteClient) Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.81 Safari/537.36 --service-request-channel-token=9EC8B9D105E71F2DBF26D5F25C1D8A9A
+dell       30486  0.0  0.0 Ssl  161-20:36:04 /usr/libexec/xdg-desktop-portal
+dell       30495  0.0  0.0 Ssl  161-20:36:04 /usr/libexec/xdg-desktop-portal-gtk
+dell       36654  0.0  0.0 Ssl  161-20:35:07 /usr/libexec/gvfsd-metadata
+dell       36655  0.0  0.0 Sl   161-20:35:07 update-notifier
+dell       40814  0.0  0.0 S    161-20:34:13 /usr/share/code/code --type=zygote --no-zygote-sandbox
+dell       40815  0.0  0.0 S    161-20:34:13 /usr/share/code/code --type=zygote
+dell       40818  0.0  0.0 S    161-20:34:13 /usr/share/code/code --type=zygote
+dell       40869  0.0  0.0 Sl   161-20:34:13 /usr/share/code/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --no-rate-limit --database=/home/dell/.config/Code/Crashpad --url=appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=dc0faa70-5e71-49b1-a856-132d6b1a067b&iid=dc0faa70-5e71-49b1-a856-132d6b1a067b&sid=dc0faa70-5e71-49b1-a856-132d6b1a067b --annotation=_companyName=Microsoft --annotation=_productName=VSCode --annotation=_version=1.96.4 --annotation=lsb-release=Ubuntu 20.04.6 LTS --annotation=plat=Linux --annotation=prod=Electron --annotation=ver=32.2.6 --initial-client-fd=52 --shared-client-connection
+dell       40908  0.0  0.0 Sl   161-20:34:12 /usr/share/code/code --type=utility --utility-sub-type=network.mojom.NetworkService --lang=zh-CN --service-sandbox-type=none --crashpad-handler-pid=40869 --enable-crash-reporter=7f949d25-38a2-4111-b813-2d480742ca80,no_channel --user-data-dir=/home/dell/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,6279710107610535031,262444284252352596,262144 --disable-features=CalculateNativeWinOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess --variations-seed-version
+dell       41128  0.0  0.0 Sl   161-20:34:11 /usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=zh-CN --service-sandbox-type=none --crashpad-handler-pid=40869 --enable-crash-reporter=7f949d25-38a2-4111-b813-2d480742ca80,no_channel --user-data-dir=/home/dell/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,6279710107610535031,262444284252352596,262144 --disable-features=CalculateNativeWinOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess --variations-seed-version
+dell      265888  0.0  0.0 Ss   44-17:50:26 -bash
+dell      289607  0.0  0.0 Sl   156-01:59:22 /usr/libexec/gvfsd-network --spawner :1.6 /org/gtk/gvfs/exec_spaw/1
+dell      289669  0.0  0.0 Sl   156-01:59:21 /usr/libexec/gvfsd-dnssd --spawner :1.6 /org/gtk/gvfs/exec_spaw/3
+sues      367955  0.0  0.0 Ssl  37-23:30:23 /usr/libexec/tracker-store
+dell      500923  0.0  0.0 Ss+  82-11:28:01 -bash
+dell      644493  0.0  0.0 SLl  161-18:19:28 /usr/lib/x86_64-linux-gnu/webkit2gtk-4.0/WebKitNetworkProcess 1 258
+sues      689208  0.0  0.0 Sl   109-16:11:15 /usr/lib/firefox/firefox -contentproc -parentBuildID 20250227124745 -prefsHandle 0 -prefsLen 32000 -prefMapHandle 1 -prefMapSize 263874 -sandboxReporter 2 -chrootClient 3 -ipcHandle 4 -initialChannelId {982ea554-a847-4e06-9018-adc77f1cf8a1} -parentPid 689122 -crashReporter 5 -appDir /usr/lib/firefox/browser 1 socket
+sues      689246  0.0  0.0 Sl   109-16:11:14 /usr/lib/firefox/firefox -contentproc -parentBuildID 20250227124745 -prefsHandle 0 -prefsLen 32141 -prefMapHandle 1 -prefMapSize 263874 -sandboxReporter 2 -chrootClient 3 -ipcHandle 4 -initialChannelId {56a07f92-919f-4fca-b458-ac96c366d1db} -parentPid 689122 -crashReporter 5 -appDir /usr/lib/firefox/browser 3 rdd
+sues      689299  0.0  0.0 Sl   109-16:11:14 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 40218 -prefMapHandle 1 -prefMapSize 263874 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {8bc658db-d790-4b8c-8c9f-901154ae75a1} -parentPid 689122 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 4 tab
+sues      689363  0.0  0.0 Sl   109-16:11:13 /usr/lib/firefox/firefox -contentproc -parentBuildID 20250227124745 -sandboxingKind 0 -prefsHandle 0 -prefsLen 40321 -prefMapHandle 1 -prefMapSize 263874 -sandboxReporter 2 -chrootClient 3 -ipcHandle 4 -initialChannelId {a42fddb4-c3a8-4419-a608-0dae307975e4} -parentPid 689122 -crashReporter 5 -appDir /usr/lib/firefox/browser 5 utility
+sues      689389  0.0  0.0 Sl   109-16:11:13 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 37346 -prefMapHandle 1 -prefMapSize 263874 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {b19ffe96-8af1-49e9-918a-aebec58e9f41} -parentPid 689122 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 7 tab
+sues      720145  0.0  0.0 Ss   105-05:01:18 /bin/sh /usr/lib/update-notifier/update-notifier-crash
+sues      720188  0.0  0.0 Sl   105-05:01:18 /usr/lib/update-notifier/system-crash-notification
+dell      804323  0.0  0.0 Ss   51-19:38:51 -bash
+dell      815676  0.0  0.0 Ss   46-19:37:04 bash
+dell      820062  0.0  0.0 S+   46-19:33:30 /opt/baidunetdisk/baidunetdisk --type=zygote --no-zygote-sandbox
+dell      820063  0.0  0.0 S+   46-19:33:30 /opt/baidunetdisk/baidunetdisk --type=zygote
+dell      820065  0.0  0.0 S+   46-19:33:30 /opt/baidunetdisk/baidunetdisk --type=zygote
+dell      820109  0.0  0.0 Sl+  46-19:33:30 /opt/baidunetdisk/baidunetdisk --type=utility --utility-sub-type=network.mojom.NetworkService --lang=zh-CN --service-sandbox-type=none --enable-crash-reporter=17551d81-4217-475c-8f17-c6e2d30f8077,no_channel --user-data-dir=/home/dell/.config/baidunetdisk --standard-schemes=app --secure-schemes=app --bypasscsp-schemes --cors-schemes=app --fetch-schemes=app --service-worker-schemes=app --streaming-schemes=app --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,13948880887738153652,15138127239928314143,131072 --disable-features=SpareRendererForSitePerProcess
+dell      820131  0.0  0.0 Sl+  46-19:33:30 /opt/baidunetdisk/baidunetdisk --type=renderer --enable-crash-reporter=17551d81-4217-475c-8f17-c6e2d30f8077,no_channel --user-data-dir=/home/dell/.config/baidunetdisk --standard-schemes=app --secure-schemes=app --bypasscsp-schemes --cors-schemes=app --fetch-schemes=app --service-worker-schemes=app --streaming-schemes=app --app-path=/opt/baidunetdisk/resources/app.asar --no-sandbox --no-zygote --first-renderer-process --disable-gpu-compositing --lang=zh-CN --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1779868491238288 --launch-time-ticks=9940119809528 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,13948880887738153652,15138127239928314143,131072 --disable-features=SpareRendererForSitePerProcess
+dell      820166  0.0  0.0 Sl+  46-19:33:30 /opt/baidunetdisk/netdisk_service
+dell      823459  0.0  0.0 Sl+  46-19:30:37 /opt/baidunetdisk/baidunetdisk --type=utility --utility-sub-type=audio.mojom.AudioService --lang=zh-CN --service-sandbox-type=none --enable-crash-reporter=17551d81-4217-475c-8f17-c6e2d30f8077,no_channel --user-data-dir=/home/dell/.config/baidunetdisk --standard-schemes=app --secure-schemes=app --bypasscsp-schemes --cors-schemes=app --fetch-schemes=app --service-worker-schemes=app --streaming-schemes=app --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,13948880887738153652,15138127239928314143,131072 --disable-features=SpareRendererForSitePerProcess
+dell      823546  0.0  0.0 Sl+  46-19:30:37 /opt/baidunetdisk/baidunetdisk --type=renderer --enable-crash-reporter=17551d81-4217-475c-8f17-c6e2d30f8077,no_channel --user-data-dir=/home/dell/.config/baidunetdisk --standard-schemes=app --secure-schemes=app --bypasscsp-schemes --cors-schemes=app --fetch-schemes=app --service-worker-schemes=app --streaming-schemes=app --app-path=/opt/baidunetdisk/resources/app.asar --no-sandbox --no-zygote --disable-gpu-compositing --lang=zh-CN --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=13 --time-ticks-at-unix-epoch=-1779868491238288 --launch-time-ticks=9940292684547 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,13948880887738153652,15138127239928314143,131072 --disable-features=SpareRendererForSitePerProcess
+root      951893  0.0  0.0 Ssl     01:58:34 /usr/libexec/fwupd/fwupd
+root      952540  0.0  0.0 I       01:58:06 [kworker/u96:2-ext4-rsv-conversion]
+root     1045960  0.0  0.0 I          57:42 [kworker/u98:0-flush-8:16]
+root     1068270  0.0  0.0 I          43:46 [kworker/33:0-rcu_par_gp]
+root     1073776  0.0  0.0 I          41:04 [kworker/u97:2-events_power_efficient]
+root     1077900  0.0  0.0 I          38:00 [kworker/5:0-rcu_par_gp]
+root     1081838  0.0  0.0 I          35:16 [kworker/47:1-rcu_par_gp]
+root     1086634  0.0  0.0 I          31:50 [kworker/6:1-events]
+root     1091570  0.0  0.0 I          28:30 [kworker/2:2-events]
+root     1092548  0.0  0.0 I          27:55 [kworker/7:2-rcu_par_gp]
+root     1092891  0.0  0.0 I          27:47 [kworker/44:0-rcu_par_gp]
+root     1093174  0.0  0.0 I          27:30 [kworker/23:1-rcu_par_gp]
+root     1094716  0.0  0.0 I          26:27 [kworker/u96:1-ext4-rsv-conversion]
+root     1098710  0.0  0.0 I          24:58 [kworker/29:2-rcu_par_gp]
+root     1098872  0.0  0.0 I          24:38 [kworker/39:0-rcu_par_gp]
+root     1100308  0.0  0.0 I          23:45 [kworker/u97:0-events_power_efficient]
+root     1100793  0.0  0.0 I          23:13 [kworker/41:1-rcu_gp]
+root     1102593  0.0  0.0 I          22:03 [kworker/34:2-events]
+root     1103313  0.0  0.0 I          21:45 [kworker/35:2-mm_percpu_wq]
+root     1103781  0.0  0.0 I          21:28 [kworker/0:0-rcu_par_gp]
+root     1103906  0.0  0.0 I          21:08 [kworker/19:2-rcu_par_gp]
+root     1104700  0.0  0.0 I          20:52 [kworker/14:1-rcu_par_gp]
+root     1105054  0.0  0.0 I          20:31 [kworker/31:3-rcu_par_gp]
+root     1105714  0.0  0.0 I          19:58 [kworker/40:2-events]
+root     1105873  0.0  0.0 I          19:54 [kworker/18:0-events]
+root     1106188  0.0  0.0 I          19:50 [kworker/45:0-rcu_gp]
+root     1106815  0.0  0.0 I          19:16 [kworker/30:0-rcu_par_gp]
+root     1107080  0.0  0.0 I          19:10 [kworker/24:2-events]
+root     1107582  0.0  0.0 I          18:57 [kworker/12:3-rcu_gp]
+root     1107785  0.0  0.0 I          18:41 [kworker/9:0-rcu_par_gp]
+root     1108664  0.0  0.0 I          18:01 [kworker/39:1-rcu_par_gp]
+root     1108944  0.0  0.0 I          18:00 [kworker/u97:1-events_unbound]
+root     1108984  0.0  0.0 I          18:00 [kworker/26:2-rcu_par_gp]
+root     1108985  0.0  0.0 I          18:00 [kworker/28:0-events]
+root     1109146  0.0  0.0 I          17:57 [kworker/1:2-events]
+root     1109723  0.0  0.0 I          17:25 [kworker/36:2-rcu_par_gp]
+root     1110763  0.0  0.0 I          16:45 [kworker/21:0-rcu_par_gp]
+root     1111585  0.0  0.0 I          16:06 [kworker/15:2-rcu_par_gp]
+root     1111621  0.0  0.0 I          16:06 [kworker/41:0-rcu_par_gp]
+root     1112221  0.0  0.0 I          15:33 [kworker/32:0-rcu_par_gp]
+root     1112480  0.0  0.0 I          15:28 [kworker/0:2-rcu_gp]
+root     1112538  0.0  0.0 I          15:28 [kworker/43:2-rcu_par_gp]
+root     1112590  0.0  0.0 I          15:27 [kworker/23:2-events]
+root     1113364  0.0  0.0 I          14:58 [kworker/47:0-rcu_par_gp]
+root     1114121  0.0  0.0 I          14:31 [kworker/22:1-rcu_par_gp]
+root     1114206  0.0  0.0 I          14:23 [kworker/20:0-rcu_par_gp]
+root     1114565  0.0  0.0 I          14:12 [kworker/31:0-rcu_par_gp]
+root     1115036  0.0  0.0 I          13:56 [kworker/23:3-rcu_par_gp]
+root     1115113  0.0  0.0 I          13:48 [kworker/7:0-rcu_par_gp]
+root     1115626  0.0  0.0 I          13:35 [kworker/25:0-rcu_par_gp]
+root     1116292  0.0  0.0 I          13:10 [kworker/6:0-rcu_par_gp]
+root     1116532  0.0  0.0 I          12:57 [kworker/22:3-rcu_par_gp]
+root     1116583  0.0  0.0 I          12:57 [kworker/16:0-events]
+root     1116584  0.0  0.0 I          12:57 [kworker/14:0-rcu_gp]
+root     1116795  0.0  0.0 I          12:56 [kworker/37:2-events]
+root     1117761  0.0  0.0 I          12:10 [kworker/13:1-events]
+root     1118114  0.0  0.0 I          11:58 [kworker/1:1-rcu_par_gp]
+root     1118283  0.0  0.0 I          11:57 [kworker/30:1-events]
+root     1118714  0.0  0.0 I          11:44 [kworker/4:2-rcu_par_gp]
+root     1118826  0.0  0.0 I          11:42 [kworker/u96:0-ext4-rsv-conversion]
+root     1118827  0.0  0.0 I          11:42 [kworker/8:1-cgroup_destroy]
+root     1118909  0.0  0.0 I          11:36 [kworker/27:1-rcu_par_gp]
+dell     1120928  0.0  0.0 S          11:20 sleep 900
+root     1121250  0.0  0.0 I          11:01 [kworker/46:2-events]
+root     1121255  0.0  0.0 I          11:01 [kworker/46:3-rcu_par_gp]
+root     1121265  0.0  0.0 I          11:01 [kworker/10:0-rcu_par_gp]
+root     1122032  0.0  0.0 I          10:46 [kworker/3:3-rcu_par_gp]
+root     1122440  0.0  0.0 I          10:13 [kworker/21:1-rcu_par_gp]
+root     1122461  0.0  0.0 I          10:13 [kworker/35:1-rcu_par_gp]
+root     1122703  0.0  0.0 I          10:12 [kworker/11:1-rcu_par_gp]
+root     1122753  0.0  0.0 I          10:10 [kworker/34:1-rcu_par_gp]
+root     1123001  0.0  0.0 I          09:54 [kworker/15:0-rcu_gp]
+root     1123123  0.0  0.0 I          09:54 [kworker/33:1-events]
+root     1123128  0.0  0.0 I          09:54 [kworker/26:0-cgroup_destroy]
+root     1123492  0.0  0.0 I          09:35 [kworker/11:2-rcu_par_gp]
+root     1123532  0.0  0.0 I          09:35 [kworker/43:0-events]
+root     1123795  0.0  0.0 I          09:01 [kworker/36:0-events]
+root     1123892  0.0  0.0 I          09:00 [kworker/29:0-events]
+root     1123894  0.0  0.0 I          09:00 [kworker/24:0-rcu_par_gp]
+root     1124143  0.0  0.0 I          08:58 [kworker/32:1-rcu_par_gp]
+root     1124387  0.0  0.0 I          08:54 [kworker/5:3-events]
+root     1124564  0.0  0.0 I          08:46 [kworker/45:1-rcu_par_gp]
+root     1124969  0.0  0.0 I          08:25 [kworker/7:1-rcu_gp]
+root     1125256  0.0  0.0 I          08:20 [kworker/41:2-cgroup_destroy]
+root     1125278  0.0  0.0 I          08:20 [kworker/20:1-events]
+root     1125768  0.0  0.0 I          07:54 [kworker/42:1-events]
+root     1125769  0.0  0.0 I          07:54 [kworker/44:2-rcu_gp]
+root     1125773  0.0  0.0 I          07:54 [kworker/42:2-events]
+root     1125822  0.0  0.0 I          07:51 [kworker/31:1-events]
+root     1125988  0.0  0.0 I          07:43 [kworker/35:3-rcu_par_gp]
+root     1126402  0.0  0.0 I          07:16 [kworker/37:1-rcu_gp]
+root     1126405  0.0  0.0 I          07:16 [kworker/13:3-events]
+root     1126707  0.0  0.0 I          07:05 [kworker/19:0-rcu_par_gp]
+root     1126709  0.0  0.0 I          07:05 [kworker/9:1-rcu_par_gp]
+root     1126982  0.0  0.0 I          06:54 [kworker/16:1-events]
+root     1127199  0.0  0.0 I          06:42 [kworker/28:1-cgroup_destroy]
+root     1127201  0.0  0.0 I          06:41 [kworker/10:3-rcu_gp]
+root     1127479  0.0  0.0 I          06:35 [kworker/18:2-rcu_par_gp]
+root     1127713  0.0  0.0 I          06:28 [kworker/14:2-events]
+root     1127736  0.0  0.0 I          06:28 [kworker/22:0-events]
+root     1127886  0.0  0.0 I          06:28 [kworker/40:0-rcu_par_gp]
+root     1128060  0.0  0.0 I          06:07 [kworker/33:2-rcu_par_gp]
+root     1128353  0.0  0.0 I          06:02 [kworker/30:2-rcu_gp]
+root     1128354  0.0  0.0 I          06:02 [kworker/25:1-rcu_gp]
+root     1128488  0.0  0.0 I          05:53 [kworker/u98:2-flush-8:16]
+root     1128495  0.0  0.0 I          05:53 [kworker/2:1-events]
+root     1128611  0.0  0.0 I          05:53 [kworker/27:3-rcu_gp]
+root     1128618  0.0  0.0 I          05:53 [kworker/12:0-rcu_par_gp]
+root     1128707  0.0  0.0 I          05:51 [kworker/4:0-rcu_par_gp]
+root     1128708  0.0  0.0 I          05:51 [kworker/38:2-events]
+root     1128858  0.0  0.0 I          05:39 [kworker/17:0-events]
+root     1128859  0.0  0.0 I          05:39 [kworker/3:1-rcu_gp]
+root     1128862  0.0  0.0 I          05:39 [kworker/17:3-rcu_par_gp]
+root     1129272  0.0  0.0 I          05:32 [kworker/47:2-events]
+root     1129296  0.0  0.0 I          05:32 [kworker/38:3-events]
+root     1129344  0.0  0.0 I          05:32 [kworker/8:2-events]
+root     1129686  0.0  0.0 I          05:11 [kworker/6:2-events]
+root     1129716  0.0  0.0 I          05:11 [kworker/7:3-events]
+root     1129807  0.0  0.0 I          05:11 [kworker/0:1-events]
+root     1130362  0.0  0.0 I          04:53 [kworker/u97:3-events_power_efficient]
+root     1130402  0.0  0.0 I          04:53 [kworker/14:3-events]
+root     1130551  0.0  0.0 I          04:49 [kworker/46:0-events]
+root     1130625  0.0  0.0 I          04:34 [kworker/26:1-events]
+root     1130647  0.0  0.0 I          04:33 [kworker/23:0-rcu_par_gp]
+root     1130652  0.0  0.0 I          04:33 [kworker/1:0-events]
+root     1131061  0.0  0.0 I          04:24 [kworker/30:3-events]
+root     1131352  0.0  0.0 I          04:21 [kworker/39:2-events]
+root     1132043  0.0  0.0 I          03:53 [kworker/21:2-events]
+root     1132045  0.0  0.0 I          03:53 [kworker/39:3-rcu_par_gp]
+root     1132090  0.0  0.0 I          03:47 [kworker/29:1-events]
+root     1132113  0.0  0.0 I          03:47 [kworker/15:1-events]
+root     1132115  0.0  0.0 I          03:47 [kworker/15:3-rcu_par_gp]
+root     1132164  0.0  0.0 I          03:47 [kworker/36:1-events]
+root     1132614  0.0  0.0 I          03:17 [kworker/32:2-events]
+root     1132637  0.0  0.0 I          03:17 [kworker/41:3-events]
+root     1132638  0.0  0.0 I          03:17 [kworker/43:1-events]
+root     1132644  0.0  0.0 I          03:17 [kworker/20:2-rcu_par_gp]
+root     1132690  0.0  0.0 I          03:16 [kworker/5:1-events]
+root     1132976  0.0  0.0 I          03:16 [kworker/34:0-events]
+root     1133033  0.0  0.0 I          03:12 [kworker/47:3]
+root     1133082  0.0  0.0 I          03:12 [kworker/11:0-events]
+root     1133306  0.0  0.0 I          03:06 [kworker/u96:3-poll_megasas0_status]
+root     1133753  0.0  0.0 I          02:39 [kworker/45:2-events]
+root     1133754  0.0  0.0 I          02:39 [kworker/45:3]
+root     1134000  0.0  0.0 I          02:37 [kworker/31:2-rcu_par_gp]
+root     1134280  0.0  0.0 Sl         02:23 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 9870268027f9ef7467997d73631d9ec50801272cb43cd99fb920d8b356b754e5 -address /run/containerd/containerd.sock
+root     1134406  0.0  0.0 Sl         02:23 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 4399 -container-ip 172.17.0.2 -container-port 4399 -use-listen-fd
+root     1134414  0.0  0.0 Sl         02:23 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 4399 -container-ip 172.17.0.2 -container-port 4399 -use-listen-fd
+root     1134421  0.0  0.0 Sl         02:23 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 20881 -container-ip 172.17.0.2 -container-port 20880 -use-listen-fd
+root     1134428  0.0  0.0 Sl         02:23 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 20881 -container-ip 172.17.0.2 -container-port 20880 -use-listen-fd
+root     1134586  0.0  0.0 Sl         02:11 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 9c911303b7ebe50ce714e4a3da3b9ab0a87781c7c1887108412e1b5885ce87ff -address /run/containerd/containerd.sock
+root     1134608  0.0  0.0 Ss+        02:11 /bin/sh /opt/system_monitor/start.sh
+root     1134714  0.0  0.0 Sl         02:11 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 9099 -container-ip 172.17.0.4 -container-port 80 -use-listen-fd
+root     1134723  0.0  0.0 Sl         02:11 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 9099 -container-ip 172.17.0.4 -container-port 80 -use-listen-fd
+root     1135411  0.0  0.0 I          01:52 [kworker/19:1-events]
+root     1135412  0.0  0.0 I          01:52 [kworker/13:0-rcu_par_gp]
+root     1135594  0.0  0.0 I          01:26 [kworker/37:0-rcu_par_gp]
+root     1135595  0.0  0.0 I          01:26 [kworker/37:3]
+root     1136397  0.0  0.0 I          00:51 [kworker/9:2-events]
+root     1136521  0.0  0.0 I          00:45 [kworker/12:1-events]
+root     1136550  0.0  0.0 I          00:45 [kworker/u98:1-writeback]
+root     1136579  0.0  0.0 I          00:45 [kworker/27:0-events]
+root     1136591  0.0  0.0 I          00:45 [kworker/16:2-events]
+root     1136915  0.0  0.0 I          00:16 [kworker/10:1-events]
+root     1136916  0.0  0.0 I          00:16 [kworker/44:1-events]
+root     1136969  0.0  0.0 I          00:16 [kworker/4:1-events]
+root     1136970  0.0  0.0 I          00:16 [kworker/40:1-events]
+root     1136972  0.0  0.0 I          00:16 [kworker/25:2-events]
+root     1137068  0.0  0.0 Sl         00:16 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 9039 -container-ip 172.17.0.5 -container-port 9039 -use-listen-fd
+root     1137074  0.0  0.0 Sl         00:16 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 9039 -container-ip 172.17.0.5 -container-port 9039 -use-listen-fd
+root     1137199  0.0  0.0 I          00:08 [kworker/3:0-events]
+root     1137346  0.0  0.0 Sl         00:07 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 11127 -container-ip 172.17.0.3 -container-port 11127 -use-listen-fd
+root     1137353  0.0  0.0 Sl         00:07 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 11127 -container-ip 172.17.0.3 -container-port 11127 -use-listen-fd
+dell     1137454  0.0  0.0 Ss         00:00 /bin/bash -c ps -eo user,pid,pcpu,pmem,stat,etime,args --sort=-pcpu > e6/pixel_wavefront_gpu/host_before001.txt
+dell     1137455  0.0  0.0 R          00:00 ps -eo user,pid,pcpu,pmem,stat,etime,args --sort=-pcpu
+ollama   1189641  0.0  0.0 Ssl  30-01:34:08 /usr/local/bin/ollama serve
+dell     1273863  0.0  0.0 Ss   92-02:55:54 -bash
+dell     1295479  0.0  0.0 SNsl 35-16:54:30 claude bg-pty-host --bg-pty-host /tmp/cc-daemon-1000/8e8f9772/pty/99583d4e.sock 225 51 -- /usr/local/lib/node_modules/@anthropic-ai/claude-code-linux-x64/claude --session-id 99583d4e-1d56-4d7b-98ad-ca87a5d1b096 --fork-session --resume /home/dell/.claude/projects/-media-disk2-YZX-research-EADP/60a6a963-e824-4df5-be6f-ea37dd493337.jsonl --permission-mode bypassPermissions
+dell     1354167  0.0  0.0 Ss+  58-23:18:11 -bash
+dell     1379657  0.0  0.0 Sl   134-02:56:12 /usr/libexec/ibus-engine-simple
+dell     1385515  0.0  0.0 Ss   134-02:54:28 bash
+dell     1388561  0.0  0.0 S+   134-02:53:38 tmux new -s 170
+dell     1388563  0.0  0.0 Ss   134-02:53:38 tmux new -s 170
+dell     1388565  0.0  0.0 Ss+  134-02:53:38 -bash
+root     1389163  0.0  0.0 Ss    1-22:10:54 sshd: dell [priv]
+dell     1389229  0.0  0.0 S     1-22:10:52 sshd: dell@notty
+dell     1389237  0.0  0.0 Ssl   1-22:10:52 codex app-server proxy
+dell     1396917  0.0  0.0 Sl   27-22:34:52 /home/dell/.codex/packages/standalone/releases/0.161.0-x86_64-unknown-linux-musl/bin/codex-code-mode-host
+root     1650085  0.0  0.0 S<l  44-05:06:56 pulseaudio --start --log-target=syslog
+dell     1840355  0.0  0.1 SNl  17-16:11:47 /usr/bin/python3 /usr/bin/update-manager --no-update --no-focus-on-map
+dell     1969655  0.0  0.0 Sl+  17-14:56:55 /opt/baidunetdisk/baidunetdisk --type=gpu-process --enable-crash-reporter=17551d81-4217-475c-8f17-c6e2d30f8077,no_channel --user-data-dir=/home/dell/.config/baidunetdisk --gpu-preferences=WAAAAAAAAAAgAAAIAAAAAAAAAAAAAAAAAABgAAAAAAA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAABAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --use-gl=angle --use-angle=swiftshader-webgl --shared-files --field-trial-handle=0,i,13948880887738153652,15138127239928314143,131072 --disable-features=SpareRendererForSitePerProcess
+dell     1970065  0.0  0.0 S    17-14:56:50 /usr/share/code/code --type=broker
+dell     2063143  0.0  0.0 Sl   113-16:32:36 /usr/bin/gnome-calendar --gapplication-service
+dell     2078369  0.0  8.1 Sl   113-16:29:19 /snap/snap-store/1216/usr/bin/snap-store
+dell     2219260  0.0  0.0 Ss   55-21:11:21 -bash
+dell     2345451  0.0  0.0 S    149-17:01:51 /usr/bin/ssh-agent -D -a /run/user/1000/keyring/.ssh
+sues     2351630  0.0  0.0 Ss   101-20:06:42 tmux new -s detr
+sues     2351631  0.0  0.0 Ss+  101-20:06:42 -bash
+dell     2378570  0.0  0.0 Ss   50-21:09:40 -bash
+dell     2431029  0.0  0.9 Sl   73-14:56:27 /usr/bin/nautilus --gapplication-service
+sues     2982046  0.0  0.0 SNl  108-10:35:56 /usr/bin/python3 /usr/bin/update-manager --no-update --no-focus-on-map
+dell     3141158  0.0  0.0 Ssl  113-01:28:13 node /usr/local/lib/node_modules/@musistudio/claude-code-router/dist/cli.js start
+yanzhen+ 3301014  0.0  0.0 S    90-22:26:30 (sd-pam)
+yanzhen+ 3301074  0.0  0.0 Ss   90-22:26:29 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+yanzhen+ 3307520  0.0  0.0 Ss   90-22:20:33 tmux new -s claude
+yanzhen+ 3307521  0.0  0.0 Ss   90-22:20:33 -bash
+dell     3317031  0.0  0.0 Tl   40-23:31:49 claude --dangerously-skip-permissions
+dell     3392623  0.0  0.0 S    98-15:42:08 tail -n +1 -f /media/disk2/YZX/research/vla/runs/internvl3_main_matrix.out
+dell     3392624  0.0  0.0 S    98-15:42:08 /bin/bash -c source /home/dell/.claude/shell-snapshots/snapshot-bash-1785329487324-aef0z2.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && { \builtin unalias -- 'unsetenv'; \builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'PID=3391050; OUT=/media/disk2/YZX/research/vla/runs/internvl3_main_matrix.out ( tail -n +1 -f "$OUT" | grep -E --line-buffered '"'"'^=== |^\[internvl3\]|official=|wrote runs|Traceback|ABORT|out of memory|OOM|CUDA error|RuntimeError'"'"' ) & TPID=$! while kill -0 $PID 2>/dev/null; do sleep 30; done sleep 8 if grep -q '"'"'internvl3 done'"'"' "$OUT"; then echo "TERMINAL: internvl3 done-marker PRESENT (clean finish)"; else echo "TERMINAL: PROCESS EXITED WITHOUT done-marker (check for crash)"; fi kill $TPID 2>/dev/null' < /dev/null && pwd -P >| /tmp/claude-cd26-cwd
+dell     3392625  0.0  0.0 Sl   98-15:42:08 ugrep -G --ignore-files --hidden -I --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.hg --exclude-dir=.bzr --exclude-dir=.jj --exclude-dir=.sl -E --line-buffered ^=== |^\[internvl3\]|official=|wrote runs|Traceback|ABORT|out of memory|OOM|CUDA error|RuntimeError
+dell     3454649  0.0  0.0 SNsl 28-23:18:05 claude bg-pty-host --bg-pty-host /tmp/cc-daemon-1000/8e8f9772/spare/b45f54bc.pty.sock 200 50 -- /usr/local/lib/node_modules/@anthropic-ai/claude-code-linux-x64/claude --bg-spare /tmp/cc-daemon-1000/8e8f9772/spare/b45f54bc.claim.sock
+dell     3454673  0.0  0.0 SNl  28-23:18:05 claude bg-spare --bg-spare /tmp/cc-daemon-1000/8e8f9772/spare/b45f54bc.claim.sock
+dell     3617985  0.0  0.0 Ss+  158-18:37:40 /usr/bin/bash --init-file /usr/share/code/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh
+sues     3667833  0.0  0.0 S    110-02:43:11 (sd-pam)
+sues     3667844  0.0  0.0 Ssl  110-02:43:11 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+sues     3667923  0.0  0.0 Ss   110-02:43:10 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+sues     3668056  0.0  0.0 Ssl  110-02:43:09 /home/sues/.vscode-server/code-125df4672b8a6a34975303c6b0baa124e560a4f7 --cli-data-dir /home/sues/.vscode-server/cli agent host
+root     3674609  0.0  0.0 Sl   110-02:37:57 gdm-session-worker [pam/gdm-password]
+sues     3674873  0.0  0.0 Sl   110-02:37:43 /usr/bin/gnome-keyring-daemon --daemonize --login
+sues     3674877  0.0  0.0 Ssl+ 110-02:37:43 /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
+root     3674879  0.0  0.0 Sl+  110-02:37:43 /usr/lib/xorg/Xorg vt3 -displayfd 3 -auth /run/user/1002/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+sues     3674896  0.0  0.0 Sl+  110-02:37:42 /usr/libexec/gnome-session-binary --systemd --systemd --session=ubuntu
+sues     3674912  0.0  0.0 Ssl  110-02:37:42 /usr/libexec/at-spi-bus-launcher
+sues     3674917  0.0  0.0 S    110-02:37:42 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+sues     3674920  0.0  0.0 Ssl  110-02:37:42 /usr/libexec/gvfsd
+sues     3674925  0.0  0.0 Sl   110-02:37:42 /usr/libexec/gvfsd-fuse /run/user/1002/gvfs -f -o big_writes
+sues     3674934  0.0  0.0 Sl   110-02:37:42 /usr/libexec/at-spi2-registryd --use-gnome-session
+sues     3675019  0.0  0.0 Ss   110-02:37:36 /usr/bin/ssh-agent /usr/bin/im-launch env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
+sues     3675042  0.0  0.0 Ssl  110-02:37:36 /usr/libexec/gnome-session-ctl --monitor
+sues     3675060  0.0  0.0 Sl   110-02:37:36 /usr/libexec/dconf-service
+sues     3675064  0.0  0.0 Ssl  110-02:37:36 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+sues     3675109  0.0  0.0 Sl   110-02:37:35 ibus-daemon --panel disable --xim
+sues     3675115  0.0  0.0 Sl   110-02:37:35 /usr/libexec/ibus-dconf
+sues     3675116  0.0  0.0 Sl   110-02:37:35 /usr/libexec/ibus-extension-gtk3
+sues     3675118  0.0  0.0 Sl   110-02:37:35 /usr/libexec/ibus-x11 --kill-daemon
+sues     3675120  0.0  0.0 Sl   110-02:37:35 /usr/libexec/ibus-portal
+sues     3675133  0.0  0.0 Sl   110-02:37:35 /usr/libexec/gnome-shell-calendar-server
+sues     3675135  0.0  0.0 Ssl  110-02:37:35 /usr/libexec/xdg-permission-store
+sues     3675144  0.0  0.0 Ssl  110-02:37:35 /usr/libexec/evolution-source-registry
+sues     3675152  0.0  0.0 Sl   110-02:37:35 /usr/libexec/goa-daemon
+sues     3675160  0.0  0.0 Sl   110-02:37:35 /usr/libexec/goa-identity-service
+sues     3675163  0.0  0.0 Ssl  110-02:37:35 /usr/libexec/evolution-calendar-factory
+sues     3675182  0.0  0.0 Ssl  110-02:37:35 /usr/libexec/gvfs-gphoto2-volume-monitor
+sues     3675189  0.0  0.0 Ssl  110-02:37:35 /usr/libexec/gvfs-afc-volume-monitor
+sues     3675191  0.0  0.0 Ssl  110-02:37:35 /usr/libexec/evolution-addressbook-factory
+sues     3675199  0.0  0.0 Ssl  110-02:37:35 /usr/libexec/gvfs-mtp-volume-monitor
+sues     3675207  0.0  0.0 Ssl  110-02:37:35 /usr/libexec/gvfs-goa-volume-monitor
+sues     3675221  0.0  0.0 Sl   110-02:37:34 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+sues     3675234  0.0  0.0 Sl   110-02:37:34 /usr/libexec/gvfsd-trash --spawner :1.6 /org/gtk/gvfs/exec_spaw/0
+sues     3675251  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-a11y-settings
+sues     3675253  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-color
+sues     3675255  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-datetime
+sues     3675259  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-keyboard
+sues     3675260  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-media-keys
+sues     3675262  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-power
+sues     3675264  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-print-notifications
+sues     3675266  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-rfkill
+sues     3675267  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-screensaver-proxy
+sues     3675269  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-sharing
+sues     3675271  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-smartcard
+sues     3675272  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-sound
+sues     3675275  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-usb-protection
+sues     3675278  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-wacom
+sues     3675280  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-wwan
+sues     3675285  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gsd-xsettings
+sues     3675311  0.0  0.0 Sl   110-02:37:34 /usr/libexec/gsd-disk-utility-notify
+sues     3675334  0.0  0.0 Sl   110-02:37:34 /usr/libexec/gsd-printer
+sues     3675337  0.0  0.0 Sl   110-02:37:34 /usr/libexec/evolution-data-server/evolution-alarm-notify
+sues     3675381  0.0  0.0 Sl   110-02:37:34 /usr/libexec/ibus-engine-simple
+sues     3675428  0.0  0.0 SNsl 110-02:37:34 /usr/libexec/tracker-miner-fs
+sues     3675479  0.0  0.0 Ssl  110-02:37:34 /usr/libexec/gvfsd-metadata
+sues     3676545  0.0  0.0 Sl   110-02:37:03 /usr/lib/ibus/ibus-engine-libpinyin --ibus
+sues     3676975  0.0  0.0 Sl   110-02:36:34 update-notifier
+sues     3677375  0.0  0.0 Ssl  110-02:36:03 /usr/libexec/xdg-desktop-portal
+sues     3677385  0.0  0.0 Ssl  110-02:36:03 /usr/libexec/xdg-document-portal
+sues     3677393  0.0  0.0 Ssl  110-02:36:03 /usr/libexec/xdg-desktop-portal-gtk
+sues     3699963  0.0  0.0 Sl   110-02:24:49 /usr/libexec/gvfsd-network --spawner :1.6 /org/gtk/gvfs/exec_spaw/1
+sues     3700013  0.0  0.0 Sl   110-02:24:48 /usr/libexec/gvfsd-dnssd --spawner :1.6 /org/gtk/gvfs/exec_spaw/3
+dell     3763351  0.0  0.0 Ss+  148-21:04:33 bash
+dell     3852420  0.0  0.0 Ss+  60-00:16:44 bash
+dell     3863808  0.0  0.0 S    42-23:58:28 tail -n +1 -f /tmp/smoke2.log
+dell     3869332  0.0  0.0 S    42-23:53:57 tail -n 0 -F /media/disk2/YZX/research/EADP/Qwen_vl/outputs/discovery/m2_run_progress.log
+dell     3887619  0.0  0.0 S    42-23:36:33 tail -n 0 -F /media/disk2/YZX/research/EADP/Qwen_vl/outputs/discovery/m2_run_progress.log
+sues     3894449  0.0  0.0 Ssl  82-21:50:43 /home/sues/.vscode-server/code-a5b500951314efd502d07465bd138dfbd714a960 --cli-data-dir /home/sues/.vscode-server/cli agent host
+dell     3903604  0.0  0.0 S    42-23:22:22 tail -n 0 -F /media/disk2/YZX/research/EADP/Qwen_vl/outputs/discovery/m2_gatece.log
+dell     3908510  0.0  0.0 S    98-08:05:32 tail -n +1 -f /media/disk2/YZX/research/vla/runs/r2b_fastv_k3.out
+dell     3908511  0.0  0.0 S    98-08:05:32 /bin/bash -c source /home/dell/.claude/shell-snapshots/snapshot-bash-1785329487324-aef0z2.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && { \builtin unalias -- 'unsetenv'; \builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'PID=3908222; OUT=/media/disk2/YZX/research/vla/runs/r2b_fastv_k3.out ( tail -n +1 -f "$OUT" | grep -E --line-buffered '"'"'^=== |\[skip\]|\[r2b gpu\]|official=|wrote |\[r2b done\]|Traceback|Error|ERROR|OOM|CUDA|Killed|RuntimeError|invalid choice'"'"' ) & TPID=$! while kill -0 $PID 2>/dev/null; do sleep 30; done sleep 8 if grep -q '"'"'r2b done'"'"' "$OUT"; then echo "TERMINAL: r2b done-marker PRESENT (clean finish)"; else echo "TERMINAL: k3 EXITED WITHOUT done-marker (check crash)"; fi kill $TPID 2>/dev/null' < /dev/null && pwd -P >| /tmp/claude-339e-cwd
+dell     3908512  0.0  0.0 Sl   98-08:05:32 ugrep -G --ignore-files --hidden -I --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.hg --exclude-dir=.bzr --exclude-dir=.jj --exclude-dir=.sl -E --line-buffered ^=== |\[skip\]|\[r2b gpu\]|official=|wrote |\[r2b done\]|Traceback|Error|ERROR|OOM|CUDA|Killed|RuntimeError|invalid choice
+dell     3908615  0.0  0.0 S    42-23:18:27 tail -n 0 -F /media/disk2/YZX/research/EADP/Qwen_vl/outputs/discovery/m2_run_progress.log
+dell     3988018  0.0  0.0 S    42-22:05:12 tail -n 0 -F /media/disk2/YZX/research/EADP/Qwen_vl/outputs/discovery/m2_run_progress.log
+dell     4040315  0.0  0.0 S    36-11:29:12 /bin/bash -c source /home/dell/.claude/shell-snapshots/snapshot-bash-1790669978205-yc2044.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && { \builtin unalias -- 'unsetenv'; \builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'cat > /tmp/e0_autopush.sh <<'"'"'EOF'"'"' #!/usr/bin/env bash # E0 auto-pusher: every 15 min, commit+push newly finished result files. cd /media/disk2/YZX/research/EADP export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 while true; do   sleep 900   FILES=$(find Qwen_vl/outputs/e0 -name "*.json" -o -name "*.md" -o -name "*.png" 2>/dev/null | while read f; do     if [ -z "$(find "$f" -mmin -2 2>/dev/null)" ] && ! git diff --quiet HEAD -- "$f" 2>/dev/null || git ls-files --others --exclude-standard "$f" 2>/dev/null | grep -q .; then echo "$f"; fi   done)   if [ -n "$FILES" ]; then     git add $FILES 2>/dev/null     if ! git diff --cached --quiet 2>/dev/null; then       git commit --quiet -m "E0 auto: new finished result shards ($(date +%m-%d\\ %H:%M))" && \         timeout 90 git push origin e0-native-baselines 2>&1 | tail -1     fi   fi done EOF chmod +x /tmp/e0_autopush.sh && nohup /tmp/e0_autopush.sh > /tmp/e0_autopush.log 2>&1 & echo "autopush armed pid $!"' && pwd -P >| /tmp/claude-b676-cwd
+dell     4040317  0.0  0.0 S    36-11:29:12 bash /tmp/e0_autopush.sh
+dell     4159539  0.0  0.0 Ss+  105-15:27:14 -bash
+dell     4162127  0.0  0.0 Ss   105-15:25:02 -bash
+sues     4172187  0.0  0.0 Sl   109-22:19:58 /usr/bin/nautilus --gapplication-service
+root     4176966  0.0  0.0 Ss      12:37:00 /usr/sbin/cupsd -l
+root     4176967  0.0  0.0 Ssl     12:37:00 /usr/sbin/cups-browsed

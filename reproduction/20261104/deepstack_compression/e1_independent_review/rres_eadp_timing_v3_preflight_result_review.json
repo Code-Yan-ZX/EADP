@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "preflight_only": true,
+  "GPU_authorized": false,
+  "GT_opened": false,
+  "existing_predictions_opened": true,
+  "model_loaded": false,
+  "cuda_initialized": false,
+  "errors": [],
+  "plan_sha256": "67fcb0b7320160c0a2aad90261753213cf4c7e1f04aa7366c2edee182f9a5dbc",
+  "worker_sha256": "e2d319e67bea926dd0cbcc1b0df43abceccd4200e1fac5883ef5d7eb326bb5e5",
+  "launch_sha256": "2cdcbd839763fa82714bba6cc55d836af311d82feb7d03dfdaa43717db44dbe8",
+  "identity_sha256": "a48018323fbb89096d052588b2a17c5f7f2103e99dfb242f9b99bebabdbd4d6b",
+  "exit_sha256": "f7f60b3d46a326a8676ea072c7c140fcc6b2a5103afd702d2559e1e8395a617d",
+  "started_sha256": "dc5bd77294e6d350f9af2371c6a2bd5899f0c29197d5756b1a63f632fdf532de",
+  "terminal_sha256": "922435fec3d9f94f49df820d68014b2673a4ad2b72ff959bf5e471e4a48cad47",
+  "prelaunch_review_sha256": "149a10a6be089afb0efd88c8555ba44da39f6fb2be97f753e10d8790f6d21666",
+  "reviewer_sha256": "81272d894712ed9ba4feec99d5c70c7ca0b4d4f0e5b892afefc0b5dc3bfab70f",
+  "limitations": [
+    "No-device imports and accepted references only, not real model execution or GPU admission.",
+    "v2 earlier no-device container failed; evidence retained.",
+    "Timing controller, observer, actual model identity, formal result and analysis remain separate work."
+  ]
+}

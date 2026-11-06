@@ -1,0 +1,129 @@
+{
+  "status": "passed",
+  "independent_review": true,
+  "GT_opened": false,
+  "scoring_performed": false,
+  "observed": {
+    "DocVQA_VAL": {
+      "disabled": {
+        "visual_tokens": 1024,
+        "generated_tokens": 5,
+        "eos": true
+      },
+      "keep_all": {
+        "visual_tokens": 1024,
+        "generated_tokens": 5,
+        "eos": true
+      },
+      "author_prefix_256": {
+        "visual_tokens": 256,
+        "generated_tokens": 5,
+        "eos": true
+      },
+      "user_text_256": {
+        "visual_tokens": 256,
+        "generated_tokens": 5,
+        "eos": true
+      }
+    },
+    "TextVQA_VAL": {
+      "disabled": {
+        "visual_tokens": 1024,
+        "generated_tokens": 3,
+        "eos": true
+      },
+      "keep_all": {
+        "visual_tokens": 1024,
+        "generated_tokens": 3,
+        "eos": true
+      },
+      "author_prefix_256": {
+        "visual_tokens": 256,
+        "generated_tokens": 3,
+        "eos": true
+      },
+      "user_text_256": {
+        "visual_tokens": 256,
+        "generated_tokens": 3,
+        "eos": true
+      }
+    },
+    "AI2D_TEST": {
+      "disabled": {
+        "visual_tokens": 1024,
+        "generated_tokens": 2,
+        "eos": true
+      },
+      "keep_all": {
+        "visual_tokens": 1024,
+        "generated_tokens": 2,
+        "eos": true
+      },
+      "author_prefix_256": {
+        "visual_tokens": 256,
+        "generated_tokens": 2,
+        "eos": true
+      },
+      "user_text_256": {
+        "visual_tokens": 256,
+        "generated_tokens": 2,
+        "eos": true
+      }
+    }
+  },
+  "arms": 12,
+  "files_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/TextVQA_VAL_39033_keep_all_started.json": "959cf5987608c9320fb79b1a6872dfdbddf9142a724a36a77902b2db66f5987c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/DocVQA_VAL_63709_disabled.json": "2e8646a38592c2272193d148125ea4968fb934b7087efcd95312f313dc5cc4f0",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/DocVQA_VAL_63709_keep_all_generated.json": "bea6abcfc11a7b25e97ebb9be6e289bca032d11491f5727fc543d749bcc9d71c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/DocVQA_VAL_63709_author_prefix_256_generated.json": "bea6abcfc11a7b25e97ebb9be6e289bca032d11491f5727fc543d749bcc9d71c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/DocVQA_VAL_63709_user_text_256_started.json": "0bd7313ceaa0323134d0615b760fec6dd1e8cc65a4733ff473f3ff96023285b5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/AI2D_TEST_11001_disabled_started.json": "1df0ed414dd9c7e28f4048a12b6366d819e4e4c6a4bfb06368b021071108a166",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/started.json": "7b59c0973b4f99b56b0e3390bb832726aa5b843d67e9d781db8ae7d1792cf5cb",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/TextVQA_VAL_39033_keep_all.json": "0792499c4193ada04be209bde256a4d6a86ae47e517cd4e95d053089bd324485",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/AI2D_TEST_11001_user_text_256_started.json": "6d96bfb1f89519b7ab566e27a61c59a4ceeaf1d9f97e9052c183a5eadce69c72",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/TextVQA_VAL_39033_author_prefix_256.json": "28da5fdfc38e552ef8e4618be9eaa9b00df963401d76ee539c7bfae1667c218c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/AI2D_TEST_11001_author_prefix_256.json": "34742c4409122936ac68bd4980627562e7bbd52f180ac1e552395180821a3da3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/TextVQA_VAL_39033_disabled_generated.json": "535d6daf11e96835ddfff70b3dbc4cc6a02845686792aeeec4437231b69dc9a5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/TextVQA_VAL_39033_user_text_256_started.json": "00b95abfbf9363e16f47da5766618e3788e97c22196f331c4d8cd14b5de3845c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/AI2D_TEST_11001_author_prefix_256_started.json": "adafdf34c2350964f2f09e231b306bc519ea036fa5f817b0a1b9decaa9bcb030",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/AI2D_TEST_11001_user_text_256.json": "2b3e0f374baa0f8889c782d9f56cafcafd5f149cc73aa296c00a300b558ed41f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/AI2D_TEST_11001_keep_all.json": "688f6cc3a94afcd7a0573254508e9742a78f0023fc6a6edfb177c6260b36ce2f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/DocVQA_VAL_63709_disabled_started.json": "f675ef59655a7916aa328ba30c27245e680ade55fba3ed6dde5ec73c1f89cade",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/TextVQA_VAL_39033_author_prefix_256_started.json": "681e1db48536b4dea14c2f5386f4cfea557d93391ac4f3f9f855dfa39b1eae4d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/TextVQA_VAL_39033_user_text_256_generated.json": "535d6daf11e96835ddfff70b3dbc4cc6a02845686792aeeec4437231b69dc9a5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/TextVQA_VAL_39033_disabled_started.json": "cbf4df3b72de0775eacb75255925872e9c9ca63eedc2003f3d0bc5ef51f8481a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/AI2D_TEST_11001_disabled_generated.json": "5dabee6ec37a4cfe4b37d8a7d33395453295d0358c35321d7211ab16135f1a72",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/DocVQA_VAL_63709_author_prefix_256_started.json": "30e5044cd3e2ac4bbff2d20a1d98803176471f032262bc5f46f066ec9fb28fc1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/worker_complete.json": "8ff1f857896278339f8c2836d903468ff72039d964be064b95d1cb6ceae1dc3f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/DocVQA_VAL_63709_keep_all.json": "8b8eeb85f3f3e0b68f84224970f73e1ca5bb153bc0f2107349c23b9d4b49e140",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/AI2D_TEST_11001_keep_all_started.json": "0ab48caa9a8b7ddf78c81b60b95aa2336ef93d1557c0fcf0caf54d0863315258",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/DocVQA_VAL_63709_user_text_256.json": "314bc01714a795d57815a57b3eae8dfabe053cfb48a645377652f03da0c88e48",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/AI2D_TEST_11001_author_prefix_256_generated.json": "5dabee6ec37a4cfe4b37d8a7d33395453295d0358c35321d7211ab16135f1a72",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/AI2D_TEST_11001_user_text_256_generated.json": "5dabee6ec37a4cfe4b37d8a7d33395453295d0358c35321d7211ab16135f1a72",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/TextVQA_VAL_39033_user_text_256.json": "4f9c8f349399f04aafe6affe6c4c292d7ae4c3c39ac29c952ab5de5e37193e49",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/TextVQA_VAL_39033_author_prefix_256_generated.json": "535d6daf11e96835ddfff70b3dbc4cc6a02845686792aeeec4437231b69dc9a5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/TextVQA_VAL_39033_disabled.json": "5824b9a833337a0b4113aa258966f4ef268e7eb83cfa91be7371ed13af4012e1",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/DocVQA_VAL_63709_user_text_256_generated.json": "b01a4c250a93045178bd596d8079d6a166c6cadad99731c1b81093531adbd23d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/AI2D_TEST_11001_disabled.json": "a257fc0ed330f4bb40322cfde63943d0ac06ea97d48cc2fcc4d0651c5eac6137",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/DocVQA_VAL_63709_author_prefix_256.json": "6e89b42936d19d358d36879e8aed40365a42cf071e0419866aa4452556b18d4a",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/TextVQA_VAL_39033_keep_all_generated.json": "535d6daf11e96835ddfff70b3dbc4cc6a02845686792aeeec4437231b69dc9a5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/DocVQA_VAL_63709_keep_all_started.json": "e98e2f71d15c865e6082473f5240a508f1084d707c0a7482436eaa5afdb059ae",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/DocVQA_VAL_63709_disabled_generated.json": "bea6abcfc11a7b25e97ebb9be6e289bca032d11491f5727fc543d749bcc9d71c",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/AI2D_TEST_11001_keep_all_generated.json": "5dabee6ec37a4cfe4b37d8a7d33395453295d0358c35321d7211ab16135f1a72",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/observations/progress.jsonl": "97c40f4c83a1585472dd54e9ae3e1b22cd13557e5b354aee1aac33b3a3958b1d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/launch.json": "2dd272fe9db5e2dae52c63131490f0753a18ae51ceeed3b98f779e418f2ce806",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/run_smoke001/exit.json": "c7fab3c2344256f1ac794aacc4346e2513e24b5c6edd7ed4f8136c8788b396d6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/monitor_smoke001/started.json": "526c4368405d04cebda0d920e5ae396a6b04ade633fb47e917f24c5270db31f5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/monitor_smoke001/terminal.json": "b39da74a1ba391192871b08e325b22c790fb8ce822e77786c256fb3197ae6ce3",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/ziprerank_natural_v4/independent_prelaunch_review.json": "3812c19c8852d73b3adde60422f89c4b97c3d701d58b116e6814db332f28b686"
+  },
+  "reviewer_sha256": "9b89a0085444dc7b06ade3ba4a7a8067320e082c5524f79b49c54894f79350ea",
+  "limitations": [
+    "three tasks, one image each; no quality scoring or throughput",
+    "local RoPE repair on all enabled arms; full user-message text selector is another local intervention and includes instructions/options",
+    "per-step cache length is global/first layer; only final all-layer shapes are archived, not KV contents",
+    "positions, DS and selected embedding equality are online checks without full high-dimensional tensor archives"
+  ],
+  "errors": []
+}

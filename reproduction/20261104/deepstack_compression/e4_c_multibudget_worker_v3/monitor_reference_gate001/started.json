@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-11-05T07:28:11.570666+00:00",
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "-c",
+    "import fixed_reference_gate as g; print(\"accepted complete DEV fixed32 references\",len(g.load()),flush=True)"
+  ],
+  "cwd": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker_v3",
+  "timeout_seconds": 300.0,
+  "stale_seconds": null,
+  "progress_paths": [],
+  "snapshot_seconds": 3600.0,
+  "poll_seconds": 2.0,
+  "grace_seconds": 20.0,
+  "disk_paths": [
+    "/",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_multibudget_worker_v3/monitor_reference_gate001"
+  ],
+  "worker_pid": 1408961,
+  "process_group": 1408961
+}

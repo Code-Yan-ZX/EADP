@@ -1,0 +1,26 @@
+{
+  "scope": "post-result CPU control for cached-vs-recompute Hi-Lo local repair",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_decode_v2/probe.py": "f00f0c1f861cdd1ebdd03f197cd105f768d6bddb2c6cc4d9c533e6aa1b72b7e5",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_decode/plan001.json": "ca94fc4795812ad9c6b89e29ca66d31ac42a101864d72acc610702f6ed3e0f64",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_decode/result001.json": "2037bc350efb37cf08992cd79d0153dbe41a28ed948f7c6c2b47283269ad08e4",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_decode/monitor_probe001/terminal.json": "b211583616ac06770dda7b9b6dbed35093a17bb8182e9700743d48d35c717e1f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/plan001.json": "aba4dc8d6a6c4a02edce0ca9de4e4064684722168fa6f13bf8e94bea81819c24",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e6/hilo_local_probe/hilo_prune/models/qwen3_vl/modeling_hilo_qwen3_vl.py": "09ba0fadf0b6e9972ac0352a184723b1424ccffd3387c5a3ec046af7ee32cabb"
+  },
+  "cases": [
+    "no_selection",
+    "selection_fusion_disabled",
+    "selection_fusion_enabled"
+  ],
+  "steps": 32,
+  "atol": 1e-05,
+  "rtol": 1e-05,
+  "GT_opened": false,
+  "gpu_authorized": false,
+  "limitations": [
+    "Exploratory after seeing selected path mismatch",
+    "random model and simple positions, not author environment/real Qwen3",
+    "full recomputation changes fusion execution vs decode; error alone not proof of implementation defect"
+  ]
+}

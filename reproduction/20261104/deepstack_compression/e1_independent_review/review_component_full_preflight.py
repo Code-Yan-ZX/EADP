@@ -1,0 +1,11 @@
+"""Independent review for no-GPU 32-image component worker preflight only."""
+import argparse,json,sys
+from pathlib import Path
+B=Path(__file__).resolve().parent.parent;D=B/'e4_c_microbench_full';R=B/'e1_independent_review';sys.path.insert(0,str(D));from full_admission import accepted_pilot,sources
+from identity_gate import sha
+p=argparse.ArgumentParser();p.add_argument('--out',required=True,type=Path);a=p.parse_args();assert a.out.resolve()==D/'independent_preflight_review_002.json'
+for mon in (D/'monitor_cpu002',R/'monitor_component_full_cpu_review_002'):
+ s=json.loads((mon/'started.json').read_text());t=json.loads((mon/'terminal.json').read_text());assert t['reason']=='completed' and t['worker_returncode']==0 and t['remaining_process_group']==[] and s['worker_pid']==t['worker_pid']
+assert 'Ran 4 tests' in (R/'monitor_component_full_cpu_review_002/stderr.log').read_text();source={str(x):sha(x) for x in sources()};cpu=json.loads((D/'cpu_check_002/verification.json').read_text());assert cpu['status']=='passed' and cpu['source_sha256_before']==cpu['source_sha256_after']==source and cpu['GT_opened'] is False and cpu['gpu_used'] is False
+schedule=json.loads((B/'e4_c_microbench/schedule001.json').read_text());s=schedule['schedule'];assert len(s['images'])==len(schedule['input_identities'])==32 and len({tuple(i) for i in s['images']})==32 and len(s['jobs'])==1920 and [j['order'] for j in s['jobs']]==list(range(1920));assert all([i['task'],i['group_id']]==image for i,image in zip(schedule['input_identities'],s['images']));prior=accepted_pilot(host=True)
+r={'status':'passed','independent_review':True,'preflight_only':True,'reviewer_sha256':sha(__file__),'source_sha256':source,'cpu_sha256':sha(D/'cpu_check_002/verification.json'),'cpu_started_sha256':sha(D/'monitor_cpu002/started.json'),'cpu_terminal_sha256':sha(D/'monitor_cpu002/terminal.json'),'GT_opened':False,'pilot_identity':prior,'independent_cpu_terminal_sha256':sha(R/'monitor_component_full_cpu_review_002/terminal.json'),'limitations':['only CPU preflight is approved; no GPU','32-image expansion postdates single-image pilot','existing accepted DEV mixed prediction journal is parsed for input identity; no GT or scoring'],'errors':[]};a.out.write_text(json.dumps(r,indent=2)+'\n');print('passed')

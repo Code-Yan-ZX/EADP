@@ -1,0 +1,1 @@
+Initial unsupervised test run: one synthetic NVML positive case failed because proposed max gap 10 ns was below the deliberately conservative 12 ns query-start to next-query-end span. Synthetic limit adjusted to 15 ns; implementation unchanged. No GPU or real samples were used.

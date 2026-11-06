@@ -1,0 +1,12 @@
+{
+  "scope": "remaining 96 pre-frozen DEV images; 288 author/fused/graph budget cases; no GT, no quality scoring",
+  "images": 96, "budgets": [128, 256, 512], "cases": 288,
+  "repeat_per_implementation": 5, "warmups_per_implementation": 1,
+  "inner_timeout_seconds": 3600, "outer_timeout_seconds": 3720,
+  "stale_seconds": 1200, "snapshot_seconds": 3600, "poll_seconds": 10, "grace_seconds": 90,
+  "minimum_free_bytes": 25769803776, "gpu_policy": "exclusive",
+  "manifest_sha256": "83171eb8298602706f9a1bad2e523cef0a833092b7b7c4673bef8bc984d92bf8",
+  "planning_estimate": "32 image accepted pilot 210.25 sec and 2.6 GiB; linear 96 image estimate about 10.5 minutes and 7.8 GiB, not a runtime guarantee",
+  "disclosure": "128 identities frozen prior to 32 case equivalence results, expansion decided after seeing pilot; 32 already observed and 96 added are not an independent full 128 validation",
+  "GT_opened": false, "scoring_performed": false
+}

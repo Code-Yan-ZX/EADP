@@ -1,0 +1,24 @@
+{
+  "status": "frozen",
+  "source_sha256": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/norm_contract.py": "532c224643ff41a7645b14b4e8953b8cabf9377dbf6b4eea655e9f4bdb610462",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/test_norm_contract.py": "6eb32c744dbb7144c7b08a36840e44d0ddff0efead798383c0f833db7a072e17",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/selection.py": "32e8202774a1aa6184b6c736c820aa8f60b386e6787ead0278bc3eb99c0af070",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/test_selection.py": "bd5a0b16384fc798696184e2ccb0344181005be228b7313c0249e8e235957581",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/select_metadata.py": "2c72e10179cbd8ca7d52ebecdd7e087b938192469c1c4e200e645159d5eb566f",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/freeze_contract.py": "cf24a90bb3b243cc90f1df98fc5dd39d94d1bd02ad922d4ce147ef40f477794d",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/plan_freeze001.json": "caad5cb02ad42fa7e0297636edadaa02ae9fec976c58936cafe9bf9f99e224c6",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_expansion352/selection001.json": "88a23d8dfb9a750a72c2e0f9f15778b09870d85c6af824e30cebd808454eb836",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_multistream_budget_diagnostic_v2/features.py": "0a27e3b35deb0c6f8b8a493e820d8504e9100382f5e8f27a197bf0c9c67d3a6f"
+  },
+  "selection_started_sha256": "4dab69bfe685cc949269ecd13eb66e86cd58f4c21d284bc9c069eaf65edaf8aa",
+  "selection_terminal_sha256": "2ec37d86a9916f0714ea8b6db25626ed6d6fe3aa0bbcc5d3e71e90753cc8cf04",
+  "tests": "test_bad_shape_dtype_nonfinite (test_norm_contract.NormContractTests) ... ok\ntest_constant_and_zero (test_norm_contract.NormContractTests) ... ok\ntest_exact_reconstruction (test_norm_contract.NormContractTests) ... ok\ntest_original_tamper_or_cache (test_norm_contract.NormContractTests) ... ok\ntest_cross_task_group_not_dropped (test_selection.SelectionTests) ... ok\ntest_duplicate_row_and_group (test_selection.SelectionTests) ... ok\ntest_full_and_order (test_selection.SelectionTests) ... ok\ntest_identity_tamper (test_selection.SelectionTests) ... ok\ntest_missing_anchor (test_selection.SelectionTests) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.035s\n\nOK\n",
+  "GT_opened": false,
+  "predictions_opened": false,
+  "GPU_used": false,
+  "feature_values_opened": false,
+  "score_values_opened": false,
+  "scope": "CPU selection and norm contract only; no runner, preflight, model or GPU authorization",
+  "errors": []
+}

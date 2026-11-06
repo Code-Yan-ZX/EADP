@@ -1,0 +1,260 @@
+{
+  "status": "prepared_awaiting_root_gpu_schedule",
+  "stage": "smoke",
+  "run_id": "001",
+  "scope": "72 DEV warm-cache interleaved latency jobs: 36 warmup, 36 measured; no GT or score",
+  "prepared_unix": 1793827515.3778484,
+  "command": [
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timing_supervise.py",
+    "--run-dir",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/monitor_latency001",
+    "--timeout",
+    "3720",
+    "--stale",
+    "1200",
+    "--progress",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_001/journal.jsonl",
+    "--snapshot-seconds",
+    "3600",
+    "--poll-seconds",
+    "15",
+    "--grace-seconds",
+    "90",
+    "--disk",
+    "/media/disk2",
+    "--",
+    "/media/disk2/YZX/research/EADP_v2/_reproduction/envs/qwen_author/bin/python",
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_launch.py",
+    "--run-id",
+    "001",
+    "--stage",
+    "smoke"
+  ],
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "output": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_001",
+  "monitor": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/monitor_latency001",
+  "budget": {
+    "jobs": 72,
+    "warmup_jobs": 36,
+    "measured_jobs": 36,
+    "inner_timeout_seconds": 3600,
+    "outer_timeout_seconds": 3720,
+    "journal_stale_seconds": 1200,
+    "snapshot_seconds": 3600,
+    "poll_seconds": 15,
+    "grace_seconds": 90,
+    "minimum_free_bytes": 32212254720
+  },
+  "budget_sha256": "267d4d9ebb323526b1a1727629c54d7bf0f4a3e61a71af9030bc865c11ecee4a",
+  "approval_bundle": {
+    "light_identity": {
+      "adapter_sha256": "e98d3230785247f190a0eb8313e7ea464f94f1edb9ebf36766559be8e9e58b2a",
+      "formal_sha256": "86b0c24d14bd99f067126d3815511636c43dd6c630638be6fbf51ea716be2173",
+      "launch_plan_sha256": "a19420875d70b120fbf198d8cd3d75f2064fe2dffbe7adaaa13c4256757f68f3",
+      "review_sha256": "4d269740c222c7ea40b5d3c6cd37c72c916dc68784ffd174dfcc5936df1e59b5",
+      "run_started_sha256": "ea6955a06f0eeb0fad2c52e7ab146c35d1648748b137de3b3ebe61e36f665fc4",
+      "run_terminal_sha256": "f26fa89adca2325edc4070957a0cc7ac076b842806275477b1eb98648f8f93c8",
+      "skip_sha256": "1732cf751dbb56d225c5bbf2fb6cd1e00cfa595d1a16368ca0137f2799994412"
+    },
+    "preflight_only": false,
+    "review_sha256": "e87e33fdb0350ef8994a471c2274aef0bfa86aea1bf90e0c787e4cab3126aea0",
+    "review_started_sha256": "3dbe60d8cc48e65f898ba8cfa04bb3811f4783cb72f02f5a1caf4150dfaf2375",
+    "review_terminal_sha256": "beacb45349fe6471a1a4e16e81f24605fe57b793a25c278b826c7290eb2d38f9",
+    "scope": "latency_smoke_launch",
+    "source_sha256": {
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/container_runtime.py": "7af58cb6477c968dc211169a6709f8ea9cd0f8d590caf4a72f97c1de1bb5f910",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/diagnose.py": "283061a38ca893945b0f748d2469c908884f08d8ca86e2feb6b753ee93eb4902",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_panel.py": "aeee2a27c4394fc683245dce6fe2629f2fa1d9948ab66bb68edbdd46a9c65645",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_plan.json": "d752c876367803c5728ffa84a819fd63b4c129cfd0e2eb78931f7d94dae5d4ad",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/qwen_weight_identity.json": "7bfe695c2dbb0aa4e625183f0344d26bcbdc3add24658a068302c2744dc07ec8",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/skip_deepstack.py": "1732cf751dbb56d225c5bbf2fb6cd1e00cfa595d1a16368ca0137f2799994412",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/budget_plan.json": "267d4d9ebb323526b1a1727629c54d7bf0f4a3e61a71af9030bc865c11ecee4a",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/contract.py": "027798e7ae8ddebcef7be5444a230c8f0c2d5bee47f5a5e65357431696666ab9",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/cpu_check.py": "dcbe1a1168ee4e920064e8acfa03ec0d622a55ed13ad32041507e819bbd46461",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/e1_reference_gate.py": "498e2c810471a94c2702135dfa996215d48e19bb4c20cc54d344c8cb63141b98",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/identity_gate.py": "dd1d306dc7bf259427812c1ad3c4c92fc2d289bfa8a13ec3d882b597f41ef2b0",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/import_probe.py": "249a9b60881e87a3d434d447d3b4aac6324f655e8ec5e1acfcd861e3f14a73a7",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/input_preflight.py": "756846a58128101f554a036d370298a4f4400a1a1a34d5fe8412f257b0838edc",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/interference.py": "76f4c708bce1689571786442bc1767130a7cabf85c57123349217ce01f64a89d",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_admission.py": "b2342b8ceafbfc6e9b0e3bdace149b81f44e362757ad919d7084a8485ba15af5",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_gate.py": "bffdc8030bfcc3eece6cd0ea095e275d7655849ad22a9dbb72b586c713152e28",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_launch.py": "f39cf224d647cc56e586e67359e2948bd019c2199cfae15bf8f972652dafdbeb",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_verify.py": "6de86fd33357de0f1fcb5632447c30386da2067a948160bc4c3e1d86d432797f",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_worker.py": "06dda012569d2cceab1953c8608392c02f765a6e45f5f89d513eccf6f17e9343",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/light_adapter.py": "e98d3230785247f190a0eb8313e7ea464f94f1edb9ebf36766559be8e9e58b2a",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/memory_probe.py": "41b2d77d73371c6ea387e528345b048a1ff8449eac4487da0423d180bc489d2e",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/preflight_import.py": "6d787cf99b3823f6776f340f09bbf85a60d85510a50730d504b8e03cfcc72cc7",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/preflight_worker.py": "52e74188b6bbf7eb83d53f2fb5cc8f92f7abe90f141f83c4baf2b0443d0ab4d9",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/real_worker.py": "92cd963bc14c389d6d720b4812618425f94c5dcdc0821daaf0e115b63b4e5196",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/runner.py": "8de5b0112e10a3e08509276413e971934e23d07d9acbb8ce03bcb27a09be1408",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/schedule.py": "557d0d17d27a847e32fa6ba68d7c69b6da3c47f401021b722dd992dd718a30d7",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/stage_runner.py": "989d357bd7fbed552bcf347188ab6790de622f46bfcaab8358cb1f2b11b176f2",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/test_latency.py": "b4a381b07b685af20a8e9cae88501deaa7806cf293a43cbb19a15aaa86df17d5",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/test_lifecycle.py": "9a25275f4328f1b06e58d24021cf82b042ba1d6e810910c9ecae65e4567d5fa0",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timer.py": "80354cf31ce68ef697fe72aa62c0cf0cdf95d408bf2f5f67818c213ed8f35cf4",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timing_launch.py": "25b5386e5377f90ca6609076e0352898c9cb392a8908209755703aef8e2b5c41",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timing_supervise.py": "27e3db3242836f1534c06f6fe087390d6547a7c23b01c22d01f02c413c948d06",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/verify_core.py": "e00a126eed3a3adad1557fcc8ef9f139069198ec9d5d5f8691961a8a9cded55c",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/initial_plan.json": "2a11cfcc2dc9404eac218f1f727e39508a687a73e0343101ae564be3e99c30e6",
+      "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py": "dddd62696ca10f2624654feec9831c83d308ddf8eb982c645ad3c5eac827ff17"
+    }
+  },
+  "source_snapshots": {
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/container_runtime.py": {
+      "sha256": "7af58cb6477c968dc211169a6709f8ea9cd0f8d590caf4a72f97c1de1bb5f910",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/00_container_runtime.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/diagnose.py": {
+      "sha256": "283061a38ca893945b0f748d2469c908884f08d8ca86e2feb6b753ee93eb4902",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/01_diagnose.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_panel.py": {
+      "sha256": "aeee2a27c4394fc683245dce6fe2629f2fa1d9948ab66bb68edbdd46a9c65645",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/02_run_panel.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/gpu_formula_facility_panel_run02/run_plan.json": {
+      "sha256": "d752c876367803c5728ffa84a819fd63b4c129cfd0e2eb78931f7d94dae5d4ad",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/03_run_plan.json"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261028/qwen/qwen_weight_identity.json": {
+      "sha256": "7bfe695c2dbb0aa4e625183f0344d26bcbdc3add24658a068302c2744dc07ec8",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/04_qwen_weight_identity.json"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4/skip_deepstack.py": {
+      "sha256": "1732cf751dbb56d225c5bbf2fb6cd1e00cfa595d1a16368ca0137f2799994412",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/05_skip_deepstack.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/budget_plan.json": {
+      "sha256": "267d4d9ebb323526b1a1727629c54d7bf0f4a3e61a71af9030bc865c11ecee4a",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/06_budget_plan.json"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/contract.py": {
+      "sha256": "027798e7ae8ddebcef7be5444a230c8f0c2d5bee47f5a5e65357431696666ab9",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/07_contract.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/cpu_check.py": {
+      "sha256": "dcbe1a1168ee4e920064e8acfa03ec0d622a55ed13ad32041507e819bbd46461",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/08_cpu_check.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/e1_reference_gate.py": {
+      "sha256": "498e2c810471a94c2702135dfa996215d48e19bb4c20cc54d344c8cb63141b98",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/09_e1_reference_gate.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/identity_gate.py": {
+      "sha256": "dd1d306dc7bf259427812c1ad3c4c92fc2d289bfa8a13ec3d882b597f41ef2b0",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/10_identity_gate.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/import_probe.py": {
+      "sha256": "249a9b60881e87a3d434d447d3b4aac6324f655e8ec5e1acfcd861e3f14a73a7",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/11_import_probe.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/input_preflight.py": {
+      "sha256": "756846a58128101f554a036d370298a4f4400a1a1a34d5fe8412f257b0838edc",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/12_input_preflight.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/interference.py": {
+      "sha256": "76f4c708bce1689571786442bc1767130a7cabf85c57123349217ce01f64a89d",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/13_interference.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_admission.py": {
+      "sha256": "b2342b8ceafbfc6e9b0e3bdace149b81f44e362757ad919d7084a8485ba15af5",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/14_latency_admission.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_gate.py": {
+      "sha256": "bffdc8030bfcc3eece6cd0ea095e275d7655849ad22a9dbb72b586c713152e28",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/15_latency_gate.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_launch.py": {
+      "sha256": "f39cf224d647cc56e586e67359e2948bd019c2199cfae15bf8f972652dafdbeb",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/16_latency_launch.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_verify.py": {
+      "sha256": "6de86fd33357de0f1fcb5632447c30386da2067a948160bc4c3e1d86d432797f",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/17_latency_verify.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency_worker.py": {
+      "sha256": "06dda012569d2cceab1953c8608392c02f765a6e45f5f89d513eccf6f17e9343",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/18_latency_worker.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/light_adapter.py": {
+      "sha256": "e98d3230785247f190a0eb8313e7ea464f94f1edb9ebf36766559be8e9e58b2a",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/19_light_adapter.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/memory_probe.py": {
+      "sha256": "41b2d77d73371c6ea387e528345b048a1ff8449eac4487da0423d180bc489d2e",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/20_memory_probe.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/preflight_import.py": {
+      "sha256": "6d787cf99b3823f6776f340f09bbf85a60d85510a50730d504b8e03cfcc72cc7",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/21_preflight_import.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/preflight_worker.py": {
+      "sha256": "52e74188b6bbf7eb83d53f2fb5cc8f92f7abe90f141f83c4baf2b0443d0ab4d9",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/22_preflight_worker.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/real_worker.py": {
+      "sha256": "92cd963bc14c389d6d720b4812618425f94c5dcdc0821daaf0e115b63b4e5196",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/23_real_worker.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/runner.py": {
+      "sha256": "8de5b0112e10a3e08509276413e971934e23d07d9acbb8ce03bcb27a09be1408",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/24_runner.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/schedule.py": {
+      "sha256": "557d0d17d27a847e32fa6ba68d7c69b6da3c47f401021b722dd992dd718a30d7",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/25_schedule.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/stage_runner.py": {
+      "sha256": "989d357bd7fbed552bcf347188ab6790de622f46bfcaab8358cb1f2b11b176f2",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/26_stage_runner.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/test_latency.py": {
+      "sha256": "b4a381b07b685af20a8e9cae88501deaa7806cf293a43cbb19a15aaa86df17d5",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/27_test_latency.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/test_lifecycle.py": {
+      "sha256": "9a25275f4328f1b06e58d24021cf82b042ba1d6e810910c9ecae65e4567d5fa0",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/28_test_lifecycle.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timer.py": {
+      "sha256": "80354cf31ce68ef697fe72aa62c0cf0cdf95d408bf2f5f67818c213ed8f35cf4",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/29_timer.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timing_launch.py": {
+      "sha256": "25b5386e5377f90ca6609076e0352898c9cb392a8908209755703aef8e2b5c41",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/30_timing_launch.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/timing_supervise.py": {
+      "sha256": "27e3db3242836f1534c06f6fe087390d6547a7c23b01c22d01f02c413c948d06",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/31_timing_supervise.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/verify_core.py": {
+      "sha256": "e00a126eed3a3adad1557fcc8ef9f139069198ec9d5d5f8691961a8a9cded55c",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/32_verify_core.py"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/initial_plan.json": {
+      "sha256": "2a11cfcc2dc9404eac218f1f727e39508a687a73e0343101ae564be3e99c30e6",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/33_initial_plan.json"
+    },
+    "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/monitor/supervise.py": {
+      "sha256": "dddd62696ca10f2624654feec9831c83d308ddf8eb982c645ad3c5eac827ff17",
+      "snapshot": "/media/disk2/YZX/research/EADP_v2/reproduction/20261104/deepstack_compression/e4_c_latency/latency001_sources/34_supervise.py"
+    }
+  },
+  "cpu_admit_started_sha256": "a0685bcd00939e64a70a56e5e62e79b6233a29485f801735f6b9a17080a409bc",
+  "cpu_admit_terminal_sha256": "abcb932fce8ba5cbbea7d0a1c3ff27e115a7cf53772bde01928eac104f688947",
+  "requirements": [
+    "root GPU scheduling and confirmed no active GPU compute jobs",
+    "remaining user deadline covers outer timeout and cleanup",
+    "all reviewed source hashes unchanged and output/monitor names unused"
+  ],
+  "limitations": [
+    "72-job pilot cannot establish full-stage runtime or 2048-token worst case",
+    "one explicit synchronization at first token; hourly health overlap is flagged, all jobs retained",
+    "single interleaved model process; memory is measured separately"
+  ]
+}
