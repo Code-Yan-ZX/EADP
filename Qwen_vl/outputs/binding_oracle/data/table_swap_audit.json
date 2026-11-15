@@ -1,0 +1,37 @@
+{
+  "pair_id": "swap_38577_38580",
+  "source_document_id": "fmwx0078",
+  "source_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/extra/source_images/fmwx0078_10.png",
+  "source_sha256": "0d9c060b2e0ca21d4446d24524ea147b501150d8e17386aac076d7addb9166c5",
+  "crop_xyxy": [
+    350,
+    635,
+    1300,
+    825
+  ],
+  "selection": "Selected by true year/amount table type and readable source layout before inspecting any model predictions.",
+  "four_targets": [
+    {
+      "member": "original",
+      "question": "what is the amounts given for the year 1998 ?",
+      "answer": "282,975"
+    },
+    {
+      "member": "original",
+      "question": "what is the amounts given for the year 1999 ?",
+      "answer": "297,267"
+    },
+    {
+      "member": "swapped",
+      "question": "what is the amounts given for the year 1998 ?",
+      "answer": "297,267"
+    },
+    {
+      "member": "swapped",
+      "question": "what is the amounts given for the year 1999 ?",
+      "answer": "282,975"
+    }
+  ],
+  "source_qa_retained": true,
+  "predictions_used": false
+}

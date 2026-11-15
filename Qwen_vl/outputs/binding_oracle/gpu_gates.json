@@ -1,0 +1,26 @@
+{
+  "pass_all": true,
+  "stock_hook_features_bitwise": true,
+  "singleton_ppe_logits_bitwise": true,
+  "max_logit_delta": 0.0,
+  "text_rotary_unchanged": true,
+  "image_rotary_changed": true,
+  "native_decode_position": true,
+  "n_vis": 1024,
+  "deepstack_lengths": [
+    1024,
+    1024,
+    1024
+  ],
+  "score_finite": true,
+  "score_shape": [
+    1024
+  ],
+  "key_shape": [
+    1024,
+    72
+  ],
+  "torch_version": "2.10.0+cu128",
+  "time": 1794122837.3214698,
+  "source": "previous-pilot page, used only for interface smoke"
+}

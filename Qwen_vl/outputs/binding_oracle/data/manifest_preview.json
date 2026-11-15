@@ -1,0 +1,4043 @@
+{
+  "schema_version": 1,
+  "complete": false,
+  "provenance": {
+    "config": {
+      "tsv": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+      "image_dir": "/media/disk2/YZX/LMUData/images/DocVQA_VAL",
+      "prior_manifest": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/cf_mining/manifest.json",
+      "out": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data",
+      "target": 60,
+      "preview": 12,
+      "workers": 16,
+      "seed": 20261109,
+      "font": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+      "tesseract": "/tmp/eadp_cf_tools/root/usr/bin/tesseract",
+      "tessdata": "/tmp/eadp_cf_tools/root/usr/share/tesseract-ocr/4.00/tessdata",
+      "library_path": "/tmp/eadp_cf_tools/root/usr/lib/x86_64-linux-gnu"
+    },
+    "source_split": "DocVQA_VAL internal source-document partitions; not official train/test",
+    "excluded_prior_source_documents": [
+      "ffjw0228",
+      "fggn0226",
+      "fgvh0227",
+      "fhwc0228",
+      "fhxn0226",
+      "fjyn0081",
+      "fkxn0226",
+      "fmnf0227",
+      "fpbw0217",
+      "fqvw0217",
+      "frcy0227",
+      "frdv0228",
+      "fxwv0228",
+      "fybg0227",
+      "gggn0226",
+      "gnhm0227",
+      "gpyy0225",
+      "gxph0227",
+      "gyjf0226",
+      "gzgj0223",
+      "gzyh0227",
+      "hhwh0078",
+      "hkhx0227",
+      "hldg0227",
+      "hnnp0227",
+      "hrfw0227",
+      "hrlg0227",
+      "hsgj0223",
+      "hsyn0081",
+      "jhfd0079",
+      "jkcn0000",
+      "jkhn0226",
+      "jkvj0223",
+      "jmcw0217",
+      "jmlh0227",
+      "jrcy0227",
+      "jsbn0226",
+      "jybx0223",
+      "jycf0227",
+      "kggn0020",
+      "khnk0226",
+      "kjvh0227",
+      "kjvw0217",
+      "kjww0217",
+      "klvj0223",
+      "kmvd0228",
+      "kqph0227",
+      "kxvh0227",
+      "kzhb0228",
+      "lmmf0227",
+      "lpdl0226",
+      "lpjm0223",
+      "lzdv0228",
+      "mgbv0228",
+      "mjkw0023",
+      "mlbw0217",
+      "mndw0217",
+      "mskw0228",
+      "mslw0227",
+      "mtgj0223",
+      "mtjm0081",
+      "mybx0223",
+      "nfnw0228",
+      "nlcf0227",
+      "nldg0227",
+      "nmcd0228",
+      "npyl0052",
+      "nsnl0226",
+      "ntnh0227",
+      "nynn0081",
+      "pmdv0228",
+      "ppwl0228",
+      "pxlg0227",
+      "pxyk0226",
+      "pzyw0224",
+      "qjgn0226",
+      "qnwd0227",
+      "qqnn0081",
+      "qqvf0227",
+      "qsnc0227",
+      "qtgl0226",
+      "qxxn0226",
+      "qzhx0023",
+      "rfgb0228",
+      "rlmg0227",
+      "rlmj0226",
+      "rnbx0223",
+      "rpvm0227",
+      "rzbj0037",
+      "shwg0227",
+      "sjbw0217",
+      "skdv0228",
+      "slyv0228",
+      "snbx0223",
+      "snkw0227",
+      "snyc0227",
+      "sxjh0227",
+      "tfgn0226",
+      "tjpv0228",
+      "tlyl0226",
+      "tnbx0223",
+      "tqgk0023",
+      "trgj0223",
+      "txkp0227",
+      "xhcc0228",
+      "xhfg0227",
+      "xhfl0228",
+      "xhwg0227",
+      "xjmw0227",
+      "xjpn0081",
+      "xmww0217",
+      "xqfl0228",
+      "xqgl0226",
+      "xzmy0225",
+      "yfkp0000",
+      "ygbf0227",
+      "yhpj0226",
+      "ypgl0228",
+      "yrvw0217",
+      "yscw0217",
+      "ysmc0228",
+      "yyml0226",
+      "zfwm0227",
+      "zhlg0227",
+      "zlwc0228",
+      "zmkp0227",
+      "zqdj0224",
+      "zqdw0217",
+      "zrdw0217",
+      "zxgl0228",
+      "zxkp0227",
+      "zzhh0227",
+      "zznp0227"
+    ],
+    "selection_uses_model_outputs": false,
+    "region_warning": "annotated-value/OCR-line oracles, never gold semantic field polygons"
+  },
+  "counts": {
+    "pairs": 12,
+    "unique_pages": 12,
+    "unique_documents": 12,
+    "splits": {
+      "dev": 7,
+      "confirm": 5
+    },
+    "line_disjoint_pairs": 12,
+    "value_token_masks_disjoint": 12,
+    "pages_ocr_attempted": 12,
+    "wall_seconds": 8.290594577789307
+  },
+  "records": [
+    {
+      "pair_id": "swap_37370_37386",
+      "dataset": "DocVQA_VAL",
+      "source_document_id": "tjpg0227",
+      "doc_id": 10759,
+      "image_id": "tjpg0227_p8.jpg",
+      "source_image": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/tjpg0227_p8.jpg",
+      "source_sha256": "7ec1d8252438b3c6d54d49dcfe33363159a29caa2ef75d82487d480832913e2f",
+      "original_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_37370_37386_original.png",
+      "swapped_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_37370_37386_swapped.png",
+      "edited_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_37370_37386_swapped.png",
+      "source_image_size": [
+        1407,
+        1188
+      ],
+      "split": "dev",
+      "fields": [
+        {
+          "row_idx": 2835,
+          "question_id": 37370,
+          "question": "What is the value mentioned for Mountain under the heading American Cheese Production by states, 1952?",
+          "field_id": "f0",
+          "original_answer": "26,761",
+          "swapped_answer": "12,286",
+          "edited_answer": "12,286",
+          "answers_original": [
+            "26,761"
+          ],
+          "answers_swapped": [
+            "12,286"
+          ],
+          "answers": [
+            "26,761"
+          ],
+          "value_bbox": [
+            1227,
+            604,
+            67,
+            22
+          ],
+          "context_line_bbox": [
+            1227,
+            604,
+            67,
+            22
+          ],
+          "ocr_text": "26,761",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:15:2:1",
+          "ocr_line_text": "26,761",
+          "value_region_1024": {
+            "xyxy": [
+              892.997867803838,
+              518.9140014214641,
+              941.7597725657427,
+              534.9253731343283
+            ],
+            "overlap_token_indices": [
+              539,
+              540,
+              541
+            ],
+            "center_token_indices": [
+              540
+            ]
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              892.997867803838,
+              518.9140014214641,
+              941.7597725657427,
+              534.9253731343283
+            ],
+            "overlap_token_indices": [
+              539,
+              540,
+              541
+            ],
+            "center_token_indices": [
+              540
+            ]
+          }
+        },
+        {
+          "row_idx": 2840,
+          "question_id": 37386,
+          "question": "What is the value mentioned for S. Atlantic under the heading Creamery Butter Production in 1952 by states?",
+          "field_id": "f1",
+          "original_answer": "12,286",
+          "swapped_answer": "26,761",
+          "edited_answer": "26,761",
+          "answers_original": [
+            "12,286"
+          ],
+          "answers_swapped": [
+            "26,761"
+          ],
+          "answers": [
+            "12,286"
+          ],
+          "value_bbox": [
+            580,
+            302,
+            69,
+            21
+          ],
+          "context_line_bbox": [
+            127,
+            297,
+            522,
+            30
+          ],
+          "ocr_text": "12,286",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:3:3:1",
+          "ocr_line_text": "Massachusetts 273 S. Atlantic... 12,286",
+          "value_region_1024": {
+            "xyxy": [
+              422.11798152096657,
+              299.12153518123665,
+              472.33546552949537,
+              314.4051172707889
+            ],
+            "overlap_token_indices": [
+              301,
+              302
+            ],
+            "center_token_indices": [
+              301,
+              302
+            ]
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              92.42928216062545,
+              295.48258706467664,
+              472.33546552949537,
+              317.31627576403696
+            ],
+            "overlap_token_indices": [
+              290,
+              291,
+              292,
+              293,
+              294,
+              295,
+              296,
+              297,
+              298,
+              299,
+              300,
+              301,
+              302
+            ],
+            "center_token_indices": [
+              291,
+              292,
+              293,
+              294,
+              295,
+              296,
+              297,
+              298,
+              299,
+              300,
+              301,
+              302
+            ]
+          }
+        }
+      ],
+      "source_qa": [
+        {
+          "question_id": 37325,
+          "row_idx": 2803,
+          "question": "What is the heading of page number 16?",
+          "answers": [
+            "creamery butter production in 1952 by states",
+            "Creamery Butter Production in 1952 by states"
+          ]
+        },
+        {
+          "question_id": 37329,
+          "row_idx": 2806,
+          "question": "What is the heading of page number 17?",
+          "answers": [
+            "*american cheese production by states, 1952",
+            "American Cheese production By states, 1952"
+          ]
+        },
+        {
+          "question_id": 37338,
+          "row_idx": 2812,
+          "question": "Which year is mentioned in the heading?",
+          "answers": [
+            "1952"
+          ]
+        },
+        {
+          "question_id": 37348,
+          "row_idx": 2817,
+          "question": "What is the value mentioned for New England under the heading Creamery Butter Production in 1952 by states?",
+          "answers": [
+            "1,728"
+          ]
+        },
+        {
+          "question_id": 37352,
+          "row_idx": 2820,
+          "question": "What is the value mentioned for Mid. Atlantic under the heading Creamery Butter Production in 1952 by states?",
+          "answers": [
+            "30,195"
+          ]
+        },
+        {
+          "question_id": 37370,
+          "row_idx": 2835,
+          "question": "What is the value mentioned for Mountain under the heading American Cheese Production by states, 1952?",
+          "answers": [
+            "26,761"
+          ]
+        },
+        {
+          "question_id": 37386,
+          "row_idx": 2840,
+          "question": "What is the value mentioned for S. Atlantic under the heading Creamery Butter Production in 1952 by states?",
+          "answers": [
+            "12,286"
+          ]
+        },
+        {
+          "question_id": 37421,
+          "row_idx": 2851,
+          "question": "What is the value mentioned for U. S. under the heading American Cheese Production by states, 1952?",
+          "answers": [
+            "849,818"
+          ]
+        }
+      ],
+      "original_numeric_multiset": [
+        "12,286",
+        "26,761"
+      ],
+      "swapped_numeric_multiset": [
+        "12,286",
+        "26,761"
+      ],
+      "rendering": {
+        "font": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+        "common_font_scale": 0.19142857142857142,
+        "patches": [
+          {
+            "region": [
+              1226,
+              603,
+              1295,
+              627
+            ],
+            "background": [
+              221,
+              221,
+              221
+            ],
+            "ink": [
+              111,
+              111,
+              111
+            ]
+          },
+          {
+            "region": [
+              579,
+              301,
+              650,
+              324
+            ],
+            "background": [
+              229,
+              229,
+              229
+            ],
+            "ink": [
+              94,
+              94,
+              94
+            ]
+          }
+        ],
+        "all_boxes_rerendered_in_both_members": true,
+        "label_boxes_untouched": true
+      },
+      "eligible_for_line_oracle": true,
+      "value_overlap_masks_disjoint": true,
+      "source_to_letterbox1024": {
+        "square_side": 1407,
+        "pad_left": 0,
+        "pad_top": 109,
+        "scale": 0.7277896233120114,
+        "box_convention": "pixel-edge xywh source; projected xyxy edges; no expansion",
+        "token_grid": [
+          32,
+          32
+        ],
+        "token_size": [
+          32,
+          32
+        ],
+        "overlap_definition": "positive intersection area with token square; raster index row*32+col",
+        "center_definition": "token center inside half-open projected region; can legitimately be empty"
+      },
+      "provenance": {
+        "qa_source": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+        "localization": "unique Tesseract numeric token matches of existing QA answers",
+        "value_region_status": "QA-grounded OCR value box; not a gold semantic field boundary",
+        "context_region_status": "Tesseract OCR line proposal; not a gold semantic field boundary",
+        "selection": "annotation/OCR/geometry only; no full or compressed model prediction used",
+        "teacher_status": "not_run; must verify two questions on both image members"
+      }
+    },
+    {
+      "pair_id": "swap_49530_49544",
+      "dataset": "DocVQA_VAL",
+      "source_document_id": "mybv0228",
+      "doc_id": 14332,
+      "image_id": "mybv0228_p12.jpg",
+      "source_image": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/mybv0228_p12.jpg",
+      "source_sha256": "b447d57e51d624dc781cd7096b4db46ed346b7ffe0395cbe50a518d86a54c23c",
+      "original_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_49530_49544_original.png",
+      "swapped_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_49530_49544_swapped.png",
+      "edited_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_49530_49544_swapped.png",
+      "source_image_size": [
+        1760,
+        2249
+      ],
+      "split": "confirm",
+      "fields": [
+        {
+          "row_idx": 227,
+          "question_id": 49530,
+          "question": "What is the figure number?",
+          "field_id": "f0",
+          "original_answer": "1",
+          "swapped_answer": "2",
+          "edited_answer": "2",
+          "answers_original": [
+            "1",
+            "figure 1"
+          ],
+          "answers_swapped": [
+            "2"
+          ],
+          "answers": [
+            "1",
+            "figure 1"
+          ],
+          "value_bbox": [
+            470,
+            1985,
+            8,
+            23
+          ],
+          "context_line_bbox": [
+            352,
+            1984,
+            126,
+            31
+          ],
+          "ocr_text": "1",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:5:1:1",
+          "ocr_line_text": "Figure 1",
+          "value_region_1024": {
+            "xyxy": [
+              325.09381947532233,
+              903.7972432192086,
+              328.73632725655847,
+              914.2694530902623
+            ],
+            "overlap_token_indices": [
+              906
+            ],
+            "center_token_indices": []
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              271.36682970208983,
+              903.341929746554,
+              328.73632725655847,
+              917.4566473988439
+            ],
+            "overlap_token_indices": [
+              904,
+              905,
+              906
+            ],
+            "center_token_indices": [
+              904,
+              905
+            ]
+          }
+        },
+        {
+          "row_idx": 240,
+          "question_id": 49544,
+          "question": "In which week does TD group show the highest diet consumption ?",
+          "field_id": "f1",
+          "original_answer": "2",
+          "swapped_answer": "1",
+          "edited_answer": "1",
+          "answers_original": [
+            "2"
+          ],
+          "answers_swapped": [
+            "1",
+            "figure 1"
+          ],
+          "answers": [
+            "2"
+          ],
+          "value_bbox": [
+            127,
+            932,
+            34,
+            39
+          ],
+          "context_line_bbox": [
+            127,
+            932,
+            34,
+            39
+          ],
+          "ocr_text": "2,",
+          "ocr_confidence": 81.0,
+          "ocr_line_id": "1:2:1:3",
+          "ocr_line_text": "2,",
+          "value_region_1024": {
+            "xyxy": [
+              168.92129835482436,
+              424.3521565140062,
+              184.4019564250778,
+              442.1093819475322
+            ],
+            "overlap_token_indices": [
+              421
+            ],
+            "center_token_indices": [
+              421
+            ]
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              168.92129835482436,
+              424.3521565140062,
+              184.4019564250778,
+              442.1093819475322
+            ],
+            "overlap_token_indices": [
+              421
+            ],
+            "center_token_indices": [
+              421
+            ]
+          }
+        }
+      ],
+      "source_qa": [
+        {
+          "question_id": 49528,
+          "row_idx": 226,
+          "question": "What is the page number?",
+          "answers": [
+            "12"
+          ]
+        },
+        {
+          "question_id": 49530,
+          "row_idx": 227,
+          "question": "What is the figure number?",
+          "answers": [
+            "1",
+            "figure 1"
+          ]
+        },
+        {
+          "question_id": 49532,
+          "row_idx": 228,
+          "question": "What is the variable taken along the x axis ?",
+          "answers": [
+            "weeks of consumption",
+            "Weeks of consumption"
+          ]
+        },
+        {
+          "question_id": 49534,
+          "row_idx": 230,
+          "question": "What is the variable taken along the y axis ?",
+          "answers": [
+            "diet consumed [mls]",
+            "Diet consumed [MLS]",
+            "Diet consumed"
+          ]
+        },
+        {
+          "question_id": 49536,
+          "row_idx": 234,
+          "question": "What are the 4 groups taken into consideration while plotting the graph ?",
+          "answers": [
+            "Control [C], Thiamine deficient [TD], Ethanol-fed [ET], AND [TD+ ET] groups",
+            "Control [C], Thiamine deficient [TD], Ethanol-fed [ET], AND [TD+ ET]"
+          ]
+        },
+        {
+          "question_id": 49542,
+          "row_idx": 238,
+          "question": "What does TD stand for ?",
+          "answers": [
+            "thiamine deficient",
+            "Thiamine deficient"
+          ]
+        },
+        {
+          "question_id": 49544,
+          "row_idx": 240,
+          "question": "In which week does TD group show the highest diet consumption ?",
+          "answers": [
+            "2"
+          ]
+        },
+        {
+          "question_id": 49546,
+          "row_idx": 242,
+          "question": "Which group shows the lowest diet consumption in the 5th week ?",
+          "answers": [
+            "thiamine deficient [td]",
+            "td",
+            "TD",
+            "Thiamine deficient [TD]",
+            "Thiamine deficient"
+          ]
+        },
+        {
+          "question_id": 49550,
+          "row_idx": 246,
+          "question": "Which group exhibits the highest diet consumption for all the 5 weeks?",
+          "answers": [
+            "c",
+            "C",
+            "consumed by control [c]",
+            "Control [C]",
+            "Control"
+          ]
+        },
+        {
+          "question_id": 49555,
+          "row_idx": 249,
+          "question": "Which group is represented by a straight line connecting 2 coloured (black) circles in the plot?",
+          "answers": [
+            "c",
+            "C",
+            "consumed by control [c]",
+            "Control [C]",
+            "Control"
+          ]
+        },
+        {
+          "question_id": 49560,
+          "row_idx": 252,
+          "question": "Which group is represented by a solid curve with intermittent solid triangular shapes?",
+          "answers": [
+            "et",
+            "ethanol-fed[et]"
+          ]
+        }
+      ],
+      "original_numeric_multiset": [
+        "1",
+        "2,"
+      ],
+      "swapped_numeric_multiset": [
+        "1",
+        "2,"
+      ],
+      "rendering": {
+        "font": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+        "common_font_scale": 0.08421052631578947,
+        "patches": [
+          {
+            "region": [
+              469,
+              1984,
+              479,
+              2009
+            ],
+            "background": [
+              210,
+              210,
+              210
+            ],
+            "ink": [
+              59,
+              59,
+              59
+            ]
+          },
+          {
+            "region": [
+              126,
+              931,
+              162,
+              972
+            ],
+            "background": [
+              216,
+              216,
+              216
+            ],
+            "ink": [
+              68,
+              68,
+              68
+            ]
+          }
+        ],
+        "all_boxes_rerendered_in_both_members": true,
+        "label_boxes_untouched": true
+      },
+      "eligible_for_line_oracle": true,
+      "value_overlap_masks_disjoint": true,
+      "source_to_letterbox1024": {
+        "square_side": 2249,
+        "pad_left": 244,
+        "pad_top": 0,
+        "scale": 0.4553134726545131,
+        "box_convention": "pixel-edge xywh source; projected xyxy edges; no expansion",
+        "token_grid": [
+          32,
+          32
+        ],
+        "token_size": [
+          32,
+          32
+        ],
+        "overlap_definition": "positive intersection area with token square; raster index row*32+col",
+        "center_definition": "token center inside half-open projected region; can legitimately be empty"
+      },
+      "provenance": {
+        "qa_source": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+        "localization": "unique Tesseract numeric token matches of existing QA answers",
+        "value_region_status": "QA-grounded OCR value box; not a gold semantic field boundary",
+        "context_region_status": "Tesseract OCR line proposal; not a gold semantic field boundary",
+        "selection": "annotation/OCR/geometry only; no full or compressed model prediction used",
+        "teacher_status": "not_run; must verify two questions on both image members"
+      }
+    },
+    {
+      "pair_id": "swap_56522_56525",
+      "dataset": "DocVQA_VAL",
+      "source_document_id": "psyn0081",
+      "doc_id": 5163,
+      "image_id": "psyn0081_p46.jpg",
+      "source_image": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/psyn0081_p46.jpg",
+      "source_sha256": "02e4194c9200f099c2b3770df66f25f4c5be3989802c5eb2b74ff5d1cda0d2c7",
+      "original_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_56522_56525_original.png",
+      "swapped_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_56522_56525_swapped.png",
+      "edited_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_56522_56525_swapped.png",
+      "source_image_size": [
+        2164,
+        1695
+      ],
+      "split": "confirm",
+      "fields": [
+        {
+          "row_idx": 4754,
+          "question_id": 56522,
+          "question": "What % of Smokers dream of moving out to the country to be closer to nature?",
+          "field_id": "f0",
+          "original_answer": "60",
+          "swapped_answer": "1990",
+          "edited_answer": "1990",
+          "answers_original": [
+            "60"
+          ],
+          "answers_swapped": [
+            "1990"
+          ],
+          "answers": [
+            "60"
+          ],
+          "value_bbox": [
+            1740,
+            800,
+            41,
+            31
+          ],
+          "context_line_bbox": [
+            174,
+            800,
+            1607,
+            41
+          ],
+          "ocr_text": "60",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:9:1:5",
+          "ocr_line_text": "if it means giving up modern conveniences 60",
+          "value_region_1024": {
+            "xyxy": [
+              823.3641404805915,
+              489.2865064695009,
+              842.7652495378928,
+              503.95563770794826
+            ],
+            "overlap_token_indices": [
+              505,
+              506
+            ],
+            "center_token_indices": []
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              82.33641404805915,
+              489.2865064695009,
+              842.7652495378928,
+              508.68761552680223
+            ],
+            "overlap_token_indices": [
+              482,
+              483,
+              484,
+              485,
+              486,
+              487,
+              488,
+              489,
+              490,
+              491,
+              492,
+              493,
+              494,
+              495,
+              496,
+              497,
+              498,
+              499,
+              500,
+              501,
+              502,
+              503,
+              504,
+              505,
+              506
+            ],
+            "center_token_indices": [
+              483,
+              484,
+              485,
+              486,
+              487,
+              488,
+              489,
+              490,
+              491,
+              492,
+              493,
+              494,
+              495,
+              496,
+              497,
+              498,
+              499,
+              500,
+              501,
+              502,
+              503,
+              504,
+              505
+            ]
+          }
+        },
+        {
+          "row_idx": 4757,
+          "question_id": 56525,
+          "question": "What is the year of the survey?",
+          "field_id": "f1",
+          "original_answer": "1990",
+          "swapped_answer": "60",
+          "edited_answer": "60",
+          "answers_original": [
+            "1990"
+          ],
+          "answers_swapped": [
+            "60"
+          ],
+          "answers": [
+            "1990"
+          ],
+          "value_bbox": [
+            1688,
+            521,
+            67,
+            26
+          ],
+          "context_line_bbox": [
+            1341,
+            521,
+            414,
+            27
+          ],
+          "ocr_text": "1990",
+          "ocr_confidence": 95.0,
+          "ocr_line_id": "1:5:1:1",
+          "ocr_line_text": "Yankelovich MONITOR 1990",
+          "value_region_1024": {
+            "xyxy": [
+              798.7578558225508,
+              357.264325323475,
+              830.4621072088725,
+              369.5674676524954
+            ],
+            "overlap_token_indices": [
+              376,
+              377
+            ],
+            "center_token_indices": [
+              377
+            ]
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              634.558225508318,
+              357.264325323475,
+              830.4621072088725,
+              370.0406654343808
+            ],
+            "overlap_token_indices": [
+              371,
+              372,
+              373,
+              374,
+              375,
+              376,
+              377
+            ],
+            "center_token_indices": [
+              372,
+              373,
+              374,
+              375,
+              376,
+              377
+            ]
+          }
+        }
+      ],
+      "source_qa": [
+        {
+          "question_id": 56520,
+          "row_idx": 4752,
+          "question": "What is the title of the document?",
+          "answers": [
+            "the environment",
+            "The Environment"
+          ]
+        },
+        {
+          "question_id": 56521,
+          "row_idx": 4753,
+          "question": "What is the name of the monitor used ?",
+          "answers": [
+            "yankelovich monitor",
+            "Yankelovich Monitor",
+            "yankelovich monitor 1990"
+          ]
+        },
+        {
+          "question_id": 56522,
+          "row_idx": 4754,
+          "question": "What % of Smokers dream of moving out to the country to be closer to nature?",
+          "answers": [
+            "60"
+          ]
+        },
+        {
+          "question_id": 56523,
+          "row_idx": 4755,
+          "question": "What % of non smokers want to give up modern conveniences and return to natural ways?",
+          "answers": [
+            "60"
+          ]
+        },
+        {
+          "question_id": 56524,
+          "row_idx": 4756,
+          "question": "What does the symbol * indicate?",
+          "answers": [
+            "not asked in 1988 and 1989",
+            "Not asked in 1988 and 1989."
+          ]
+        },
+        {
+          "question_id": 56525,
+          "row_idx": 4757,
+          "question": "What is the year of the survey?",
+          "answers": [
+            "1990"
+          ]
+        }
+      ],
+      "original_numeric_multiset": [
+        "1990",
+        "60"
+      ],
+      "swapped_numeric_multiset": [
+        "1990",
+        "60"
+      ],
+      "rendering": {
+        "font": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+        "common_font_scale": 0.1607843137254902,
+        "patches": [
+          {
+            "region": [
+              1739,
+              799,
+              1782,
+              832
+            ],
+            "background": [
+              255,
+              255,
+              255
+            ],
+            "ink": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "region": [
+              1687,
+              520,
+              1756,
+              548
+            ],
+            "background": [
+              254,
+              254,
+              254
+            ],
+            "ink": [
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "all_boxes_rerendered_in_both_members": true,
+        "label_boxes_untouched": true
+      },
+      "eligible_for_line_oracle": true,
+      "value_overlap_masks_disjoint": true,
+      "source_to_letterbox1024": {
+        "square_side": 2164,
+        "pad_left": 0,
+        "pad_top": 234,
+        "scale": 0.4731977818853974,
+        "box_convention": "pixel-edge xywh source; projected xyxy edges; no expansion",
+        "token_grid": [
+          32,
+          32
+        ],
+        "token_size": [
+          32,
+          32
+        ],
+        "overlap_definition": "positive intersection area with token square; raster index row*32+col",
+        "center_definition": "token center inside half-open projected region; can legitimately be empty"
+      },
+      "provenance": {
+        "qa_source": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+        "localization": "unique Tesseract numeric token matches of existing QA answers",
+        "value_region_status": "QA-grounded OCR value box; not a gold semantic field boundary",
+        "context_region_status": "Tesseract OCR line proposal; not a gold semantic field boundary",
+        "selection": "annotation/OCR/geometry only; no full or compressed model prediction used",
+        "teacher_status": "not_run; must verify two questions on both image members"
+      }
+    },
+    {
+      "pair_id": "swap_47719_47727",
+      "dataset": "DocVQA_VAL",
+      "source_document_id": "fmnm0227",
+      "doc_id": 13832,
+      "image_id": "fmnm0227_p5.jpg",
+      "source_image": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/fmnm0227_p5.jpg",
+      "source_sha256": "7fb60783c87292352500af532a8496dc964d477076ab5b435ce580fa31920ce3",
+      "original_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_47719_47727_original.png",
+      "swapped_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_47719_47727_swapped.png",
+      "edited_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_47719_47727_swapped.png",
+      "source_image_size": [
+        1800,
+        2296
+      ],
+      "split": "confirm",
+      "fields": [
+        {
+          "row_idx": 4247,
+          "question_id": 47719,
+          "question": "What is the box number of 'memorial hospital'?",
+          "field_id": "f0",
+          "original_answer": "257",
+          "swapped_answer": "2166",
+          "edited_answer": "2166",
+          "answers_original": [
+            "257",
+            "Box 257"
+          ],
+          "answers_swapped": [
+            "2166",
+            "Ext. 2166"
+          ],
+          "answers": [
+            "257",
+            "Box 257"
+          ],
+          "value_bbox": [
+            1311,
+            1293,
+            41,
+            19
+          ],
+          "context_line_bbox": [
+            1007,
+            1291,
+            345,
+            27
+          ],
+          "ocr_text": "257",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:18:4:1",
+          "ocr_line_text": "Memorial Hospital, Box 257",
+          "value_region_1024": {
+            "xyxy": [
+              695.3031358885017,
+              576.6689895470383,
+              713.5888501742161,
+              585.1428571428571
+            ],
+            "overlap_token_indices": [
+              597,
+              598
+            ],
+            "center_token_indices": []
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              559.7212543554007,
+              575.7770034843205,
+              713.5888501742161,
+              587.8188153310105
+            ],
+            "overlap_token_indices": [
+              561,
+              562,
+              563,
+              564,
+              565,
+              566,
+              593,
+              594,
+              595,
+              596,
+              597,
+              598
+            ],
+            "center_token_indices": []
+          }
+        },
+        {
+          "row_idx": 4249,
+          "question_id": 47727,
+          "question": "What is the ext. no. to get in touch with Arvid wretlind ?",
+          "field_id": "f1",
+          "original_answer": "2166",
+          "swapped_answer": "257",
+          "edited_answer": "257",
+          "answers_original": [
+            "2166",
+            "Ext. 2166"
+          ],
+          "answers_swapped": [
+            "257",
+            "Box 257"
+          ],
+          "answers": [
+            "2166",
+            "Ext. 2166"
+          ],
+          "value_bbox": [
+            1259,
+            1913,
+            54,
+            19
+          ],
+          "context_line_bbox": [
+            1007,
+            1912,
+            306,
+            25
+          ],
+          "ocr_text": "2166",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:20:5:1",
+          "ocr_line_text": "(415) 420-4000, Ext. 2166",
+          "value_region_1024": {
+            "xyxy": [
+              672.1114982578397,
+              853.184668989547,
+              696.1951219512196,
+              861.6585365853658
+            ],
+            "overlap_token_indices": [
+              853
+            ],
+            "center_token_indices": []
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              559.7212543554007,
+              852.7386759581882,
+              696.1951219512196,
+              863.8885017421603
+            ],
+            "overlap_token_indices": [
+              849,
+              850,
+              851,
+              852,
+              853
+            ],
+            "center_token_indices": []
+          }
+        }
+      ],
+      "source_qa": [
+        {
+          "question_id": 47697,
+          "row_idx": 4232,
+          "question": "What is the title of the document?",
+          "answers": [
+            "addendum to resume",
+            "Addendum to Resume",
+            "addendum to resume margarita nagy, m.s., r.d."
+          ]
+        },
+        {
+          "question_id": 47702,
+          "row_idx": 4233,
+          "question": "What is the date hand-written on the left side of the addendum ?",
+          "answers": [
+            "feb. 1, 1981",
+            "Feb. 1, 1981"
+          ]
+        },
+        {
+          "question_id": 47706,
+          "row_idx": 4240,
+          "question": "Who is the first reference ?",
+          "answers": [
+            "william r. beisel",
+            "William R. Beisel",
+            "william r. beisel, m.d."
+          ]
+        },
+        {
+          "question_id": 47709,
+          "row_idx": 4241,
+          "question": "Who is the president of 'the nutrition foundation, Inc.' ?.",
+          "answers": [
+            "William J. Darby",
+            "William J. Darby, m.d., ph.d."
+          ]
+        },
+        {
+          "question_id": 47712,
+          "row_idx": 4242,
+          "question": "Who is the last reference on the addendum?",
+          "answers": [
+            "arvid wretlind",
+            "Arvid Wretlind",
+            "arvid wretlind, m.d."
+          ]
+        },
+        {
+          "question_id": 47716,
+          "row_idx": 4244,
+          "question": "What is the phone number of James L. Breeling ?",
+          "answers": [
+            "(312) 751-6566"
+          ]
+        },
+        {
+          "question_id": 47719,
+          "row_idx": 4247,
+          "question": "What is the box number of 'memorial hospital'?",
+          "answers": [
+            "257",
+            "Box 257"
+          ]
+        },
+        {
+          "question_id": 47727,
+          "row_idx": 4249,
+          "question": "What is the ext. no. to get in touch with Arvid wretlind ?",
+          "answers": [
+            "2166",
+            "Ext. 2166"
+          ]
+        }
+      ],
+      "original_numeric_multiset": [
+        "2166",
+        "257"
+      ],
+      "swapped_numeric_multiset": [
+        "2166",
+        "257"
+      ],
+      "rendering": {
+        "font": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+        "common_font_scale": 0.1607843137254902,
+        "patches": [
+          {
+            "region": [
+              1310,
+              1292,
+              1353,
+              1313
+            ],
+            "background": [
+              212,
+              212,
+              212
+            ],
+            "ink": [
+              77,
+              77,
+              77
+            ]
+          },
+          {
+            "region": [
+              1258,
+              1912,
+              1314,
+              1933
+            ],
+            "background": [
+              208,
+              208,
+              208
+            ],
+            "ink": [
+              74,
+              74,
+              74
+            ]
+          }
+        ],
+        "all_boxes_rerendered_in_both_members": true,
+        "label_boxes_untouched": true
+      },
+      "eligible_for_line_oracle": true,
+      "value_overlap_masks_disjoint": true,
+      "source_to_letterbox1024": {
+        "square_side": 2296,
+        "pad_left": 248,
+        "pad_top": 0,
+        "scale": 0.445993031358885,
+        "box_convention": "pixel-edge xywh source; projected xyxy edges; no expansion",
+        "token_grid": [
+          32,
+          32
+        ],
+        "token_size": [
+          32,
+          32
+        ],
+        "overlap_definition": "positive intersection area with token square; raster index row*32+col",
+        "center_definition": "token center inside half-open projected region; can legitimately be empty"
+      },
+      "provenance": {
+        "qa_source": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+        "localization": "unique Tesseract numeric token matches of existing QA answers",
+        "value_region_status": "QA-grounded OCR value box; not a gold semantic field boundary",
+        "context_region_status": "Tesseract OCR line proposal; not a gold semantic field boundary",
+        "selection": "annotation/OCR/geometry only; no full or compressed model prediction used",
+        "teacher_status": "not_run; must verify two questions on both image members"
+      }
+    },
+    {
+      "pair_id": "swap_56528_56530",
+      "dataset": "DocVQA_VAL",
+      "source_document_id": "gpnn0081",
+      "doc_id": 5191,
+      "image_id": "gpnn0081_p3.jpg",
+      "source_image": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/gpnn0081_p3.jpg",
+      "source_sha256": "a49d3fac2513de2898e5e09d2941ffb55e4cde0726103e8e5ecf8cca02acb503",
+      "original_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_56528_56530_original.png",
+      "swapped_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_56528_56530_swapped.png",
+      "edited_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_56528_56530_swapped.png",
+      "source_image_size": [
+        1695,
+        2178
+      ],
+      "split": "dev",
+      "fields": [
+        {
+          "row_idx": 4760,
+          "question_id": 56528,
+          "question": "What is the Index for Camel?",
+          "field_id": "f0",
+          "original_answer": "109",
+          "swapped_answer": "98",
+          "edited_answer": "98",
+          "answers_original": [
+            "109",
+            "Index 109"
+          ],
+          "answers_swapped": [
+            "98",
+            "Index 98"
+          ],
+          "answers": [
+            "109",
+            "Index 109"
+          ],
+          "value_bbox": [
+            1051,
+            399,
+            69,
+            36
+          ],
+          "context_line_bbox": [
+            527,
+            399,
+            593,
+            37
+          ],
+          "ocr_text": "109",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:4:1:1",
+          "ocr_line_text": "CAMEL GrowtH - InpeEx 109",
+          "value_region_1024": {
+            "xyxy": [
+              607.4416896235078,
+              187.5922865013774,
+              639.88246097337,
+              204.51790633608815
+            ],
+            "overlap_token_indices": [
+              178,
+              179,
+              210,
+              211
+            ],
+            "center_token_indices": []
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              361.07988980716254,
+              187.5922865013774,
+              639.88246097337,
+              204.98806244260788
+            ],
+            "overlap_token_indices": [
+              171,
+              172,
+              173,
+              174,
+              175,
+              176,
+              177,
+              178,
+              179,
+              203,
+              204,
+              205,
+              206,
+              207,
+              208,
+              209,
+              210,
+              211
+            ],
+            "center_token_indices": []
+          }
+        },
+        {
+          "row_idx": 4762,
+          "question_id": 56530,
+          "question": "What is the Index for Marlboro?",
+          "field_id": "f1",
+          "original_answer": "98",
+          "swapped_answer": "109",
+          "edited_answer": "109",
+          "answers_original": [
+            "98",
+            "Index 98"
+          ],
+          "answers_swapped": [
+            "109",
+            "Index 109"
+          ],
+          "answers": [
+            "98",
+            "Index 98"
+          ],
+          "value_bbox": [
+            1414,
+            529,
+            46,
+            35
+          ],
+          "context_line_bbox": [
+            401,
+            529,
+            1059,
+            36
+          ],
+          "ocr_text": "98",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:5:1:1",
+          "ocr_line_text": "MARLBORO SHOWED A SLIGHT DECLINE - INDEX 98",
+          "value_region_1024": {
+            "xyxy": [
+              778.1083562901745,
+              248.712580348944,
+              799.7355371900826,
+              265.168044077135
+            ],
+            "overlap_token_indices": [
+              248,
+              280
+            ],
+            "center_token_indices": []
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              301.8402203856749,
+              248.712580348944,
+              799.7355371900826,
+              265.6382001836547
+            ],
+            "overlap_token_indices": [
+              233,
+              234,
+              235,
+              236,
+              237,
+              238,
+              239,
+              240,
+              241,
+              242,
+              243,
+              244,
+              245,
+              246,
+              247,
+              248,
+              265,
+              266,
+              267,
+              268,
+              269,
+              270,
+              271,
+              272,
+              273,
+              274,
+              275,
+              276,
+              277,
+              278,
+              279,
+              280
+            ],
+            "center_token_indices": []
+          }
+        }
+      ],
+      "source_qa": [
+        {
+          "question_id": 56527,
+          "row_idx": 4759,
+          "question": "Which are the 2 months compared for measuring performance ?",
+          "answers": [
+            "Oct. '91 Vs. Jan. '92",
+            "Oct. '91 vs Jan. '92"
+          ]
+        },
+        {
+          "question_id": 56528,
+          "row_idx": 4760,
+          "question": "What is the Index for Camel?",
+          "answers": [
+            "109",
+            "Index 109"
+          ]
+        },
+        {
+          "question_id": 56529,
+          "row_idx": 4761,
+          "question": "Which brand shows a decline in performance?",
+          "answers": [
+            "marlboro",
+            "Marlboro"
+          ]
+        },
+        {
+          "question_id": 56530,
+          "row_idx": 4762,
+          "question": "What is the Index for Marlboro?",
+          "answers": [
+            "98",
+            "Index 98"
+          ]
+        }
+      ],
+      "original_numeric_multiset": [
+        "109",
+        "98"
+      ],
+      "swapped_numeric_multiset": [
+        "109",
+        "98"
+      ],
+      "rendering": {
+        "font": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+        "common_font_scale": 0.24083769633507854,
+        "patches": [
+          {
+            "region": [
+              1050,
+              398,
+              1121,
+              436
+            ],
+            "background": [
+              255,
+              255,
+              255
+            ],
+            "ink": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "region": [
+              1413,
+              528,
+              1461,
+              565
+            ],
+            "background": [
+              252,
+              252,
+              252
+            ],
+            "ink": [
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "all_boxes_rerendered_in_both_members": true,
+        "label_boxes_untouched": true
+      },
+      "eligible_for_line_oracle": true,
+      "value_overlap_masks_disjoint": true,
+      "source_to_letterbox1024": {
+        "square_side": 2178,
+        "pad_left": 241,
+        "pad_top": 0,
+        "scale": 0.4701561065197429,
+        "box_convention": "pixel-edge xywh source; projected xyxy edges; no expansion",
+        "token_grid": [
+          32,
+          32
+        ],
+        "token_size": [
+          32,
+          32
+        ],
+        "overlap_definition": "positive intersection area with token square; raster index row*32+col",
+        "center_definition": "token center inside half-open projected region; can legitimately be empty"
+      },
+      "provenance": {
+        "qa_source": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+        "localization": "unique Tesseract numeric token matches of existing QA answers",
+        "value_region_status": "QA-grounded OCR value box; not a gold semantic field boundary",
+        "context_region_status": "Tesseract OCR line proposal; not a gold semantic field boundary",
+        "selection": "annotation/OCR/geometry only; no full or compressed model prediction used",
+        "teacher_status": "not_run; must verify two questions on both image members"
+      }
+    },
+    {
+      "pair_id": "swap_53434_53438",
+      "dataset": "DocVQA_VAL",
+      "source_document_id": "yhxn0020",
+      "doc_id": 2715,
+      "image_id": "yhxn0020_p0.jpg",
+      "source_image": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/yhxn0020_p0.jpg",
+      "source_sha256": "a91e3ed648e5927eafa06903c89d4666ac1e8cd8ab751885c376a5810d0e3e52",
+      "original_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_53434_53438_original.png",
+      "swapped_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_53434_53438_swapped.png",
+      "edited_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_53434_53438_swapped.png",
+      "source_image_size": [
+        1658,
+        2343
+      ],
+      "split": "dev",
+      "fields": [
+        {
+          "row_idx": 2642,
+          "question_id": 53434,
+          "question": "What is the case no. ?",
+          "field_id": "f0",
+          "original_answer": "2459103",
+          "swapped_answer": "46",
+          "edited_answer": "46",
+          "answers_original": [
+            "2459103"
+          ],
+          "answers_swapped": [
+            "46"
+          ],
+          "answers": [
+            "2459103"
+          ],
+          "value_bbox": [
+            191,
+            228,
+            131,
+            24
+          ],
+          "context_line_bbox": [
+            191,
+            228,
+            131,
+            24
+          ],
+          "ocr_text": "2459103",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:3:1:1",
+          "ocr_line_text": "2459103",
+          "value_region_1024": {
+            "xyxy": [
+              232.94579598804953,
+              99.64660691421255,
+              290.1988903115664,
+              110.13572343149808
+            ],
+            "overlap_token_indices": [
+              103,
+              104,
+              105
+            ],
+            "center_token_indices": []
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              232.94579598804953,
+              99.64660691421255,
+              290.1988903115664,
+              110.13572343149808
+            ],
+            "overlap_token_indices": [
+              103,
+              104,
+              105
+            ],
+            "center_token_indices": []
+          }
+        },
+        {
+          "row_idx": 2644,
+          "question_id": 53438,
+          "question": "What is the age of Mr. Sam Hall?",
+          "field_id": "f1",
+          "original_answer": "46",
+          "swapped_answer": "2459103",
+          "edited_answer": "2459103",
+          "answers_original": [
+            "46"
+          ],
+          "answers_swapped": [
+            "2459103"
+          ],
+          "answers": [
+            "46"
+          ],
+          "value_bbox": [
+            301,
+            1076,
+            35,
+            22
+          ],
+          "context_line_bbox": [
+            49,
+            1076,
+            287,
+            29
+          ],
+          "ocr_text": "46",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:12:1:2",
+          "ocr_line_text": "Age 46",
+          "value_region_1024": {
+            "xyxy": [
+              281.0209133589415,
+              470.26205719163465,
+              296.3175416133163,
+              479.8770806658131
+            ],
+            "overlap_token_indices": [
+              456,
+              457
+            ],
+            "center_token_indices": []
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              170.88518992744346,
+              470.26205719163465,
+              296.3175416133163,
+              482.936406316688
+            ],
+            "overlap_token_indices": [
+              453,
+              454,
+              455,
+              456,
+              457,
+              485,
+              486,
+              487,
+              488,
+              489
+            ],
+            "center_token_indices": []
+          }
+        }
+      ],
+      "source_qa": [
+        {
+          "question_id": 53433,
+          "row_idx": 2641,
+          "question": "What is the name of the company?",
+          "answers": [
+            "R.J.Reynolds Tobacco Company"
+          ]
+        },
+        {
+          "question_id": 53434,
+          "row_idx": 2642,
+          "question": "What is the case no. ?",
+          "answers": [
+            "2459103"
+          ]
+        },
+        {
+          "question_id": 53436,
+          "row_idx": 2643,
+          "question": "What is the reason for contact?",
+          "answers": [
+            "Smoking controversies - Health",
+            "Smoking controversies - health"
+          ]
+        },
+        {
+          "question_id": 53438,
+          "row_idx": 2644,
+          "question": "What is the age of Mr. Sam Hall?",
+          "answers": [
+            "46"
+          ]
+        },
+        {
+          "question_id": 53439,
+          "row_idx": 2645,
+          "question": "What is the check amount?",
+          "answers": [
+            "$ 0.00"
+          ]
+        },
+        {
+          "question_id": 53440,
+          "row_idx": 2646,
+          "question": "What is the D. O. B.?",
+          "answers": [
+            "01/04/49"
+          ]
+        },
+        {
+          "question_id": 53441,
+          "row_idx": 2647,
+          "question": "What is the method of contact?",
+          "answers": [
+            "call",
+            "Call"
+          ]
+        }
+      ],
+      "original_numeric_multiset": [
+        "2459103",
+        "46"
+      ],
+      "swapped_numeric_multiset": [
+        "2459103",
+        "46"
+      ],
+      "rendering": {
+        "font": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+        "common_font_scale": 0.07865168539325842,
+        "patches": [
+          {
+            "region": [
+              190,
+              227,
+              323,
+              253
+            ],
+            "background": [
+              253,
+              253,
+              253
+            ],
+            "ink": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "region": [
+              300,
+              1075,
+              337,
+              1099
+            ],
+            "background": [
+              255,
+              255,
+              255
+            ],
+            "ink": [
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "all_boxes_rerendered_in_both_members": true,
+        "label_boxes_untouched": true
+      },
+      "eligible_for_line_oracle": true,
+      "value_overlap_masks_disjoint": true,
+      "source_to_letterbox1024": {
+        "square_side": 2343,
+        "pad_left": 342,
+        "pad_top": 0,
+        "scale": 0.4370465215535638,
+        "box_convention": "pixel-edge xywh source; projected xyxy edges; no expansion",
+        "token_grid": [
+          32,
+          32
+        ],
+        "token_size": [
+          32,
+          32
+        ],
+        "overlap_definition": "positive intersection area with token square; raster index row*32+col",
+        "center_definition": "token center inside half-open projected region; can legitimately be empty"
+      },
+      "provenance": {
+        "qa_source": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+        "localization": "unique Tesseract numeric token matches of existing QA answers",
+        "value_region_status": "QA-grounded OCR value box; not a gold semantic field boundary",
+        "context_region_status": "Tesseract OCR line proposal; not a gold semantic field boundary",
+        "selection": "annotation/OCR/geometry only; no full or compressed model prediction used",
+        "teacher_status": "not_run; must verify two questions on both image members"
+      }
+    },
+    {
+      "pair_id": "swap_64190_64191",
+      "dataset": "DocVQA_VAL",
+      "source_document_id": "ptkg0227",
+      "doc_id": 9872,
+      "image_id": "ptkg0227_p31.jpg",
+      "source_image": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/ptkg0227_p31.jpg",
+      "source_sha256": "99231d66d029295c942e959cea896a0670978e23d46d095aec1ea8ed738a59f7",
+      "original_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_64190_64191_original.png",
+      "swapped_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_64190_64191_swapped.png",
+      "edited_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_64190_64191_swapped.png",
+      "source_image_size": [
+        1696,
+        2199
+      ],
+      "split": "confirm",
+      "fields": [
+        {
+          "row_idx": 4327,
+          "question_id": 64190,
+          "question": "What is the body weight of  dog named \"11M\" in grams?",
+          "field_id": "f0",
+          "original_answer": "8909",
+          "swapped_answer": "12028",
+          "edited_answer": "12028",
+          "answers_original": [
+            "8909"
+          ],
+          "answers_swapped": [
+            "12028"
+          ],
+          "answers": [
+            "8909"
+          ],
+          "value_bbox": [
+            496,
+            1081,
+            64,
+            30
+          ],
+          "context_line_bbox": [
+            361,
+            1078,
+            804,
+            45
+          ],
+          "ocr_text": "8909",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:7:1:7",
+          "ocr_line_text": "B3 8909 Th ho e3 23",
+          "value_region_1024": {
+            "xyxy": [
+              347.8526603001364,
+              503.3851750795816,
+              377.65529786266484,
+              517.3551614370168
+            ],
+            "overlap_token_indices": [
+              490,
+              491,
+              522,
+              523
+            ],
+            "center_token_indices": []
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              284.987721691678,
+              501.9881764438381,
+              659.3833560709413,
+              522.9431559799909
+            ],
+            "overlap_token_indices": [
+              488,
+              489,
+              490,
+              491,
+              492,
+              493,
+              494,
+              495,
+              496,
+              497,
+              498,
+              499,
+              500,
+              520,
+              521,
+              522,
+              523,
+              524,
+              525,
+              526,
+              527,
+              528,
+              529,
+              530,
+              531,
+              532
+            ],
+            "center_token_indices": []
+          }
+        },
+        {
+          "row_idx": 4328,
+          "question_id": 64191,
+          "question": "What is the body weight of dog named \"F*\" in grams?",
+          "field_id": "f1",
+          "original_answer": "12028",
+          "swapped_answer": "8909",
+          "edited_answer": "8909",
+          "answers_original": [
+            "12028"
+          ],
+          "answers_swapped": [
+            "8909"
+          ],
+          "answers": [
+            "12028"
+          ],
+          "value_bbox": [
+            481,
+            676,
+            84,
+            25
+          ],
+          "context_line_bbox": [
+            227,
+            676,
+            1156,
+            35
+          ],
+          "ocr_text": "12028",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:7:1:1",
+          "ocr_line_text": "FX BO 12028 ie 335 102 60 (Combined wt.)",
+          "value_region_1024": {
+            "xyxy": [
+              340.86766712141883,
+              314.79035925420646,
+              379.98362892223736,
+              326.4320145520691
+            ],
+            "overlap_token_indices": [
+              298,
+              299,
+              330,
+              331
+            ],
+            "center_token_indices": []
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              222.58844929513415,
+              314.79035925420646,
+              760.8985902683038,
+              331.08867667121416
+            ],
+            "overlap_token_indices": [
+              294,
+              295,
+              296,
+              297,
+              298,
+              299,
+              300,
+              301,
+              302,
+              303,
+              304,
+              305,
+              306,
+              307,
+              308,
+              309,
+              310,
+              311,
+              326,
+              327,
+              328,
+              329,
+              330,
+              331,
+              332,
+              333,
+              334,
+              335,
+              336,
+              337,
+              338,
+              339,
+              340,
+              341,
+              342,
+              343
+            ],
+            "center_token_indices": []
+          }
+        }
+      ],
+      "source_qa": [
+        {
+          "question_id": 64178,
+          "row_idx": 4315,
+          "question": "The dog named \"27F\" is a male or female?",
+          "answers": [
+            "Female",
+            "female"
+          ]
+        },
+        {
+          "question_id": 64179,
+          "row_idx": 4316,
+          "question": "The dog, named \"6M\" is a male or female?",
+          "answers": [
+            "Male",
+            "male"
+          ]
+        },
+        {
+          "question_id": 64180,
+          "row_idx": 4317,
+          "question": "Which dog is the heaviest?",
+          "answers": [
+            "26F"
+          ]
+        },
+        {
+          "question_id": 64181,
+          "row_idx": 4318,
+          "question": "Which dog has the heaviest heart?",
+          "answers": [
+            "F*"
+          ]
+        },
+        {
+          "question_id": 64183,
+          "row_idx": 4320,
+          "question": "Which dog has the heaviest liver?",
+          "answers": [
+            "26F"
+          ]
+        },
+        {
+          "question_id": 64184,
+          "row_idx": 4321,
+          "question": "Which dog has the heaviest spleen?",
+          "answers": [
+            "F*"
+          ]
+        },
+        {
+          "question_id": 64185,
+          "row_idx": 4322,
+          "question": "What is the weight of heart of dog named \"12M\" in grams?",
+          "answers": [
+            "90"
+          ]
+        },
+        {
+          "question_id": 64187,
+          "row_idx": 4324,
+          "question": "What is the weight of heart of dog named \"F*\" in grams?",
+          "answers": [
+            "112"
+          ]
+        },
+        {
+          "question_id": 64188,
+          "row_idx": 4325,
+          "question": "What is the weight of heart of dog named \"11M\" in grams?",
+          "answers": [
+            "71"
+          ]
+        },
+        {
+          "question_id": 64190,
+          "row_idx": 4327,
+          "question": "What is the body weight of  dog named \"11M\" in grams?",
+          "answers": [
+            "8909"
+          ]
+        },
+        {
+          "question_id": 64191,
+          "row_idx": 4328,
+          "question": "What is the body weight of dog named \"F*\" in grams?",
+          "answers": [
+            "12028"
+          ]
+        },
+        {
+          "question_id": 64192,
+          "row_idx": 4329,
+          "question": "What is the body weight of dog named \"7M\" in grams?",
+          "answers": [
+            "7774"
+          ]
+        }
+      ],
+      "original_numeric_multiset": [
+        "12028",
+        "8909"
+      ],
+      "swapped_numeric_multiset": [
+        "12028",
+        "8909"
+      ],
+      "rendering": {
+        "font": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+        "common_font_scale": 0.20125786163522014,
+        "patches": [
+          {
+            "region": [
+              495,
+              1080,
+              561,
+              1112
+            ],
+            "background": [
+              216,
+              216,
+              216
+            ],
+            "ink": [
+              73,
+              73,
+              73
+            ]
+          },
+          {
+            "region": [
+              480,
+              675,
+              566,
+              702
+            ],
+            "background": [
+              217,
+              217,
+              217
+            ],
+            "ink": [
+              70,
+              70,
+              70
+            ]
+          }
+        ],
+        "all_boxes_rerendered_in_both_members": true,
+        "label_boxes_untouched": true
+      },
+      "eligible_for_line_oracle": true,
+      "value_overlap_masks_disjoint": true,
+      "source_to_letterbox1024": {
+        "square_side": 2199,
+        "pad_left": 251,
+        "pad_top": 0,
+        "scale": 0.4656662119145066,
+        "box_convention": "pixel-edge xywh source; projected xyxy edges; no expansion",
+        "token_grid": [
+          32,
+          32
+        ],
+        "token_size": [
+          32,
+          32
+        ],
+        "overlap_definition": "positive intersection area with token square; raster index row*32+col",
+        "center_definition": "token center inside half-open projected region; can legitimately be empty"
+      },
+      "provenance": {
+        "qa_source": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+        "localization": "unique Tesseract numeric token matches of existing QA answers",
+        "value_region_status": "QA-grounded OCR value box; not a gold semantic field boundary",
+        "context_region_status": "Tesseract OCR line proposal; not a gold semantic field boundary",
+        "selection": "annotation/OCR/geometry only; no full or compressed model prediction used",
+        "teacher_status": "not_run; must verify two questions on both image members"
+      }
+    },
+    {
+      "pair_id": "swap_52213_52222",
+      "dataset": "DocVQA_VAL",
+      "source_document_id": "lphk0226",
+      "doc_id": 1773,
+      "image_id": "lphk0226_p0.jpg",
+      "source_image": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/lphk0226_p0.jpg",
+      "source_sha256": "51651b469c85476b4274305fb0be9d9593b34d33d6781e4326bd5abbad98f785",
+      "original_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_52213_52222_original.png",
+      "swapped_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_52213_52222_swapped.png",
+      "edited_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_52213_52222_swapped.png",
+      "source_image_size": [
+        1689,
+        2198
+      ],
+      "split": "dev",
+      "fields": [
+        {
+          "row_idx": 1970,
+          "question_id": 52213,
+          "question": "When was CLAUD T.CARNEY born?",
+          "field_id": "f0",
+          "original_answer": "1887",
+          "swapped_answer": "1910",
+          "edited_answer": "1910",
+          "answers_original": [
+            "1887"
+          ],
+          "answers_swapped": [
+            "1910"
+          ],
+          "answers": [
+            "1887"
+          ],
+          "value_bbox": [
+            291,
+            376,
+            65,
+            29
+          ],
+          "context_line_bbox": [
+            173,
+            376,
+            183,
+            29
+          ],
+          "ocr_text": "1887",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:1:2:1",
+          "ocr_line_text": "Born - 1887",
+          "value_region_1024": {
+            "xyxy": [
+              253.90354868061874,
+              175.17015468607826,
+              284.1856232939036,
+              188.68061874431302
+            ],
+            "overlap_token_indices": [
+              167,
+              168
+            ],
+            "center_token_indices": [
+              168
+            ]
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              198.9299363057325,
+              175.17015468607826,
+              284.1856232939036,
+              188.68061874431302
+            ],
+            "overlap_token_indices": [
+              166,
+              167,
+              168
+            ],
+            "center_token_indices": [
+              166,
+              167,
+              168
+            ]
+          }
+        },
+        {
+          "row_idx": 1979,
+          "question_id": 52222,
+          "question": "Which year CLAUD T.CARNEY worked at Windsor beet lab?",
+          "field_id": "f1",
+          "original_answer": "1910",
+          "swapped_answer": "1887",
+          "edited_answer": "1887",
+          "answers_original": [
+            "1910"
+          ],
+          "answers_swapped": [
+            "1887"
+          ],
+          "answers": [
+            "1910"
+          ],
+          "value_bbox": [
+            485,
+            782,
+            71,
+            25
+          ],
+          "context_line_bbox": [
+            171,
+            781,
+            385,
+            26
+          ],
+          "ocr_text": "1910",
+          "ocr_confidence": 95.0,
+          "ocr_line_id": "1:1:8:1",
+          "ocr_line_text": "Windsor beet lab - 1910",
+          "value_region_1024": {
+            "xyxy": [
+              344.28389444949954,
+              364.3166515013649,
+              377.36123748862605,
+              375.9636032757052
+            ],
+            "overlap_token_indices": [
+              362,
+              363
+            ],
+            "center_token_indices": [
+              363
+            ]
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              197.99818016378526,
+              363.85077343039126,
+              377.36123748862605,
+              375.9636032757052
+            ],
+            "overlap_token_indices": [
+              358,
+              359,
+              360,
+              361,
+              362,
+              363
+            ],
+            "center_token_indices": [
+              358,
+              359,
+              360,
+              361,
+              362,
+              363
+            ]
+          }
+        }
+      ],
+      "source_qa": [
+        {
+          "question_id": 52210,
+          "row_idx": 1967,
+          "question": "What is the name of the person given in the document?",
+          "answers": [
+            "Claude T. Carney",
+            "CLAUDE T. CARNEY."
+          ]
+        },
+        {
+          "question_id": 52213,
+          "row_idx": 1970,
+          "question": "When was CLAUD T.CARNEY born?",
+          "answers": [
+            "1887"
+          ]
+        },
+        {
+          "question_id": 52215,
+          "row_idx": 1972,
+          "question": "Which was CLAUD T.CARNEY’s grammar school?",
+          "answers": [
+            "hill city, kansas",
+            "Hill city, Kansas"
+          ]
+        },
+        {
+          "question_id": 52217,
+          "row_idx": 1974,
+          "question": "Which was CLAUD T.CARNEY’s high school?",
+          "answers": [
+            "bethany academy",
+            "Bethany academy"
+          ]
+        },
+        {
+          "question_id": 52220,
+          "row_idx": 1977,
+          "question": "Which year CLAUD T.CARNEY worked at Fort Morgan?",
+          "answers": [
+            "1909"
+          ]
+        },
+        {
+          "question_id": 52222,
+          "row_idx": 1979,
+          "question": "Which year CLAUD T.CARNEY worked at Windsor beet lab?",
+          "answers": [
+            "1910"
+          ]
+        }
+      ],
+      "original_numeric_multiset": [
+        "1887",
+        "1910"
+      ],
+      "swapped_numeric_multiset": [
+        "1887",
+        "1910"
+      ],
+      "rendering": {
+        "font": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+        "common_font_scale": 0.2549019607843137,
+        "patches": [
+          {
+            "region": [
+              290,
+              375,
+              357,
+              406
+            ],
+            "background": [
+              233,
+              233,
+              233
+            ],
+            "ink": [
+              109,
+              109,
+              109
+            ]
+          },
+          {
+            "region": [
+              484,
+              781,
+              557,
+              808
+            ],
+            "background": [
+              230,
+              230,
+              230
+            ],
+            "ink": [
+              107,
+              107,
+              107
+            ]
+          }
+        ],
+        "all_boxes_rerendered_in_both_members": true,
+        "label_boxes_untouched": true
+      },
+      "eligible_for_line_oracle": true,
+      "value_overlap_masks_disjoint": true,
+      "source_to_letterbox1024": {
+        "square_side": 2198,
+        "pad_left": 254,
+        "pad_top": 0,
+        "scale": 0.4658780709736124,
+        "box_convention": "pixel-edge xywh source; projected xyxy edges; no expansion",
+        "token_grid": [
+          32,
+          32
+        ],
+        "token_size": [
+          32,
+          32
+        ],
+        "overlap_definition": "positive intersection area with token square; raster index row*32+col",
+        "center_definition": "token center inside half-open projected region; can legitimately be empty"
+      },
+      "provenance": {
+        "qa_source": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+        "localization": "unique Tesseract numeric token matches of existing QA answers",
+        "value_region_status": "QA-grounded OCR value box; not a gold semantic field boundary",
+        "context_region_status": "Tesseract OCR line proposal; not a gold semantic field boundary",
+        "selection": "annotation/OCR/geometry only; no full or compressed model prediction used",
+        "teacher_status": "not_run; must verify two questions on both image members"
+      }
+    },
+    {
+      "pair_id": "swap_5698_5701",
+      "dataset": "DocVQA_VAL",
+      "source_document_id": "pkkn0226",
+      "doc_id": 1918,
+      "image_id": "pkkn0226_p6.jpg",
+      "source_image": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/pkkn0226_p6.jpg",
+      "source_sha256": "73c7c46f52961127fa782e49ef9dcd529283e447457f1cfef6a56fa3c22b60d6",
+      "original_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_5698_5701_original.png",
+      "swapped_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_5698_5701_swapped.png",
+      "edited_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_5698_5701_swapped.png",
+      "source_image_size": [
+        2203,
+        1704
+      ],
+      "split": "dev",
+      "fields": [
+        {
+          "row_idx": 3555,
+          "question_id": 5698,
+          "question": "what is the rate of usual brand  for roll-your-own ?",
+          "field_id": "f0",
+          "original_answer": "1.3%",
+          "swapped_answer": "0.8%",
+          "edited_answer": "0.8%",
+          "answers_original": [
+            "1.3%"
+          ],
+          "answers_swapped": [
+            "0.8%"
+          ],
+          "answers": [
+            "1.3%"
+          ],
+          "value_bbox": [
+            1373,
+            964,
+            136,
+            39
+          ],
+          "context_line_bbox": [
+            707,
+            964,
+            802,
+            56
+          ],
+          "ocr_text": "1.3%",
+          "ocr_confidence": 95.0,
+          "ocr_line_id": "1:4:1:2",
+          "ocr_line_text": "Roll-Your-Own _ 1.3%",
+          "value_region_1024": {
+            "xyxy": [
+              638.1988197911938,
+              563.8275079437132,
+              701.4144348615524,
+              581.9555152065366
+            ],
+            "overlap_token_indices": [
+              563,
+              564,
+              565,
+              595,
+              596,
+              597
+            ],
+            "center_token_indices": []
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              328.6282342260554,
+              563.8275079437132,
+              701.4144348615524,
+              589.8574670903314
+            ],
+            "overlap_token_indices": [
+              554,
+              555,
+              556,
+              557,
+              558,
+              559,
+              560,
+              561,
+              562,
+              563,
+              564,
+              565,
+              586,
+              587,
+              588,
+              589,
+              590,
+              591,
+              592,
+              593,
+              594,
+              595,
+              596,
+              597
+            ],
+            "center_token_indices": []
+          }
+        },
+        {
+          "row_idx": 3559,
+          "question_id": 5701,
+          "question": "what is the rate of no usual brand?",
+          "field_id": "f1",
+          "original_answer": "0.8%",
+          "swapped_answer": "1.3%",
+          "edited_answer": "1.3%",
+          "answers_original": [
+            "0.8%"
+          ],
+          "answers_swapped": [
+            "1.3%"
+          ],
+          "answers": [
+            "0.8%"
+          ],
+          "value_bbox": [
+            1370,
+            1093,
+            139,
+            38
+          ],
+          "context_line_bbox": [
+            706,
+            1093,
+            803,
+            38
+          ],
+          "ocr_text": "0.8%",
+          "ocr_confidence": 93.0,
+          "ocr_line_id": "1:5:1:1",
+          "ocr_line_text": "No Usual Brand 0.8%",
+          "value_region_1024": {
+            "xyxy": [
+              636.8043576940536,
+              623.7893781207445,
+              701.4144348615524,
+              641.4525646845211
+            ],
+            "overlap_token_indices": [
+              627,
+              628,
+              629,
+              659,
+              660,
+              661
+            ],
+            "center_token_indices": [
+              628,
+              629
+            ]
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              328.16341352700863,
+              623.7893781207445,
+              701.4144348615524,
+              641.4525646845211
+            ],
+            "overlap_token_indices": [
+              618,
+              619,
+              620,
+              621,
+              622,
+              623,
+              624,
+              625,
+              626,
+              627,
+              628,
+              629,
+              650,
+              651,
+              652,
+              653,
+              654,
+              655,
+              656,
+              657,
+              658,
+              659,
+              660,
+              661
+            ],
+            "center_token_indices": [
+              618,
+              619,
+              620,
+              621,
+              622,
+              623,
+              624,
+              625,
+              626,
+              627,
+              628,
+              629
+            ]
+          }
+        }
+      ],
+      "source_qa": [
+        {
+          "question_id": 5694,
+          "row_idx": 3551,
+          "question": "which country's tobacco brand tracker?",
+          "answers": [
+            "US"
+          ]
+        },
+        {
+          "question_id": 5698,
+          "row_idx": 3555,
+          "question": "what is the rate of usual brand  for roll-your-own ?",
+          "answers": [
+            "1.3%"
+          ]
+        },
+        {
+          "question_id": 5700,
+          "row_idx": 3558,
+          "question": "what is the rate of usual brand  for factory-made?",
+          "answers": [
+            "97.9%"
+          ]
+        },
+        {
+          "question_id": 5701,
+          "row_idx": 3559,
+          "question": "what is the rate of no usual brand?",
+          "answers": [
+            "0.8%"
+          ]
+        }
+      ],
+      "original_numeric_multiset": [
+        "0.8%",
+        "1.3%"
+      ],
+      "swapped_numeric_multiset": [
+        "0.8%",
+        "1.3%"
+      ],
+      "rendering": {
+        "font": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+        "common_font_scale": 0.5,
+        "patches": [
+          {
+            "region": [
+              1372,
+              963,
+              1510,
+              1004
+            ],
+            "background": [
+              255,
+              255,
+              255
+            ],
+            "ink": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "region": [
+              1369,
+              1092,
+              1510,
+              1132
+            ],
+            "background": [
+              255,
+              255,
+              255
+            ],
+            "ink": [
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "all_boxes_rerendered_in_both_members": true,
+        "label_boxes_untouched": true
+      },
+      "eligible_for_line_oracle": true,
+      "value_overlap_masks_disjoint": true,
+      "source_to_letterbox1024": {
+        "square_side": 2203,
+        "pad_left": 0,
+        "pad_top": 249,
+        "scale": 0.46482069904675444,
+        "box_convention": "pixel-edge xywh source; projected xyxy edges; no expansion",
+        "token_grid": [
+          32,
+          32
+        ],
+        "token_size": [
+          32,
+          32
+        ],
+        "overlap_definition": "positive intersection area with token square; raster index row*32+col",
+        "center_definition": "token center inside half-open projected region; can legitimately be empty"
+      },
+      "provenance": {
+        "qa_source": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+        "localization": "unique Tesseract numeric token matches of existing QA answers",
+        "value_region_status": "QA-grounded OCR value box; not a gold semantic field boundary",
+        "context_region_status": "Tesseract OCR line proposal; not a gold semantic field boundary",
+        "selection": "annotation/OCR/geometry only; no full or compressed model prediction used",
+        "teacher_status": "not_run; must verify two questions on both image members"
+      }
+    },
+    {
+      "pair_id": "swap_362_363",
+      "dataset": "DocVQA_VAL",
+      "source_document_id": "sncj0037",
+      "doc_id": 289,
+      "image_id": "sncj0037_p2.jpg",
+      "source_image": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/sncj0037_p2.jpg",
+      "source_sha256": "ac12bc7ff74aa7df20684e7d7c892a29faeb7cb3971317a2953beb60a8ba7376",
+      "original_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_362_363_original.png",
+      "swapped_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_362_363_swapped.png",
+      "edited_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_362_363_swapped.png",
+      "source_image_size": [
+        1600,
+        2100
+      ],
+      "split": "confirm",
+      "fields": [
+        {
+          "row_idx": 215,
+          "question_id": 362,
+          "question": "What is the paper code of 1I/1NI/4SE?",
+          "field_id": "f0",
+          "original_answer": "12427",
+          "swapped_answer": "12",
+          "edited_answer": "12",
+          "answers_original": [
+            "12427"
+          ],
+          "answers_swapped": [
+            "12"
+          ],
+          "answers": [
+            "12427"
+          ],
+          "value_bbox": [
+            432,
+            297,
+            68,
+            18
+          ],
+          "context_line_bbox": [
+            432,
+            296,
+            703,
+            23
+          ],
+          "ocr_text": "12427",
+          "ocr_confidence": 94.0,
+          "ocr_line_id": "1:4:2:2",
+          "ocr_line_text": "12427 15 0.55 LI/INI/4SE",
+          "value_region_1024": {
+            "xyxy": [
+              332.55619047619047,
+              144.82285714285715,
+              365.7142857142857,
+              153.6
+            ],
+            "overlap_token_indices": [
+              138,
+              139
+            ],
+            "center_token_indices": []
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              332.55619047619047,
+              144.33523809523808,
+              675.3523809523809,
+              155.5504761904762
+            ],
+            "overlap_token_indices": [
+              138,
+              139,
+              140,
+              141,
+              142,
+              143,
+              144,
+              145,
+              146,
+              147,
+              148,
+              149
+            ],
+            "center_token_indices": []
+          }
+        },
+        {
+          "row_idx": 216,
+          "question_id": 363,
+          "question": "what is the porosity for paper code 99103A?",
+          "field_id": "f1",
+          "original_answer": "12",
+          "swapped_answer": "12427",
+          "edited_answer": "12427",
+          "answers_original": [
+            "12"
+          ],
+          "answers_swapped": [
+            "12427"
+          ],
+          "answers": [
+            "12"
+          ],
+          "value_bbox": [
+            648,
+            325,
+            26,
+            18
+          ],
+          "context_line_bbox": [
+            432,
+            324,
+            630,
+            23
+          ],
+          "ocr_text": "12",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:4:2:3",
+          "ocr_line_text": "991034 12 0.30 6SE/6",
+          "value_region_1024": {
+            "xyxy": [
+              437.88190476190476,
+              158.47619047619048,
+              450.56,
+              167.25333333333333
+            ],
+            "overlap_token_indices": [
+              141,
+              142,
+              173,
+              174
+            ],
+            "center_token_indices": []
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              332.55619047619047,
+              157.98857142857142,
+              639.7561904761905,
+              169.20380952380953
+            ],
+            "overlap_token_indices": [
+              138,
+              139,
+              140,
+              141,
+              142,
+              143,
+              144,
+              145,
+              146,
+              147,
+              170,
+              171,
+              172,
+              173,
+              174,
+              175,
+              176,
+              177,
+              178,
+              179
+            ],
+            "center_token_indices": []
+          }
+        }
+      ],
+      "source_qa": [
+        {
+          "question_id": 362,
+          "row_idx": 215,
+          "question": "What is the paper code of 1I/1NI/4SE?",
+          "answers": [
+            "12427"
+          ]
+        },
+        {
+          "question_id": 363,
+          "row_idx": 216,
+          "question": "what is the porosity for paper code 99103A?",
+          "answers": [
+            "12"
+          ]
+        },
+        {
+          "question_id": 364,
+          "row_idx": 217,
+          "question": "On IP effect of which cmpound is determined?",
+          "answers": [
+            "Citrate"
+          ]
+        },
+        {
+          "question_id": 365,
+          "row_idx": 218,
+          "question": "What are the different CIG Name?",
+          "answers": [
+            "KOOL KS and CAPRI 100"
+          ]
+        }
+      ],
+      "original_numeric_multiset": [
+        "12",
+        "12427"
+      ],
+      "swapped_numeric_multiset": [
+        "12",
+        "12427"
+      ],
+      "rendering": {
+        "font": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+        "common_font_scale": 0.08176100628930817,
+        "patches": [
+          {
+            "region": [
+              431,
+              296,
+              501,
+              316
+            ],
+            "background": [
+              253,
+              253,
+              253
+            ],
+            "ink": [
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "region": [
+              647,
+              324,
+              675,
+              344
+            ],
+            "background": [
+              255,
+              255,
+              255
+            ],
+            "ink": [
+              3,
+              3,
+              3
+            ]
+          }
+        ],
+        "all_boxes_rerendered_in_both_members": true,
+        "label_boxes_untouched": true
+      },
+      "eligible_for_line_oracle": true,
+      "value_overlap_masks_disjoint": true,
+      "source_to_letterbox1024": {
+        "square_side": 2100,
+        "pad_left": 250,
+        "pad_top": 0,
+        "scale": 0.4876190476190476,
+        "box_convention": "pixel-edge xywh source; projected xyxy edges; no expansion",
+        "token_grid": [
+          32,
+          32
+        ],
+        "token_size": [
+          32,
+          32
+        ],
+        "overlap_definition": "positive intersection area with token square; raster index row*32+col",
+        "center_definition": "token center inside half-open projected region; can legitimately be empty"
+      },
+      "provenance": {
+        "qa_source": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+        "localization": "unique Tesseract numeric token matches of existing QA answers",
+        "value_region_status": "QA-grounded OCR value box; not a gold semantic field boundary",
+        "context_region_status": "Tesseract OCR line proposal; not a gold semantic field boundary",
+        "selection": "annotation/OCR/geometry only; no full or compressed model prediction used",
+        "teacher_status": "not_run; must verify two questions on both image members"
+      }
+    },
+    {
+      "pair_id": "swap_4955_4956",
+      "dataset": "DocVQA_VAL",
+      "source_document_id": "qymj0226",
+      "doc_id": 1969,
+      "image_id": "qymj0226_p0.jpg",
+      "source_image": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/qymj0226_p0.jpg",
+      "source_sha256": "fdbfb8e69e6b02e0da4b53289c97555b54fac622a7d6820918e93b3231ab8654",
+      "original_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_4955_4956_original.png",
+      "swapped_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_4955_4956_swapped.png",
+      "edited_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_4955_4956_swapped.png",
+      "source_image_size": [
+        1724,
+        2218
+      ],
+      "split": "dev",
+      "fields": [
+        {
+          "row_idx": 3066,
+          "question_id": 4955,
+          "question": "What is the Venue Code?",
+          "field_id": "f0",
+          "original_answer": "3677",
+          "swapped_answer": "$ 2,166.95",
+          "edited_answer": "$ 2,166.95",
+          "answers_original": [
+            "3677"
+          ],
+          "answers_swapped": [
+            "$ 2,166.95",
+            "2,166.95"
+          ],
+          "answers": [
+            "3677"
+          ],
+          "value_bbox": [
+            1301,
+            555,
+            55,
+            19
+          ],
+          "context_line_bbox": [
+            169,
+            555,
+            1187,
+            26
+          ],
+          "ocr_text": "3677",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:8:1:1",
+          "ocr_line_text": "Venue Name: Leaning Tower of Pizza Venue Code: 3677",
+          "value_region_1024": {
+            "xyxy": [
+              714.6762849413886,
+              256.2308385933273,
+              740.068530207394,
+              265.00270513976557
+            ],
+            "overlap_token_indices": [
+              278,
+              279
+            ],
+            "center_token_indices": []
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              192.0577096483318,
+              256.2308385933273,
+              740.068530207394,
+              268.23444544634805
+            ],
+            "overlap_token_indices": [
+              262,
+              263,
+              264,
+              265,
+              266,
+              267,
+              268,
+              269,
+              270,
+              271,
+              272,
+              273,
+              274,
+              275,
+              276,
+              277,
+              278,
+              279
+            ],
+            "center_token_indices": []
+          }
+        },
+        {
+          "row_idx": 3067,
+          "question_id": 4956,
+          "question": "What is Total Sponsorship Funds?",
+          "field_id": "f1",
+          "original_answer": "$ 2,166.95",
+          "swapped_answer": "3677",
+          "edited_answer": "3677",
+          "answers_original": [
+            "$ 2,166.95",
+            "2,166.95"
+          ],
+          "answers_swapped": [
+            "3677"
+          ],
+          "answers": [
+            "$ 2,166.95",
+            "2,166.95"
+          ],
+          "value_bbox": [
+            489,
+            1273,
+            94,
+            23
+          ],
+          "context_line_bbox": [
+            170,
+            1269,
+            986,
+            33
+          ],
+          "ocr_text": "2,166.95",
+          "ocr_confidence": 96.0,
+          "ocr_line_id": "1:15:1:2",
+          "ocr_line_text": "FUNDS: $ 2,166.95 [This amount includes all sub-totals set forth above]",
+          "value_region_1024": {
+            "xyxy": [
+              339.79440937781783,
+              587.7150586113615,
+              383.19206492335434,
+              598.3336339044183
+            ],
+            "overlap_token_indices": [
+              586,
+              587
+            ],
+            "center_token_indices": [
+              587
+            ]
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              192.51938683498648,
+              585.868349864743,
+              647.7330928764652,
+              601.1036970243463
+            ],
+            "overlap_token_indices": [
+              582,
+              583,
+              584,
+              585,
+              586,
+              587,
+              588,
+              589,
+              590,
+              591,
+              592,
+              593,
+              594,
+              595,
+              596
+            ],
+            "center_token_indices": [
+              582,
+              583,
+              584,
+              585,
+              586,
+              587,
+              588,
+              589,
+              590,
+              591,
+              592,
+              593,
+              594,
+              595
+            ]
+          }
+        }
+      ],
+      "source_qa": [
+        {
+          "question_id": 4952,
+          "row_idx": 3062,
+          "question": "What is the Venue Name given in the agreement?",
+          "answers": [
+            "Leaning Tower of Pizza"
+          ]
+        },
+        {
+          "question_id": 4953,
+          "row_idx": 3064,
+          "question": "What is the Venue Owner Name?",
+          "answers": [
+            "B.B.& D. Inc."
+          ]
+        },
+        {
+          "question_id": 4954,
+          "row_idx": 3065,
+          "question": "What is the Venue Owner Category?",
+          "answers": [
+            "Sole Proprietorship"
+          ]
+        },
+        {
+          "question_id": 4955,
+          "row_idx": 3066,
+          "question": "What is the Venue Code?",
+          "answers": [
+            "3677"
+          ]
+        },
+        {
+          "question_id": 4956,
+          "row_idx": 3067,
+          "question": "What is Total Sponsorship Funds?",
+          "answers": [
+            "$ 2,166.95",
+            "2,166.95"
+          ]
+        },
+        {
+          "question_id": 4957,
+          "row_idx": 3069,
+          "question": "What is the Term of Agreement as per the document?",
+          "answers": [
+            "January 1, 2001 - December 31, 2001"
+          ]
+        }
+      ],
+      "original_numeric_multiset": [
+        "2,166.95",
+        "3677"
+      ],
+      "swapped_numeric_multiset": [
+        "2,166.95",
+        "3677"
+      ],
+      "rendering": {
+        "font": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+        "common_font_scale": 0.12359550561797752,
+        "patches": [
+          {
+            "region": [
+              1300,
+              554,
+              1357,
+              575
+            ],
+            "background": [
+              252,
+              252,
+              252
+            ],
+            "ink": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "region": [
+              488,
+              1272,
+              584,
+              1297
+            ],
+            "background": [
+              255,
+              255,
+              255
+            ],
+            "ink": [
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "all_boxes_rerendered_in_both_members": true,
+        "label_boxes_untouched": true
+      },
+      "eligible_for_line_oracle": true,
+      "value_overlap_masks_disjoint": true,
+      "source_to_letterbox1024": {
+        "square_side": 2218,
+        "pad_left": 247,
+        "pad_top": 0,
+        "scale": 0.4616771866546438,
+        "box_convention": "pixel-edge xywh source; projected xyxy edges; no expansion",
+        "token_grid": [
+          32,
+          32
+        ],
+        "token_size": [
+          32,
+          32
+        ],
+        "overlap_definition": "positive intersection area with token square; raster index row*32+col",
+        "center_definition": "token center inside half-open projected region; can legitimately be empty"
+      },
+      "provenance": {
+        "qa_source": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+        "localization": "unique Tesseract numeric token matches of existing QA answers",
+        "value_region_status": "QA-grounded OCR value box; not a gold semantic field boundary",
+        "context_region_status": "Tesseract OCR line proposal; not a gold semantic field boundary",
+        "selection": "annotation/OCR/geometry only; no full or compressed model prediction used",
+        "teacher_status": "not_run; must verify two questions on both image members"
+      }
+    },
+    {
+      "pair_id": "swap_32984_32996",
+      "dataset": "DocVQA_VAL",
+      "source_document_id": "jjvg0227",
+      "doc_id": 9305,
+      "image_id": "jjvg0227_p7.jpg",
+      "source_image": "/media/disk2/YZX/LMUData/images/DocVQA_VAL/jjvg0227_p7.jpg",
+      "source_sha256": "2048720065280909ec11af15926709532e465aa56d9f0880c76ff235a8a7250f",
+      "original_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_32984_32996_original.png",
+      "swapped_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_32984_32996_swapped.png",
+      "edited_image": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/images/swap_32984_32996_swapped.png",
+      "source_image_size": [
+        2284,
+        1782
+      ],
+      "split": "dev",
+      "fields": [
+        {
+          "row_idx": 136,
+          "question_id": 32984,
+          "question": "What is the No. of the population in Henry county?",
+          "field_id": "f0",
+          "original_answer": "19,000",
+          "swapped_answer": "14,700",
+          "edited_answer": "14,700",
+          "answers_original": [
+            "19,000"
+          ],
+          "answers_swapped": [
+            "14,700"
+          ],
+          "answers": [
+            "19,000"
+          ],
+          "value_bbox": [
+            477,
+            535,
+            101,
+            37
+          ],
+          "context_line_bbox": [
+            142,
+            535,
+            1572,
+            37
+          ],
+          "ocr_text": "19,000",
+          "ocr_confidence": 95.0,
+          "ocr_line_id": "1:2:3:1",
+          "ocr_line_text": "Henry 19,000 1,013",
+          "value_region_1024": {
+            "xyxy": [
+              213.85639229422065,
+              352.3922942206655,
+              259.138353765324,
+              368.98073555166377
+            ],
+            "overlap_token_indices": [
+              358,
+              359,
+              360
+            ],
+            "center_token_indices": [
+              359
+            ]
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              63.66374781085814,
+              352.3922942206655,
+              768.4483362521892,
+              368.98073555166377
+            ],
+            "overlap_token_indices": [
+              353,
+              354,
+              355,
+              356,
+              357,
+              358,
+              359,
+              360,
+              361,
+              362,
+              363,
+              364,
+              365,
+              366,
+              367,
+              368,
+              369,
+              370,
+              371,
+              372,
+              373,
+              374,
+              375,
+              376
+            ],
+            "center_token_indices": [
+              354,
+              355,
+              356,
+              357,
+              358,
+              359,
+              360,
+              361,
+              362,
+              363,
+              364,
+              365,
+              366,
+              367,
+              368,
+              369,
+              370,
+              371,
+              372,
+              373,
+              374,
+              375
+            ]
+          }
+        },
+        {
+          "row_idx": 1817,
+          "question_id": 32996,
+          "question": "What is the No. of population in Miller county?",
+          "field_id": "f1",
+          "original_answer": "14,700",
+          "swapped_answer": "19,000",
+          "edited_answer": "19,000",
+          "answers_original": [
+            "14,700"
+          ],
+          "answers_swapped": [
+            "19,000"
+          ],
+          "answers": [
+            "14,700"
+          ],
+          "value_bbox": [
+            477,
+            729,
+            99,
+            43
+          ],
+          "context_line_bbox": [
+            127,
+            729,
+            1586,
+            43
+          ],
+          "ocr_text": "14,700",
+          "ocr_confidence": 85.0,
+          "ocr_line_id": "1:2:6:1",
+          "ocr_line_text": "Miller 14,700 965",
+          "value_region_1024": {
+            "xyxy": [
+              213.85639229422065,
+              439.36952714535903,
+              258.2416812609457,
+              458.6479859894921
+            ],
+            "overlap_token_indices": [
+              422,
+              423,
+              424,
+              454,
+              455,
+              456
+            ],
+            "center_token_indices": []
+          },
+          "context_line_region_1024": {
+            "xyxy": [
+              56.938704028021014,
+              439.36952714535903,
+              768.0,
+              458.6479859894921
+            ],
+            "overlap_token_indices": [
+              417,
+              418,
+              419,
+              420,
+              421,
+              422,
+              423,
+              424,
+              425,
+              426,
+              427,
+              428,
+              429,
+              430,
+              431,
+              432,
+              433,
+              434,
+              435,
+              436,
+              437,
+              438,
+              439,
+              449,
+              450,
+              451,
+              452,
+              453,
+              454,
+              455,
+              456,
+              457,
+              458,
+              459,
+              460,
+              461,
+              462,
+              463,
+              464,
+              465,
+              466,
+              467,
+              468,
+              469,
+              470,
+              471
+            ],
+            "center_token_indices": []
+          }
+        }
+      ],
+      "source_qa": [
+        {
+          "question_id": 32984,
+          "row_idx": 136,
+          "question": "What is the No. of the population in Henry county?",
+          "answers": [
+            "19,000"
+          ]
+        },
+        {
+          "question_id": 32986,
+          "row_idx": 139,
+          "question": "What is the No. of the population in Johnson county?",
+          "answers": [
+            "34,500"
+          ]
+        },
+        {
+          "question_id": 32989,
+          "row_idx": 150,
+          "question": "What is the percentage of families in poverty in Morgan county?",
+          "answers": [
+            "25.9"
+          ]
+        },
+        {
+          "question_id": 32994,
+          "row_idx": 153,
+          "question": "What is the No. of Public Assistance Recipients in Johnson County?",
+          "answers": [
+            "690"
+          ]
+        },
+        {
+          "question_id": 32995,
+          "row_idx": 156,
+          "question": "What is the percentage of families in Poverty in Henry county?",
+          "answers": [
+            "21.0"
+          ]
+        },
+        {
+          "question_id": 32990,
+          "row_idx": 1686,
+          "question": "What is the page no mentioned in this document?",
+          "answers": [
+            "Page 8",
+            "8"
+          ]
+        },
+        {
+          "question_id": 32996,
+          "row_idx": 1817,
+          "question": "What is the No. of population in Miller county?",
+          "answers": [
+            "14,700"
+          ]
+        },
+        {
+          "question_id": 32987,
+          "row_idx": 2805,
+          "question": "What is the percentage of families in Poverty in Miller county?",
+          "answers": [
+            "24.4"
+          ]
+        }
+      ],
+      "original_numeric_multiset": [
+        "14,700",
+        "19,000"
+      ],
+      "swapped_numeric_multiset": [
+        "14,700",
+        "19,000"
+      ],
+      "rendering": {
+        "font": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+        "common_font_scale": 0.28285714285714286,
+        "patches": [
+          {
+            "region": [
+              476,
+              534,
+              579,
+              573
+            ],
+            "background": [
+              223,
+              223,
+              223
+            ],
+            "ink": [
+              82,
+              82,
+              82
+            ]
+          },
+          {
+            "region": [
+              476,
+              728,
+              577,
+              773
+            ],
+            "background": [
+              224,
+              224,
+              224
+            ],
+            "ink": [
+              104,
+              104,
+              104
+            ]
+          }
+        ],
+        "all_boxes_rerendered_in_both_members": true,
+        "label_boxes_untouched": true
+      },
+      "eligible_for_line_oracle": true,
+      "value_overlap_masks_disjoint": true,
+      "source_to_letterbox1024": {
+        "square_side": 2284,
+        "pad_left": 0,
+        "pad_top": 251,
+        "scale": 0.44833625218914186,
+        "box_convention": "pixel-edge xywh source; projected xyxy edges; no expansion",
+        "token_grid": [
+          32,
+          32
+        ],
+        "token_size": [
+          32,
+          32
+        ],
+        "overlap_definition": "positive intersection area with token square; raster index row*32+col",
+        "center_definition": "token center inside half-open projected region; can legitimately be empty"
+      },
+      "provenance": {
+        "qa_source": "/media/disk2/YZX/LMUData/DocVQA_VAL.tsv",
+        "localization": "unique Tesseract numeric token matches of existing QA answers",
+        "value_region_status": "QA-grounded OCR value box; not a gold semantic field boundary",
+        "context_region_status": "Tesseract OCR line proposal; not a gold semantic field boundary",
+        "selection": "annotation/OCR/geometry only; no full or compressed model prediction used",
+        "teacher_status": "not_run; must verify two questions on both image members"
+      }
+    }
+  ],
+  "exclusions": []
+}

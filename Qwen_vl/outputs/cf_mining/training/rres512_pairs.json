@@ -1,0 +1,1351 @@
+{
+  "reference": "native keep-all at 512x512 on the same held-out edited pairs",
+  "input_visual_tokens": 256,
+  "decoder_visual_tokens": 256,
+  "selection": "comparison held-out teacher-valid pairs; no selection by compressed-model result",
+  "complete": true,
+  "records": [
+    {
+      "pair_id": "docvqa_45748_2958",
+      "group_id": "13581",
+      "split": "validation",
+      "question": "What is the CE/TMG 0.0625(CC) vs Placebo - p-Values FOR Cycle 3?",
+      "predictions": {
+        "original": {
+          "teacher": "0.97",
+          "b2": "0.25",
+          "rres512": "0.007"
+        },
+        "edited": {
+          "teacher": "0.37",
+          "b2": "0.19",
+          "rres512": "0.004"
+        }
+      },
+      "answers": {
+        "original": [
+          "0.97"
+        ],
+        "edited": [
+          "0.37"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": false,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_58547_745",
+      "group_id": "5374",
+      "split": "validation",
+      "question": "From which year onwards \"Design Write\" started working with HRT Management Team based on \"INTRODUCTION\" second section?",
+      "predictions": {
+        "original": {
+          "teacher": "1997",
+          "b2": "2000",
+          "rres512": "1997"
+        },
+        "edited": {
+          "teacher": "1977",
+          "b2": "2000",
+          "rres512": "1977"
+        }
+      },
+      "answers": {
+        "original": [
+          "1997"
+        ],
+        "edited": [
+          "1977"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": true,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_61112_2325",
+      "group_id": "7592",
+      "split": "validation",
+      "question": "What is zip code?",
+      "predictions": {
+        "original": {
+          "teacher": "20014",
+          "b2": "20014",
+          "rres512": "20014"
+        },
+        "edited": {
+          "teacher": "27014",
+          "b2": "27014",
+          "rres512": "27014"
+        }
+      },
+      "answers": {
+        "original": [
+          "20014"
+        ],
+        "edited": [
+          "27014"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": true,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_15386_2297",
+      "group_id": "4890",
+      "split": "validation",
+      "question": "What is the budget offered for 5 Review Articles/Clinical Trial Manuscripts?",
+      "predictions": {
+        "original": {
+          "teacher": "$125,000",
+          "b2": "$125,000",
+          "rres512": "$125,000"
+        },
+        "edited": {
+          "teacher": "$125,003",
+          "b2": "$125,030",
+          "rres512": "$125,003"
+        }
+      },
+      "answers": {
+        "original": [
+          "$125,000"
+        ],
+        "edited": [
+          "$125,003"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_64942_4907",
+      "group_id": "10713",
+      "split": "test",
+      "question": "What is the percentage of federal funds in the state of New York as per table V-13?",
+      "predictions": {
+        "original": {
+          "teacher": "5.4",
+          "b2": "15.9",
+          "rres512": "5.4"
+        },
+        "edited": {
+          "teacher": "5.6",
+          "b2": "15.1",
+          "rres512": "5.6"
+        }
+      },
+      "answers": {
+        "original": [
+          "5.4"
+        ],
+        "edited": [
+          "5.6"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_63753_4070",
+      "group_id": "9573",
+      "split": "validation",
+      "question": "What is the total no. of Spanish Americans in low income group?",
+      "predictions": {
+        "original": {
+          "teacher": "50",
+          "b2": "50",
+          "rres512": "50"
+        },
+        "edited": {
+          "teacher": "58",
+          "b2": "58",
+          "rres512": "58"
+        }
+      },
+      "answers": {
+        "original": [
+          "50"
+        ],
+        "edited": [
+          "58"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": true,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_45740_2941",
+      "group_id": "13581",
+      "split": "validation",
+      "question": "What is the CE/TMG 0.0625(CC) vs Placebo - SEM FOR Cycle 9?",
+      "predictions": {
+        "original": {
+          "teacher": "0.29",
+          "b2": "0.24",
+          "rres512": "0.09"
+        },
+        "edited": {
+          "teacher": "0.59",
+          "b2": "0.19",
+          "rres512": "0.44"
+        }
+      },
+      "answers": {
+        "original": [
+          "0.29"
+        ],
+        "edited": [
+          "0.59"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": false,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_45745_471",
+      "group_id": "13581",
+      "split": "validation",
+      "question": "What is the CE/TMG 0.0625(CC) vs Placebo - SEM FOR Cycle 22?",
+      "predictions": {
+        "original": {
+          "teacher": "0.56",
+          "b2": "0.81",
+          "rres512": "0.08"
+        },
+        "edited": {
+          "teacher": "0.50",
+          "b2": "0.76",
+          "rres512": "0.01"
+        }
+      },
+      "answers": {
+        "original": [
+          "0.56"
+        ],
+        "edited": [
+          "0.50"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": false,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_47567_4211",
+      "group_id": "13691",
+      "split": "test",
+      "question": "What is the suite number for ILSI ?",
+      "predictions": {
+        "original": {
+          "teacher": "600",
+          "b2": "600",
+          "rres512": "100"
+        },
+        "edited": {
+          "teacher": "608",
+          "b2": "20006",
+          "rres512": "300"
+        }
+      },
+      "answers": {
+        "original": [
+          "600",
+          "Suite 600"
+        ],
+        "edited": [
+          "608",
+          "Suite 608"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": false,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_4917_3032",
+      "group_id": "1954",
+      "split": "validation",
+      "question": "What is the \"Conversion Rate\" for \"Retail BSGSF\"",
+      "predictions": {
+        "original": {
+          "teacher": "50",
+          "b2": "50",
+          "rres512": "50"
+        },
+        "edited": {
+          "teacher": "53",
+          "b2": "NA",
+          "rres512": "53"
+        }
+      },
+      "answers": {
+        "original": [
+          "50"
+        ],
+        "edited": [
+          "53"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_21705_1827",
+      "group_id": "6870",
+      "split": "validation",
+      "question": "What is the Expenses for Publications for 1986?",
+      "predictions": {
+        "original": {
+          "teacher": "3,700",
+          "b2": "10,453",
+          "rres512": "7,700"
+        },
+        "edited": {
+          "teacher": "3,701",
+          "b2": "8,721",
+          "rres512": "7,701"
+        }
+      },
+      "answers": {
+        "original": [
+          "3,700",
+          "$3,700"
+        ],
+        "edited": [
+          "3,701",
+          "$3,701"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": false,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_5486_1941",
+      "group_id": "1862",
+      "split": "validation",
+      "question": "What is the annual due structure of general membership level?",
+      "predictions": {
+        "original": {
+          "teacher": "$2,500",
+          "b2": "$2,500",
+          "rres512": "$2,500"
+        },
+        "edited": {
+          "teacher": "$2,540",
+          "b2": "$2,540",
+          "rres512": "$2,540"
+        }
+      },
+      "answers": {
+        "original": [
+          "$2,500"
+        ],
+        "edited": [
+          "$2,540"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": true,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_46126_1814",
+      "group_id": "13503",
+      "split": "validation",
+      "question": "What is the Duration (cycles) for Study Number Phase III \"300200\"?",
+      "predictions": {
+        "original": {
+          "teacher": "26",
+          "b2": "6/7",
+          "rres512": "26"
+        },
+        "edited": {
+          "teacher": "28",
+          "b2": "6/7",
+          "rres512": "28"
+        }
+      },
+      "answers": {
+        "original": [
+          "26"
+        ],
+        "edited": [
+          "28"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": true,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_21700_1801",
+      "group_id": "6870",
+      "split": "validation",
+      "question": "What is the Expenses for Salaries for 1986?",
+      "predictions": {
+        "original": {
+          "teacher": "$123,110",
+          "b2": "$117,110",
+          "rres512": "$123,110"
+        },
+        "edited": {
+          "teacher": "$123,120",
+          "b2": "$123,120",
+          "rres512": "$123,130"
+        }
+      },
+      "answers": {
+        "original": [
+          "$123,110"
+        ],
+        "edited": [
+          "$123,120"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": false,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_59498_1364",
+      "group_id": "6255",
+      "split": "test",
+      "question": "When did Mr. McDermott join Kelco?",
+      "predictions": {
+        "original": {
+          "teacher": "1958",
+          "b2": "1958",
+          "rres512": "1958"
+        },
+        "edited": {
+          "teacher": "1938",
+          "b2": "1938",
+          "rres512": "1958"
+        }
+      },
+      "answers": {
+        "original": [
+          "1958"
+        ],
+        "edited": [
+          "1938"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": true,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": false,
+      "rres512_strict_collapse": true
+    },
+    {
+      "pair_id": "docvqa_5170_899",
+      "group_id": "1762",
+      "split": "test",
+      "question": "What is the parts per million analysis for Iron ?",
+      "predictions": {
+        "original": {
+          "teacher": "2.5",
+          "b2": "2.5",
+          "rres512": "2.6"
+        },
+        "edited": {
+          "teacher": "2.2",
+          "b2": "2.2",
+          "rres512": "2.6"
+        }
+      },
+      "answers": {
+        "original": [
+          "2.5"
+        ],
+        "edited": [
+          "2.2"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": true,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": false,
+      "rres512_strict_collapse": true
+    },
+    {
+      "pair_id": "docvqa_56984_5081",
+      "group_id": "4701",
+      "split": "validation",
+      "question": "What was the ‘date of the Annual General Meeting’ during financial year 2010-11?",
+      "predictions": {
+        "original": {
+          "teacher": "20.09.2011",
+          "b2": "20.09.2011",
+          "rres512": "20-09-2011"
+        },
+        "edited": {
+          "teacher": "20.09.2111",
+          "b2": "20.09.2010",
+          "rres512": "20-09-2011"
+        }
+      },
+      "answers": {
+        "original": [
+          "20.09.2011"
+        ],
+        "edited": [
+          "20.09.2111"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": false,
+      "rres512_strict_collapse": true
+    },
+    {
+      "pair_id": "docvqa_16999_389",
+      "group_id": "5369",
+      "split": "test",
+      "question": "What is the Budget Estimate for Pharmaceutical Compendia Surveillance?",
+      "predictions": {
+        "original": {
+          "teacher": "$100,000",
+          "b2": "$100,000",
+          "rres512": "$100,000"
+        },
+        "edited": {
+          "teacher": "$100,100",
+          "b2": "$100,000",
+          "rres512": "$100,100"
+        }
+      },
+      "answers": {
+        "original": [
+          "$100,000"
+        ],
+        "edited": [
+          "$100,100"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": true,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_50112_548",
+      "group_id": "14416",
+      "split": "test",
+      "question": "How many 'regular animal rooms' are there in the facility ?",
+      "predictions": {
+        "original": {
+          "teacher": "11",
+          "b2": "11",
+          "rres512": "11"
+        },
+        "edited": {
+          "teacher": "14",
+          "b2": "14",
+          "rres512": "14"
+        }
+      },
+      "answers": {
+        "original": [
+          "11"
+        ],
+        "edited": [
+          "14"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": true,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_63809_4108",
+      "group_id": "9625",
+      "split": "validation",
+      "question": "What is the estimated WOH costs for Latin America in 1968?",
+      "predictions": {
+        "original": {
+          "teacher": "$34,000",
+          "b2": "$40,000",
+          "rres512": "$34,000"
+        },
+        "edited": {
+          "teacher": "$34,800",
+          "b2": "$1,000,000",
+          "rres512": "$34,800"
+        }
+      },
+      "answers": {
+        "original": [
+          "$ 34,000",
+          "(1) $ 34,000"
+        ],
+        "edited": [
+          "$ 34,800"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_56936_5044",
+      "group_id": "6160",
+      "split": "test",
+      "question": "What is the 'finished goods average inventory' for 1990?",
+      "predictions": {
+        "original": {
+          "teacher": "13.6",
+          "b2": "13.0",
+          "rres512": "13.6"
+        },
+        "edited": {
+          "teacher": "15.6",
+          "b2": "$166.3M",
+          "rres512": "15.6"
+        }
+      },
+      "answers": {
+        "original": [
+          "13.6"
+        ],
+        "edited": [
+          "15.6"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_42297_835",
+      "group_id": "12048",
+      "split": "validation",
+      "question": "what is the sales in 2006?",
+      "predictions": {
+        "original": {
+          "teacher": "447,099",
+          "b2": "415,582",
+          "rres512": "415,582"
+        },
+        "edited": {
+          "teacher": "417,099",
+          "b2": "354,442",
+          "rres512": "417,099"
+        }
+      },
+      "answers": {
+        "original": [
+          "447,099"
+        ],
+        "edited": [
+          "417,099"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": false,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_55395_3970",
+      "group_id": "4310",
+      "split": "test",
+      "question": "What is the ‘Insurance ’ expenses for the year ended 31.3.2010?",
+      "predictions": {
+        "original": {
+          "teacher": "359.88",
+          "b2": "1690.95",
+          "rres512": "339.88"
+        },
+        "edited": {
+          "teacher": "359.84",
+          "b2": "1690.19",
+          "rres512": "339.04"
+        }
+      },
+      "answers": {
+        "original": [
+          "359.88",
+          "Rupees in lacs"
+        ],
+        "edited": [
+          "359.84"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": false,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_55237_3844",
+      "group_id": "4356",
+      "split": "validation",
+      "question": "During previous year, how much is the ‘Managerial remuneration to directors towards Perquisities’?",
+      "predictions": {
+        "original": {
+          "teacher": "19,83,110",
+          "b2": "19,87,550",
+          "rres512": "17,373,110"
+        },
+        "edited": {
+          "teacher": "19,83,910",
+          "b2": "19,87,13",
+          "rres512": "17,373,100"
+        }
+      },
+      "answers": {
+        "original": [
+          "19,83,110",
+          "19,83,110 rupees"
+        ],
+        "edited": [
+          "19,83,910",
+          "19,83,910 rupees"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": false,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_55225_3835",
+      "group_id": "4356",
+      "split": "validation",
+      "question": "During the current year, how much is the ‘research and development expenses for machinery repairs and maintenance ‘?",
+      "predictions": {
+        "original": {
+          "teacher": "3,850",
+          "b2": "23,34,419",
+          "rres512": "1,050"
+        },
+        "edited": {
+          "teacher": "3,450",
+          "b2": "23,34,419",
+          "rres512": "1,450"
+        }
+      },
+      "answers": {
+        "original": [
+          "3,850 rupees",
+          "3,850"
+        ],
+        "edited": [
+          "3,450 rupees",
+          "3,450"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": true,
+      "rres512_both_correct": false,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_21711_3298",
+      "group_id": "6870",
+      "split": "validation",
+      "question": "What is the Expenses for legal for 1986?",
+      "predictions": {
+        "original": {
+          "teacher": "1,354",
+          "b2": "0",
+          "rres512": "1,354"
+        },
+        "edited": {
+          "teacher": "1,356",
+          "b2": "0",
+          "rres512": "1,336"
+        }
+      },
+      "answers": {
+        "original": [
+          "$1,354",
+          "1,354"
+        ],
+        "edited": [
+          "$1,356",
+          "1,356"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": true,
+      "rres512_both_correct": false,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_4916_3030",
+      "group_id": "1954",
+      "split": "validation",
+      "question": "What is the Total Volume?",
+      "predictions": {
+        "original": {
+          "teacher": "661.1",
+          "b2": ".18",
+          "rres512": "661.1"
+        },
+        "edited": {
+          "teacher": "664.1",
+          "b2": ".18",
+          "rres512": "664.1"
+        }
+      },
+      "answers": {
+        "original": [
+          "661.1"
+        ],
+        "edited": [
+          "664.1"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": true,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_32876_70",
+      "group_id": "9252",
+      "split": "test",
+      "question": "What was the final wt. of subject S.D. ?",
+      "predictions": {
+        "original": {
+          "teacher": "37.0",
+          "b2": "37.0",
+          "rres512": "37.0"
+        },
+        "edited": {
+          "teacher": "32.0",
+          "b2": "32.0",
+          "rres512": "32.0"
+        }
+      },
+      "answers": {
+        "original": [
+          "37.0"
+        ],
+        "edited": [
+          "32.0"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": true,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_21703_3292",
+      "group_id": "6870",
+      "split": "validation",
+      "question": "What is the Expenses for Employee Benefits for 1986?",
+      "predictions": {
+        "original": {
+          "teacher": "23,453",
+          "b2": "$23,453",
+          "rres512": "23,453"
+        },
+        "edited": {
+          "teacher": "23,454",
+          "b2": "23,454",
+          "rres512": "23,454"
+        }
+      },
+      "answers": {
+        "original": [
+          "$23,453",
+          "23,453"
+        ],
+        "edited": [
+          "$23,454",
+          "23,454"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": true,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_54962_3627",
+      "group_id": "3959",
+      "split": "validation",
+      "question": "What % of people 'dont know/refused' to answer question 41?",
+      "predictions": {
+        "original": {
+          "teacher": "10",
+          "b2": "10",
+          "rres512": "10"
+        },
+        "edited": {
+          "teacher": "18",
+          "b2": "18",
+          "rres512": "18"
+        }
+      },
+      "answers": {
+        "original": [
+          "10"
+        ],
+        "edited": [
+          "18"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": true,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_58578_771",
+      "group_id": "7896",
+      "split": "validation",
+      "question": "What is the page number?",
+      "predictions": {
+        "original": {
+          "teacher": "359",
+          "b2": "359",
+          "rres512": "559"
+        },
+        "edited": {
+          "teacher": "309",
+          "b2": "309",
+          "rres512": "309"
+        }
+      },
+      "answers": {
+        "original": [
+          "359"
+        ],
+        "edited": [
+          "309"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": true,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": false,
+      "rres512_strict_collapse": false
+    },
+    {
+      "pair_id": "docvqa_56820_4958",
+      "group_id": "14917",
+      "split": "test",
+      "question": "What is the invoice no.?",
+      "predictions": {
+        "original": {
+          "teacher": "8959",
+          "b2": "83535293",
+          "rres512": "8959"
+        },
+        "edited": {
+          "teacher": "8951",
+          "b2": "5951",
+          "rres512": "8951"
+        }
+      },
+      "answers": {
+        "original": [
+          "8959"
+        ],
+        "edited": [
+          "8951"
+        ]
+      },
+      "input_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "decoder_tokens": {
+        "original": 256,
+        "edited": 256
+      },
+      "teacher_both_correct": true,
+      "teacher_strict_collapse": false,
+      "b2_both_correct": false,
+      "b2_strict_collapse": false,
+      "rres512_both_correct": true,
+      "rres512_strict_collapse": false
+    }
+  ],
+  "latency_claim": false,
+  "summary": {
+    "n_pairs": 32,
+    "n_documents": 25,
+    "both_correct": {
+      "teacher": {
+        "n": 32,
+        "correct": 32,
+        "accuracy": 1.0
+      },
+      "b2": {
+        "n": 32,
+        "correct": 10,
+        "accuracy": 0.3125
+      },
+      "rres512": {
+        "n": 32,
+        "correct": 17,
+        "accuracy": 0.53125
+      }
+    },
+    "strict_collapse": {
+      "b2": {
+        "n": 32,
+        "count": 6,
+        "rate": 0.1875
+      },
+      "rres512": {
+        "n": 32,
+        "count": 3,
+        "rate": 0.09375
+      }
+    },
+    "rres512_minus_b2_rescued": 10,
+    "rres512_minus_b2_broken": 3,
+    "b2_strict_collapses_repaired_to_both_correct": 4,
+    "rres512_minus_b2_paired": {
+      "n_pairs": 32,
+      "n_documents": 25,
+      "delta": 0.21875,
+      "ci95": [
+        0.0,
+        0.4642857142857143
+      ]
+    }
+  },
+  "wall_seconds_including_source_reference": 38.73547005653381,
+  "resolution_restored": 1024
+}

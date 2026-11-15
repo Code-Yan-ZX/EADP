@@ -1,0 +1,52 @@
+{
+  "pass_all": true,
+  "singleton_ppe_K256_logits_bitwise": true,
+  "same_field_anchors": true,
+  "same_field_dominants": true,
+  "checks": {
+    "visionzip": {
+      "passed": true,
+      "reps_shape": [
+        256,
+        4
+      ],
+      "n_vis": 256,
+      "ds_lengths": [
+        256,
+        256,
+        256
+      ],
+      "unassigned": 0
+    },
+    "field_anchor_control": {
+      "passed": true,
+      "reps_shape": [
+        256,
+        4
+      ],
+      "n_vis": 256,
+      "ds_lengths": [
+        256,
+        256,
+        256
+      ],
+      "unassigned": 0
+    },
+    "field_oracle": {
+      "passed": true,
+      "reps_shape": [
+        256,
+        4
+      ],
+      "n_vis": 256,
+      "ds_lengths": [
+        256,
+        256,
+        256
+      ],
+      "unassigned": 0
+    }
+  },
+  "source_pair": "swap_37370_37386",
+  "prediction_used_for_selection": false
+}

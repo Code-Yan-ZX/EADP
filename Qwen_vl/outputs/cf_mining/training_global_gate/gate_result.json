@@ -1,0 +1,480 @@
+{
+  "verdict": "UNRESOLVED_CARRIER_OR_OPTIMIZATION",
+  "criterion": "at least one additional training pair both-correct in actual generation",
+  "requested_pairs": 8,
+  "actual_pairs": 8,
+  "fit_selection_strict_collapses": 5,
+  "fit_selection_broad_only_failures": 3,
+  "train_both_correct_gain": 0,
+  "before": {
+    "n_pairs": 8,
+    "n_documents": 8,
+    "both_correct": 0,
+    "broad_pair_failures": 8,
+    "strict_answer_collapses": 5,
+    "broad_pair_failure_rate": 1.0,
+    "strict_answer_collapse_rate": 0.625,
+    "both_correct_rate": 0.0,
+    "original_correct_rate": 0.125,
+    "edited_correct_rate": 0.0,
+    "collapse_rate": 0.625
+  },
+  "after": {
+    "n_pairs": 8,
+    "n_documents": 8,
+    "both_correct": 0,
+    "broad_pair_failures": 8,
+    "strict_answer_collapses": 3,
+    "broad_pair_failure_rate": 1.0,
+    "strict_answer_collapse_rate": 0.375,
+    "both_correct_rate": 0.0,
+    "original_correct_rate": 0.0,
+    "edited_correct_rate": 0.0,
+    "collapse_rate": 0.375
+  },
+  "fit_collapse_changes": {
+    "initial_strict_collapses": 5,
+    "strict_collapses_repaired_to_both_correct": 0,
+    "new_strict_collapses": 0
+  },
+  "heldout": {
+    "n_pairs": 32,
+    "n_documents": 25,
+    "both_correct": 9,
+    "broad_pair_failures": 23,
+    "strict_answer_collapses": 7,
+    "broad_pair_failure_rate": 0.71875,
+    "strict_answer_collapse_rate": 0.21875,
+    "both_correct_rate": 0.28125,
+    "original_correct_rate": 0.46875,
+    "edited_correct_rate": 0.34375,
+    "collapse_rate": 0.21875
+  },
+  "sources": {
+    "records": [
+      {
+        "pair_id": "docvqa_1022_582",
+        "split": "validation",
+        "answer": "501",
+        "prediction": "501",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_15386_2297",
+        "split": "validation",
+        "answer": "$125,000",
+        "prediction": "$125,000",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_6854_1085",
+        "split": "validation",
+        "answer": "73167300",
+        "prediction": "73167300",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_55225_3835",
+        "split": "validation",
+        "answer": "3,850",
+        "prediction": "23,34,419",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_42297_835",
+        "split": "validation",
+        "answer": "447,099",
+        "prediction": "354,442",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_54962_3627",
+        "split": "validation",
+        "answer": "10",
+        "prediction": "23",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_45740_2941",
+        "split": "validation",
+        "answer": "0.29",
+        "prediction": "0.18",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_21711_3298",
+        "split": "validation",
+        "answer": "$1,354",
+        "prediction": "$1,354",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_59498_1364",
+        "split": "test",
+        "answer": "1958",
+        "prediction": "1958",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_45124_2574",
+        "split": "test",
+        "answer": "140,167.30",
+        "prediction": "$130,954.17",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_65155_5062",
+        "split": "test",
+        "answer": "$ 292.00",
+        "prediction": "44% X 124.48",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_45748_2958",
+        "split": "validation",
+        "answer": "0.97",
+        "prediction": "0.020*",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_56936_5044",
+        "split": "test",
+        "answer": "13.6",
+        "prediction": "1990",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_5170_899",
+        "split": "test",
+        "answer": "2.5",
+        "prediction": "2.5",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_39063_4000",
+        "split": "validation",
+        "answer": "20036",
+        "prediction": "20036",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_56984_5081",
+        "split": "validation",
+        "answer": "20.09.2011",
+        "prediction": "20.09.2011",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_64942_4907",
+        "split": "test",
+        "answer": "5.4",
+        "prediction": "13.9",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_46631_3533",
+        "split": "test",
+        "answer": "19",
+        "prediction": "19",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_50112_548",
+        "split": "test",
+        "answer": "11",
+        "prediction": "11",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_56820_4958",
+        "split": "test",
+        "answer": "8959",
+        "prediction": "8959",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_58547_745",
+        "split": "validation",
+        "answer": "1997",
+        "prediction": "1997",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_43784_1895",
+        "split": "validation",
+        "answer": "2013",
+        "prediction": "2013",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_63809_4108",
+        "split": "validation",
+        "answer": "$ 34,000",
+        "prediction": "$34,000",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_45841_3014",
+        "split": "validation",
+        "answer": "45",
+        "prediction": "4",
+        "correct": false,
+        "teacher_correct": true
+      }
+    ],
+    "n_sources": 24,
+    "accuracy": 0.5833333333333334,
+    "complete": true
+  },
+  "heldout_change": {
+    "n_pairs": 32,
+    "n_documents": 25,
+    "delta": -0.03125,
+    "ci95": [
+      -0.10714285714285714,
+      0.0
+    ]
+  },
+  "heldout_collapse_changes": {
+    "initial_strict_collapses": 6,
+    "strict_collapses_repaired_to_both_correct": 0,
+    "new_strict_collapses": 1
+  },
+  "source_baseline": {
+    "records": [
+      {
+        "pair_id": "docvqa_1022_582",
+        "split": "validation",
+        "answer": "501",
+        "prediction": "501",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_15386_2297",
+        "split": "validation",
+        "answer": "$125,000",
+        "prediction": "$125,000",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_6854_1085",
+        "split": "validation",
+        "answer": "73167300",
+        "prediction": "73167300",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_55225_3835",
+        "split": "validation",
+        "answer": "3,850",
+        "prediction": "23,34,419",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_42297_835",
+        "split": "validation",
+        "answer": "447,099",
+        "prediction": "354,444",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_54962_3627",
+        "split": "validation",
+        "answer": "10",
+        "prediction": "23",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_45740_2941",
+        "split": "validation",
+        "answer": "0.29",
+        "prediction": "0.18",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_21711_3298",
+        "split": "validation",
+        "answer": "$1,354",
+        "prediction": "$1,354",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_59498_1364",
+        "split": "test",
+        "answer": "1958",
+        "prediction": "after graduating from the University of Massachusetts in Food Technology",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_45124_2574",
+        "split": "test",
+        "answer": "140,167.30",
+        "prediction": "$130,954.17",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_65155_5062",
+        "split": "test",
+        "answer": "$ 292.00",
+        "prediction": "44% X 124.48",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_45748_2958",
+        "split": "validation",
+        "answer": "0.97",
+        "prediction": "0.020*",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_56936_5044",
+        "split": "test",
+        "answer": "13.6",
+        "prediction": "1990",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_5170_899",
+        "split": "test",
+        "answer": "2.5",
+        "prediction": "2.5",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_39063_4000",
+        "split": "validation",
+        "answer": "20036",
+        "prediction": "20036",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_56984_5081",
+        "split": "validation",
+        "answer": "20.09.2011",
+        "prediction": "20.09.2011",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_64942_4907",
+        "split": "test",
+        "answer": "5.4",
+        "prediction": "13.9",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_46631_3533",
+        "split": "test",
+        "answer": "19",
+        "prediction": "19",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_50112_548",
+        "split": "test",
+        "answer": "11",
+        "prediction": "11",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_56820_4958",
+        "split": "test",
+        "answer": "8959",
+        "prediction": "8959",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_58547_745",
+        "split": "validation",
+        "answer": "1997",
+        "prediction": "1997",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_43784_1895",
+        "split": "validation",
+        "answer": "2013",
+        "prediction": "2012",
+        "correct": false,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_63809_4108",
+        "split": "validation",
+        "answer": "$ 34,000",
+        "prediction": "$34,000",
+        "correct": true,
+        "teacher_correct": true
+      },
+      {
+        "pair_id": "docvqa_45841_3014",
+        "split": "validation",
+        "answer": "45",
+        "prediction": "5",
+        "correct": false,
+        "teacher_correct": true
+      }
+    ],
+    "n_sources": 24,
+    "accuracy": 0.5,
+    "complete": true
+  },
+  "initial_sha256": "ee571066aae240b9f26ad66234513478b8f719eca3b76e39209f5eb4498b0c4a",
+  "native_identity": {
+    "pair_id": "docvqa_51771_1743",
+    "zero_gate_main_bitwise": true,
+    "zero_gate_deepstack_bitwise": true,
+    "first_logit_max_absolute_delta": 0.0625,
+    "first_logit_mean_absolute_delta": 1.5385827282443643e-05,
+    "first_argmax_match": true,
+    "native_first_token": 16,
+    "forced_first_token": 16,
+    "frozen_decoder_sample_sha256": "848284bd41b69e6a4417fa841907f481b674f009154376bfbcc5b7b8935616fa"
+  },
+  "decoder_sample_checksum_unchanged": true,
+  "frozen_decoder_unchanged": true,
+  "limitation": "overfit gate only; neither generalization nor mining advantage established"
+}

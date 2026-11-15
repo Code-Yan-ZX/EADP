@@ -1,0 +1,147 @@
+{
+  "complete": true,
+  "purpose": "post-hoc interface diagnostic, no model selection",
+  "arms": {
+    "ordinary": {
+      "n": 8,
+      "correct": 8,
+      "records": [
+        {
+          "pair_id": "docvqa_55250_3853",
+          "answer": "6.00",
+          "teacher_training_answer": "6.00",
+          "prediction": "6.00",
+          "correct": true,
+          "teacher_forced_answer_nll": 0.03608230873942375
+        },
+        {
+          "pair_id": "docvqa_37351_2822",
+          "answer": "1939",
+          "teacher_training_answer": "1939",
+          "prediction": "1939",
+          "correct": true,
+          "teacher_forced_answer_nll": 2.1409377950476483e-05
+        },
+        {
+          "pair_id": "docvqa_42034_628",
+          "answer": "$9,719",
+          "teacher_training_answer": "9719",
+          "prediction": "9719",
+          "correct": true,
+          "teacher_forced_answer_nll": 0.00620083836838603
+        },
+        {
+          "pair_id": "docvqa_51724_1705",
+          "answer": "$1.25",
+          "teacher_training_answer": "$1.25",
+          "prediction": "$1.25",
+          "correct": true,
+          "teacher_forced_answer_nll": 0.001342636183835566
+        },
+        {
+          "pair_id": "docvqa_2209_1412",
+          "answer": "19.18",
+          "teacher_training_answer": "19.18",
+          "prediction": "19.18",
+          "correct": true,
+          "teacher_forced_answer_nll": 3.424965325393714e-05
+        },
+        {
+          "pair_id": "docvqa_44965_3133",
+          "answer": "3,000.00",
+          "teacher_training_answer": "3,000.00",
+          "prediction": "3,000.00",
+          "correct": true,
+          "teacher_forced_answer_nll": 0.0045801792293787
+        },
+        {
+          "pair_id": "docvqa_51771_1743",
+          "answer": "128",
+          "teacher_training_answer": "128",
+          "prediction": "128",
+          "correct": true,
+          "teacher_forced_answer_nll": 1.1920915312657598e-06
+        },
+        {
+          "pair_id": "docvqa_43764_1881",
+          "answer": "2011",
+          "teacher_training_answer": "2011",
+          "prediction": "2011",
+          "correct": true,
+          "teacher_forced_answer_nll": 4.66055134893395e-05
+        }
+      ]
+    },
+    "online": {
+      "n": 8,
+      "correct": 0,
+      "records": [
+        {
+          "pair_id": "docvqa_55250_3853",
+          "answer": "6.00",
+          "teacher_training_answer": "6.00",
+          "prediction": "6.10",
+          "correct": false,
+          "teacher_forced_answer_nll": 0.6353814005851746
+        },
+        {
+          "pair_id": "docvqa_37351_2822",
+          "answer": "1939",
+          "teacher_training_answer": "1939",
+          "prediction": "1977",
+          "correct": false,
+          "teacher_forced_answer_nll": 1.1886053085327148
+        },
+        {
+          "pair_id": "docvqa_42034_628",
+          "answer": "$9,719",
+          "teacher_training_answer": "9719",
+          "prediction": "637",
+          "correct": false,
+          "teacher_forced_answer_nll": 3.529773712158203
+        },
+        {
+          "pair_id": "docvqa_51724_1705",
+          "answer": "$1.25",
+          "teacher_training_answer": "$1.25",
+          "prediction": "337,750",
+          "correct": false,
+          "teacher_forced_answer_nll": 2.2542192935943604
+        },
+        {
+          "pair_id": "docvqa_2209_1412",
+          "answer": "19.18",
+          "teacher_training_answer": "19.18",
+          "prediction": "11.57",
+          "correct": false,
+          "teacher_forced_answer_nll": 1.2811133861541748
+        },
+        {
+          "pair_id": "docvqa_44965_3133",
+          "answer": "3,000.00",
+          "teacher_training_answer": "3,000.00",
+          "prediction": "1,500",
+          "correct": false,
+          "teacher_forced_answer_nll": 1.0609534978866577
+        },
+        {
+          "pair_id": "docvqa_51771_1743",
+          "answer": "128",
+          "teacher_training_answer": "128",
+          "prediction": "12",
+          "correct": false,
+          "teacher_forced_answer_nll": 1.3915560245513916
+        },
+        {
+          "pair_id": "docvqa_43764_1881",
+          "answer": "2011",
+          "teacher_training_answer": "2011",
+          "prediction": "2017",
+          "correct": false,
+          "teacher_forced_answer_nll": 0.7897334694862366
+        }
+      ]
+    }
+  },
+  "pool_restored": true
+}

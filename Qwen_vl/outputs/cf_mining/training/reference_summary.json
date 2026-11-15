@@ -1,0 +1,108 @@
+{
+  "complete": true,
+  "rres512": {
+    "n_sources": 24,
+    "all_sources": {
+      "teacher": {
+        "n": 24,
+        "correct": 24,
+        "accuracy": 1.0
+      },
+      "b2": {
+        "n": 24,
+        "correct": 12,
+        "accuracy": 0.5
+      },
+      "rres512": {
+        "n": 24,
+        "correct": 19,
+        "accuracy": 0.7916666666666666
+      }
+    },
+    "teacher_correct_sources": {
+      "b2": {
+        "n": 24,
+        "correct": 12,
+        "accuracy": 0.5
+      },
+      "rres512": {
+        "n": 24,
+        "correct": 19,
+        "accuracy": 0.7916666666666666
+      }
+    },
+    "rres512_minus_b2_rescued": 8,
+    "rres512_minus_b2_broken": 1
+  },
+  "rres512_pairs": {
+    "n_pairs": 32,
+    "n_documents": 25,
+    "both_correct": {
+      "teacher": {
+        "n": 32,
+        "correct": 32,
+        "accuracy": 1.0
+      },
+      "b2": {
+        "n": 32,
+        "correct": 10,
+        "accuracy": 0.3125
+      },
+      "rres512": {
+        "n": 32,
+        "correct": 17,
+        "accuracy": 0.53125
+      }
+    },
+    "strict_collapse": {
+      "b2": {
+        "n": 32,
+        "count": 6,
+        "rate": 0.1875
+      },
+      "rres512": {
+        "n": 32,
+        "count": 3,
+        "rate": 0.09375
+      }
+    },
+    "rres512_minus_b2_rescued": 10,
+    "rres512_minus_b2_broken": 3,
+    "b2_strict_collapses_repaired_to_both_correct": 4,
+    "rres512_minus_b2_paired": {
+      "n_pairs": 32,
+      "n_documents": 25,
+      "delta": 0.21875,
+      "ci95": [
+        0.0,
+        0.4642857142857143
+      ]
+    }
+  },
+  "invariants": {
+    "attempted_pairs": 8,
+    "teacher_both_correct_pairs": 8,
+    "teacher_rejected_pairs": 0,
+    "accepted": {
+      "teacher": {
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0
+      },
+      "b2": {
+        "n": 8,
+        "correct": 3,
+        "accuracy": 0.375
+      },
+      "online": {
+        "n": 8,
+        "correct": 0,
+        "accuracy": 0.0
+      }
+    },
+    "online_rescued": 0,
+    "online_broken": 3
+  },
+  "wall_seconds": 57.70478057861328,
+  "limitation": "small supplementary quality checks; no unseen-layout, field-binding, arithmetic, or latency claim"
+}

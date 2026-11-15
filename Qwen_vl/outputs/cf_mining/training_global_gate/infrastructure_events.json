@@ -1,0 +1,23 @@
+{
+  "events": [
+    {
+      "phase": "before any training update",
+      "issue": "float32 linspace rounded final checksum sample index out of bounds for large embedding parameter",
+      "fix": "exact Python integer interpolation; CUDA long index tensor",
+      "effect": "initial gate launch aborted before training; restarted same seed/protocol; mining unchanged",
+      "regression_bounds_checked": [
+        1,
+        16,
+        16777217,
+        622329856,
+        1073741824
+      ]
+    },
+    {
+      "phase": "first backward, before any optimizer update",
+      "issue": "VLMEvalKit vlm/__init__.py disables autograd globally during model import",
+      "fix": "explicit torch.enable_grad context around compressor training forward and backward",
+      "effect": "gate aborted before optimizer updates; full-teacher cache and zero-gate evaluation remain valid; restarted same protocol"
+    }
+  ]
+}

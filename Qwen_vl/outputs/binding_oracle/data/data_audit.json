@@ -1,0 +1,913 @@
+{
+  "all_pass": true,
+  "scope": "Data-only audit; no teacher/compressor prediction files opened; no GPU model loaded.",
+  "manifest": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/combined_manifest.json",
+  "counts": {
+    "pairs": 62,
+    "independent_source_documents": 62,
+    "unique_pages": 62,
+    "source_byte_hashes": 62,
+    "base_VAL_pairs": 22,
+    "extra_TRAIN_pairs": 40,
+    "split": {
+      "dev": 41,
+      "confirm": 21
+    }
+  },
+  "unchanged_prefix": {
+    "v2_first22_exact_records": true,
+    "extra_first12_exact_records": true
+  },
+  "source_qa": {
+    "selected_field_questions_verified_against_original_annotations": 124,
+    "all_retained_source_page_questions_verified": 400,
+    "all_62_pages_have_at_least_two_annotated_questions": true,
+    "all_original_aliases_retained": true,
+    "swapped_aliases_are_other_field_original_aliases": true,
+    "annotation_sources": [
+      "local DocVQA_VAL.tsv",
+      "already local pinned pixparse/docvqa-single-page-questions TRAIN parquet"
+    ]
+  },
+  "leakage": {
+    "prior_CF_parent_documents": 133,
+    "prior_CF_parent_overlap_all62": 0,
+    "all_VAL_parent_documents": 938,
+    "extra_TRAIN_overlap_all_VAL_parents": 0,
+    "base_extra_shared_documents": 0,
+    "one_page_per_document": true,
+    "split_unit": "ucsf_document_id",
+    "note": "Parent-ID and source-byte checks are exact; not an exhaustive semantic near-duplicate or publisher-template audit."
+  },
+  "deterministic_quality": {
+    "max_digit_count_ratio": 2,
+    "min_shared_font_height_retention": 0.6,
+    "max_provided_word_angle_degrees": 5,
+    "reject_vertical_narrow_short_values": true,
+    "require_unit_category_match": true,
+    "field_unit_counts": {
+      "number": 48,
+      "identifier": 8,
+      "year_or_date": 12,
+      "percent": 24,
+      "currency": 32
+    },
+    "Tesseract_confidence_min": 55,
+    "provided_ocr_confidence": "reject explicit Low; null remains null; numeric Tesseract confidence is not imputed",
+    "source_pixels_and_dimensions_kept": true,
+    "both_value_boxes_rerendered_in_both_members": true,
+    "reported_numeric_multiset_unchanged_all62": true
+  },
+  "pixel_audit": {
+    "path": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/combined_pixel_audit.json",
+    "all124_rendered_members_outside_documented_patches_changed_pixels": 0,
+    "source_sha256_matches_all": true,
+    "dimensions_preserved_all": true
+  },
+  "geometry": {
+    "version": "native_smart_resize_then_square_v2",
+    "independent_CPU_all62_counts_match_runner": true,
+    "all62_have_at_least_one_token_per_field": true,
+    "collision_pages": 8,
+    "collision_assignment": "larger positive token/box intersection area; ties field0; no prediction-dependent geometry",
+    "actual_fetch_image_sizes_checked_against_smart_resize_pages": 22,
+    "actual_fetch_image_size_checks_all_pass": true,
+    "max_ideal_vs_native_edge_shift_v2_pixels": 6.25059931109115,
+    "ideal_mapping_warning": "source_to_letterbox1024/value_region_1024/context_line_region_1024 are ideal direct square-pad mappings only. Native wrapper first fetch_image smart_resize(factor=32,min=max=1024**2), then square-pad and resize1024. Runner must project raw source pixel boxes through that actual pipeline; do not use ideal token masks for native oracles.",
+    "region_names": "QA-grounded OCR value boxes and OCR line proposals; not gold semantic field polygons",
+    "records": [
+      {
+        "pair_id": "swap_37370_37386",
+        "field_token_counts": [
+          3,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          1088,
+          928
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_47719_47727",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_52213_52222",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_5698_5701",
+        "field_token_counts": [
+          6,
+          6
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          1152,
+          896
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_7024_7017",
+        "field_token_counts": [
+          3,
+          3
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_57376_57387",
+        "field_token_counts": [
+          3,
+          3
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1184
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_54337_54359",
+        "field_token_counts": [
+          4,
+          3
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_5313_5314",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 2,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_11316_11318",
+        "field_token_counts": [
+          4,
+          4
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_52241_52243",
+        "field_token_counts": [
+          3,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_43600_43611",
+        "field_token_counts": [
+          1,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_64610_64612",
+        "field_token_counts": [
+          1,
+          4
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_6767_6769",
+        "field_token_counts": [
+          2,
+          3
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_46637_46645",
+        "field_token_counts": [
+          3,
+          3
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1184
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_63011_63015",
+        "field_token_counts": [
+          2,
+          1
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          640,
+          1536
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_43255_43261",
+        "field_token_counts": [
+          3,
+          6
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_38869_38880",
+        "field_token_counts": [
+          4,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          1152,
+          896
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_8125_8126",
+        "field_token_counts": [
+          8,
+          6
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          1152,
+          864
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_58319_58321",
+        "field_token_counts": [
+          6,
+          6
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_47552_47708",
+        "field_token_counts": [
+          3,
+          3
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          1152,
+          896
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_47517_47519",
+        "field_token_counts": [
+          3,
+          2
+        ],
+        "collision_tokens": 2,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_62102_62110",
+        "field_token_counts": [
+          4,
+          4
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          704,
+          1440
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_6417_6420",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_33065_33068",
+        "field_token_counts": [
+          3,
+          6
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_24095_24101",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1184
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_63466_63469",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1184
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_36249_36252",
+        "field_token_counts": [
+          3,
+          3
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_5135_5136",
+        "field_token_counts": [
+          4,
+          4
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          1248,
+          800
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_19484_19489",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 2,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_38577_38580",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 2,
+        "fetch_size": [
+          864,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_33132_33135",
+        "field_token_counts": [
+          3,
+          6
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_18334_18337",
+        "field_token_counts": [
+          4,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1120
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_12846_12848",
+        "field_token_counts": [
+          3,
+          6
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_19223_19227",
+        "field_token_counts": [
+          2,
+          4
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_41954_41963",
+        "field_token_counts": [
+          3,
+          3
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          1152,
+          864
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_55276_55278",
+        "field_token_counts": [
+          2,
+          4
+        ],
+        "collision_tokens": 2,
+        "fetch_size": [
+          1152,
+          896
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_13078_13081",
+        "field_token_counts": [
+          2,
+          6
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_13604_13607",
+        "field_token_counts": [
+          6,
+          6
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_60346_60348",
+        "field_token_counts": [
+          2,
+          4
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          768,
+          1312
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_43698_43701",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_20974_20977",
+        "field_token_counts": [
+          4,
+          2
+        ],
+        "collision_tokens": 2,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_17933_17935",
+        "field_token_counts": [
+          6,
+          6
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          1152,
+          864
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_24963_24964",
+        "field_token_counts": [
+          4,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_36345_36351",
+        "field_token_counts": [
+          2,
+          4
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_24231_24232",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1184
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_16462_16471",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_33059_33060",
+        "field_token_counts": [
+          3,
+          3
+        ],
+        "collision_tokens": 3,
+        "fetch_size": [
+          1280,
+          800
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_40426_40431",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          1152,
+          896
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_36341_36342",
+        "field_token_counts": [
+          2,
+          4
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_35961_35962",
+        "field_token_counts": [
+          3,
+          3
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          928,
+          1184
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_17372_17376",
+        "field_token_counts": [
+          4,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_42508_42509",
+        "field_token_counts": [
+          1,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1184
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_38661_38665",
+        "field_token_counts": [
+          2,
+          1
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          1248,
+          800
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_31780_31786",
+        "field_token_counts": [
+          6,
+          3
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_14122_14126",
+        "field_token_counts": [
+          4,
+          4
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          800,
+          1248
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_12925_12926",
+        "field_token_counts": [
+          3,
+          4
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_50645_50646",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_64087_64090",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          1152,
+          896
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_8405_8420",
+        "field_token_counts": [
+          3,
+          3
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          864,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_16161_16162",
+        "field_token_counts": [
+          4,
+          2
+        ],
+        "collision_tokens": 2,
+        "fetch_size": [
+          1152,
+          896
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_36916_36921",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          896,
+          1152
+        ],
+        "valid": true
+      },
+      {
+        "pair_id": "swap_4654_4655",
+        "field_token_counts": [
+          2,
+          2
+        ],
+        "collision_tokens": 0,
+        "fetch_size": [
+          1152,
+          896
+        ],
+        "valid": true
+      }
+    ]
+  },
+  "percentage_OCR_vs_aliases_format_mismatch": {
+    "fields": 0,
+    "pairs": 0,
+    "records": [],
+    "policy": "Keep original aliases and strict percentage-sensitive primary exact score. A teacher answer with the alternate percent format may fail the primary inclusion gate; any unit-aware sensitivity must be uniform and secondary."
+  },
+  "representative_figure": {
+    "path": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/table_swap_audit.png",
+    "metadata": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/table_swap_audit.json",
+    "pair_id": "swap_38577_38580",
+    "selection": "real year-amount table chosen by data type/readability before inspecting model outputs; annotated targets only"
+  },
+  "rendering_limitations": [
+    "OCR rectangles are proposals; a few slanted glyph edge pixels can remain outside the erased rectangle. Symmetric rendering and full-teacher 4-answer gates control some artifacts, but do not establish perfect edit realism.",
+    "Provided-OCR and Tesseract confidence conventions differ and are explicitly recorded.",
+    "No gold semantic field boundaries, no held-out-layout claim, and no full DocVQA benchmark estimate."
+  ],
+  "identifier_exact_boundary": {
+    "audit_path": "/media/disk2/YZX/research/EADP/Qwen_vl/outputs/binding_oracle/data/identifier_exact_audit.json",
+    "leading_zero_fields": 3,
+    "leading_zero_pairs": 2,
+    "Decimal_exact_accepts_zero_dropped_codes": true,
+    "literal_exact_accepts_zero_dropped_codes": false,
+    "all62_pair_targets_remain_distinct_under_Decimal": true,
+    "note": "Primary numeric-value binding exact cannot claim literal preservation of identifier characters. Original records and scoring rules unchanged."
+  }
+}
